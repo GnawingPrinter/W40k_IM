@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="0,35">
+	<Include Path="Windows/Styles.xml"/>
+		
+	<Constants>
+		<CabalMissionProgressBarLength Type="int" Value="330"/>
+		<QuestCount Type="int" Value="5"/>
+	</Constants>
+	
+	<FlowContainer HAlign="right" Tutorial="Data_terminal">
+		<FlowContainer Horizontal="1" HAlign="center" MarginLeft="-80" MarginBottom="-30" MarginTop="5" >
+			<XBOXButton Name="Ongoin"
+				Height="48"
+				SetButton="R_TRIGGER"
+				Style="XBoxButtonFont"
+			/>
+			<Text Name="Title"
+				Height="48"
+				MarginLeft="5"
+				MarginTop="2"
+				TextAlignH="left"
+				Style="Headline_XLarge_Light_Glow"
+				Text="controller.common.data_terminal"
+			/>
+		</FlowContainer>
+		<FlowContainer
+				Width="518"
+				BackgroundTopSize="165"
+				BackgroundBotSize="110"
+				BackgroundTopImage="UI/OpenWorld/DataTerminal/data_terminal_panel_TOP.tga"
+				BackgroundMidImage="UI/OpenWorld/DataTerminal/data_terminal_panel_middle.tga"
+				BackgroundBotImage="UI/OpenWorld/DataTerminal/data_terminal_panel_bottom.tga"
+				MarginLeft="-5"
+			>
+			<FlowContainer Horizontal="0" MarginLeft="30" MarginTop="65">
+				<FlowContainer Name="Notifications">
+					<Text
+						Size="400,48"
+						TextAlignH="left"
+						Style="Headline_XLarge_Color_Glow"
+						Text="controller.buttons.notifications"
+					/>
+					<Image
+						Size="400,16"
+						MarginTop="-5"
+						MarginBottom="5"
+						MarginLeft="-5"
+						Image="UI/OpenWorld/headline3.tga"
+					/>
+					<FlowContainer MarginLeft="10">
+						<FlowContainer Name="InQueue" Height="55" Horizontal="1" MarginTop="5">
+							<Image						
+								Size="36,36"
+								MarginLeft="4"							
+								Image="UI/msgbox/alert_queueOff.tga"					
+							/>
+							<Icon Name="InQueueText"
+								Pos="0,-28"
+								Size="380,85"
+								TextAlignH="left"
+								AlignV="Top"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.inqueue"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="PendingCabalInvitedAlert" Height="36" Horizontal="1">
+							<Image
+								Size="36,36"
+								MarginRight="5"
+								Image="UI/msgbox/alert_inviteOff.tga"
+							/>
+							<Icon Name="PendingCabalInvitedAlertText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.GUI.notification.cabalinvitation"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="PendingCabalAcceptedAlert" Height="36" Horizontal="1">
+							<Image
+								Size="36,36"
+								MarginRight="5"
+								Image="UI/msgbox/alert_inviteOff.tga"
+							/>
+							<Icon Name="PendingCabalAcceptedAlertText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.GUI.notification.cabaljoined"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="PendingQuestReward" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="40,40"
+								MarginRight="1"
+								Image="UI/msgbox/alert_lootOff.tga"
+							/>
+							<Icon Name="PendingQuestRewardText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="controller.buttons.claim_story_reward"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="PendingReward" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="40,40"
+								MarginRight="1"
+								Image="UI/msgbox/alert_lootOff.tga"
+							/>
+							<Icon Name="PendingRewardText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.reward"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="PendingSurvey" Height="36" Horizontal="1" MarginTop="5">
+							<Image
+								Size="36,36"
+								MarginRight="5"
+								Image="UI/msgbox/survey/survey_buttonOff.tga"
+							/>
+							<Icon Name="PendingSurveyText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.survey"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="PendingFriendRequest" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="40,40"
+								MarginRight="1"
+								Image="UI/msgbox/alert_friendOff.tga"
+							/>
+							<Icon Name="PendingFriendRequestText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.friendrequest"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="CraftingFinished" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="40,40"
+								MarginRight="1"
+								Image="UI/msgbox/alert_craftingOff.tga"
+							/>
+							<Icon Name="CraftingFinishedText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.craftingfinished"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="CraftResearchFinished" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="40,40"
+								MarginRight="1"
+								Image="UI/msgbox/alert_craftingOff.tga"
+							/>
+							<Icon Name="CraftResearchFinishedText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.crafttechfinished"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="CabalNotification" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="36,36"
+								MarginRight="5"
+								Image="UI/OpenWorld/button_cabalOff.tga"
+							/>
+							<Image
+								MarginTop="16"
+								MarginLeft="-24"
+								Size="24,24"
+								Image="UI/msgbox/button_alerticon.tga"
+							/>
+							<Icon Name="CabalNotificationText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.cabalapplication"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="CabalRewardNotification" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="36,36"
+								MarginRight="5"
+								Image="UI/OpenWorld/button_cabalOff.tga"
+							/>
+							<Image
+								MarginTop="16"
+								MarginLeft="-24"
+								Size="24,24"
+								Image="UI/msgbox/button_alerticon.tga"
+							/>
+							<Icon Name="CabalRewardNotificationText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="controller.buttons.claim_cabal_reward"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="CharactersheetNotification" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="36,36"
+								MarginRight="5"
+								Image="UI/OpenWorld/button_characterOff.tga"
+							/>
+							<Image
+								MarginTop="16"
+								MarginLeft="-24"
+								Size="24,24"
+								Image="UI/msgbox/button_alerticon.tga"
+							/>
+							<Icon Name="CharactersheetNotificationText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.character"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="SkillsNotification" Height="40" Horizontal="1" MarginTop="5">
+							<Image
+								Size="36,36"
+								MarginRight="5"
+								Image="UI/OpenWorld/button_skillsOff.tga"
+							/>
+							<Image
+								MarginTop="16"
+								MarginLeft="-24"
+								Size="24,24"
+								Image="UI/msgbox/button_alerticon.tga"
+							/>
+							<Icon Name="SkillsNotificationText"
+								Size="380,36"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_notifications"
+								Text="openworld.gui.notification.skill"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+					</FlowContainer>
+				</FlowContainer>
+				<FlowContainer Name="Continues" MarginTop="20">
+					<Text
+						Size="400,48"
+						TextAlignH="left"
+						Style="Headline_XLarge_Color_Glow"
+						Text="controller.common.active_quests"
+					/>
+					<Image
+						Size="400,16"
+						MarginTop="-5"
+						MarginBottom="5"
+						MarginLeft="-5"
+						Image="UI/OpenWorld/headline3.tga"
+					/>
+					<FlowContainer MarginLeft="10">
+						<Loop Count="@QuestCount" Variable="$X$">
+							<FlowContainer Name="ContinueCampaign$X$" Height="40" Horizontal="1" MarginBottom="8">
+								<Image
+									Size="50,50"
+									MarginTop="-5"
+									MarginRight="-2"
+									MarginLeft="-5"
+									Image="UI/OpenWorld/Missions/mission_custom.tga"
+								/>
+								<Icon Name="ContinueCampaignText$X$"
+									Size="380,40"
+									TextAlignH="left"
+									AllImg="none"
+									Style="DataTerminal_story"
+									ControllerSenseEnabled="1"
+								/>
+							</FlowContainer>
+						</Loop>
+						<FlowContainer Name="ContinueInvestigation" Height="40" Horizontal="1" MarginBottom="8">
+							<Image
+								Size="50,50"
+								MarginTop="-5"
+								MarginRight="-2"
+								MarginLeft="-5"
+								Image="UI/OpenWorld/Missions/mission_mosaicOff.tga"
+							/>
+							<Icon Name="ContinueInvestigationText"
+								Size="380,40"
+								TextAlignH="left"
+								AllImg="none"
+								Style="DataTerminal_priority"
+								Text="openworld.gui.starmap.continue_investigation"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+						<FlowContainer Name="WorldEventDetail" Height="40" Horizontal="1">
+                            <Image
+                                Size="40,40"
+                                MarginRight="5"
+                                Image="UI/OpenWorld/DataTerminal/world_event_icon.tga"
+                            />
+                            <Icon Name="WorldEventDetailText"
+                                Size="380,40"
+                                TextAlignH="left"
+                                AllImg="none"
+                                Style="StarmapHeadline2_3_controller"
+                                Text="openworld.GUI.starmap.event_details"
+                                ControllerSenseEnabled="1"
+                            />
+                        </FlowContainer>						
+					</FlowContainer>
+				</FlowContainer>
+				<FlowContainer Name="CabalMission" MarginTop="20">
+					<Text
+						Size="400,48"
+						TextAlignH="left"
+						Style="Headline_XLarge_Color_Glow"
+						Text="controller.common.cabal_objective"
+					/>
+					<Image
+						Size="400,16"
+						MarginTop="-5"
+						MarginBottom="5"
+						MarginLeft="-5"
+						Image="UI/OpenWorld/headline3.tga"
+					/>
+					<Container Size="410,125" MarginLeft="-10" MarginTop="-5">
+						<Image
+							Size="360,136"
+							Image="UI/OpenWorld/DataTerminal/starmap_cabalmissionProgressBar.tga"
+						/>
+						<Image
+							Pos="350,0"
+							Size="70,70"
+							Image="UI/NavigationWheel/Icons/Cabal_rollover.tga"
+						/>
+						<Text Name="CabalMissionName"
+							Pos="18,10"
+							Size="320,30"
+							Style="Text_Large_Light_Outline"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="Daily Mission Name"
+						/>
+						<FlowContainer
+							Pos="13,37"
+							Height="24"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/Interaction/frame_inoculator_barLeft.tga"
+							BackgroundMidImage="UI/Interaction/frame_inoculator_barMiddle.tga"
+							BackgroundBotImage="UI/Interaction/frame_inoculator_barRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="CabalMissionProgressBar" Height="24" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<Dummy Name="CabalMissionProgressBarTooltip" Pos="13,37" Height="24" Width="@CabalMissionProgressBarLength" InitPopup="bottomcenter,topcenter" />
+						<Image Name="CabalMissionDonationBack"
+							Pos="17,68"
+							Size="48,48"
+							Image="UI/OpenWorld/starmap_cabalmissionButtonBg.tga"
+						/>
+						<Icon Name="CabalMissionDonationIcon"
+							Pos="21,72"
+							Size="40,40"
+							IdleImg="UI/OpenWorld/starmap_buttonDonateOff.tga"
+							RolloverImg="UI/OpenWorld/starmap_buttonDonateOver.tga"
+							PressImg="UI/OpenWorld/starmap_buttonDonateOver.tga"
+						/>
+						<Icon Name="CabalMissionDonationText"
+							Pos="60,73"
+							Size="370,40"
+							TextAlignH="left"
+							AllImg="none"
+							Style="DataTerminal_notifications"
+							ControllerSenseEnabled="1"
+						/>
+						<TextBox Name="CabalMissionDesc"
+							Pos="18,70"
+							Size="390,55"
+							Style="Text_Large_Light_Outline"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="Daily Mission Name"
+						/>
+					</Container>
+				</FlowContainer>
+				<FlowContainer Name="Effects" MarginTop="20">
+					<Text
+						Size="400,48"
+						TextAlignH="left"
+						Style="Headline_XLarge_Color_Glow"
+						Text="controller.common.active_consumables"
+					/>
+					<Image
+						Size="400,16"
+						MarginTop="-5"
+						MarginBottom="5"
+						MarginLeft="-5"
+						Image="UI/OpenWorld/headline3.tga"
+					/>
+					<Container Name="ActiveConsumable" Height="70" Horizontal="1" MarginLeft="2" Size="400,70">
+						<Icon Name="EffectIcon"
+							Size="60,60" 
+							Pos="0,5" 
+							AllImg="UI/Artifacts/belt_frag_grenade_godlike.tga"
+							UseButtonEffects="0"
+						/>
+						<Text Name="EffectText"
+							Pos="78,0"
+							Size="310,35"
+							TextAlignH="left"
+							TextAlignV="bottom"
+							Style="Rune_Name_Purple_Glow"
+							Text="Nagyon meno effekt, jobb leszek tőle sokkal"
+							ControllerSenseEnabled="1"
+							InitPopup="rightcenter,leftcenter"
+							Tooltip="Wooo de menő kis buff, ad sok XP-t"
+						/>
+						<Text Name="EffectCounter"
+							Pos="78,35"
+							Size="220,35"
+							TextAlignH="left"
+							TextAlignV="top"
+							Style="Text_Normal_White"
+							Text="még 3 mission"
+						/>
+					</Container>
+				</FlowContainer>
+			</FlowContainer>
+			<Dummy Size="50,60"/>
+		</FlowContainer>
+	</FlowContainer>
+</Window>

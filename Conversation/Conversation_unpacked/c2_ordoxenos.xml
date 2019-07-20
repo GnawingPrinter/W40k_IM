@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Root>
+	<LanguageName>
+		<eng>English</eng>
+	</LanguageName>
+	<Languages>eng</Languages>
+	<Quest>
+		<C2_OrdoXenos>
+			<node1>
+				<Desc>
+					<eng>How delightful of you to pay me a visit, Inquisitor! If I'm not mistaken, we have some unfinished business involving a bottle of Amasec.</eng>
+				</Desc>
+			</node1>
+			<node10>
+				<Desc>
+					<eng>Well, that's the usual procedure. Alas, enemies are the only thing we have a considerable surplus of. Leaving aside my sentimental reservations about a genocide, it may escalate into an unwinnable war with a race living in inaccessible, extra-dimensional hellholes.</eng>
+				</Desc>
+			</node10>
+			<node11>
+				<Desc>
+					<eng>Who knows? They may become Corsairs and take to preying upon our outposts. Even worse, they may claim an Imperial world for themselves. That could lead to a full-scale war against the wrong enemy at the wrong time. I'm trying my best to sort this mess out.</eng>
+				</Desc>
+			</node11>
+			<node2>
+				<Desc>
+					<eng>How is the reconstruction of the Archives going?</eng>
+				</Desc>
+			</node2>
+			<node3>
+				<Desc>
+					<eng>Any news about the Tuathal Aeldari?</eng>
+				</Desc>
+			</node3>
+			<node4>
+				<Desc>
+					<eng>I wish they had simply thrown me into an Amniotic Tank. After the Aeldari decided to regroup somewhere very far away, the Caligari Conclave sent an Adeptus Mechanicus expedition to rebuild that Emperor-forsaken place. Every corner is crawling with Logis, Magis and whatnot.</eng>
+				</Desc>
+			</node4>
+			<node5>
+				<Desc>
+					<eng>We will hear from them, trust me. Their Craftworld is dying and they will grow more and more desperate with each passing day.</eng>
+				</Desc>
+			</node5>
+			<node6>
+				<Desc>
+					<eng>You are still not delighted about your librarian duties.</eng>
+				</Desc>
+			</node6>
+			<node7>
+				<Desc>
+					<eng>My duty here isn't helping anybody, especially not me. Besides, I'm still an anointed Inquisitor. I have my own retinue to lead into great peril for the safety of the Imperium. Politics! A blight upon the Galaxy, really.</eng>
+				</Desc>
+			</node7>
+			<node8>
+				<Desc>
+					<eng>They have attacked the Imperium on several occasions. They must be eradicated.</eng>
+				</Desc>
+			</node8>
+			<node9>
+				<Desc>
+					<eng>Do you think we can barter some kind of peace with the Tuathal Aeldari?</eng>
+				</Desc>
+			</node9>
+		</C2_OrdoXenos>
+	</Quest>
+</Root>

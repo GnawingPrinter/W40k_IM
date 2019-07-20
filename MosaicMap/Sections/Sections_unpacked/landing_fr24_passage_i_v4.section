@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Landing_Fr24_Passage_I_v4 Terrain="Terrains/Sections/Landing_site/Landing_Fr24_Passage_I_v4.VHT" Preview="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr24_Passage_I_v4_thumb.bmp" Image="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr24_Passage_I_v4.bmp" MapType="Floating Platform" MinClickHeight="-310">
+	<PivotPos x="3334.96875" y="335.962891" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-3" Row="0" Image="">
+			<Gate Direction="WEST" Size="1" Position.x="3197.18506" Position.y="360.246674" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="">
+			<Gate Direction="EAST" Size="1" Position.x="3564.71704" Position.y="360.650574" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+	</Grids>
+</Landing_Fr24_Passage_I_v4>

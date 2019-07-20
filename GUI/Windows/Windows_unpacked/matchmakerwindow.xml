@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="626,95" GuiAlign="bottomcenter" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<MaxVoteCount Type="int" Value="8"/>
+		<BarWidth Type="int" Value="352"/>
+	</Constants>
+		
+	<Dummy Name="WindowHandler" MouseSenseEnabled="0"/>
+	
+	
+	
+	<Container Name="Setup" Visible="1">
+		<Image
+			Pos="0,0"
+			Size="668,840"
+			Image="UI/OpenWorld/Matchmaker/matchmaker_backgroundSetup.tga"
+		/>
+		<Image
+			Pos="0,0"
+			Size="668,840"
+			Image="UI/OpenWorld/Panels/subsector_background2.tga"
+		/>
+		<Text
+			Pos="94,98"
+			Size="506,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.coop.title"
+		/>
+		<Text
+			Style="Headline_Large_Light"
+			Pos="50,149"			
+			Size="562,32"
+			TextAlignH="Left"
+			TextAlignV="Center"
+			Text="controller.common.matchmaking"
+			MouseSenseEnabled="0"
+			ConsoleVisible="0"
+		/>
+		<Image
+			Pos="50,180"
+			Size="562,4"
+			Image="UI/Assignment/assignment_bigline.tga"
+			MouseSenseEnabled="0"
+			ConsoleVisible="0"
+		/>		
+		<TextBox Name="CoopDescription"
+			Pos="50,194"
+			Size="562,180"
+			Style="Text_Normal_Dark"
+			TextAlignH="left"
+			TextAlignV="top"
+			Text="openworld.gui.coop.description"
+		/>
+		<Container Name="Selection">
+			<Container Name="Normal" Pos="41,581">
+				<Icon Name="NormalIcon"
+					Size="284,176"
+					IdleImg="UI/OpenWorld/Matchmaker/matchmaker_normalOff.tga"
+					PressImg="UI/OpenWorld/Matchmaker/matchmaker_normalOver.tga"
+					RolloverImg="UI/OpenWorld/Matchmaker/matchmaker_normalOver.tga"
+					UseButtonEffects="0"
+					Enabled="1"
+					ControllerSenseEnabled="1"
+				/>
+				<Text Name="NormalTitle"
+					Pos="26,16"
+					Size="232,32"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.coop.mode.normal"
+					MouseSenseEnabled="0"
+				/>		
+				<Text
+					Pos="26,130"
+					Size="232,32"
+					Style="Text_Normal_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="common.free"
+					MouseSenseEnabled="0"
+				/>				
+			</Container>
+		</Container>
+	</Container>
+	
+	<Dummy Name="TabJob" MouseSenseEnabled="0" Comment="konzolos verziohoz kell"/>
+	
+	<Container Name="Searching" Visible="0">
+		<Image Name="GameModeBackground"
+			Pos="0,0"
+			Size="668,840"
+			Image="UI/OpenWorld/Matchmaker/matchmaker_backgroundNormal.tga"
+		/>
+		<Image
+			Pos="0,0"
+			Size="668,840"
+			Image="UI/OpenWorld/Panels/subsector_background2.tga"
+		/>
+		<Text
+			Pos="94,98"
+			Size="506,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.coop.title"
+		/>
+		<Text
+			Style="Headline_Large_Light"
+			Pos="50,149"			
+			Size="562,32"
+			TextAlignH="Left"
+			TextAlignV="Center"
+			Text="controller.common.matchmaking"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Pos="50,180"
+			Size="562,4"
+			Image="UI/Assignment/assignment_bigline.tga"
+			MouseSenseEnabled="0"
+		/>		
+		<TextBox Name="WaitingMessage"
+			Pos="50,204"
+			Size="562,40"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="top"
+			Text="openworld.GUI.coop.description"
+		/>
+		
+		<Container Name="InQueue" Visible="1">
+			<TextBox Name="QueueWaiting"
+				Pos="50,728"
+				Size="342,32"
+				Style="Text_Normal_Dark"
+				TextAlignH="left"
+				TextAlignV="top"
+				Text="_999 player(s) in queue"
+			/>
+			<TextBox Name="QueueTimer"
+				Pos="412,728"
+				Size="200,32"
+				Style="Text_Large_Light_Glow"
+				FontType="Share Tech Mono"
+				TextAlignH="right"
+				TextAlignV="top"
+				Text="_60:60"
+			/>
+			<TextBox Name="QueueMessage"
+				Pos="10,728"
+				Size="612,32"
+				Style="Text_Normal_Dark"
+				TextAlignH="center"
+				TextAlignV="top"
+				Text="error"
+			/>
+		</Container>
+	
+		<Container Name="PartyFound" Visible="0">
+			<Container Name="VotePartyVotes" Pos="159,626" Size="344,188">
+				<Text
+					Size="344,32" 
+					Style="Text_Large_White"
+					TextAlignV="center"
+					Text="Battle.GUI.vote.start_map.confirm"
+				/>
+				<FlowContainer Horizontal="1" HAlign="center" Pos="0,36" Size="344,32">		
+					<Loop Count="@MaxVoteCount" Variable="$X$">
+						<Image Name="ReadyVote$X$"
+							Size="32,32"
+							MarginRight="4"
+							Image="UI/msgbox/popup_voteOff.tga"
+						/>
+					</Loop>
+				</FlowContainer>
+				<Container Size="338,40" Pos="3,80" Name="VoteButtons">
+					<Icon Name="Accept"
+						Pos="0,0"
+						Size="164,36"
+						IdleImg="UI/common/Options/button_largeOff.tga"
+						PressImg="UI/common/Options/button_largeOff.tga"
+						RolloverImg="UI/common/Options/button_largeOver.tga"
+						Style="Starmap2_3"
+						Text="common.accept"
+						ShowCategory="mouse"
+					/>
+					<Icon Name="Decline"
+						Pos="174,0"
+						Size="164,36"
+						IdleImg="UI/common/Options/button_largeOff.tga"
+						PressImg="UI/common/Options/button_largeOff.tga"
+						RolloverImg="UI/common/Options/button_largeOver.tga"
+						Style="Starmap2_3"
+						Text="common.decline"
+						ShowCategory="mouse"
+					/>
+				</Container>
+			</Container>
+			
+			<Container Pos="159,670">
+				<Image Name="TimerBarBg"
+					Pos="0,80"
+					Size="348,16"
+					Image="UI/msgbox/popup_partyBarBg.tga"
+				/>
+				<Container Size="352,16" Pos="-2,78" Name="RemainingTimeBox" IgnoreScissor="0">
+					<FlowContainer
+						Pos="0,0"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+						BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+						BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="RemainingTime" Height="20" Width="@BarWidth" MouseSenseEnabled="0"/>
+					</FlowContainer>
+				</Container>
+			</Container>
+		</Container>
+	</Container>
+	
+	<Container Name="Tabs" Pos="-70,133" Size="828,48" PCVisible="0">
+		<FlowContainer HAlign="center" Horizontal="1">
+			<XBOXButton Name="XBoxLB"
+				Size="45,45"
+				MarginBottom="2"
+				MarginRight="5"
+				SetButton="LEFT_SHOULDER"
+			/>
+			<Icon Name="Matchmaking"
+				MarginTop="4"
+				Size="140,40"
+				IdleImg="UI/common/Options/options_headline_buttonOff.tga"
+				PressImg="UI/common/Options/options_headline_buttonOn.tga"
+				RolloverImg="UI/common/Options/options_headline_buttonOver.tga"
+				Style="StarmapHeadline2_3"
+				Text="controller.common.matchmaking"
+				TiltPivot="@TiltPivot"
+				TiltMouseCenter="@TiltMouseCenter"
+				DefaultTilt="@DefaultTilt"
+				MaximumTilt="@MaximumTilt"
+				TiltZone="@TiltZone"
+			/>
+			<Icon Name="Friends"
+				MarginTop="4"
+				Size="140,40"
+				IdleImg="UI/common/Options/options_headline_buttonOff.tga"
+				PressImg="UI/common/Options/options_headline_buttonOn.tga"
+				RolloverImg="UI/common/Options/options_headline_buttonOver.tga"
+				Style="StarmapHeadline2_3"
+				Text="common.friends"
+				TiltPivot="@TiltPivot"
+				TiltMouseCenter="@TiltMouseCenter"
+				DefaultTilt="@DefaultTilt"
+				MaximumTilt="@MaximumTilt"
+				TiltZone="@TiltZone"
+			/>
+			<XBOXButton Name="XBoxRB"
+				Size="45,45"
+				MarginBottom="2"
+				MarginLeft="5"
+				SetButton="RIGHT_SHOULDER"
+			/>
+		</FlowContainer>
+	</Container>
+	
+	<Icon Name="MainButton"
+		Pos="483,781"
+		Size="160,40"
+		IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+		PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+		RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		Style="Starmap2_3"
+		InitPopup="bottomcenter,topcenter"
+		TiltZone="@WindowTiltZone"
+		ShowCategory="mouse"
+		Text="openworld.gui.pvp.cancel"
+	/>
+	
+	<Icon Name="Close"
+		Pos="626,120"
+		Size="24,24"
+		IdleImg="UI/OpenWorld/icon_closeOff.tga"
+		PressImg="UI/OpenWorld/icon_closeOver.tga"
+		RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+		InitPopup="bottomcenter,topcenter"
+		Tooltip="common.close"
+		ShowCategory="mouse"
+	/>
+	
+</Window>

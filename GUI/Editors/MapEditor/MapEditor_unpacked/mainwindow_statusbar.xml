@@ -1,0 +1,12 @@
+<GridContainer FillColor="#aabed2" BorderWidth="1">
+	<Columns>
+		<Column Width="Auto"/>
+		<Column Width="Auto"/>
+		<Column Width="1*"/>
+	</Columns>
+	<ComboBox Column="0" ColorMask="#FF0000" Width="100" Name="Zoom" OpenUp="true" SelectionColor="#0088FF"/> 
+	<Icon Column="1" Text="&lt;-&gt;" Style="SimpleButton" Width="40" Tooltip="Fit to Screen" Name="ZoomToFit"/>
+	<Text Column="2" MarginLeft="10" TextAlignH="Left" Name="StatusSelectionInfo"/>
+	<Image Column="2" Alpha="0.0" Clickable="true"/> <!--Ez azert kell, hogy a popup ne jelenjen meg az egesz status bar folott...-->
+	<Text Column="2" MarginRight="10" TextAlignH="Right" Name="StatusText"/>
+</GridContainer>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="626,95" GuiAlign="center" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	<Constants>
+		<RewardPopupAlign Value="topcenter,bottomcenter"/>
+		<RewardPopupAlign2 Value="bottomcenter,topcenter"/>
+		
+		<GloryBarLength Type="int" Value="546"/>
+		<MaxItemCount Type="int" Value="3"/>
+	</Constants>
+	
+	<Dummy Name="RandomDummy" Size="1,1"/>
+	
+	<Container Name="GloryNormal">
+		<Image
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/Glory/glory_background1.tga"
+		/>
+		<Image
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/MissionInfo/mission_background2.tga"
+		/>
+		<Text
+			Pos="80,100"
+			Size="484,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.glory.title"
+		/>
+		<Text
+			Pos="57,146"
+			Size="300,40"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.glory.weeklyglory"
+		/>
+		<FlowContainer
+			Pos="55,192"
+			Height="24"
+			Horizontal="1"
+			BackgroundTopSize="8"
+			BackgroundBotSize="8"
+			BackgroundTopImage="UI/OpenWorld/Glory/glory_barLeft.tga"
+			BackgroundMidImage="UI/OpenWorld/Glory/glory_barMiddle.tga"
+			BackgroundBotImage="UI/OpenWorld/Glory/glory_barRight.tga"
+			MouseSenseEnabled="0"
+		>
+			<Dummy Name="GloryBar" Height="24" Width="@GloryBarLength" MouseSenseEnabled="0"/>
+		</FlowContainer>
+		<Container>
+			<Container Name="Reward0">
+				<Image Name="Reward0Back"
+					Pos="66,219"
+					Size="52,104"
+					Image="UI/OpenWorld/Glory/glory_rewardframe1On.tga"
+				/>
+				<FlowContainer Pos="72,257">
+					<Image Name="Reward0Gold"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward0Item"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceItem.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward0Premium"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward0Xp"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceXp.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+				</FlowContainer>
+			</Container>
+			<Container Name="Reward1">
+				<Image Name="Reward1Back"
+					Pos="125,219"
+					Size="60,104"
+					Image="UI/OpenWorld/Glory/glory_rewardframe2On.tga"
+				/>
+				<FlowContainer Pos="140,257">
+					<Image Name="Reward1Gold"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward1Item"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceItem.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward1Premium"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward1Xp"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceXp.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+				</FlowContainer>
+			</Container>
+			<Container Name="Reward2">
+				<Image Name="Reward2Back"
+					Pos="193,219"
+					Size="60,104"
+					Image="UI/OpenWorld/Glory/glory_rewardframe2On.tga"
+				/>
+				<FlowContainer Pos="208,257">
+					<Image Name="Reward2Gold"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward2Item"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceItem.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward2Premium"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward2Xp"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceXp.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+				</FlowContainer>
+			</Container>
+			<Container Name="Reward3">
+				<Image Name="Reward3Back"
+					Pos="303,219"
+					Size="52,104"
+					Image="UI/OpenWorld/Glory/glory_rewardframe1On.tga"
+				/>
+				<FlowContainer Pos="309,257">
+					<Image Name="Reward3Gold"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward3Item"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceItem.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward3Premium"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward3Xp"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceXp.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+				</FlowContainer>
+			</Container>
+			<Container Name="Reward4">
+				<Image Name="Reward4Back"
+					Pos="573,219"
+					Size="52,104"
+					Image="UI/OpenWorld/Glory/glory_rewardframe1On.tga"
+				/>
+				<FlowContainer Pos="579,257">
+					<Image Name="Reward4Gold"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward4Item"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceItem.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward4Premium"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+					<Image Name="Reward4Xp"
+						MarginBottom="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceXp.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign"
+					/>
+				</FlowContainer>
+			</Container>
+		</Container>
+		<TextBox
+			Pos="57,515"
+			Size="553,200"
+			Style="Text_Normal_White"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="openworld.gui.glory.desc"
+		/>
+		<Text Name="GloryWeeklyValue"
+			Pos="407,146"
+			Size="194,40"
+			Style="Headline_Large_White_Glow"
+			FontType="Share Tech Mono"
+			FontSize="22"
+			Color="#ededed"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="10/69"
+		/>
+		<Text Name="GloryWeekNumber"
+			Pos="57,731"
+			Size="200,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.glory.weeknumber"
+		/>
+		<Text
+			Pos="296,733"
+			Size="212,30"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="openworld.gui.glory.timeleft"
+		/>
+		<Text Name="GloryTimeLeft"
+			Pos="525,733"
+			Size="90,30"
+			Style="Text_Large_White"
+			FontType="Share Tech Mono"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="10 : 30"
+		/>
+		<Icon Name="NormalLeaderboard"
+			Pos="309,782"
+			Size="188,32"
+			IdleImg="UI/OpenWorld/starmap_buttonOff.tga"
+			PressImg="UI/OpenWorld/starmap_buttonOff.tga"
+			RolloverImg="UI/OpenWorld/starmap_buttonOver.tga"
+			Style="StarmapHeadline1_4"
+			Text="openworld.gui.leaderboard.title"
+		/>
+		<Icon Name="Ok"
+			Pos="509,782"
+			Size="140,32"
+			IdleImg="UI/OpenWorld/starmap_buttonOff.tga"
+			PressImg="UI/OpenWorld/starmap_buttonOff.tga"
+			RolloverImg="UI/OpenWorld/starmap_buttonOver.tga"
+			Style="Starmap2_3"
+			Text="common.ok"
+		/>
+		<Icon Name="GloryTutorial"
+			Pos="38,773"
+			Size="32,32"
+			IdleImg="UI/OpenWorld/button_journalOff.tga"
+			PressImg="UI/OpenWorld/button_journalOff.tga"
+			RolloverImg="UI/OpenWorld/button_journalOver.tga"
+			InitPopup="topcenter,bottomcenter"
+			Tooltip="tutorial.weeklyglory.name"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="GloryWeekly">
+		<Image
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/Glory/glory_background_reward.tga"
+		/>
+		<Image
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/MissionInfo/mission_background2.tga"
+		/>
+		<Text Name="WeeklyReportTitle"
+			Pos="82,100"
+			Size="484,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.glory.weekrewards"
+		/>
+		<Text
+			Pos="92,192"
+			Size="250,30"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.glory.gloryrank"
+		/>
+		<Text Name="GloryRank"
+			Pos="390,192"
+			Size="200,30"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="RANK 0"
+		/>
+		<FlowContainer
+			Pos="69,253"
+			Height="24"
+			Horizontal="1"
+			BackgroundTopSize="8"
+			BackgroundBotSize="8"
+			BackgroundTopImage="UI/OpenWorld/Glory/glory_barLeft.tga"
+			BackgroundMidImage="UI/OpenWorld/Glory/glory_barMiddle.tga"
+			BackgroundBotImage="UI/OpenWorld/Glory/glory_barRight.tga"
+			MouseSenseEnabled="0"
+		>
+			<Dummy Name="GloryBar_reward" Height="24" Width="@GloryBarLength" MouseSenseEnabled="0"/>
+		</FlowContainer>
+		
+		<Dummy Name="GloryBar_Tooltip" Pos="69,253" Height="24" Width="@GloryBarLength" InitPopup="bottomcenter,topcenter" />
+		
+		<Text
+			Pos="92,697"
+			Size="150,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.glory.rewards"
+		/>
+		<Container Pos="240,692" Size="370,40">
+			<FlowContainer Horizontal="1" HorizontalAlignment="right">
+				<Container Name="WeeklyRewardGold"  Size="105,40">
+					<Text Name="WeeklyRewardGoldValue"
+						Style="Text_Large_Light_Glow"
+						Size="60,40"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="10000"
+					/>
+					<Image						
+						Pos="60,0"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign2"
+						Tooltip="Battle.GUI.inventory.gold.label"
+					/>
+				</Container>
+
+				<Container Name="WeeklyRewardPremium" Size="105,40">
+					<Text Name="WeeklyRewardPremiumValue"
+						Style="Text_Large_Light_Glow"
+						Size="60,40"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="200"
+					/>
+					<Image
+						Pos="60,0"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign2"
+						Tooltip="Battle.GUI.inventory.fate.label"
+					/>
+				</Container>
+				
+				<Container Name="WeeklyRewardXp" Size="105,40">
+					<Text Name="WeeklyRewardXpValue"
+						Style="Text_Large_Light_Glow"
+						Size="60,40"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="1000"
+					/>
+					<Image
+						Pos="60,0"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceXp.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign2"
+						Tooltip="openworld.GUI.mission.charxp"
+					/>
+				</Container>
+
+				<Loop Count="@MaxItemCount" Variable="$X$">
+					<Image Name="WeeklyRewardItem$X$"
+						MarginRight="5"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceItem.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="@RewardPopupAlign2"
+					/>
+				</Loop>
+			</FlowContainer>
+		</Container>
+		<Icon Name="WeeklyLeaderboard"
+			Pos="265,782"
+			Size="188,32"
+			IdleImg="UI/OpenWorld/starmap_buttonOff.tga"
+			PressImg="UI/OpenWorld/starmap_buttonOff.tga"
+			RolloverImg="UI/OpenWorld/starmap_buttonOver.tga"
+			Style="StarmapHeadline1_4"
+			Text="openworld.gui.leaderboard.title"
+		/>
+		<Icon Name="ClaimReward"
+			Pos="465,782"
+			Size="188,32"
+			IdleImg="UI/OpenWorld/starmap_buttonOff.tga"
+			PressImg="UI/OpenWorld/starmap_buttonOff.tga"
+			RolloverImg="UI/OpenWorld/starmap_buttonOver.tga"
+			Style="StarmapHeadline1_4"
+			Text="openworld.gui.glory.claim_rewards"
+		/>
+	</Container>
+	
+	<Icon Name="Close"
+		Pos="638,122"
+		Size="24,24"
+		IdleImg="UI/OpenWorld/icon_closeOff.tga"
+		PressImg="UI/OpenWorld/icon_closeOver.tga"
+		RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+		InitPopup="@RewardPopupAlign2"
+		Tooltip="common.close"
+	/>
+</Window>

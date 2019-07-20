@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<Window Pos="0,0">
+	<Include Path="Windows/Styles.xml"/>
+	<Constants>
+		<Visible Type="int" Value="1"/>
+		<ListedCosmeticCount Type="int" Value="6"/>
+		<ListedCosmeticInRow Type="int" Value="2"/>
+	</Constants>
+	
+	<Container Name="Headline">
+		<Image Name="PanelBack"
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Extras/Extras_Bg_racs.tga"
+			Size="2220,1442"
+			Pos="-320,-120"
+			Alpha="0.4"
+		/>
+		<Scene3D Name="CharacterModel"
+			Pos="200,100"
+			Size="1920,1080"
+			GuiAlign="center"
+			SetCamera="characterwindow"
+			_DynamicOffsetMax="-8,-8"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<FlowContainer Name="TopTabs" MarginTop="33" Horizontal="1" Height="68" HAlign="center" GuiAlign="topleft">
+			<XBOXButton Name="XBoxLB"
+				Size="48,48"
+				SetButton="LEFT_SHOULDER"
+			/>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="PetsButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.extras.pets.name"
+				/>
+				<Icon Name="PetsNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+					Visible="0"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="EmotesButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.extras.emotes.name"
+				/>
+				<Icon Name="EmotesNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+					Visible="0"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="CosmeticsButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					ButtonState="UIBS_PRESSED_BYPROG"
+					Text="openworld.gui.extras.cosmetics.name"
+				/>
+				<Icon Name="CosmeticsNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+					Visible="0"
+				/>
+			</Container>
+			<XBOXButton Name="XBoxRB"
+				Size="48,48"
+				SetButton="RIGHT_SHOULDER"
+			/>
+		</FlowContainer>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="CosmeticContainer" Pos="75,103" Size="573,776" GuiAlign="leftcenter" >
+		<Text Name="CategoryName"
+			Size="580,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="_Cosmetic"
+		/>
+		<Image
+			Pos="0,34"
+			Size="573,742"
+			Image="UI/Extras/Cosmetic/Cosmetic_bg.tga"
+		/>
+		<XBOXButton Name="ControllerListLeft"
+			Pos="11,38"
+			Size="48,48"
+			SetButton="L_TRIGGER"
+		/>
+		<FlowContainer Height="56" Horizontal="1" HAlign="center" MarginLeft="10" MarginTop="36">
+			<Icon Name="TabFootprint"
+				Size="56,56"
+				IdleImg="UI/Extras/Cosmetic/Categorytab_FootprintOff.tga"
+				PressImg="UI/Extras/Cosmetic/Categorytab_FootprintOn.tga"
+				RolloverImg="UI/Extras/Cosmetic/Categorytab_FootprintOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="openworld.gui.extras.Cosmetics.Footprints.name"
+			/>
+			<Icon Name="TabHead"
+				Size="56,56"
+				IdleImg="UI/Extras/Cosmetic/Categorytab_HelmetOff.tga"
+				PressImg="UI/Extras/Cosmetic/Categorytab_HelmetOn.tga"
+				RolloverImg="UI/Extras/Cosmetic/Categorytab_HelmetOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="openworld.gui.extras.Cosmetics.Helmets.name"
+			/>
+			<Icon Name="TabDecor"
+				Size="56,56"
+				IdleImg="UI/Extras/Cosmetic/Categorytab_DecorOff.tga"
+				PressImg="UI/Extras/Cosmetic/Categorytab_DecorOn.tga"
+				RolloverImg="UI/Extras/Cosmetic/Categorytab_DecorOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="openworld.gui.extras.Cosmetics.Decorations.name"
+			/>
+		</FlowContainer>
+		<XBOXButton Name="ControllerListRight"
+			Pos="513,38"
+			Size="48,48"
+			SetButton="R_TRIGGER"
+		/>
+	</Container>
+	<Loop Count="@ListedCosmeticCount" Variable="$X$" ItemsInRow="@ListedCosmeticInRow" Offset="265,218">
+		<Container Name="ListedCosmetic$X$">	
+			<Image Name="ListedCosmeticEquippedFrame$X$"
+				Pos="145,210"
+				Size="166,166"
+				Image="UI/Extras/Cosmetic/CosmeticFrame_Equipped.tga"
+			/>	
+			<Image Name="ListedCosmeticPic$X$"
+				Pos="145,210"
+				Size="166,166"
+				Image="UI/Extras/Cosmetic/Cosmetic_skullmask.tga"
+			/>	
+			<Icon Name="ListedCosmeticFrame$X$"
+				Pos="145,210"
+				Size="166,166"
+				IdleImg="UI/Extras/Cosmetic/CosmeticFrame_Idle.tga"
+				PressImg="UI/Extras/Cosmetic/CosmeticFrame_Highlight.tga"
+				RolloverImg="UI/Extras/Cosmetic/CosmeticFrame_Highlight.tga"
+				ControllerSenseEnabled="1"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="Unlock Criteria: Vedd meg!"
+			/>	
+			<Image Name="ListedCosmeticLock$X$"
+				Pos="145,210"
+				Size="166,166"
+				Image="UI/Extras/Cosmetic/Cosmetic_lock.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text Name="ListedCosmeticName$X$"
+				Pos="110,380"
+				Size="240,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_Mask of the Martyrs"
+			/>
+		</Container>
+	</Loop>		
+	<Slider Name="CosmeticSlider"
+		Pos="615,210"
+		Size="20,655"
+		UseLeftStick="0"
+	/>
+	<FlowContainer Pos="75,900" GuiAlign="leftcenter">
+		<Icon Name="SelectButton"
+			MarginLeft="185"
+			Size="204,52"
+			IdleImg="UI/Crafting/button_xlargeOff.tga"
+			PressImg="UI/Crafting/button_xlargeOver.tga"
+			RolloverImg="UI/Crafting/button_xlargeOver.tga"
+			Style="StarmapHeadline2_3"
+			Text="_EQUIP"
+			ShowCategory="mouse"
+		/>
+		<Container Name="CosmeticTypeContainer" MarginTop="10">
+			<Text Name="CosmeticType_founding"
+				Size="573,777"
+				Style="Rune_Name_Purple_Glow"
+				TextAlignH="center"
+				TextAlignV="top"
+				Text="openworld.GUI.extras.Legacy_founding"
+			/>
+			<Text Name="CosmeticType_seasonal"
+				Size="573,777"
+				Style="Rune_Name_Blue_Glow"
+				TextAlignH="center"
+				TextAlignV="top"
+				Text="openworld.GUI.extras.Legacy_seasonal"
+			/>
+			<Text Name="CosmeticType_event"
+				Size="573,777"
+				Style="Rune_Name_Blue_Glow"
+				TextAlignH="center"
+				TextAlignV="top"
+				Text="openworld.GUI.extras.Legacy_event"
+			/>
+		</Container>
+	</FlowContainer>
+	<Container Name="Preview" GuiAlign="center" Visible="0">
+		<Image
+			Pos="887,358"
+			Size="582,337"
+			Image="UI/Extras/Cosmetic/Cosmetic_Video_bg.tga"
+		/>
+		<Video Name="CosmeticSelectedVideo"
+			Pos="898,369"
+			Size="560,315"
+			LoopVideo="1"
+		/>
+	</Container>
+	<FlowContainer Name="PurchaseButtons" Horizontal="1" MarginTop="14" Pos="85,870" GuiAlign="leftcenter" Visible="0">
+		<Icon Name="PurchasePremium"
+			Size="272,80"							
+			IdleImg="UI/Menu/DLC/dlc_iconPremiumOff.tga"
+			PressImg="UI/Menu/DLC/dlc_iconPremiumOff.tga"
+			RolloverImg="UI/Menu/DLC/dlc_iconPremiumOver.tga"
+			UseButtonEffects="0"
+		/>
+		<Text Name="PremiumPrice"
+			Style="Text_Large_Light"
+			MarginTop="22"
+			MarginLeft="-190"
+			Size="172,30"
+			TextAlignH="center"
+			Text="common.dlc.premium"
+			MouseSenseEnabled="0"
+		/>
+		<Icon Name="PurchaseCash"
+			MarginLeft="8"
+			Size="272,80"
+			IdleImg="UI/Menu/DLC/dlc_iconCashOff.tga"
+			PressImg="UI/Menu/DLC/dlc_iconCashOff.tga"
+			RolloverImg="UI/Menu/DLC/dlc_iconCashOver.tga"
+			UseButtonEffects="0"
+			Visible="0"
+		/>
+		<Text Name="NormalPrice"
+			Style="Text_Large_Light"
+			MarginTop="22"
+			MarginLeft="-190"
+			Size="172,30"
+			TextAlignH="center"
+			Text="_69 EUR"
+			MouseSenseEnabled="0"
+			Visible="0"
+		/>
+	</FlowContainer>
+	
+	
+</Window>

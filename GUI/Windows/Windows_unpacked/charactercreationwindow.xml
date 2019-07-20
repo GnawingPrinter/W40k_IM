@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	<Styles>
+		<GreatButton 
+			Style="StarmapHeadline1_4"
+			Size="284,48"
+			IdleImg="UI/Menu/main_buttonOff.tga"
+			PressImg="UI/Menu/main_buttonOver.tga"
+			RolloverImg="UI/Menu/main_buttonOver.tga"
+			ControllerSenseEnabled="1"
+			UseButtonEffects="0"
+			RolloverFade="125"
+		/>
+	</Styles>
+	
+	<Container GuiAlign="leftcenter">
+		<Image
+			Pos="0,0"
+			Height="388"
+			Image="UI/Menu/main_darken.tga"
+		/>
+		<Image
+			Pos="0,0"
+			Size="288,1080"
+			Image="UI/Menu/main_left.tga"
+		/>
+		<Image
+			Pos="33,44"
+			Size="332,332"
+			Image="UI/Menu/main_characterFrame.tga"
+		/>
+		<Image Name="Portrait"
+			Pos="59,66"
+			Size="284,284"
+			Image="UI/Menu/main_characterFrame.tga"
+		/>
+		<Icon Name="BackButton"
+			Pos="59,405"
+			Style="GreatButton"
+			Text="common.cancel"
+			ShowCategory="mouse"
+		/>
+		<Container GuiAlign="center">
+			<Container Name="BackgroundSelection">
+				<Text Name="SelectBackground"
+					Pos="472,30"
+					Size="1070,60"
+					Style="Text_XLarge_White_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="menu.main.createcharacter.selectBackground"
+				/>
+				<Container Pos="292,875" Size="1570,160">
+					<FlowContainer HAlign="center" Horizontal="1">
+						<Container Name="PsykerContainer" Size="284,160" MarginLeft="60" MarginRight="60">
+							<Container Name="BackgroundAcceptFrame_Psyker" Size="284,160" Visible="0" ShowCategory="mouse">
+								<Image
+									Size="284,160"
+									Image="UI/Menu/main_CreateBg.tga"
+								/>
+								<Icon Name="PsykerBackgroundContinue"
+									Pos="0,112"
+									Style="GreatButton"
+									Text="common.continue"
+								/>
+							</Container>
+							<Icon Name="Psyker"
+								Pos="0,57"
+								Size="284,48"
+								IdleImg="UI/Menu/main_buttonOff.tga"
+								PressImg="UI/Menu/main_buttonOver.tga"
+								RolloverImg="UI/Menu/main_buttonOver.tga"
+								Style="StarmapHeadline1_4"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								Text="common.class.Psyker.name"
+								RolloverFade="125"
+							/>
+						</Container>
+						<Container Name="CrusaderContainer" Size="284,160" MarginLeft="60" MarginRight="60">
+							<Container Name="BackgroundAcceptFrame_Crusader" Size="284,160" Visible="0" ShowCategory="mouse">
+								<Image
+									Size="284,160"
+									Image="UI/Menu/main_CreateBg.tga"
+								/>
+								<Icon Name="CrusaderBackgroundContinue"
+									Pos="0,112"
+									Style="GreatButton"
+									Text="common.continue"
+								/>
+							</Container>
+							<Icon Name="Crusader"
+								Pos="0,57"
+								Size="284,48"
+								IdleImg="UI/Menu/main_buttonOff.tga"
+								PressImg="UI/Menu/main_buttonOver.tga"
+								RolloverImg="UI/Menu/main_buttonOver.tga"
+								Style="StarmapHeadline1_4"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								Text="common.class.Crusader.name"
+								RolloverFade="125"
+							/>
+						</Container>
+						<Container Name="AssassinContainer" Size="284,160" MarginLeft="60" MarginRight="60">
+							<Container Name="BackgroundAcceptFrame_Assassin" Size="284,160" Visible="0" ShowCategory="mouse">
+								<Image
+									Size="284,160"
+									Image="UI/Menu/main_CreateBg.tga"
+								/>
+								<Icon Name="AssassinBackgroundContinue"
+									Pos="0,112"
+									Style="GreatButton"
+									Text="common.continue"
+								/>
+							</Container>
+							<Icon Name="Assassin"
+								Pos="0,57"
+								Size="284,48"
+								IdleImg="UI/Menu/main_buttonOff.tga"
+								PressImg="UI/Menu/main_buttonOver.tga"
+								RolloverImg="UI/Menu/main_buttonOver.tga"
+								Style="StarmapHeadline1_4"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								Text="common.class.Assassin.name"
+								RolloverFade="125"
+							/>
+						</Container>
+						<Container Name="TechadeptContainer" Size="284,160" MarginLeft="60" MarginRight="60">
+							<Container Name="BackgroundAcceptFrame_Techadept" Size="284,160" Visible="0" ShowCategory="mouse">
+								<Image
+									Size="284,160"
+									Image="UI/Menu/main_CreateBg.tga"
+								/>
+								<Icon Name="TechadeptBackgroundContinue"
+									Pos="0,112"
+									Style="GreatButton"
+									Text="common.continue"
+								/>
+							</Container>
+							<Icon Name="Techadept"
+								Pos="0,57"
+								Size="284,48"
+								IdleImg="UI/Menu/main_buttonOff.tga"
+								PressImg="UI/Menu/main_buttonOver.tga"
+								RolloverImg="UI/Menu/main_buttonOver.tga"
+								Style="StarmapHeadline1_4"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								Text="common.class.Techadept.name"
+								RolloverFade="125"
+							/>
+						</Container>
+					</FlowContainer>
+				</Container>
+			</Container>
+			<Container Name="StartingGearSelection">
+				<Text Name="SelectExpertise"
+					Pos="472,30"
+					Size="1070,60"
+					Style="Text_XLarge_White_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="menu.main.createcharacter.selectExpertise"
+				/>
+				<Container Pos="292,875" Size="1570,160">
+					<FlowContainer HAlign="center" Horizontal="1">
+						<Container Name="Specialisation2Container" Size="284,160" MarginLeft="60" MarginRight="60">
+							<Container Name="SpecialisationAcceptFrame_2" Size="284,160" Visible="0" ShowCategory="mouse">
+								<Image
+									Size="284,160"
+									Image="UI/Menu/main_CreateBg.tga"
+								/>
+								<Icon Name="Specialisation2Continue"
+									Pos="0,112"
+									Style="GreatButton"
+									Text="common.continue"
+								/>
+							</Container>
+							<Icon Name="specialisation_2"
+								Pos="0,57"
+								Size="284,48"
+								IdleImg="UI/Menu/main_buttonOff.tga"
+								PressImg="UI/Menu/main_buttonOver.tga"
+								RolloverImg="UI/Menu/main_buttonOver.tga"
+								Style="StarmapHeadline1_4"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								Text="_specialisation_2"
+								RolloverFade="125"
+							/>
+						</Container>
+						<Container Name="Specialisation1Container" Size="284,160" MarginLeft="60" MarginRight="60">
+							<Container Name="SpecialisationAcceptFrame_1" Size="284,160" Visible="0" ShowCategory="mouse">
+								<Image
+									Size="284,160"
+									Image="UI/Menu/main_CreateBg.tga"
+								/>
+								<Icon Name="Specialisation1Continue"
+									Pos="0,112"
+									Style="GreatButton"
+									Text="common.continue"
+								/>
+							</Container>
+							<Icon Name="specialisation_1"
+								Pos="0,57"
+								Size="284,48"
+								IdleImg="UI/Menu/main_buttonOff.tga"
+								PressImg="UI/Menu/main_buttonOver.tga"
+								RolloverImg="UI/Menu/main_buttonOver.tga"
+								Style="StarmapHeadline1_4"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								Text="_specialisation_1"
+								RolloverFade="125"
+							/>
+						</Container>
+						<Container Name="Specialisation3Container" Size="284,160" MarginLeft="60" MarginRight="60">
+							<Container Name="SpecialisationAcceptFrame_3" Size="284,160" Visible="0" ShowCategory="mouse">
+								<Image
+									Size="284,160"
+									Image="UI/Menu/main_CreateBg.tga"
+								/>
+								<Icon Name="Specialisation3Continue"
+									Pos="0,112"
+									Style="GreatButton"
+									Text="common.continue"
+								/>
+							</Container>
+							<Icon Name="specialisation_3"
+								Pos="0,57"
+								Size="284,48"
+								IdleImg="UI/Menu/main_buttonOff.tga"
+								PressImg="UI/Menu/main_buttonOver.tga"
+								RolloverImg="UI/Menu/main_buttonOver.tga"
+								Style="StarmapHeadline1_4"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								Text="_specialisation_3"
+								RolloverFade="125"
+							/>
+						</Container>
+					</FlowContainer>
+				</Container>
+			</Container>
+			
+			<Container Name="GearFrame">
+				<FlowContainer Name="GearDescription" Horizontal="1">
+					<Dummy Name="specialisation_2_dummy" Size="410,10" Visible="0"/>
+					<Dummy Name="specialisation_1_dummy" Size="735,10" Visible="0"/>
+					<Dummy Name="specialisation_3_dummy" Size="1060,10" Visible="0"/>
+					<FlowContainer MarginTop="100" Width="620">
+						<Container Size="620,30">
+							<Image
+								Pos="7,5"
+								Size="20,20"
+								Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"
+							/>
+							<Text Name="ClassWeaponLabel"
+								Pos="34,0"
+								Size="586,30"
+								Style="Text_Large_Light_Glow"
+								TextAlignH="left"
+								TextAlignV="center"
+								Text="_ClassWeaponLabel"
+							/>
+						</Container>
+						<TextBox Name="ClassWeaponDesc"
+							IgnoreScissor="1"
+							MarginLeft="34"
+							Width="586"
+							Style="Text_Normal_White_Outline"
+							Text="_ClassWeaponDesc"
+						/>
+						<Container Size="620,30" MarginTop="11">
+							<Image
+								Pos="7,5"
+								Size="20,20"
+								Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"
+							/>
+							<Text Name="ClassArmorLabel"
+								Pos="34,0"
+								Size="586,30"
+								Style="Text_Large_Light_Glow"
+								TextAlignH="left"
+								TextAlignV="center"
+								Text="_ClassArmorLabel"
+							/>
+						</Container>
+						<TextBox Name="ClassArmorDesc"
+							IgnoreScissor="1"
+							MarginLeft="34"
+							Width="586"
+							Style="Text_Normal_White_Outline"
+							Text="_ClassArmorDesc"
+						/>
+					</FlowContainer>
+				</FlowContainer>
+			</Container>
+		</Container>
+	</Container>
+	
+	<Container GuiAlign="rightcenter">
+		<Container Pos="0,0" Name="ClassBackground">
+			<FlowContainer Pos="410,100" Width="620">
+				<TextBox Name="ClassFlavour"
+					MarginTop="5"
+					Width="620"
+					Style="Text_Normal_White_Outline"
+					Text="_ClassFlavour"
+				/>
+				<TextBox Name="ClassDesc"
+					MarginTop="24"
+					Width="620"
+					Style="Text_Normal_White_Outline"
+					Text="_ClassDesc"
+				/>
+			</FlowContainer>
+
+			<FlowContainer Pos="1060,100" Width="620">
+				<Container Size="620,30">
+					<Image
+						Pos="7,5"
+						Size="20,20"
+						Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"
+					/>
+					<Text Name="ClassResourceLabel"
+						Pos="34,0"
+						Size="586,30"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_ClassResourceLabel"
+					/>
+				</Container>
+				<TextBox Name="ClassResourceDesc"
+					MarginLeft="34"
+					Width="586"
+					Style="Text_Normal_White_Outline"
+					Text="_ClassResourceDesc"
+				/>
+				<Container Size="620,30" MarginTop="11">
+					<Image
+						Pos="7,5"
+						Size="20,20"
+						Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"
+					/>
+					<Text Name="ClassInfo2Label"
+						Pos="34,0"
+						Size="586,30"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_ClassInfo2Label"
+					/>
+				</Container>
+				<TextBox Name="ClassInfo2Desc" 
+					MarginLeft="34"
+					Width="586"
+					Style="Text_Normal_White_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_ClassInfo2Desc"
+				/>
+				<Container Size="620,30" MarginTop="11">
+					<Image
+						Pos="7,5"
+						Size="20,20"
+						Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"
+					/>
+					<Text Name="ClassInfo3Label"
+						Pos="34,0"
+						Size="586,30"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_ClassInfo3Label"
+					/>
+				</Container>
+				<TextBox Name="ClassInfo3Desc"
+					MarginLeft="34"
+					Width="586"
+					Style="Text_Normal_White_Outline"
+					Text="_ClassInfo3Desc"
+				/>
+			</FlowContainer>
+		</Container>
+	</Container>
+	
+	<Container Name="DifficultyChooser" Pos="472,96" GuiAlign="topcenter" Visible="0">
+		<Container Name="Story">
+			<Image
+				Pos="2,90"
+				Size="276,152"
+				Image="UI/Menu/main_difficultyBg.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Icon Name="StoryButton"
+				Pos="0,141"
+				Style="GreatButton"
+				Text="menu.main.difficulty.story.label"
+				ControllerSenseEnabled="1"
+			/>
+			<Image
+				Pos="65,0"
+				Size="152,152"
+				Image="UI/Menu/main_difficultyStory.tga"
+				MouseSenseEnabled="0"
+			/>
+			<TextBox Name="StoryDescription"
+				IgnoreScissor="1"
+				Pos="-62,248"
+				Size="400,320"
+				Style="Text_Normal_White_Outline"
+				Color="#b5fffc"
+				FontOutlineWidth="3" 
+				OutlineSharpness="1.5"
+				Text="menu.main.difficulty.story.desc"
+			/>
+		</Container>
+		<Container Name="Challenge">
+			<Image
+				Pos="792,90"
+				Size="276,152"
+				Image="UI/Menu/main_difficultyBg.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Icon Name="ChallengeButton"
+				Pos="790,141"
+				Style="GreatButton"
+				Text="menu.main.difficulty.challenge.label"
+				ControllerSenseEnabled="1"
+			/>
+			<Image
+				Pos="855,0"
+				Size="152,152"
+				Image="UI/Menu/main_difficultyHard.tga"
+				MouseSenseEnabled="0"
+			/>
+			<TextBox Name="ChallengeDescription"
+				IgnoreScissor="1"
+				Pos="728,248"
+				Size="400,320"
+				Style="Text_Normal_White_Outline"
+				Color="#b5fffc"
+				FontOutlineWidth="3" 
+				OutlineSharpness="1.5"
+				Text="menu.main.difficulty.challenge.desc"
+			/>
+		</Container>
+	</Container>
+	
+	<Container Name="CharacterChooserCreation" Pos="746,821" GuiAlign="bottomcenter">
+		<Image
+			Pos="0,0"
+			Size="520,136"
+			Image="UI/Menu/main_bottomBackground.tga"
+		/>
+		<Text
+			Pos="80,26"
+			Size="360,30"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="menu.main.newgame.name"
+		/>
+		<EditBox Name="CharacterName"
+			Pos="140,52"
+			Size="243,28"
+			Style="Text_Large_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+			SelectionColor="#777777"
+			ControllerSenseEnabled="1"
+		/>
+		<ComboBox Name="CampaignState"
+			Pos="269,161"
+			Size="168,48"
+			OpenHeight="800"
+			Style="Text_Normal_White"
+			TextAlignH="center"
+			TextAlignV="center"
+			ControllerSenseEnabled="1"
+		/>
+		<Icon Name="AcceptButton"
+			Pos="120,111"
+			Style="GreatButton"
+			UseButtonEffects="0"
+			Text="common.accept"
+			ShowCategory="mouse"
+		/>
+	</Container>
+</Window>

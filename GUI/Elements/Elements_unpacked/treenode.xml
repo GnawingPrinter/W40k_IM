@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<TreeNode>
+	<GridContainer FitChildren="true">
+		<Columns>
+			<Column Width="20"/>
+			<Column Width="1*"/>
+		</Columns>
+		<Icon Column="0" Name="Collapse" IdleImg="white.tga" ColorMask="#FF0000" Text="+"/>
+		<Container Column="1" Name="ContentHolder" FitChildren="true"/>
+	</GridContainer>
+</TreeNode>

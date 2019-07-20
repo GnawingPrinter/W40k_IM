@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Ruined_City_Fr49 Terrain="Terrains/Sections/Ruined_City/Ruined_City_Fr49.VHT" Preview="Terrains/Sections/Ruined_City/MapEditorImages/Ruined_City_Fr49_thumb.bmp" Image="Terrains/Sections/Ruined_City/MapEditorImages/Ruined_City_Fr49.bmp" MinClickHeight="-50000" Background="false" MapType="Urban Ruins">
+	<PivotPos x="-1736.72534" y="2599.05347" />
+	<Tags />
+	<Grids>
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+	</Grids>
+</Ruined_City_Fr49>

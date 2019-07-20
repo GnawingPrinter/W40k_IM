@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<MaxKeyCount Type="int" Value="5"/>
+		<MaxIntelCount Type="int" Value="6"/>
+	</Constants>
+
+	<Container Size="300,300" MarginTop="-120">
+		<FlowContainer Width="300" VerticalAlignment="bottom">	
+			<Text Name="Title" Pos="17,4" Size="280,32" Style="Headline_Large_Color_Glow" TextAlignH="left" TextAlignV="center" Text="mission.VoidCursadeEnd.title"/>
+			<FlowContainer MarginTop="4" MarginBottom="0" TextAlignV="bottom"
+			Width="300"
+			UseMinimumSize="1"
+			BackgroundTopSize="36"
+			BackgroundBotSize="60"
+			BackgroundTopImage="UI/objectives/objectives_backgroundTop.tga"
+			BackgroundMidImage="UI/objectives/objectives_backgroundMiddle.tga"
+			BackgroundBotImage="UI/objectives/objectives_backgroundBottom.tga"
+			>
+				<Dummy Height="22"/>
+
+				<FlowContainer Name="Objective" Pos="14,0" Width="280">
+					<Container>
+						<CheckBox Name="Objective1_Off" Size="24,24" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+						<CheckBox Name="Objective1_On" Size="24,24" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+						<TextBox Name="Objective1Text" Pos="30,2" Width="250" UseSlider="0" Style="Text_Normal_Color" VerticalAlignment="top" TextAlignH="left" TextAlignV="top" Text="mission.VoidCursadeEnd.objective1"/>
+					</Container>
+					<Container>
+						<CheckBox Name="ObjectiveEnd_Off" Size="24,24" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+						<CheckBox Name="ObjectiveEnd_On" Size="24,24" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+						<TextBox Name="ObjectiveEndText" Pos="30,2" Width="250" UseSlider="0" Style="Text_Normal_Color" VerticalAlignment="top" TextAlignH="left" TextAlignV="top" Text="mission.VoidCursadeEnd.objectiveEnd"/>
+					</Container>
+					<Container>
+						<CheckBox Name="Objective2_Off" Size="24,24" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+						<CheckBox Name="Objective2_On" Size="24,24" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+						<TextBox Name="Objective2Text" Pos="30,2" Width="250" UseSlider="0" Style="Text_Normal_Color" VerticalAlignment="top" TextAlignH="left" TextAlignV="top" Text="mission.VoidCursadeEnd.objective2"/>
+					</Container>
+					<Image Size="272,32" MarginLeft="4" Image="UI/TarotCampaign/MAP/Widget-Sepa.dds"/>
+					<TextBox Name="KeysCollected"
+					MarginBottom="10"
+					Style="Text_Normal_Dark"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="openworld.GUI.voidcrusade.keytitle"
+					InitPopup="rightcenter,leftcenter"
+					/>
+					<FlowContainer Horizontal="1" Height="30" HAlign="center" MarginBottom="10">
+						<Loop Count="@MaxKeyCount" Variable="$X$">
+							<Icon Name="Key$X$"
+								Size="30,30"
+								PressImg="UI/TarotCampaign/MAP/Void_KeyActive.dds"
+								IdleImg="UI/TarotCampaign/MAP/Void_KeyInactive.dds"
+							/>
+						</Loop>
+					</FlowContainer>
+					<TextBox Name="IntelsCollected"
+					MarginBottom="5"
+					Style="Text_Normal_Dark"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="openworld.GUI.voidcrusade.inteltitle"
+					InitPopup="rightcenter,leftcenter"
+					/>
+					<FlowContainer Horizontal="1" Height="30" HAlign="center">
+						<Loop Count="@MaxIntelCount" Variable="$X$">
+							<Icon Name="Intel$X$"
+								Size="30,30"
+								PressImg="UI/TarotCampaign/MAP/Void_InfoFragmentActive.dds"
+								IdleImg="UI/TarotCampaign/MAP/Void_InfoFragmentInactive.dds"
+							/>
+						</Loop>
+					</FlowContainer>
+				</FlowContainer>
+			</FlowContainer>
+		</FlowContainer>
+	</Container>
+</Window>
+
+

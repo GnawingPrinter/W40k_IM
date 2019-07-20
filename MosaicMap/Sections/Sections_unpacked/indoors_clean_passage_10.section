@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Indoors_Clean_passage_10 Terrain="Terrains/Sections/Indoors_Clean/SII_passage_10.VHT" Preview="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_passage_10_thumb.bmp" Image="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_passage_10.bmp" MapType="Indoors Clean" MinClickHeight="0">
+	<PivotPos x="-23" y="475.807251" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-4" Row="-4" Image="" />
+		<Grid Column="-3" Row="-4" Image="" />
+		<Grid Column="-2" Row="-4" Image="" />
+		<Grid Column="-1" Row="-4" Image="" />
+		<Grid Column="0" Row="-4" Image="">
+			<Gate Direction="NORTH" Type="Small" Position.x="-4.57763599e-005" Position.y="291.868713" Position.z="2.38418565e-007" />
+		</Grid>
+		<Grid Column="1" Row="-4" Image="" />
+		<Grid Column="2" Row="-4" Image="" />
+		<Grid Column="3" Row="-4" Image="" />
+		<Grid Column="4" Row="-4" Image="" />
+		<Grid Column="-4" Row="-3" Image="" />
+		<Grid Column="-3" Row="-3" Image="" />
+		<Grid Column="-2" Row="-3" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="" />
+		<Grid Column="2" Row="-3" Image="" />
+		<Grid Column="3" Row="-3" Image="" />
+		<Grid Column="4" Row="-3" Image="" />
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+		<Grid Column="-4" Row="3" Image="" />
+		<Grid Column="-3" Row="3" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="" />
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="4" Row="3" Image="" />
+		<Grid Column="-4" Row="4" Image="" />
+		<Grid Column="-3" Row="4" Image="" />
+		<Grid Column="-2" Row="4" Image="" />
+		<Grid Column="-1" Row="4" Image="" />
+		<Grid Column="0" Row="4" Image="" />
+		<Grid Column="1" Row="4" Image="" />
+		<Grid Column="2" Row="4" Image="" />
+		<Grid Column="3" Row="4" Image="" />
+		<Grid Column="4" Row="4" Image="" />
+		<Grid Column="-4" Row="5" Image="" />
+		<Grid Column="-3" Row="5" Image="" />
+		<Grid Column="-2" Row="5" Image="" />
+		<Grid Column="-1" Row="5" Image="" />
+		<Grid Column="0" Row="5" Image="">
+			<Gate Direction="SOUTH" Type="Small" Position.x="-4.57763599e-005" Position.y="759.821472" Position.z="2.38418565e-007" />
+		</Grid>
+		<Grid Column="1" Row="5" Image="" />
+		<Grid Column="2" Row="5" Image="" />
+		<Grid Column="3" Row="5" Image="" />
+		<Grid Column="4" Row="5" Image="" />
+	</Grids>
+</Indoors_Clean_passage_10>

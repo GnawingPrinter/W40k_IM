@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Glacial_Fr12_BG Terrain="Terrains/Sections/Glacial_Terrain/Glacial_Fr12.VHT" Preview="Terrains/Sections/Glacial_Terrain/MapEditorImages/Glacial_Fr12_BG_thumb.bmp" Image="Terrains/Sections/Glacial_Terrain/MapEditorImages/Glacial_Fr12_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Frozen Wastes">
+	<PivotPos x="-826.887695" y="-1015.16821" />
+	<Tags />
+	<Grids>
+		<Grid Column="-1" Row="-10" Image="" />
+		<Grid Column="0" Row="-10" Image="" />
+		<Grid Column="1" Row="-10" Image="" />
+		<Grid Column="-1" Row="-9" Image="" />
+		<Grid Column="0" Row="-9" Image="" />
+		<Grid Column="1" Row="-9" Image="" />
+		<Grid Column="-1" Row="-8" Image="" />
+		<Grid Column="0" Row="-8" Image="" />
+		<Grid Column="1" Row="-8" Image="" />
+		<Grid Column="-1" Row="-7" Image="" />
+		<Grid Column="0" Row="-7" Image="" />
+		<Grid Column="1" Row="-7" Image="" />
+		<Grid Column="-1" Row="-6" Image="" />
+		<Grid Column="0" Row="-6" Image="" />
+		<Grid Column="1" Row="-6" Image="" />
+		<Grid Column="-1" Row="-5" Image="" />
+		<Grid Column="0" Row="-5" Image="" />
+		<Grid Column="1" Row="-5" Image="" />
+		<Grid Column="-1" Row="-4" Image="" />
+		<Grid Column="0" Row="-4" Image="" />
+		<Grid Column="1" Row="-4" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="-1" Row="4" Image="" />
+		<Grid Column="0" Row="4" Image="" />
+		<Grid Column="1" Row="4" Image="" />
+		<Grid Column="-1" Row="5" Image="" />
+		<Grid Column="0" Row="5" Image="" />
+		<Grid Column="1" Row="5" Image="" />
+		<Grid Column="-1" Row="6" Image="" />
+		<Grid Column="0" Row="6" Image="" />
+		<Grid Column="1" Row="6" Image="" />
+		<Grid Column="-1" Row="7" Image="" />
+		<Grid Column="0" Row="7" Image="" />
+		<Grid Column="1" Row="7" Image="" />
+		<Grid Column="-1" Row="8" Image="" />
+		<Grid Column="0" Row="8" Image="" />
+		<Grid Column="1" Row="8" Image="" />
+		<Grid Column="-1" Row="9" Image="" />
+		<Grid Column="0" Row="9" Image="" />
+		<Grid Column="1" Row="9" Image="" />
+		<Grid Column="-1" Row="10" Image="" />
+		<Grid Column="0" Row="10" Image="" />
+		<Grid Column="1" Row="10" Image="" />
+	</Grids>
+</Glacial_Fr12_BG>

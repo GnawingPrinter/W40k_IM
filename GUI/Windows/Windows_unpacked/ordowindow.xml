@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<Window Pos="0,0">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<ReputationCount Type="int" Value="5"/>
+		<RewardNumber Type="int" Value="5"/>
+		<RewardItemNumber Type="int" Value="4"/>
+		<ProgressBarLength Type="int" Value="494"/>
+	</Constants>
+	
+	<Container>
+		<Image
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Inventory/fullscreen_inventory_storageBg.tga"
+			Pos="700,174"
+			Size="484,732"
+			DynamicOffsetMax="40,40"
+			GuiAlign="center"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<Container MarginTop="33" Horizontal="1" Height="68" HAlign="center" GuiAlign="topleft">
+			<Icon Name="MoralityButton"
+				Size="224,68"
+				IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+				IdleOffset="0,-11"
+				PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+				PressOffset="0,-12"
+				RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+				RolloverOffset="0,-11"
+				Style="StarmapHeadline2_3"
+				MouseSenseEnabled="false"
+				Text="_Ordo Missions"
+			/>
+		</Container>
+		<Icon TutorialCategoryToReset="OrdoMissions"
+			Pos="28,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+			PressImg="UI/Interaction/button_tutorialResetOff.tga"
+			RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+			GuiAlign="topleft"
+			InitPopup="leftcenter,rightcenter"
+			Tooltip="Tutorial.TutorialReset"
+			ShowCategory="mouse"
+		/>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	
+	<Loop Count="3" Variable="$A$" Offset="0,320">
+		<Container Name="OrdoContainer$A$" Pos="75,80" Size="676,325" GuiAlign="topleft">
+			<Image
+				Image="UI\OpenWorld\Ordo\Ordo_bg.tga"
+			/>
+			<Image Name="OrdoChar$A$"
+				Pos="42,34"
+				Size="172,172"
+				Image="UI\Inventory\fullscreen_shop_charvid.tga"			
+			/>
+			<Image Name="OrdoCharFrame$A$"
+				Pos="23,34"
+				Size="221,221"
+				Image="UI\OpenWorld\Ordo\ordo_charframe_type1.tga"			
+			/>
+			<Icon Name="OrdoShop$A$"
+				Pos="52,263"
+				Size="164,36"
+				Style="Starmap2_3"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="_Ha akarunk tooltippet, akkor lehet..."
+				Text="battle.gui.interaction.shop.name"
+				ShowCategory="mouse"
+			/>
+			<Text Name="OrdoName$A$"
+				Pos="230,26"
+				Size="423,40"
+				Style="Headline_XLarge_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="_Ordo name"
+			/>
+			<Image
+				Pos="226,62"
+				Size="425,12"
+				Image="UI/OpenWorld/headline3.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text
+				Pos="249,78"
+				Size="237,30"
+				Style="Text_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="bottom"
+				Text="_Reputation:"
+			/>
+			<Container Pos="520,78">
+				<Loop Count="@ReputationCount" Variable="$X$" Offset="25,0">
+					<Icon Name="OrdoContainer$A$ReputationIcon$X$"
+						Size="17,26"
+						IdleImg="UI\OpenWorld\Ordo\icon_reputationOff.tga"
+						PressImg="UI\OpenWorld\Ordo\icon_reputationOn.tga"
+						RolloverImg="UI\OpenWorld\Ordo\icon_reputationOn.tga"
+						MouseSenseEnabled="0"
+					/>
+				</Loop>
+			</Container>
+			<Icon Name="OrdoRewards$A$"
+				Pos="500,110"
+				Size="154,36"
+				Style="Starmap2_3"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="_View Reputation Rewards"
+				Text="_Rewards"
+				ShowCategory="mouse"
+			/>
+			<Image
+				Pos="249,108"
+				Size="400,3"
+				Image="UI/Psyker/separator.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text
+				Pos="259,144"
+				Size="378,30"
+				Style="Text_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="bottom"
+				Text="_Ordo Missions"
+			/>
+			<Container Pos="268,175">
+				<Loop Count="3" Variable="$X$" Offset="125,0">
+					<Image Name="OrdoContainer$A$MissionIcon$X$"
+						Pos="5,4"
+						Size="112,110"
+						Image="UI\debug\canselectdead_idle.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="OrdoContainer$A$MissionFrame$X$"
+						Size="118,115"
+						Image="UI\OpenWorld\Ordo\Missionframe_type1.tga"
+						Tooltip="_Ha akarunk tooltippet, akkor lehet..."
+						MouseSenseEnabled="1"
+					/>
+				</Loop>
+			</Container>
+		</Container>
+	</Loop>
+
+	<Container Name="OrdoReputation" Pos="1321,142" GuiAlign="topright">
+			<Text
+				Size="505,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_Reputation"
+			/>
+			<Image
+				Size="507,815"
+				Pos="0,30"
+				Image="UI\OpenWorld\Ordo\Reputation_bg.tga"
+			/>
+			<Text Name="OrdoNameReputation"
+				Pos="0,50"
+				Size="505,40"
+				Style="Headline_XLarge_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="bottom"
+				Text="_Ordo name"
+			/>
+			<Container Pos="382,200" Width="22" Height="@ProgressBarLength" IgnoreScissor="1">
+				<FlowContainer
+					MarginTop="-4"
+					MarginBottom="-4"
+					Width="22"
+					BackgroundTopSize="8"
+					BackgroundBotSize="8"
+					BackgroundTopImage="UI/Progress/frame_verticalXp_barRight.tga"
+					BackgroundMidImage="UI/Progress/frame_verticalXp_barMiddle.tga"
+					BackgroundBotImage="UI/Progress/frame_verticalXp_barLeft.tga"
+					MouseSenseEnabled="0"
+					VAlign="bottom"
+				>
+					<Dummy Name="OrdoLevelProgressBar" Width="20" MarginTop="4" MarginBottom="4" Height="@ProgressBarLength" MouseSenseEnabled="0"/>
+				</FlowContainer>
+			</Container>
+			<Container Name="OrdoRewards" Pos="0,410" Size="456,670" IgnoreScissor="1">
+				<Loop Count="@RewardNumber" Variable="$X$" Offset="0,-122">
+					<Container Name="OrdoReward_$X$" Pos="0,235">
+						<Image Name="OrdoRewardLine_$X$"
+							Pos="32,39"
+							Size="352,12"
+							Image="UI/Progress/progress_rewardLeftlineOn.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="OrdoRewardMarker_$X$"
+							Pos="373,25"
+							Size="40,40"
+							Image="UI/Progress/progress_rewardMarkerOn.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Container Size="360,90">
+							<FlowContainer Name="OrdoRewardFrames_$X$" Height="90" Horizontal="1" HAlign="right">								
+								<Container Name="OrdoReward_Box$X$" Size="90,90">
+									<Image Name="OrdoReward_Image_$X$"
+										Pos="18,17"
+										Size="56,56"
+										Image="UI/Perks/Precognitive_evasionOff.tga"
+										InitPopup="bottomcenter,topcenter"
+										Tooltip="_RewardTooltip"
+										SlideredElement="1"
+									/>
+									<Image
+										Pos="11,11"
+										Size="68,68"
+										Image="UI/Progress/progress_reward_perk.tga"
+										MouseSenseEnabled="0"
+									/>
+								</Container>
+								<Container Name="OrdoReward_Point_$X$" Size="90,90">
+									<Image Name="OrdoReward_PointImage_$X$"
+										Pos="11,11"
+										Size="68,68"
+										Image="UI/Progress/progress_reward_skillpoint1.tga"
+										InitPopup="bottomcenter,topcenter"
+										SlideredElement="1"
+									/>
+								</Container>
+							</FlowContainer>
+						</Container>
+					</Container>
+				</Loop>
+			</Container>		
+	</Container>
+</Window>

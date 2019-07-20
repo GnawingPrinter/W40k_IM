@@ -1,0 +1,574 @@
+<?xml version="1.0"?>
+<SoldierGroups>
+
+	<micro_Horde Text="Micro Horde" Image="group_small_horde" Color="#FF0000" Size="1.6" Horde="1">
+		<Horde Count="10" LowCount="8" VeryLowCount="6" />
+	</micro_Horde>
+	
+	<micro_melee_normal Text="Micro Melee Normal" Image="group_small_melee" Color="#FF0000" Size="1.6">
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="2" />
+		<Normal_Ranged Count="0" LowCount="0" VeryLowCount="0" />
+	</micro_melee_normal>
+	
+	<micro_ranged_normal Text="Micro Ranged Normal" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Normal_Melee Count="0" LowCount="0" VeryLowCount="0" />
+		<Normal_Ranged Count="2" LowCount="2" VeryLowCount="2" />
+	</micro_ranged_normal>
+	
+	<micro_melee_medium Text="Micro Melee Medium" Image="group_small_melee" Color="#FF0000" Size="1.6">
+		<Medium_Melee Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="0" LowCount="0" VeryLowCount="0" />
+	</micro_melee_medium>
+	
+	<micro_ranged_medium Text="Micro Ranged Medium" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Ranged Count="0" LowCount="0" VeryLowCount="0" />
+	</micro_ranged_medium>
+	
+	<Weak_Horde Text="Weak Horde" Image="group_small_horde" Color="#FF0000" Size="1.6" Horde="1">
+		<Horde Count="20" LowCount="15" VeryLowCount="12" />
+	</Weak_Horde>
+	
+	<Weak_melee_normal Text="Weak Melee Normal" Image="group_small_melee" Color="#FF0000" Size="1.6">
+		<Normal_Melee Count="4" LowCount="3" VeryLowCount="3" Coop2Count="4" Coop4Count="4" />
+		<Normal_Ranged Count="1" LowCount="1" VeryLowCount="0" Coop2Count="1" Coop4Count="2" />
+		<Medium_Melee Count="0" LowCount="0" VeryLowCount="0" Coop2Count="0" Coop4Count="1" />
+	</Weak_melee_normal>
+	
+	<Weak_ranged_normal Text="Weak Ranged Normal" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Normal_Melee Count="1" LowCount="1" VeryLowCount="0" Coop2Count="1" Coop4Count="2" />
+		<Normal_Ranged Count="4" LowCount="3" VeryLowCount="3" Coop2Count="4" Coop4Count="4" />
+		<Medium_Ranged Count="0" LowCount="0" VeryLowCount="0" Coop2Count="0" Coop4Count="1" />
+	</Weak_ranged_normal>
+	
+	<Weak_melee_medium Text="Weak Melee Medium" Image="group_small_melee" Color="#FF0000" Size="1.6">
+		<Medium_Melee Count="1" LowCount="1" VeryLowCount="0" Coop2Count="1" Coop4Count="1" />
+		<Normal_Melee Count="1" LowCount="0" VeryLowCount="2" Coop2Count="2" Coop4Count="3" />
+	</Weak_melee_medium>
+	
+	<Weak_ranged_medium Text="Weak Ranged Medium" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="0" Coop2Count="1" Coop4Count="1" />
+		<Normal_Ranged Count="1" LowCount="0" VeryLowCount="2" Coop2Count="3" Coop4Count="2" />
+	</Weak_ranged_medium>
+	
+
+	<Average_Horde Text="Average Horde" Image="group_large_horde" Color="#FF0000" Size="1.7" Horde="1">
+		<Horde Count="40" LowCount="30" VeryLowCount="24" />
+	</Average_Horde>
+
+	<Average_melee_normal Text="Average Melee Normal" Image="group_medium_melee" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="5" LowCount="4" VeryLowCount="3" Coop2Count="5" Coop4Count="5" />
+		<Normal_Ranged Count="3" LowCount="2" VeryLowCount="2" Coop2Count="3" Coop4Count="3" />
+		<Medium_Melee Count="0" LowCount="0" VeryLowCount="0" Coop2Count="1" Coop4Count="1" />
+	</Average_melee_normal>
+	
+	<Average_ranged_normal Text="Average Ranged Normal" Image="group_medium_ranged" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="3" LowCount="2" VeryLowCount="2" Coop2Count="3" Coop4Count="3" />
+		<Normal_Ranged Count="5" LowCount="4" VeryLowCount="3" Coop2Count="5" Coop4Count="5" />
+		<Medium_Ranged Count="0" LowCount="0" VeryLowCount="0" Coop2Count="1" Coop4Count="1" />
+	</Average_ranged_normal>
+
+	
+	<Average_melee_normal_and_medium Text="Average Melee Normal and Medium" Image="group_medium_melee" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="5" LowCount="4" VeryLowCount="3" Coop2Count="6" Coop4Count="7" />
+		<Normal_Ranged Count="2" LowCount="2" VeryLowCount="1" Coop2Count="2" Coop4Count="3" />
+		<Medium_Melee Count="1" LowCount="1" VeryLowCount="1" Coop2Count="2" Coop4Count="2" />
+	</Average_melee_normal_and_medium>
+	
+	<Average_ranged_normal_and_medium Text="Average Ranged Normal and Medium" Image="group_medium_ranged" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="1" Coop2Count="2" Coop4Count="3" />
+		<Normal_Ranged Count="4" LowCount="3" VeryLowCount="3" Coop2Count="6" Coop4Count="7"  />
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="1" Coop2Count="2" Coop4Count="2" />
+	</Average_ranged_normal_and_medium>
+
+	<Average_melee_medium Text="Average Melee Medium" Image="group_medium_melee" Color="#FF0000" Size="1.7">
+		<Normal_Ranged Count="2" LowCount="3" VeryLowCount="2" Coop2Count="2" Coop4Count="4" />
+		<Medium_Melee Count="2" LowCount="1" VeryLowCount="1" Coop2Count="2" Coop4Count="2" />
+	</Average_melee_medium>
+	
+	<Average_ranged_medium Text="Average Ranged Medium" Image="group_medium_ranged" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="2" LowCount="3" VeryLowCount="2" Coop2Count="2" Coop4Count="4" />
+		<Medium_Ranged Count="2" LowCount="1" VeryLowCount="1" Coop2Count="2" Coop4Count="2" />
+	</Average_ranged_medium>
+
+	<Average_melee_commander Text="Average Melee Commander" Image="group_medium_commander" Color="#FF0000" Size="1.7">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" Coop2Count="1" Coop4Count="1" />
+		<Normal_Melee Count="4" LowCount="3" VeryLowCount="3" Coop2Count="4" Coop4Count="5" />
+		<Normal_Ranged Count="4" LowCount="2" VeryLowCount="2" Coop2Count="4" Coop4Count="5" />
+		<Medium_Melee Count="1" LowCount="1" VeryLowCount="0" Coop2Count="3" Coop4Count="3" />
+	</Average_melee_commander>
+
+	<Average_ranged_commander Text="Average Ranged Commander" Image="group_medium_commander" Color="#FF0000" Size="1.7">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" Coop2Count="1" Coop4Count="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="2" Coop2Count="2" Coop4Count="3" />
+		<Normal_Ranged Count="6" LowCount="3" VeryLowCount="3" Coop2Count="6" Coop4Count="7" />
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="0" Coop2Count="3" Coop4Count="3" />
+	</Average_ranged_commander>
+	
+	<Strong_Horde Text="Strong Horde" Image="group_large_horde" Color="#FF0000" Size="1.7" Horde="1">
+		<Horde Count="60" LowCount="45" VeryLowCount="35" />
+	</Strong_Horde>
+	
+	<Strong_melee_medium Text="Strong Melee Medium" Image="group_large_melee" Color="#FF0000" Size="1.7">
+		<Medium_Melee Count="3" LowCount="2" VeryLowCount="2" Coop2Count="3" Coop4Count="3" />
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="0" Coop2Count="2" Coop4Count="2" />
+		<Normal_Ranged Count="2" LowCount="2" VeryLowCount="2" Coop2Count="2" Coop4Count="4" />
+	</Strong_melee_medium>
+	
+	<Strong_ranged_medium Text="Strong Ranged Medium" Image="group_large_ranged" Color="#FF0000" Size="1.7">
+		<Medium_Melee Count="1" LowCount="1" VeryLowCount="0" Coop2Count="2" Coop4Count="2" />
+		<Medium_Ranged Count="3" LowCount="2" VeryLowCount="2" Coop2Count="3" Coop4Count="2" />
+		<Normal_Ranged Count="1" LowCount="1" VeryLowCount="1" Coop2Count="1" Coop4Count="2" />
+		<Normal_Melee Count="1" LowCount="1" VeryLowCount="1" Coop2Count="1" Coop4Count="2" />
+	</Strong_ranged_medium>
+	
+	<Strong_melee_normal_and_medium Text="Strong Melee Normal and Medium" Image="group_large_melee" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="6" LowCount="5" VeryLowCount="4" Coop2Count="6" Coop4Count="8" />
+		<Normal_Ranged Count="4" LowCount="3" VeryLowCount="2" Coop2Count="4" Coop4Count="4" />
+		<Medium_Melee Count="3" LowCount="2" VeryLowCount="2" Coop2Count="4" Coop4Count="5" />
+		<Medium_Ranged Count="0" LowCount="0" VeryLowCount="0" Coop2Count="0" Coop4Count="1" />
+	</Strong_melee_normal_and_medium>
+	
+	<Strong_ranged_normal_and_medium Text="Strong Ranged Normal and Medium" Image="group_large_ranged" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="4" LowCount="3" VeryLowCount="2" Coop2Count="4" Coop4Count="4" />
+		<Normal_Ranged Count="6" LowCount="5" VeryLowCount="4" Coop2Count="6" Coop4Count="8" />
+		<Medium_Ranged Count="3" LowCount="2" VeryLowCount="2" Coop2Count="4" Coop4Count="5" />
+		<Medium_Melee Count="0" LowCount="0" VeryLowCount="0" Coop2Count="0" Coop4Count="1" />
+	</Strong_ranged_normal_and_medium>
+	
+	<Strong_melee_commander Text="Strong Melee Commander" Image="group_large_commander" Color="#FF0000" Size="1.7">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" Coop2Count="1" Coop4Count="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="2" Coop2Count="3" Coop4Count="4" />
+		<Normal_Ranged Count="5" LowCount="4" VeryLowCount="2" Coop2Count="6" Coop4Count="7" />
+		<Medium_Melee Count="2" LowCount="1" VeryLowCount="1" Coop2Count="3" Coop4Count="3" />
+		<Medium_Ranged Count="0" LowCount="0" VeryLowCount="0" Coop2Count="1" Coop4Count="1" />
+	</Strong_melee_commander>
+
+	<Strong_ranged_commander Text="Strong Ranged Commander" Image="group_large_commander" Color="#FF0000" Size="1.7">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" Coop2Count="1" Coop4Count="1" />
+		<Normal_Melee Count="3" LowCount="2" VeryLowCount="2" Coop2Count="3" Coop4Count="4" />
+		<Normal_Ranged Count="4" LowCount="4" VeryLowCount="2" Coop2Count="6" Coop4Count="7" />
+		<Medium_Melee Count="0" LowCount="0" VeryLowCount="0" Coop2Count="1" Coop4Count="1" />
+		<Medium_Ranged Count="2" LowCount="1" VeryLowCount="1" Coop2Count="3" Coop4Count="3" />
+	</Strong_ranged_commander>
+
+	
+	<Elite Text="Elite" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Elite Count="1" Coop2Count="1" Coop4Count="1" />
+		<Medium_Melee Count="0" Coop2Count="1" Coop4Count="2" />
+		<Medium_Ranged Count="0" Coop2Count="1" Coop4Count="1" />
+	</Elite>
+
+	<Villain Text="Villain - ne hasznald" Image="group_large_elite" Color="#FF7700" Size="1.8">
+		<Villain Count="1" />
+	</Villain>
+
+	<Cannon Text="Stationary Cannon" Image="Unit_Stationary_Cannon" Color="#FFFFFF" Size="3.6">
+		<Cannon Count="1" />
+	</Cannon>
+
+	<Flamer Text="Heavy Flamer" Image="Unit_Heavy_Flamer" Color="#FFFFFF" Size="3.6">
+		<Flamer Count="1" />
+	</Flamer>
+
+	<Regenerate_Tower Text="Regenerate Tower" Image="soldier_regenerate_tower" Color="#FFFFFF" Size="1.0">
+		<Regenerate_Tower Count="1" />
+	</Regenerate_Tower>
+
+	<Trap_Bolter Text="Bolter Turret" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Trap_Bolter Count="1" />
+	</Trap_Bolter>
+	
+	<Trap_Bolter_ally Text="Trap_Bolter_ally" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Trap_Bolter_ally Count="1" />
+	</Trap_Bolter_ally>
+	
+	<Trap_Flamer Text="Flamer Turret" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Trap_Flamer Count="1" />
+	</Trap_Flamer>
+	
+	<Trap_Rocket Text="Rocket Turret" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Trap_Rocket Count="1" />
+	</Trap_Rocket>
+	
+	<Tarantula_Enemy Text="Tarantula Turret" Image="object_technical" Color="#FF0000" Size="0.5">
+		<Tarantula_Enemy Count="1" />
+	</Tarantula_Enemy>
+	
+	<Imperial_Guards Text="Imperial Guards" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Imperial_Guard_Ally Count="4" />
+	</Imperial_Guards>
+
+	<Imperial_Guards_Strong Text="Imperial Guards Strong" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Imperial_Guard_Ally_Strong Count="4" />
+	</Imperial_Guards_Strong>
+
+	<Nurgle_Helbrute Text="Nurgle Helbrute" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Nurgle_Helbrute Count="1" />
+	</Nurgle_Helbrute>
+	
+	<Nurgle_Dreadnought Text="Nurgle Dreadnought" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Nurgle_Dreadnought Count="1" />
+	</Nurgle_Dreadnought>
+	
+	<Fugitive_Group Text="Fugitive Group" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="1" />
+		<Normal_Ranged Count="4" LowCount="3" VeryLowCount="3" />
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="1" />
+	</Fugitive_Group>
+
+	<VIP_Group Text="Fugitive Group" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<VIP_psyker Count="1" LowCount="1" VeryLowCount="1" />
+		<Imperial_Guard_Ally Count="4" LowCount="3" VeryLowCount="3" />
+	</VIP_Group>
+	
+	<Specialist_Group Text="Specialist Group" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Weapon_Specialist Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Ranged Count="2" LowCount="2" VeryLowCount="2" />
+	</Specialist_Group>
+	
+	<helbrute Text="helbrute" Image="group_large_elite" Color="#FF0000" Size="1.6">
+		<Word_Bearers_Helbrute Count="1" />
+	</helbrute>
+
+
+	<Tutorial2_commander Text="Tutorial 2 Commander" Image="group_medium_commander" Color="#FF0000" Size="1.7">
+		<Tutorial2_commander Count="1" LowCount="1" VeryLowCount="1" />
+		<Tutorial2_Ranged1 Count="1" LowCount="1" VeryLowCount="1" />
+		<Tutorial2_Ranged2 Count="1" LowCount="1" VeryLowCount="1" />
+		<Tutorial2_Ranged3 Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="2" />
+	</Tutorial2_commander>
+
+	<SavingCaiusThorn_1_Hero Text="Campaign: Saving Caius Thorn 1 Hero" Image="group_large_commander" Color="#FF0000" Size="1.7">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="3" LowCount="2" VeryLowCount="2" />
+		<Normal_Ranged Count="4" LowCount="4" VeryLowCount="2" />
+		<Medium_Ranged Count="2" LowCount="1" VeryLowCount="1" />
+	</SavingCaiusThorn_1_Hero>
+
+	<CH4_UtherTomb_3_InquisitorRetinue Text="Campaign: Uther Tomb 3 Inquisitor Retinue" Image="group_large_commander" Color="#FF0000" Size="1.7">
+		<CH4_UtherTomb_3_InquisitorRetinue1 Count="1" LowCount="1" VeryLowCount="1" />
+		<CH4_UtherTomb_3_InquisitorRetinue2 Count="1" LowCount="1" VeryLowCount="1" />
+	</CH4_UtherTomb_3_InquisitorRetinue>
+
+
+	<FeralDogs_step1a_fugitive Text="FeralDogs_step1a_fugitive" Image="group_small_ranged" Color="#FF0000" Size="1.7">
+		<FeralDogs_Recon_Sergeant Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="1" />
+		<Normal_Ranged Count="4" LowCount="3" VeryLowCount="3" />
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="1" />
+	</FeralDogs_step1a_fugitive>
+
+	<FeralDogs_step3c_VIP Text="FeralDogs_step3c_VIP" Image="group_small_ranged" Color="#FF0000" Size="1.7">
+		<VIP_techpriest Count="1" LowCount="1" VeryLowCount="1" />
+	</FeralDogs_step3c_VIP>
+
+	<FeralDogs_commander Text="FeralDogs commander" Image="group_medium_commander" Color="#FF0000" Size="1.7">
+		<FeralDogs_commander Count="1" LowCount="1" VeryLowCount="1" />
+		<Rebel_Guardsman Count="5" LowCount="5" VeryLowCount="4" />
+		<Rebel_Heavy_Gunner Count="2" LowCount="2" VeryLowCount="2" />
+		<Ogryn_AC Count="1" LowCount="1" VeryLowCount="1" />
+	</FeralDogs_commander>
+
+	<Empty_Group Text="Empty Group" Image="object_technical" Color="#FF0000" Size="1.6">
+	</Empty_Group>
+	
+	<Knightmap_Leman_Russ_Demolisher Text="Knightmap_Leman_Russ_Demolisher" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Knightmap_Leman_Russ_Demolisher Count="1" />
+	</Knightmap_Leman_Russ_Demolisher>
+	
+	<Knightmap_Leman_Russ_Eradicator Text="Knightmap_Leman_Russ_Eradicator" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Knightmap_Leman_Russ_Eradicator Count="1" />
+	</Knightmap_Leman_Russ_Eradicator>
+	
+	<Knightmap_Sentinel_Autocannon Text="Knightmap_Sentinel_Autocannon" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Knightmap_Sentinel_Autocannon Count="1" />
+	</Knightmap_Sentinel_Autocannon>
+	
+	<Knightmap_Sentinel_Lasgun Text="Knightmap_Sentinel_Lasgun" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Knightmap_Sentinel_Lasgun Count="1" />
+	</Knightmap_Sentinel_Lasgun>
+	
+	<Knightmap_Word_Bearers_Decimator Text="Knightmap_Word_Bearers_Decimator" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Knightmap_Word_Bearers_Decimator Count="1" />
+	</Knightmap_Word_Bearers_Decimator>
+	
+	<Knightmap_Trap_Bolter Text="Knightmap_Trap_Bolter" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Knightmap_Trap_Bolter Count="1" />
+	</Knightmap_Trap_Bolter>
+	
+	<Knightmap_Trap_Rocket Text="Knightmap_Trap_Rocket" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Knightmap_Trap_Rocket Count="1" />
+	</Knightmap_Trap_Rocket>
+	
+	<Knightmap_Fortified_wall_bunker Text="Knightmap_Fortified_wall_bunker" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Knightmap_Fortified_wall_bunker Count="1" />
+	</Knightmap_Fortified_wall_bunker>
+	
+	<Big_Turret Text="Dual Cannon Turret" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Big_Turret Count="1" />
+	</Big_Turret>
+	
+	<Bullgryn Text="Bullgryn" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Bullgryn Count="1" />
+	</Bullgryn>
+	
+	<Ogryn_AC Text="Ogryn_AC" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Ogryn_AC Count="1" />
+	</Ogryn_AC>
+	
+	<Rebel_Psyker Text="Rebel_Psyker" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Rebel_Psyker Count="1" />
+	</Rebel_Psyker>
+	
+	<Nurgle_Helbrute Text="Nurgle_Helbrute" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Nurgle_Helbrute Count="1" />
+	</Nurgle_Helbrute>
+	
+	<Word_Bearers_Sorcerer Text="Word_Bearers_Sorcerer" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Word_Bearers_Sorcerer Count="1" />
+	</Word_Bearers_Sorcerer>
+	
+	<Unbound_Ravager Text="Unbound_Ravager" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Unbound_Ravager Count="1" />
+	</Unbound_Ravager>
+	
+	<Unbound_Enforcer Text="Unbound_Enforcer" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Unbound_Enforcer Count="1" />
+	</Unbound_Enforcer>
+	
+	<Unbound_Raider Text="Unbound_Raider" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Unbound_Raider Count="1" />
+	</Unbound_Raider>
+	
+	<Rebel_Psyker Text="Rebel_Psyker" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Rebel_Psyker Count="1" />
+	</Rebel_Psyker>
+	
+	<Rebel_Veteran_Specialist Text="Rebel_Veteran_Specialist" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Rebel_Veteran_Specialist Count="1" />
+	</Rebel_Veteran_Specialist>
+	
+	<Rebel_Heavy_Gunner Text="Rebel_Heavy_Gunner" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Rebel_Heavy_Gunner Count="1" />
+	</Rebel_Heavy_Gunner>
+	
+	<Plaguebearer Text="Plaguebearer" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Plaguebearer Count="1" />
+	</Plaguebearer>
+	
+	<Plague_Marine_Havoc Text="Plague_Marine_Havoc" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Plague_Marine_Havoc Count="1" />
+	</Plague_Marine_Havoc>
+	
+	<Nurglebulb2 Text="Nurgling Egg" Image="group_nurglebulb" Color="#40FF00" Size="1">
+		<Nurglebulb2 Count="1" />
+	</Nurglebulb2>
+	
+	<Corrupted_Group Text="Corrupted Horde" Image="group_nurglebulb" Color="#40FF00" Size="1">
+		<Corrupted_Eradicator Count="3" LowCount="3" VeryLowCount="3" />
+		<Corrupted_Disassembler Count="2" LowCount="2" VeryLowCount="1" />
+	</Corrupted_Group>
+	
+	<Corrupted_Group_large Text="Corrupted Horde Large" Image="group_nurglebulb" Color="#40FF00" Size="1">
+		<Corrupted_Eradicator Count="6" LowCount="5" VeryLowCount="4" />
+		<Corrupted_Disassembler Count="3" LowCount="2" VeryLowCount="1" />
+	</Corrupted_Group_large>
+	
+	<Khymera Text="Khymera" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Khymera Count="1" />
+	</Khymera>
+	
+	<Talos Text="Talos" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Talos Count="1" />
+	</Talos>
+	
+	<Cronos Text="Cronos" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Cronos Count="1" />
+	</Cronos>
+	
+	<Haemonculus Text="Haemonculus" Image="group_large_elite" Color="#FF0000" Size="1.8">
+		<Haemonculus Count="1" />
+	</Haemonculus>
+
+	<Assassination Text="Assassination" Image="group_large_commander" Color="#FF0000" Size="1.7">
+		<Normal_Melee Count="8" LowCount="6" VeryLowCount="4" />
+		<Normal_Ranged Count="12" LowCount="10" VeryLowCount="8" />
+		<Medium_Ranged Count="3" LowCount="2" VeryLowCount="1" />
+		<Medium_Melee Count="2" LowCount="1" VeryLowCount="1" />
+	</Assassination>
+		
+	<Convert_Militia Text="Convert_Militia_CAMPAIGN" Image="group_small_ranged" Color="#FF0000" Size="1">
+		<Convert_Militia_Heavy_Gunner Count="1" />
+		<Convert_Militia_Sergeant Count="1" />
+		<Convert_Militia_Specialist Count="1" />
+	</Convert_Militia>
+		
+	<pet_cherub1 Text="Cherub" Image="group_nurglebulb" Color="#40FF00" Size="1.8">
+		<pet_cherub1 Count="1" />
+	</pet_cherub1>
+	
+	<pet_herald_cherub Text="Herald Cherub" Image="group_nurglebulb" Color="#40FF00" Size="1.8">
+		<pet_herald_cherub Count="1" />
+	</pet_herald_cherub>
+	
+	<pet_founding_cherub Text="Founding Cherub" Image="group_nurglebulb" Color="#40FF00" Size="1.8">
+		<pet_founding_cherub Count="1" />
+	</pet_founding_cherub>
+		
+	<pet_founding_servoskull Text="founding_servoskull" Image="group_nurglebulb" Color="#40FF00" Size="1.8">
+		<pet_founding_servoskull Count="1" />
+	</pet_founding_servoskull>	
+	
+	<pet_servoskull Text="pet_servoskull" Image="group_nurglebulb" Color="#40FF00" Size="1.8">
+		<pet_servoskull Count="1" />
+	</pet_servoskull>	
+	
+	<pet_servoskull4 Text="pet_servoskull4" Image="group_nurglebulb" Color="#40FF00" Size="1.8">
+		<pet_servoskull4 Count="1" />
+	</pet_servoskull4>	
+	
+	<DE_Egg Text="DE Egg" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<DE_Egg Count="1" LowCount="1" VeryLowCount="1" />
+	</DE_Egg>	
+	
+	<Pain_Harvest_1 Text="Pain_Harvest_1" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Normal_Melee Count="1" LowCount="1" VeryLowCount="0" />
+		<Normal_Ranged Count="7" LowCount="6" VeryLowCount="4" />
+	</Pain_Harvest_1>	
+	<Pain_Harvest_2 Text="Pain_Harvest_2" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Horde Count="10" LowCount="8" VeryLowCount="6" />
+		<Normal_Melee Count="1" LowCount="1" VeryLowCount="0" />
+		<Normal_Ranged Count="4" LowCount="3" VeryLowCount="0" />
+		<Medium_Ranged Count="1" LowCount="1" VeryLowCount="0" />
+	</Pain_Harvest_2>	
+	<Pain_Harvest_3 Text="Pain_Harvest_3" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Normal_Melee Count="4" LowCount="3" VeryLowCount="0" />
+		<Normal_Ranged Count="2" LowCount="2" VeryLowCount="0" />
+		<Medium_Melee Count="1" LowCount="0" VeryLowCount="0" />
+	</Pain_Harvest_3>	
+
+	<Pain_Harvest_Catalyst_1 Text="Pain_Harvest_Catalyst_1" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="2" />
+		<Normal_Ranged Count="5" LowCount="5" VeryLowCount="3" />
+	</Pain_Harvest_Catalyst_1>	
+	<Pain_Harvest_Catalyst_2 Text="Pain_Harvest_Catalyst_2" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="2" />
+		<Normal_Ranged Count="6" LowCount="4" VeryLowCount="3" />
+	</Pain_Harvest_Catalyst_2>	
+	<Pain_Harvest_Catalyst_3 Text="Pain_Harvest_Catalyst_3" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" />
+		<Normal_Melee Count="2" LowCount="2" VeryLowCount="2" />
+		<Normal_Ranged Count="3" LowCount="2" VeryLowCount="2" />
+		<Horde Count="10" LowCount="8" VeryLowCount="6" />
+	</Pain_Harvest_Catalyst_3>	
+
+	<Khorne_1_Ranieli_Guard Text="Khorne_1_Ranieli_Guard" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Imperial_Guard_Ally Count="4" />
+	</Khorne_1_Ranieli_Guard>
+
+	<MaelstromOfCarnage Text="Maelstrom Of Carnage" Image="group_small_ranged" Color="#FF0000" Size="1.6">
+		<Horde Count="5" LowCount="4" VeryLowCount="1" />
+		<Normal_Melee Count="3" LowCount="3" VeryLowCount="1" />
+		<Normal_Ranged Count="3" LowCount="3" VeryLowCount="1" />
+	</MaelstromOfCarnage>	
+	<MaelstromOfCarnage2 Text="Maelstrom Of Carnage" Image="group_large_melee" Color="#FF0000" Size="1.6">
+		<Medium_Melee Count="1" LowCount="1" VeryLowCount="1" />
+	</MaelstromOfCarnage2>
+	<MaelstromOfCarnage3 Text="Maelstrom Of Carnage" Image="group_large_commander" Color="#FF0000" Size="1.6">
+		<Commander Count="1" LowCount="1" VeryLowCount="1" />
+	</MaelstromOfCarnage3>
+	
+	<Sporocyst Text="Sporocyst" Image="group_large_elite" Color="#FF0000" Size="1">
+		<Sporocyst Count="1" />
+	</Sporocyst>
+	
+	<Trap_Bolter Text="Bolter Turret" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Trap_Bolter Count="1" />
+	</Trap_Bolter>
+	
+	<Void_Commander Text="Void Commander !TAROT_ONLY!" Image="group_large_melee" Color="#FF0000" Size="1.0">
+		<Void_Commander Count="1" />
+	</Void_Commander>
+	
+	<Cremator_Crawler_enemy Text="Cremator Crawler !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Cremator_Crawler_enemy Count="1" />
+	</Cremator_Crawler_enemy>
+	
+	<TechAdept_Kastelan_robot_melee_enemy Text="Kastelan Robot Melee !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<TechAdept_Kastelan_robot_melee_enemy Count="1" />
+	</TechAdept_Kastelan_robot_melee_enemy>
+	
+	<TechAdept_Kastelan_robot_ranged_enemy Text="Kastelan Robot Ranged !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<TechAdept_Kastelan_robot_ranged_enemy Count="1" />
+	</TechAdept_Kastelan_robot_ranged_enemy>
+	
+	<Kataphron_Destroyer_enemy Text="Kataphon Destroyer !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Kataphron_Destroyer_enemy Count="1" />
+	</Kataphron_Destroyer_enemy>
+	
+	<Kataphron_Vanguard_enemy Text="Kataphon Vanguard !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Kataphron_Vanguard_enemy Count="1" />
+	</Kataphron_Vanguard_enemy>
+	
+	<Necromechanic_turret_Damage_boost Text="NecroTurret DMGboost !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Necromechanic_turret_Damage_boost Count="1" />
+	</Necromechanic_turret_Damage_boost>
+	
+	<Necromechanic_turret_Healing_aoe Text="NecroTurret AoEheal !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Necromechanic_turret_Healing_aoe Count="1" />
+	</Necromechanic_turret_Healing_aoe>
+	
+	<Necromechanic_turret_Regeneration Text="NecroTurret Regen !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Necromechanic_turret_Regeneration Count="1" />
+	</Necromechanic_turret_Regeneration>
+	
+	<Tarantula_turret_Boltgun Text="Boltgun Tarantula !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Tarantula_turret_Boltgun Count="1" />
+	</Tarantula_turret_Boltgun>
+	
+	<Tarantula_turret_Flamer Text="Flamer Tarantula !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Tarantula_turret_Flamer Count="1" />
+	</Tarantula_turret_Flamer>
+	
+	<Tarantula_turret_Lasgun Text="Lasgun Tarantula !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Tarantula_turret_Lasgun Count="1" />
+	</Tarantula_turret_Lasgun>
+	
+	<Tarantula_Turret_Missile_launcher Text="Missile Tarantula !TAROT_ONLY! " Image="object_technical" Color="#FF0000" Size="1.0">
+		<Tarantula_Turret_Missile_launcher Count="1" />
+	</Tarantula_Turret_Missile_launcher>
+	
+	<Vivisector_Crawler_enemy Text="VivisectorCrawler !TAROT_ONLY!" Image="object_technical" Color="#FF0000" Size="1.0">
+		<Vivisector_Crawler_enemy Count="1" />
+	</Vivisector_Crawler_enemy>
+	
+	<Tarot_Stormwatcher Text="Tarot_Stormwatcher !TAROT_ONLY!" Image="group_small_melee" Color="#FF0000" Size="1.0">
+		<Stormwatcher_Commander Count="1" />
+		<Imperial_Guard_Ally Count="4" />
+	</Tarot_Stormwatcher>
+	
+	<Automata_Normal Text="Automata Normal" Image="group_small_ranged" Color="#FF0000" Size="1.0">
+		<Kataphron_Destroyer_enemy Count="1" />
+		<Cremator_Crawler_enemy Count="2" />
+	</Automata_Normal>
+	
+	<Automata_Medium Text="Automata Medium" Image="group_medium_ranged" Color="#FF0000" Size="1.0">
+		<Kataphron_Vanguard_enemy Count="1" />
+		<Cremator_Crawler_enemy Count="2" />
+		<Vivisector_Crawler_enemy Count="2" />
+	</Automata_Medium>
+	
+	<Tyranid_Normal Text="Tyranid Normal" Image="group_small_melee" Color="#FF0000" Size="1.0">
+		<Hormagaunt Count="2" />
+	</Tyranid_Normal>
+	
+	<Tyranid_Medium Text="Tyranid Medium" Image="group_medium_melee" Color="#FF0000" Size="1.0">
+		<Tyranid_warrior_melee Count="1" />
+	</Tyranid_Medium>
+	
+</SoldierGroups>

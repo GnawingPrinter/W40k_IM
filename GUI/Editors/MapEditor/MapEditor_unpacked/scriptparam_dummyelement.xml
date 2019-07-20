@@ -1,0 +1,11 @@
+<ScriptParamDummyElement>	
+	<Include Path="Common.xml"/>
+	<GridContainer MarginLeft="30" Height="40">
+		<Columns>
+			<Column Width="Auto"/>
+			<Column Width="1*"/>
+		</Columns>
+		<Image Size="25,25" ColorMask="#FF0000" VerticalAlignment="Center" Margin="5"/>
+		<Text Column="1" Text="Nagyonszép dummyk"  TextAlignH="Left" MarginLeft="5" FontSize="11"/>
+	</GridContainer>
+</ScriptParamDummyElement>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Container Size="362,182" IgnoreScissor="1">
+	<Styles>
+		<LocationStyle
+			FontType="Electrolize"
+			FontSize="17"
+			BiggerFontSize="19"
+			Color="0xff72c1c8"
+			Sharpness="0.5"
+			TextAlignH="left"
+			TextAlignV="center"
+			PressColor="0xff72c1c8"
+			RolloverColor="0xffededed"
+			RolloverOutlineColor="0x666bffff"
+			RolloverFontOutlineWidth="20"
+			RolloverOutlineSharpness="2"
+			RolloverOutlineOffset="0.0"
+		/>
+		<FontGreen
+			FontType="Share Tech Mono"
+			FontSize="19"
+			BiggerFontSize="21"
+			Color="0xffb5fffc"
+			Sharpness="0.5"
+			TextAlignH="center"
+			TextAlignV="center"
+			Offset="0,0"
+		/>
+		<LocationSmall
+			FontType="Roboto"
+			FontSize="15"
+			BiggerFontSize="17"
+			Color="0xff99cccc"
+			Sharpness="0.5"
+			OutlineColor="0xcc000000" 
+			FontOutlineWidth="3" 
+			OutlineSharpness="0.3"
+			TextAlignH="center"
+			TextAlignV="center"
+			Offset="1,0"
+		/>
+	</Styles>
+	<Constants>
+		<MaxMissionCount Type="int" Value="7"/>
+		<EventProgressBarLength  Type="int" Value="288"/>
+	</Constants>
+		
+	<Image Name="LabelBg" IgnoreScissor="1" Visible="0"
+		Pos="0,0"
+		Size="320,72"
+		Image="UI/OpenWorld/starmap_locationTemplate.tga"
+		MouseSenseEnabled="0"
+	/>
+	<Container Name="Standard" Visible="1">
+		<Icon Name="Back"
+			Pos="0,0"
+			Size="320,72"
+			Image="UI/OpenWorld/starmap_locationOff.tga"
+			ClickSoundPath="event:/gui/buttons/hit"
+			ControllerSenseEnabled="1"
+			RolloverFade="100"
+			UseButtonEffects="0"
+		/>
+		<Icon Name="LevelIcon"
+			Pos="16,17"
+			Size="48,30"
+			Style="FontGreen"
+			AllImg="none"
+			MouseSenseEnabled="0"
+		/>
+		<Icon Name="Name"
+			Pos="73,18"
+			Size="275,30"
+			Style="LocationStyle"
+			AllImg="none"
+			MouseSenseEnabled="0"
+			IconMarginRatioX="1"
+			IconMarginRatioY="1"
+		/>
+		<Text Name="Desc"
+			Pos="73,46"
+			Size="280,30"
+			Style="LocationSmall"
+			TextAlignH="left"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="ExtraText"
+			Pos="73,68"
+			Size="280,30"
+			Style="LocationSmall"
+			TextAlignH="left"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+		/>
+		<Container Name="EventSystemFrame" Visible="0" IgnoreScissor="1">
+			<Image Name="EventIcon"
+				Pos="-45,14"
+				Size="64,64"
+				Image="UI/OpenWorld/Events/event_icon_chaos.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Image Name="EventBarBg"
+				Pos="11,51"
+				Size="288,16"
+				Image="UI/OpenWorld/Events/event_system_barBg.tga"
+				MouseSenseEnabled="0"
+			/>	
+			<FlowContainer Name="EventBar"
+				Pos="11,51"
+				Height="16"
+				Horizontal="1"
+				BackgroundTopSize="8"
+				BackgroundBotSize="8"
+				BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+				BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+				BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+				MouseSenseEnabled="0"
+			>
+				<Dummy Name="EventProgressBar" Height="16" Width="@EventProgressBarLength" MouseSenseEnabled="0"/>
+			</FlowContainer>
+		</Container>
+		<Container Pos="72,-22" IgnoreScissor="1">
+			<Loop Count="@MaxMissionCount" Variable="$X$" Offset="36,0">
+				<Image Name="EventFrame$X$"
+					Visible="0"
+					Pos="-11,-11"
+					Size="52,52"
+					Layer="0"
+					Image="UI/OpenWorld/Events/event_wings.tga"
+					MouseSenseEnabled="0"
+				/>	
+				<Icon Name="MissionIcon_$X$"
+					Pos="0,0"
+					Size="32,32"
+					Layer="1"
+					IdleImg="UI/OpenWorld/Missions/mission_mosaicOff.tga"
+					RolloverImg="UI/OpenWorld/Missions/mission_mosaicOver.tga"
+					PressImg="UI/OpenWorld/Missions/mission_mosaicOff.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="MissionDifficulty_$X$"
+					Pos="0,24"
+					Size="32,7"
+					Image="UI/OpenWorld/Missions/mission_difficultyGreen.tga"
+					MouseSenseEnabled="0"
+					Layer="1"
+				/>
+				<Image Name="MissionExtra_$X$"
+					Pos="0,-34"
+					Size="32,32"
+					Image="UI/OpenWorld/Missions/mission_custom.tga"
+					IgnoreScissor="1"
+					MouseSenseEnabled="0"
+				/>
+			</Loop>
+		</Container>
+	</Container>
+	<Container Name="Warzone" Visible="0">
+		<Icon Name="WarzoneBack"
+			Pos="0,0"
+			Size="320,72"
+			IdleImg="UI/OpenWorld/starmap_locationWarzoneOff.tga"
+			RolloverImg="UI/OpenWorld/starmap_locationWarzoneOver.tga"
+			PressImg="UI/OpenWorld/starmap_locationWarzoneOver.tga"
+			ClickSoundPath="event:/gui/buttons/hit"
+			ControllerSenseEnabled="1"
+			RolloverFade="100"
+			UseButtonEffects="0"
+		/>
+		<Icon Name="WarzoneName"
+			Pos="73,18"
+			Size="275,30"
+			Style="LocationStyle"
+			AllImg="none"
+			Text="_Warzone: Lacaon"
+			MouseSenseEnabled="0"
+			IconMarginRatioX="1"
+			IconMarginRatioY="1"
+		/>
+	</Container>
+
+</Container>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RT_Fr54_sziklak_BG Terrain="Terrains/Sections/Rocky_Terrain/RT_Fr54_sziklak_BG.VHT" Preview="Terrains/Sections/Rocky_Terrain/MapEditorImages/RT_Fr54_sziklak_BG_thumb.bmp" Image="Terrains/Sections/Rocky_Terrain/MapEditorImages/RT_Fr54_sziklak_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Rocky Terrain">
+	<PivotPos x="-504.887695" y="2756.83179" />
+	<Tags />
+	<Grids>
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="6" Row="3" Image="" />
+		<Grid Column="-6" Row="-2" Image="" />
+		<Grid Column="-5" Row="-2" Image="" />
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="5" Row="-2" Image="" />
+		<Grid Column="6" Row="-2" Image="" />
+		<Grid Column="-6" Row="-1" Image="" />
+		<Grid Column="-5" Row="-1" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="5" Row="-1" Image="" />
+		<Grid Column="6" Row="-1" Image="" />
+		<Grid Column="-6" Row="0" Image="" />
+		<Grid Column="-5" Row="0" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="5" Row="0" Image="" />
+		<Grid Column="6" Row="0" Image="" />
+		<Grid Column="-6" Row="1" Image="" />
+		<Grid Column="-5" Row="1" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="5" Row="1" Image="" />
+		<Grid Column="6" Row="1" Image="" />
+		<Grid Column="-6" Row="2" Image="" />
+		<Grid Column="-5" Row="2" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+		<Grid Column="5" Row="2" Image="" />
+		<Grid Column="6" Row="2" Image="" />
+		<Grid Column="-6" Row="3" Image="" />
+		<Grid Column="-5" Row="3" Image="" />
+		<Grid Column="-4" Row="3" Image="" />
+		<Grid Column="-3" Row="3" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="" />
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="4" Row="3" Image="" />
+		<Grid Column="5" Row="3" Image="" />
+	</Grids>
+</RT_Fr54_sziklak_BG>

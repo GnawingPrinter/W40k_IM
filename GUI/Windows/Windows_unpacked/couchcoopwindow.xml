@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="626,95" GuiAlign="bottomcenter">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<TiltPivot Value="1650,0"/>
+		<TiltMouseCenter Value="1780,540"/>
+		<DefaultTilt Value="0.0,0.0"/>
+		<MaximumTilt Value="0.0,0.0"/>
+		<TiltZone Value="0,0,0,0"/>
+		
+	</Constants>
+				
+	<Container>
+		<Image
+			Name="CoopBackground"
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/Coop_Setup_background.tga"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<Image
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/subsector_background2.tga"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<Text
+			Pos="94,98"
+			Size="506,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Text="controller.common.local_coop"
+		/>
+		
+		<TextBox Name="CoopDescription"
+			Pos="58,150"
+			Size="560,550"
+			Style="Text_Normal_White"
+			TextAlignH="left"
+			TextAlignV="top"
+			Text="openworld.gui.coop.description"
+		/>
+
+		<Icon Name="MainButton"
+			Pos="456,782"
+			Size="188,32"
+			IdleImg="UI/OpenWorld/starmap_buttonOff.tga"
+			PressImg="UI/OpenWorld/starmap_buttonOver.tga"
+			RolloverImg="UI/OpenWorld/starmap_buttonOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Style="StarmapHeadline1_4"
+			Text="controller.buttons.add_player"
+		/>
+		
+		<Icon Name="Close"
+			Pos="625,119"
+			Size="24,24"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+	</Container>
+</Window>

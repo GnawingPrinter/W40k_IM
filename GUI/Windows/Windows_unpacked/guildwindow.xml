@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="center" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	<Constants>		
+		<DefaultPage Type="string" Value="Overview"/>	
+		<NoCabalDetailsCount Type="int" Value="4"/>
+		<ApplicationLimit Type="int" Value="8"/>
+		<CabalXPBarLength Type="int" Value="626"/>
+		<CabalMissionProgressLength Type="int" Value="672"/>
+		<CabalMissionCount Type="int" Value="5"/>
+		<CabalMemberCount Type="int" Value="13"/>
+		<CabalListLimit Type="int" Value="12"/>
+		<TechTreeCount Type="int" Value="42"/>
+		<TechCountInRow Type="int" Value="7"/>
+	</Constants>
+	
+	<Container Pos="535,95">
+		<Container Name="Common">
+			<Image
+				Pos="0,0"
+				Size="848,840"
+				Image="UI/OpenWorld/Friends/friends_backgroundNew.tga"
+			/>
+			<Image
+				Pos="0,0"
+				Size="848,840"
+				Image="UI/common/Options/options_background2.tga"
+			/>
+			<Text Name="CabalWindowTitle"
+				Pos="74,98"
+				Size="706,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.cabal.title"
+			/>
+			<Container Pos="0,130" Size="848,48" IgnoreScissor="1">
+				<FlowContainer Horizontal="1" HAlign="center">
+					<XBOXButton Name="XBoxLB"
+						Size="48,48"
+						SetButton="LEFT_SHOULDER"
+					/>
+					<Icon Name="OverviewTab"
+						Size="160,40"
+						MarginTop="4"
+						IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+						PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						Style="Starmap2_3"
+						Enabled="0"
+						Text="openworld.gui.cabal.overview"
+					/>
+					<Icon Name="MembersTab"
+						Size="160,40"
+						MarginTop="4"
+						IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+						PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						Style="Starmap2_3"
+						Enabled="0"
+						Text="openworld.gui.cabal.members"
+					/>
+					<Icon Name="CalendarTab"
+						Size="160,40"
+						MarginTop="4"
+						IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+						PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						Style="Starmap2_3"
+						Enabled="0"
+						Text="openworld.gui.cabal.calendar"
+						Visible="0"
+					/>
+					<Icon Name="TechTreeTab"
+						Size="160,40"
+						MarginTop="4"
+						IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+						PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						Style="Starmap2_3"
+						Enabled="0"
+						Text="openworld.gui.cabal.techtree"
+					/>
+					<Icon Name="BrowserTab"
+						Size="160,40"
+						MarginTop="4"
+						IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+						PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+						Style="Starmap2_3"
+						Enabled="0"
+						Text="openworld.gui.cabal.browser"
+					/>
+					<XBOXButton Name="XBoxRB"
+						Size="48,48"
+						SetButton="RIGHT_SHOULDER"
+					/>
+				</FlowContainer>
+			</Container>
+			<Icon Name="Close"
+				Pos="801,118"
+				Size="28,28"
+				IdleImg="UI/OpenWorld/icon_closeOff.tga"
+				PressImg="UI/OpenWorld/icon_closeOver.tga"
+				RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="common.close"
+			/>
+		</Container>
+		<Container Name="Overview">
+			<ScrollableContainer Pos="63,186" Size="744,570" Name="NoCabal">
+				<FlowContainer>
+					<TextBox
+						MarginTop="10"
+						Width="722"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="openworld.gui.cabal.nocabal.headline0"
+					/>
+					<TextBox
+						MarginTop="20"
+						Width="722"
+						Style="Text_Normal_White"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="openworld.gui.cabal.nocabal.headline1"
+					/>
+					<Loop Count="@NoCabalDetailsCount" Variable="$X$">
+						<Container MarginTop="14" Name="NoCabalDetail_$X$">
+							<Image
+								MarginTop="0"
+								MarginLeft="14"
+								VerticalAlignment="top"
+								Size="20,20"
+								Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"
+							/>
+							<TextBox
+								MarginLeft="41"
+								UseSlider="0"
+								Width="681"
+								VerticalAlignment="top"
+								Style="Text_Normal_White"
+								TextAlignH="left"
+								TextAlignV="top"
+								Text="openworld.gui.cabal.nocabal.details$X$"
+							/>
+						</Container>
+					</Loop>
+					<Container Name="CreateFindCabalButtons" MarginTop="20">
+						<Icon Name="CreateCabal"
+							MarginLeft="1"
+							Size="164,36"
+							IdleImg="UI/common/Options/button_largeOff.tga"
+							PressImg="UI/common/Options/button_largeOver.tga"
+							RolloverImg="UI/common/Options/button_largeOver.tga"
+							Style="Starmap2_3"
+							Text="openworld.gui.cabal.create"
+						/>
+						<Icon Name="FindCabal"
+							MarginLeft="179"
+							Size="164,36"
+							IdleImg="UI/common/Options/button_largeOff.tga"
+							PressImg="UI/common/Options/button_largeOver.tga"
+							RolloverImg="UI/common/Options/button_largeOver.tga"
+							Style="Starmap2_3"
+							Text="openworld.gui.cabal.find"
+						/>
+					</Container>
+					<Text
+						MarginTop="22"
+						MarginBottom="4"
+						Size="722,30"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.gui.cabal.applications"
+					/>
+					<Text
+						Name="NoApplicationText"
+						MarginTop="0"
+						MarginBottom="4"
+						Size="722,20"
+						Style="Text_Normal_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.gui.cabal.noapplications"
+					/>
+					<Loop Count="@ApplicationLimit" Variable="$X$">
+						<Container Size="724,40" Name="Application$X$">
+							<Icon Name="ApplicationFrame$X$"
+								Size="724,40"
+								IdleImg="UI/cabal/cabal_frameOff.tga"
+								PressImg="UI/cabal/cabal_frameOn.tga"
+								RolloverImg="UI/cabal/cabal_frameOver.tga"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+							/>
+							<Image
+								Pos="8,8"
+								Size="28,24"
+								Image="UI/OpenWorld/Friends/request_statusPending.tga"
+							/>
+							<Text Name="ApplicationName$X$"
+								Pos="38,3"
+								Size="233,30"
+								Style="Text_Normal_White"
+								TextAlignH="left"
+								TextAlignV="center"
+								Text="Fasza klán név"
+							/>
+							<Text Name="ApplicationMembers$X$"
+								Pos="290,3"
+								Size="144,30"
+								Style="Italic_Normal_White"
+								TextAlignH="left"
+								TextAlignV="center"
+								Text="- Members"
+							/>
+							<Text Name="ApplicationType$X$"
+								Pos="472,3"
+								Size="144,30"
+								Style="Text_Normal_White"
+								TextAlignH="left"
+								TextAlignV="center"
+								Text="openworld.gui.cabal.application"
+							/>
+							<Icon Name="ApplicationAccept$X$"
+								Pos="650,4"
+								Size="32,32"
+								IdleImg="UI/OpenWorld/Friends/button_acceptOff.tga"
+								PressImg="UI/OpenWorld/Friends/button_acceptOver.tga"
+								RolloverImg="UI/OpenWorld/Friends/button_acceptOver.tga"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="common.accept"
+							/>
+							<Icon Name="ApplicationDecline$X$"
+								Pos="684,4"
+								Size="32,32"
+								IdleImg="UI/OpenWorld/Friends/button_declineOff.tga"
+								PressImg="UI/OpenWorld/Friends/button_declineOver.tga"
+								RolloverImg="UI/OpenWorld/Friends/button_declineOver.tga"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="common.decline"
+							/>
+						</Container>
+					</Loop>
+				</FlowContainer>
+			</ScrollableContainer>
+			<Container Name="YesCabal">
+				<Image Name="OverviewBack"
+					Pos="51,96"
+					Size="752,660"
+					Image="UI/cabal/cabal_frameOverview.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image
+					Pos="72,189"
+					Size="728,100"
+					Image="UI/cabal/cabal_rank.tga"
+				/>
+				<Text Name="CabalRank"
+					Pos="102,212"
+					Size="40,40"
+					FontSize="36"
+					Style="Text_XLarge_White_Glow"
+					FontType="Share Tech Mono"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="1"
+				/>
+				<Text
+					Pos="179,194"
+					Size="372,30"
+					Style="Text_Large_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.cabalrank"
+				/>
+				<Text Name="CabalXpValue"
+					Pos="559,194"
+					Size="239,30"
+					Style="Text_Normal_Dark_Outline"
+					FontType="Share Tech Mono"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="-/- XP"
+				/>
+				<FlowContainer
+					Pos="176,223"
+					Height="20"
+					Horizontal="1"
+					BackgroundTopSize="8"
+					BackgroundBotSize="8"
+					BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+					BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+					BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+					MouseSenseEnabled="0"
+				>
+					<Dummy Name="CabalXPBar" Height="20" Width="0" MouseSenseEnabled="0"/>
+				</FlowContainer>
+				
+				<Text Name="OccupyText"
+					Pos="178,246"
+					Size="597,30"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_The Grandmaster has not logged in for 2 weeks."
+					Visible="0"
+				/>
+				
+				<Icon Name="OccupyButton"
+					Pos="636,246"
+					Size="164,36"
+					IdleImg="UI/Crafting/button_craftingOff.tga"
+					PressImg="UI/Crafting/button_craftingOver.tga"
+					RolloverImg="UI/Crafting/button_craftingOver.tga"
+					Style="Starmap2_3"
+					Text="_Occupy leadership"
+					ShowCategory="mouse"
+					Visible="0"
+				/>
+				
+				<Icon Name="ChangeTaxButton" Visible="0"
+					Pos="168,246"
+					Size="36,36"
+					IdleImg="UI/cabal/button_taxOff.tga"
+					PressImg="UI/cabal/button_taxOver.tga"
+					RolloverImg="UI/cabal/button_taxOver.tga"
+					Style="Starmap2_3"
+				/>
+				<Text Name="TaxValue" Visible="0"
+					Pos="208,247"
+					Size="392,30"
+					Style="Text_Normal_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="Cabal tax: -"
+				/>
+				<Text Name="CabalTreasury" Visible="0"
+					Pos="674,254"
+					Size="102,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+				/>
+				<Text
+					Pos="56,303"
+					Size="612,32"
+					Style="Text_Large_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.cabaldirective"
+				/>
+				<Image
+					Pos="55,333"
+					Size="742,4"
+					Image="UI/Assignment/assignment_bigline.tga"
+				/>
+				<Container Pos="652,297" Size="148,50">
+					<FlowContainer HAlign="right" Horizontal="1" IgnoreScissor="1">
+						<XBOXButton Name="MissionPrev"
+							MarginTop="-8"
+							Size="48,48"
+							SetButton="L_TRIGGER"
+						/>
+						<Loop Count="@CabalMissionCount" Variable="$X$" Offset="0,0">
+							<Icon Name="CabalMissionIcon$X$"
+							
+								Size="20,32"
+								IdleImg="UI/cabal/cabal_mission_emptyOff.tga"
+								PressImg="UI/cabal/cabal_mission_emptyOff.tga"
+								RolloverImg="UI/cabal/cabal_mission_emptyOff.tga"
+								UseButtonEffects="0"
+							/>
+						</Loop>
+						<XBOXButton Name="MissionNext"
+							MarginTop="-8"
+							MarginRight="-5"
+							Size="48,48"
+							SetButton="R_TRIGGER"
+						/>
+					</FlowContainer>
+				</Container>
+				<Text Name="SelectedMissionName"
+					Pos="72,343"
+					Size="597,30"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_MissionName"
+				/>
+				<Text Name="SelectedMissionReward"
+					Pos="687,343"
+					Size="102,30"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="- XP"
+				/>
+				<Text Name="SelectedMissionDesc"
+					Pos="72,369"
+					Size="720,30"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_MissionNagyonRovidLeirasa"
+				/>
+				<Image Name="SelectedMissionBarBg" Visible="0"
+					Pos="72,403"
+					Size="672,16"
+					Image="UI/cabal/cabal_mission_barBg.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<XBOXButton Name="RerollButton"
+					Pos="750,337"
+					Size="48,48"
+					SetButton="R_THUMB_PRESS"
+					Visible="true"
+					ShowCategory="controller"
+				/>
+				<Text Name="RerollButtonText"
+					Pos="600,347"
+					Size="150,30"
+					Style="Text_Large_Light_Glow"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="controller.buttons.reroll"
+					Visible="true"
+					ShowCategory="controller"
+				/>
+				<FlowContainer
+					Pos="69,401"
+					Height="20"
+					Horizontal="1"
+					MouseSenseEnabled="0"
+					BackgroundTopSize="8"
+					BackgroundBotSize="8"
+					BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+					BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+					BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+				>
+					<Dummy Name="SelectedMissionProgressBar" Height="20" Width="0" MouseSenseEnabled="0"/>
+				</FlowContainer>
+				<Icon Name="RerollMission"
+					Pos="764,385"
+					Size="36,36"
+					IdleImg="UI/cabal/button_rerollOff.tga"
+					PressImg="UI/cabal/button_rerollOver.tga"
+					RolloverImg="UI/cabal/button_rerollOver.tga"
+					UseButtonEffects="0"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Text
+					Pos="56,435"
+					Size="612,32"
+					Style="Text_Large_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.weeklycontribution"
+				/>
+				<Image
+					Pos="55,465"
+					Size="743,4"
+					Image="UI/Assignment/assignment_bigline.tga"
+				/>
+				<Text Name="WeeklyContributionValue"
+					Pos="72,475"
+					Size="460,30"
+					Style="Text_Normal_White"
+					FontType="Share Tech Mono"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="- Points"
+				/>
+				<Text Name="WeeklyContributionPosition"
+					Pos="559,475"
+					Size="238,30"
+					Style="Text_Normal_White"
+					FontType="Share Tech Mono"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="-. in Cabal"
+				/>
+				<Text Name="MissionResetTimer"
+					Pos="559,509"
+					Size="238,30"
+					Style="Text_Normal_White"
+					FontType="Share Tech Mono"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="--:--"
+				/>
+				<Icon Name="MissionClaimReward"
+					Pos="636,506"
+					Size="164,36"
+					IdleImg="UI/Crafting/button_craftingOff.tga"
+					PressImg="UI/Crafting/button_craftingOver.tga"
+					RolloverImg="UI/Crafting/button_craftingOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.gui.cabal.claim_rewards"
+					ShowCategory="mouse"
+				/>
+				<TextBox Name="MissionClaimRewardController"
+					Pos="328,509"
+					Size="464,46"
+					Style="Text_Normal_Light"
+					UseSlider="0"
+					Text="controller.common.cabal_claim_reward"
+					TextAlignH="right"
+					ShowCategory="controller"
+				/>
+				<Container Name="ChangeTaxPanel" Pos="58,277" Size="392,128" Visible="0">
+					<Image
+						Size="392,128"
+						Image="UI/cabal/cabal_tax_popup.tga"
+					/>
+					<Text
+						Pos="20,16"
+						Size="286,30"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.gui.cabal.setcabaltax"
+					/>
+					<Text Name="CabalChangeTaxValue"
+						Pos="325,16"
+						Size="48,30"
+						Style="Text_Normal_White"
+						TextAlignH="right"
+						TextAlignV="center"
+					/>
+					<Slider Name="ChangeTaxSlider"
+						Pos="15,47"
+						Size="364,20"
+						RangeMin="0"
+						RangeMax="40"
+						StepSize="1"
+						PageSize="5"
+						ShownSize="1"
+					/>
+					<Icon Name="ChangeTaxAccept"
+						Pos="27,75"
+						Size="164,36"
+						IdleImg="UI/Crafting/button_craftingOff.tga"
+						PressImg="UI/Crafting/button_craftingOver.tga"
+						RolloverImg="UI/Crafting/button_craftingOver.tga"
+						Style="Starmap2_3"
+						Text="common.accept"
+					/>
+					<Icon Name="ChangeTaxCancel"
+						Pos="202,75"
+						Size="164,36"
+						IdleImg="UI/Crafting/button_craftingOff.tga"
+						PressImg="UI/Crafting/button_craftingOver.tga"
+						RolloverImg="UI/Crafting/button_craftingOver.tga"
+						Style="Starmap2_3"
+						Text="common.cancel"
+					/>
+				</Container>
+				<Text
+					Pos="56,526"
+					Size="728,32"
+					Style="Text_Large_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.events"
+				/>
+				<ScrollableContainer Name="LogContainer"
+					Pos="71,564"
+					Size="716,186"
+					ScrollSpeed="50"
+				>
+					<SmartTextBox Name="LogTextBox"
+						VerticalAlignment="top"
+						Style="Text_Normal_White"
+						TextAlignH="left"
+						TextAlignV="top"
+						MouseSenseEnabled="1"
+						MinLineHeight="0.0"
+					/>
+				</ScrollableContainer>
+				<Icon Name="LeaveCabal"
+					Pos="662,782"
+					Size="160,40"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					InitPopup="bottomcenter,topcenter"
+					ShowCategory="mouse"
+					Text="openworld.gui.cabal.leave"
+				/>
+				<Icon Name="ModifyCabal"
+					Pos="502,782"
+					Size="160,40"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					InitPopup="bottomcenter,topcenter"
+					ShowCategory="mouse"
+					Text="openworld.gui.cabal.modify"
+				/>				
+				<Icon Name="DisbandCabal"
+					Pos="342,782"
+					Size="160,40"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					InitPopup="bottomcenter,topcenter"
+					ShowCategory="mouse"
+					Text="openworld.gui.cabal.disband"
+				/>
+			</Container>
+		</Container>
+		<Container Name="Members" Width="848">
+			<RadioGroupLogical Name="MemberRadioGroup"/>
+			<FlowContainer MarginTop="174" Horizontal="1" HAlign="center">
+				<XBOXButton Name="MembersXBoxLT"
+					Size="48,48"
+					SetButton="L_TRIGGER"
+				/>
+				<CheckBox Name="MembersCheckbox"
+					MarginTop="7"
+					Height="32"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					InitPopup="bottomleft,topleft"
+					Text="openworld.gui.cabal.members"
+					RadioGroup="MemberRadioGroup"
+					UseDefault="1"
+				/>
+				<CheckBox Name="ApplicantsCheckbox"
+					MarginTop="7"
+					MarginLeft="20"
+					Height="32"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					InitPopup="bottomleft,topleft"
+					Text="openworld.gui.cabal.applicants"
+					RadioGroup="MemberRadioGroup"
+					UseDefault="1"
+				/>
+				<XBOXButton Name="MembersXBoxRT"
+					Size="48,48"
+					MarginLeft="5"
+					SetButton="R_TRIGGER"
+				/>
+			</FlowContainer>
+			<Image
+				Pos="62,218"
+				Size="728,524"
+				Image="UI/cabal/cabal_memberlist.tga"
+			/>
+			<Loop Count="@CabalMemberCount" Variable="$X$" Offset="0,40">
+				<Container Pos="63,220" Size="724,40" Name="Member$X$" IgnoreScissor="1">
+					<Icon Name="MemberFrame$X$"
+						Pos="0,0"
+						Size="724,40"
+						IdleImg="UI/Cabal/cabal_frameOff.tga"
+						PressImg="UI/Cabal/cabal_frameOn.tga"
+						RolloverImg="UI/Cabal/cabal_frameOver.tga"
+						UseButtonEffects="0"
+					/>
+					<Image Name="MemberStatusIcon$X$"
+						Pos="8,8"
+						Size="28,24"
+						Image="UI/OpenWorld/Friends/friends_statusOffline.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="MemberName$X$"
+						Pos="38,3"
+						Size="233,30"
+						Style="Text_Normal_Dark_Outline"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="friend $X$"
+					/>
+					<Text Name="MemberRank$X$"
+						Pos="290,3"
+						Size="144,30"
+						Style="Text_Normal_Dark_Outline"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="friend $X$"
+					/>
+					<Text Name="MemberStatus$X$"
+						Pos="454,3"
+						Size="144,30"
+						Style="Italic_Normal_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="offline"
+					/>
+					<Icon Name="MemberPartyInvite$X$"
+						Pos="582,4"
+						Size="32,32"
+						IdleImg="UI/OpenWorld/Friends/button_inviteOff.tga"
+						RolloverImg="UI/OpenWorld/Friends/button_inviteOver.tga"
+						PressImg="UI/OpenWorld/Friends/button_inviteOver.tga"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.gui.friendlist.invite"
+					/>
+					<Icon Name="MemberKick$X$"
+						Pos="616,4"
+						Size="32,32"
+						IdleImg="UI/OpenWorld/Friends/button_kickOff.tga"
+						RolloverImg="UI/OpenWorld/Friends/button_kickOver.tga"
+						PressImg="UI/OpenWorld/Friends/button_kickOver.tga"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.gui.cabal.kick"
+					/>
+					<Icon Name="MemberDemote$X$"
+						Pos="650,4"
+						Size="32,32"
+						IdleImg="UI/OpenWorld/Friends/button_demoteOff.tga"
+						RolloverImg="UI/OpenWorld/Friends/button_demoteOver.tga"
+						PressImg="UI/OpenWorld/Friends/button_demoteOver.tga"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.gui.cabal.demote"
+					/>
+					<Icon Name="MemberPromote$X$"
+						Pos="684,4"
+						Size="32,32"
+						IdleImg="UI/OpenWorld/Friends/button_promoteOff.tga"
+						RolloverImg="UI/OpenWorld/Friends/button_promoteOver.tga"
+						PressImg="UI/OpenWorld/Friends/button_promoteOver.tga"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.gui.cabal.promote"
+					/>
+					<Icon Name="MemberAccept$X$"
+						Pos="650,4"
+						Size="32,32"
+						IdleImg="UI/OpenWorld/Friends/button_acceptOff.tga"
+						RolloverImg="UI/OpenWorld/Friends/button_acceptOver.tga"
+						PressImg="UI/OpenWorld/Friends/button_acceptOver.tga"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.gui.cabal.accept"
+					/>
+					<Icon Name="MemberDecline$X$"
+						Pos="684,4"
+						Size="32,32"
+						IdleImg="UI/OpenWorld/Friends/button_declineOff.tga"
+						RolloverImg="UI/OpenWorld/Friends/button_declineOver.tga"
+						PressImg="UI/OpenWorld/Friends/button_declineOver.tga"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.gui.cabal.decline"
+					/>
+					<FlowContainer Name="MemberContextMenu_$X$" Pos="532,4" Visible="0" Layer="2"
+						Width="208"
+						BackgroundTopSize="12"
+						BackgroundBotSize="10"
+						BackgroundTopImage="UI/ContextMenuPanel/ContexMenuPanel_bg_top.tga"
+						BackgroundMidImage="UI/ContextMenuPanel/ContexMenuPanel_bg_middle.tga"
+						BackgroundBotImage="UI/ContextMenuPanel/ContexMenuPanel_bg_bottom.tga"
+					>
+						<Icon Name="MemberAddFriend_$X$"
+							MarginTop="5"
+							Style="ContextMenuPanel"
+							Text="common.party.AddFriend"
+							ControllerSenseEnabled="1"
+						/>
+						<Icon Name="MemberInviteToParty_$X$"
+							Style="ContextMenuPanel"
+							Text="common.party.InviteToParty"
+							ControllerSenseEnabled="1"
+						/>
+						<Icon Name="MemberKick_$X$"
+							Style="ContextMenuPanel"
+							Text="openworld.gui.cabal.kick"
+							ControllerSenseEnabled="1"
+						/>
+						<Icon Name="MemberPromote_$X$"
+							Style="ContextMenuPanel"
+							Text="openworld.gui.cabal.promote"
+							ControllerSenseEnabled="1"
+						/>
+						<Icon Name="MemberDemote_$X$"
+							Style="ContextMenuPanel"
+							Text="openworld.gui.cabal.demote"
+							ControllerSenseEnabled="1"
+						/>
+						<Icon Name="MemberAccept_$X$"
+							Style="ContextMenuPanel"
+							Text="openworld.gui.cabal.accept"
+							ControllerSenseEnabled="1"
+						/>
+						<Icon Name="MemberDecline_$X$"
+							Style="ContextMenuPanel"
+							Text="openworld.gui.cabal.decline"
+							ControllerSenseEnabled="1"
+						/>
+					</FlowContainer>
+				</Container>
+			</Loop>
+			<Slider Name="MemberSlider"
+				Pos="787,220"
+				Size="20,520"
+			/>
+			<Image
+				Pos="63,740"
+				Size="724,4"
+				Image="UI/OpenWorld/Friends/info_doubleline.tga"
+			/>
+			<CheckBox Name="OnlineOnly"
+				Pos="58,745"
+				Size="300,32"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.friendlist.onlineonly"
+			/>
+			<Text Name="MembersNumber"
+				Pos="564,747"
+				Size="220,30"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="-/- Online"
+			/>
+		</Container>
+		<Container Name="Calendar">
+		</Container>
+		<Container Name="TechTree">
+			<Container Name="TechTreeSidePanel" Pos="-344,111" IgnoreScissor="1">
+				<Image
+					Size="404,692"
+					Image="UI/OpenWorld/MissionInfo/assignment_choices_background1.dds"
+					/>
+				<Image Name="TechIcon"
+					Pos="26,37"
+					Size="64,64"
+					Image="cabal tech ikon"
+					/>
+				<TextBox Name="TechName"
+					Pos="104,37"
+					Size="262,64"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="top"
+					Text="A tecsnika neve"
+					/>
+				<Image
+					Pos="30,111"
+					Size="336,4"
+					Image="UI/Assignment/assignment_bigline.tga"
+					/>
+				<ScrollableContainer
+					Pos="30,116"
+					Size="336,492"
+					ScrollSpeed="50"
+					>
+					<FlowContainer Vertical="1">
+						<TextBox Name="TechText"
+							MarginTop="11"
+							Width="336"
+							Style="Italic_Normal_White"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="A tecsnika hablatyolasa ami szuper hosszu, szuper jo."
+							/>
+						<TextBox Name="TechDesc"
+							MarginTop="10"
+							Width="336"
+							Style="Text_Normal_Dark_Outline"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="A tecsnika leirasa ami szuper hosszu, szuper jo."
+							/>
+						<TextBox Name="TechRequirement"
+							MarginTop="11"
+							Width="336"
+							Style="Text_Normal_Dark_Outline"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="ez kell neked!"
+							/>
+					</FlowContainer>
+				</ScrollableContainer>
+				<Text Name="InfluenceValue"
+					Pos="10,652"
+					Size="164,30"
+					Style="Text_Normal_White"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="Influence left:"
+					/>
+				<Icon Name="ResearchButton"
+					Pos="235,647"
+					Size="160,40"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="cabal.techtree.research"
+					ShowCategory="mouse"
+					/>
+			</Container>
+			<Container Pos="103,190">
+				<Line Name="Inactive" LineWidth="30" Texture="UI/Skills/fullscreen_skills_lineOff.tga"/>
+				<Line Name="Active" LineWidth="30" Texture="UI/Skills/fullscreen_skills_lineOn.tga"/>
+				<Loop Count="@TechTreeCount" ItemsInRow="@TechCountInRow" Variable="$X$" Offset="100,100">
+					<Image Name="TechTreeIcon_$X$"
+						Size="64,64"
+						Image="UI/CharacterSheet/icon_trait_slotEmptyOff.tga"
+						ControllerSenseEnabled="1"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Image Name="TechTreeSelection_$X$"
+						Size="64,64"
+						Image="UI/cabal/techtree/cabaltech_selection.tga"
+						InitPopup="bottomcenter,topcenter"
+					/>
+				</Loop>
+				<Image Name="TechTreeCenter"
+					Pos="270,190"
+					Size="124,180"
+					Image="UI\cabal\techtree\cabaltech_middle.dds"
+					/>
+			</Container>
+		</Container>
+		<Container Name="Browser">
+			<Text Name="Loading" Visible="0"
+				Pos="60,497"
+				Size="706,30"
+				Style="Headline_Normal_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="common.network.loading"
+			/>			
+			<Text Name="NoResult" Visible="0"
+				Pos="60,497"
+				Size="706,30"
+				Style="Headline_Normal_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.friendlist.noresult"
+			/>
+			<EditBox Name="SearchEditBox"
+				Pos="62,182"
+				Size="180,28"
+				Style="Text_Normal_White"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<Icon Name="SearchIcon"
+				Pos="255,180"
+				Size="164,36"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				Style="Starmap2_3"
+				Text="openworld.gui.cabal.search"
+			/>
+			<ComboBox Name="SearchRegionComboBox"
+				Pos="633,182"
+				Size="154,32"
+				Style="Text_Normal_White"
+				TextAlignH="center"
+				TextAlignV="center"
+			/>
+			<Image
+				Pos="62,248"
+				Size="728,524"
+				Image="UI/cabal/cabal_memberlist.tga"
+			/>
+			<FlowContainer Pos="74,218" Height="32" Horizontal="1">
+				<Text Name="CabalListOrderName"
+					AllImg="none"
+					Style="Text_Normal_Dark"
+					IdleTextAlignV="center"
+					PressTextAlignV="center"
+					RolloverTextAlignV="center"
+					Text="openworld.gui.cabal.list.name"
+				/>
+				<Icon Name="CabalListOrderNameTri"
+					Size="16,16"
+					MarginTop="8"
+					MarginLeft="2"
+					AllImg="UI/cabal/icon_arrowDown.tga"
+				/>
+			</FlowContainer>
+			<FlowContainer Pos="291,218" Height="32" Horizontal="1">
+				<Text Name="CabalListOrderMembers"
+					Height="32"
+					AllImg="none"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.list.members"
+				/>
+				<Icon Name="CabalListOrderMembersTri"
+					Size="16,16"
+					MarginTop="8"
+					MarginLeft="2"
+					IdleImg="UI/cabal/icon_arrowUp.tga"
+				/>
+			</FlowContainer>
+			<FlowContainer Pos="406,218" Height="32" Horizontal="1">
+				<Text Name="CabalListOrderRank"
+					Heigth="32"
+					AllImg="none"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.list.rank"
+				/>
+				<Icon Name="CabalListOrderRankTri"
+					Size="16,16"
+					MarginTop="8"
+					MarginLeft="2"
+					IdleImg="UI/cabal/icon_arrowUp.tga"
+				/>
+			</FlowContainer>
+			<FlowContainer Pos="499,218" Height="32" Horizontal="1">
+				<Text Name="CabalListOrderRecruiting"
+					Heigth="32"
+					AllImg="none"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.list.recruiting"
+				/>
+				<Icon Name="CabalListOrderRecruitingTri"
+					Size="16,16"
+					MarginTop="8"
+					MarginLeft="2"
+					IdleImg="UI/cabal/icon_arrowUp.tga"
+				/>
+			</FlowContainer>
+			<FlowContainer Pos="633,218" Height="32" Horizontal="1">
+				<Text Name="CabalListOrderRegion"
+					Heigth="32"
+					AllImg="none"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.list.region"
+				/>
+				<Icon Name="CabalListOrderRegionTri"
+					Size="16,16"
+					MarginTop="8"
+					MarginLeft="2"
+					IdleImg="UI/cabal/icon_arrowUp.tga"
+				/>
+			</FlowContainer>
+			<Loop Count="@CabalListLimit" Variable="$X$" Offset="0,40">
+				<Container Pos="63,250" Size="724,40" Name="Cabal$X$">
+					<Icon Name="CabalFrame$X$"
+						Pos="0,0"
+						Size="724,40"
+						IdleImg="UI/Cabal/cabal_frameOff.tga"
+						PressImg="UI/Cabal/cabal_frameOn.tga"
+						RolloverImg="UI/Cabal/cabal_frameOver.tga"
+						UseButtonEffects="0"
+						ControllerSenseEnabled="1"
+					/>
+					<Image Name="CabalNameLoading$X$"
+						Pos="13,4"
+						Size="25,25"
+						Image="UI/Leaderboard/Loading_icon.dds"
+						MouseSenseEnabled="0"
+						Visible="0"
+					/>
+					<Text Name="CabalName$X$"
+						Pos="13,3"
+						Size="200,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="cabal $X$"
+					/>
+					<Text Name="CabalMembers$X$"
+						Pos="228,3"
+						Size="98,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="CabalRank$X$"
+						Pos="341,3"
+						Size="80,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="Faszacabal"
+					/>
+					<Text Name="CabalRecruiting$X$"
+						Pos="436,3"
+						Size="144,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="Open"
+					/>
+					<Text Name="CabalRegion$X$"
+						Pos="571,3"
+						Size="134,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="Region"
+					/>
+				</Container>
+			</Loop>
+			<Slider Name="CabalListSlider"
+				Pos="787,250"
+				Size="20,520"
+			/>
+			<Image
+				Pos="63,730"
+				Size="724,4"
+				Image="UI/OpenWorld/Friends/info_doubleline.tga"
+			/>
+			<CheckBox Name="RecruitingOnly"
+				Pos="58,737"
+				Size="300,32"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.cabal.onlyrecruit"
+			/>
+			
+			<XBOXButton Name="XBoxLTBrowser"
+				Pos="516,731"
+				Size="48,48"
+				SetButton="L_TRIGGER"
+			/>
+			<Icon Name="PagePrev"
+				Pos="524,739" 
+				Size="32,32"
+				IdleImg="UI/openworld/button_prevOff.tga"
+				PressImg="UI/openworld/button_prevOver.tga"
+				RolloverImg="UI/openworld/button_prevOver.tga"
+				Style="StarmapHeadline1_4"
+			/>
+			
+			<Text Name="PageInfo"
+				Pos="556,737" 
+				Size="200,36"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="-/- page"
+			/>
+			
+			<Icon Name="PageNext"
+				Pos="756,739"
+				Size="32,32"
+				IdleImg="UI/openworld/button_nextOff.tga"
+				PressImg="UI/openworld/button_nextOver.tga"
+				RolloverImg="UI/openworld/button_nextOver.tga"
+				Style="StarmapHeadline1_4"
+			/>
+			
+			<XBOXButton Name="XBoxRTBrowser"
+				Pos="748,731"
+				Size="48,48"
+				SetButton="R_TRIGGER"
+			/>
+			
+		</Container>
+	</Container>
+	
+	<Container Name="CreateModifyCabal" Visible="0">
+		<Image
+			Image="UI/BlackTexture.tga"
+			Alpha="0.5"
+			GuiAlign="topleft"
+		/>
+		<Container Pos="785,157">
+			<Image
+				Pos="0,0"
+				Size="404,484"
+				Image="UI/msgbox/info/cabalpopup_background1.tga"
+			/>
+			<Image
+				Pos="0,0"
+				Size="404,484"
+				Image="UI/msgbox/info/info_background2.tga"
+			/>
+			<Text Name="CreateModifyHeadline"
+				Pos="32,23"
+				Size="338,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.cabal.create"
+			/>
+			<Text
+				Pos="30,71"
+				Size="148,30"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.playerinfo.name"
+			/>
+			<EditBox Name="CabalNameEditBox"
+				Pos="188,70"
+				Size="182,32"
+				Style="Text_Normal_White"
+				TextAlignH="center"
+				TextAlignV="center"
+				ControllerSenseEnabled="1"
+			/>
+			<Text
+				Pos="30,105"
+				Size="148,30"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.cabal.regioncapital"
+			/>
+			<ComboBox Name="CabalRegionComboBox"
+				Pos="188,104"
+				Size="182,32"
+				Style="Text_Normal_White"
+				TextAlignH="center"
+				TextAlignV="center"
+				ControllerSenseEnabled="1"
+			/>
+			<Text
+				Pos="30,139"
+				Size="148,30"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.cabal.recruiting"
+			/>
+			<ComboBox Name="CabalRecruitingComboBox"
+				Pos="188,138"
+				Size="182,32"
+				Style="Text_Normal_White"
+				TextAlignH="center"
+				TextAlignV="center"
+				ControllerSenseEnabled="1"
+			/>
+			<Text
+				Pos="30,173"
+				Size="148,30"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.playerinfo.info"
+			/>
+			<TextEditor Name="CabalInfoEditBox"
+				Pos="30,204"
+				Size="338,177"
+				Style="Italic_Normal_White"
+				TextAlignH="left"
+				TextAlignV="top"
+				ControllerSenseEnabled="1"
+				MaxCharacters="255"
+			/>
+			<EditBox Name="CabalInfoEditBoxConsole"
+				Pos="30,204"
+				Size="338,177"
+				Style="Italic_Normal_White"
+				TextAlignH="left"
+				TextAlignV="top"
+				ControllerSenseEnabled="1"
+				TiltPivot="@TiltPivot"
+				TiltMouseCenter="@TiltMouseCenter"
+				DefaultTilt="@DefaultTilt"
+				MaximumTilt="@MaximumTilt"
+				TiltZone="@TiltZone"	
+				Visible="false"
+				PCVisible="0"
+				Multiline="1"
+			/>
+			<Text
+				Pos="30,394"
+				Size="148,30"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.cabal.cost"
+			/>
+			<Container Name="CabalCreateCost">
+				<Text Name="CreateCabalCostFate"
+					Pos="173,394"
+					Size="52,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="_999"
+				/>
+				<Image
+					Pos="230,394"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardFate.tga"
+				/>
+				<Text Name="CreateCabalCostCredit"
+					Pos="268,394"
+					Size="64,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="_99999"
+				/>
+				<Image
+					Pos="337,394"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"
+				/>
+			</Container>
+			<Text Name="ModifyCabalFree"
+				Pos="230,394"
+				Size="140,30"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="common.free"
+			/>
+			<Icon Name="CreateCabalCreate"
+				Pos="25,433"
+				Size="168,48"
+				IdleImg="UI/common/battle_escOff.tga"
+				PressImg="UI/common/battle_escOver.tga"
+				RolloverImg="UI/common/battle_escOver.tga"
+				Style="StarmapHeadline1_4"
+				Text="openworld.gui.tarot.create"
+			/>
+			<Icon Name="CreateCabalAccept"
+				Pos="25,433"
+				Size="168,48"
+				IdleImg="UI/common/battle_escOff.tga"
+				PressImg="UI/common/battle_escOver.tga"
+				RolloverImg="UI/common/battle_escOver.tga"
+				Style="StarmapHeadline1_4"
+				Text="common.accept"
+			/>
+			<Icon Name="CreateCabalCancel"
+				Pos="210,433"
+				Size="168,48"
+				IdleImg="UI/common/battle_escOff.tga"
+				PressImg="UI/common/battle_escOver.tga"
+				RolloverImg="UI/common/battle_escOver.tga"
+				Style="StarmapHeadline1_4"
+				Text="common.cancel"
+			/>
+		</Container>
+	</Container>
+</Window>

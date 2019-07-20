@@ -1,0 +1,12 @@
+<SelectionInfo_SoldierGroup>
+	<Include Path="Common.xml"/>
+	<FlowContainer Width="300" FillColor="#000000">
+		<Container Height="30">
+			<Image ColorMask="#5a6473"/>
+			<Text Text="Soldier Group" Style="InvertedText" FontSize="13"/>
+		</Container>
+		<Icon Style="SimpleButton" Height="30" Text="Make Supergroup" Margin="1" Name="MakeBtn"/>
+		<Icon Style="SimpleButton" Height="30" Text="Add To Supergroup" Margin="1" Name="AddBtn"/>
+		<Icon Style="SimpleButton" Height="30" Text="Remove From Supergroup" Margin="1" Name="RemoveBtn"/>
+	</FlowContainer>
+</SelectionInfo_SoldierGroup>

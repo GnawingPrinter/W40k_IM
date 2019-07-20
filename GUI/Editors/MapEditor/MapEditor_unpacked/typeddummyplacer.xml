@@ -1,0 +1,14 @@
+<Root>	
+	<Include Path="Common.xml"/>
+	<GridContainer Height="60" Visible="true" MarginTop="3" FillColor="#afaaa5">
+		<Columns>
+			<Column Width="60"/>
+			<Column Width="1*"/>
+		</Columns>
+		<Image ColumnSpan="2" ColorMask="#877d78" Alpha="1.0" Name="Selection" Visible="false"/>
+		<Image Column="0" Name="Image"/>
+		<Text Column="1"  MarginLeft="10" TextAlignH="Left" Name="TypeName"/>
+		<Icon ColumnSpan="2" Alpha="0" Tooltip="asdasda" Name="Button"/>
+		<CheckBox Column="0" Name="CheckBox" Visible="false"/>
+	</GridContainer>
+</Root>

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<Window Pos="0,0">
+	<Include Path="Windows/Styles.xml"/>
+	<Constants>
+		<Visible Type="int" Value="1"/>
+		<ListedEmoteCount Type="int" Value="6"/>
+		<ListedEmoteInRow Type="int" Value="2"/>
+	</Constants>
+	<Container Name="Headline">
+		<Image Name="PanelBack"
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<Image
+			Image="UI/Extras/Extras_Bg_racs.tga"
+			Size="2220,1442"
+			Pos="-120,-120"
+			Alpha="0.4"
+		/>
+		<Scene3D Name="CharacterModel"
+			Pos="550,0"
+			Size="1920,1080"
+			GuiAlign="rightcenter"
+			SetCamera="characterwindow"
+			_DynamicOffsetMax="-8,-8"
+			Rotate="0"
+			AllowEffects="1"
+		/>
+		<FlowContainer Name="TopTabs" MarginTop="33" Horizontal="1" Height="68" HAlign="center" GuiAlign="topleft">
+			<XBOXButton Name="XBoxLB"
+				Size="48,48"
+				SetButton="LEFT_SHOULDER"
+			/>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="PetsButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.extras.pets.name"
+				/>
+				<Icon Name="PetsNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+					Visible="0"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="EmotesButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					ButtonState="UIBS_PRESSED_BYPROG"
+					Text="openworld.gui.extras.emotes.name"
+				/>
+				<Icon Name="EmotesNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+					Visible="0"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="CosmeticsButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.extras.cosmetics.name"
+				/>
+				<Icon Name="CosmeticsNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+					Visible="0"
+				/>
+			</Container>
+			<XBOXButton Name="XBoxRB"
+				Size="48,48"
+				SetButton="RIGHT_SHOULDER"
+			/>
+		</FlowContainer>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="EmoteList" GuiAlign="leftcenter" >
+		<Image
+			Pos="75,127"
+			Size="793,777"
+			Image="UI/Extras/Emotes/Emote_bg.tga"
+		/>
+		<Text
+			Pos="75,103"
+			Size="580,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.GUI.extras.Emotes.Emote_list"
+		/>
+		<Loop Count="@ListedEmoteCount" Variable="$X$" ItemsInRow="@ListedEmoteInRow" Offset="280,248">
+			<Container Name="ListedEmote$X$">	
+				<Icon Name="ListedEmoteSelector$X$"
+					Pos="130,160"
+					Size="200,200"
+					IdleImg="UI/Alap_UI/Invisible_back.tga"
+					PressImg="UI/Extras/Emotes/Emote_highlight.tga"
+					RolloverImg="UI/Extras/Emotes/Emote_highlight.tga"
+					InitPopup="topcenter,bottomcenter"
+					SlideredElement="1"
+					UseButtonEffects="0"
+				/>	
+				<Image Name="ListedEmoteIcon$X$"
+					Pos="130,155"
+					Size="200,200"
+					Image="UI/Extras/Emotes/Emote_facepalm.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="ListedEmoteLocked$X$"
+					Pos="130,155"
+					Size="200,200"
+					Image="UI/Extras/Emotes/Emote_lock.tga"
+					MouseSenseEnabled="0"
+				/>	
+				<Text Name="ListedEmoteName$X$"
+					Pos="110,360"
+					Size="240,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_Facepalm"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+		</Loop>
+		<Slider Name="EmoteSlider"
+			Pos="638,148"
+			Size="20,732"
+			UseLeftStick="0"
+		/>
+	</Container>
+	<Container Name="Preview" GuiAlign="center" Visible="0">
+		<Video Name="EmoteSelectedVideo"
+			Pos="898,371"
+			Size="560,315"
+			LoopVideo="1"
+		/>
+	</Container>
+	<Text
+		Pos="750,213"
+		Size="480,30"
+		Style="Headline_XLarge_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="openworld.GUI.extras.Emotes.Emote_wheel.name"
+	/>
+	<Container Pos="750,247" Name="EmoteWheel" GuiAlign="leftcenter" >
+		<Image
+			Size="480,480"
+			Image="UI/Extras/Emotes/Emote_Wheel.tga"
+		/>
+		<Image Name="TopHighlight" Visible="0"
+			Size="480,480"
+			Image="UI/Extras/Emotes/Emote_Wheel_SelectorTop.tga"
+		/>
+		<Image Name="BottomHighlight" Visible="0"
+			Size="480,480"
+			Image="UI/Extras/Emotes/Emote_Wheel_SelectorBottom.tga"
+		/>
+		<Image Name="LeftHighlight" Visible="0"
+			Size="480,480"
+			Image="UI/Extras/Emotes/Emote_Wheel_SelectorLeft.tga"
+		/>
+		<Image Name="RightHighlight" Visible="0"
+			Size="480,480"
+			Image="UI/Extras/Emotes/Emote_Wheel_SelectorRight.tga"
+		/>
+		<Image Name="Selected_Controller"
+			Pos="210,210"
+			Size="60,60"
+			Image="UI/Extras/Emotes/Emote_Wheel_Center_RStick.tga"
+			ShowCategory="controller"
+		/>
+		<Image Name="TopBackEmote"
+			Pos="165,15"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_Wheel_SlotBg.tga"
+		/>
+		<Image Name="BottomBackEmote"
+			Pos="165,315"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_Wheel_SlotBg.tga"
+		/>
+		<Image Name="LeftBackEmote"
+			Pos="15,165"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_Wheel_SlotBg.tga"
+		/>
+		<Image Name="RightBackEmote"
+			Pos="315,165"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_Wheel_SlotBg.tga"
+		/>
+		<Image Name="TopEquippedEmote"
+			Pos="165,15"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_facepalm.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="BottomEquippedEmote"
+			Pos="165,315"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_facepalm.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="LeftEquippedEmote"
+			Pos="15,165"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_facepalm.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="RightEquippedEmote"
+			Pos="315,165"
+			Size="150,150"
+			Image="UI/Extras/Emotes/Emote_facepalm.tga"
+			MouseSenseEnabled="0"
+		/>
+	</Container>	
+	<SmartTextBox Name="EmoteWheelDesc"
+		GuiAlign="leftcenter"
+		Pos="750,763"
+		Size="480,100"
+		Style="Headline_Large_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		_Text="openworld.GUI.extras.Emotes.Emote_wheel.desc"
+		CanProcessController="0"
+	/>
+	<Container Name="EmoteTypeContainer">
+		<Text Name="EmoteType_founding"
+			Pos="75,910"
+			Size="578,777"
+			Style="Rune_Name_Purple_Glow"
+			TextAlignH="center"
+			TextAlignV="top"
+			Text="openworld.GUI.extras.Legacy_founding"
+		/>
+		<Text Name="EmoteType_seasonal"
+			Pos="75,910"
+			Size="578,777"
+			Style="Rune_Name_Blue_Glow"
+			TextAlignH="center"
+			TextAlignV="top"
+			Text="openworld.GUI.extras.Legacy_seasonal"
+		/>
+		<Text Name="EmoteType_event"
+			Pos="75,910"
+			Size="578,777"
+			Style="Rune_Name_Blue_Glow"
+			TextAlignH="center"
+			TextAlignV="top"
+			Text="openworld.GUI.extras.Legacy_event"
+		/>
+	</Container>
+	<FlowContainer Name="PurchaseButtons" Horizontal="1" MarginTop="14" Pos="95,890" GuiAlign="leftcenter">
+		<Icon Name="PurchasePremium"
+			Size="272,80"							
+			IdleImg="UI/Menu/DLC/dlc_iconPremiumOff.tga"
+			PressImg="UI/Menu/DLC/dlc_iconPremiumOff.tga"
+			RolloverImg="UI/Menu/DLC/dlc_iconPremiumOver.tga"
+			UseButtonEffects="0"
+		/>
+		<Text Name="PremiumPrice"
+			Style="Text_Large_Light"
+			MarginTop="22"
+			MarginLeft="-190"
+			Size="172,30"
+			TextAlignH="center"
+			Text="common.dlc.premium"
+			MouseSenseEnabled="0"
+		/>
+		<Icon Name="PurchaseCash"
+			MarginLeft="8"
+			Size="272,80"
+			IdleImg="UI/Menu/DLC/dlc_iconCashOff.tga"
+			PressImg="UI/Menu/DLC/dlc_iconCashOff.tga"
+			RolloverImg="UI/Menu/DLC/dlc_iconCashOver.tga"
+			UseButtonEffects="0"
+			Visible="0"
+		/>
+		<Text Name="NormalPrice"
+			Style="Text_Large_Light"
+			MarginTop="22"
+			MarginLeft="-190"
+			Size="172,30"
+			TextAlignH="center"
+			Text="_69 EUR"
+			MouseSenseEnabled="0"
+			Visible="0"
+		/>
+	</FlowContainer>	
+	<Container Pos="0,1013" Size="1920,32" GuiAlign="bottomcenter" ShowCategory="mouse">
+		<FlowContainer Horizontal="1" HAlign="center">
+			<Image
+				Height="32"
+				Width="32"
+				Image="UI/Shortcuts/bigshortcut_leftclick.dds"
+			/>
+			<Text
+				Style="Text_Large_Light"
+				Height="30"
+				MarginTop="2"
+				MarginRight="48"
+				Text="openworld.GUI.extras.Emotes.Dragndrop"
+			/>
+			<Image
+				Height="32"
+				Width="32"
+				MarginLeft="20"
+				Image="UI/Shortcuts/bigshortcut_rightclick.dds"
+			/>
+			<Text
+				Style="Text_Large_Light"
+				Height="30"
+				MarginTop="2"
+				MarginRight="48"
+				Text="openworld.GUI.extras.Emotes.Remove"
+			/>
+		</FlowContainer>
+	</Container>
+	
+	<Dummy Name="DPadDummy" MouseSenseEnabled="0"/>
+</Window>

@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="535,95" GuiAlign="center" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<BrowserRowCount Type="int" Value="14"/>
+		<ChannelSlotCount Type="int" Value="5"/>
+		<MemberCount Type="int" Value="100"/>
+	</Constants>
+	
+	<Container>
+		<Image
+			Pos="0,0"
+			Size="848,840"
+			Image="UI/OpenWorld/Friends/friends_backgroundNew.tga"
+		/>
+		<Image
+			Pos="0,0"
+			Size="848,840"
+			Image="UI/common/Options/options_background2.tga"
+		/>
+		<Text
+			Pos="74,98"
+			Size="706,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="chat.channel.headline"
+		/>
+		
+		<Container Pos="0,130" Size="848,48" IgnoreScissor="1">
+			<FlowContainer Horizontal="1" HAlign="center" IgnoreScissor="1">
+				<XBOXButton Name="XBoxLB"
+					Size="48,48"
+					SetButton="LEFT_SHOULDER"
+				/>
+				<Icon Name="BrowseTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="chat.channel.tab.browse"
+				/>
+				<Icon Name="JoinedTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="chat.channel.tab.joined"
+				/>
+				<Icon Name="MyTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="chat.channel.tab.mychannel"
+				/>
+				<XBOXButton Name="XBoxRB"
+					Size="48,48"
+					SetButton="RIGHT_SHOULDER"
+				/>
+			</FlowContainer>
+		</Container>
+			
+		<Container Name="Browse" Visible="0">
+			<Image
+				Pos="51,211"
+				Size="752,524"
+				Image="UI/OpenWorld/Friends/info_frameSearch.tga"
+			/>
+			<EditBox Name="SearchEditBox"
+				Pos="54,194"
+				Size="312,32"
+				Style="Text_Normal_Dark"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<Icon Name="SearchButton"
+				Pos="388,192"
+				Size="164,36"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				Style="Starmap2_3"
+				UseButtonEffects="0"
+				Text="openworld.gui.cabal.search"
+				ShowCategory="mouse"
+			/>
+			<Text
+				Pos="94,240"
+				Size="144,30"
+				Style="Headline_Normal_Light_Glow"
+				IgnoreScissor="1"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.edit.name"
+			/>
+			<Text
+				Pos="369,240"
+				Size="174,30"
+				Style="Headline_Normal_Light_Glow"
+				IgnoreScissor="1"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.edit.desc"
+			/>
+			<Text
+				Pos="612,240"
+				Size="174,30"
+				Style="Headline_Normal_Light_Glow"
+				IgnoreScissor="1"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.members"
+			/>			
+			<Loop Count="@BrowserRowCount" Variable="$X$" Offset="0,32">
+				<Container Pos="56,272" Widht="744" Name="Channel$X$" IgnoreScissor="1">
+					<Icon Name="ChannelBg$X$"
+						Pos="0,0"
+						Size="744,32"
+						IdleImg="UI/OpenWorld/Friends/friends_frameOff.tga"
+						PressImg="UI/OpenWorld/Friends/friends_frameOn.tga"
+						RolloverImg="UI/OpenWorld/Friends/friends_frameOver.tga"
+						UseButtonEffects="0"
+						ControllerSenseEnabled="1"
+						SlideredElement="1"
+					/>
+					<Image Name="ChannelStatusIcon$X$"
+						Pos="4,3"
+						Size="28,24"
+						Image="UI/OpenWorld/Friends/friends_statusOffline.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="ChannelName$X$"
+						Pos="38,0"
+						Size="270,32"
+						Style="Normal_White"
+						Color="#99cccc"
+						TextAlignH="left"
+						FontSize="16"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="Very nice long channel name, the longhiest"
+					/>
+					<Text Name="ChannelDesc$X$"
+						Pos="313,0"
+						Size="364,32"
+						Style="Text_Normal_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="Very nice long channel desc, the longhiest description ever made by humans"
+						Truncate="1"
+					/>
+					<Text Name="ChannelMembers$X$"
+						Pos="685,0"
+						Size="54,32"
+						Style="Text_Normal_Dark"
+						FontType="Share Tech Mono"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="_69/100"
+					/>
+				</Container>
+			</Loop>
+		
+			<Container Pos="50,736">
+				<Text Name="PageNumbers"			
+					Size="160,36" 
+					Pos="300,0"
+					Style="Text_Normal_Dark" 
+					Text="_1/12" 
+				/>
+				<Icon Name="PageBack"
+					Pos="0,0"
+					Size="36,36"
+					IdleImg="UI/Leaderboard/button_prevOff.tga"
+					PressImg="UI/Leaderboard/button_prevOn.tga"
+					RolloverImg="UI/Leaderboard/button_prevOver.tga"
+				/>
+				<Icon Name="PageNext"
+					Pos="715,0"
+					Size="36,36"
+					IdleImg="UI/Leaderboard/button_nextOff.tga"
+					PressImg="UI/Leaderboard/button_nextOn.tga"
+					RolloverImg="UI/Leaderboard/button_nextOver.tga"
+				/>
+			</Container>
+			
+			<Text Name="ChannelSlotRemaining"
+				Pos="560,190"
+				Size="234,40"
+				Style="Text_Normal_Color"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="_Joined channels: 3/5"
+			/>
+			<Icon Name="JoinChannelButton"
+				Pos="662,782"
+				Size="160,40"
+				IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+				Style="Starmap2_3"
+				ShowCategory="mouse"
+				Text="chat.channel.join"
+			/>
+		</Container>
+
+		<Container Name="Joined" Visible="1">
+			<TextBox
+				Pos="62,165"
+				Size="744,80"
+				Style="Text_Normal_Color"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="chat.channel.joined.header"
+				MouseSenseEnabled="0"
+			/>
+			<Loop Count="@ChannelSlotCount" Variable="$X$" Offset="0,88">
+			<Container Pos="52,228"	Size="748,80" Name="JoinedChannel$X$" Visible="1">
+				<Icon Name="JoinedChannelIcon$X$"
+					Size="748,80"
+					IdleImg="UI/OpenWorld/Chat/channels_frameOff.tga"
+					PressImg="UI/OpenWorld/Chat/channels_frameOver.tga"
+					RolloverImg="UI/OpenWorld/Chat/channels_frameOver.tga"
+					UseButtonEffects="0"
+					ControllerSenseEnabled="1"
+					SlideredElement="1"
+				/>
+				<Text Name="JoinedChannelName$X$"
+					Pos="10,10"
+					Size="400,36"
+					Style="Headline_Normal_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_That supper channelll $X$"
+					FontSize="20"
+					MouseSenseEnabled="0"
+				/>
+				<Text Name="JoinedChannelMembers$X$"
+					Pos="10,36"
+					Size="400,36"
+					Style="Text_Normal_Color"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_69/100 member"
+					MouseSenseEnabled="0"
+				/>
+				<Icon Name="JoinedChannelShortCodeBox$X$"
+					Size="160,36"
+					Pos="502,21"
+					IdleImg="UI/common/Options/button_largeOff.tga"
+					PressImg="UI/common/Options/button_largeOff.tga"
+					RolloverImg="UI/common/Options/button_largeOver.tga"
+					UseButtonEffects="0"
+					ControllerSenseEnabled="1"
+					SlideredElement="1"
+				/>
+				<Text Name="JoinedChannelShortCode$X$"
+					Pos="502,19"
+					Size="160,40"
+					Style="Text_Normal_Color"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_[CH$X$]"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="JoinedChannelColor$X$"
+					Pos="680,19"
+					Size="40,40"
+					ColorMask="$X$0$X$0$X$0$X$0"/>
+			</Container>
+			<Container Pos="52,228"	Size="748,80" Name="EmptyChannel$X$" Visible="0">
+				<Icon
+					Size="748,80"
+					AllImg="UI/OpenWorld/Chat/channels_frameOff.tga"
+					UseButtonEffects="0"
+					ControllerSenseEnabled="1"
+					SlideredElement="1"
+					Alpha="0.3"
+				/>
+				<Text
+					Style="Text_Normal_Color"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="chat.channel.joined.empty"
+				/>
+			</Container>
+			</Loop>
+			<TextBox
+				Pos="62,700"
+				Size="744,80"
+				Style="Text_Normal_Color"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="chat.channel.joined.desc"
+			/>
+			<Icon Name="LeaveChannelButton"
+				Pos="662,782"
+				Size="160,40"
+				IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+				Style="Starmap2_3"
+				ShowCategory="mouse"
+				Text="chat.channel.leave"
+			/>
+		</Container>
+		
+		<Container Name="MyChannel" Visible="0">
+			<TextBox
+				Pos="62,160"
+				Size="744,80"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.nochannel"
+				MouseSenseEnabled="0"
+			/>
+			<Icon Name="CreateChannelButton"
+				Pos="662,782"
+				Size="160,40"
+				IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+				Style="Starmap2_3"
+				ShowCategory="mouse"
+				Text="chat.channel.create"
+			/>
+		</Container>
+		
+		<Container Name="EditChannel" Visible="0">
+			<Image
+				Pos="54,422"
+				Size="356,308"
+				Image="UI/OpenWorld/Friends/info_frameList.tga"
+			/>
+			<Image
+				Pos="436,422"
+				Size="356,308"
+				Image="UI/OpenWorld/Friends/info_frameList.tga"
+			/>				
+			<Text
+				Pos="60,160"
+				Size="550,80"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.edit.name"
+			/>
+			<EditBox Name="EditChannelName"
+				Pos="54,213"
+				Size="550,32"
+				Style="Text_Normal_Dark"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<Text
+				Pos="640,160"
+				Size="140,80"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.edit.shortname"
+			/>
+			<EditBox Name="EditChannelShortName"
+				Pos="634,213"
+				Size="158,32"
+				Style="Text_Normal_Dark"
+				TextAlignH="left"
+				TextAlignV="center"
+				MaxCharacters="8"
+			/>
+			<Text
+				Pos="60,226"
+				Size="550,80"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.edit.desc"
+			/>
+			<TextEditor Name="EditChannelDesc"
+				Pos="54,280"
+				Size="550,110"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<Text
+				Pos="640,252"
+				Size="140,80"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.edit.access"
+			/>
+			<RadioGroupLogical Name="EditChannelAccess"/>
+			<CheckBox Name="PrivateAccess"
+				Pos="642,292"
+				Size="140,80"
+				MarginTop="12"
+				Height="30"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				RadioGroup="EditChannelAccess"
+				UseDefault="1"
+				Text="chat.channel.mychannel.edit.access.private"
+			/>
+			<CheckBox Name="PublicAccess"
+				Pos="642,320"
+				Size="140,80"
+				MarginTop="12"
+				Height="30"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				RadioGroup="EditChannelAccess"
+				UseDefault="1"
+				Text="chat.channel.mychannel.edit.access.public"
+			/>
+			<Text
+				Pos="60,371"
+				Size="140,80"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.members"
+			/>
+			<Text
+				Pos="442,371"
+				Size="140,80"
+				Style="Text_Normal_Color"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="chat.channel.mychannel.banned"
+			/>
+			<ScrollableContainer Pos="57,424" Size="371,302">
+			<FlowContainer>
+			<Loop Count="@MemberCount" Variable="$X$">
+				<Container Name="Member$X$" Size="351,30">
+					<Icon Name="MemberIcon$X$"
+						IdleImg="UI/OpenWorld/Friends/friends_frameOff.tga"
+						PressImg="UI/OpenWorld/Friends/friends_frameOn.tga"
+						RolloverImg="UI/OpenWorld/Friends/friends_frameOver.tga"
+						UseButtonEffects="0"
+					/>
+					<Text Name="MemberName$X$"
+						Text="Player $X$" 
+						Style="Text_Normal_Color" 
+						MouseSenseEnabled="0"
+						TextAlignH="left"
+						TextAlignV="center"
+						MarginLeft="5"
+					/>
+				</Container>
+			</Loop>
+			</FlowContainer>
+			</ScrollableContainer>
+			<Icon Name="KickButton"
+				Pos="50,733"
+				Size="158,36"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				Style="Starmap2_3"
+				UseButtonEffects="0"
+				Text="chat.channel.mychannel.kick"
+				ShowCategory="mouse"
+			/>
+			<Icon Name="BanButton"
+				Pos="214,733"
+				Size="158,36"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				Style="Starmap2_3"
+				UseButtonEffects="0"
+				Text="chat.channel.mychannel.ban"
+				ShowCategory="mouse"
+			/>
+			<ScrollableContainer Pos="439,428" Size="371,302">
+			<FlowContainer>
+			<Loop Count="@MemberCount" Variable="$X$">
+				<Container Name="BannedMember$X$" Size="305,30">
+					<Icon Name="BannedMemberIcon$X$"
+						IdleImg="UI/OpenWorld/Friends/friends_frameOff.tga"
+						PressImg="UI/OpenWorld/Friends/friends_frameOn.tga"
+						RolloverImg="UI/OpenWorld/Friends/friends_frameOver.tga"
+						UseButtonEffects="0"
+					/>
+					<Text Name="BannedMemberName$X$"
+						Text="Player $X$" 
+						Style="Text_Normal_Color" 
+						MouseSenseEnabled="0"
+						TextAlignH="left"
+						TextAlignV="center"
+						MarginLeft="5"
+					/>
+				</Container>
+			</Loop>
+			</FlowContainer>
+			</ScrollableContainer>
+			<Icon Name="UnBanButton"
+				Pos="638,733"
+				Size="158,36"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				Style="Starmap2_3"
+				UseButtonEffects="0"
+				Text="chat.channel.mychannel.unban"
+				ShowCategory="mouse"
+			/>
+			<Text Name="ChannelFeedbackButton"
+				Pos="342,782"
+				Size="160,40"
+				Style="Text_Normal_White"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="_Saved"
+				Enabled="0"
+				Visible="0"
+			/>
+			<Icon Name="SaveChannelButton"
+				Pos="662,782"
+				Size="160,40"
+				IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+				Style="Starmap2_3"
+				ShowCategory="mouse"
+				Text="chat.channel.mychannel.save"
+			/>
+			<Icon Name="DeleteButton"
+				Pos="502,782"
+				Size="160,40"
+				IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+				Style="Starmap2_3"
+				ShowCategory="mouse"
+				Text="chat.channel.mychannel.delete"
+			/>
+		</Container>
+		
+		<Icon Name="Close"
+			Pos="801,118"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+</Window>

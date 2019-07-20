@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window >
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<CustomChannelCount Type="int" Value="5"/>
+		<OptionsMenu1Count Type="int" Value="4"/>
+		<OptionsMenu2Count Type="int" Value="3"/>
+		<BattlePosX Type="int" Value="46"/>
+		<BattlePosY Type="int" Value="560"/>
+		<DefaultPosX Type="int" Value="46"/>
+		<DefaultPosY Type="int" Value="730"/>
+		<ControllerDefaultPosX Type="int" Value="46"/>
+		<ControllerDefaultPosY Type="int" Value="730"/>
+		
+		
+		<TabsActiveLeft Type="string" Value="UI/OpenWorld/Chat/tabs/chat_tabs_buttonOn_left.dds"/>
+		<TabsActiveCenter Type="string" Value="UI/OpenWorld/Chat/tabs/chat_tabs_buttonOn_middle.dds"/>
+		<TabsActiveRight Type="string" Value="UI/OpenWorld/Chat/tabs/chat_tabs_buttonOn_right.dds"/>
+		<TabsInactiveLeft Type="string" Value="UI/OpenWorld/Chat/tabs/chat_tabs_buttonOff_left.tga"/>
+		<TabsInactiveCenter Type="string" Value="UI/OpenWorld/Chat/tabs/chat_tabs_buttonOff_middle.tga"/>
+		<TabsInactiveRight Type="string" Value="UI/OpenWorld/Chat/tabs/chat_tabs_buttonOff_right.tga"/>
+		<TabHeight Type="int" Value="32"/>
+		<MaxTabCount Type="int" Value="8"/>
+		<TabLineWidth Type="int" Value="450"/>
+		<TabCornerWidth Type="int" Value="4"/>
+		
+	</Constants>
+	
+	<Styles>
+		<Text_Chat FontType="Roboto" FontSize="15" Color="#ededed" Sharpness="0.5" 
+		OutlineColor="0xAA000000" FontOutlineWidth="5" OutlineSharpness="1" OutlineOffset="0.0"
+		MinLineHeight="0.0"
+		/>
+	</Styles>
+	
+	
+	
+	
+	<Container IgnoreScissor="1" Name="GreatContainer" GuiAlign="bottomleft" >
+	
+		<Icon Name="HideIcon"
+			Pos="-38,28"
+			Size="36,36"
+			IdleImg="UI/OpenWorld/Chat/button_chatCloseOff.tga"
+			PressImg="UI/OpenWorld/Chat/button_chatCloseOver.tga"
+			RolloverImg="UI/OpenWorld/Chat/button_chatCloseOver.tga"
+			IndeterminateImg="UI/OpenWorld/Chat/button_chatCloseOver.tga"
+			UseButtonEffects="0"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="chat.buttons.toggle"
+		/>
+		
+		<Icon Name="PmNotification"
+			Pos="-20,45"
+			Size="24,24"
+			IdleImg="UI/OpenWorld/Chat/button_pmalert.tag"
+			PressImg="UI/OpenWorld/Chat/button_pmalert.tga"
+			RolloverImg="UI/OpenWorld/Chat/button_pmalert.tga"
+			UseButtonEffects="0"
+			MouseSenseEnabled="0"
+		/>
+			
+		<Image Name="ChatBack"
+			Pos="0,32"
+			Size="496,223"
+			Image="UI/OpenWorld/Chat/tabs/chat_tabs_frameMiddle.tga"
+			MouseSenseEnabled="0"
+		/>
+		
+		<Container Name="ChatBox" IgnoreScissor="1">
+			<Image Name="ChatBackBottom"
+				Pos="0,255"
+				Size="496,40"
+				Image="UI/OpenWorld/Chat/tabs/chat_tabs_frameBottom.tga"
+				MouseSenseEnabled="0"
+			/>
+			
+			<Image Image="UI/OpenWorld/Chat/tabs/chat_tabs_left.tga" Pos="0,0" Size="8,32"/>
+			<FlowContainer Name="Tabs" Horizontal="1" Pos="8,0" Height="32" IgnoreScissor="1">
+				<Loop Count="@MaxTabCount" Variable="$x$">
+					<FlowContainer 
+						Name="Tab$x$"
+						Horizontal="1"
+						Height="@TabHeight"
+						BackgroundTopSize="@TabCornerWidth"
+						BackgroundBotSize="@TabCornerWidth"
+						BackgroundTopImage="@TabsActiveLeft"
+						BackgroundMidImage="@TabsActiveCenter"
+						BackgroundBotImage="@TabsActiveRight"
+						IgnoreScissor="1"
+					>
+						<Icon Name="TabText$x$" 
+							Text="Tab$x$" 
+							Size="100,30" 
+							Style="Starmap2_3" 
+							AllImg="none"
+							IgnoreScissor="1"
+						>
+							<Image Name="TabArrow$x$" Image="UI/OpenWorld/Chat/tabs/chat_tabs_arrow.tga" Size="12,8" Pos="-6,-8" Visible="0"/>
+							<Dummy Name="TabMoveDummy$x$" Height="64" Visible="0"/>
+						</Icon>
+					</FlowContainer>
+				</Loop>
+				
+				<FlowContainer 
+						Name="AddTabButton"
+						Horizontal="1"
+						Height="@TabHeight"
+						BackgroundTopSize="@TabCornerWidth"
+						BackgroundBotSize="@TabCornerWidth"
+						BackgroundTopImage="@TabsInactiveLeft"
+						BackgroundMidImage="@TabsInactiveCenter"
+						BackgroundBotImage="@TabsInactiveRight"
+					>
+						<Icon Name="AddTabText" 
+							Text="+" 
+							Size="30,30" 
+							Style="Starmap2_3" 
+							AllImg="none"
+						/>
+				</FlowContainer>
+			<Image Image="UI/OpenWorld/Chat/tabs/chat_tabs_middle.tga" Pos="0,0" Size="0,32" Name="RemainingLine"/>
+			</FlowContainer>
+			<Image Image="UI/OpenWorld/Chat/tabs/chat_tabs_right.tga" Pos="488,0" Size="8,32" />
+			
+			<EditBox Name="FakeInput"
+				Size="482,30" Pos="8,259"
+				Style="Text_Normal_White"
+				Enabled="0"
+			/>
+			
+			<GridContainer Size="477,30" Pos="13,259">
+				<Columns>
+					<Column Width="Auto" />
+					<Column Width="1*" />
+				</Columns>
+				<Text Name="ChatInputLabel"
+					Text="[senki]"
+					Style="Text_Normal_White"
+					HAlign="left"
+					VAlign="center"
+					Column="0"
+				/>
+				<ChatEditBox Name="ChatInput"
+					Style="Text_Chat"
+					Column="1"
+					EnableBorder="0"
+					MarginLeft="1"
+					MaxCharacters="200"
+				/>
+			</GridContainer>
+
+			
+			<Icon Name="SettingsButton"
+				Pos="-38,64"
+				Size="36,36"
+				IdleImg="UI/OpenWorld/Chat/button_settingsOff.tga"
+				PressImg="UI/OpenWorld/Chat/button_settingsOff.tga"
+				RolloverImg="UI/OpenWorld/Chat/button_settingsOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="chat.buttons.settings"
+			/>
+			
+			<Icon Name="ChannelButton"
+				Pos="-38,100"
+				Size="36,36"
+				IdleImg="UI/OpenWorld/Chat/button_channelsOff.tga"
+				PressImg="UI/OpenWorld/Chat/button_channelsOff.tga"
+				RolloverImg="UI/OpenWorld/Chat/button_channelsOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="chat.buttons.channels"
+			/>
+
+		</Container>
+		
+		<ScrollableContainer Name="ChatContainer"
+			Pos="10,42"
+			Size="472,212"
+			ZOffset="@Layer_0_ZOffset"
+			TiltPivot="@BottomLeftTiltPivot"
+			TiltMouseCenter="@BottomLeftTiltMouseCenter"
+			DefaultTilt="@BottomLeftDefaultTilt"
+			MaximumTilt="@BottomLeftMaximumTilt"
+			TiltZone="200,0,720,1080"
+			ScrollSpeed="30"
+		>
+			<SmartTextBox Name="ChatTextBox"
+				VerticalAlignment="top"
+				Style="Text_Chat"
+				TextAlignH="left"
+				TextAlignV="top"
+				MouseSenseEnabled="0"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomLeftTiltPivot"
+				TiltMouseCenter="@BottomLeftTiltMouseCenter"
+				DefaultTilt="@BottomLeftDefaultTilt"
+				MaximumTilt="@BottomLeftMaximumTilt"
+				TiltZone="200,0,720,1080"
+			/>
+		</ScrollableContainer>
+		
+		<Container Name="OptionsLevel_Root" Pos="15,66" Visible="0" IgnoreScissor="1">
+				
+			<Dummy Name="SettingsBgDummy"
+				Pos="-15,-54"
+				Size="496,355"
+			/>
+			<FlowContainer>			
+				<Icon Name="OptionsMenu_Channels"
+					Pos="0,0"
+					Size="160,32"
+					MarginBottom="-2"
+					IdleImg="UI/OpenWorld/Chat/chat_menuOff.tga"
+					RolloverImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					Text="chat.buttons.channels"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>
+
+				<Icon Name="OptionsMenu_Rename"
+					Pos="0,0"
+					Size="160,32"
+					MarginBottom="-2"
+					IdleImg="UI/OpenWorld/Chat/chat_menuOff.tga"
+					RolloverImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					Text="chat.buttons.rename"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>	
+				
+				<Icon Name="OptionsMenu_Delete"
+					Pos="0,0"
+					Size="160,32"
+					MarginBottom="-2"
+					IdleImg="UI/OpenWorld/Chat/chat_menuOff.tga"
+					RolloverImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					Text="chat.buttons.delete"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>
+				
+				<Icon Name="OptionsMenu_Create"
+					Pos="0,0"
+					Size="160,32"
+					MarginBottom="-2"
+					IdleImg="UI/OpenWorld/Chat/chat_menuOff.tga"
+					RolloverImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					Text="chat.buttons.create"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>		
+				
+				<Icon Name="OptionsMenu_Settings"
+					Pos="0,0"
+					Size="160,32"
+					MarginBottom="-2"
+					IdleImg="UI/OpenWorld/Chat/chat_menuOff.tga"
+					RolloverImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menuOver.tga"
+					Text="chat.buttons.settings"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>			
+			</FlowContainer>
+			
+			<Container Name="OptionsLevel_Channels" Pos="160,0" Visible="0">
+				<Image
+					Pos="0,4"
+					Size="20,24"
+					Image="UI/OpenWorld/Chat/chat_menuArrow.tga"
+					MouseSenseEnabled="0"
+				/>	
+
+				<Icon Name="OptionsMenu_Channel_General"
+					Pos="20,0"
+					Size="160,32"
+					AllImg="UI/OpenWorld/Chat/chat_menu_checkboxOff.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menu_checkboxOver.tga"
+					Text="chat.channels.general"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>
+				
+				<Icon Name="OptionsMenu_Channel_Party"
+					Pos="20,30"
+					Size="160,32"
+					AllImg="UI/OpenWorld/Chat/chat_menu_checkboxOff.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menu_checkboxOver.tga"
+					Text="chat.channels.party"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>
+
+				<Icon Name="OptionsMenu_Channel_Cabal"
+					Pos="20,60"
+					Size="160,32"
+					AllImg="UI/OpenWorld/Chat/chat_menu_checkboxOff.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menu_checkboxOver.tga"
+					Text="chat.channels.clan"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>
+
+				<Icon Name="OptionsMenu_Channel_Team"
+					Pos="20,90"
+					Size="160,32"
+					AllImg="UI/OpenWorld/Chat/chat_menu_checkboxOff.tga"
+					PressImg="UI/OpenWorld/Chat/chat_menu_checkboxOver.tga"
+					Text="chat.channels.team"
+					Style="Starmap2_3"
+					TextAlignH="left"
+				/>
+				<Container Pos="20,120">
+					<Loop Count="@CustomChannelCount" Variable="$X$" Offset="0,30">
+						<Icon Name="OptionsMenu_Channel_Custom$X$"
+							Size="160,32"
+							AllImg="UI/OpenWorld/Chat/chat_menu_checkboxOff.tga"
+							PressImg="UI/OpenWorld/Chat/chat_menu_checkboxOver.tga"
+							Text="__Channel$X$"
+							Style="Starmap2_3"
+							TextAlignH="left"
+						/>
+					</Loop>
+				</Container>
+			</Container>
+		
+		</Container>
+	
+	</Container>	
+	
+	<ContextMenu Name="ContextMenu" Style="ContextMenuButton" InitPopup="center,center"/>
+
+</Window>

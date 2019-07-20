@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+
+	<Constants>
+		<TargetWaitMSec Type="float" Value="333"/>
+		<ShootWaitMSec Type="float" Value="0"/>
+	</Constants>
+	
+	<Container>
+		<Image
+			Size="200,200"
+			Image="UI/BATTLE_UI/aimed/aimed_bg.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotBack0"
+			Pos="30,1"
+			Size="140,68"
+			Image="UI/BATTLE_UI/aimed/aimed_button1Over.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotBack1"
+			Pos="130,29"
+			Size="68,140"
+			Image="UI/BATTLE_UI/aimed/aimed_button2Over.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotBack2"
+			Pos="30,129"
+			Size="140,68"
+			Image="UI/BATTLE_UI/aimed/aimed_button3Over.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotBack3"
+			Pos="2,29"
+			Size="68,140"
+			Image="UI/BATTLE_UI/aimed/aimed_button4Over.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotIcon0"
+			Pos="81,8"
+			Size="36,36"
+			Image="UI/BATTLE_UI/aimed/aimed_icon_headOn.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotIcon1"
+			Pos="151,78"
+			Size="36,36"
+			Image="UI/BATTLE_UI/aimed/aimed_icon_headOn.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotIcon2"
+			Pos="82,152"
+			Size="36,36"
+			Image="UI/BATTLE_UI/aimed/aimed_icon_headOn.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="SlotIcon3"
+			Pos="13,78"
+			Size="36,36"
+			Image="UI/BATTLE_UI/aimed/aimed_icon_headOn.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="TimeUnderlay"
+			Pos="47,51"
+			Size="100,100"
+			Image="UI/BATTLE_UI/aimed/aimed_upper.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="DamageBonus"
+			Pos="68,77"
+			Size="62,40"
+			Style="Text_XLarge_White_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+		/>
+		<MaskedImage Name="TimeOverlay"
+			Pos="49,51"
+			Size="96,96"
+			Image="UI/BATTLE_UI/aimed/sniper_bar.dds"
+			AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+</Window>

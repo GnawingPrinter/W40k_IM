@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Size="300,160">
+	<Constants>
+		<MaxKoponyaCountLarge Type="int" Value="4"/>
+		<MaxKoponyaCountSmall Type="int" Value="5"/>
+	</Constants>
+	
+	<FlowContainer Width="300" VerticalAlignment="bottom">	
+		<Include Path="Windows/Objectives/ExtraObjectives.xml"/>
+		<Text Name="Title" Pos="17,4" Size="280,32" Style="Headline_Large_Color_Glow" TextAlignH="left" TextAlignV="center" Text="mission.Hunt.Name"/>
+		<FlowContainer Name="HuntMission" MarginTop="4" MarginBottom="0" TextAlignV="bottom"
+		Width="300"
+		BackgroundTopSize="36"
+		BackgroundBotSize="100"
+		BackgroundTopImage="UI/objectives/objectives_backgroundTop.tga"
+		BackgroundMidImage="UI/objectives/objectives_backgroundMiddle.tga"
+		BackgroundBotImage="UI/objectives/objectives_backgroundBottom.tga"
+		>
+			<Dummy Height="22"/>
+			<Container Name="RatingBlock" Pos="16,0" Size="266,64" VerticalAlignment="bottom">		
+				<Image Name="RatingBack" Pos="0,0" Size="84,52" Image="UI/OpenWorld/icon_challengeGreen.tga"/>
+				<Text Name="RatingValue" Pos="5,7" Size="72,36" Style="Clue_Cogitator_Text" FontSize="28" BiggerFontSize="30" Color="#21c800" Sharpness="0.5"/>
+				<Text Name="ChallengeDamageModifier" Pos="88,-3" Size="178,32" Style="Text_Normal_White" FontSize="16" TextAlignH="left" TextAlignV="center"/>
+				<Text Name="ChallengeDamageReductionModifier" Pos="88,24" Size="178,32" Style="Text_Normal_White" FontSize="16" TextAlignH="left" TextAlignV="center"/>			
+				<Image Name="Line" Pos="0,59" Size="266,4" Image="UI/Assignment/assignment_bigline.tga"/>
+			</Container>
+
+			<FlowContainer Name="Objective" Pos="14,0" Width="280">
+				<Container Pos="0,0" Size="280,84">
+					<Text Name="EnemiesKilled" Pos="0,0" Size="266,30" Style="Text_Large_Light_Glow" TextAlignH="center" TextAlignV="center" Text="mission.common.elites_killed"/>
+					<Container Pos="0,30" Size="266,48">
+						<FlowContainer Horizontal="1" HorizontalAlignment="center">
+							<Image Name="BossHPBar0" Size="48,48" MarginLeft="5" MarginRight="5" Image="UI/Objectives/objective_iconHuntOn.tga"/>
+							<Image Name="BossHPBar1" Size="48,48" MarginLeft="5" MarginRight="5" Image="UI/Objectives/objective_iconHuntOn.tga"/>
+							<Image Name="BossHPBar2" Size="48,48" MarginLeft="5" MarginRight="5" Image="UI/Objectives/objective_iconHuntOn.tga"/>
+						</FlowContainer>
+					</Container>
+				</Container>
+				<Container MarginTop="0">
+					<CheckBox Name="Objective1_Off" Size="24,24" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+					<CheckBox Name="Objective1_On" Size="24,24" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+					<TextBox Name="ObjectiveText" Pos="30,2" Width="250" UseSlider="0" Style="Text_Normal_Color" VerticalAlignment="top" TextAlignH="left" TextAlignV="top" Text="mission.Hunt.objective1"/>
+				</Container>
+			</FlowContainer>	
+
+			<Container Pos="0,0" Size="284,42" MarginTop="6" MarginBottom="19">
+				<Image Name="Line2" Pos="14,1" Size="266,4" Image="UI/Assignment/assignment_bigline.tga"/>	
+				<Text Name="AllowedDeath" Pos="17,10" Size="130,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.common.allowed_death"/>
+				<Container Name="SkullsLarge" Pos="156,11" Size="128,32">
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Loop Count="@MaxKoponyaCountLarge" Variable="$X$">
+							<Image Name="LifeLarge$X$" Size="32,32" Image="UI/Objectives/objectives_lifeOn.tga"/>
+						</Loop>
+					</FlowContainer>
+				</Container>
+				<Container Name="SkullsSmall" Pos="164,13" Size="120,32" Visible="0">
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Loop Count="@MaxKoponyaCountSmall" Variable="$X$">
+							<Image Name="LifeSmall$X$" Size="24,24" Image="UI/Objectives/objectives_lifeOn.tga"/>
+						</Loop>
+					</FlowContainer>
+				</Container>
+			</Container>			
+
+		</FlowContainer>
+	</FlowContainer>
+</Window>

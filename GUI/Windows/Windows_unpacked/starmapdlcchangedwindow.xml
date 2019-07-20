@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="461,95" GuiAlign="center" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Styles>
+		<OptionContainerStyle
+			Size="800,32"
+		/>
+		<OptionLabelStyle
+			Pos="0,2"
+			Size="400,28"
+			Style="Text_Normal_Dark_Outline"
+			BiggerFontSize="21"
+			TextAlignH="left"
+			TextAlignV="center"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionSliderStyle
+			Pos="400,6"
+			Size="400,20"
+			RangeMin="0"
+			RangeMax="100"
+			StepSize="1"
+			PageSize="10"
+			ShownSize="10"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionComboBox
+			Pos="400,0"
+			Size="400,32"
+			Style="Text_Normal_White"
+			TextAlignH="left"
+			TextAlignV="center"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionCheckboxStyle
+			Size="600,32"
+			Style="Text_Normal_Dark_Outline"
+			BiggerFontSize="21"
+			TextAlignH="left"
+			TextAlignV="center"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionCheckboxStyleNoText
+			Size="32,32"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+	</Styles>
+
+	<Constants>
+		<TiltPivot Value="1650,0"/>
+		<TiltMouseCenter Value="1780,540"/>
+		<DefaultTilt Value="0.0,0.0"/>
+		<MaximumTilt Value="0.0,0.0"/>
+		<TiltZone Value="0,0,0,0"/>
+		
+		<HotkeyCount Type="int" Value="12"/>
+		<QualityCount Type="int" Value="6"/>
+		<TextureCount Type="int" Value="2"/>
+		<DecorCount Type="int" Value="6"/>
+	</Constants>
+	
+	<Container IgnoreScissor="1">
+		<Image
+			Pos="0,0"
+			Size="996,840"
+			Image="UI/common/Options/options_background1.tga"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<Image
+			Pos="0,0"
+			Size="996,840"
+			Image="UI/common/Options/options_background2_resized.tga"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<Text
+			Pos="148,98"
+			Size="706,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="common.options"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		
+	</Container>
+	
+	<Container Name="MainPage">
+		<ScrollableContainer Pos="72,186" Size="890,578">
+			<FlowContainer Width="850">
+		
+			<Image Name="DlcImage"
+				Pos="200,200"
+				Size="400,400"
+				Image="UI/Assignment/assignment_bigline.tga"
+				TiltPivot="@TiltPivot"
+				TiltMouseCenter="@TiltMouseCenter"
+				DefaultTilt="@DefaultTilt"
+				MaximumTilt="@MaximumTilt"
+				TiltZone="@TiltZone"
+			/>		
+			
+			<Text Name="DlcText"
+				Pos="59,100"
+				Style="OptionLabelStyle"
+				Text="battle.event.miss"
+			/>
+				
+			</FlowContainer>
+		</ScrollableContainer>
+	</Container>
+		
+</Window>

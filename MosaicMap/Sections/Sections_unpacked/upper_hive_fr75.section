@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Upper_Hive_Fr75 Terrain="Terrains/Sections/Upper_Hive/Upper_Hive_Fr75.VHT" Preview="Terrains/Sections/Upper_Hive/MapEditorImages/Upper_Hive_Fr42_thumb.bmp" Image="Terrains/Sections/Upper_Hive/MapEditorImages/Upper_Hive_Fr42.bmp" MinClickHeight="-50000" Background="false" MapType="Upper Hive">
+	<PivotPos x="3036" y="2162" />
+	<Tags />
+	<Grids>
+		<Grid Column="0" Row="0" Image="" />
+	</Grids>
+</Upper_Hive_Fr75>

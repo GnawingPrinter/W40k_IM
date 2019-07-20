@@ -1,0 +1,63 @@
+<Root>
+	<XBOX_X 				path="UI/common/XBOX/Buttons/X.dds"			size="58,58" charsize="32,32" offset="-8, -10"/>
+	<XBOX_Y 				path="UI/common/XBOX/Buttons/Y.dds"			size="58,58" charsize="32,32" offset="-8, -10"/>
+	<XBOX_A 				path="UI/common/XBOX/Buttons/A.dds"			size="58,58" charsize="32,32" offset="-8, -10"/>
+	<XBOX_B 				path="UI/common/XBOX/Buttons/B.dds"			size="58,58" charsize="32,32" offset="-8, -10"/>
+	<XBOX_LEFT_SHOULDER 	path="UI/common/XBOX/Buttons/LB.dds" 		size="52,52" charsize="38,25" offset="-2, -9" />
+	<XBOX_RIGHT_SHOULDER 	path="UI/common/XBOX/Buttons/RB.dds" 		size="52,52" charsize="38,25" offset="-2, -9" />
+	<XBOX_LEFT_TRIGGER 		path="UI/common/XBOX/Buttons/LT.dds" 		size="58,58" charsize="32,32" offset="-8, -11" />
+	<XBOX_RIGHT_TRIGGER 	path="UI/common/XBOX/Buttons/RT.dds" 		size="58,58" charsize="32,32" offset="-8, -11" />
+	<XBOX_DPAD_LEFT 		path="UI/common/XBOX/Buttons/Dpad_Left.dds" 	size="55,55" charsize="40,35" offset="-3, -10" />
+	<XBOX_DPAD_RIGHT 		path="UI/common/XBOX/Buttons/Dpad_Right.dds" 	size="55,55" charsize="40,35" offset="-3, -10" />
+	<XBOX_DPAD_UP 			path="UI/common/XBOX/Buttons/Dpad_Up.dds" 		size="55,55" charsize="40,35" offset="-3, -10" />
+	<XBOX_DPAD_DOWN 		path="UI/common/XBOX/Buttons/Dpad_Down.dds" 	size="55,55" charsize="40,35" offset="-3, -10" />
+	<XBOX_DPAD_LEFT_RIGHT	path="UI/common/XBOX/Buttons/Dpad_left-right.dds" 	size="55,55" charsize="40,35" offset="-3, -10" />
+	<XBOX_LEFT_THUMB 		path="UI/common/XBOX/Buttons/LThumb.dds" 		size="58,58" charsize="36,30" offset="-6, -10" />
+	<XBOX_RIGHT_THUMB 		path="UI/common/XBOX/Buttons/RThumb.dds" 		size="58,58" charsize="36,30" offset="-6, -10" />
+	<XBOX_R_STICK	 		path="UI/common/XBOX/Buttons/RStick.dds"  		size="58,58" charsize="32,32" offset="-8, -10" />
+	<XBOX_R_STICK_UP 		path="UI/common/XBOX/Buttons/RStick_up.dds"  	size="58,58" charsize="26,32" offset="-10, -10" />
+	<XBOX_R_STICK_DOWN 		path="UI/common/XBOX/Buttons/RStick_down.dds"  	size="58,58" charsize="26,32" offset="-10, -10" />
+	<XBOX_R_STICK_LEFT 		path="UI/common/XBOX/Buttons/RStick_left.dds"  	size="58,58" charsize="34,32" offset="-4, -10" />
+	<XBOX_R_STICK_RIGHT 	path="UI/common/XBOX/Buttons/RStick_right.dds" 	size="58,58" charsize="34,32" offset="-10, -10" />
+	<XBOX_L_STICK	 		path="UI/common/XBOX/Buttons/LStick.dds"  		size="58,58" charsize="32,32" offset="-8, -10" />
+	<XBOX_L_STICK_UP 		path="UI/common/XBOX/Buttons/LStick_up.dds" 	size="58,58" charsize="26,32" offset="-10, -10" />
+	<XBOX_L_STICK_DOWN 		path="UI/common/XBOX/Buttons/LStick_down.dds" 	size="58,58" charsize="26,32" offset="-10, -10" />
+	<XBOX_L_STICK_LEFT 		path="UI/common/XBOX/Buttons/LStick_left.dds" 	size="58,58" charsize="34,32" offset="-4, -10" />
+	<XBOX_L_STICK_RIGHT 	path="UI/common/XBOX/Buttons/LStick_right.dds" 	size="58,58" charsize="34,32" offset="-10, -10" />
+	<XBOX_LEFT_STICK_LR 	path="UI/common/XBOX/Buttons/LStick_left-right.dds"		size="58,58" charsize="48,32" offset="0, -10" />
+	<XBOX_LEFT_RIGHT_TRIGGER path="UI/common/XBOX/Buttons/LT-RT.dds" 		size="68,44" charsize="58,34" offset="-8, -10"/>
+	<XBOX_MENU				path="UI/common/XBOX/Buttons/Menu.dds" 		size="58,58" charsize="32,32" offset="-8, -10" />
+	<XBOX_VIEW				path="UI/common/XBOX/Buttons/View.dds" 		size="58,58" charsize="32,32" offset="-8, -10" />
+	
+	<PS_SQUARE 			path="UI/common/PS4/Buttons/square.dds" 	size="58,58" charsize="32,32" offset="-8, -10"/>
+	<PS_TRIANGLE 		path="UI/common/PS4/Buttons/triangle.dds" 	size="58,58" charsize="32,32" offset="-8, -10"/>
+	<PS_CROSS 			path="UI/common/PS4/Buttons/cross.dds" 		size="58,58" charsize="32,32" offset="-8, -10"/>
+	<PS_CIRCLE 			path="UI/common/PS4/Buttons/circle.dds" 	size="58,58" charsize="32,32" offset="-8, -10"/>
+	<PS_LEFT_SHOULDER 	path="UI/common/PS4/Buttons/L1.dds" 		size="58,58" charsize="38,32" offset="-5, -12"/>
+	<PS_RIGHT_SHOULDER 	path="UI/common/PS4/Buttons/R1.dds" 		size="58,58" charsize="38,32" offset="-5, -12"/>
+	<PS_LEFT_TRIGGER 	path="UI/common/PS4/Buttons/L2.dds" 		size="58,58" charsize="32,32" offset="-8, -14"/>
+	<PS_RIGHT_TRIGGER 	path="UI/common/PS4/Buttons/R2.dds" 		size="58,58" charsize="32,32" offset="-8, -14"/>
+	<PS_DPAD_LEFT 		path="UI/common/PS4/Buttons/Dpad_Left.dds" 		size="58,58" charsize="36,35" offset="-6, -10"/>
+	<PS_DPAD_RIGHT 		path="UI/common/PS4/Buttons/Dpad_Right.dds" 	size="58,58" charsize="36,35" offset="-6, -10"/>
+	<PS_DPAD_UP 		path="UI/common/PS4/Buttons/Dpad_Up.dds" 		size="58,58" charsize="36,35" offset="-6, -10"/>
+	<PS_DPAD_DOWN 		path="UI/common/PS4/Buttons/Dpad_Down.dds" 		size="58,58" charsize="36,35" offset="-6, -10"/>
+	<PS_DPAD_LEFT_RIGHT	path="UI/common/PS4/Buttons/Dpad_left-right.dds" 	size="58,58" charsize="36,35" offset="-6, -10"/>
+	<PS_LEFT_THUMB 		path="UI/common/PS4/Buttons/LThumb.dds" 		size="58,58" charsize="40,32" offset="-4,-11"/>
+	<PS_RIGHT_THUMB 	path="UI/common/PS4/Buttons/RThumb.dds" 		size="58,58" charsize="40,32" offset="-4,-11" />
+	<PS_R_STICK 		path="UI/common/PS4/Buttons/RStick.dds"  		size="58,58" charsize="32,32" offset="-8, -10" />
+	<PS_R_STICK_UP 		path="UI/common/PS4/Buttons/RStick_up.dds"  	size="58,58" charsize="26,32" offset="-10, -10" />
+	<PS_R_STICK_DOWN 	path="UI/common/PS4/Buttons/RStick_down.dds"  	size="58,58" charsize="26,32" offset="-10, -10" />
+	<PS_R_STICK_LEFT 	path="UI/common/PS4/Buttons/RStick_left.dds"  	size="58,58" charsize="34,32" offset="-4, -10" />
+	<PS_R_STICK_RIGHT 	path="UI/common/PS4/Buttons/RStick_right.dds" 	size="58,58" charsize="34,32" offset="-10, -10" />
+	<PS_L_STICK 		path="UI/common/PS4/Buttons/LStick.dds" 		size="58,58" charsize="32,32" offset="-8, -10" />
+	<PS_L_STICK_UP 		path="UI/common/PS4/Buttons/LStick_up.dds" 		size="58,58" charsize="26,32" offset="-10, -10" />
+	<PS_L_STICK_DOWN 	path="UI/common/PS4/Buttons/LStick_down.dds" 	size="58,58" charsize="26,32" offset="-10, -10" />
+	<PS_L_STICK_LEFT 	path="UI/common/PS4/Buttons/LStick_left.dds" 	size="58,58" charsize="34,32" offset="-4, -10" />
+	<PS_L_STICK_RIGHT 	path="UI/common/PS4/Buttons/LStick_right.dds" 	size="58,58" charsize="34,32" offset="-10, -10" />
+	<PS_LEFT_STICK_LR 	path="UI/common/PS4/Buttons/LStick_left-right.dds" 		size="58,58" charsize="48,32" offset="0, -10" />
+	<PS_LEFT_RIGHT_TRIGGER path="UI/common/PS4/Buttons/L1_R1.dds" 		size="68,44"/>
+	<PS_OPTIONS				path="UI/common/PS4/Buttons/options_horizontal.dds"		size="84,48" charsize="80,32" offset="-2, -12" />
+	<PS_TOUCH				path="UI/common/PS4/Buttons/touch.dds" 		size="58,58" charsize="50,32" offset="0, -12" />
+	
+	<Favour_Icon path="UI/OpenWorld/starmap_resourceFavour.tga" size="58,58" charsize="58,58" offset="-8, -10" />
+</Root>

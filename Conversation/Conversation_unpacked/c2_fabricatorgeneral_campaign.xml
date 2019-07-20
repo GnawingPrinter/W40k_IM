@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Root>
+	<LanguageName>
+		<eng>English</eng>
+	</LanguageName>
+	<Languages>eng</Languages>
+	<Quest>
+		<C2_FabricatorGeneral_Campaign>
+			<node1>
+				<Desc>
+					<eng>Inquisitor, how socially proactive from you to visit me.</eng>
+				</Desc>
+			</node1>
+			<node10>
+				<Desc>
+					<eng>How? You said it was a classified investigation.</eng>
+				</Desc>
+			</node10>
+			<node11>
+				<Desc>
+					<eng>I am the Fabricator-General of a Forge Word. I have my methods. I have an informant in the retinue of the Inquisitor in charge, stationed on the ship of a certain Captain van Wynter. We could both benefit from the Archeotech secrets in that monastery.</eng>
+				</Desc>
+			</node11>
+			<node12>
+				<Desc>
+					<eng>I will accept your offer, Fabricator-General. I will travel to the coordinates of the “Martyr” immediately.</eng>
+				</Desc>
+			</node12>
+			<node2>
+				<Desc>
+					<eng>You contacted me and promised me information.</eng>
+				</Desc>
+			</node2>
+			<node3>
+				<Desc>
+					<eng>A straightforward approach. Very commendable. I have accessed the digital scrolls on your non-classified investigations and noticed your dominant interest, which was confirmed by your recent visit to the Sanctum.</eng>
+				</Desc>
+			</node3>
+			<node4>
+				<Desc>
+					<eng>What dominant interest are you referring to?</eng>
+				</Desc>
+			</node4>
+			<node5>
+				<Desc>
+					<eng>You are actively seeking Tech-Relics by Uther Tiberius, the infamous Inquisitor excommunicated for potentially heretic studies. I have information that could significantly advance your pursuit.</eng>
+				</Desc>
+			</node5>
+			<node6>
+				<Desc>
+					<eng>Are you offering me additional information on the Xenarite sect?</eng>
+				</Desc>
+			</node6>
+			<node7>
+				<Desc>
+					<eng>That sect was terminated a long  time ago. I have more valuable information for you. The “Martyr”, the wandering fortress-monastery of Uther Tiberius, long thought to be lost, has returned to the Caligari Sector from the Immaterium.</eng>
+				</Desc>
+			</node7>
+			<node8>
+				<Desc>
+					<eng>A thorough study of the ship could reward me with precious inormation.</eng>
+				</Desc>
+			</node8>
+			<node9>
+				<Desc>
+					<eng>The problem is that the “Martyr” is currently under a highly classified Inquisitorial investigation, which even I cannot access. Your credentials, on the other hand, can grant you admission. I have the current coordinates of the ship.</eng>
+				</Desc>
+			</node9>
+		</C2_FabricatorGeneral_Campaign>
+	</Quest>
+</Root>

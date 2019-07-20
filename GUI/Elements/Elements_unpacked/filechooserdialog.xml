@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<FileChooserDialog>
+	<Include Path="Cfg/GUI/Common.xml"/>
+	<GridContainer FillColor="#96aabe" ElementDirectory="Editor">
+		<Rows>
+			<Row Height="28"/>
+			<Row Height="1*"/>
+			<Row Height="34"/>
+			<Row Height="34"/>
+		</Rows>
+		<Columns>
+			<Column Width="1*"/>
+			<Column Width="1*"/>
+		</Columns>
+		<Text Row="0" Column="0" Name="Title" Text="" Style="NormalText"/>
+		<ListBox Row="1" Column="0" Name="FileList" SelectionColor="#0088FF" Style="NormalText"/>
+		<GridContainer Row="2" Column="0">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="80"/>
+				<Column Width="80"/>
+			</Columns>
+			<EditBox Column="0" Style="NormalText" Name="FileName" Graphics="UI/Element/Editor/EDITBOX"/>
+			<Icon Column="1" Style="SimpleButton" Text="Ok" Name="Ok"/>
+			<Icon Column="2" Style="SimpleButton" Text="Cancel" Name="Cancel"/>
+		</GridContainer>
+		<GridContainer Row="3" Column="0">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="80"/>
+				<Column Width="80"/>
+			</Columns>
+			<EditBox Name="FilterBox" Column="0" Text="" Graphics="UI/Element/Editor/EDITBOX" />
+			<Icon Name="FilterButton" Column="1" Text="Filter" Style="SimpleButton" />
+			<Icon Name="ClearButton" Column="2" Text="Clear" Style="SimpleButton" />
+		</GridContainer>
+		<Text Row="0" Column="1" Text="Preview"/>
+		<Container Row="1" Column="1">
+			<Image Name="PreviewImg" HAlign="center" VAlign="center"/>
+		</Container>
+		
+	</GridContainer>
+</FileChooserDialog>

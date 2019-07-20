@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Container Size="362,182" IgnoreScissor="1">
+	<Include Path="Windows/Styles.xml"/>
+	<Styles>
+		<LocationStyle
+			FontType="Electrolize"
+			FontSize="17"
+			BiggerFontSize="19"
+			Color="0xffededed"
+			Sharpness="0.5"
+			TextAlignH="left"
+			TextAlignV="center"
+			PressColor="0xffededed"
+			RolloverColor="0xffededed"
+		/>
+		<FontGreen
+			FontType="Share Tech Mono"
+			FontSize="19"
+			BiggerFontSize="21"
+			Color="0xffb5fffc"
+			Sharpness="0.5"
+			TextAlignH="center"
+			TextAlignV="center"
+			Offset="0,0"
+		/>
+		<LocationSmall
+			FontType="Roboto"
+			FontSize="15"
+			BiggerFontSize="17"
+			Color="0xffb5fffc"
+			Sharpness="0.5"
+			TextAlignH="center"
+			TextAlignV="center"
+			Offset="1,0"
+		/>
+	</Styles>
+	
+	<Constants>
+		<MaxMissionCount Type="int" Value="7"/>
+	</Constants>
+	
+	<FlowContainer Name="Standard">
+		<Loop Count="@MaxMissionCount" Variable="$X$">
+			<Container Name="Mission_Container_$X$" Pos="0,0" MarginTop="0" MarginBottom="0" Size="60,60" IgnoreScissor="1">
+				<Image Name="ControllerUpDown$X$"
+					Pos="-50,5"
+					Size="48,48"
+					Image="UI\common\XBOX\Buttons\Dpad_up-down.tga"
+					Visible="0"
+					IgnoreScissor="1"
+					ShowCategory="controller"					
+				/>
+				<Image Name="EventFrame$X$"
+					Visible="0"
+					Pos="-9,-11"
+					Size="80,80"
+					Image="UI/OpenWorld/Events/event_large_wings.tga"
+					MouseSenseEnabled="0"
+				/>			
+				<Icon Name="MissionFrame_$X$"
+					Size="388,64"
+					Style="LocationStyle"
+					UseButtonEffects="0"
+					IdleImg="UI/OpenWorld/starmap_missionOff.tga"
+					RolloverImg="UI/OpenWorld/starmap_missionOver.tga"
+					PressImg="UI/OpenWorld/starmap_missionOn.tga"
+					RolloverFade="100"
+					ControllerSenseEnabled="1"
+				/>
+				<Image Name="Overlay_$X$"
+					MarginTop="4"
+					Size="320,64"
+					Image="UI/OpenWorld/starmap_mission_assignment.dds"
+					MouseSenseEnabled="0"
+				/>				
+				<Image Name="Mission_Type_$X$"
+					Pos="2,1"					
+					Size="60,60"
+					AllImg="UI/OpenWorld/Missions/mission_large_assassinationOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="Mission_Extra_$X$"
+					Pos="1,2"
+					Size="60,60"
+					Image="UI/OpenWorld/Missions/mission_large_custom.tga"
+					IgnoreScissor="1"
+					MouseSenseEnabled="0"
+				/>
+				<Container Name="Mission_Open_$X$" MarginTop="0" MarginLeft="0" Size="328,64" IgnoreSissor="1">
+					<Image Name="Mission$X$RatingBack"
+						Pos="66,16"
+						Size="56,32"
+						Image="UI/OpenWorld/MissionInfo/mission_challengeGreen.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="Mission$X$RatingValue"
+						Pos="76,19"
+						Size="36,28"
+						Style="FontGreen"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="_999"
+					/>
+					<Text Name="Mission_Name_$X$"
+						IgnoreScissor="1"
+						HAlign="left"
+						Pos="134,7"
+						Size="320,30"
+						Style="LocationStyle"
+						MouseSenseEnabled="0"
+						Text="_mission name"
+					/>
+					<Text Name="Mission_Desc_$X$"
+						IgnoreScissor="1"
+						Pos="134,26"
+						Size="320,30"
+						HAlign="left"
+						Style="LocationSmall"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_mission desc"
+						MouseSenseEnabled="0"
+					/>
+				</Container>
+			</Container>
+		</Loop>
+	</FlowContainer>
+	
+	<FlowContainer Name="Warzone" Visible="0">
+		<Container Name="WarzoneStage" Pos="0,0" MarginTop="0" MarginBottom="0" Size="60,60" IgnoreScissor="1">		
+			<Icon Name="Frame"
+				Pos="12,0"
+				Size="388,64"
+				Style="LocationStyle"
+				UseButtonEffects="0"
+				IdleImg="UI/OpenWorld/starmap_missionOff.tga"
+				RolloverImg="UI/OpenWorld/starmap_missionOver.tga"
+				PressImg="UI/OpenWorld/starmap_missionOn.tga"
+				RolloverFade="100"
+				ControllerSenseEnabled="1"
+			/>
+			<Icon Name="BossFrame"
+				Pos="-9,-13"
+				Size="388,80"
+				Style="LocationStyle"
+				UseButtonEffects="0"
+				IdleImg="UI/OpenWorld/starmap_warzonebossOff.tga"
+				RolloverImg="UI/OpenWorld/starmap_warzonebossOver.tga"
+				PressImg="UI/OpenWorld/starmap_warzonebossOn.tga"
+				ControllerSenseEnabled="1"
+			/>	
+			<Image Name="StageFrame"
+				Visible="1"
+				Pos="-9,-13"
+				Size="80,80"
+				Image="UI/OpenWorld/Warzone/warzone_large_wings.tga"
+				MouseSenseEnabled="0"
+			/>				
+			<Image Name="WarzoneStageIcon"
+				Pos="2,-1"					
+				Size="60,60"
+				Image="UI/OpenWorld/Warzone/warzone_stage_1.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Container Name="Stage_Open" MarginTop="0" MarginLeft="0" Size="328,64" IgnoreSissor="1">
+				<Text Name="Stage_Name"
+					IgnoreScissor="1"
+					HAlign="left"
+					Pos="78,7"
+					Size="376,30"
+					Style="LocationStyle"
+					MouseSenseEnabled="0"
+					Text="_The Breakthrough"
+				/>
+				<Text Name="Stage_Number"
+					IgnoreScissor="1"
+					Pos="78,26"
+					Size="376,30"
+					HAlign="left"
+					Style="LocationSmall"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.warzone.stagenumber"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+		</Container>
+	</FlowContainer>
+	
+
+	
+</Container>

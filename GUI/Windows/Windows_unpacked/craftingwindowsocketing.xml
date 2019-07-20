@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+	<Constants>		
+		<RuneWordCount Type="int" Value="6"/>
+		<SocketList Type="int" Value="6"/>
+		<CraftingGemCount Type="int" Value="32"/>
+		<ListedGemInRow Type="int" Value="8"/>
+		<CraftingRuneCount Type="int" Value="20"/>
+		<ListedRuneInRow Type="int" Value="5"/>
+	</Constants>
+	<Container Name="Socketing" Visible="0" GuiAlign="topcenter">
+		<Dummy Name="SocketInventoryLayout"
+			ShowCategory="controller"
+		/>
+		<Dummy Name="SocketGemChooseLayout"
+			ShowCategory="controller"
+		/>		
+		<Dummy Name="SocketFusionLayout"
+			ShowCategory="controller"
+		/>
+		<Dummy Name="SocketGemsLayout"
+			ShowCategory="controller"
+		/>
+		<Dummy Name="SocketRunesLayout"
+			ShowCategory="controller"
+		/>
+
+		<Icon TutorialCategoryToReset="Socketing"
+			Pos="28,80"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+			PressImg="UI/Interaction/button_tutorialResetOff.tga"
+			RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+			GuiAlign="topleft"
+			InitPopup="leftcenter,rightcenter"
+			Tooltip="Tutorial.TutorialReset"
+			ShowCategory="mouse"
+		/>
+		
+		<FlowContainer Pos="617,105">
+			<Container Name="TabSelectionController" Size="708,44" ShowCategory="controller">
+				<XBOXButton Name="SocketingController"
+					Pos="147,0"
+					Size="48,48"
+					SetButton="R_THUMB_LEFT"
+				/>
+				<XBOXButton Name="RuneCraftController"
+					Pos="336,0"
+					Size="48,48"
+					SetButton="R_THUMB_UP"
+				/>
+				<XBOXButton Name="GemCraftController"
+					Pos="513,0"
+					Size="48,48"
+					SetButton="R_THUMB_RIGHT"
+				/>
+			</Container>	
+			<Container Name="TabSelection" Size="708,44" Tutorial="Forging">
+				<FlowContainer Horizontal="1" HAlign="center">
+					<Icon Name="SocketButton"
+						Size="184,44"
+						IdleImg="UI\Crafting\tab_craftingOff.tga"
+						IdleOffset="0,0"
+						PressImg="UI\Crafting\tab_craftingOn.tga"
+						PressOffset="0,-1"
+						RolloverImg="UI\Crafting\tab_craftingOver.tga"
+						RolloverOffset="0,0"
+						Style="StarmapHeadline2_3"
+						Text="openworld.gui.crafting.socketing.socketing_tab_title"
+					/>
+					<Icon Name="GemCraftingButton"
+						Size="184,44"
+						IdleImg="UI\Crafting\tab_craftingOff.tga"
+						IdleOffset="0,0"
+						PressImg="UI\Crafting\tab_craftingOn.tga"
+						PressOffset="0,-1"
+						RolloverImg="UI\Crafting\tab_craftingOver.tga"
+						RolloverOffset="0,0"
+						Style="StarmapHeadline2_3"
+						Text="openworld.gui.crafting.socketing.gemcrafting_tab_title"
+						Tooltip="_"
+						InitPopup="topcenter,bottomcenter"
+					/>
+					<Icon Name="RuneCraftingButton"
+						Size="184,44"
+						IdleImg="UI\Crafting\tab_craftingOff.tga"
+						IdleOffset="0,0"
+						PressImg="UI\Crafting\tab_craftingOn.tga"
+						PressOffset="0,-1"
+						RolloverImg="UI\Crafting\tab_craftingOver.tga"
+						RolloverOffset="0,0"
+						Style="StarmapHeadline2_3"
+						Text="openworld.gui.crafting.socketing.runecrafting_tab_title"
+						Tooltip="_"
+						InitPopup="topcenter,bottomcenter"
+					/>
+				</FlowContainer>
+			</Container>
+			<Container Name="SocketContainer" Size="652,890" Pos="27,-5" Visible="0">
+				<Icon Name="PsalmDoctrineTutorial"
+					IgnoreScissor="1"
+					Pos="652,73"
+					Size="32,32"
+					IdleImg="UI/OpenWorld/button_journalOff.tga"
+					PressImg="UI/OpenWorld/button_journalOff.tga"
+					RolloverImg="UI/OpenWorld/button_journalOver.tga"
+					InitPopup="topcenter,bottomcenter"
+					Tooltip="tutorial.runeword.name"
+					ShowCategory="mouse"
+				/>
+				<FlowContainer
+					Width="652"
+					BackgroundTopSize="240"
+					BackgroundBotSize="30"
+					BackgroundTopImage="UI\Crafting\Socketing\MainFrameSocketing_Bg_Top.tga"
+					BackgroundMidImage="UI\Crafting\Socketing\MainFrameForge_Bg_mid.tga"
+					BackgroundBotImage="UI\Crafting\Socketing\MainFrameForge_Bg_Bottom.tga"
+				>
+					<Container Pos="-39,12">
+						<Container Size="270,200">						
+							<Icon Name="SocketingSlot"
+								Pos="201,30"
+								Size="57,117"
+								IdleImg="UI/Crafting/Socketing/Socketing_Item_slot.tga"
+								PressImg="UI/Crafting/Socketing/Socketing_Item_slot.tga"
+								RolloverImg="UI/Crafting/Socketing/Socketing_Item_slot.tga"
+								UseButtonEffects="0"
+								Tooltip="openworld.gui.crafting.socketing.select_an_item"
+							/>
+							<Artifact Name="SocketingSlot_Item1x1" Pos="201,60" Style="EquippedItemSlot1x1" Visible="0" HandlePopup="1"/>
+							<Artifact Name="SocketingSlot_Item1x2" Pos="201,30" Style="EquippedItemSlot1x2" Visible="0" HandlePopup="1"/>
+							
+							<Effect Name="SocketingEffect" Visible="0"
+								Pos="201,70"
+								Size="582,649"
+								Effect="UI/3D_GUI_windows/Crafting/Fusion.N2E"
+								MouseSenseEnabled="0"								
+							/>
+							
+						</Container>
+						<Container Name="RuneWord" Size="380,200" Pos="300,0" Visible="0">
+							<Text Name="RuneWordHeader"
+								Pos="27,16"
+								Size="350,30"
+								Style="Rune_Name_Yellow_Glow"
+								TextAlignH="center"
+								TextAlignV="center"
+								Text="openworld.gui.crafting.socketing.active_runeword"
+							/>
+							<Container Pos="53,52" Width="350">
+								<Loop Count="@RuneWordCount" Variable="$X$" Offset="50,0">
+									<FlowContainer Name="RuneWord$X$" Horizontal="1">
+										<Image Name="RuneWordItem_$X$"
+											Size="49,49"
+											Image="UI/Artifacts/Gems/gem1_1.tga"	
+											InitPopup="bottomcenter,topcenter"
+										/>
+									</FlowContainer>
+								</Loop>
+							</Container>	
+							<TextBox Name="RuneWordDesc"
+								Pos="20,105"
+								Size="370,80"
+								Style="Text_Large_Light_Glow"
+								UseSlider="0"
+								TextAlignH="center"
+								TextAlignV="top"
+								Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+								IgnoreScissor="1"
+							/>	
+							<Effect Name="RuneWordEffect" Visible="0"
+								Pos="28,50"
+								Size="582,649"
+								Effect="UI/3D_GUI_windows/Crafting/Fusion.N2E"
+								MouseSenseEnabled="0"
+							/>
+						</Container>
+					</Container>
+					
+					<FlowContainer Name="SocketFrame" MarginTop="8" Visible="1">
+						<Text Name="SocketTitle"
+							Size="652,30"
+							MarginTop="10"
+							MarginBottom="4"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="openworld.GUI.crafting.Socketing.sockets"						
+						/>
+						<TextBox Name="SocketError" Visible="0"
+							Width="652"
+							MarginTop="15"
+							MarginBottom="8"
+							Style="Text_Normal_Red_Light"
+							FontSize="19" 
+							BiggerFontSize="21"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="openworld.GUI.crafting.Socketing.socketing_minlvl"						
+						/>
+						<FlowContainer VAlign="top">
+							<Loop Count="@SocketList" Variable="$X$" Offset="0,0">
+								<Container Size="652,62" Name="SocketList$X$" MarginBottom="1">
+									<Icon Name="SocketFrame$X$"
+										Pos="0,0"
+										Size="652,62"
+										IdleImg="UI/crafting/Socketing/Socketing_frameOff.tga"
+										PressImg="UI/crafting/Socketing/Socketing_frameOn.tga"
+										RolloverImg="UI/crafting/Socketing/Socketing_frameOver.tga"
+										UseButtonEffects="0"
+										ControllerSenseEnabled="1"
+										MouseSenseEnabled="0"
+										IgnoreScissor="1"
+										InitPopup="leftcenter,rightcenter"
+									/>
+									<Image Name="SocketItem_$X$"
+										Size="60,60"
+										Pos="9,1"
+										Image="UI/Artifacts/Gems/gem1_1.tga"
+										ControllerSenseEnabled="0"
+										InitPopup="rightcenter,leftcenter"
+									/>
+									<TextBox Name="SocketItemDesc_$X$"
+										Pos="74,0"
+										Size="488,60"
+										Style="Text_Normal_Color"
+										TextAlignH="left"
+										TextAlignV="center"
+										MouseSenseEnabled="0"
+										ControllerSenseEnabled="0"
+										Text="+5% Critical Hit Chance and +10% Critical Hit Strength while having Suprise bonus"
+									/>	
+									<Icon Name="RemoveFromSocketButton$X$"
+										Pos="593,9"
+										Size="44,44"
+										MarginRight="12"
+										IdleImg="UI/crafting/socketing/button_removeOff.tga"
+										PressImg="UI/crafting/socketing/button_removeOn.tga"
+										RolloverImg="UI/crafting/socketing/button_removeOn.tga"
+										UseButtonEffects="0"
+										InitPopup="leftcenter,rightcenter"
+										Tooltip="controller.buttons.remove_socket"
+										ShowCategory="mouse"
+									/>
+									<Icon Name="RemoveFromSocketLocked$X$"
+										Visible="0"
+										Pos="593,9"
+										Size="44,44"
+										MarginRight="12"
+										IdleImg="UI/crafting/button_locked.tga"
+										PressImg="UI/crafting/button_locked.tga"
+										RolloverImg="UI/crafting/button_locked.tga"
+										UseButtonEffects="0"
+										ControllerSenseEnabled="0"
+										InitPopup="leftcenter,rightcenter"
+										Tooltip="openworld.GUI.crafting.modify.locked_tooltip"
+									/>
+								</Container>
+							</Loop>
+						</FlowContainer>
+					</FlowContainer>				
+					<Container Size="652,60" Name="AddSocket">
+						<Icon Name="AddSocketFrame"
+							Pos="0,0"
+							Size="652,62"
+							IdleImg="UI/crafting/Socketing/Fuse_frameOff.tga"
+							PressImg="UI/crafting/Socketing/Fuse_frameOn.tga"
+							RolloverImg="UI/crafting/Socketing/Fuse_frameOver.tga"
+							UseButtonEffects="0"
+							MouseSenseEnabled="0"
+							IgnoreScissor="1"
+							Alpha="0.4"
+						/>
+						<FlowContainer Horizontal="1" Pos="9,1">
+							<Image 
+								Size="60,60"
+								Image="UI/Artifacts/Gems/SocketEmpty.tga"	
+								Alpha="0.4"
+								ShowCategory="controller"
+							/>
+							<Text
+								MarginLeft="-60"
+								Size="60,60"
+								Pos="0,2"
+								Style="Headline_Large_Color_Glow"
+								TextAlignH="center"
+								TextAlignV="center"
+								FontSize="38"
+								Text="+"
+								ShowCategory="controller"
+							/>
+							<Text 
+								MarginLeft="15"
+								Size="229,60"
+								Style="Headline_Large_Color_Glow"
+								TextAlignH="left"
+								TextAlignV="center"
+								Text="openworld.gui.crafting.socketing.add_socket"
+							/>
+						</FlowContainer>
+						<Container Pos="220,9">
+							<Image
+								Pos="92,4"
+								Size="35,35"
+								Image="UI/OpenWorld/starmap_resourceCrown.tga"
+								Tooltip="openworld.GUI.crafting.Socketing.socketing_price"
+							/>
+							<Image
+								Pos="136,0"
+								Size="115,44"
+								Image="UI/Inventory/fullscreen_shop_costBg.tga"
+								Tooltip="openworld.GUI.crafting.Socketing.socketing_price"
+							/>
+							<Text Name="SocketPrice"
+								Pos="136,0"
+								Size="115,44"
+								Style="Headline_Large_Light_Glow"
+								TextAlignH="center"
+								TextAlignV="center"
+								MouseSenseEnabled="0"
+								Text="_666"
+							/>
+						</Container>
+						<Container Pos="328,9">
+							<Image Name="MaterialPriceIcon"
+								Pos="165,4"
+								Size="35,35"
+								Image="UI\Crafting\Materials\big_godlike_material.tga"
+								Tooltip="Craftmaterials.big_godlike_material.name"
+								InitPopup="bottomcenter,topcenter"
+							/>
+							<Image
+								Pos="209,0"
+								Size="44,44"
+								Image="UI/Inventory/fullscreen_shop_costBg.tga"
+							/>
+							<Text Name="MaterialPriceValue"
+								Pos="209,0"
+								Size="44,44"
+								Style="Headline_Large_Light_Glow"
+								TextAlignH="center"
+								TextAlignV="center"
+								Text="_1"
+							/>
+						</Container>
+						<Icon Name="FuseButton"
+							Pos="593,9"
+							Size="44,44"
+							IdleImg="UI/Crafting/button_addOff.tga"
+							PressImg="UI/Crafting/button_addOn.tga"
+							RolloverImg="UI/Crafting/button_addOn.tga"
+							UseButtonEffects="0"
+							InitPopup="leftcenter,rightcenter"
+							Tooltip="openworld.gui.crafting.socketing.add_socket_tooltip"
+							ShowCategory="mouse"
+						/>
+					</Container>
+					<Dummy Size="20,20" />
+				</FlowContainer>
+			</Container>
+			
+			
+			<Container Name="RuneGemCrafting" Pos="27,-5" Visible="1">
+				<FlowContainer 	
+					Width="652"
+					BackgroundTopSize="64"
+					BackgroundBotSize="30"
+					BackgroundTopImage="UI\Crafting\Socketing\MainFrameForge_Bg_Top.tga"
+					BackgroundMidImage="UI\Crafting\Socketing\MainFrameForge_Bg_mid.tga"
+					BackgroundBotImage="UI\Crafting\Socketing\MainFrameForge_Bg_Bottom.tga"
+				>
+					<Text Name="RuneGemCraftingTitle"
+						Halign="center"
+						Size="652,30"
+						MarginTop="20"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="Select a _Rune/Gem to craft"
+					/>
+					<Image 
+						MarginTop="10"
+						MarginLeft="5"
+						HAlign="left"
+						Size="640,3"
+						Image="UI/Psyker/separator.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Container Name="GemSelection" HAlign="center" MarginTop="10" MarginBottom="35" IgnoreScissor="1">
+						<Loop Count="@CraftingGemCount" Variable="$X$" ItemsInRow="@ListedGemInRow" Offset="65,90" MarginBottom="35">
+							<Artifact Name="CraftingGem$X$" ArtifactSize="1,1" CanSelect="1" HandlePopup="1" Size="60,60"/>
+							<Text Name="CraftingGemCount$X$"
+								Pos="0,62"
+								Size="60,20"
+								Style="Text_Large_Light"
+								TextAlignH="center"
+								TextAlignV="bottom"
+								MouseSenseEnabled="0"
+								Text="2"
+							/>
+						</Loop>
+					</Container>
+					<Container Name="RuneSelection" HAlign="center" MarginTop="10" MarginBottom="35" IgnoreScissor="1">
+						<Loop Count="@CraftingRuneCount" Variable="$X$" ItemsInRow="@ListedRuneInRow" Offset="80,90" MarginBottom="35">
+							<Artifact Name="CraftingRune$X$" ArtifactSize="1,1" CanSelect="1" HandlePopup="1" Size="60,60"/>
+							<Text Name="CraftingRuneCount$X$"
+								Pos="0,62"
+								Size="60,20"
+								Style="Text_Large_Light"
+								TextAlignH="center"
+								TextAlignV="bottom"
+								MouseSenseEnabled="0"
+								Text="2"
+							/>
+						</Loop>
+					</Container>
+					<Image 
+						MarginTop="3"
+						MarginLeft="5"
+						HAlign="left"
+						Size="640,3"
+						Image="UI/Psyker/separator.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Container Name="CraftRuneGem" Size="652,90" MarginTop="20">
+						<Icon Name="CraftRuneGemFrame"
+							Pos="0,0"
+							Size="652,62"
+							IdleImg="UI/crafting/Socketing/Socketing_frameOff.tga"
+							PressImg="UI/crafting/Socketing/Socketing_frameOn.tga"
+							RolloverImg="UI/crafting/Socketing/Socketing_frameOver.tga"
+							UseButtonEffects="0"
+							MouseSenseEnabled="0"
+						/>
+						<FlowContainer Horizontal="1">
+							<Container Size="585,80" MarginLeft="7" MarginTop="1" HAlign="center">
+								<FlowContainer Horizontal="1">
+									<Dummy Size="130,60" />
+									<FlowContainer Height="80" MarginRight="1">
+										<Image Name="Resource1"
+											Size="60,60"
+											Image="UI/Artifacts/Gems/SocketEmpty.tga"		
+										/>
+										<Text Name="ResourceValue1"
+											Size="60,20"
+											Style="Headline_Normal_Light_Glow"
+											TextAlignH="center"
+											TextAlignV="center"
+											Text="_1"
+										/>
+									</FlowContainer>
+									<FlowContainer Height="80" MarginRight="1">
+										<Image Name="Resource2"
+											Size="60,60"
+											Image="UI/Artifacts/Gems/SocketEmpty.tga"							
+										/>
+										<Text Name="ResourceValue2"
+											Size="60,20"
+											Style="Headline_Normal_Light_Glow"
+											TextAlignH="center"
+											TextAlignV="center"
+											Text="_1"
+										/>
+									</FlowContainer>
+									<FlowContainer Height="80" MarginRight="1" Visible="0">
+										<Image Name="Resource3"
+											Size="60,60"
+											Image="UI/Artifacts/Gems/SocketEmpty.tga"							
+										/>
+										<Text Name="ResourceValue3"
+											Size="60,20"
+											Style="Headline_Normal_Light_Glow"
+											TextAlignH="center"
+											TextAlignV="center"
+											Text="_1"
+										/>
+									</FlowContainer>
+									<FlowContainer Height="80" MarginRight="1" Visible="0">
+										<Image Name="Resource4"
+											Size="60,60"
+											Image="UI/Artifacts/Gems/SocketEmpty.tga"							
+										/>
+										<Text Name="ResourceValue4"
+											Size="60,20"
+											Style="Headline_Normal_Light_Glow"
+											TextAlignH="center"
+											TextAlignV="center"
+											Text="_1"
+										/>
+									</FlowContainer>
+									<Image
+										MarginTop="13"
+										MarginLeft="20"
+										Size="35,35"
+										Image="UI/OpenWorld/starmap_resourceCrown.tga"
+									/>
+									<Image
+										MarginTop="8"
+										MarginLeft="10"
+										Size="115,44"
+										Image="UI/Inventory/fullscreen_shop_costBg.tga"
+									/>
+									<Text Name="RunGemPrice"
+										MarginTop="8"
+										MarginLeft="-115"
+										Size="115,44"
+										Style="Headline_Large_Light_Glow"
+										TextAlignH="center"
+										TextAlignV="center"
+										Text="_666"
+									/>
+									<Icon Name="CraftRuneGemButton"
+										MarginLeft="30"
+										MarginTop="8"								
+										Size="44,44"
+										IdleImg="UI/Crafting/button_salvage_commonOff.tga"
+										PressImg="UI/Crafting/button_salvage_commonOver.tga"
+										RolloverImg="UI/Crafting/button_salvage_commonOver.tga"
+										UseButtonEffects="0"
+										InitPopup="leftcenter,rightcenter"
+										Tooltip="_Craft Selected Rune"
+										ShowCategory="mouse"
+									/>
+								</FlowContainer>
+							</Container>
+						</FlowContainer>
+					</Container>
+				</FlowContainer>
+			</Container>
+		</FlowContainer>	
+	</Container>

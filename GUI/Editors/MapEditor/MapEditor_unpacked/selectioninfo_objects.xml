@@ -1,0 +1,10 @@
+<SelectionInfo_SoldierGroup>
+	<Include Path="Common.xml"/>
+	<FlowContainer Width="300" FillColor="#000000">
+		<Container Height="30">
+			<Image ColorMask="#5a6473"/>
+			<Text Text="Pattern" Style="InvertedText" FontSize="13"/>
+		</Container>
+		<Icon Style="SimpleButton" Height="30" Text="Make Pattern" Margin="1" Name="MakePatBtn"/>
+	</FlowContainer>
+</SelectionInfo_SoldierGroup>

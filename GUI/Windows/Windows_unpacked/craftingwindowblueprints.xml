@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Constants>
+	<BlueprintSlotCount Type="int" Value="18"/>
+</Constants>
+<Container Name="Crafting" Visible="0" Tutorial="Crafting_alap">
+	<Dummy Name="BlueprintsListLayout"
+		ShowCategory="controller"
+	/>
+	<Dummy Name="BlueprintsMenuLayout"
+		ShowCategory="controller"
+	/>
+	<Scene3D Name="TechPriestModel_Blueprint"
+		Pos="540,80"
+		Size="1920,1080"
+		GuiAlign="rightcenter"
+		MouseSenseEnabled="0"
+		SetCamera="craftingwindow_techpreist"
+	/>
+	<Icon TutorialCategoryToReset="Crafting"
+		Pos="28,80"
+		Size="32,32"
+		IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+		PressImg="UI/Interaction/button_tutorialResetOff.tga"
+		RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+		GuiAlign="topleft"
+		InitPopup="leftcenter,rightcenter"
+		Tooltip="Tutorial.TutorialReset"
+		ShowCategory="mouse"
+	/>
+	<Container Name="CraftingLeft" GuiAlign="leftcenter">
+		<Text
+			Pos="75,103"
+			Size="500,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.blueprints"
+		/>
+		<Image
+			Pos="75,137"
+			Size="652,610"
+			Image="UI/Crafting/fullscreen_crafting_recipes.tga"
+		/>
+		<ComboBox Name="ItemCategoryComboBox"
+			Pos="94,150"
+			Size="430,34"
+			PaddingLeft="3"
+			OpenHeight="400"
+			FontType="Titillium Regular"
+			FontSize="18"
+			Color="#EDEDED"
+			Sharpness="0.5"
+			TextAlignH="left"
+			TextAlignV="center"
+		/>
+		<Icon Name="ItemCategoryComboBoxArrow"
+			Pos="526,149"
+			Size="36,36"
+			IdleImg="UI/Element/Default/COMBOBOX/Gomb_idle.tga"
+			PressImg="UI/Element/Default/COMBOBOX/Gomb_Over.tga"
+			RolloverImg="UI/Element/Default/COMBOBOX/Gomb_Over.tga"
+			MouseSenseEnabled="1"
+			UseButtonEffects="0"
+			ShowCategory="mouse"
+		/>
+		<XBOXButton Name="ItemCategoryComboBoxX"
+			Pos="525,147"
+			Size="40,40"
+			SetButton="Y"
+			ShowCategory="controller"
+		/>
+
+		<XBOXButton Name="BpRarityComboBox"
+			Pos="579,163"
+			Size="48,48"
+			SetButton="Back"
+		/>			
+		<RadioGroupLogical Name="CraftingBlueprintRarity"/>
+		<FlowContainer Pos="582,215">
+			<CheckBox Name="CraftingBlueprintRarity_Rare2"
+				MarginRight="2"
+				Size="44,44"
+				InitPopup="bottomleft,topleft"
+				RadioGroup="CraftingBlueprintRarity"
+				ImageChecked="UI/Crafting/button_crafting_rare2On.tga"
+				ImageUnchecked="UI/Crafting/button_crafting_rare2Off.tga"
+				MouseSenseEnabled="1"
+			/>
+			<CheckBox Name="CraftingBlueprintRarity_Godlike"
+				MarginRight="2"
+				Size="44,44"
+				InitPopup="bottomleft,topleft"
+				RadioGroup="CraftingBlueprintRarity"
+				ImageChecked="UI/Crafting/button_crafting_godlikeOn.tga"
+				ImageUnchecked="UI/Crafting/button_crafting_godlikeOff.tga"
+				MouseSenseEnabled="1"
+			/>
+			<CheckBox Name="CraftingBlueprintRarity_BigGodlike"
+				MarginRight="2"
+				Size="44,44"
+				InitPopup="bottomleft,topleft"
+				RadioGroup="CraftingBlueprintRarity"
+				ImageChecked="UI/Crafting/button_crafting_biggodlikeOn.tga"
+				ImageUnchecked="UI/Crafting/button_crafting_biggodlikeOff.tga"
+				MouseSenseEnabled="1"
+			/>
+			<Icon Name="CraftingTutorialReset"
+				TutorialCategoryToReset="Crafting"
+				MarginRight="2"
+				MarginTop="20"
+				Size="44,44"
+				IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+				PressImg="UI/Interaction/button_tutorialResetOff.tga"
+				RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+				UseButtonEffects="0"
+				GuiAlign="leftcenter"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="Tutorial.TutorialReset"
+				ShowCategory="controller"
+			/>
+		</FlowContainer>
+		<Container Pos="96,208" Size="470,672">
+			<Loop Count="@BlueprintSlotCount" Variable="$X$" Offset="0,28">
+				<Image Name="CraftingBlueprintSlot$X$"
+					Pos="0,0"
+					Size="440,28"
+					Image="UI/Crafting/crafting_blueprintSelected.tga"
+					SlideredElement="1"
+				/>
+				<Text Name="CraftingBlueprintName$X$"
+					Pos="10,0"
+					Size="360,28"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Text="_Kaki_Blueprint_$X$"
+				/>
+				<Text Name="CraftingBlueprintCount$X$"
+					Pos="379,0"
+					Size="54,28"
+					Style="Text_Large_Light"
+					TextAlignH="right"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Text="_$X$"
+				/>
+			</Loop>
+			<Slider Name="BlueprintSlider"
+				Pos="445,-5"
+				Size="20,530"
+			/>
+		</Container>
+	</Container>
+	<Text
+		Pos="725,103"
+		Size="500,30"
+		Style="Headline_Large_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="openworld.gui.crafting.craftingcost"
+	/>
+	<Image
+		Pos="725,137"
+		Size="500,119"
+		Image="UI/Crafting/CraftCostFrame_bg.tga"
+	/>
+	<Container Name="CraftinCostFrame" Pos="738,165" Size="460,74">
+		<FlowContainer Horizontal="1">
+			<Container Size="455,74" MarginLeft="10" HAlign="left">
+				<FlowContainer Horizontal="1">
+					<FlowContainer Height="74" >
+						<Image Name="BlueprintResource1"
+							Size="48,48"
+							Image="UI/Artifacts/Gems/Socketmpty.tga"		
+						/>
+						<Text Name="BlueprintResourceValue1"
+							MarginTop="4"
+							Size="48,20"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="bottom"
+							Text="_1"
+						/>
+					</FlowContainer>
+					<FlowContainer Height="72" MarginLeft="14">
+						<Image Name="BlueprintResource2"
+							Size="48,48"
+							Image="UI/Artifacts/Gems/SocketEmpty.tga"							
+						/>
+						<Text Name="BlueprintResourceValue2"
+							MarginTop="4"
+							Size="48,20"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="bottom"
+							Text="_1"
+						/>
+					</FlowContainer>
+					<FlowContainer Height="72" MarginLeft="14">
+						<Image Name="BlueprintResource3"
+							Size="48,48"
+							Image="UI/Artifacts/Gems/SocketEmpty.tga"							
+						/>
+						<Text Name="BlueprintResourceValue3"
+							MarginTop="4"
+							Size="48,20"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="bottom"
+							Text="_1"
+						/>
+					</FlowContainer>
+					<FlowContainer Height="72" MarginLeft="14">
+						<Image Name="BlueprintResource4"
+							Size="48,48"
+							Image="UI/Artifacts/Gems/SocketEmpty.tga"							
+						/>
+						<Text Name="BlueprintResourceValue4"
+							MarginTop="4"
+							Size="48,20"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="bottom"
+							Text="_1"
+						/>
+					</FlowContainer>
+				</FlowContainer>
+				<Container HAlign="right" Width="175">
+					<Image
+						MarginTop="10"
+						Pos="0,0"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+					/>
+					<Image
+						MarginTop="8"
+						Pos="50,0"
+						Size="115,44"
+						Image="UI/Inventory/fullscreen_shop_costBg.tga"
+					/>
+					<Text Name="CraftGoldCostValue"
+						MarginTop="8"
+						Pos="50,0"
+						Size="115,44"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="_666"
+					/>
+				</Container>
+			</Container>
+		</FlowContainer>
+	</Container>
+	<Icon Name="CraftingCraftButton"
+		Pos="746,270"
+		Size="463,88"
+		IdleImg="UI/Crafting/Craft_buttonOff.tga"
+		PressImg="UI/Crafting/Craft_buttonOn.tga"
+		RolloverImg="UI/Crafting/Craft_buttonOver.tga"
+		UseButtonEffects="0"
+		Enabled="0"
+		ShowCategory="mouse"
+	/>
+	<Effect Name="CraftingCraftButtonEffectBase"
+		Pos="746,270"
+		Size="463,88"
+		Effect="UI/3D_GUI_windows/Crafting/Uj_craftgomb_idle.N2E"
+		Loop="1"
+		MouseSenseEnabled="0"
+		Show="1"
+		ShowCategory="mouse"
+	/>
+	<Effect Name="CraftingCraftButtonEffectUse"
+		Pos="746,270"
+		Size="463,88"
+		Effect="UI/3D_GUI_windows/Crafting/Uj_craftgomb_push.N2E"
+		MouseSenseEnabled="0"
+		ShowCategory="mouse"
+	/>
+	<Icon Name="CraftingCraftButtonText"
+		Pos="746,270"
+		Size="463,88"
+		AllImg="none"
+		IdleOffset="0,3"
+		PressOffset="0,3"
+		RolloverOffset="0,3"
+		Enabled="0"
+		Style="Crafting_MLarge_Color_Glow_onmouse"
+		Text="CRAFT ITEM"
+		ShowCategory="mouse"
+	/>
+	<Container Name="CraftingRight" GuiAlign="center">
+		<Text Name="PreviewTitle"
+			Pos="735,372"
+			Size="472,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.crafteditem"
+		/>
+		<Dummy Name="CraftingTooltipDummy" Pos="735,406" Size="1,1"/>
+	</Container>
+</Container>

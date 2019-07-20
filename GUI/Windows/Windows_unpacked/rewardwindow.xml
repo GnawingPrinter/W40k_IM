@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="759,200" Size="420,666" GuiAlign="center" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+
+	<Constants>
+		<InfluencePinCount Type="int" Value="5"/>
+		<SystemInfluenceBarLength Type="int" Value="352"/>		
+		<Visible Type="int" Value="1"/>
+	</Constants>
+	
+	<!--Ide lehet okossagokat irni-->
+	<Dummy Name="TooltipDummy" Pos="433,16" Size="1,1"/>
+	
+	<Container Name="WindowBg">
+		<Image Name="BackgroundMiddle"
+			Pos="0,68"
+			Size="420,552"
+			Image="UI/msgbox/popup_rewardsMiddle.tga"
+		/>		
+		<Image Name="BackgroundTop"
+			Pos="0,0"
+			Size="420,76"
+			Image="UI/msgbox/popup_rewardsTop.tga"
+		/>
+		<Image Name="BackgroundBottom"
+			Pos="0,614"
+			Size="420,52"
+			Image="UI/msgbox/popup_rewardsBottom.tga"
+		/>
+	</Container>
+	
+	<Text Name="WindowTitle"
+		Pos="35,30"
+		Size="330,32"
+		Style="Headline_Large_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="_title"
+	/>
+	
+	<Icon Name="ClaimButton"
+		Pos="121,623"
+		Size="160,40"
+		IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+		PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		Style="Starmap2_3"
+		Text="openworld.GUI.reward.claim"
+	/>
+	
+	<XBOXButton Name="ClaimController"
+		Pos="370,21"
+		HAlign="center"
+		VAlign="bottom"
+		Height="48"
+		SetButton="A"
+		Style="XBoxButtonFont"
+		Text="openworld.GUI.mission.claim"
+	/>
+	
+	<Container Name="GenericBox" Visible="0">	
+		<Image Name="GenericPicture"
+			Pos="89,164"
+			Size="228,312"
+			Image="UI/msgbox/popup_rewardsPictureGeneric.tga"
+		/>
+	</Container>
+	
+	<Container Name="InfluenceBox" Visible="0">
+		<Image Name="InfluencePicture"
+			Pos="21,214"
+			Size="360,300"
+			Image="UI/msgbox/popup_rewardsPictureInfluence.tga"
+		/>
+		<Image Name="InfluenceBarBg"
+			Pos="26,154"
+			Size="352,16"
+			Image="UI/msgbox/popup_rewardsInfluenceBar.tga"
+		/>
+		<Text Name="InfluenceText"/>
+<!-- 		<Loop Count="@InfluencePinCount" Variable="$X$" Offset="69,0">
+			<Image Name="SystemInfluenceMarker$X$" Pos="90,167" Size="12,12" Image="UI/OpenWorld/starmap_barMarker.tga" MouseSenseEnabled="0" ZOffset="@Layer_0_ZOffset" TiltPivot="@WindowTiltPivot" TiltMouseCenter="@WindowTiltMouseCenter" DefaultTilt="@Layer_0_DefaultTilt" MaximumTilt="@Layer_Text_MaximumTilt"/>
+			<Image Name="SystemInfluenceReward$X$" Pos="47,178" Size="28,28" Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga" ZOffset="@Layer_0_ZOffset" TiltPivot="@WindowTiltPivot" TiltMouseCenter="@WindowTiltMouseCenter" DefaultTilt="@Layer_0_DefaultTilt" MaximumTilt="@Layer_Text_MaximumTilt" InitPopup="topcenter,bottomcenter"/>
+		</Loop> -->
+		<Container Pos="30,4">
+			<Image Name="SystemInfluenceMarker0" Pos="8,165" Size="12,12" Image="UI/OpenWorld/starmap_barMarker.tga" MouseSenseEnabled="0"/>
+			<Image Name="SystemInfluenceReward0" Pos="2,175" Size="24,24" Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"/>
+		</Container>
+		<Container Pos="52,4">
+			<Image Name="SystemInfluenceMarker1" Pos="8,165" Size="12,12" Image="UI/OpenWorld/starmap_barMarker.tga" MouseSenseEnabled="0"/>
+			<Image Name="SystemInfluenceReward1" Pos="2,175" Size="24,24" Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"/>
+		</Container>
+		<Container Pos="96,4">
+			<Image Name="SystemInfluenceMarker2" Pos="8,165" Size="12,12" Image="UI/OpenWorld/starmap_barMarker.tga" MouseSenseEnabled="0"/>
+			<Image Name="SystemInfluenceReward2" Pos="2,175" Size="24,24" Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"/>
+		</Container>
+		<Container Pos="184,4">
+			<Image Name="SystemInfluenceMarker3" Pos="8,165" Size="12,12" Image="UI/OpenWorld/starmap_barMarker.tga" MouseSenseEnabled="0"/>
+			<Image Name="SystemInfluenceReward3" Pos="2,175" Size="24,24" Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"/>
+		</Container>
+		<Container Pos="360,4">
+			<Image Name="SystemInfluenceMarker4" Pos="8,165" Size="12,12" Image="UI/OpenWorld/starmap_barMarker.tga" MouseSenseEnabled="0"/>
+			<Image Name="SystemInfluenceReward4" Pos="2,175" Size="24,24" Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"/>
+		</Container>
+		<FlowContainer
+			Pos="26,152"
+			Height="20"
+			Horizontal="1"
+			BackgroundTopSize="8"
+			BackgroundBotSize="8"
+			BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+			BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+			BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+			MouseSenseEnabled="0"
+			ZOffset="@Layer_0_ZOffset"
+			TiltPivot="@WindowTiltPivot"
+			TiltMouseCenter="@WindowTiltMouseCenter"
+			DefaultTilt="@Layer_0_DefaultTilt"
+			MaximumTilt="@Layer_Text_MaximumTilt"
+		>
+			<Dummy Name="InfluenceBar" Height="20" Width="@SystemInfluenceBarLength" MouseSenseEnabled="0"/>
+		</FlowContainer>
+	</Container>
+	
+	<Container Name="HeroicDeedBox" Visible="0">	
+		<Image Name="HeroicDeedPicture"
+			Pos="49,200"
+			Size="312,272"
+			Image="UI/msgbox/popup_rewardsPictureLoot.tga"
+		/>
+	</Container>
+	
+	<Container Name="CraftingBox" Visible="0">	
+		<Image Name="CraftingBoxPicture"
+			Pos="12,64"
+			Size="380,400"
+			Image="UI/msgbox/popup_rewardsPictureCrafting.tga"
+		/>
+	</Container>
+		
+	<Container Name="InvestigationBox" Visible="0">	
+		<TextBox Name="InvestigationText"
+			Pos="30,121"
+			Size="360,322"
+			Style="Text_Normal_White"
+			TextAlignH="left"
+			TextAlignV="top"
+			Text="_investigationtext"
+		/>
+	</Container>
+	
+	<Container Name="ProtectorBox" Visible="0">	
+		<Image
+			Pos="22,152"
+			Size="360,372"
+			Image="UI/msgbox/popup_rewardsPictureProtector.tga"
+		/>
+		<TextBox Name="ProtectorRank"
+			Pos="35,151"
+			Size="40,30"
+			Style="Text_Large_White"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="_#1"
+		/>
+		<Text Name="ProtectorName"
+			Pos="80,151"
+			Size="215,30"
+			Style="Text_Large_White"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="_charactername_longone"
+		/>
+		<Text Name="ProtectorInfluence"
+			Pos="300,151"
+			Size="70,30"
+			Style="Text_Large_White"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="384775"
+		/>
+	</Container>
+	
+	<Container Name="GloryLeaderboardBox" Visible="0">	
+		<Image
+			Pos="22,152"
+			Size="360,372"
+			Image="UI/msgbox/popup_rewardsPictureProtector.tga"
+		/>
+		<TextBox Name="GloryLeaderboardRank"
+			Pos="35,151"
+			Size="40,30"
+			Style="Text_Large_White"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="_#1"
+		/>
+		<TextBox Name="GloryLeaderboardName"
+			Pos="80,151"
+			Size="280,30"
+			Style="Text_Large_White"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="_charactername"
+		/>
+	</Container>
+	
+	<Container Size="420,610" Visible="1">
+		<Container Name="TopFrame" Pos="0,80" Size="420,234">		
+			<FlowContainer Width="420">
+				<Text Name="GenericRewardDesc"
+					MarginTop="4"
+					MarginLeft="30"
+					Width="344"
+					Style="Text_Large_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_rewardheadline"
+				/>
+				<Image Name="RewardDescSeparator"
+					MarginTop="3"
+					MarginBottom="2"
+					MarginLeft="30"
+					Size="344,4"
+					Image="UI/Assignment/assignment_bigline.tga"
+				/>
+				<TextBox Name="GenericRewardDesc2"
+					MarginTop="4"
+					MarginLeft="30"
+					Size="344,198"
+					Style="Text_Large_White"
+					TextAlignH="left"
+					TextAlignV="top"
+					Text="_rewarddesc"
+				/>			
+			</FlowContainer>
+		</Container>
+		<Container Name="BottomFrame" Pos="0,137" Size="420,460">
+			<FlowContainer Name="RewardFrame" VAlign="bottom" Width="420">
+				<Text Name="RewardListHeader"
+					MarginTop="0"
+					MarginLeft="30"
+					Size="354,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.GUI.reward.reward"
+				/>				
+				<Image Name="RewardLineShort" Visible="0"
+					MarginTop="2"
+					MarginLeft="30"
+					Size="242,4"
+					Image="UI/Assignment/assignment_bigline.tga"
+				/>
+				<Image Name="RewardLineLong" Visible="1"
+					MarginTop="2"
+					MarginLeft="30"
+					Size="344,4"
+					Image="UI/Assignment/assignment_bigline.tga"
+				/>
+				<Container Name="LargeReward" MarginTop="4" Size="420,53" IgnoreScissor="1"  Visible="0">
+					<Image Name="LargeRewardImage"
+						Pos="267,-58"
+						Size="132,116"
+						Image="UI/msgbox/popup_rewardsDeedAttribute.tga"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Image Name="LargeRewardImage2"
+						Pos="282,-40"
+						Size="104,104"
+						Image="UI/msgbox/popup_rewardsDeedAttribute.tga"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Text Name="LargeRewardName"
+						MarginTop="0"
+						MarginLeft="30"
+						Size="240,28"
+						Style="Text_Large_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_rewardname"
+					/>
+					<Text Name="LargeRewardDesc"
+						MarginTop="26"
+						MarginLeft="30"
+						Size="240,28"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_description!"
+					/>
+				</Container>
+				<Container Name="GoldReward" MarginTop="10" Size="396,30" Visible="0">
+					<Image
+						Pos="30,2"
+						Size="28,28"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"
+					/>
+					<Text
+						Pos="64,2"
+						Size="195,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.mission.gold"
+					/>
+					<Text Name="GoldAmount"
+						Pos="281,2"
+						Size="92,30"
+						Style="Text_Normal_White"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_69"
+					/>
+				</Container>
+				<Container Name="FateReward" MarginTop="10" Size="396,30" Visible="0">
+					<Image
+						Pos="30,2"
+						Size="28,28"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardFate.tga"
+					/>
+					<Text
+						Pos="64,2"
+						Size="195,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.mission.fate"
+					/>
+					<Text Name="FateAmount"
+						Pos="281,2"
+						Size="92,30"
+						Style="Text_Normal_White"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_69"
+					/>
+				</Container>
+				<Container Name="RankReward" MarginTop="10" Size="396,30" Visible="0">
+					<Image
+						Pos="30,2"
+						Size="28,28"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardXp.tga"
+					/>
+					<Text
+						Pos="64,2"
+						Size="195,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.mission.charxp"
+					/>
+					<Text Name="RankAmount"
+						Pos="281,2"
+						Size="92,30"
+						Style="Text_Normal_White"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_69"
+					/>
+				</Container>
+				<Container Name="XPReward" MarginTop="10" Size="396,30" Visible="0">
+					<Image
+						Pos="30,2"
+						Size="28,28"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardAccXp.tga"
+					/>
+					<Text
+						Pos="64,2"
+						Size="195,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.mission.accxp"
+					/>
+					<Text Name="XPAmount"
+						Pos="281,2"
+						Size="92,30"
+						Style="Text_Normal_White"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_69"
+					/>
+				</Container>
+				<Container Name="GloryReward" MarginTop="10" Size="396,30" Visible="0">
+					<Image
+						Pos="30,2"
+						Size="28,28"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardGlory.tga"
+					/>
+					<Text
+						Pos="64,2"
+						Size="195,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.mission.glory"
+					/>
+					<Text Name="GloryAmount"
+						Pos="281,2"
+						Size="92,30"
+						Style="Text_Normal_White"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_69"
+					/>
+				</Container>
+				<Container Name="CraftMaterialReward" MarginTop="10" Size="396,70" Visible="0">
+					<Image Name="CraftMaterialIcon"
+						Pos="30,2"
+						Size="60,60"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardGlory.tga"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Text Name="CraftMaterialCount"
+						MarginTop="4"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Large_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_rewardname"
+					/>
+					<Text Name="CraftMaterialText"
+						MarginTop="32"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="menu.inventory.commonreward.craftmaterial"
+					/>
+				</Container>
+				<Container Name="MedkitUnlockReward" MarginTop="10" Size="396,70" Visible="0">
+					<Image Name="MedkitIcon"
+						Pos="30,2"
+						Size="60,60"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardGlory.tga"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Text Name="MedkitUnlockText"
+						MarginTop="4"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Large_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_rewardname"
+					/>
+					<Text
+						MarginTop="32"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="menu.inventory.commonreward.inoculatorunlock"
+					/>
+				</Container>
+				<Container Name="TarotUnlockReward" MarginTop="10" Size="396,86" Visible="0">
+					<Image Name="TarotIcon"
+						Pos="34,2"
+						Size="52,84"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardGlory.tga"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Text Name="TarotUnlockText"
+						MarginTop="14"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Large_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_rewardname"
+					/>
+					<Text
+						MarginTop="42"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="menu.inventory.commonreward.tarotunlock"
+					/>
+				</Container>
+				<Container Name="CosmeticReward" MarginTop="10" Size="396,70" Visible="0">
+					<Image Name="CosmeticIcon"
+						Pos="30,2"
+						Size="60,60"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardGlory.tga"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Text Name="CosmeticText"
+						MarginTop="4"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Large_White"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_rewardname"
+					/>
+					<Text Name="CosmeticSubText"
+						MarginTop="32"
+						MarginLeft="100"
+						Size="240,28"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="menu.inventory.commonreward.cosmeticunlock"
+					/>
+				</Container>
+				<Container Name="Artifacts" MarginTop="10" Size="396,138" Visible="1">
+					<Image
+						Visible="0"
+						Pos="161,2"
+						Size="28,28"
+						Image="UI/OpenWorld/MissionInfo/mission_rewardItem.tga"
+					/>
+					<Text
+						Visible="0"
+						Pos="197,0"
+						Size="170,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.mission.item"
+					/>
+					<Image
+						Pos="51,8"
+						Size="304,128"
+						Image="UI/msgbox/popup_inventorySmall.tga"
+					/>
+					<Inventory Name="GenericRewardInventory"
+						Pos="53,10"
+						Size="300,120"
+					/>
+				</Container>
+			</FlowContainer>
+		</Container>
+	</Container>
+
+
+</Window>

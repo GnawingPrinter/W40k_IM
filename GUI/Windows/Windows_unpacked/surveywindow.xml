@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="128,50" GuiAlign="topleft">
+	<Include Path="Windows/Styles.xml"/>
+
+	<Constants>
+		<QuestionCount Type="int" Value="5"/>
+		<AnswerCount Type="int" Value="5"/>
+	</Constants>
+
+	<Image
+		Pos="0,0"
+		Size="568,52"
+		Image="UI/msgbox/survey/survey_top.tga"
+	/>
+	<Image
+		Pos="0,52"
+		Size="568,708"
+		Image="UI/msgbox/survey/survey_middle.tga"
+	/>
+	<Image
+		Pos="0,760"
+		Size="568,40"
+		Image="UI/msgbox/survey/survey_bottom.tga"
+	/>
+	<Text Name="SurveyTitle"
+		Pos="20,9"
+		Size="528,30"
+		Style="Headline_Large_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="openworld.GUI.survey.title"
+	/>
+	<Icon Name="Close"
+		Pos="548,32"
+		Size="24,24"
+		IdleImg="UI/OpenWorld/icon_closeOff.tga"
+		PressImg="UI/OpenWorld/icon_closeOff.tga"
+		RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+		InitPopup="bottomcenter,topcenter"
+		Tooltip="common.close"
+		ShowCategory="mouse"
+	/>
+	<ScrollableContainer Pos="24,67" Size="530,650">
+		<FlowContainer
+			Width="510"
+		>
+			<TextBox Name="SurveyDesc"
+				MarginBottom="10"
+				Width="510"
+				UseSlider="0"
+				Style="Text_Normal_Dark_Outline"
+				Text="missionstory.purge_001"
+			/>
+			<Loop Count="@QuestionCount" Variable="$X$">
+				<TextBox Name="Question$X$_Question"
+					MarginBottom="10"
+					Width="510"
+					UseSlider="0"
+					Style="Text_Large_Light"
+					Text="missionstory.purge_001"
+				/>
+				<FlowContainer Name="Question$X$_MultiAnswer">
+					<RadioGroupLogical Name="Question$X$_MultiAnswer_AnswerGroup"/>
+					<Loop Count="@AnswerCount" Variable="$Y$">
+						<CheckBox Name="Question$X$_MultiAnswer_AnswerGroup_Answer$Y$"
+							Size="506,32"
+							FontType="Titillium Regular"
+							FontSize="18"
+							Color="#EDEDED"
+							TextAlignH="left"
+							TextAlignV="center"
+							RadioGroup="Question$X$_MultiAnswer_AnswerGroup"
+							UseDefault="1"
+							Text="Fos $X$ $Y$"
+							ControllerSenseEnabled="1"
+						/>
+					</Loop>
+				</FlowContainer>
+				
+				<FlowContainer Name="Question$X$_Rate">
+					<Container>
+						<RadioGroupLogical Name="Question$X$_Rate_AnswerGroup"/>
+						<Loop Count="@AnswerCount" Variable="$Y$" Offset="85,0">
+							<CheckBox Name="Question$X$_Rate_AnswerGroup_Answer$Y$"
+								Pos="60,0"
+								Size="58,32"
+								FontType="Titillium Regular"
+								FontSize="18"
+								Color="#EDEDED"
+								TextAlignH="left"
+								TextAlignV="center"
+								RadioGroup="Question$X$_Rate_AnswerGroup"
+								UseDefault="1"
+								Text="openworld.GUI.survey._$Y$"
+								ControllerSenseEnabled="1"
+							/>
+						</Loop>
+					</Container>
+				</FlowContainer>
+				
+				<FlowContainer Name="Question$X$_Explain">
+					<TextEditor Name="Question$X$_Explain_Answer"
+						Size="510,140"
+						Style="Text_XSmall_Light"
+						FontSize="18"
+						ControllerSenseEnabled="1"
+					/>
+				</FlowContainer>
+				
+				<Image Name="Question$X$_Separator"
+					MarginTop="14"
+					MarginBottom="14"
+					Size="508,4"
+					Image="UI/msgbox/survey/survey_line.tga"
+				/>
+			</Loop>
+			
+			<TextBox
+				Width="510"
+				Style="Text_Normal_Dark_Outline"
+				UseSlider="0"
+				Text="openworld.GUI.survey.thankyou"
+			/>
+			<Container MarginTop="5" Size="510,40">
+				<Image
+					Pos="4,0"
+					Size="40,40"
+					Image="UI/OpenWorld/starmap_resourcePremium.tga"
+				/>
+				<Text Name="SurveyReward"
+					Pos="55,5"
+					Size="100,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_100"
+				/>
+			</Container>
+		</FlowContainer>
+	</ScrollableContainer>
+		
+	<Icon Name="Send"
+		Pos="200,748"
+		Size="168,48"
+		IdleImg="UI/common/battle_escOff.tga"
+		PressImg="UI/common/battle_escOver.tga"
+		RolloverImg="UI/common/battle_escOver.tga"
+		Style="StarmapHeadline1_4"
+		Text="openworld.GUI.survey.send"
+		ShowCategory="mouse"
+	/>
+</Window>

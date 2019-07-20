@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Giant_Rails_Fr06 Terrain="Terrains/Sections/Giant_Rails/Giant_Rails_Fr06.VHT" Preview="Terrains/Sections/Giant_Rails/MapEditorImages/Giant_Rails_Fr06_thumb.bmp" Image="Terrains/Sections/Giant_Rails/MapEditorImages/Giant_Rails_Fr06.bmp" MinClickHeight="-50000" Background="false" MapType="Giant Rails">
+	<PivotPos x="-3496" y="-1334" />
+	<Tags />
+	<Grids>
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+	</Grids>
+</Giant_Rails_Fr06>

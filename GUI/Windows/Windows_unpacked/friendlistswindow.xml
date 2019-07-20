@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="535,95" GuiAlign="center" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>		
+		<FriendCount Type="int" Value="16"/>
+		<SearchCount Type="int" Value="14"/>
+		<PartyMemberCount Type="int" Value="4"/>
+
+		<LFGUnavailableColor Type="color" Value="#b5aaa6"/>
+		<LFGAvailableColor Type="color" Value="#b5fffc"/>
+	</Constants>
+			
+	<Container>
+		<Image
+			Pos="0,0"
+			Size="848,840"
+			Image="UI/OpenWorld/Friends/friends_backgroundNew.tga"
+		/>
+		<Image Name="FriendsBack"
+			Pos="0,0"
+			Size="848,840"
+			Image="UI/common/Options/options_background2.tga"
+		/>
+		<Text
+			Pos="74,98"
+			Size="706,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="controller.common.social"
+		/>
+		
+		<Container Pos="0,130" Size="848,48" IgnoreScissor="1">
+			<FlowContainer Horizontal="1" HAlign="center" IgnoreScissor="1">
+				<XBOXButton Name="XBoxLB"
+					Size="48,48"
+					SetButton="LEFT_SHOULDER"
+				/>
+				<Icon Name="FriendlistTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.gui.friendlist.title"
+				/>
+				<Icon Name="FindTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.gui.friendlist.FindPlayer"
+				/>
+				<Icon Name="RequestsTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.gui.friendlist.Requests"
+				/>
+				<Icon Name="PartyTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="common.party"
+					ShowCategory="controller"
+				/>
+				<Icon Name="LFGTab"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="LFG.LFGTab"
+				/>
+				<XBOXButton Name="XBoxRB"
+					Size="48,48"
+					SetButton="RIGHT_SHOULDER"
+				/>
+			</FlowContainer>
+		</Container>
+			
+		<Container Name="Friends">
+			<Container Name="Friendlist" Visible="0">
+				<Text
+					Pos="94,188"
+					Size="144,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.status"
+				/>
+				<Text
+					Pos="229,188"
+					Size="174,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.friend"
+				/>
+				<Text
+					Pos="418,188"
+					Size="174,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.cabal"
+				/>
+				<Text
+					Pos="607,188"
+					Size="54,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.rank"
+				/>
+				<Image Name="FriendlistBack"
+					Pos="51,211"
+					Size="752,524"
+					Image="UI/OpenWorld/Friends/info_frameFriendlistNew.tga"
+				/>
+				<FlowContainer Pos="470,785" Horizontal="1" ShowCategory="mouse" Visible="0">
+					<Text
+						Style="Text_Normal_Light"
+						Size="300,32"
+						TextAlignH="right"
+						Text="party.user_intercations"
+					/>
+					<Image
+						Height="32"
+						Width="32"
+						Image="UI/Shortcuts/bigshortcut_rightclick.dds"
+					/>
+				</FlowContainer>
+				<Loop Count="@FriendCount" Variable="$X$" Offset="0,32">
+					<Container Pos="56,218" Widht="744" Name="Friend$X$" IgnoreScissor="1">
+						<Icon Name="FriendBack$X$"
+							Pos="0,0"
+							Size="744,32"
+							IdleImg="UI/OpenWorld/Friends/friends_frameOff.tga"
+							PressImg="UI/OpenWorld/Friends/friends_frameOn.tga"
+							RolloverImg="UI/OpenWorld/Friends/friends_frameOver.tga"
+							UseButtonEffects="0"
+							ControllerSenseEnabled="1"
+							SlideredElement="1"
+						/>
+						<Image Name="FriendStatusIcon$X$"
+							Pos="4,3"
+							Size="28,24"
+							Image="UI/OpenWorld/Friends/friends_statusOffline.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Text Name="FriendCharacterStatus$X$"
+							Pos="38,0"
+							Size="120,32"
+							Style="Italic_Normal_White"
+							Color="#99cccc"
+							TextAlignH="left"
+							FontSize="16"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="offline"
+						/>
+						<Text Name="FriendName$X$"
+							Pos="173,0"
+							Size="174,32"
+							Style="Text_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="friend $X$"
+						/>
+						<Text Name="CabalName$X$"
+							Pos="362,0"
+							Size="174,32"
+							Style="Text_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="cabal $X$"
+						/>
+						<Text Name="FriendLevel$X$"
+							Pos="551,0"
+							Size="54,32"
+							Style="Text_Normal_Dark"
+							FontType="Share Tech Mono"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="9999"
+						/>
+						<Icon Name="FriendInvite$X$"
+							Pos="680,-3"
+							Size="36,36"
+							IdleImg="UI/OpenWorld/Friends/button_inviteOff.tga"
+							PressImg="UI/OpenWorld/Friends/button_inviteOff.tga"
+							RolloverImg="UI/OpenWorld/Friends/button_inviteOver.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="openworld.GUI.friendlist.invite"
+							ShowCategory="mouse"
+						/>
+						<Icon Name="FriendMenu$X$"
+							Pos="711,-3"
+							Size="36,36"
+							IdleImg="UI/OpenWorld/Chat/button_settingsOff.tga"
+							PressImg="UI/OpenWorld/Chat/button_settingsOff.tga"
+							RolloverImg="UI/OpenWorld/Chat/button_settingsOver.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="common.options"
+							ShowCategory="mouse"
+						/>
+					</Container>
+				</Loop>
+				<CheckBox Name="OnlineOnly"
+					Pos="50,738"
+					Size="300,32"
+					Style="Text_Normal_Color"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.onlineonly"
+					ShowCategory="mouse"
+				/>
+				<Text Name="FriendsNumber"
+					Pos="576,739"
+					Size="220,30"
+					Style="Text_Normal_Dark"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="5/7 Online"
+				/>
+			</Container>	
+			
+			<Container Name="Find" Visible="0">
+				<Image
+					Pos="51,211"
+					Size="752,524"
+					Image="UI/OpenWorld/Friends/info_frameSearch.tga"
+				/>
+				<Text
+					Pos="52,180"
+					Size="212,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="openworld.gui.cabal.list.name"
+				/>
+				<EditBox Name="SearchEditBox"
+					Pos="52,207"
+					Size="212,28"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="center"
+				/>
+				<Container ShowCategory="mouse">
+					<Text
+						Pos="282,180"
+						Size="148,30"
+						Style="Headline_Normal_Light_Glow"
+						IgnoreScissor="1"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="openworld.gui.friendlist.level"
+					/>	
+					<EditBox Name="MinLevelEditBox"
+						Pos="282,207"
+						Size="64,28"
+						Style="Text_Normal_Dark"
+						FontType="Share Tech Mono"
+						TextAlignH="left"
+						TextAlignV="center"
+						InputType="numbers"
+					/>
+					<Image
+						Pos="348,218"
+						Size="16,8"
+						Image="UI/OpenWorld/Friends/info_frameLine.tga"
+						MouseSenseEnabled="0"
+					/>
+					<EditBox Name="MaxLevelEditBox"
+						Pos="366,207"
+						Size="64,28"
+						Style="Text_Normal_Dark"
+						FontType="Share Tech Mono"
+						TextAlignH="left"
+						TextAlignV="center"
+						InputType="numbers"
+					/>
+				</Container>
+				<Text
+					Pos="94,242"
+					Size="144,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.status"
+				/>
+				<Text
+					Pos="229,242"
+					Size="174,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.friend"
+				/>
+				<Text
+					Pos="418,242"
+					Size="174,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.cabal"
+				/>
+				<Text
+					Pos="607,242"
+					Size="54,30"
+					Style="Headline_Normal_Light_Glow"
+					IgnoreScissor="1"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.friendlist.rank"
+				/>
+				<Icon Name="SearchButton"
+					Pos="638,201"
+					Size="164,36"
+					IdleImg="UI/common/Options/button_largeOff.tga"
+					PressImg="UI/common/Options/button_largeOff.tga"
+					RolloverImg="UI/common/Options/button_largeOver.tga"
+					Style="Starmap2_3"
+					UseButtonEffects="0"
+					Enabled="0"
+					Text="openworld.gui.cabal.search"
+					ShowCategory="mouse"
+				/>
+				<Text Name="SearchingNotification"
+					Pos="93,273"
+					Size="450,40"
+					Style="Text_Normal_Color"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.pvp.searching"
+				/>
+				<Loop Count="@SearchCount" Variable="$X$" Offset="0,32">
+					<Container Pos="56,272" Size="744,28" IgnoreScissor="1" Name="FindResult$X$">
+						<Icon Name="FindResultBack$X$"
+							Pos="0,0"
+							Size="744,32"
+							IdleImg="UI/OpenWorld/Friends/friends_frameOff.tga"
+							PressImg="UI/OpenWorld/Friends/friends_frameOn.tga"
+							RolloverImg="UI/OpenWorld/Friends/friends_frameOver.tga"
+							UseButtonEffects="0"
+							ControllerSenseEnabled="1"
+							SlideredElement="1"
+						/>
+						<Image Name="FindResultStatusIcon$X$"
+							Pos="4,3"
+							Size="28,24"
+							Image="UI/OpenWorld/Friends/friends_statusOffline.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Text Name="FindResultCharacterStatus$X$"
+							Pos="38,0"
+							Size="120,32"
+							Style="Italic_Normal_White"
+							Color="#99cccc"							
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="offline"
+						/>
+						<Text Name="FindResultName$X$"
+							Pos="173,0"
+							Size="174,32"
+							Style="Text_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="friend $X$"
+						/>
+						<Text Name="FindResultCabal$X$"
+							Pos="362,0"
+							Size="174,32"
+							Style="Text_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="cabal $X$"
+						/>
+						<Text Name="FindResultLevel$X$"
+							Pos="551,0"
+							Size="54,32"
+							Style="Text_Normal_Dark"
+							FontType="Share Tech Mono"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="9999"
+						/>
+						<Text Name="FindResultRegion$X$"
+							Visible="0"
+							Pos="458,3"
+							Size="80,30"
+							Style="Text_Normal_Light"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="N/A"
+						/>
+						<Icon Name="FindResultAddFriend$X$"
+							Pos="680,-3"
+							Size="36,36"
+							IdleImg="UI/OpenWorld/Friends/button_addfriendOff.tga"
+							PressImg="UI/OpenWorld/Friends/button_addfriendOff.tga"
+							RolloverImg="UI/OpenWorld/Friends/button_addfriendOver.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="openworld.GUI.friendlist.addfriend"
+							ShowCategory="mouse"
+						/>
+						<Icon Name="FindResultMenu$X$"
+							Pos="711,-3"
+							Size="36,36"
+							IdleImg="UI/OpenWorld/Chat/button_settingsOff.tga"
+							PressImg="UI/OpenWorld/Chat/button_settingsOff.tga"
+							RolloverImg="UI/OpenWorld/Chat/button_settingsOver.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="common.options"
+							ShowCategory="mouse"
+						/>
+					</Container>
+				</Loop>
+				<FlowContainer Pos="470,785" Horizontal="1" ShowCategory="mouse" Visible="0">
+					<Text
+						Style="Text_Normal_Light"
+						Size="300,32"
+						TextAlignH="right"
+						Text="party.user_intercations"
+					/>
+					<Image
+						Height="32"
+						Width="32"
+						Image="UI/Shortcuts/bigshortcut_rightclick.dds"
+					/>
+				</FlowContainer>
+			</Container>
+			
+			<Container Name="Requests" Visible="1">
+				<Image Name="RequestsBack"
+					Pos="51,211"
+					Size="752,524"
+					Image="UI/OpenWorld/Friends/info_frameFriendlistNew.tga"
+				/>
+				<RadioGroupLogical Name="RequestType"/>
+				<Container Pos="50,180" Size="750,48">
+					<FlowContainer Horizontal="1" HorizontalAlignment="center">
+						<XBOXButton Name="MembersXBoxLT"
+							Size="48,48"
+							MarginTop="-9"
+							SetButton="L_TRIGGER"
+						/>
+						<CheckBox Name="RequestsForYou"
+							Height="32"
+							Style="Text_Normal_Color"
+							TextAlignH="left"
+							TextAlignV="center"
+							InitPopup="bottomleft,topleft"
+							RadioGroup="RequestType"
+							UseDefault="1"
+							Text="openworld.gui.friendlist.requests.foryou"
+						/>
+						<CheckBox Name="RequestsYours"
+							MarginLeft="30"
+							Height="32"
+							Style="Text_Normal_Color"
+							TextAlignH="left"
+							TextAlignV="center"
+							InitPopup="bottomleft,topleft"
+							RadioGroup="RequestType"
+							UseDefault="1"
+							Text="openworld.gui.friendlist.requests.yours"
+						/>
+						<XBOXButton Name="MembersXBoxRT"
+							Size="48,48"
+							MarginLeft="5"
+							MarginTop="-9"
+							SetButton="R_TRIGGER"
+						/>
+					</FlowContainer>
+				</Container>
+				
+				<Loop Count="@FriendCount" Variable="$X$" Offset="0,32">
+					<Container Pos="56,218" Size="550,40" IgnoreScissor="1" Name="Request$X$">
+						<Icon Name="RequestBack$X$"
+							Pos="0,0"
+							Size="744,32"
+							IdleImg="UI/OpenWorld/Friends/friends_frameOff.tga"
+							PressImg="UI/OpenWorld/Friends/friends_frameOn.tga"
+							RolloverImg="UI/OpenWorld/Friends/friends_frameOver.tga"
+							UseButtonEffects="0"
+							ControllerSenseEnabled="1"
+							SlideredElement="1"
+						/>
+						<Image Name="RequestStatusIcon$X$"
+							Pos="4,3"
+							Size="28,24"
+							Image="UI/OpenWorld/Friends/friends_statusOffline.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Text Name="RequestName$X$"
+							Pos="38,0"
+							Size="233,32"
+							Style="Text_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="find $X$"
+						/>
+						<Text Name="RequestCharacterStatus$X$"
+							Pos="290,0"
+							Size="144,32"
+							Style="Italic_Normal_White"
+							Color="#99cccc"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="offline"
+						/>
+						<Icon Name="RequestAccept$X$"
+							Pos="680,-3"
+							Size="36,36"
+							IdleImg="UI/OpenWorld/Friends/button_acceptOff.tga"
+							PressImg="UI/OpenWorld/Friends/button_acceptOff.tga"
+							RolloverImg="UI/OpenWorld/Friends/button_acceptOver.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="openworld.GUI.friendlist.accept"
+							ShowCategory="mouse"
+						/>
+						<Icon Name="RequestDecline$X$"
+							Pos="711,-3"
+							Size="36,36"
+							IdleImg="UI/OpenWorld/Friends/button_declineOff.tga"
+							PressImg="UI/OpenWorld/Friends/button_declineOff.tga"
+							RolloverImg="UI/OpenWorld/Friends/button_declineOver.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="openworld.GUI.friendlist.decline"
+							ShowCategory="mouse"
+						/>
+					</Container>
+				</Loop>
+				<FlowContainer Pos="470,785" Horizontal="1" ShowCategory="mouse" Visible="0">
+					<Text
+						Style="Text_Normal_Light"
+						Size="300,32"
+						TextAlignH="right"
+						Text="party.user_intercations"
+					/>
+					<Image
+						Height="32"
+						Width="32"
+						Image="UI/Shortcuts/bigshortcut_rightclick.dds"
+					/>
+				</FlowContainer>
+			</Container>
+			
+
+			<Container Name="LFGSearch" Visible="0">
+				<Image
+					Pos="51,211"
+					Size="752,524"
+					Image="UI/OpenWorld/Friends/info_frameFriendlistNew.tga"
+				/>
+			
+				<Container Pos="56,180">
+
+					<Text
+						Pos="0,0"
+						Size="274,30"
+						Style="Headline_Normal_Light_Glow"
+						IgnoreScissor="1"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="LFG.Search.GroupName"
+						Color="@LFGAvailableColor"
+					/>
+					<Text
+						Pos="280,0"
+						Size="174,30"
+						Style="Headline_Normal_Light_Glow"
+						IgnoreScissor="1"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="LFG.Search.OwnerName"
+						Color="@LFGAvailableColor"
+					/>
+					<Image
+						Pos="515,3"
+						Size="28,24"
+						Image="UI/OpenWorld/Friends/friends_statusPartySelf.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text
+						Pos="560,0"
+						Size="100,30"
+						Style="Headline_Normal_Light_Glow"
+						IgnoreScissor="1"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="openworld.gui.friendlist.level"
+					/>
+					<Text
+						Pos="655,0"
+						Size="96,30"
+						Style="Headline_Normal_Light_Glow"
+						IgnoreScissor="1"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="LFG.search.Goals"
+					/>
+					<Text Name="LFG_SearchingNotification"
+						Pos="37,55"
+						Size="450,40"
+						Style="Text_Normal_Color"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.gui.pvp.searching"
+					/>
+				
+
+					<Loop Count="@SearchCount" Variable="$X$" Offset="0,32">
+						<Container Pos="0,39" Size="744,28" IgnoreScissor="1" Name="LFG_FindResult$X$">
+							<Icon Name="LFG_FindResultBack$X$"
+								Pos="0,0"
+								Size="744,32"
+								IdleImg="UI/OpenWorld/Friends/friends_frameOff.tga"
+								PressImg="UI/OpenWorld/Friends/friends_frameOn.tga"
+								RolloverImg="UI/OpenWorld/Friends/friends_frameOver.tga"
+								UseButtonEffects="0"
+								ControllerSenseEnabled="1"
+								SlideredElement="1"
+							/>
+							<Text Name="LFG_FindResultName$X$"
+								Pos="4,0"
+								Size="274,32"
+								Style="Text_Normal_White"
+								TextAlignH="left"
+								TextAlignV="center"
+								MouseSenseEnabled="0"
+								Text="Name $X$"
+							/>
+							<Text Name="LFG_FindResultOwner$X$"
+								Pos="280,0"
+								Size="174,32"
+								Style="Text_Normal_White"
+								TextAlignH="left"
+								TextAlignV="center"
+								MouseSenseEnabled="0"
+								Text="Owner $X$"
+							/>
+							<Text Name="LFG_FindResultMemberCount$X$"
+								Pos="500,0"
+								Size="60,32"
+								Style="Text_Normal_White"
+								TextAlignH="center"
+								TextAlignV="center"
+								MouseSenseEnabled="0"
+								Text="5/7"
+							/>
+							<Text Name="LFG_FindResultLevel$X$"
+								Pos="560,0"
+								Size="100,32"
+								Style="Text_Normal_White"
+								TextAlignH="center"
+								TextAlignV="center"
+								MouseSenseEnabled="0"
+								Text="100"
+							/>
+							<Container Pos="655,0" Size="96,32">
+								<FlowContainer Horizontal="1" HorizontalAlignment="center" VAlign="center">
+									<Image Name="LFG_FindResultGoal_Mission$X$"
+										Size="24,24"
+										Image="UI/LFG/goal_Mission.tga"
+										Tooltip="LFG.Type.Normal"
+										InitPopup="bottomcenter,topcenter"
+									/>
+									<Image Name="LFG_FindResultGoal_Assignment$X$"
+										Size="24,24"
+										Image="UI/LFG/goal_Assignment.tga"
+										Tooltip="LFG.Type.Assignment"
+										InitPopup="bottomcenter,topcenter"
+									/>
+									<Image Name="LFG_FindResultGoal_Warzone$X$"
+										Size="24,24"
+										Image="UI/LFG/goal_Warzone.tga"
+										Tooltip="LFG.Type.Warzone"
+										InitPopup="bottomcenter,topcenter"
+									/>
+								</FlowContainer>
+							</Container>
+						</Container>
+					</Loop>
+				</Container>
+				<Container Pos="134,738" Size="546,32">
+					<FlowContainer Horizontal="1" HorizontalAlignment="left">
+						<CheckBox Name="LFG_ShowUnavailable"
+							Height="32"
+							Style="Text_Normal_Color"
+							TextAlignH="left"
+							TextAlignV="center"
+							InitPopup="bottomleft,topleft"
+							Text="LFG.Search.ShowUnavailable"
+						/>
+					</FlowContainer>
+				</Container>
+				<Container Pos="73,782" Size="748,48">				
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Icon Name="LFG_PostButton"
+							Size="160,40"
+							IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+							Style="Starmap2_3"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+							Enabled="1"
+							Text="LFG.Post"
+						/>
+						<Icon Name="LFG_JoinButton"
+							Size="160,40"
+							IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+							Style="Starmap2_3"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+							Enabled="0"
+							Text="LFG.Join"
+						/>
+						<Icon Name="LFG_SearchButton"
+							Size="160,40"
+							IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+							Style="Starmap2_3"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+							Enabled="1"
+							Text="openworld.gui.cabal.search"
+						/>
+					</FlowContainer>
+				</Container>
+			</Container>
+			
+			<Container Name="LFGPost" Visible="0">
+				<Image
+					Pos="51,211"
+					Size="752,524"
+					Image="UI/OpenWorld/Friends/info_frameFriendlistNew.tga"
+				/>
+				<Text
+					Pos="51,180"
+					Size="752,32"
+					Style="Text_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					ZOffset="@Layer_0_ZOffset"
+					TiltPivot="@WindowTiltPivot"
+					TiltMouseCenter="@WindowTiltMouseCenter"
+					DefaultTilt="@Layer_0_DefaultTilt"
+					MaximumTilt="@Layer_Text_MaximumTilt"
+					Text="LFG.Post.Header"
+				/>
+				<Container Pos="70,188">
+					<Text
+						Pos="0,40"
+						Size="150,30"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="LFG.Search.GroupName"
+					/>
+					<EditBox Name="LFG_Post_Name"
+						Pos="150,40"
+						Size="280,28"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						MaxCharacters="40"
+					/>
+					<Text
+						Pos="0,78"
+						Size="148,30"
+						Style="Text_Normal_Light"
+						IgnoreScissor="1"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.gui.friendlist.level"
+					/>
+					<EditBox Name="LFG_MinLevelEditBox"
+						Pos="150,78"
+						Size="64,28"
+						Style="Text_Normal_Dark"
+						FontType="Share Tech Mono"
+						TextAlignH="left"
+						TextAlignV="center"
+						InputType="numbers"
+					/>
+					<Image
+						Pos="216,89"
+						Size="16,8"
+						Image="UI/OpenWorld/Friends/info_frameLine.tga"
+						MouseSenseEnabled="0"
+					/>
+					<EditBox Name="LFG_MaxLevelEditBox"
+						Pos="234,78"
+						Size="64,28"
+						Style="Text_Normal_Dark"
+						FontType="Share Tech Mono"
+						TextAlignH="left"
+						TextAlignV="center"
+						InputType="numbers"
+					/>
+					<Text
+						Pos="0,166"
+						Size="148,30"
+						Style="Text_Large_Light_Glow"
+						IgnoreScissor="1"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="LFG.Search.Goals"
+					/>
+					<Image Name="RewardDescSeparator"
+						Pos="0,196"
+						Size="714,4"
+						Image="UI/Assignment/assignment_bigline.tga"
+					/>
+					<Container Pos="0,208">
+						<FlowContainer>
+							<Container Size="300,32" MarginBottom="10">
+								<Image 
+									Size="32,32"
+									Image="UI/LFG/goal_Mission.tga"
+								/> 
+								<CheckBox Name="LFG_Goal_Mission"
+									Pos="40,0"
+									Size="260,32"
+									Style="Text_Normal_Light"
+									Text="LFG.Type.Normal"
+									TextAlignH="left"
+								/>
+							</Container>
+							<Container Size="300,32" MarginBottom="10">
+								<Image
+									Size="32,32"
+									Image="UI/LFG/goal_Assignment.tga"
+								/>
+								<CheckBox Name="LFG_Goal_Assignment"
+									Pos="40,0"
+									Size="260,32"
+									Style="Text_Normal_Light"
+									Text="LFG.Type.Assignment"
+									TextAlignH="left"
+								/>
+							</Container>
+							<Container Size="300,32" MarginBottom="10" IgnoreScissor="1">
+								<Image
+									Pos="-4,-4"
+									Size="40,40"
+									Image="UI/LFG/goal_Warzone.tga"
+								/>
+								<CheckBox Name="LFG_Goal_Warzone"
+									Pos="40,0"
+									Size="260,32"
+									Style="Text_Normal_Light"
+									Text="LFG.Type.Warzone"
+									TextAlignH="left"
+								/>
+							</Container>
+						</FlowContainer>
+					</Container>
+				</Container>
+				<Container Pos="73,782" Size="748,48">				
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Icon Name="LFG_Post_CreateButton"
+							Size="160,40"
+							IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+							Style="Starmap2_3"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+							Enabled="1"
+							Text="LFG.Post"
+						/>
+						<Icon Name="LFG_Post_CancelButton"
+							Size="160,40"
+							IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+							Style="Starmap2_3"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+							Enabled="1"
+							Text="common.cancel"
+						/>
+					</FlowContainer>
+				</Container>
+			</Container>
+			
+			<Container Name="LFGGroupStatus" Visible="0">
+				<Image
+					Pos="51,211"
+					Size="752,524"
+					Image="UI/OpenWorld/Friends/info_frameFriendlistNew.tga"
+				/>
+				<Text
+					Pos="51,180"
+					Size="752,32"
+					Style="Text_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					ZOffset="@Layer_0_ZOffset"
+					TiltPivot="@WindowTiltPivot"
+					TiltMouseCenter="@WindowTiltMouseCenter"
+					DefaultTilt="@Layer_0_DefaultTilt"
+					MaximumTilt="@Layer_Text_MaximumTilt"
+					Text="LFG.Status.header"
+				/>
+				<Container Pos="65,180">
+					<Text
+						Pos="0,40"
+						Size="150,40"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="LFG.Search.GroupName"
+					/>
+					<Text Name="LFG_Status_Name"
+						Pos="150,40"
+						Size="280,28"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+					/>
+					<Text
+						Pos="0,80"
+						Size="148,30"
+						Style="Text_Normal_Light"
+						IgnoreScissor="1"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.gui.friendlist.level"
+					/>
+					<Text Name="LFG_Status_MinLevel"
+						Pos="150,80"
+						Size="64,28"
+						Style="Text_Normal_Dark"
+						FontType="Share Tech Mono"
+						TextAlignH="right"
+						TextAlignV="center"
+					/>
+					<Image
+						Pos="216,91"
+						Size="16,8"
+						Image="UI/OpenWorld/Friends/info_frameLine.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="LFG_Status_MaxLevel"
+						Pos="234,80"
+						Size="64,28"
+						Style="Text_Normal_Dark"
+						FontType="Share Tech Mono"
+						TextAlignH="left"
+						TextAlignV="center"
+					/>
+					<Text
+						Pos="0,170"
+						Size="148,30"
+						Style="Text_Large_Light_Glow"
+						IgnoreScissor="1"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="LFG.Search.Goals"
+					/>
+					<Container Pos="0,210">
+						<FlowContainer>
+							<Container Name="LFG_Status_Goal_Mission" MarginBottom="10">
+								<Image
+									Size="32,32"
+									Image="UI/LFG/goal_Mission.tga"
+								/>
+								<Text
+									Pos="40,0"
+									Size="260,32"
+									Style="Text_Normal_Light"
+									Text="LFG.Type.Normal"
+									TextAlignH="left"
+								/>
+							</Container>
+							<Container Name="LFG_Status_Goal_Assignment" MarginBottom="10">
+								<Image
+									Size="32,32"
+									Image="UI/LFG/goal_Assignment.tga"
+								/>
+								<Text
+									Pos="40,0"
+									Size="260,32"
+									Style="Text_Normal_Light"
+									Text="LFG.Type.Assignment"
+									TextAlignH="left"
+								/>
+							</Container>
+							<Container Name="LFG_Status_Goal_Warzone" MarginBottom="10">
+								<Image
+									Size="32,32"
+									Image="UI/LFG/goal_Warzone.tga"
+								/>
+								<Text
+									Pos="40,0"
+									Size="260,32"
+									Style="Text_Normal_Light"
+									Text="LFG.Type.Warzone"
+									TextAlignH="left"
+								/>
+							</Container>
+						</FlowContainer>
+					</Container>
+				</Container>
+				<Container Pos="73,782" Size="748,48">				
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Icon Name="LFG_Status_CancelButton"
+							Size="160,40"
+							IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+							Style="Starmap2_3"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+							Enabled="1"
+							Text="common.cancel"
+						/>
+						<Icon Name="LFG_Status_PromoteButton"
+							Size="160,40"
+							IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							PressImg="UI/Assignment/starmap_panelbuttonOff.tga"
+							RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+							Style="Starmap2_3"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+							Enabled="1"
+							Text="LFG.Status.Promote"
+						/>
+					</FlowContainer>
+				</Container>
+			</Container>
+
+			<Container Name="LFGUnavailable" Visible="0">
+				<Image
+					Pos="51,211"
+					Size="752,524"
+					Image="UI/OpenWorld/Friends/info_frameFriendlistNew.tga"
+				/>
+				<Container Pos="65,211" Size="738,524">
+					<TextBox
+						Style="Text_Large_Light_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="LFG.Unavailable"
+					/>
+				</Container>
+			</Container>
+
+			<Slider Name="FriendSlider"
+				Pos="802,210"
+				Size="20,533"
+			/>
+			<Container Name="PageControl" Visible="0" Pos="50,738">
+				<Icon Name="PageFirst"
+					Pos="0,0"
+					Size="36,36"
+					IdleImg="UI/Leaderboard/button_topOff.tga"
+					PressImg="UI/Leaderboard/button_topOff.tga"
+					RolloverImg="UI/Leaderboard/button_topOver.tga"
+				/>
+				<Icon Name="PageBack"
+					Pos="38,0"
+					Size="36,36"
+					IdleImg="UI/Leaderboard/button_prevOff.tga"
+					PressImg="UI/Leaderboard/button_prevOn.tga"
+					RolloverImg="UI/Leaderboard/button_prevOver.tga"
+				/>
+				<Icon Name="PageNext"
+					Pos="715,0"
+					Size="36,36"
+					IdleImg="UI/Leaderboard/button_nextOff.tga"
+					PressImg="UI/Leaderboard/button_nextOn.tga"
+					RolloverImg="UI/Leaderboard/button_nextOver.tga"
+				/>
+			</Container>
+		</Container>
+		
+		<Container Name="Party">
+			<Container Pos="19,150">
+				<Loop Count="@PartyMemberCount" Variable="$X$" Offset="0,152">
+					<Container Name="PartyMember$X$">
+						<Icon Name="PartyMemberFrame$X$"
+							Pos="0,20"
+							Size="625,151"
+							IdleImg="UI/OpenWorld/Friends/party_member_background_crusader.tga"
+							RolloverImg="UI/OpenWorld/Friends/party_member_background_crusader_highlight.tga"
+							PressImg="UI/OpenWorld/Friends/party_member_background_crusader_highlight.tga"
+							MouseSenseEnabled="1"
+						/>
+						<Image Name="PartyMemberLeaderIcon$X$"
+							Pos="180,53"
+							Size="68,28"
+							Image="UI/BATTLE_UI/Main/party/icon_partyLeader.tga"
+							MouseSenseEnabled="0"
+							Visible="0"
+						/>
+						<Text Name="PartyMemberName$X$"
+							Pos="250,50"
+							Size="400,40"
+							Style="Headline_XLarge_Light_Glow"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="Józsi"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="PartyMemberState$X$"
+							Pos="250,119"
+							Size="24,24"
+							Image="UI/BATTLE_UI/Main/party/icon_partyBase.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Text Name="PartyMemberLevel$X$"
+							Pos="250,92"
+							Size="300,24"
+							FontType="Vibrocentric"
+							FontSize="14"
+							Color="#2BEDE6"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="69"
+							MouseSenseEnabled="0"
+						/>					
+					</Container>
+				</Loop>
+				<FlowContainer Pos="270,632" Horizontal="1" ShowCategory="mouse" Visible="0">
+					<Text
+						Style="Text_Large_Light"
+						Size="300,32"
+						TextAlignH="right"
+						Text="party.user_interactions"
+					/>
+					<Image
+						Height="32"
+						Width="32"
+						Image="UI/Shortcuts/bigshortcut_rightclick.dds"
+					/>
+				</FlowContainer>
+				<Dummy Name="PartyDummy" Visible="0"/>
+			</Container>
+		</Container>
+		
+		<Container Name="ContextMenuSelected" Pos="19,150"  Visible="0" >
+			<Container Name="PartyMember">
+				<Image Name="PartyMemberFrame"
+					Pos="0,20"
+					Size="625,151"
+					Image="UI/OpenWorld/Friends/party_member_background_crusader.tga"
+				/>
+				<Image Name="PartyMemberLeaderIcon"
+					Pos="180,53"
+					Size="68,28"
+					Image="UI/BATTLE_UI/Main/party/icon_partyLeader.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Text Name="PartyMemberName"
+					Pos="250,50"
+					Size="400,40"
+					Style="Headline_XLarge_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="Józsi"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="PartyMemberState"
+					Pos="250,119"
+					Size="24,24"
+					Image="UI/BATTLE_UI/Main/party/icon_partyBase.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Text Name="PartyMemberLevel"
+					Pos="250,92"
+					Size="300,24"
+					FontType="Vibrocentric"
+					FontSize="14"
+					Color="#2BEDE6"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="69"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<FlowContainer Pos="55,180"  >
+				<Icon Name="PartyDisband"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.DisbandParty"
+					Visible="1"
+					ControllerSenseEnabled="1"
+				/>
+				<Icon Name="LeaveParty"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.LeaveParty"
+					Visible="1"
+					ControllerSenseEnabled="1"
+				/>
+				<Icon Name="Kick"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.Kick"
+					Visible="1"
+					ControllerSenseEnabled="1"
+				/>
+				<Icon Name="RemoveCouchCoopPartner"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.remove_henchman"
+					Visible="1"
+					ControllerSenseEnabled="1"
+				/>
+				<Icon Name="Whisper"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.Whisper"
+					Visible="1"
+					ControllerSenseEnabled="1"
+				/>
+				<Icon Name="AddFriend"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.AddFriend"
+					Visible="0"
+					ControllerSenseEnabled="1"
+				/>
+				<Icon Name="DelegateLeader"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.DelegateLeader"
+					Visible="1"
+					ControllerSenseEnabled="1"
+				/>
+				<Icon Name="InviteToCabal"
+					Size="400,40"
+					TextAlignH="left"
+					AllImg="none"
+					Style="StarmapHeadline2_3_controller"
+					Text="common.party.InviteToCabal"
+					Visible="1"
+					ControllerSenseEnabled="1"
+				/>
+			</FlowContainer>
+		</Container>
+		<Icon Name="Close"
+			Pos="801,118"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+
+		<Dummy Name="ContextMenuDummy" Visible="0"/>
+		<ContextMenu Name="ContextMenu"
+			Style="ContextMenuButton" 
+			InitPopup="center,center"
+			GuiAlign="topleft"
+		/>
+	</Container>
+</Window>

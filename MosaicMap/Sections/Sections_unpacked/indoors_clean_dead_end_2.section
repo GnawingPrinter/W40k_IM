@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Indoors_Clean_dead_end_2 Terrain="Terrains/Sections/Indoors_Clean/SII_dead_end_2.VHT" Preview="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_dead_end_2_thumb.bmp" Image="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_dead_end_2.bmp" MapType="Indoors Clean" MinClickHeight="0">
+	<PivotPos x="-575" y="429.807129" />
+	<Tags DeadEnd="true" />
+	<Grids>
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="-551.329163" Position.y="521.672424" Position.z="-0.221491337" />
+		</Grid>
+		<Grid Column="1" Row="1" Image="" />
+	</Grids>
+</Indoors_Clean_dead_end_2>
