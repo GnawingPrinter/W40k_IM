@@ -17,6 +17,7 @@ function collectParams()
 	addParam("AllyGroup", "Dummy")
 	addParam("EnemyGroup", "Dummy")
 	addParam("Intel", "Dummy")
+	addParam("UnlockMissionName", "String")
 end
 
 function preload()
@@ -129,7 +130,7 @@ function onSoldierDied( soldier, attacker )
 end
 
 function onObjectInteracted( obj, interactor )
-	addVoidCrusadeUnlock("Secret_Mission_GAMMA")
+	addVoidCrusadeUnlock( getStringParam("UnlockMissionName") )
 	playVideoMessage("defendStormwatcher","StormWatcherIntelFound")
 
 	obj:changeState("Inactive")

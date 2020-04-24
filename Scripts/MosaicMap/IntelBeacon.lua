@@ -4,6 +4,14 @@ function collectParams()
 	addParam("TeleportIn", "Dummy", 1)
 	addParam("TeleportOut", "Dummy", 1)
 	addParam("Ally", "DummyList", 1)
+	addParam("UnlockMissionName", "String")
+end
+
+function setParameterDefaultValue( name )
+	if name == "UnlockMissionName" then
+		setDefaultString( "Secret_Mission_ALPHA" )
+		return
+	end
 end
 
 AllyGroupType = "Imperial_Guards"
@@ -30,8 +38,8 @@ function onLoadMap()
 	
 	createChest( "Lootbox_BIG", chestDummy.position, chestDummy.orient )
 	
-	createTeleport( teleportInDummy.position, teleportInDummy.orient, teleportOutDummy.position + teleportOutDummy.orient * 20.0, teleportOutDummy.orient )
-	createTeleport( teleportOutDummy.position, teleportOutDummy.orient, teleportInDummy.position + teleportInDummy.orient * 20.0, teleportInDummy.orient )
+	createTeleport( teleportInDummy.position, teleportInDummy.orient, teleportOutDummy.position + teleportOutDummy.orient * 20.0, teleportOutDummy.orient, true )
+	createTeleport( teleportOutDummy.position, teleportOutDummy.orient, teleportInDummy.position + teleportInDummy.orient * 20.0, teleportInDummy.orient, false )
 
 	dummyList = getDummyList("Ally")
 	for i=1,#dummyList do
@@ -63,6 +71,6 @@ end
 
 function onObjectInteracted( object, interactor )
 	object:changeState("Inactive")
-	addVoidCrusadeUnlock("Secret_Mission_ALPHA")
+	addVoidCrusadeUnlock( getStringParam("UnlockMissionName") )
 	playVideoMessage("VC_IntelBeaconFound","VC_IntelBeaconFound")
 end

@@ -1,4 +1,7 @@
 SoldierType = "Villain"
+HiddenFoeType = "HiddenFoesGrp"
+enemyGroup = nil
+
 function collectParams()
 	addParam("Villain", "Dummy", 1)
 	addParam("Chest", "Dummy", 1)
@@ -37,16 +40,28 @@ function onLoadMap()
 		return
 	end
 	
-	spawnEnemy( SoldierType, "", villainDummy.position, villainDummy.orient )
-	createChest( "Lootbox_BIG", chestDummy.position, chestDummy.orient )
-	
-	createTeleport( teleportInDummy.position, teleportInDummy.orient, teleportOutDummy.position + teleportOutDummy.orient * 20.0, teleportOutDummy.orient )
-	createTeleport( teleportOutDummy.position, teleportOutDummy.orient, teleportInDummy.position + teleportInDummy.orient * 20.0, teleportInDummy.orient )
-	createCircleTrigger( "banterTrigger", teleportInDummy.position, 20 )
+	if isEventActive("hidden_foes") == true and getEventCounter("hidden_room") < 60 then
+		enemyGroup = spawnEnemyGroup( HiddenFoeType, villainDummy.position, villainDummy.orient)
+		createChest( "Lootbox_HiddenFoe", chestDummy.position, chestDummy.orient )
+		createCircleTrigger( "banterTrigger", teleportOutDummy.position, 20 )
+	else
+		spawnEnemy( SoldierType, "", villainDummy.position, villainDummy.orient )
+		createChest( "Lootbox_BIG", chestDummy.position, chestDummy.orient )
+	end
+	hiddenArea()
+	createTeleport( teleportInDummy.position, teleportInDummy.orient, teleportOutDummy.position + teleportOutDummy.orient * 20.0, teleportOutDummy.orient, true )
+	createTeleport( teleportOutDummy.position, teleportOutDummy.orient, teleportInDummy.position + teleportInDummy.orient * 20.0, teleportInDummy.orient, false )	
 end
 
 
 function onTriggerEntered( trigger )
 	trigger:enable( false )
-	playBanterGroup( "BNT_HiddenArea", trigger.soldierId )
+	playBanter( "BNT_HiddenFoe", trigger.soldierId )
+end
+
+function onSquadDied( squad )
+	if squad == enemyGroup then
+		hiddenAreaCompleted()
+		feedback("hiddenfoeskilled")
+	end
 end
