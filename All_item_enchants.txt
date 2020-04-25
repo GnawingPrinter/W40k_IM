@@ -250,10 +250,11 @@ chance_to_double_damage_and_healing
 damage_for_long_penalty_for_short_range
 double_suppression_damage_on_crit
 godlike_damage_after_summon
+godlike_damage_from_reserve
 godlike_damage_per_minion_in_big_aura
 godlike_datapool_per_kill
 godlike_datapool_per_kill_on_high_reserve
-godlike_minion_damage_on_kill
+godlike_hp_per_hit_for_everyone
 godlike_ranged_damage_per_turret
 godlike_summon_cost_on_kill
 shock_small_aura_on_kill
@@ -336,6 +337,38 @@ Godlike_Vulnerability_on_Crit;deal_dmg;100000,Vulnerability_on_hit_warp;put_vuln
 ```
 ### Archeotech: 
 ```
+arc_rifle_1skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+arc_rifle_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+arc_rifle_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+arc_rifle_1skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+arc_rifle_1skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
+arc_rifle_2skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+arc_rifle_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+arc_rifle_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+arc_rifle_2skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+arc_rifle_2skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
 ```
 ### Morality: 
 ```
@@ -2328,7 +2361,6 @@ bleed_damage
 bonus_damage_biomancy_major
 bonus_damage_pyromancy_major
 burn_damage
-damage_from_execution
 damage_in_exposed
 damage_percent_against_bleeding_enemies_major
 dot_duration_percent_major
@@ -2445,7 +2477,6 @@ secondary enchants:
 ```
 bleed_damage
 burn_damage
-damage_from_execution
 damage_in_exposed
 damage_percent_against_bleeding_enemies_major
 dot_duration_percent_major
@@ -7548,29 +7579,6 @@ heavy_flamer_b_Demonic_Weapon_Temporary_Cellrot_On_Hit_Demonic_Weapon_Temporary_
 
 ```
 
-## iinferno_pistol:
-relic enchants:
-```
-
-```
-primary enchants:
-```
-
-```
-secondary enchants:
-```
-overheat_reduction_major
-```
-### Ancients: 
-```
-```
-### Archeotech: 
-```
-```
-### Morality: 
-```
-```
-
 ## inferno_pistol:
 relic enchants:
 ```
@@ -7608,6 +7616,7 @@ secondary enchants:
 damage_percent_against_bleeding_enemies_major
 hp_per_kill_major
 increased_damage_against_slow_group_enemies_major
+overheat_reduction_major
 skill1_cooldown_percent_major
 skill1_damage_percent_major
 skill2_cooldown_percent_major
@@ -9582,11 +9591,11 @@ chance_to_double_damage_and_healing
 chance_to_stun_after_killing
 double_suppression_damage_on_crit
 godlike_damage_after_summon
+godlike_damage_from_reserve
 godlike_damage_per_minion_in_big_aura
 godlike_datapool_per_kill
 godlike_datapool_per_kill_on_high_reserve
 godlike_hp_per_hit_for_everyone
-godlike_minion_damage_on_kill
 godlike_summon_cost_on_kill
 heal_on_deadly_strikes
 shock_small_aura_on_kill
@@ -9667,6 +9676,38 @@ Godlike_Vulnerability_on_Crit;deal_dmg;100000,Vulnerability_on_hit_warp;put_vuln
 ```
 ### Archeotech: 
 ```
+omnissian_axe_1skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+omnissian_axe_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+omnissian_axe_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+omnissian_axe_1skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+omnissian_axe_1skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
+omnissian_axe_2skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+omnissian_axe_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+omnissian_axe_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+omnissian_axe_2skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+omnissian_axe_2skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
 ```
 ### Morality: 
 ```
@@ -10490,7 +10531,7 @@ assault_armor_a_Blind_armour:
 chance_to_blind;finish_mission_hard;5,resist_all_major;suffer_dmg;200000,damage_reduce_major;kill_horde;1000,Hp_fix_major;put_debuff;500
 
 assault_armor_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 assault_armor_a_Crit_Slowgroup_armour:
 Slow_on_Crit;finish_mission_no_melee_dmg_suffered;5,Shock_on_Crit_normal;finish_mission_hard;5,critical_hit_chance_major;kill_critical_hit;300,Stun_on_Crit;deal_suppression;50000
@@ -10550,7 +10591,7 @@ demolition_armor_a_Blind_armour:
 chance_to_blind;finish_mission_hard;5,resist_all_major;suffer_dmg;200000,damage_reduce_major;kill_horde;1000,Hp_fix_major;put_debuff;500
 
 demolition_armor_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 demolition_armor_a_Crit_Slowgroup_armour:
 Slow_on_Crit;finish_mission_no_melee_dmg_suffered;5,Shock_on_Crit_normal;finish_mission_hard;5,critical_hit_chance_major;kill_critical_hit;300,Stun_on_Crit;deal_suppression;50000
@@ -10610,7 +10651,7 @@ sentinel_armor_a_Blind_armour:
 chance_to_blind;finish_mission_hard;5,resist_all_major;suffer_dmg;200000,damage_reduce_major;kill_horde;1000,Hp_fix_major;put_debuff;500
 
 sentinel_armor_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 sentinel_armor_a_Crit_Slowgroup_armour:
 Slow_on_Crit;finish_mission_no_melee_dmg_suffered;5,Shock_on_Crit_normal;finish_mission_hard;5,critical_hit_chance_major;kill_critical_hit;300,Stun_on_Crit;deal_suppression;50000
@@ -11740,7 +11781,7 @@ aetherwalker_armour_a_Bleed_armour:
 Godlike_Bleeding_on_Physical_Hit;finish_mission_hard;5,Bleed_damage;deal_dmg;100000,Hp_fix_major;suffer_dmg;200000,hp_regeneration_major;suffer_suppression;200000
 
 aetherwalker_armour_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 aetherwalker_armour_a_Crithit_armour:
 Godlike_Critical_damage_bonus;finish_mission_no_wardrug;5,critical_hit_chance_major;kill_tyranid;1000,Hp_fix_major;kill_single_attack;200,resist_all_major;kill_daemon;1000
@@ -11785,7 +11826,7 @@ empyrean_armour_a_Bleed_armour:
 Godlike_Bleeding_on_Physical_Hit;finish_mission_hard;5,Bleed_damage;deal_dmg;100000,Hp_fix_major;suffer_dmg;200000,hp_regeneration_major;suffer_suppression;200000
 
 empyrean_armour_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 empyrean_armour_a_Crithit_armour:
 Godlike_Critical_damage_bonus;finish_mission_no_wardrug;5,critical_hit_chance_major;kill_tyranid;1000,Hp_fix_major;kill_single_attack;200,resist_all_major;kill_daemon;1000
@@ -11830,7 +11871,7 @@ warpbound_armour_a_Bleed_armour:
 Godlike_Bleeding_on_Physical_Hit;finish_mission_hard;5,Bleed_damage;deal_dmg;100000,Hp_fix_major;suffer_dmg;200000,hp_regeneration_major;suffer_suppression;200000
 
 warpbound_armour_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 warpbound_armour_a_Crithit_armour:
 Godlike_Critical_damage_bonus;finish_mission_no_wardrug;5,critical_hit_chance_major;kill_tyranid;1000,Hp_fix_major;kill_single_attack;200,resist_all_major;kill_daemon;1000
@@ -12382,10 +12423,11 @@ chance_to_double_damage_and_healing
 damage_for_long_penalty_for_short_range
 double_suppression_damage_on_crit
 godlike_damage_after_summon
+godlike_damage_from_reserve
 godlike_damage_per_minion_in_big_aura
 godlike_datapool_per_kill
 godlike_datapool_per_kill_on_high_reserve
-godlike_minion_damage_on_kill
+godlike_hp_per_hit_for_everyone
 godlike_ranged_damage_per_turret
 godlike_summon_cost_on_kill
 shock_small_aura_on_kill
@@ -12464,6 +12506,38 @@ Godlike_Vulnerability_on_Crit;deal_dmg;100000,Vulnerability_on_hit_warp;put_vuln
 ```
 ### Archeotech: 
 ```
+radium_carbine_1skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+radium_carbine_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+radium_carbine_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+radium_carbine_1skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+radium_carbine_1skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
+radium_carbine_2skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+radium_carbine_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+radium_carbine_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+radium_carbine_2skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+radium_carbine_2skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
 ```
 ### Morality: 
 ```
@@ -12656,7 +12730,6 @@ damage_percent_against_bleeding_enemies_major
 hp_per_kill_major
 increased_damage_against_slow_group_enemies_major
 skill1_cooldown_percent_major
-skill1_damage_percent_major
 skill2_cooldown_percent_major
 skill2_damage_percent_major
 slow_group_duration_percent_major
@@ -13278,7 +13351,6 @@ fleshbane_tag_skills_damage_percent_major
 knockback_tag_skills_damage_percent_major
 single_target_skills_damage_major
 skill1_cooldown_percent_major
-skill1_damage_percent_major
 skill2_cooldown_percent_major
 skill2_damage_percent_major
 suffered_slow_stun_duration_major
@@ -13365,7 +13437,6 @@ fleshbane_tag_skills_damage_percent_major
 knockback_tag_skills_damage_percent_major
 single_target_skills_damage_major
 skill1_cooldown_percent_major
-skill1_damage_percent_major
 skill2_cooldown_percent_major
 skill2_damage_percent_major
 suffered_slow_stun_duration_major
@@ -13480,7 +13551,7 @@ fabricator_distortion_armour_a_Blind_armour:
 chance_to_blind;finish_mission_hard;5,resist_all_major;suffer_dmg;200000,damage_reduce_major;kill_horde;1000,Hp_fix_major;put_debuff;500
 
 fabricator_distortion_armour_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 fabricator_distortion_armour_a_Crit_Slowgroup_armour:
 Slow_on_Crit;finish_mission_no_melee_dmg_suffered;5,Shock_on_Crit_normal;finish_mission_hard;5,critical_hit_chance_major;kill_critical_hit;300,Stun_on_Crit;deal_suppression;50000
@@ -13537,7 +13608,7 @@ hololithic_armour_a_Blind_armour:
 chance_to_blind;finish_mission_hard;5,resist_all_major;suffer_dmg;200000,damage_reduce_major;kill_horde;1000,Hp_fix_major;put_debuff;500
 
 hololithic_armour_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 hololithic_armour_a_Crit_Slowgroup_armour:
 Slow_on_Crit;finish_mission_no_melee_dmg_suffered;5,Shock_on_Crit_normal;finish_mission_hard;5,critical_hit_chance_major;kill_critical_hit;300,Stun_on_Crit;deal_suppression;50000
@@ -13594,7 +13665,7 @@ stealth_bodysuit_a_Blind_armour:
 chance_to_blind;finish_mission_hard;5,resist_all_major;suffer_dmg;200000,damage_reduce_major;kill_horde;1000,Hp_fix_major;put_debuff;500
 
 stealth_bodysuit_a_Burn_armour:
-Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;10000
+Godlike_Burn_duration;suffer_heat_dmg;100000,Burn_on_heat_hit;deal_heat_dmg;50000,Shock_on_Burn;put_effect;500,Hp_fix_major;use_wardrug;100
 
 stealth_bodysuit_a_Crit_Slowgroup_armour:
 Slow_on_Crit;finish_mission_no_melee_dmg_suffered;5,Shock_on_Crit_normal;finish_mission_hard;5,critical_hit_chance_major;kill_critical_hit;300,Stun_on_Crit;deal_suppression;50000
@@ -14067,6 +14138,69 @@ suppression_resist_from_survival
 ```
 ### Ancients: 
 ```
+electroid_shielding_a_Crithit_armour:
+Godlike_Critical_damage_bonus;finish_mission_no_wardrug;5,critical_hit_chance_major;kill_tyranid;1000,Hp_fix_major;kill_single_attack;200,resist_all_major;kill_daemon;1000
+
+electroid_shielding_a_Fear_armour:
+Godlike_Damage_against_Afraid;finish_mission_no_wardrug;5,Fear_duration;use_resource;1000,Fear_on_Hit;kill_normal;500,Hp_fix_major;deal_suppression;50000
+
+electroid_shielding_a_Focused_armour:
+Godlike_Focused_in_High_HP;heal_by_wardrug;20000,All_resist_in_green;finish_mission_no_death;5,Hp_fix_major;deal_dmg;100000,hp_regeneration_major;kill_medium;100
+
+electroid_shielding_a_Green_suppression_armour:
+Damage_reduce_in_Green_suppression;finish_mission_no_melee_dmg_suffered;5,All_resist_in_green;finish_mission_no_death;5,supression_resistance_max_major;finish_mission_hard;5,Hp_fix_major;finish_mission_no_wardrug;5
+
+electroid_shielding_a_In_crowd_armour:
+Godlike_Cooldown_in_threat;finish_mission_hard;5,Movement_speed_in_threat;kill_5_enemy_single_attack;100,All_resist_in_threat;kill_eldar;1000,Hp_fix_major;use_resource;1000
+
+electroid_shielding_a_Slow_Shock_armour:
+Godlike_Slow_Shock_duration;deal_dmg;100000,Crit_chance_and_strenght_on_slow_group_major;finish_mission_hard;5,Slow_on_Hit;critical_hit;500,increased_damage_against_slow_group_enemies_major;kill_villain;5
+
+electroid_shielding_a_Vulnerability_armour:
+Chance_to_give_vulnerability_on_hit;kill_critical_hit;200,Vulnerability_efficiency_bonust_major;kill_critical_hit;300,vulnerability_duration_major;kill_critical_hit;400,Critical_damage_bonus;kill_critical_hit;500
+
+necromechanic_raiment_a_Crithit_armour:
+Godlike_Critical_damage_bonus;finish_mission_no_wardrug;5,critical_hit_chance_major;kill_tyranid;1000,Hp_fix_major;kill_single_attack;200,resist_all_major;kill_daemon;1000
+
+necromechanic_raiment_a_Fear_armour:
+Godlike_Damage_against_Afraid;finish_mission_no_wardrug;5,Fear_duration;use_resource;1000,Fear_on_Hit;kill_normal;500,Hp_fix_major;deal_suppression;50000
+
+necromechanic_raiment_a_Focused_armour:
+Godlike_Focused_in_High_HP;heal_by_wardrug;20000,All_resist_in_green;finish_mission_no_death;5,Hp_fix_major;deal_dmg;100000,hp_regeneration_major;kill_medium;100
+
+necromechanic_raiment_a_Green_suppression_armour:
+Damage_reduce_in_Green_suppression;finish_mission_no_melee_dmg_suffered;5,All_resist_in_green;finish_mission_no_death;5,supression_resistance_max_major;finish_mission_hard;5,Hp_fix_major;finish_mission_no_wardrug;5
+
+necromechanic_raiment_a_In_crowd_armour:
+Godlike_Cooldown_in_threat;finish_mission_hard;5,Movement_speed_in_threat;kill_5_enemy_single_attack;100,All_resist_in_threat;kill_eldar;1000,Hp_fix_major;use_resource;1000
+
+necromechanic_raiment_a_Slow_Shock_armour:
+Godlike_Slow_Shock_duration;deal_dmg;100000,Crit_chance_and_strenght_on_slow_group_major;finish_mission_hard;5,Slow_on_Hit;critical_hit;500,increased_damage_against_slow_group_enemies_major;kill_villain;5
+
+necromechanic_raiment_a_Vulnerability_armour:
+Chance_to_give_vulnerability_on_hit;kill_critical_hit;200,Vulnerability_efficiency_bonust_major;kill_critical_hit;300,vulnerability_duration_major;kill_critical_hit;400,Critical_damage_bonus;kill_critical_hit;500
+
+technomartyr_vestment_a_Crithit_armour:
+Godlike_Critical_damage_bonus;finish_mission_no_wardrug;5,critical_hit_chance_major;kill_tyranid;1000,Hp_fix_major;kill_single_attack;200,resist_all_major;kill_daemon;1000
+
+technomartyr_vestment_a_Fear_armour:
+Godlike_Damage_against_Afraid;finish_mission_no_wardrug;5,Fear_duration;use_resource;1000,Fear_on_Hit;kill_normal;500,Hp_fix_major;deal_suppression;50000
+
+technomartyr_vestment_a_Focused_armour:
+Godlike_Focused_in_High_HP;heal_by_wardrug;20000,All_resist_in_green;finish_mission_no_death;5,Hp_fix_major;deal_dmg;100000,hp_regeneration_major;kill_medium;100
+
+technomartyr_vestment_a_Green_suppression_armour:
+Damage_reduce_in_Green_suppression;finish_mission_no_melee_dmg_suffered;5,All_resist_in_green;finish_mission_no_death;5,supression_resistance_max_major;finish_mission_hard;5,Hp_fix_major;finish_mission_no_wardrug;5
+
+technomartyr_vestment_a_In_crowd_armour:
+Godlike_Cooldown_in_threat;finish_mission_hard;5,Movement_speed_in_threat;kill_5_enemy_single_attack;100,All_resist_in_threat;kill_eldar;1000,Hp_fix_major;use_resource;1000
+
+technomartyr_vestment_a_Slow_Shock_armour:
+Godlike_Slow_Shock_duration;deal_dmg;100000,Crit_chance_and_strenght_on_slow_group_major;finish_mission_hard;5,Slow_on_Hit;critical_hit;500,increased_damage_against_slow_group_enemies_major;kill_villain;5
+
+technomartyr_vestment_a_Vulnerability_armour:
+Chance_to_give_vulnerability_on_hit;kill_critical_hit;200,Vulnerability_efficiency_bonust_major;kill_critical_hit;300,vulnerability_duration_major;kill_critical_hit;400,Critical_damage_bonus;kill_critical_hit;500
+
 ```
 ### Archeotech: 
 ```
@@ -14402,6 +14536,451 @@ technomartyr_vestment_b_Demonic_Armour_Low_HP_DR_Demonic_Armour_Low_HP_DR:
 
 ```
 
+## techadeptsummon_buff:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage_reduce
+minion_heat_damage
+minion_heat_resist
+minion_hp
+minion_hp_regen
+minion_melee_damage
+minion_physical_damage
+minion_physical_resist
+minion_ranged_damage
+minion_shield
+minion_shield_regen
+minion_speed
+minion_warp_resist
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_cremator_crawler_weapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_heat_damage
+minion_hp_per_hit
+minion_hp_per_kill
+minion_physical_damage
+minion_ranged_damage
+minion_speed
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_kastelan_robot_altweapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_damage_on_death_explosion_kastelan
+minion_heat_damage
+minion_hp_per_hit
+minion_hp_per_kill
+minion_ranged_damage
+minion_speed
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_kastelan_robot_mainweapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_damage_on_death_explosion_kastelan
+minion_hp_per_hit
+minion_hp_per_kill
+minion_melee_damage
+minion_physical_damage
+minion_ranged_damage
+minion_speed
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_kataphron_destroyer_altweapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_hp_per_hit
+minion_hp_per_kill
+minion_physical_damage
+minion_ranged_damage
+minion_speed
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_kataphron_destroyer_mainweapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_heat_damage
+minion_hp_per_hit
+minion_hp_per_kill
+minion_ranged_damage
+minion_speed
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_kataphron_vanguard_weapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_hp_per_hit
+minion_hp_per_kill
+minion_melee_damage
+minion_physical_damage
+minion_speed
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_nechromechanic_turret_weapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_heat_resist
+minion_hp
+minion_hp_regen
+minion_physical_resist
+minion_shield
+minion_shield_regen
+minion_warp_resist
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_tarantula_turret_weapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_heat_damage
+minion_hp_per_hit
+minion_hp_per_kill
+minion_physical_damage
+minion_ranged_damage
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
+## techadeptsummon_vivisector_crawler_weapon:
+relic enchants:
+```
+miniongodlike_damage
+miniongodlike_damage_from_reserve
+miniongodlike_damage_on_low_hp
+miniongodlike_heat_resist
+miniongodlike_hp_from_reserve
+miniongodlike_knockback_immunity
+miniongodlike_physical_resist
+miniongodlike_slow_immunity
+miniongodlike_stun_immunity
+```
+primary enchants:
+```
+minion_damage
+minion_damage_against_afraid
+minion_damage_against_bleeding
+minion_damage_against_burning
+minion_damage_against_medium
+minion_damage_against_normal
+minion_damage_against_poisoned
+minion_damage_against_shocked_slowed
+minion_damage_against_stunned
+minion_damage_on_death_explosion_crawler
+minion_hp_per_hit
+minion_hp_per_kill
+minion_melee_damage
+minion_physical_damage
+minion_speed
+minion_suppression_damage
+```
+secondary enchants:
+```
+
+```
+### Ancients: 
+```
+```
+### Archeotech: 
+```
+```
+### Morality: 
+```
+```
+
 ## thunder_hammer:
 relic enchants:
 ```
@@ -14642,11 +15221,11 @@ chance_to_double_damage_and_healing
 chance_to_stun_after_killing
 double_suppression_damage_on_crit
 godlike_damage_after_summon
+godlike_damage_from_reserve
 godlike_damage_per_minion_in_big_aura
 godlike_datapool_per_kill
 godlike_datapool_per_kill_on_high_reserve
 godlike_hp_per_hit_for_everyone
-godlike_minion_damage_on_kill
 godlike_summon_cost_on_kill
 heal_on_deadly_strikes
 shock_small_aura_on_kill
@@ -14725,6 +15304,38 @@ Godlike_Vulnerability_on_Crit;deal_dmg;100000,Vulnerability_on_hit_warp;put_vuln
 ```
 ### Archeotech: 
 ```
+voltaic_axe_1skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+voltaic_axe_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+voltaic_axe_1skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+voltaic_axe_1skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+voltaic_axe_1skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
+voltaic_axe_2skill_b_BIG_weapons_techadept_Godlike_Crit_Chance_from_Reserve: 
+  MainEnchant=Godlike_Crit_Chance_from_Reserve
+  PrimaryEnchants1=Crit_chance_and_strenght_on_slow_group_major,Critical_damage_bonus,critical_hit_chance_major,critical_hit_strength_major,Fear_on_Crit,HP_on_Crit,Knockback_on_Crit,Knockdown_on_Crit,Shock_on_Crit_normal,Slow_on_Crit_normal,Stun_on_Crit
+
+voltaic_axe_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill: 
+  MainEnchant=Godlike_Datapool_per_kill
+
+voltaic_axe_2skill_b_BIG_weapons_techadept_Godlike_Datapool_per_kill_on_high_reserve: 
+  MainEnchant=Godlike_Datapool_per_kill_on_high_reserve
+
+voltaic_axe_2skill_b_BIG_weapons_techadept_Godlike_Minion_damage_on_kill: 
+  MainEnchant=Godlike_Minion_damage_on_kill
+
+voltaic_axe_2skill_b_BIG_weapons_techadept_Godlike_Summon_cost_on_kill: 
+  MainEnchant=Godlike_Summon_cost_on_kill
+
 ```
 ### Morality: 
 ```
