@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Size="0,0">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<DisableMouseSense Type="bool" Value="0"/>
+		<ObjectiveCount Type="int" Value="13"/>
+	</Constants>
+
+	<FlowContainer Width="300" VerticalAlignment="bottom" >
+		<Text Name="Title" MarginLeft="17" MarginTop="4" Size="280,32" Style="Headline_Large_Color_Glow" TextAlignH="left" TextAlignV="center"/>
+		<FlowContainer
+			Width="300"
+			BackgroundTopSize="36"
+			BackgroundBotSize="26"
+			BackgroundTopImage="UI/objectives/objectives_backgroundTop.tga"
+			BackgroundMidImage="UI/objectives/objectives_backgroundMiddle.tga"
+			BackgroundBotImage="UI/objectives/objectives_backgroundBottom.tga"
+		>
+			<Dummy Height="25"/>
+			<FlowContainer Name="TD">
+				<FlowContainer Name="ObjectiveBox">
+					<Container Size="280,30">
+						<Text Pos="15,0" Size="100,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="campaign.objective.C2_Ch3_Mission_3.TechpriestState"/>
+						<Image Pos="140,3" Size="140,24" Image="UI/Objectives/objectives_bar3Background.tga"/>
+						<Image Name="HPBar" Pos="140,3" Size="140,24" Image="UI/Objectives/objectives_bar3.tga"/>
+					</Container>
+
+					<Container Name="InWave" Size="280,56">
+						<Text Name="EnemiesLeft" Pos="15,0" Size="260,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.TD.enemiesleft_c2"/>
+						<Image Name="ProgressBarBack" Pos="20,28" Size="260,24" Image="UI/Objectives/objectives_bar2Background.tga"/>
+						<Image Name="ProgressBar" Pos="20,28" Size="260,24" Image="UI/Objectives/objectives_bar2.tga"/>
+					</Container>
+
+					<CheckBox Name="SurviveObjective_Off" MarginLeft="15" MarginTop="6" Size="275,24" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Text="campaign.objective.C2_Ch3_Mission_3.DefendNPC" Checked="0" MouseSenseEnabled="0"/>
+				</FlowContainer>
+			</FlowContainer>
+
+			<FlowContainer Name="Tasks">
+				<Loop Count="@ObjectiveCount" Variable="$X$">
+					<Container Name="Objective$X$_Off">
+						<CheckBox MarginLeft="15" Size="24,24" VAlign="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+						<TextBox Name="Objective$X$_OffTextBox" VAlign="top" MarginLeft="45" Width="240" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" UseSlider="0" MouseSenseEnabled="0"/>
+					</Container>
+					<Container Name="Objective$X$_On">
+						<CheckBox MarginLeft="15" Size="24,24" VAlign="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+						<TextBox Name="Objective$X$_OnTextBox" VAlign="top" MarginLeft="45" Width="240" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" UseSlider="0" MouseSenseEnabled="0"/>
+					</Container>
+				</Loop>
+			</FlowContainer>
+			<Dummy Height="27"/>
+		</FlowContainer>
+		<Dummy Height="20"/>
+	</FlowContainer>
+	
+	<Container Name="WaveDone" Pos="-947,-584" Size="660,324" GuiAlign="center">
+		<Image Name="WaveDoneBack"
+			Image="UI/BATTLE_UI/Main/battle_winBg.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="WaveDoneText"
+			Pos="0,134"
+			Size="660,60"
+			Style="Text_XLarge_White_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="mission.TD.WaveDone"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+</Window>

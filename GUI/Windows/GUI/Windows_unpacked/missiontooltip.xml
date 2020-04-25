@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="550,150">
+	<Constants>
+		<SkillCount Type="int" Value="4"/>
+		<EnchantCount Type="int" Value="6"/>
+		<StatCount Type="int" Value="5"/>
+	</Constants>
+	
+	<Include Path="Windows/Styles.xml"/>
+	
+	<FlowContainer Name="ItemTooltipBack"
+		Width="472"
+		BackgroundTopSize="180"
+		BackgroundBotSize="12"
+		BackgroundTopImage="UI/BATTLE_UI/spells/Tooltip/tooltip_common_bgTop.tga"
+		BackgroundMidImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgMiddle.tga"
+		BackgroundBotImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgBottom.tga"
+		>
+		
+		<Container Height="120">
+			<Text Name="Location"
+				Pos="20,6"
+				Size="432,30"
+				Style="Text_Large_Light"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="location"
+			/>
+			
+			<Image Name="ItemIcon"
+				Pos="17,52"
+				Size="60,60"
+				MouseSenseEnabled="0"
+				HandlePopup="0"
+				CanHighlight="0"
+			/>
+			<Text Name="MissionType"
+				Pos="90,50"
+				Size="250,30"
+				Style="Headline_XLarge_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<Text Name="MonsterSetting"
+				Pos="90,81"
+				Size="250,30"
+				Style="Text_Large_White"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<Image Name="RatingBack"
+				Pos="363,56"
+				Size="84,52"
+				Image="UI\\OpenWorld\\MissionInfo\\mission_challengeWhite.tga"
+			/>
+			<Text Name="RatingValue"
+				Pos="368,64"
+				Size="72,32"
+				Style="Clue_Cogitator_Text"
+				FontSize="28"
+				TextAlignH="center"
+				TextAlignV="center"
+			/>
+		</Container>
+		
+		
+		
+		<Container Name="TacticalMap" Size="324,324" MarginLeft="80" MarginTop="20" MarginBottom="5" >
+			<Image Name="MiniMap"
+				Pos="0,0"
+				VAlign="center"
+				HAlign="center"
+				Image="/UI/MosaicMap/Maps/Mining_Small_36.tga"
+				MouseSenseEnabled="0"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@WindowTiltPivot"
+				TiltMouseCenter="@WindowTiltMouseCenter"
+				DefaultTilt="@Layer_0_DefaultTilt"
+				MaximumTilt="@Layer_Text_MaximumTilt"
+			/>
+		</Container> 
+		
+		<Image
+			MarginLeft="18"
+			Size="436,8"
+			Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+		/>
+		
+		<Container Size="472,165" Name="TarotBlock">
+			<Loop Count="3" Variable="$X$" Offset="91,0">
+				<Image Name="TarotCard$X$"
+					Pos="104,10"
+					Size="80,136"
+					Image="UI/Tarot/cards/tarot_large_backside.tga"
+					InitPopup="bottomcenter,topcenter"
+					Tooltip="_MajorArcanaSlotTooltip"
+					TiltPivot="@MiddleTiltPivot"
+					TiltMouseCenter="@MiddleTiltMouseCenter"
+					DefaultTilt="@MiddleDefaultTilt"
+					MaximumTilt="@MiddleMaximumTilt"
+					TiltZone="@MiddleTiltZone"
+				/>
+			</Loop>
+			
+			<Image
+				Pos="18,157"
+				Size="436,8"
+				Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+			/>
+		</Container>
+		
+		<FlowContainer Horizontal="1" Height="60" MarginBottom="15" MarginTop="8" MarginLeft="5" HAlign="center">
+			<Container Size="89,60" Name="Credits">
+				<Image 
+					Pos="31,0"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"
+					Tooltip="openworld.GUI.mission.gold"
+				/>
+				<TextBox Name="CreditValue"
+					Pos="0,30"
+					Size="89,30"
+					Style="Text_Large_White"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="1000"
+				/>
+			</Container>
+			<Container Size="89,60" Name="Rank">
+				<Image
+					Pos="31,0"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardXp.tga"
+					Tooltip="openworld.GUI.mission.charxp"
+				/>
+				<TextBox Name="RankValue"
+					Pos="0,30"
+					Size="89,30"
+					Style="Text_Large_White"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="1000"
+				/>
+			</Container>
+			<Container Size="89,60" Name="Fate">
+				<Image 
+					Pos="31,0"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardFate.tga"
+					Tooltip="openworld.GUI.mission.fate"
+				/>
+				<TextBox Name="FateValue"
+					Pos="0,30"
+					Size="89,30"
+					Style="Text_Large_White"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="1000"
+				/>
+			</Container>
+			<Container Size="89,60" Name="Glory">
+				<Image 
+					Pos="31,0"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardGlory.tga"
+					Tooltip="openworld.GUI.mission.glory"
+				/>
+				<TextBox Name="GloryValue"
+					Pos="0,30"
+					Size="89,30"
+					Style="Text_Large_White"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="1000"
+				/>
+			</Container>			
+		</FlowContainer>
+
+		
+	</FlowContainer>
+	
+	<Icon Name="Close"
+		Pos="450,20"
+		Size="32,32"
+		IdleImg="UI/Interaction/button_closeOff.tga"
+		PressImg="UI/Interaction/button_closeOff.tga"
+		RolloverImg="UI/Interaction/button_closeOver.tga"
+		GuiAlign="topright"
+		InitPopup="bottomcenter,topcenter"
+		Tooltip="common.close"
+	/>
+</Window>

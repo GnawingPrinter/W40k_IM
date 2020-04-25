@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="center">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<LeftTiltPivot Value="1650,0"/>
+		<LeftTiltMouseCenter Value="1780,540"/>
+		<LeftDefaultTilt Value="0.0,0.0"/>
+		<LeftMaximumTilt Value="0.0,0.0"/>
+		<LeftTiltZone Value="0,0,0,0"/>
+		
+		<MiddleTiltPivot Value="1650,0"/>
+		<MiddleTiltMouseCenter Value="1780,540"/>
+		<MiddleDefaultTilt Value="0.0,0.0"/>
+		<MiddleMaximumTilt Value="0.0,0.0"/>
+		<MiddleTiltZone Value="1160,0,1780,1080"/>
+		
+		<RightTiltPivot Value="1650,0"/>
+		<RightTiltMouseCenter Value="1650,540"/>
+		<RightDefaultTilt Value="0.0,0.0"/>
+		<RightMaximumTilt Value="0.0,0.0"/>
+		<RightTiltZone Value="1535,0,1780,1080"/>
+
+		<ComponentCount Type="int" Value="10"/>
+		<MedkitComponentCount Type="int" Value="4"/>
+		<CapacityBarLength Type="int" Value="362"/>
+	</Constants>
+	
+	<Styles>
+		<ComponentBack 
+			Pos="0,0"
+			Size="368,80"
+			IdleImg="UI/InoculatorSetup/frame_component_bgOff.tga"
+			RolloverImg="UI/InoculatorSetup/frame_component_bgOver.tga"
+			PressImg="UI/InoculatorSetup/frame_component_bgOn.tga"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+			InitPopup="leftcenter,rightcenter"
+			UseButtonEffects="0"
+		/>
+		<ComponentIconBack
+			Pos="13,9"
+			Size="60,60"
+			Image="UI/Artifacts/Back/1x1_neutral.tga"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+			MouseSenseEnabled="0"
+		/>
+		<ComponentIcon
+			Pos="13,9"
+			Size="60,60"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+			MouseSenseEnabled="0"
+		/>
+		<ComponentNew
+			Pos="28,-4"
+			Size="32,32"
+			Image="UI/InoculatorSetup/Inoculator_alert.tga"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+			MouseSenseEnabled="0"
+		/>
+		<ComponentName
+			Pos="89,11"
+			Size="268,28"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="left"
+			TextAlignV="center"
+			TiltPivot="@RightTiltPivot"
+			TiltMouseCenter="@RightTiltMouseCenter"
+			DefaultTilt="@RightDefaultTilt"
+			MaximumTilt="@RightMaximumTilt"
+			TiltZone="@RightTiltZone"
+			MouseSenseEnabled="0"
+		/>
+		<ComponentCooldownIcon
+			Pos="83,37"
+			Size="32,32"
+			Image="UI/BATTLE_UI/spells/Tooltip/icon_cooldown.tga"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+			MouseSenseEnabled="0"
+		/>
+		<ComponentCooldownText
+			Pos="112,40"
+			Size="86,28"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="leftcenter"
+			TextAlignV="center"
+			TiltPivot="@RightTiltPivot"
+			TiltMouseCenter="@RightTiltMouseCenter"
+			DefaultTilt="@RightDefaultTilt"
+			MaximumTilt="@RightMaximumTilt"
+			TiltZone="@RightTiltZone"
+			MouseSenseEnabled="0"
+		/>
+		<ComponentCapacityIcon
+			Pos="196,37"
+			Size="32,32"
+			Image="UI/BATTLE_UI/spells/Tooltip/icon_capacity.tga"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+			MouseSenseEnabled="0"
+		/>
+		<ComponentCost
+			Pos="225,40"
+			Size="130,28"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="leftcenter"
+			TextAlignV="center"
+			TiltPivot="@RightTiltPivot"
+			TiltMouseCenter="@RightTiltMouseCenter"
+			DefaultTilt="@RightDefaultTilt"
+			MaximumTilt="@RightMaximumTilt"
+			TiltZone="@RightTiltZone"
+			MouseSenseEnabled="0"
+		/>
+	</Styles>
+	
+	<Container>
+		<Dummy Name="BlackScreen" HAlign="right"/>
+		<Image
+			Image="UI/BlackTexture.tga"
+			GuiAlign="topleft"
+		/>
+		<Effect Name="MedkitSetupBackEffect"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/3D_GUI_windows/Inoculator/inoculator.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+			GuiAlign="topleft"
+		/>
+		<Scene3D Name="Medic"
+			Pos="385,45"
+			Size="1920,1080"
+			GuiAlign="rightcenter"
+			MouseSenseEnabled="0"
+			TiltPivot="@RightTiltPivot"
+			TiltMouseCenter="@RightTiltMouseCenter"
+			DefaultTilt="@RightDefaultTilt"
+			MaximumTilt="@RightMaximumTilt"
+			TiltZone="@RightTiltZone"
+			SetCamera="medkitsetupwindow"
+		/>
+		<Icon
+			Pos="848,36"
+			Size="224,68"
+			IdleImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+			IdleFontType="Vibrocentric" IdleFontSize="18" IdleColor="#ededed" IdleSharpness="0.5"
+			IdleOffset="0,-12"
+			ButtonState="UIBS_ALWAYS_IDLE"
+			GuiAlign="topcenter"
+			Text="openworld.gui.medkit.setup.title"
+		/>
+		<Icon Name="Journal"
+			Pos="28,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_infoOff.tga"
+			PressImg="UI/Interaction/button_infoOff.tga"
+			RolloverImg="UI/Interaction/button_infoOver.tga"
+			GuiAlign="topleft"
+			InitPopup="topcenter,bottomcenter"
+			Tooltip="openworld.gui.journal.tutorials.title"
+		/>
+		<Icon TutorialCategoryToReset="Inoculator"
+			Pos="28,80"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+			PressImg="UI/Interaction/button_tutorialResetOff.tga"
+			RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+			GuiAlign="topleft"
+			InitPopup="leftcenter,rightcenter"
+			Tooltip="Tutorial.TutorialReset"
+			ShowCategory="mouse"
+		/>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+		/>
+		
+		<Icon Name="TutorialReset"
+			TutorialCategoryToReset="Inoculator"
+			Pos="938,913"
+			Size="44,44"
+			IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+			PressImg="UI/Interaction/button_tutorialResetOff.tga"
+			RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+			UseButtonEffects="0"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="Tutorial.TutorialReset"
+			ShowCategory="controller"
+		/>
+		<XBOXButton
+			Pos="937,865"
+			Size="48,48"
+			SetButton="Back"
+		/>
+	</Container>
+		
+	<Text
+		Pos="100,100"
+		Size="389,30"
+		Style="Headline_Large_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="openworld.gui.medkit.setup.medkit_equiped"
+		TiltPivot="@LeftTiltPivot"
+		TiltMouseCenter="@LeftTiltMouseCenter"
+		DefaultTilt="@LeftDefaultTilt"
+		MaximumTilt="@LeftMaximumTilt"
+		TiltZone="@LeftTiltZone"
+	/>
+		
+	
+	<FlowContainer Pos="100,131" Width="444" Tutorial="Inoculator_base"
+		BackgroundTopSize="158"
+		BackgroundBotSize="17"
+		BackgroundTopImage="UI/InoculatorSetup/frame_inoculator_bg_top.tga"
+		BackgroundMidImage="UI/InoculatorSetup/frame_inoculator_bg_middle.tga"
+		BackgroundBotImage="UI/InoculatorSetup/frame_inoculator_bg_bottom.tga"
+	>
+		<Container Name="SelectedMedkitFrame" >
+		
+			<Artifact Name="EquippedMedkitItemSlot"
+				MarginLeft="15"
+				MarginTop="13"
+				Size="60,120"
+				TiltPivot="@LeftTiltPivot"
+				TiltMouseCenter="@LeftTiltMouseCenter"
+				DefaultTilt="@LeftDefaultTilt"
+				MaximumTilt="@LeftMaximumTilt"
+				TiltZone="@LeftTiltZone"
+				MouseSenseEnabled="0"
+			/>
+			<Loop Count="@MedkitComponentCount" Variable="$X$" Offset="70,0">
+				<Image  Name="EquippedMedkitComponent$X$Bar"
+					Pos="110,83"
+					Size="60,8"
+					Image="UI/spells/Inoculator/Inoculator_bar_booster.tga"
+					TiltPivot="@LeftTiltPivot"
+					TiltMouseCenter="@LeftTiltMouseCenter"
+					DefaultTilt="@LeftDefaultTilt"
+					MaximumTilt="@LeftMaximumTilt"
+					TiltZone="@LeftTiltZone"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="EquippedMedkitComponent$X$Icon"
+					Pos="110,20"
+					Size="60,60"
+					Image="UI/spells/Inoculator/Inoculator_slot_locked.tga"
+					TiltPivot="@LeftTiltPivot"
+					TiltMouseCenter="@LeftTiltMouseCenter"
+					DefaultTilt="@LeftDefaultTilt"
+					MaximumTilt="@LeftMaximumTilt"
+					TiltZone="@LeftTiltZone"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="EquippedMedkitComponent$X$Highlight"
+					Pos="104,15"
+					Size="72,78"
+					Image="UI/spells/Inoculator/Inoculator_slot_highlight.tga"
+					TiltPivot="@LeftTiltPivot"
+					TiltMouseCenter="@LeftTiltMouseCenter"
+					DefaultTilt="@LeftDefaultTilt"
+					MaximumTilt="@LeftMaximumTilt"
+					TiltZone="@LeftTiltZone"
+					MouseSenseEnabled="0"
+				/>
+			</Loop>
+			
+			<Text
+				MarginLeft="107"
+				MarginTop="105"
+				Size="202,25"
+				Style="Headline_Large_White_Glow"
+				Text="openworld.gui.medkit.setup.inoculator_usage"
+				TextAlignH="left"
+				TiltPivot="@LeftTiltPivot"
+				TiltMouseCenter="@LeftTiltMouseCenter"
+				DefaultTilt="@LeftDefaultTilt"
+				MaximumTilt="@LeftMaximumTilt"
+				TiltZone="@LeftTiltZone"
+			/>
+			<Text Name="ChargeCount"
+				MarginLeft="318"
+				MarginTop="100"
+				Size="60,34"
+				Style="Headline_XLarge_Color_Glow"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="x"
+				TiltPivot="@LeftTiltPivot"
+				TiltMouseCenter="@LeftTiltMouseCenter"
+				DefaultTilt="@LeftDefaultTilt"
+				MaximumTilt="@LeftMaximumTilt"
+				TiltZone="@LeftTiltZone"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="openworld.gui.medkit.setup.capacitytooltip"
+			/>
+			<MagicBulb Name="Syringe"
+				MarginLeft="105"
+				MarginTop="195"
+				Size="230,60"
+				Image="UI/BATTLE_UI/Main/battle_hpBar.tga"
+				AlphaMask="UI/InoculatorSetup/SyringeMask.tga"
+			/>
+			<Image
+				MarginLeft="15"
+				MarginTop="163"
+				Size="364,104"
+				Image="UI/InoculatorSetup/Syringe.dds"
+			/>
+			
+			<FlowContainer Size="282,30" MarginLeft="130" MarginTop="160" Horizontal="1"  >
+				<Text
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.medkit.setup.resource_total"
+					TiltPivot="@LeftTiltPivot"
+					TiltMouseCenter="@LeftTiltMouseCenter"
+					DefaultTilt="@LeftDefaultTilt"
+					MaximumTilt="@LeftMaximumTilt"
+					TiltZone="@LeftTiltZone"
+				/>
+				<Text Name="MaxCapacity" 
+					Style="Text_Large_White_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					MarginLeft="5"
+					Text=""
+					TiltPivot="@LeftTiltPivot"
+					TiltMouseCenter="@LeftTiltMouseCenter"
+					DefaultTilt="@LeftDefaultTilt"
+					MaximumTilt="@LeftMaximumTilt"
+					TiltZone="@LeftTiltZone"
+				/>
+			</FlowContainer>
+			
+			<Image
+				Name="ChargeMeter"
+				MarginLeft="120"
+				MarginTop="193"
+				Size="8,68"
+				Image="UI/InoculatorSetup/usage_meter.dds"
+			/>
+			<FlowContainer Size="282,30" MarginLeft="160" MarginTop="265" Horizontal="1" >
+				<Text
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.medkit.setup.resource_per_charge"
+					TiltPivot="@LeftTiltPivot"
+					TiltMouseCenter="@LeftTiltMouseCenter"
+					DefaultTilt="@LeftDefaultTilt"
+					MaximumTilt="@LeftMaximumTilt"
+					TiltZone="@LeftTiltZone"
+				/>
+				<Text Name="CapacityCost"
+					Style="Text_Large_White_Glow"
+					TextAlignH="left"
+					TextAlignV="top"
+					MarginLeft="5"
+					Text=""
+					TiltPivot="@LeftTiltPivot"
+					TiltMouseCenter="@LeftTiltMouseCenter"
+					DefaultTilt="@LeftDefaultTilt"
+					MaximumTilt="@LeftMaximumTilt"
+					TiltZone="@LeftTiltZone"
+				/>
+			</FlowContainer>
+			
+			<Dummy Name="CapacityBar" MouseSenseEnabled="0"/>
+		</Container>
+		
+		<Text
+			MarginTop="15"
+			MarginBottom="-3"
+			MarginLeft="14"
+			TextAlignH="left"
+			Style="Headline_MLarge_Color_Glow"
+			Text="openworld.gui.medkit.setup.skillinfo"
+		/>
+		<Image
+			MarginTop="7"
+			MarginLeft="9"
+			Size="385,10"
+			Image="UI/OpenWorld/headline3.tga"
+		/>
+		<FlowContainer Width="377">
+			<Loop Count="@MedkitComponentCount" Variable="$X$" >
+				<FlowContainer Horizontal="1" Name="Component$X$" MarginTop="10" Width="370" VAlign="top" >
+					<Image MarginLeft="21"  Size="20,20" Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"/>
+					<TextBox Name="Component$X$Effect"
+						MarginLeftX="46"
+						Width="330" UseSlider="0" Style="Text_Large_Light_Glow" 
+						TextAlignH="left" TextAlignV="top" VAlign="top"
+						Text="Inoculator.empty.name"
+					/>
+				</FlowContainer>
+			</Loop>
+		
+		<Image
+			MarginTop="10"
+			MarginLeft="13"
+			Size="377,8"
+			Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+		/>
+		<Container MarginBottom="10" Name="SkillCooldown" Size="388,32">
+			<Image
+				MarginLeft="19"
+				Size="32,32"
+				Image="UI/BATTLE_UI/spells/Tooltip/icon_cooldown.tga"
+			/>
+			<Text
+				MarginLeft="52"
+				Size="180,32"
+				Style="Italic_Normal_White"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="Skills.common.cooldown"
+			/>
+			<FlowContainer Horizontal="1" HorizontalAlignment="Right">
+				<Text Name="SkillCooldownValue"
+					Height="32"
+					MarginRight="8"
+					Style="Text_Large_White"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="20"
+				/>
+				<Text
+					Height="26"
+					MarginTop="4"
+					MarginRight="29"
+					Style="Italic_Normal_White"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="Skills.common.DurationMeasure"
+				/>
+			</FlowContainer>
+		</Container>
+		</FlowContainer>
+	</FlowContainer>
+	
+	<Container Name="ComponentListFrame" Pos="518,101">
+		<Text
+			Pos="0,0"
+			Size="408,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.medkit.setup.component_list"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+		/>
+		<Image Name="ComponentListBack"
+			Pos="0,28"
+			Size="388,824"
+			Image="UI/InoculatorSetup/fullscreen_inoculator_middle.tga"
+			TiltPivot="@MiddleTiltPivot"
+			TiltMouseCenter="@MiddleTiltMouseCenter"
+			DefaultTilt="@MiddleDefaultTilt"
+			MaximumTilt="@MiddleMaximumTilt"
+			TiltZone="@MiddleTiltZone"
+		/>
+		<Slider Name="ComponentSlider"
+			Pos="383,38"
+			Size="20,800"
+		/>
+		<FlowContainer MarginTop="45">
+			<TextBox Name="SelectedComponentText"
+				MarginLeft="24"
+				Size="342,72"
+				_Width="342"
+				UseSlider="0" 
+				Style="Text_Large_Light_Glow" 
+				VAlign="top"
+				TextAlignH="left" 
+				TextAlignV="center"
+				Text=""
+				Visible="0"
+			/>
+			<Image
+				MarginTop="0"
+				MarginLeft="9"
+				Size="370,8"
+				Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+				Visible="0"
+			/>
+			<Container MarginLeft="10" Size="388,800" HAlign="left" VAlign="top" >
+				<Loop Count="@ComponentCount" Variable="$X$" >
+					<Container Size="368,80" IgnoreScissor="0" Name="Component$X$Frame">
+						<Icon Name="Component$X$Back" Style="ComponentBack" SlideredElement="1"/>
+						<Image Style="ComponentIconBack"/>
+						<Image Name="Component$X$Icon" Style="ComponentIcon"/>
+						<Image Name="Component$X$New" Style="ComponentNew"/>
+						<Text Name="Component$X$Name" Style="ComponentName"/>
+						<Image Name="Component$X$CooldownIcon" Style="ComponentCooldownIcon"/>
+						<Text Name="Component$X$Cooldown" Style="ComponentCooldownText"/>
+						<Image Name="Component$X$CostIcon" Style="ComponentCapacityIcon"/>
+						<Text Name="Component$X$Cost" Style="ComponentCost"/>
+					</Container>
+				</Loop>
+			</Container>
+		</FlowContainer>
+	</Container>
+	
+	<Container Name="MouseActions" Pos="0,1013" Size="1920,32">
+		<FlowContainer Horizontal="1" HAlign="center">
+			<Loop Count="2" Variable="$X$">
+				<Text Name="ActionModifier$X$"
+					Style="Text_Large_Light"
+					Height="30"
+					MarginTop="2"
+					MarginRight="2"
+					Text="Action $X$."
+				/>
+				<Image Name="ActionImage$X$"
+					Height="32"
+					Width="32"
+					Image="UI/Shortcuts/bigshortcut_leftclick.dds"
+				/>
+				<Text Name="ActionText$X$"
+					Style="Text_Large_Light"
+					Height="30"
+					MarginTop="2"
+					MarginRight="48"
+					Text="Action $X$."
+				/>
+			</Loop>
+		</FlowContainer>
+	</Container>
+		
+</Window>

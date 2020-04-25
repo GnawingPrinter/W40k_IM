@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<MaxMissionCount Type="int" Value="35"/>
+		<MaxKeyCount Type="int" Value="6"/>
+		<MaxIntelCount Type="int" Value="5"/>
+		<LegendMissionType Type="int" Value="18"/>
+		<LegendEnemyType Type="int" Value="8"/>
+	</Constants>
+
+	<Image
+		Image="UI/BlackTexture.tga"
+	/>
+	
+	<Container HAlign="center" VAlign="center" Size="2580,1080">
+		<Image Name="Background" Image="UI/TarotCampaign/MAP/TC-BG-Large.dds" DynamicOffsetMax="20,20"/>
+		<Image Image="UI/TarotCampaign/MAP/GRID-Large.dds" DynamicOffsetMax="10,10"/>
+		<Effect Name="BgEffect"
+			Size="2580,1080"
+			Effect="UI/Void_Crusade_map/void_fog.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+			Show="1"
+		/>
+	</Container>
+	
+	<Container Name="MapMode">
+		<Container Name="TopLeftPart" GuiAlign="topleft">
+			<Icon Name="Tutorial"
+				Pos="32,47"
+				Size="36,36"
+				IdleImg="UI/Interaction/button_infoOff.tga"
+				PressImg="UI/Interaction/button_infoOff.tga"
+				RolloverImg="UI/Interaction/button_infoOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="openworld.gui.journal.tutorials.title"
+				ShowCategory="mouse"
+			/>
+			<Icon TutorialCategoryToReset="Void_Crusade"
+				Pos="32,90"
+				Size="36,36"
+				IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+				PressImg="UI/Interaction/button_tutorialResetOff.tga"
+				RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+				UseButtonEffects="0"
+				InitPopup="leftcenter,rightcenter"
+				Tooltip="Tutorial.TutorialReset"
+				ShowCategory="mouse"
+			/>
+			<Icon Name="TutorialReset"
+				TutorialCategoryToReset="Void_Crusade"
+				Pos="32,47"
+				Size="36,36"
+				IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+				PressImg="UI/Interaction/button_tutorialResetOff.tga"
+				RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="Tutorial.TutorialReset"
+				ShowCategory="controller"
+			/>
+			<XBOXButton
+				Pos="30,84"
+				Size="40,40"
+				SetButton="Back"
+			/>
+			<Icon Name="Abandon"
+				Pos="70,47"
+				Size="164,36"
+				Style="Starmap2_3"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="openworld.GUI.voidcrusade.abandontooltip"
+				Text="openworld.GUI.voidcrusade.abandon"
+				ShowCategory="mouse"
+			/>
+			<Icon Name="OpenLegend"
+				Pos="70,90"
+				Size="164,36"
+				Style="Starmap2_3"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				UseButtonEffects="0"
+				Text="openworld.gui.starmap.missionicon_info"
+				ShowCategory="mouse"
+			/>
+		</Container>
+		
+		<Container Name="TopCenterPart" GuiAlign="topcenter" Tutorial="VoidCrusade_GraphMission">
+			<Image
+				Pos="685,11"
+				Size="550,100"
+				Image="UI/TarotCampaign/MAP/Global-Values-Center-Info-Panel.dds"
+			/>
+			<Image
+				Pos="901,41"
+				Size="50,50"
+				Image="UI/TarotCampaign/MAP/Global-Values-Number-Diff_Box.dds"
+			/>
+			<Image
+				Pos="1089,41"
+				Size="50,50"
+				Image="UI/TarotCampaign/MAP/Global-Values-Number-Life-Box.dds"
+			/>
+			<Text
+				Pos="782,47"
+				Size="110,37"
+				Style="Headline_Large_Light_Glow"
+				Color="#ff0000"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="openworld.GUI.voidcrusade.difficulty"
+			/>
+			<Text
+				Pos="974,47"
+				Size="110,37"
+				Style="Headline_Large_Light_Glow"
+				Color="#00dd00"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="openworld.GUI.voidcrusade.lifecount"
+			/>
+			<Text Name="DifficultyValue"
+				Pos="910,50"
+				Size="32,32"
+				Style="Headline_Large_Light_Glow"
+				Color="#ff0000"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_69"
+			/>
+			<Text Name="LifesCountValue"
+				Pos="1098,50"
+				Size="32,32"
+				Style="Headline_Large_Light_Glow"
+				Color="#00dd00"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_69"
+			/>
+			<TextBox Name="PendingRewardWarning"
+				GuiAlign="topleft"
+				HAlign="center"
+				MarginTop="100"
+				Size="820,40"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="bottom"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="menu.inventory.commonreward.pending"
+				UseSlider="0"
+			/>
+			<Icon Name="PendingReward"
+				GuiAlign="topleft"
+				HAlign="center"
+				MarginTop="150"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_lootOff.tga"
+				RolloverImg="UI/msgbox/alert_lootOver.tga"
+				PressImg="UI/msgbox/alert_lootOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Tooltip="openworld.gui.notification.reward"
+				ShowCategory="mouse"
+			/>
+		</Container>
+		
+		<Container Name="TopRightPart" GuiAlign="topright">
+			<Icon Name="Close"
+				Pos="1860,42"
+				Size="32,32"
+				IdleImg="UI/Interaction/button_closeOff.tga"
+				PressImg="UI/Interaction/button_closeOff.tga"
+				RolloverImg="UI/Interaction/button_closeOver.tga"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="common.close"
+				ShowCategory="mouse"
+			/>
+			<Text Name="MapLocation"
+				Pos="1489,41"
+				Size="290,28"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="_Ivory // Alpha-Nebula"
+			/>
+			<Text Name="MapName"
+				Pos="1489,69"
+				Size="290,24"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="_C-Type I. Void Crusade  Map"
+			/>
+			<Image Name="MapIcon"
+				Pos="1787,40"
+				Size="52,52"
+				Image="UI/TarotCampaign/MAP/Ivory_Map_Item.dds"
+			/>
+			<Image
+				Pos="1485,121"
+				Size="352,296"
+				Image="UI/TarotCampaign/MAP/End-Loot-Infos-Widget.dds"
+			/>
+			<Image
+				Pos="1484,90"
+				Size="354,15"
+				Image="UI/TarotCampaign/MAP/Sepa-Line.dds"
+			/>
+			<Text
+				Pos="1502,131"
+				Size="320,28"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.GUI.voidcrusade.endlootinfo"
+			/>
+			<TextBox Name="MapInfoLoot"
+				Pos="1502,178"
+				Size="320,80"
+				Style="Text_Normal_Dark"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="_Loot Quality, etc."
+				InitPopup="rightcenter,leftcenter"
+				Tooltip="openworld.GUI.voidcrusade.lootbonus.tooltip"
+			/>
+			<TextBox Name="KeysCollected"
+				Pos="1502,279"
+				Size="320,30"
+				Style="Text_Normal_Dark"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.GUI.voidcrusade.keytitle"
+				InitPopup="rightcenter,leftcenter"
+			/>
+			<Container Pos="1502,309" Size="320,30">
+				<FlowContainer Horizontal="1" HAlign="center">
+					<Loop Count="@MaxKeyCount" Variable="$X$">
+						<Icon Name="Key$X$"
+							Size="30,30"
+							PressImg="UI/TarotCampaign/MAP/Void_KeyActive.dds"
+							IdleImg="UI/TarotCampaign/MAP/Void_KeyInactive.dds"
+						/>
+						<Effect Name="KeyEffect$X$"
+							Size="30,30"
+							MarginLeft="-30"
+							Effect="UI/HUD/Icon_effects/Warzone_key_intel_ready.N2E"
+						/>
+					</Loop>
+				</FlowContainer>
+			</Container>
+			<TextBox Name="IntelsCollected"
+				Pos="1502,339"
+				Size="320,30"
+				Style="Text_Normal_Dark"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.GUI.voidcrusade.inteltitle"
+				InitPopup="rightcenter,leftcenter"
+			/>
+			<Container Pos="1502,369" Size="320,30">
+				<FlowContainer Horizontal="1" HAlign="center">
+					<Loop Count="@MaxIntelCount" Variable="$X$">
+						<Icon Name="Intel$X$"
+							Size="30,30"
+							PressImg="UI/TarotCampaign/MAP/Void_InfoFragmentActive.dds"
+							IdleImg="UI/TarotCampaign/MAP/Void_InfoFragmentInactive.dds"
+						/>
+						<Effect Name="IntelEffect$X$"
+							Size="30,30"
+							MarginLeft="-30"
+							Effect="UI/HUD/Icon_effects/Warzone_key_intel_ready.N2E"
+						/>
+					</Loop>
+				</FlowContainer>
+			</Container>
+		</Container>
+		
+		<Container Name="MapPart" GuiAlign="center">
+			<Line Name="Active" LineWidth="16" Texture="UI/TarotCampaign/MAP/fullscreen_void_crusade_lineOn.dds"/>
+			<Line Name="Inactive" LineWidth="16" Texture="UI/TarotCampaign/MAP/fullscreen_void_crusade_lineOff.tga"/>
+			<Line Name="Failed" LineWidth="16" Texture="UI/TarotCampaign/MAP/fullscreen_void_crusade_lineFailed.tga"/>
+			<Icon Name="StartPoint"
+				Pos="920,919"
+				Size="80,80"
+				AllImg="UI/TarotCampaign/MAP/Start-Base.dds"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="openworld.GUI.voidcrusade.start"
+				ControllerSenseEnabled="1"
+				UseButtonEffects="0"
+			/>
+			<Loop Count="@MaxMissionCount" Variable="$X$">
+				<Container Name="Mission$X$" Pos="200,250" IgnoreScissor="1">
+					<Icon Name="MissionIcon$X$"
+						Size="64,64"
+						IdleImg="UI/TarotCampaign/MAP/MissionType/Base/Base-Mission-Completed.dds"
+						RolloverImg="UI/TarotCampaign/MAP/MissionType/Base/Base-Mission-Completed.dds"
+						PressedImg="UI/TarotCampaign/MAP/MissionType/Base/Base-Mission-Completed.dds"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="_missionstate"
+						ControllerSenseEnabled="1"
+					/>
+					<Effect Name="MissionEffect$X$"
+						Size="64,64"
+						Effect="UI/HUD/Icon_effects/warzone_hidden_mission_ready.N2E"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="MissionMonsterSetting$X$"
+						Size="64,64"
+						Image="UI/TarotCampaign/MAP/EnemySetting/Chaos/EnemySettingChaosBonus.dds"
+						MouseSenseEnabled="0"
+					/>
+					<Container Pos="-22,-36" Size="108,36">
+						<FlowContainer HAlign="center" Height="36" Horizontal="1">
+							<Image Name="MissionType$X$"
+								Size="36,36"
+								Image="UI/TarotCampaign/MAP/GameMode/Mission_Type_Callous_Hunt.dds"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="_Mission Type"
+							/>
+							<Image Name="MissionDifficulty$X$"
+								Size="36,36"
+								Image="UI/TarotCampaign/MAP/GameMode/Diff_Plus_1.dds"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="openworld.GUI.voidcrusade.difficultytooltip"
+							/>
+							<Image Name="MissionVillain$X$" Visible="0"
+								Size="36,36"
+								Image="UI/TarotCampaign/MAP/GameMode/Wandering_Villain.dds"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="openworld.GUI.voidcrusade.villain"
+							/>
+						</FlowContainer>
+					</Container>
+				</Container>
+			</Loop>
+		</Container>		
+	</Container>
+	
+	<Image Name="VoidCrusadeEndBack" Image="UI/BlackTexture.tga" Alpha="0.5"/>
+	
+	<Container Name="VoidCrusadeCompleted" Size="488,276" HAlign="center" VAlign="center" Visible="0">
+		<Image Name="CompletedBackground"
+			Pos="0,0"
+			Size="488,276"
+			Image="UI/TarotCampaign/Void_PopupCompleted.tga"
+		/>
+		<TextBox Name="VoidCrusadeCompletedHeadline"
+			Pos="20,126"
+			Size="448,32"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.voidcrusade.completed"
+		/>
+		<Icon Name="CompletedExit"
+			Pos="160,165"
+			Size="168,48"
+			IdleImg="UI/common/battle_escOff.tga"
+			PressImg="UI/common/battle_escOver.tga"
+			RolloverImg="UI/common/battle_escOver.tga"
+			Style="Starmap2_3"
+			Text="Common.Exit"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="VoidCrusadeLost" Size="488,276" HAlign="center" VAlign="center" Visible="0">
+		<Image Name="LostBackground"
+			Pos="0,0"
+			Size="488,276"
+			Image="UI/TarotCampaign/Void_PopupLost.tga"
+		/>
+		<TextBox Name="VoidCrusadeLostHeadline"
+			Pos="20,126"
+			Size="448,32"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.voidcrusade.failed"
+		/>
+		<Icon Name="LostExit"
+			Pos="160,165"
+			Size="168,48"
+			IdleImg="UI/common/battle_escOff.tga"
+			PressImg="UI/common/battle_escOver.tga"
+			RolloverImg="UI/common/battle_escOver.tga"
+			Style="Starmap2_3"
+			Text="Common.Exit"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="VoidCrusadeLegend" Pos="0,140" Visible="1" GuiAlign="topleft">
+		<Image
+			Pos="0,0"
+			Size="672,758"
+			Image="UI/TarotCampaign/MAP/LegendBg.dds"
+		/>
+		<Icon Name="LegendClose"
+			Pos="647,32"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOff.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+		<FlowContainer Pos="85,-10" Horizontal="1">
+			<XBOXButton Name=""
+				Height="48"
+				SetButton="R_TRIGGER"
+				Style="XBoxButtonFont"
+			/>
+			<Text
+				Height="48"
+				MarginLeft="5"
+				MarginTop="2"
+				TextAlignH="left"
+				Style="Headline_XLarge_Light_Glow"
+				Text="openworld.gui.starmap.missionicon_info"
+			/>
+		</FlowContainer>
+		<ScrollableContainer Size="580,698" Pos="85,57">
+			<Text
+				Size="270,48"
+				TextAlignH="left"
+				Style="Headline_MLarge_Color_Glow"
+				Text="openworld.gui.coop.mode"
+			/>
+			<Image
+				Pos="-5,40"
+				Size="280,10"
+				Image="UI/OpenWorld/headline3.tga"
+			/>
+			<Loop Count="@LegendMissionType" Variable="$X$" Offset="0,35">
+				<FlowContainer Name="LegendMissionType$X$" Size="250,32" Pos="0,53" Horizontal="1">
+					<Image Name="LegendMissionTypeIcon$X$"
+						Size="30,30"
+						Image="UI\OpenWorld\Missions\mission_incursionOff.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Text Name="LegendMissionTypeName$X$"
+						Size="240,32"
+						MarginLeft="4"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="_Daemon Hunt"
+					/>
+				</FlowContainer>
+			</Loop>
+			<FlowContainer Pos="292,0">	
+				<Text
+					Size="280,48"
+					TextAlignH="left"
+					Style="Headline_MLarge_Color_Glow"
+					Text="openworld.gui.fasttravel.randommissions.filters.enemy_type"
+				/>
+				<Image
+					Pos="-5,-8"
+					Size="280,10"
+					Image="UI/OpenWorld/headline3.tga"
+				/>
+				<Loop Count="@LegendEnemyType" Variable="$X$" >
+					<FlowContainer Name="LegendEnemyType$X$" Size="250,36" Horizontal="1">
+						<Image Name="LegendEnemyTypeIcon$X$"
+							Size="30,30"
+							Image="UI\OpenWorld\MissionDeployment\EnemyType\WB_warband.tga"
+							MouseSenseEnabled="0"
+						/>	
+						<Text Name="LegendEnemyTypeName$X$"
+							Size="240,32"
+							MarginLeft="4"
+							Style="Text_Normal_Light"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="_Word Bearer Vanguard"
+						/>
+					</FlowContainer>
+				</Loop>
+				
+				<Text
+					Size="280,48"
+					MarginTop="10"
+					TextAlignH="left"
+					Style="Headline_MLarge_Color_Glow"
+					Text="openworld.GUI.voidcrusade.Mission_modifiers"
+				/>
+				<Image
+					Pos="-5,-8"
+					Size="280,10"
+					Image="UI/OpenWorld/headline3.tga"
+				/>
+				<FlowContainer Size="250,40" Horizontal="1">
+					<Image Name="LegendModifierIcon"
+						Size="40,40"
+						Image="UI\TarotCampaign\MAP\GameMode\Diff_Plus_1.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Text Name="LegendModifierType"
+						Size="240,40"
+						MarginLeft="4"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="openworld.gui.voidcrusade.difficultytooltip"
+					/>
+				</FlowContainer>
+				<FlowContainer Size="250,40" Horizontal="1">
+					<Image
+						Size="40,40"
+						Image="UI\TarotCampaign\MAP\GameMode\Wandering_Villain.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Text
+						Size="240,40"
+						MarginLeft="4"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="openworld.gui.voidcrusade.villain"
+					/>
+				</FlowContainer>
+				<Text
+					Size="280,48"
+					MarginTop="10"
+					TextAlignH="left"
+					Style="Headline_MLarge_Color_Glow"
+					Text="openworld.GUI.voidcrusade.Mission_states"
+				/>
+				<Image
+					Pos="-5,-8"
+					Size="280,10"
+					Image="UI/OpenWorld/headline3.tga"
+				/>
+				<FlowContainer Size="250,40" Horizontal="1">
+					<Image 
+						Size="40,40"
+						Image="UI\TarotCampaign\MAP\MissionType\BaseCompleted.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Text
+						Size="240,40"
+						MarginLeft="4"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="gamemode.mission.victory"
+					/>
+				</FlowContainer>
+				<FlowContainer Size="250,40" Horizontal="1">
+					<Image 
+						Size="40,40"
+						Image="UI\TarotCampaign\MAP\MissionType\BaseFailed.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Text
+						Size="240,40"
+						MarginLeft="4"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="gamemode.mission.defeated"
+					/>
+				</FlowContainer>
+				<FlowContainer Size="250,40" Horizontal="1">
+					<Image 
+						Size="40,40"
+						Image="UI\TarotCampaign\MAP\MissionType\BaseUnavailable.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Text
+						Size="240,40"
+						MarginLeft="4"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="openworld.gui.voidcrusade.missionstate.unavailable"
+					/>
+				</FlowContainer>
+				<FlowContainer Size="250,40" Horizontal="1">
+					<Image 
+						Size="40,40"
+						Image="UI\TarotCampaign\MAP\MissionType\BaseInactive.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Text
+						Size="240,40"
+						MarginLeft="4"
+						Style="Text_Normal_Light"
+						TextAlignH="left"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="openworld.gui.voidcrusade.missionstate.inactive"
+					/>
+				</FlowContainer>
+			</FlowContainer>
+		</ScrollableContainer>
+	</Container>
+	
+</Window>

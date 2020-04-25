@@ -1,0 +1,7 @@
+<MapEditorDummy>
+	<Include Path="Cfg/GUI/Templates/MapEditor/Dummies/DummyCommon.xml"/>
+	<Constants>
+		<IconPath Value="UI/Editor/MapEditor/Dummies/dummy_reinfIcon.dds"/>
+		<BackgroundColor Value="#00cc00"/>
+	</Constants>
+</MapEditorDummy>

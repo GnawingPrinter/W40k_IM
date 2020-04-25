@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SII_Nurgle_passage_10_clear Terrain="Terrains/Sections/Imperial_indoors_nurgle_infested/SII_Nurgle_passage_10_clear.VHT" Preview="Terrains/Sections/Imperial_indoors_nurgle_infested/MapEditorImages/SII_Nurgle_passage_10_clear_thumb.bmp" Image="Terrains/Sections/Imperial_indoors_nurgle_infested/MapEditorImages/SII_Nurgle_passage_10_clear.bmp" MinClickHeight="-50000" Background="false" MapType="Nurgle Indoors">
+	<PivotPos x="667.763184" y="1442.28906" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-4" Row="-4" Image="" />
+		<Grid Column="-3" Row="-4" Image="" />
+		<Grid Column="-2" Row="-4" Image="" />
+		<Grid Column="-1" Row="-4" Image="" />
+		<Grid Column="0" Row="-4" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="690.925903" Position.y="1258.22192" Position.z="2.38418579e-07" />
+		</Grid>
+		<Grid Column="1" Row="-4" Image="" />
+		<Grid Column="2" Row="-4" Image="" />
+		<Grid Column="3" Row="-4" Image="" />
+		<Grid Column="4" Row="-4" Image="" />
+		<Grid Column="-4" Row="-3" Image="" />
+		<Grid Column="-3" Row="-3" Image="" />
+		<Grid Column="-2" Row="-3" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="" />
+		<Grid Column="2" Row="-3" Image="" />
+		<Grid Column="3" Row="-3" Image="" />
+		<Grid Column="4" Row="-3" Image="" />
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+		<Grid Column="-4" Row="3" Image="" />
+		<Grid Column="-3" Row="3" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="" />
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="4" Row="3" Image="" />
+		<Grid Column="-4" Row="4" Image="" />
+		<Grid Column="-3" Row="4" Image="" />
+		<Grid Column="-2" Row="4" Image="" />
+		<Grid Column="-1" Row="4" Image="" />
+		<Grid Column="0" Row="4" Image="" />
+		<Grid Column="1" Row="4" Image="" />
+		<Grid Column="2" Row="4" Image="" />
+		<Grid Column="3" Row="4" Image="" />
+		<Grid Column="4" Row="4" Image="" />
+		<Grid Column="-4" Row="5" Image="" />
+		<Grid Column="-3" Row="5" Image="" />
+		<Grid Column="-2" Row="5" Image="" />
+		<Grid Column="-1" Row="5" Image="" />
+		<Grid Column="0" Row="5" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="689.957153" Position.y="1718.3053" Position.z="2.38418579e-07" />
+		</Grid>
+		<Grid Column="1" Row="5" Image="" />
+		<Grid Column="2" Row="5" Image="" />
+		<Grid Column="3" Row="5" Image="" />
+		<Grid Column="4" Row="5" Image="" />
+	</Grids>
+</SII_Nurgle_passage_10_clear>

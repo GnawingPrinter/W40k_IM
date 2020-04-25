@@ -1,0 +1,14 @@
+<GridContainer Visible="false" Name="Scripts">
+	<Rows>
+		<Row Height="40" ID="Title"/>
+		<Row Height="1" ID="Border1"/>
+		<Row Height="1*" ID="Content"/>
+	</Rows>
+	<Image RowID="Title" ColorMask="#5a6473"/>
+	<Text RowID="Title" Style="InvertedText" Text="Scripts" FontSize="18"/>
+	<Image RowID="Border1" ColorMask="#000000"/>
+	<RadioGroupLogical Name="ScriptRadioGroup"/>
+	<ScrollableContainer Margin="5" MarginTop="50" Height="960">
+		<FlowContainer RowID="Content" Name="ScriptList"/>
+	</ScrollableContainer>
+</GridContainer>

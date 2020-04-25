@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Mining_Fr25_Bridge_T_v2 Terrain="Terrains/Sections/MiningOperation/Mining_Fr25_Bridge_T_v2.VHT" Preview="Terrains/Sections/MiningOperation/MapEditorImages/Mining_Fr25_Bridge_T_v2_thumb.bmp" Image="Terrains/Sections/MiningOperation/MapEditorImages/Mining_Fr25_Bridge_T_v2.bmp" MinClickHeight="-50000" Background="false" MapType="Mining Operation">
+	<PivotPos x="3911.1123" y="916.831543" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-4" Row="-3" Image="" />
+		<Grid Column="-3" Row="-3" Image="" />
+		<Grid Column="-2" Row="-3" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="" />
+		<Grid Column="2" Row="-3" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="4025.73413" Position.y="778.67804" Position.z="0.171013817" />
+		</Grid>
+		<Grid Column="3" Row="-3" Image="" />
+		<Grid Column="4" Row="-3" Image="" />
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="">
+			<Gate Direction="WEST" Size="1" Position.x="3726.95801" Position.y="940.411804" Position.z="0.459181279" />
+		</Grid>
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+		<Grid Column="-4" Row="3" Image="" />
+		<Grid Column="-3" Row="3" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="4025.85229" Position.y="1100.85095" Position.z="0.171013817" />
+		</Grid>
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="4" Row="3" Image="" />
+	</Grids>
+</Mining_Fr25_Bridge_T_v2>

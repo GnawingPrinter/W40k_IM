@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="rightcenter" Pos="1190,108" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<MaxAnswerCount Type="int" Value="4"/>
+		
+		<WindowTiltPivot Value="1780,540"/>
+		<WindowTiltMouseCenter Value="1780,540"/>
+		<WindowTiltZone Value="760,0,1780,1080"/>
+
+		<Layer_0_ZOffset Value="0"/>
+		<Layer_0_DefaultTilt Value="0.0,0.0"/>
+		<Layer_0_MaximumTilt Value="0.0,0.0"/>
+
+		<Layer_1_ZOffset Value="0"/>
+		<Layer_1_MaximumTilt Value="0.0,0.0"/>
+
+		<Layer_1_Shadow_ZOffset Value="0"/>
+		<Layer_1_Shadow_DefaultTilt Value="0.0,0.0"/>
+		<Layer_1_Shadow_MaximumTilt Value="0.0,0.0"/>
+
+		<Layer_2_ZOffset Value="0"/>
+		<Layer_2_MaximumTilt Value="0.0,0.0"/>		
+		
+		<Layer_text_ZOffset Value="0"/>
+		<Layer_text_MaximumTilt Value="0.0,0.0"/>
+		
+	</Constants>
+	
+	<Image
+		Pos="0,0"
+		Size="668,840"
+		Image="UI/OpenWorld/PoI/starmap_PoI_dialogueBg.tga"
+		ZOffset="@Layer_0_ZOffset"
+	/>
+	<Image
+		Pos="0,0"
+		Size="668,840"
+		Image="UI/OpenWorld/Panels/subsector_background2.tga"
+	/>
+	<Text Name="PoiName"
+		Pos="80,98"
+		Size="520,30"
+		Style="Headline_Large_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="_PoiName"
+	/>
+	<Image Name="PoiBackground"
+		Pos="-313,112"
+		Size="360,400"
+		Image="\UI\OpenWorld\PoI\starmap_PoI_background.tga"
+	/>
+	<Video Name="NPCVideo"
+		Pos="-302,132"
+		Size="336,336"
+		LoopVideo="1"
+	/>
+	<Text Name="NPCName"
+		Pos="-278,390"
+		Size="290,60"
+		Style="Text_Large_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="_NPCName"
+	/>
+	<Text Name="NPCTitle"
+		Pos="-278,415"
+		Size="290,60"
+		Style="Text_Normal_Dark"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="_NPCTitle"
+	/>
+	<Image Name="PoiFrame"
+		Pos="-313,112"
+		Size="360,400"
+		Image="\UI\OpenWorld\PoI\starmap_PoI_frame.tga"
+	/>
+	<Image
+		Pos="54,175"
+		Size="567,4"
+		Image="UI/Assignment/assignment_bigline.tga"
+	/>
+	<Text Name="PoiDescHeadline"
+		Pos="56,148"
+		Size="568,32"
+		Style="Text_Large_Light_Glow"
+		IgnoreScissor="1"
+		TextAlignH="left"
+		TextAlignV="top"
+		Text="openworld.gui.locationinfo.history"
+	/>
+	<TextBox Name="PoiDesc"
+		Pos="56,180"
+		Size="568,180"
+		Style="Text_Normal_Dark"
+		TextAlignH="left"
+		TextAlignV="top"
+		Text="_PoiDesc"
+	/>
+	<Image
+		Pos="54,421"
+		Size="568,4"
+		Image="UI/Assignment/assignment_bigline.tga"
+	/>
+	<Text Name="NPCTextboxHeadline"
+		Pos="56,391"
+		Size="567,32"
+		Style="Text_Large_Light_Glow"
+		IgnoreScissor="1"
+		TextAlignH="left"
+		TextAlignV="center"
+		Text="openworld.gui.specialpoi.dialogue"
+	/>
+
+	<Container Name="DialogueFrame" IgnoreScissor="1">
+		<ScrollableContainer Pos="71,424" Size="567,332" UseSlider="1">
+			<FlowContainer Width="542">
+				<Text Name="NPCName2"
+					MarginTop="10"
+					Size="542,30"
+					Style="Text_Large_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_NPCName"
+				/>
+				<TextBox Name="NPCTextbox"
+					MarginTop="4"
+					Width="542"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					UseSlider="0"
+					Text="_NPCTextbox"
+				/>
+				<Text Name="Answers"
+					MarginTop="10"
+					Size="542,30"
+					Style="Text_Large_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.specialpoi.dialogoptions"
+				/>
+				<RadioGroupLogical Name="Answer"/>
+				<Loop Count="@MaxAnswerCount" Variable="$X$" MarginTop="6">
+					<FlowContainer Name="PoiAnswer$X$" MarginTop="6" Width="541">
+						<CheckBox Name="PoiAnswerIcon$X$"
+							Size="32,32"
+							RadioGroup="Answer"
+							UseDefault="1"
+						/>
+						<TextBox Name="PoiAnswerText$X$"
+							Width="504"
+							MarginLeft="37"
+							MarginTop="-26"
+							Style="Text_Normal_White"
+							TextAlignH="left"
+							TextAlignV="top"
+							ControllerSenseEnabled="1"
+							UseSlider="0"
+							Text="_Answer$X$"
+						/>
+					</FlowContainer>
+				</Loop>
+			</FlowContainer>
+		</ScrollableContainer>
+	</Container> 
+
+	<Icon Name="Close"
+		Pos="624,119"
+		Size="28,28"
+		IdleImg="UI/OpenWorld/icon_closeOff.tga"
+		PressImg="UI/OpenWorld/icon_closeOff.tga"
+		RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+		InitPopup="bottomcenter,topcenter"
+		ZOffset="@Layer_2_ZOffset"
+		TiltPivot="@WindowTiltPivot"
+		TiltMouseCenter="@WindowTiltMouseCenter"
+		DefaultTilt="@Layer_2_DefaultTilt"
+		MaximumTilt="@Layer_2_MaximumTilt"
+		TiltZone="@WindowTiltZone"
+		Tooltip="common.close"
+	/>
+	<Icon Name="Continue"
+		Pos="483,781"
+		Size="160,40"
+		IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+		PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		Style="Starmap2_3"
+		InitPopup="bottomcenter,topcenter"
+		Text="common.continue"
+		ShowCategory="mouse"
+	/>
+	
+	<Icon Name="LeaderboardIcon"
+		Pos="323,781"
+		Size="160,40"
+		IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+		PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		Style="StarmapHeadline1_4"
+		Text="openworld.gui.leaderboard.title"
+		ShowCategory="mouse"
+	/>
+	<Text Name="LeaderboardScore"
+		Pos="173,781"
+		Size="140,32"
+		Align="Right"
+		Style="Text_Normal_White"
+	/>
+	<Dummy Name="SkipDummy"
+		GuiAlign="topleft"
+		Pos="-1238,-108"
+	/>
+</Window>

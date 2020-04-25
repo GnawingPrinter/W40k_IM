@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="center" Pos="737,105" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	<Constants>
+	</Constants>
+
+	<Container Name="MainPanel">
+
+		<Image Name="Back"
+			Pos="0,0"
+			Size="668,840"
+			Image="UI/OpenWorld/Warzone/warzone_background1.tga"
+		/>
+		<Image Name="WarzoneHeadline"
+			Pos="26,134"
+			Size="628,108"
+			Image="UI/OpenWorld/Warzone/warzone_lacaon_headline.tga"
+		/>
+		<Image
+			Pos="0,0"
+			Size="668,840"
+			Image="UI/Assignment/assignment_background2.tga"
+		/>
+		<Text Name="TitleText"
+			Pos="63,101"
+			Size="520,24"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.warzone.title"
+		/>
+		
+		<Container Pos="134,250" Size="400,500">
+			<Text
+				Height="30"
+				Style="Headline_Large_Light_Glow"
+				Text="DEBUG STUFF"
+			/>
+			<FlowContainer Pos="0,35" Height="40" Horizontal="1">
+				<Text
+					Height="40"
+					Style="Text_Normal_White_Outline"
+					Text="Warzone level"
+				/>
+				<Icon Name="PrevLevel"
+					IdleImg="UI/CharacterSheet/button_minusOff.dds"
+					PressImg="UI/CharacterSheet/button_minusOn.dds"
+					RolloverImg="UI/CharacterSheet/button_minusOn.dds"
+					Size="36,36"
+					MarginTop="2"
+					MarginLeft="5"
+					MarginRight="5"
+					InitPopup="topcenter,bottomcenter"
+					Tooltip="Hold Shift to lower by 10"
+				/>
+				<Text Name="SelectedLevel"
+					Size="80,40"
+					Style="Text_Normal_White_Outline"
+					Text="1"
+				/>
+				<Icon Name="NextLevel"
+					IdleImg="UI/CharacterSheet/button_plusOff.dds"
+					PressImg="UI/CharacterSheet/button_plusOn.dds"
+					RolloverImg="UI/CharacterSheet/button_plusOn.dds"
+					Size="36,36"
+					MarginTop="2"
+					MarginLeft="5"
+					MarginRight="5"
+					InitPopup="topcenter,bottomcenter"
+					Tooltip="Hold Shift to increase by 10"
+				/>
+			</FlowContainer>
+		</Container>
+
+		<Icon Name="Start"
+			Pos="491,783"
+			Size="160,40"
+			IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+			PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+			RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+			Style="Starmap2_3"
+			InitPopup="bottomcenter,topcenter"
+			ShowCategory="mouse"
+			Text="common.start"
+		/>
+		<Icon Name="Close"
+			Pos="634,120"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+
+</Window>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Size="0,0">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<DisableMouseSense Type="bool" Value="0"/>
+		<ObjectiveCount Type="int" Value="13"/>
+	</Constants>
+	
+	<FlowContainer Width="300" VerticalAlignment="bottom">	
+		<Text Name="Title" MarginLeft="17" MarginTop="4" Size="280,32" Style="Headline_Large_Color_Glow" TextAlignH="left" TextAlignV="center"/>
+		<FlowContainer
+		Width="300"
+		BackgroundTopSize="36"
+		BackgroundBotSize="26"
+		BackgroundTopImage="UI/objectives/objectives_backgroundTop.tga"
+		BackgroundMidImage="UI/objectives/objectives_backgroundMiddle.tga"
+		BackgroundBotImage="UI/objectives/objectives_backgroundBottom.tga"
+		>	
+			<Dummy Height="25"/>
+			<FlowContainer Name="Purge">
+				<FlowContainer Name="ObjectiveBox">
+					<Container Pos="14,0" MarginTop="2" Size="272,54">				
+						<Text Name="EnemiesKilled" Pos="2,0" Size="272,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.common.enemies_killed"/>
+						<FlowContainer Name="ProgressBarBack" Horizontal="1" HorizontalAlignment="left">
+							<Image Name="BarBgLeft" Pos="0,24" Size="8,24" Image="UI/objectives/objectives_barBgLeft.tga"/>
+							<Image Name="BarBgMiddle" Pos="0,24" Size="256,24" Image="UI/objectives/objectives_barBgMiddle.tga"/>
+							<Image Name="BarBgRight" Pos="0,24" Size="8,24" Image="UI/objectives/objectives_barBgRight.tga"/>	
+						</FlowContainer>
+						<Image Name="ProgressBar" Pos="4,24" Size="264,24" Image="UI/Objectives/objectives_barMiddle.tga"/>
+					</Container>
+					
+					<Container Pos="14,0">
+						<CheckBox Name="Objective_Off" Size="24,24" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+						<CheckBox Name="Objective_On" Size="24,24" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+						<TextBox Name="ObjectiveText" Pos="30,2" Width="250" UseSlider="0" Style="Text_Normal_Color" VerticalAlignment="top" TextAlignH="left" TextAlignV="top" Text="campaign.objective.C2_Ch2_Mission_9.PurgeTyranids"/>
+					</Container>
+					<Container Pos="14,0">
+						<CheckBox Name="SideObjective_Off" Size="24,24" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+						<CheckBox Name="SideObjective_On" Size="24,24" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+						<TextBox Name="SideObjectiveText" Pos="30,2" Width="250" UseSlider="0" Style="Text_Normal_Color" VerticalAlignment="top" TextAlignH="left" TextAlignV="top" Text="campaign.objective.C2_Ch2_Mission_9.KillToxicrene"/>
+					</Container>
+				</FlowContainer>
+			</FlowContainer>
+			
+			<FlowContainer Name="Tasks">
+				<Loop Count="@ObjectiveCount" Variable="$X$">
+					<Container Name="Objective$X$_Off">
+						<CheckBox MarginLeft="15" Size="24,24" VAlign="center" ImageUnchecked="UI/Objectives/objectives_checkboxOff.tga" Checked="0" MouseSenseEnabled="0"/>
+						<TextBox Name="Objective$X$_OffTextBox" VAlign="top" MarginLeft="45" Width="240" Style="Text_Normal_Light" Color="#54f1eb" TextAlignH="left" TextAlignV="center" UseSlider="0" MouseSenseEnabled="0"/>
+					</Container>
+					<Container Name="Objective$X$_On">
+						<CheckBox MarginLeft="15" Size="24,24" VAlign="center" ImageChecked="UI/Objectives/objectives_checkboxOn.tga" Checked="1" MouseSenseEnabled="0"/>
+						<TextBox Name="Objective$X$_OnTextBox" VAlign="top" MarginLeft="45" Width="240" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" UseSlider="0" MouseSenseEnabled="0"/>
+					</Container>
+				</Loop>
+			</FlowContainer>
+			<Dummy Height="27"/>
+		</FlowContainer>
+		<Dummy Height="20"/>
+	</FlowContainer>	
+</Window>

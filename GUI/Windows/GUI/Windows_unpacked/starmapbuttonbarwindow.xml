@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="bottomcenter">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Styles>
+		<OptionContainerStyle
+			Size="800,32"
+		/>
+		<OptionLabelStyle
+			Pos="0,2"
+			Size="400,28"
+			Style="Text_Normal_Dark_Outline"
+			BiggerFontSize="21"
+			TextAlignH="left"
+			TextAlignV="center"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionSliderStyle
+			Pos="400,6"
+			Size="400,20"
+			RangeMin="0"
+			RangeMax="100"
+			StepSize="1"
+			PageSize="10"
+			ShownSize="10"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionComboBox
+			Pos="400,0"
+			Size="400,32"
+			Style="Text_Normal_White"
+			TextAlignH="left"
+			TextAlignV="center"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionCheckboxStyle
+			Size="600,32"
+			Style="Text_Normal_Dark_Outline"
+			BiggerFontSize="21"
+			TextAlignH="left"
+			TextAlignV="center"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<OptionCheckboxStyleNoText
+			Size="32,32"
+			ControllerSenseEnabled="1"
+			InitPopup="bottomleft,topleft"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+	</Styles>
+
+	<Constants>
+		<TiltPivot Value="1650,0"/>
+		<TiltMouseCenter Value="1780,540"/>
+		<DefaultTilt Value="0.0,0.0"/>
+		<MaximumTilt Value="0.0,0.0"/>
+		<TiltZone Value="0,0,0,0"/>
+		
+		<HotkeyCount Type="int" Value="12"/>
+		<QualityCount Type="int" Value="6"/>
+		<TextureCount Type="int" Value="2"/>
+		<DecorCount Type="int" Value="6"/>
+	</Constants>
+	
+	<Container Size="520,120" Pos="698,943" Name="BottomMenuBar">
+		<Image Name="Menu"
+			Image="UI/OpenWorld/starmap_menuBackground.tga"
+			ZOffset="@Layer_0_ZOffset"
+			TiltPivot="@BottomCenterTiltPivot"
+			TiltMouseCenter="960,1000"
+			DefaultTilt="@BottomCenterDefaultTilt"
+			MaximumTilt="@BottomCenterMaximumTilt"
+		/>
+		<FlowContainer MarginTop="33" MarginLeft="6" Horizontal="1" HAlign="center">
+			<Dummy Name="BottomMenuBarDummy" Size="0,20" Visible="0"/>
+			<Container Size="52,52" IgnoreScissor="1">
+				<Icon Name="Charactersheet"
+					Size="40,40"
+					IdleImg="UI/OpenWorld/button_characterOff.tga"
+					PressImg="UI/OpenWorld/button_characterOff.tga"
+					RolloverImg="UI/OpenWorld/button_characterOver.tga"
+					InitPopup="bottomcenter,topcenter"
+					ZOffset="@Layer_0_ZOffset"
+					TiltPivot="@BottomCenterTiltPivot"
+					TiltMouseCenter="@BottomCenterTiltMouseCenter"
+					DefaultTilt="@BottomCenterDefaultTilt"
+					MaximumTilt="@BottomCenterMaximumTilt"
+					Tooltip="openworld.gui.character.title"
+				/>
+				<AnimatedImage Name="CharactersheetNotification"
+					Pos="-6,-6"
+					Size="52,52"
+					FPS="24"
+					ImageCount="20"
+					Image="UI/OpenWorld/NotificationAnim/menu_icon_update_00.tga"
+					AnimationRestartMS="500.0"
+					MouseSenseEnabled="0"
+				/>
+				<AnimatedImage Name="CharactersheetBlink" Visibel="0"
+					Pos="-55,-55"
+					Size="150,150"
+					FPS="24"
+					ImageCount="20"
+					Image="UI/OpenWorld/NotificationAnim/poi_mission_selector_00.tga"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container MarginLeft="0">
+				<Icon Name="Quests"
+					Size="40,40"
+					IdleImg="UI/OpenWorld/button_gloryOff.tga"
+					PressImg="UI/OpenWorld/button_gloryOff.tga"
+					RolloverImg="UI/OpenWorld/button_gloryOver.tga"
+					Enabled="0"
+					InitPopup="bottomcenter,topcenter"
+					ZOffset="@Layer_0_ZOffset"
+					TiltPivot="@BottomCenterTiltPivot"
+					TiltMouseCenter="@BottomCenterTiltMouseCenter"
+					DefaultTilt="@BottomCenterDefaultTilt"
+					MaximumTilt="@BottomCenterMaximumTilt"
+					Tooltip="openworld.gui.Glory.title"
+				/>
+				<AnimatedImage Name="QuestsNotification"
+					Pos="-6,-6"
+					Size="52,52"
+					FPS="24"
+					ImageCount="20"
+					Image="UI/OpenWorld/NotificationAnim/menu_icon_update_00.tga"
+					AnimationRestartMS="500.0"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container MarginLeft="-8">
+				<Icon Name="Friends"
+					Size="40,40"
+					IdleImg="UI/OpenWorld/button_friendsOff.tga"
+					PressImg="UI/OpenWorld/button_friendsOff.tga"
+					RolloverImg="UI/OpenWorld/button_friendsOver.tga"
+					InitPopup="bottomcenter,topcenter"
+					ZOffset="@Layer_0_ZOffset"
+					TiltPivot="@BottomCenterTiltPivot"
+					TiltMouseCenter="@BottomCenterTiltMouseCenter"
+					DefaultTilt="@BottomCenterDefaultTilt"
+					MaximumTilt="@BottomCenterMaximumTilt"
+					Tooltip="controller.common.social"
+				/>
+				<AnimatedImage Name="FriendsNotification"
+					Pos="-6,-6"
+					Size="52,52"
+					FPS="24"
+					ImageCount="20"
+					Image="UI/OpenWorld/NotificationAnim/menu_icon_update_00.tga"
+					AnimationRestartMS="500.0"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container MarginLeft="-8">
+				<Icon Name="Cabal"
+					Size="40,40"
+					IdleImg="UI/OpenWorld/button_cabalOff.tga"
+					PressImg="UI/OpenWorld/button_cabalOff.tga"
+					RolloverImg="UI/OpenWorld/button_cabalOver.tga"
+					InitPopup="bottomcenter,topcenter"
+					ZOffset="@Layer_0_ZOffset"
+					TiltPivot="@BottomCenterTiltPivot"
+					TiltMouseCenter="@BottomCenterTiltMouseCenter"
+					DefaultTilt="@BottomCenterDefaultTilt"
+					MaximumTilt="@BottomCenterMaximumTilt"
+					Tooltip="openworld.gui.cabal.title"
+				/>
+				<AnimatedImage Name="CabalNotification"
+					Pos="-6,-6"
+					Size="52,52"
+					FPS="24"
+					ImageCount="20"
+					Image="UI/OpenWorld/NotificationAnim/menu_icon_update_00.tga"
+					AnimationRestartMS="500.0"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container MarginLeft="-8">
+				<Icon Name="Journal"
+					Size="40,40"
+					IdleImg="UI/OpenWorld/button_journalOff.tga"
+					PressImg="UI/OpenWorld/button_journalOff.tga"
+					RolloverImg="UI/OpenWorld/button_journalOver.tga"
+					InitPopup="bottomcenter,topcenter"
+					ZOffset="@Layer_0_ZOffset"
+					TiltPivot="@BottomCenterTiltPivot"
+					TiltMouseCenter="@BottomCenterTiltMouseCenter"
+					DefaultTilt="@BottomCenterDefaultTilt"
+					MaximumTilt="@BottomCenterMaximumTilt"
+					Tooltip="openworld.gui.journal.title"
+				/>
+				<AnimatedImage Name="JournalNotification"
+					Pos="-6,-6"
+					Size="52,52"
+					FPS="24"
+					ImageCount="20"
+					Image="UI/OpenWorld/NotificationAnim/menu_icon_update_00.tga"
+					AnimationRestartMS="500.0"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Icon Name="FastTravel" Tutorial="FastTravel_mouse"
+				MarginLeft="-8"
+				Size="40,40"
+				IdleImg="UI/OpenWorld/button_starmapOff.tga"
+				PressImg="UI/OpenWorld/button_starmapOff.tga"
+				RolloverImg="UI/OpenWorld/button_starmapOver.tga"
+				InitPopup="bottomcenter,topcenter"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Tooltip="controller.buttons.fasttravel"
+			/>
+			<Icon Name="ZoomOut"
+				MarginLeft="13"
+				Size="40,40"
+				IdleImg="UI/OpenWorld/button_zoomoutOff.tga"
+				PressImg="UI/OpenWorld/button_zoomoutOff.tga"
+				RolloverImg="UI/OpenWorld/button_zoomoutOver.tga"
+				InitPopup="bottomcenter,topcenter"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Tooltip="battle.gui.popup.mapzoomoutbutton"
+			/>
+			<Icon Name="Hub"
+				MarginLeft="4"
+				Size="40,40"
+				IdleImg="UI/OpenWorld/button_hubOff.tga"
+				PressImg="UI/OpenWorld/button_hubOff.tga"
+				RolloverImg="UI/OpenWorld/button_hubOver.tga"
+				InitPopup="bottomcenter,topcenter"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Tooltip="openworld.GUI.hub"
+			/>				
+		</FlowContainer>
+	</Container>
+</Window>

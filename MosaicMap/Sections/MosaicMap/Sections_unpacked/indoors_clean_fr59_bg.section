@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Indoors_Clean_Fr59_BG Terrain="Terrains/Sections/Indoors_Clean/SII_Fr59_BG.VHT" Preview="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_Fr59_BG_thumb.bmp" Image="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_Fr59_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Indoors Clean">
+	<PivotPos x="1587" y="-444.192871" />
+	<Tags />
+	<Grids>
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+	</Grids>
+</Indoors_Clean_Fr59_BG>

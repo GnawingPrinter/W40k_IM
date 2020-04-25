@@ -1,0 +1,154 @@
+<Window>
+  <Include Path="Windows/CraftingSkinAnimations.xml"/>
+
+  <StyleRules>
+    <Rule Pattern="*" FontSize="14" Color="#ffffff"/>
+	<Rule Pattern="Icon" ColorMask="#111111"/>
+  </StyleRules>
+
+  <GridContainer FillColor="#222222">
+    <Columns>
+      <Column Width="2*"/>
+      <Column Width="1*"/>
+    </Columns>
+    <Scene3D Column="0" Name="ModelScene"/>
+    <FlowContainer Column="1" Margin="10">
+      <GridContainer FillColor="#333333">
+        <Rows>
+          <Row Height="20"/>
+          <Row Height="160"/>
+          <Row Height="30"/>
+        </Rows>
+        <Columns>
+          <Column Width="45"/>
+          <Column Width="200"/>
+          <Column Width="1*"/>
+          <Column Width="80"/>
+        </Columns>
+
+        <Text Row="0" ColumnSpan="100" TextAlignH="left">Artifact</Text>
+        <ListBox Row="1" ColumnSpan="100" Name="ArtifactList"/>
+        <Text Row="2" Column="0">Filter</Text>
+        <EditBox Row="2" Column="1" MarginLeft="5" MarginRight="5" Name="ArtifactFilter"/>
+        <Icon Row="2" Column="3" Text="Select" Name="ArtifactSelectBtn"/>
+      </GridContainer>
+
+      <GridContainer Height="30" MarginTop="10" FillColor="#333333" Name="SlotGrid">
+        <Columns>
+          <Column Width="45"/>
+          <Column Width="300"/>
+        </Columns>
+        <Text Column="0">Slot</Text>
+        <ComboBox Column="1" MarginLeft="10" Name="CbSlots"/>
+      </GridContainer>
+
+      <GridContainer Height="30" MarginTop="10" FillColor="#333333" Name="PatternGrid">
+        <Columns>
+          <Column Width="45"/>
+          <Column Width="300"/>
+        </Columns>
+        <Text Column="0">Pattern</Text>
+        <ComboBox Column="1" MarginLeft="10" Name="CbPatterns"/>
+      </GridContainer>
+      <GridContainer Height="30" MarginTop="10" FillColor="#333333" Name="ModelGrid">
+        <Columns>
+          <Column Width="45"/>
+          <Column Width="300"/>
+		  <Column Width="1*"/>
+        </Columns>
+        <Text Column="0">Model</Text>
+        <ComboBox Column="1" MarginLeft="10" Name="CbModels"/>
+		<CheckBox Column="2" MarginLeft="10" Text="Show All Models" Checked="true" Name="ShowAllModels"/>
+      </GridContainer>
+
+	  <GridContainer Height="30" MarginTop="10" FillColor="#333333" Name="RarityGrid">
+        <Columns>
+          <Column Width="45"/>
+          <Column Width="300"/>
+        </Columns>
+        <Text Column="0">Rarity</Text>
+        <ComboBox Column="1" MarginLeft="10" Name="CbRarity"/>
+      </GridContainer>
+
+      <GridContainer Height="30" MarginTop="10" FillColor="#333333" Name="MaterialGrid">
+        <Columns>
+          <Column Width="45"/>
+          <Column Width="300"/>
+        </Columns>
+        <Text Column="0">Material</Text>
+        <ComboBox Column="1" MarginLeft="10" Name="CbMaterials"/>
+      </GridContainer>
+
+	  <GridContainer Height="30" Visible="1">
+			<Columns>
+				<Column Width="50"/>
+				<Column Width="Auto"/>
+				<Column Width="50"/>
+			</Columns>
+			<Text Column="0" TextAlignH="left" Text="Scale"/>
+			<Slider Column="1" Height="30" Width="500" MarginLeft="8" MarginRight="8" RangeMax="300" Name="ScaleSlider"/>
+			<Text Column="2" TextAlignH="right" Text="1.0" Name="ScaleValueText"/>
+	  </GridContainer>
+
+	  <Icon Height="20" Text="Hide Substances" MarginTop="10" Name="ShowSubstances"/>
+	  <GridContainer FillColor="#333333" Name="SubstanceGrid">
+		<Rows>
+			<Row Height="30"/>
+			<Row Height="30"/>
+			<Row Height="30"/>
+			<Row Height="100"/>
+			<Row Height="30"/>
+		</Rows>
+        <Columns>
+			<Column Width="1*"/>
+			<Column Width="1*"/>
+			<Column Width="1*"/>
+			<Column Width="1*"/>
+        </Columns>
+		<Text Row="0" Column="0" ColumnSpan="2" Text="Substance Slot 1"/>
+		<ComboBox Row="1" Column="0" ColumnSpan="2" Name="CbSubstances1"/>
+		<Icon Row="2" Column="0" MarginLeft="2" MarginRight="2" Text="Add" Name="AddSubstance1" UserData="1"/>
+		<Icon Row="2" Column="1" MarginLeft="2" MarginRight="2" Text="Delete" Name="DeleteSubstance1" UserData="1"/>
+		<ListBox Row="3" Column="0" ColumnSpan="2" Margin="5" MarginTop="0" Name="LbSubstances1"/>
+		<Text Row="4" Column="0" ColumnSpan="2" Text="Preview" HAlign="left" MarginLeft="10" Visible="1"/>
+		<ComboBox Row="4" Column="0" ColumnSpan="2" Width="235" HAlign="right" MarginRight="5" OpenHeight="250" Name="CbSubstancePreviews1"/>
+
+		<Text Row="0" Column="2" ColumnSpan="2" Text="Substance Slot 2"/>
+		<ComboBox Row="1" Column="2" ColumnSpan="2" Name="CbSubstances2"/>
+		<Icon Row="2" Column="2" MarginLeft="2" MarginRight="2" Text="Add" Name="AddSubstance2" UserData="2"/>
+		<Icon Row="2" Column="3" MarginLeft="2" MarginRight="2" Text="Delete" Name="DeleteSubstance2" UserData="2"/>
+		<ListBox Row="3" Column="2" ColumnSpan="2" Margin="5" MarginTop="0" Name="LbSubstances2"/>
+		<Text Row="4" Column="2" ColumnSpan="2" Text="Preview" HAlign="left" MarginLeft="10" Visible="1"/>
+		<ComboBox Row="4" Column="2" ColumnSpan="2" Width="235" HAlign="right" MarginRight="5" OpenHeight="250" Name="CbSubstancePreviews2"/>
+      </GridContainer>
+
+	  <Icon Height="20" Text="Hide Material Params" MarginTop="10" Name="ShowMaterialParams"/>
+	  <FlowContainer Name="MaterialParams">
+		  <Loop Count="12" Variable="$Y$">
+			<GridContainer Name="Amount_Grid_$Y$" Height="30" UserData="1" Visible="0">
+				<Columns>
+					<Column Width="100"/>
+					<Column Width="1*"/>
+					<Column Width="50"/>
+				</Columns>
+				<Text Column="0" TextAlignH="left" Name="Amount_Text_$Y$" Text="a"/>
+				<Slider Column="1" MarginLeft="8" MarginRight="8" UserData="$Y$" Name="Amount_Slider_$Y$"/>
+				<Text Column="2" TextAlignH="right" Name="Amount_Value_$Y$" Text="a"/>
+			</GridContainer>
+
+			<GridContainer Name="Power_Grid_$Y$" Height="30" UserData="2" Visible="0">
+				<Columns>
+					<Column Width="100"/>
+					<Column Width="1*"/>
+					<Column Width="50"/>
+				</Columns>
+				<Text Column="0" TextAlignH="left" Name="Power_Text_$Y$" Text="a"/>
+				<Slider Column="1" MarginLeft="8" MarginRight="8" UserData="$Y$" Name="Power_Slider_$Y$"/>
+				<Text Column="2" TextAlignH="right" Name="Power_Value_$Y$" Text="a"/>
+			</GridContainer>
+		  </Loop>
+	  </FlowContainer>
+	  <Icon Text="Save" ColorMask="#333333" Height="30" MarginTop="10" Name="BnSave"/>
+    </FlowContainer>
+  </GridContainer>
+</Window>

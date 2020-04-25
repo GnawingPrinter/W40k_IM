@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Styles>
+		<FontGreen
+			FontType="Share Tech Mono"
+			FontSize="19"
+			BiggerFontSize="21"
+			Color="0xffb5fffc"
+			Sharpness="0.5"
+			TextAlignH="center"
+			TextAlignV="center"
+			Offset="0,0"
+		/>
+		<PrevIcon
+			MarginLeft="10"
+			IdleImg="UI/Leaderboard/button_prevOff.tga"
+			PressImg="UI/Leaderboard/button_prevOn.tga"
+			RolloverImg="UI/Leaderboard/button_prevOn.tga"
+			ShowCategory="mouse"
+		/>
+		<NextIcon
+			MarginRight="10"
+			IdleImg="UI/Leaderboard/button_nextOff.tga"
+			PressImg="UI/Leaderboard/button_nextOn.tga"
+			RolloverImg="UI/Leaderboard/button_nextOn.tga"
+			ShowCategory="mouse"
+		/>
+	</Styles>
+	
+	<Constants>
+		<TopCenterTiltPivot Value="960,1080"/>
+		<TopCenterTiltMouseCenter Value="960,1080"/>
+		<TopCenterDefaultTilt Value="0.0,0.0"/>
+		<TopCenterMaximumTilt Value="0.0,0.0"/>
+		
+		<BottomCenterTiltPivot Value="960,1080"/>
+		<BottomCenterTiltMouseCenter Value="960,1080"/>
+		<BottomCenterDefaultTilt Value="0.0,0.0"/>
+		<BottomCenterMaximumTilt Value="0.0,0.0"/>
+		
+		<BottomRightTiltPivot Value="1820,0"/>
+		<BottomRightTiltMouseCenter Value="1650,540"/>
+		<BottomRightDefaultTilt Value="0.0,0.0"/>
+		<BottomRightMaximumTilt Value="0.0,0.0"/>
+		<BottomRightTiltZone Value="1535,0,1780,1080"/>
+		
+		<TopRightTiltPivot Value="1820,0"/>
+		<TopRightTiltMouseCenter Value="1780,540"/>
+		<TopRightDefaultTilt Value="0.0,0.0"/>
+		<TopRightMaximumTilt Value="0.0,0.0"/>
+		<TopRightTiltZone Value="660,0,1780,1080"/>
+		
+		<TopLeftTiltPivot Value="100,0"/>
+		<TopLeftTiltMouseCenter Value="140,540"/>
+		<TopLeftDefaultTilt Value="0.0,0.0"/>
+		<TopLeftMaximumTilt Value="0.0,0.0"/>
+		<TopLeftTiltZone Value="14,0,800,1080"/>
+		
+		<RightCenterTiltPivot Value="1820,0"/>
+		<RightCenterTiltMouseCenter Value="1780,540"/>
+		<RightCenterDefaultTilt Value="0.0,0.0"/>
+		<RightCenterMaximumTilt Value="0.0,0.0"/>
+		<RightCenterTiltZone Value="1160,0,1780,1080"/>		
+
+		<RightCenter_Text_TiltPivot Value="1820,0"/>
+		<RightCenter_Text_TiltMouseCenter Value="1780,540"/>
+		<RightCenter_Text_DefaultTilt Value="0.0,0.0"/>
+		<RightCenter_Text_MaximumTilt Value="0.0,0.0"/>
+		<RightCenter_Text_TiltZone Value="1160,0,1780,1080"/>	
+		
+		<LocationLabelMaximumTilt Value="6.0,0.0"/>
+		<LocationLabelOffset Value="0"/>
+		
+		<Layer_0_ZOffset Value="0"/>
+		<Layer_1_ZOffset Value="0"/>
+		<Layer_2_ZOffset Value="0"/>
+		
+		<CabalMissionProgressBarLength Type="int" Value="322"/>
+		<PoiEventProgressBarLength Type="int" Value="322"/>
+		<MultiProgressBarLength Type="int" Value="102"/>
+		<MaxCampaignPage Type="int" Value="5"/>
+		<MaxChallengeCount Type="int" Value="5"/>
+		<RiskRewardBarLength Type="int" Value="298"/>
+		<RewardMarkerCount Type="int" Value="5"/>
+		<WorldEventIconCount Type="int" Value="8"/>
+	</Constants>
+	
+	<Container Name="EverythingContainer">
+		<Dummy Name="LocationLabelDummy" _ZOffset="@LocationLabelOffset" _MaximumTilt="@LocationLabelMaximumTilt" Visible="0"/>
+		
+		<Line Name="StarmapLines" LineWidth="16" Texture="UI/OpenWorld/starmap_location_lineOff.tga" GuiAlign="center" Stretch="1"/>
+		<AnimatedImage Name="BlinkingElement"
+			GuiAlign="center"
+			Size="256,256"
+			FPS="24"
+			ImageCount="20"
+			Image="UI/OpenWorld/NotificationAnim/poi_mission_selector_00.tga"
+			MouseSenseEnabled="0"
+			Visible="0"
+			Layer="2"
+		/>
+		
+		<FlowContainer Name="TopMenuBar" HAlign="center" Layer="2">
+			<Image
+					HAlign="center"
+					MarginTop="28"
+					Size="520,100"
+					Image="UI/OpenWorld/starmap_resourceBackground.tga"
+					MouseSenseEnabled="0"
+			/>
+			<FlowContainer Name="Resources" MarginTop="-68" Height="100" Horizontal="1" HAlign="center">
+				<Container Name="CreditFrame" Size="158,40">
+					<Image
+						HAlign="center"
+						Pos="20,4"
+						Size="108,32"
+						Image="UI/OpenWorld/starmap_resourceBackgroundFrame.tga"
+						MouseSenseEnabled="0"
+					/>			
+					<Image Name="CreditIcon"
+						Pos="0,0"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceCrown.tga"
+						InitPopup="topcenter,bottomcenter"
+						Tooltip="battle.gui.inventory.gold.label"
+					/>
+					<Text Name="CreditValue"
+						Pos="53,0"
+						Size="92,40"
+						Style="Headline_Large_Light_Glow"
+						FontType="Share Tech Mono"
+						FontSize="22"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+				/>
+				</Container>
+				<Container Name="PremiumFrame" Size="158,40" MarginLeft="10">
+					<Image
+						HAlign="center"
+						Pos="20,4"
+						Size="108,32"
+						Image="UI/OpenWorld/starmap_resourceBackgroundFrame.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Image Name="PremiumIcon"
+						Pos="0,0"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						InitPopup="topcenter,bottomcenter"
+						Tooltip="battle.gui.inventory.fate.label"
+						ZOffset="@Layer_0_ZOffset"
+					/>
+					<Text Name="PremiumValue"
+						Pos="53,0"
+						Size="92,40"
+						Style="Headline_Large_Light_Glow"
+						FontType="Share Tech Mono"
+						FontSize="22"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+					/>
+				</Container>
+				<Container Name="Token" Size="158,40" MarginLeft="10" Visible="0">
+					<Image
+						HAlign="center"
+						Pos="20,4"
+						Size="108,32"
+						Image="UI/OpenWorld/starmap_resourceBackgroundFrame.tga"
+						MouseSenseEnabled="0"
+					/>	
+					<Image Name="TokenIcon"
+						Pos="0,0"
+						Size="40,40"
+						Image="UI/OpenWorld/starmap_resourceToken.tga"
+						InitPopup="topcenter,bottomcenter"
+						Tooltip="openworld.gui.warzone.favour"
+						ZOffset="@Layer_0_ZOffset"
+					/>
+					<Text Name="TokenValue"
+						Pos="53,0"
+						Size="92,40"
+						Style="Headline_Large_Light_Glow"
+						FontType="Share Tech Mono"
+						FontSize="22"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+					/>
+				</Container>
+			</FlowContainer>
+			<XBOXButton Name="NavigationWheel"
+				MarginTop="-40"
+				MarginLeft="-14"
+				Height="48"
+				HAlign="center"
+				SetButton="START"
+				Style="XBoxButtonFont"
+				Text="controller.common.navigation_wheel"
+			/>
+		</FlowContainer>
+		
+		<FlowContainer Name="PendingAlerts" Pos="0,124" GuiAlign="topleft" Horizontal="1" Layer="2" HAlign="center">
+			<Icon Name="PendingCabalInvitedAlert"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_inviteOff.tga"
+				RolloverImg="UI/msgbox/alert_inviteOver.tga"
+				PressImg="UI/msgbox/alert_inviteOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Tooltip="openworld.GUI.notification.cabalinvitation"
+			/>
+			<Icon Name="PendingCabalAcceptedAlert"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_inviteOff.tga"
+				RolloverImg="UI/msgbox/alert_inviteOver.tga"
+				PressImg="UI/msgbox/alert_inviteOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Tooltip="openworld.GUI.notification.cabaljoined"
+			/>
+			<Icon Name="PendingReward"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_lootOff.tga"
+				RolloverImg="UI/msgbox/alert_lootOver.tga"
+				PressImg="UI/msgbox/alert_lootOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Tooltip="openworld.gui.notification.reward"
+			/>
+			<Icon Name="PendingSurvey"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/survey/survey_buttonOff.tga"
+				RolloverImg="UI/msgbox/survey/survey_buttonOver.tga"
+				PressImg="UI/msgbox/survey/survey_buttonOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Tooltip="openworld.gui.notification.survey"
+			/>
+			<Icon Name="PendingFriendRequest"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_friendOff.tga"
+				RolloverImg="UI/msgbox/alert_friendOver.tga"
+				PressImg="UI/msgbox/alert_friendOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Visible="0"
+				Tooltip="openworld.gui.notification.friendrequest"
+			/>
+			
+			<Icon Name="CraftingFinished"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_craftingOff.tga"
+				RolloverImg="UI/msgbox/alert_craftingOver.tga"
+				PressImg="UI/msgbox/alert_cabalOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Visible="0"
+				Tooltip="openworld.gui.notification.craftingfinished"
+			/>
+			
+			<Icon Name="CraftResearchFinished"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_craftingOff.tga"
+				RolloverImg="UI/msgbox/alert_craftingOver.tga"
+				PressImg="UI/msgbox/alert_cabalOver.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Visible="0"
+				Tooltip="openworld.gui.notification.crafttechfinished"
+			/>
+			
+			<Icon Name="InQueue"
+				Size="36,36"
+				MarginRight="2"
+				IdleImg="UI/msgbox/alert_queueOff.tga"
+				RolloverImg="UI/msgbox/alert_queueOff.tga"
+				PressImg="UI/msgbox/alert_queueOff.tga"
+				InitPopup="topleft,bottomleft"
+				ZOffset="@Layer_1_ZOffset"
+				TiltPivot="@TopLeftTiltPivot"
+				TiltMouseCenter="@TopLeftTiltMouseCenter"
+				DefaultTilt="@TopLeftDefaultTilt"
+				MaximumTilt="@TopLeftMaximumTilt"
+				TiltZone="@TopLeftTiltZone"
+				Visible="0"
+				Tooltip="openworld.gui.notification.inqueue"
+			/>
+		</FlowContainer>
+		
+		<Container Name="TopRightMenuBar" GuiAlign="topright" Layer="2">
+			<Text Name="LocationName"
+				Pos="1485,44"
+				Size="266,24"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+			/>
+			<Icon Name="InfoButton"
+				Pos="1442,42"
+				Size="36,36"
+				IdleImg="UI/Interaction/button_infoOff.tga"
+				PressImg="UI/Interaction/button_infoOff.tga"
+				RolloverImg="UI/Interaction/button_infoOver.tga"
+				InitPopup="leftcenter,rightcenter"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+				ShowCategory="mouse"
+			/>
+			<Text Name="ParentLocationName"
+				Pos="1485,68"
+				Size="266,23"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+			/>
+			<Image Name="RatingBack"
+				Pos="1758,40"
+				Size="84,52"
+				Image="UI/OpenWorld/icon_challengeGreen.tga"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+			/>
+			<Text Name="RatingValue"
+				Pos="1763,47"
+				Size="74,40"
+				Style="Clue_Cogitator_Text"
+				FontSize="28"
+				BiggerFontSize="31"
+				Color="#21c800"
+				Sharpness="0.5"
+				TextAlignH="center"
+				TextAlignV="center"
+				MouseSenseEnabled="0"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+			/>
+			<Image Name="Line"
+				Pos="1480,91"
+				Size="360,12"
+				Image="UI/OpenWorld/starmap_line.tga"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+			/>
+			<Text Name="Version"
+				Pos="1660,106"
+				Size="174,26"
+				Style="Text_Normal_Light"
+				FontType="Share Tech Mono"
+				TextAlignH="right"
+				TextAlignV="center"
+				MouseSenseEnabled="0"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+				Text="Fos?"
+			/>
+			<Text Name="Time"
+				Pos="1486,106"
+				Size="174,26"
+				Style="Text_Normal_White"
+				FontType="Share Tech Mono"
+				TextAlignH="left"
+				TextAlignV="center"
+				MouseSenseEnabled="0"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@TopRightTiltPivot"
+				TiltMouseCenter="@TopRightTiltMouseCenter"
+				DefaultTilt="@TopRightDefaultTilt"
+				MaximumTilt="@TopRightMaximumTilt"
+				TiltZone="@TopRightTiltZone"
+				Text="Fos!"
+				ShowCategory="mouse"
+			/>
+			<XBOXButton Name="FastTravel" Tutorial="FastTravel_controller"
+				Pos="1471,99"
+				Height="38"
+				Text="controller.buttons.fasttravel"
+				Style="ButtonFont_small"
+				SetButton="L_TRIGGER"
+				IgnoreScissor="1"
+			/>
+		</Container>
+			
+		<FlowContainer Name="RightCenterMenuBar"  Pos="1483,155" Width="360" GuiAlign="topright" Layer="2">
+			<FlowContainer Name="Missions" Width="360">
+				<FlowContainer Name="CampaignMissionSelection" Horizontal="1" HAlign="center">
+					<XBOXButton Name="CampaignXBoxLB"
+						Height="38"
+						MarginTop="-9"
+						MarginRight="5"
+						SetButton="LEFT_SHOULDER"
+					/>
+					<Loop Count="@MaxCampaignPage" Variable="$X$" Offset="0,0">
+						<Image Name="CampaignMissionSelectMarker$X$"
+							Size="20,20"
+							Image="UI/OpenWorld/starmap_carouselOn.tga"
+						/>
+					</Loop>
+					<XBOXButton Name="CampaignXBoxRB"
+						Height="38"
+						MarginTop="-9"
+						MarginLeft="5"
+						SetButton="RIGHT_SHOULDER"
+					/>
+				</FlowContainer>
+				<FlowContainer Name="CampaignMission" MarginBottom="10"
+					Width="356"
+					BackgroundTopSize="84"
+					BackgroundBotSize="40"
+					BackgroundTopImage="UI/OpenWorld/Rightbox/starmap_rightboxTop.tga"
+					BackgroundMidImage="UI/OpenWorld/Rightbox/starmap_rightboxMiddle.tga"
+					BackgroundBotImage="UI/OpenWorld/Rightbox/starmap_rightboxBottom.tga"
+				>
+					<Container Height="30" MarginTop="11">
+						<Icon Name="CampaignPrev"
+							Size="28,28"
+							Style="PrevIcon"
+						/>
+						<Text Name="CampaignChapterName"
+							MarginLeft="40"
+							Size="276,30"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="openworld.GUI.starmap.investigation"
+						/>
+						<Icon Name="CampaignNext"
+							HAlign="right"
+							Size="28,28"
+							Style="NextIcon"
+						/>
+					</Container>
+					<Image
+						MarginLeft="96"
+						MarginTop="7"
+						MarginBottom="-142"
+						Size="252,142"
+						Image="UI/OpenWorld/Rightbox/starmap_rightbox_investigationBg.tga"
+						ShowCategory="mouse"
+					/>
+					<Image
+						MarginLeft="96"
+						MarginTop="7"
+						MarginBottom="-142"
+						VAlign="bottom"
+						Size="252,142"
+						Image="UI/OpenWorld/Rightbox/controller/starmap_rightbox_investigationBg.tga"
+						ShowCategory="controller"
+					/>
+					<FlowContainer Width="356" Horizontal="1" IgnoreScissor="1">										
+                        <Icon Name="CampaignBriefing"
+                            Pos="18,5"
+                            Size="36,36"
+                            IdleImg="UI/Tutorial/button_clueJournalOff.tga"
+                            RolloverImg="UI/Tutorial/button_clueJournalOver.tga"
+                            PressImg="UI/Tutorial/button_clueJournalOver.tga"
+                            InitPopup="bottomcenter,topcenter"
+                            Tooltip="openworld.GUI.starmap.open_journal"
+                            ShowCategory="mouse"
+                        />
+						<Text Name="CampaignMissionName"
+							Pos="22,11"
+							Size="276,30"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="story.storymission"
+						/>
+					</FlowContainer>
+					<Image
+						MarginLeft="20"
+						MarginTop="7"
+						Size="316,20"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxBar.tga"
+					/>
+					<FlowContainer
+						MarginLeft="17"
+						MarginTop="-20"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+						BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+						BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="CampaignProgressBar" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+					</FlowContainer>
+					<TextBox Name="CampaignMissionTask"
+						MarginLeft="27"
+						MarginTop="9"
+						Width="300"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="_CabalMissionDesc"
+					/>
+					<Image
+						MarginTop="5"
+						Size="356,12"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+						ZOffset="@Layer_0_ZOffset"
+						ShowCategory="mouse"
+					/>
+					<Container MarginTop="1" Height="36" ShowCategory="mouse">
+						<Icon Name="CampaignTravel" 
+							IgnoreScissor="1"
+							Pos="1,-10"
+							Size="52,52"
+							IdleImg="UI/OpenWorld/Missions/mission_customSmallOff.tga"
+							RolloverImg="UI/OpenWorld/Missions/mission_customSmallOn.tga"
+							PressImg="UI/OpenWorld/Missions/mission_customSmallOn.tga"
+							InitPopup="bottomcenter,topcenter"
+							ShowCategory="mouse"
+						/>
+						<FlowContainer Horizontal="1" Visible="0">
+							<Dummy ShowCategory="mouse" Size="80,0"/>
+							<Dummy ShowCategory="controller" Size="10,0"/>
+							<Container Name="CampaignChallengeRatingContainer" Size="56,32" Pos="3,2">
+								<Image Name="CampaignRatingBack"
+									Pos="0,0"
+									Size="56,32"
+									Image="UI/OpenWorld/icon_challengeGreen.tga"
+								/>
+								<Text Name="CampaignRatingValue"
+									Pos="10,3"
+									Size="36,28"
+									Style="FontGreen"
+									TextAlignH="center"
+									TextAlignV="center"
+									Text="69"
+								/>
+							</Container>
+						</FlowContainer>
+						<Text Name="TravelText"
+							Pos="58,2"
+							Size="245,30"
+							Style="Text_Normal_Dark"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="story.travelto"
+							ShowCategory="mouse"
+						/>
+						<Text Name="CampaignClueCounter"
+							Visible="0"
+							Pos="93,0"
+							Size="245,30"
+							Style="Text_Normal_Dark"
+							TextAlignH="right"
+							TextAlignV="center"
+							Text="_Clues: 1/69"
+						/>
+					</Container>
+					<Dummy Size="1,10"/>
+					<Dummy Size="1,10" ShowCategory="controller"/>
+				</FlowContainer>
+				<FlowContainer Name="Investigation"	MarginBottom="10"
+					Width="356"
+					BackgroundTopSize="84"
+					BackgroundBotSize="40"
+					BackgroundTopImage="UI/OpenWorld/Rightbox/starmap_rightboxTop.tga"
+					BackgroundMidImage="UI/OpenWorld/Rightbox/starmap_rightboxMiddle.tga"
+					BackgroundBotImage="UI/OpenWorld/Rightbox/starmap_rightboxBottom.tga"
+				>
+					<Container Height="30" MarginTop="11">
+						<Icon Name="InvestigationPrev"
+							Size="28,28"
+							Style="PrevIcon"
+						/>
+						<Text
+							MarginLeft="40"
+							Size="276,30"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="openworld.GUI.starmap.priority_assignment"
+						/>
+						<Icon Name="InvestigationNext"
+							HAlign="right"
+							Size="28,28"
+							Style="NextIcon"
+						/>
+					</Container>
+					<FlowContainer Name="CurrentInvestigation" MarginTop="20">
+						<Text Name="InvestigationPOI"
+							Size="300,30"
+							MarginLeft="25"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="_HovaIsMegyunkKeremSzepen"
+						/>
+						<Image
+							MarginLeft="20"
+							Size="316,32"
+							Image="UI/OpenWorld/Rightbox/starmap_rightboxBarSmall_success.tga"
+							ZOffset="@Layer_0_ZOffset"
+						/>
+						<FlowContainer
+							MarginLeft="45"				
+							MarginTop="-26"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+							BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+							BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="InvestigationPotential" Height="20" Width="@RiskRewardBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<Image
+							MarginLeft="20"			
+							Size="316,32"
+							Image="UI/OpenWorld/Rightbox/starmap_rightboxBarSmall_damage.tga"
+						/>
+						<FlowContainer
+							MarginLeft="45"
+							MarginTop="-26"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+							BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+							BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="InvestigationRisk" Height="20" Width="@RiskRewardBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<Image			
+							MarginTop="-5"
+							Size="356,12"
+							Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+							ZOffset="@Layer_0_ZOffset"
+							ShowCategory="mouse"
+						/>
+						<FlowContainer Horizontal="1" MarginLeft="10" ShowCategory="mouse">
+							<Icon Name="InvestigationTravel"
+								Size="36,36"
+								IdleImg="UI/OpenWorld/starmap_buttonTravelOff.tga"
+								RolloverImg="UI/OpenWorld/starmap_buttonTravelOver.tga"
+								PressImg="UI/OpenWorld/starmap_buttonTravelOver.tga"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="openworld.GUI.starmap.continue_investigation"				
+							/>
+							<Text Name="InvestigationExpiration"		
+								Size="280,30"
+								Style="Text_Normal_Dark"
+								TextAlignH="right"
+								TextAlignV="center"						
+						
+							/>
+						</FlowContainer>
+						
+						<Dummy Size="1,10"/>
+					</FlowContainer>
+				
+				</FlowContainer>
+			</FlowContainer>
+			<FlowContainer Name="CommunityEvents" Width="360">
+				<FlowContainer Name="CommunityEventSelection" Horizontal="1" HAlign="center">			
+					<Image Name="WorldEventMarker"
+						Size="20,20"
+						Image="UI/OpenWorld/starmap_carouselOn.tga"
+					/>
+					<Image Name="WeeklyBonusMarker"
+						Size="20,20"
+						Image="UI/OpenWorld/starmap_carouselOn.tga"
+					/>
+					<Image Name="TokenBrokerMarker"
+						Size="20,20"
+						Image="UI/OpenWorld/starmap_carouselOn.tga"
+					/>
+					<Image Name="CabalMissionMarker"
+						Size="20,20"
+						Image="UI/OpenWorld/starmap_carouselOn.tga"
+					/>
+				</FlowContainer>
+				<Container Name="PoiEventProgress" MarginTop="-20" Visible="0" IgnoreScissor="1">
+					<Image Name="PoiEventBarBg"
+						Pos="28,21"
+						Size="324,24"
+						Image="UI/OpenWorld/Events/event_poi_barBg.tga"
+						_MouseSenseEnabled="0"
+						InitPopup="rightcenter,leftcenter"
+						Tooltip="_999/999"
+					/>
+					<FlowContainer Name="PoiEventBar"
+						Pos="29,23"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+						BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+						BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="PoiEventProgressBar" Height="20" Width="@PoiEventProgressBarLength" MouseSenseEnabled="0"/>
+					</FlowContainer>
+					<Image Name="PoiEventIcon"
+						Pos="-13,0"
+						Size="64,64"
+						Image="UI/OpenWorld/Events/event_icon_chaos.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Dummy Size="1,10"/>
+				</Container>
+				<FlowContainer Name="CabalMission" MarginBottom="10"
+					Width="356"
+					BackgroundTopSize="84"
+					BackgroundBotSize="40"
+					BackgroundTopImage="UI/OpenWorld/Rightbox/starmap_rightboxTop.tga"
+					BackgroundMidImage="UI/OpenWorld/Rightbox/starmap_rightboxMiddle.tga"
+					BackgroundBotImage="UI/OpenWorld/Rightbox/starmap_rightboxBottom.tga"
+				>
+					<Container Height="30" MarginTop="11">
+						<Icon Name="CabalMissionPrev"
+							Size="28,28"
+							Style="PrevIcon"
+						/>
+						<Text
+							MarginLeft="40"
+							Size="276,30"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="openworld.GUI.starmap.cabal_directive"
+						/>
+						<Icon Name="CabalMissionNext"
+							HAlign="right"
+							Size="28,28"
+							Style="NextIcon"
+						/>
+					</Container>
+					<Text Name="CabalMissionName"
+						MarginLeft="20"
+						MarginTop="13"
+						Size="320,30"
+						Style="Headline_Normal_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_CabalMissionName"
+					/>
+					<Image
+						MarginLeft="20"
+						MarginTop="5"
+						Size="316,20"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxBar.tga"
+					/>
+					<FlowContainer
+						MarginLeft="17"
+						MarginTop="-20"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+						BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+						BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="CabalMissionProgressBar" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+					</FlowContainer>
+					<Dummy Name="CabalMissionProgressBarTooltip" MarginLeft="17" MarginTop="-20" Height="20" Width="@CabalMissionProgressBarLength" InitPopup="bottomcenter,topcenter" />
+					<TextBox Name="CabalMissionDesc"
+						MarginLeft="27"
+						MarginTop="9"
+						Width="300"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="_CabalMissionDesc"
+					/>
+					<Icon Name="CabalMissionDonationIcon"
+						MarginLeft="17"
+						MarginTop="9"
+						MarginBottom="4"
+						Size="36,36"
+						IdleImg="UI/OpenWorld/starmap_buttonDonateOff.tga"
+						RolloverImg="UI/OpenWorld/starmap_buttonDonateOver.tga"
+						PressImg="UI/OpenWorld/starmap_buttonDonateOver.tga"
+						ShowCategory="mouse"
+					/>
+					<TextBox Name="CabalMissionDonationDesc"
+						MarginLeft="62"
+						MarginTop="-39"
+						Margin="9"
+						Width="250"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="_CabalMissionDesc"
+						ShowCategory="mouse"
+					/>
+					<Dummy Size="1,16"/>
+				</FlowContainer>
+				
+				<FlowContainer Name="WeeklyBonus" MarginBottom="10" Visible="0"
+					Width="356"
+					BackgroundTopSize="84"
+					BackgroundBotSize="40"
+					BackgroundTopImage="UI/OpenWorld/Rightbox/starmap_rightboxTop.tga"
+					BackgroundMidImage="UI/OpenWorld/Rightbox/starmap_rightboxMiddle.tga"
+					BackgroundBotImage="UI/OpenWorld/Rightbox/starmap_rightboxBottom.tga"
+				>
+					<Container Height="30" MarginTop="11">
+						<Icon Name="WeeklyBonusPrev"
+							Size="28,28"
+							Style="PrevIcon"
+						/>
+						<Text Name="WeeklyBonusName"
+							MarginLeft="40"
+							Size="276,30"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="_Week of Wisdom"
+						/>
+						<Icon Name="WeeklyBonusNext"
+							HAlign="right"
+							Size="28,28"
+							Style="NextIcon"
+						/>
+					</Container>
+					<FlowContainer Name="WeeklyBonusBox" MarginTop="20" Horizontal="1" Clickable="1">
+						<Image Name="WeeklyBonusIcon"
+							MarginLeft="20"
+							Size="50,50"
+							Image="UI/OpenWorld/Missions/mission_warzoneOn.tga"
+							MouseSenseEnabled="0"
+						/>
+						<TextBox Name="WeeklyBonusDesc"
+							MarginLeft="10"
+							Width="255"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="_Week Desc"
+							MouseSenseEnabled="0"							
+						/>
+					</FlowContainer>
+					<Image ShowCategory="mouse"
+						Size="356,12"
+						MarginTop="-2"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+					/>
+					<FlowContainer Size="310,45" Horizontal="1" ShowCategory="mouse">
+						<Icon Name="WeeklyBonusLink"
+							Pos="18,5"
+							Size="36,36"
+							MarginRight="6"
+							IdleImg="UI/Tutorial/button_clueJournalOff.tga"
+							RolloverImg="UI/Tutorial/button_clueJournalOver.tga"
+							PressImg="UI/Tutorial/button_clueJournalOver.tga"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="weeklybonus.linkpopup"							
+						/>
+							
+						<Text Name="WeeklyBonusNextDesc"
+							Pos="18,7"
+							Size="280,30"
+							Style="Text_Normal_Dark"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="_Next up desc: Week of the Conqueror"
+						/>
+					</FlowContainer>
+					<Dummy Size="1,5"/>
+					<Dummy Size="1,15" ShowCategory="controller"/>
+				</FlowContainer>
+				
+				<FlowContainer Name="TokenBroker" MarginBottom="10" Visible="1"
+					Width="356"
+					BackgroundTopSize="84"
+					BackgroundBotSize="40"
+					BackgroundTopImage="UI/OpenWorld/Rightbox/starmap_rightboxTop.tga"
+					BackgroundMidImage="UI/OpenWorld/Rightbox/starmap_rightboxMiddle.tga"
+					BackgroundBotImage="UI/OpenWorld/Rightbox/starmap_rightboxBottom.tga"
+				>
+					<Container Height="30" MarginTop="11">
+						<Icon Name="TokenBrokerPrev"
+							Size="28,28"
+							Style="PrevIcon"
+						/>
+						<Text Name="TokenBrokerName"
+							MarginLeft="40"
+							Size="276,30"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="battle.gui.tokenbrokershop.label"
+						/>
+						<Icon Name="TokenBrokerNext"
+							HAlign="right"
+							Size="28,28"
+							Style="NextIcon"
+						/>
+					</Container>
+					<FlowContainer Name="TokenBrokerBox" MarginTop="20" Horizontal="1" Clickable="1">
+						<Image Name="TokenBrokerIcon"
+							MarginLeft="20"
+							Size="50,50"
+							Image="UI\common\Events\TokenBroker\RebusAvatar.dds"
+							MouseSenseEnabled="0"
+						/>
+						<TextBox Name="TokenBrokerDesc"
+							MarginLeft="10"
+							Width="255"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="openworldnpc.Custodian_Rebus.desc"
+							MouseSenseEnabled="0"							
+						/>
+					</FlowContainer>
+					<Image
+						Size="356,12"
+						MarginTop="-2"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+					/>
+					<FlowContainer Size="330,45" Horizontal="1">
+						<Icon Name="TokenBrokerLink"
+							Pos="18,5"
+							Size="36,36"
+							MarginRight="6"
+							IdleImg="UI/Tutorial/button_clueJournalOff.tga"
+							RolloverImg="UI/Tutorial/button_clueJournalOver.tga"
+							PressImg="UI/Tutorial/button_clueJournalOver.tga"
+							ShowCategory="mouse"
+						/>
+							
+						<Text Name="TokenBrokerTimer"
+							Pos="18,7"
+							Size="280,30"
+							Style="Text_Normal_Dark"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="openworldnpc.Custodian_Rebus.avability"
+						/>
+					</FlowContainer>
+					<Dummy Size="1,5"/>
+				</FlowContainer>
+				
+				<FlowContainer Name="WorldEvent" MarginBottom="10"
+					Width="356"
+					BackgroundTopSize="84"
+					BackgroundBotSize="40"
+					BackgroundTopImage="UI/OpenWorld/Rightbox/starmap_rightboxTop.tga"
+					BackgroundMidImage="UI/OpenWorld/Rightbox/starmap_rightboxMiddle.tga"
+					BackgroundBotImage="UI/OpenWorld/Rightbox/starmap_rightboxBottom.tga"
+				>
+					<_Image
+						MarginBottom="-142"
+						Size="252,142"
+						Pos="96,48"
+						Image="UI/OpenWorld/Rightbox/starmap_rightbox_investigationBg.tga"
+					/>
+					<Container Height="30" MarginTop="11">
+						<Icon Name="WorldEventPrev"
+							Size="28,28"
+							Style="PrevIcon"
+						/>
+						<Text
+							MarginLeft="40"
+							Size="276,30"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="openworld.GUI.starmap.world_event"
+						/>
+						<Icon Name="WorldEventNext"
+							HAlign="right"
+							Size="28,28"
+							Style="NextIcon"
+						/>
+					</Container>
+					<FlowContainer Name="WorldEventInfo" Visible="1">
+						<Text Name="WorldEventName"
+							MarginLeft="20"
+							MarginTop="15"
+							Size="320,30"
+							Style="Text_Large_Light_Glow"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="_WorldEventName"
+						/>
+						<Image
+							Size="356,12"
+							MarginTop="-6"
+							Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+						/>
+					</FlowContainer>
+					<FlowContainer Name="WorldEventProgress" Visible="1">
+						<TextBox Name="EventProgressText"
+							MarginLeft="20"
+							MarginTop="16"
+							MarginBottom="5"
+							Width="316"
+							Style="Text_Normal_Dark"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="_WorldEventObjective"
+						/>				
+						<Container Name="PlayerRewardProgress">
+							<FlowContainer Name="EventProgressTooltip"
+								MarginLeft="17"
+								MarginTop="0"
+								Height="20"
+								Horizontal="1"
+								BackgroundTopSize="8"
+								BackgroundBotSize="8"
+								BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+								BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+								BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+								InitPopup="rightcenter,leftcenter"
+								Tooltip="_999/999"						
+							>
+								<Dummy Name="EventProgressBg" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+							</FlowContainer>
+							<FlowContainer
+								MarginLeft="17"
+								MarginTop="0"
+								Height="20"
+								Horizontal="1"
+								BackgroundTopSize="8"
+								BackgroundBotSize="8"
+								BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+								BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+								BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+								MouseSenseEnabled="0"
+							>
+								<Dummy Name="EventProgressBar" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+							</FlowContainer>
+							<Container Name="RewardMarker" IgnoreScissor="1" Visible="1">
+								<Loop Count="@RewardMarkerCount" Variable="$Y$">
+									<Image Name="RewardMarker$Y$"
+										MarginTop="15"
+										MarginLeft="6"
+										Size="12,12"
+										Image="UI/OpenWorld/starmap_barMarker.tga"
+										MouseSenseEnabled="0"
+									/>
+								</Loop>
+							</Container>
+						</Container>
+					</FlowContainer>
+					<FlowContainer Name="WorldEventCommunityProgress" Visible="1">
+						<TextBox Name="EventCommunityProgressText"
+							MarginLeft="20"
+							MarginTop="10"
+							MarginBottom="5"
+							Width="316"
+							Style="Text_Normal_Dark"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="_WorldEventCommunityObjective"
+						/>				
+						<Container Name="CommunityProgressBar" Visible="0">
+							<FlowContainer
+								MarginLeft="17"
+								MarginTop="0"
+								Height="20"
+								Horizontal="1"
+								BackgroundTopSize="8"
+								BackgroundBotSize="8"
+								BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+								BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+								BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+								MouseSenseEnabled="0"
+							>
+								<Dummy Name="EventCommunityProgressBg" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+							</FlowContainer>
+							<FlowContainer
+								MarginLeft="17"
+								MarginTop="0"
+								Height="20"
+								Horizontal="1"
+								BackgroundTopSize="8"
+								BackgroundBotSize="8"
+								BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+								BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+								BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+								MouseSenseEnabled="0"
+							>
+								<Dummy Name="EventCommunityProgressBar" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+							</FlowContainer>
+							<Container Name="CommunityRewardMarker3" IgnoreScissor="1" Visible="1">
+								<Loop Count="3" Variable="$Y$" Offset="107,0">
+									<Image Name="CommunityReward3$Y$Marker"
+										Pos="115,15"
+										Size="12,12"
+										Image="UI/OpenWorld/starmap_barMarker.tga"
+										MouseSenseEnabled="0"
+									/>
+								</Loop>
+							</Container>
+						</Container>
+						<Container Name="CommunityMultiProgressBar" MarginLeft="17" Visible="1">
+							<Loop Count="3" Variable="$X$" Offset="110,0">
+								<FlowContainer Name="CommunityMultiProgressTooltip$X$" 
+									MarginTop="0"
+									Height="20"
+									Horizontal="1"
+									BackgroundTopSize="8"
+									BackgroundBotSize="8"
+									BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+									BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+									BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+									InitPopup="rightcenter,leftcenter"
+									Tooltip="_999/999"
+								>
+									<Dummy Name="CommunityMultiProgressBg$X$" Variable="$X$" Height="20" Width="@MultiProgressBarLength" MouseSenseEnabled="0"/>
+								</FlowContainer>
+								<FlowContainer
+									MarginTop="0"
+									Height="20"
+									Horizontal="1"
+									BackgroundTopSize="8"
+									BackgroundBotSize="8"
+									BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+									BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+									BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+									MouseSenseEnabled="0"
+								>
+									<Dummy Name="CommunityMultiProgressBar$X$" Variable="$X$" Height="20" Width="@MultiProgressBarLength" MouseSenseEnabled="0"/>
+								</FlowContainer>
+							</Loop>
+						</Container>
+					</FlowContainer>
+					<FlowContainer Horizontal="1" Height="34" Pos="20,0" Name="EventPlanetary">
+						<Container Size="108,34">
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/Mechanicum_34x34.dds" 
+								Size="34,34"
+								Pos="0,0"
+							/>
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+								Size="62,34"
+								Pos="34,0"
+							/>
+							<Image Name="PlanetaryBar0"
+								Image="UI/common/Events/PlanetaryReclamation/FPB_Red_Widget.dds" 
+								Size="60,32"
+								Pos="35,1"
+							/>
+							<Text Name="PlanetaryCounter0"
+								Text="3568"
+								Size="62,34"
+								Pos="34,0"
+								Style="Text_Small_Light"
+								Color="#eeeeee"
+							/>
+							<Dummy InitPopup="bottomcenter,topcenter" Tooltip="worldevent.planetary_reclamation.mechanicum" />
+						</Container>
+						
+						<Container Size="108,34">
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/Ecclesiarchy_34x34.dds" 
+								Size="34,34"
+								Pos="0,0"
+							/>
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+								Size="62,34"
+								Pos="34,0"
+							/>
+							<Image Name="PlanetaryBar1"
+								Image="UI/common/Events/PlanetaryReclamation/FPB_Gold_Widget.dds" 
+								Size="60,32"
+								Pos="35,1"
+							/>
+							<Text Name="PlanetaryCounter1"
+								Text="3568" 
+								Size="62,34"
+								Pos="34,0"
+								Style="Text_Small_Light"
+								Color="#eeeeee"
+							/>
+							<Dummy InitPopup="bottomcenter,topcenter" Tooltip="worldevent.planetary_reclamation.ecclesiarchy" />
+						</Container>
+						
+						<Container Size="108,34">
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/AstraMilitarum_34x34.dds" 
+								Size="34,34"
+								Pos="0,0"
+							/>
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+								Size="62,34"
+								Pos="34,0"
+							/>
+							<Image Name="PlanetaryBar2"
+								Image="UI/common/Events/PlanetaryReclamation/FPB_Blue_Widget.dds" 
+								Size="60,32"
+								Pos="35,1"
+							/>
+							<Text Name="PlanetaryCounter2"
+								Text="3568" 
+								Size="62,34"
+								Pos="34,0"
+								Style="Text_Small_Light"
+								Color="#eeeeee"
+							/>
+							<Dummy InitPopup="bottomcenter,topcenter" Tooltip="worldevent.planetary_reclamation.Astra_Militarum" />
+						</Container>
+					</FlowContainer>
+					<Container Name="WorldEventIcons" Size="350,36">
+						<Loop Count="@WorldEventIconCount" Variable="$X$" Offset="39,0">
+							<Icon Name="WorldEventIcon$X$" Size="34,34" Pos="22,0" InitPopup="bottomcenter,topcenter" UseButtonEffects="0"/>
+						</Loop>
+					</Container>
+					<Image
+						Size="356,12"
+						MarginLeft="0"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+					/>
+					<FlowContainer Size="356,38" MarginLeft="10" MarginTop="2" MarginBottom="-7" Horizontal="1">
+						<Icon Name="WorldEventBriefing"
+							Size="36,36"
+							IdleImg="UI/Tutorial/button_clueJournalOff.tga"
+							RolloverImg="UI/Tutorial/button_clueJournalOver.tga"
+							PressImg="UI/Tutorial/button_clueJournalOver.tga"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="openworld.GUI.starmap.event_details"
+							ShowCategory="mouse"
+						/>
+						<Icon Name="WorldEventTravel"
+							Size="36,36"
+							IdleImg="UI/OpenWorld/starmap_buttonTravelOff.tga"
+							RolloverImg="UI/OpenWorld/starmap_buttonTravelOver.tga"
+							PressImg="UI/OpenWorld/starmap_buttonTravelOver.tga"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="openworld.GUI.starmap.travel"
+							ShowCategory="mouse"
+						/>
+						<Text Name="WorldEventTimer"
+							MarginLeft="10"
+							Size="245,38"
+							Style="Text_Normal_Dark"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="_Remaining time: 2:12:35"
+						/>
+					</FlowContainer>
+					<Dummy Size="1,20"/>
+				</FlowContainer>
+			</FlowContainer>
+			<FlowContainer Name="PersonalEvents" Width="360">
+				<FlowContainer Name="PersonalEventSelection" Horizontal="1" HAlign="center">
+					<Loop Count="@MaxChallengeCount" Variable="$X$" Offset="0,0">
+						<Image Name="ChallengeMarker$X$"
+							Size="20,20"
+							Image="UI/OpenWorld/starmap_carouselOn.tga"
+						/>
+					</Loop>
+				</FlowContainer>
+				<Loop Count="@MaxChallengeCount" Variable="$X$">
+					<FlowContainer Name="Challenge$X$" MarginBottom="10"
+						Width="356"
+						BackgroundTopSize="84"
+						BackgroundBotSize="40"
+						BackgroundTopImage="UI/OpenWorld/Rightbox/starmap_rightboxTop.tga"
+						BackgroundMidImage="UI/OpenWorld/Rightbox/starmap_rightboxMiddle.tga"
+						BackgroundBotImage="UI/OpenWorld/Rightbox/starmap_rightboxBottom.tga"
+					>
+						<Container Height="30" MarginTop="11">
+							<Icon Name="ChallengePrev$X$"
+								Size="28,28"
+								Style="PrevIcon"
+							/>
+							<Text
+								MarginLeft="40"
+								Size="276,30"
+								Style="Headline_Large_Light_Glow"
+								TextAlignH="center"
+								TextAlignV="center"
+								Text="openworld.GUI.challenges"
+							/>
+							<Icon Name="ChallengeNext$X$"
+								HAlign="right"
+								Size="28,28"
+								Style="NextIcon"
+							/>
+						</Container>
+						<Image
+							MarginLeft="96"
+							MarginTop="7"
+							MarginBottom="-162"
+							Size="252,142"
+							Image="UI/OpenWorld/Rightbox/starmap_rightbox_investigationBg.tga"
+							Visible="0"
+						/>
+						<TextBox Name="ChallengeName$X$"
+							MarginLeft="20"
+							MarginTop="15"
+							MarginBottom="5"
+							Width="316"
+							Style="Headline_Normal_Light_Glow"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="asdasd"
+						/>
+						<Image
+							MarginLeft="20"
+							MarginTop="5"
+							Size="316,20"
+							Image="UI/OpenWorld/Rightbox/starmap_rightboxBar.tga"
+						/>
+						<FlowContainer
+							MarginLeft="17"
+							MarginTop="-20"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+							BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+							BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="ChallengeProgressBar$X$" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<Container Name="ChallangeReward$X$" Size="336,40" MarginTop="5">
+							<FlowContainer Height="40" Horizontal="1" HAlign="right">
+								<Text	
+									MarginRight="10"
+									MarginTop="-4"
+									Style="Text_Normal_Dark"
+									Text="openworld.gui.glory.rewards"
+								/>
+								<Image 	
+									MarginTop="3"							
+									Size="28,28"								
+									Image="UI/OpenWorld/MissionInfo/mission_rewardFate.tga"
+									InitPopup="bottomcenter,topcenter"
+									Tooltip="battle.gui.inventory.fate.label"	
+								/>
+								<Text 												
+									MarginTop="-5"
+									MarginLeft="3"
+									MarginRight="10"
+									Style="Text_Normal_Light"
+									InitPopup="bottomcenter,topcenter"
+									Tooltip="battle.gui.inventory.fate.label"	
+									Text="25"
+								/>
+								<Text 												
+									MarginTop="-5"
+									MarginRight="8"
+									Style="Text_Normal_Light"
+									MouseSenseEnabled="0"  
+									Text="|"
+								/>							
+								<Image 			
+									MarginTop="3"
+									Size="28,28"
+									Image="UI/OpenWorld/starmap_resourceItem.tga"
+									InitPopup="bottomcenter,topcenter"
+									Tooltip="artifacts.types.bag"	
+								/>								
+							</FlowContainer>
+						</Container>
+						<Image			
+							MarginTop="-10"
+							Size="356,12"
+							Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+							ZOffset="@Layer_0_ZOffset"
+							ShowCategory="mouse"
+						/>
+						<FlowContainer Horizontal="1" MarginLeft="17" MarginTop="4" ShowCategory="mouse">
+							<Icon Name="ChallengeReroll$X$"
+								Size="36,36"
+								IdleImg="UI/OpenWorld/starmap_buttonRerollOff.tga"
+								RolloverImg="UI/OpenWorld/starmap_buttonRerollOver.tga"
+								PressImg="UI/OpenWorld/starmap_buttonRerollOver.tga"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="_Reroll"				
+							/>
+							<Text Name="ChallengeRerollDesc$X$"
+								Size="280,30"
+								MarginTop="5"
+								MarginLeft="5"
+								Style="Text_Normal_Dark"
+								TextAlignH="left"
+								TextAlignV="center"	
+								Text="challenges.GUI.reroll_desc"
+						
+							/>
+						</FlowContainer>
+						<Dummy Size="1,15"/>
+					</FlowContainer>
+				</Loop>
+			</FlowContainer>
+			
+			<FlowContainer Name="PendingAlertsController" MarginTop="-10" Width="360" IgnoreScissor="1">
+				<XBOXButton Name="DataTerminal"
+					Height="48"
+					Width="290"
+					SetButton="R_TRIGGER"
+					Style="XBoxButtonFont"
+					Text="controller.buttons.open_data_terminal"
+				/>
+				<FlowContainer Name="NewNotification" MarginLeft="50" MarginTop="-15" Horizontal="1">
+					<Image
+						MarginTop="13"
+						MarginLeft="10"
+						Size="20,20"
+						Image="UI/msgbox/button_alerticon.tga"
+					/>
+					<Text
+						Height="48"
+						MarginLeft="10"
+						Style="Headline_Normal_Light_Glow"
+						Text="controller.common.new_notifications"
+					/>
+				</FlowContainer>
+				<FlowContainer Name="NewMission" MarginLeft="50" MarginTop="-16" Horizontal="1">
+					<Image
+						MarginTop="13"
+						MarginLeft="10"
+						Size="20,20"
+						Image="UI/msgbox/button_alerticon.tga"
+					/>
+					<Text
+						Height="48"
+						MarginLeft="10"
+						Style="Headline_Normal_Light_Glow"
+						Text="controller.common.active_quests"
+					/>
+				</FlowContainer>
+			</FlowContainer>
+		</FlowContainer>
+		
+		<FlowContainer Pos="517,858">
+		<Dummy  ShowCategory="controller" Size="0,50"/>
+		<TextBox Name="PendingRewardWarning"
+			Size="820,74"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="bottom"
+			GuiAlign="bottomcenter"
+			ZOffset="@Layer_0_ZOffset"
+			TiltPivot="@BottomCenterTiltPivot"
+			TiltMouseCenter="@BottomCenterTiltMouseCenter"
+			DefaultTilt="@BottomCenterDefaultTilt"
+			MaximumTilt="@BottomCenterMaximumTilt"
+			Text="menu.inventory.commonreward.pending"
+			UseSlider="0"
+		/>
+		</FlowContainer>
+		
+		<Dummy Name="ControllerInput" MouseSenseEnabled="0"/>
+		
+		<Container Name="WheelPanel" Layer="2" GuiAlign="center">
+		
+			<Container>
+				<Image
+					Image="UI/BlackTexture.tga"
+					Alpha="0.7"
+					GuiAlign="topleft"
+				/>
+			</Container>
+		
+			<Icon Name="WheelBGCenter"
+				Pos="590,126"
+				Size="740,740"
+				IdleImg="UI/NavigationWheel/WheelBG_center_idle.dds"		
+				RolloverImg="UI/NavigationWheel/WheelBG_center_rollover.dds"		
+			/>
+			
+			<Icon Name="WheelCommandBridge"
+				Pos="882,418"
+				Size="156,156"
+				IdleImg="UI/NavigationWheel/Icons/Starmap_idle.dds"		
+				RolloverImg="UI/NavigationWheel/Icons/Starmap_rollover.dds"		
+			/>			
+			
+			<Icon Name="WheelBGLeft"
+				Pos="590,126"
+				Size="740,740"
+				IdleImg="UI/NavigationWheel/WheelBG_left_idle.dds"		
+				RolloverImg="UI/NavigationWheel/WheelBG_left_rollover.dds"		
+			/>
+			
+			<Icon Name="WheelBGRight"
+				Pos="590,126"
+				Size="740,740"
+				IdleImg="UI/NavigationWheel/WheelBG_right_idle.dds"		
+				RolloverImg="UI/NavigationWheel/WheelBG_right_rollover.dds"		
+			/>
+			
+			<Icon Name="WheelBGTop"
+				Pos="590,126"
+				Size="740,740"
+				IdleImg="UI/NavigationWheel/WheelBG_top_idle.dds"	
+				RolloverImg="UI/NavigationWheel/WheelBG_top_rollover.dds"					
+			/>
+			
+			<Icon Name="WheelBGBottom"
+				Pos="590,126"
+				Size="740,740"
+				IdleImg="UI/NavigationWheel/WheelBG_bottom_idle.dds"	
+				RolloverImg="UI/NavigationWheel/WheelBG_bottom_rollover.dds"								
+			/>
+			
+			<Image Name="WheelSelector"
+				Pos="590,126"
+				Size="740,740"
+				Image="UI/NavigationWheel/WheelBG_center_pontozas.dds"		
+			/>
+			
+			<Image Name="WheelDecorationCircle1"
+				Pos="590,126"
+				Size="740,740"
+				Image="UI/NavigationWheel/WheelBG_ponozas.dds"		
+			/>
+			
+			<Image Name="WheelDecorationCircle2"
+				Pos="590,126"
+				Size="740,740"
+				Image="UI/NavigationWheel/WheelBG_szagattott.dds"		
+			/>			
+			
+			<Icon Name="Icon0"
+				Pos="790,137"
+				Size="340,140"
+				IdleImg="UI/NavigationWheel/Icons/Options_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Options_rollover.dds"
+			/>
+			
+			<Icon Name="Icon2"
+				Pos="1137,258"
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Cabal_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Cabal_rollover.dds"
+			/>
+			
+			<Icon Name="Text2"
+				Pos="1262,283"
+				Size="400,50"
+				Style="Wheel_Label"											
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="left"
+				TextAlignV="center"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="openworld.gui.cabal.title"
+			/>
+			
+			<Icon Name="Icon3"
+				Pos="1200,388"
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Friends_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Friends_rollover.dds"
+			/>
+			
+			<Icon Name="Text3"
+				Pos="1312,418"
+				Size="400,50"
+				Style="Wheel_Label"		
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="left"
+				TextAlignV="center"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="controller.common.social"
+			/>
+			
+			<Icon Name="Icon4"
+				Pos="1198,521"
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Glory_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Glory_rollover.dds"
+			/>	
+		
+			<Icon Name="Text4"
+				Pos="1310,554"
+				Size="400,50"
+				Style="Wheel_Label"
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="left"
+				TextAlignV="center"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="openworld.gui.glory.title"
+			/>		
+		
+			<Icon Name="Icon5"
+				Pos="1131,646"
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Journal_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Journal_rollover.dds"
+			/>
+			
+			<Icon Name="Text5"
+				Pos="1252,688"
+				Size="400,50"
+				Style="Wheel_Label"
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="left"
+				TextAlignV="center"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="openworld.gui.journal.title"
+			/>
+			
+			<Icon Name="Icon6"
+				Pos="790,717"
+				Size="340,140"
+				IdleImg="UI/NavigationWheel/Icons/Exit_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Exit_rollover.dds"
+			/>
+			
+			<Icon Name="Icon8"
+				Pos="693,647"
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Heroicdeeds_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Heroicdeeds_rollover.dds"
+			/>
+			
+			<Icon Name="Text8"
+				Pos="262,688"
+				Size="400,50"
+				Style="Wheel_Label"
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="right"
+				TextAlignV="top"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="openworld.gui.heroicdeeds.title"
+			/>		
+			
+			<Icon Name="Icon9"
+				Pos="622,519"
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Skills_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Skills_rollover.dds"
+			/>
+			
+			<Icon Name="Text9"
+				Pos="215,554"
+				Size="400,50"
+				Style="Wheel_Label"
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="right"
+				TextAlignV="top"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="openworld.gui.skills.title"
+			/>		
+			
+		
+			<Icon Name="Icon10"
+				Pos="626,380"
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Character_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Character_rollover.dds"
+			/>
+			
+			<Icon Name="Text10"
+				Pos="209,418"
+				Size="400,50"
+				Style="Wheel_Label"
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="right"
+				TextAlignV="top"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="battle.gui.charactersheet"
+			/>		
+			
+			<Icon Name="Icon11"
+				Pos="680,250"			
+				Size="96,96"
+				IdleImg="UI/NavigationWheel/Icons/Inventory_idle.dds"			
+				RolloverImg="UI/NavigationWheel/Icons/Inventory_rollover.dds"
+			/>
+			
+			<Icon Name="Text11"
+				Pos="255,283"
+				Size="400,50"
+				Style="Wheel_Label"
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="right"
+				TextAlignV="top"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="battle.gui.inventory.label"
+			/>		
+			
+			
+			<Icon Name="CommanderBridge"
+				Pos="821,591"
+				Size="279,73"
+				Style="Wheel_Label"
+				IdleImg=""			
+				RolloverImg=""			
+				TextAlignH="center"
+				TextAlignV="top"
+				ZOffset="@Layer_0_ZOffset"
+				TiltPivot="@BottomCenterTiltPivot"
+				TiltMouseCenter="@BottomCenterTiltMouseCenter"
+				DefaultTilt="@BottomCenterDefaultTilt"
+				MaximumTilt="@BottomCenterMaximumTilt"
+				Text="openworld.gui.hub"
+			/>		
+			
+		</Container>
+		
+		<Container Name="NewInvestigationContainer" GuiAlign="bottomcenter" Layer="2">
+			<Effect
+				Name="NewInvestigationEffect"
+				Pos="960,520"
+				Size="0,0"
+				Effect="UI\Clue_tutorial\investigation_start_alap.N2E"
+				MouseSenseEnabled="0"
+			/>
+			<Text
+				Name="NewInvestigationText"
+				Style="Headline_XLarge_Light_Glow"
+				FontSize="22"
+				BiggerFontSize="24"
+				Pos="630,850"
+				Size="660,60"
+				Text="Battle.gui.alert.investigationstart"
+				Alpha="0"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+
+	</Container>
+</Window>
+
+
+
+

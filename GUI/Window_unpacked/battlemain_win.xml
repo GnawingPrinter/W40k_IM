@@ -1,0 +1,2300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="bottomleft">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<WeaponSkillCount Type="int" Value="4"/>
+		<DebuffCount Type="int" Value="27"/>
+		<GrenadeChargeCount Type="int" Value="6"/>
+		<MedkitChargeCount Type="int" Value="8"/>
+		<MinionBoosterCount Type="int" Value="3"/>
+		<MissionFinishDelayTime Type="float" Value="2900.0"/>
+		<MissionFinishAlphaTime Type="float" Value="500.0"/>
+		<MissionFinishShowTime Type="float" Value="1000.0"/>
+	</Constants>
+	
+	<Styles>
+		<Item1x1
+			IconSize="15,15"
+			Size="15,15"
+			ArtifactSize="1,1"
+			CanSelect="0"
+			PopupAlign="bottomcenter"
+		/>
+	</Styles>
+	
+	<Container Pos="0,-200" GuiAlign="center">
+		<Effect Name="MissionCompleteEffect"
+			Size="1920,1080"
+			Loop="0"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="MissionCompleteText"
+			Pos="630,474"
+			Size="660,60"
+			Style="Text_XLarge_White_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="GameMode.mission.victory"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Container Pos="0,0" Name="PsykerEffects" IgnoreScissor="1" GuiAlign="topleft">
+		<Effect Name="PsykerEffect0"
+			GuiAlign="topleft"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_left_top.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="PsykerEffect1"
+			GuiAlign="topright"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_right_top.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="PsykerEffect2"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_left_bottom.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="PsykerEffect3"
+			GuiAlign="bottomright"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_right_bottom.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="WeakPsykerEffect0"
+			GuiAlign="topleft"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_weak_left_top.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="WeakPsykerEffect1"
+			GuiAlign="topright"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_weak_right_top.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="WeakPsykerEffect2"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_weak_left_bottom.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="WeakPsykerEffect3"
+			GuiAlign="bottomright"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/Warp/warp_weak_right_bottom.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Container Pos="0,0" Name="HalalEffects" IgnoreScissor="1" GuiAlign="topleft">
+		<Effect Name="HalalEffect0"
+			GuiAlign="topleft"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/HUD/Death_marker/death_blood_left_top.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="HalalEffect1"
+			GuiAlign="topright"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/HUD/Death_marker/death_blood_right_top.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="HalalEffect2"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/HUD/Death_marker/death_blood_left_bottom.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="HalalEffect3"
+			GuiAlign="bottomright"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/HUD/Death_marker/death_blood_right_bottom.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Container Name="DefaultUI" Pos="0,852" Visible="1">
+		<Image
+			Size="712,208"
+			Image="UI/BATTLE_UI/Main/battle_leftBgBottom.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Name="BattleLeftBg"
+			Size="712,208"
+			Image="UI/BATTLE_UI/Main/battle_leftBg.tga"
+			MouseSenseEnabled="0"
+		/>
+		
+		<Container>
+			<MaskedImage Name="SuppressionBarYellow"
+				Pos="100,11"
+				Size="148,148"
+				Image="UI/BATTLE_UI/Main/battle_supressionYellow.tga"
+				AlphaMask="UI/BATTLE_UI/Main/cooldown_supression_mask.tga"
+			/>
+			<MaskedImage Name="SuppressionBarRed"
+				Pos="100,11"
+				Size="148,148"
+				Image="UI/BATTLE_UI/Main/battle_supressionRed.tga"
+				AlphaMask="UI/BATTLE_UI/Main/cooldown_supression_mask.tga"
+			/>
+			<MaskedImage Name="SuppressionBarGreen"
+				Pos="100,11"
+				Size="148,148"
+				Image="UI/BATTLE_UI/Main/battle_supressionGreen.tga"
+				AlphaMask="UI/BATTLE_UI/Main/cooldown_supression_mask.tga"
+			/>
+			<Dummy Name="SuppressionBarDummy"
+				Pos="100,11"
+				Size="148,148"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			<MagicBulb Name="ShieldBar"
+				Pos="117,51"
+				Size="108,108"
+				Image="UI/BATTLE_UI/Main/battle_shieldBar.tga"
+				AlphaMask="UI/BATTLE_UI/Main/MagicBulbGlass.dds"
+			/>
+			<MagicBulb Name="HPBar"
+				Pos="117,51"
+				Size="108,108"
+				Image="UI/BATTLE_UI/Main/battle_hpBar.tga"
+				AlphaMask="UI/BATTLE_UI/Main/MagicBulbGlass.dds"
+			/>
+			<Dummy Name="HPBarDummy"
+				Pos="117,51"
+				Size="108,108"
+				InitPopup="bottomcenter,topcenter"
+			/>
+		</Container>
+		
+		<Container>
+			<Icon Name="MedkitIcon"
+				Pos="54,57"
+				Size="40,100"
+				IdleImg="UI/BATTLE_UI/Main/inoculator_empty.tga"
+				RolloverImg="UI/BATTLE_UI/Main/inoculator_empty.tga"
+				PressImg="UI/BATTLE_UI/Main/inoculator_empty_pressed.tga"
+			/>
+			<MaskedImage Name="MedkitCooldown"
+				Pos="54,57"
+				Size="40,100"
+				Image="UI/BATTLE_UI/Main/cooldown_inoculator.tga"
+				AlphaMask="UI/BATTLE_UI/Spells/overheat_mask.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Effect Name="MedkitCooldownEffect"
+				Pos="54,57"
+				Size="40,100"
+				Effect="UI/HUD/Icon_effects/inoculator_ready.N2E"
+				MouseSenseEnabled="0"
+			/>
+			<Image Name="MedkitShortcutIcon"
+				Pos="73,135"
+				Size="32,32"
+				Image="UI/BATTLE_UI/Main/shortcut_empty_inoculator.tga"
+				MouseSenseEnabled="0"
+				ShowCategory="mouse"
+			/>
+			<Image Name="MedkitShortcutIconController"
+				Pos="49,125"
+				Size="48,48"
+				Image="UI/BATTLE_UI/Main/RB.tga"
+				MouseSenseEnabled="0"
+				ShowCategory="controller"
+			/>
+			<Text Name="MedkitShortcut"
+				Pos="83,138"
+				Size="20,20"
+				Style="Shortcut"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text=""
+				MouseSenseEnabled="0"
+				ShowCategory="mouse"
+			/>
+			<Container Name="MedkitChargesIcons">
+				<Image Name="MedkitCharge1"
+					Pos="41,129"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="MedkitCharge2"
+					Pos="41,116"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="MedkitCharge3"
+					Pos="41,103"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="MedkitCharge4"
+					Pos="41,90"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+                <Image Name="MedkitCharge5"
+                    Pos="41,77"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+                <Image Name="MedkitCharge6"
+                    Pos="41,64"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+				<Image Name="MedkitCharge7"
+                    Pos="47,51"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+				<Image Name="MedkitCharge8"
+                    Pos="55,40"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+				<Text Name="MedkitChargeExtra"
+                    Pos="55,15"
+					Size="20,20"
+					Style="Shortcut"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text=""
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+		</Container>
+		
+		<Container>
+			<Icon Name="SwitchWeapon"
+				Pos="254,98"
+				Size="40,56"
+				IdleImg="UI/BATTLE_UI/Main/wset_switchOff.tga"
+				RolloverImg="UI/BATTLE_UI/Main/wset_switchOver.tga"
+				PressImg="UI/BATTLE_UI/Main/wset_switchOff.tga"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="battle.gui.popup.switchweaponbutton"
+				ShowCategory="mouse"
+			/>				
+			<Effect Name="SwitchWeaponEffect"
+				Pos="254,98"
+				Size="40,56"
+				Effect="UI/HUD/Icon_effects/weaponchange_ready.N2E"
+				Loop="0"
+				MouseSenseEnabled="0"
+				ShowCategory="mouse"
+			/>
+		
+			<Loop Count="@WeaponSkillCount" Variable="$X$" Offset="60,0">
+				<Container>
+					<Image Name="WeaponSlot_$X$"
+						Pos="306,97"
+						Size="60,60"
+						Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+					/>
+					<MaskedImage Name="WeaponCooldown_$X$"
+						Pos="306,97"
+						Size="60,60"
+						Image="UI/BATTLE_UI/spells/cooldown_rectangular.tga"
+						AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Effect Name="WeaponCooldownEffect_$X$"
+						Pos="321,113"
+						Size="28,28"
+						Effect="UI/HUD/Icon_effects/skill_ready.N2E"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="WeaponShortcutIcon_$X$"
+						Pos="332,139"
+						Size="32,32"
+						Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+						MouseSenseEnabled="0"
+						Visible="0"
+					/>
+					<Image Name="WeaponShortcutIconController_$X$"
+						Pos="326,127"
+						Size="48,48"
+						Image="none"
+						MouseSenseEnabled="0"
+						Visible="0"
+					/>
+					<Text Name="WeaponShortcutText_$X$"
+						Pos="341,142"
+						Size="20,20"
+						Style="Shortcut"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+					/>
+					<Container Name="SummoningSkillInfo_$X$" Pos="307,103" IgnoreScissor="1" Visible="0">
+						<Image Name="MinionWeaponModuleFrame_$X$"
+							Pos="36,-7"
+							Size="23,23"
+							Image="UI/BATTLE_UI/Main/Minion/MinionWeaponModuleFrame.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="MinionDefaultSecondaryWeaponModuleItem_$X$"
+							Pos="40,-3"
+							Size="15,15"
+						/>
+						<Artifact Name="MinionSecondaryWeaponModuleItem_$X$"
+							Pos="40,-3"
+							Style="Item1x1"
+						/>
+						<Container Size="12,35" Pos="4,13">
+
+							<FlowContainer  Width="12" IgnoreScissor="1" VAlign="bottom"
+								BackgroundTopSize="2"
+								BackgroundBotSize="1"
+								BackgroundTopImage="UI\common\mozaic_background.tga"
+								BackgroundMidImage="UI\common\mozaic_background.tga"
+								BackgroundBotImage="UI\common\mozaic_background.tga" 
+							>
+								<Loop Count="@MinionBoosterCount" Variable="$Y$" Offset="0,12">
+									<Image Name="MinionBooster_$X$_Module_$Y$"
+										MarginTop="1"
+										MarginBottom="1"
+										Pos="1,0"
+										Size="10,10"
+										Image="UI\TechAdept\booster_locked.tga"
+									/>
+								</Loop>
+							</FlowContainer>
+						</Container>
+					</Container>
+					<Container Name="MinionInfo_$X$" Pos="307,163" Visible="0">
+						<Image Name="MinionNumberFrame_$X$"
+							Pos="11,9"
+							Size="34,18"
+							Image="UI/BATTLE_UI/Main/Minion/MinionNumberFrame.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image
+							Pos="5,4"
+							Size="48,4"
+							Image="UI/BATTLE_UI/Main/Minion/MinionHealthBarBg.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="MinionHealthBar_$X$"							
+							Pos="5,4"
+							Size="48,4"
+							Image="UI/BATTLE_UI/Main/Minion/MinionHealthBar.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="MinionHealthBarFrame_$X$"
+							Size="58,14"
+							Image="UI/BATTLE_UI/Main/Minion/MinionHealthFrame.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Text Name="MinionNumber_$X$"
+							Pos="12,11"
+							Size="34,15"
+							Style="Shortcut"
+							TextAlignH="center"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="3/4"
+						/>
+					</Container>
+				</Container>
+			</Loop>
+			
+			<Container Name="1HandedLeft">
+				<Image Name="1HandedLeft_AmmoBottom"
+					Pos="428,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBgBottom.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="1HandedLeft_AmmoBar"
+					Pos="458,81"
+					Size="72,12"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBlue.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="1HandedLeft_AmmoBack"
+					Pos="428,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBg.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="1HandedLeft_AmmoIcon"
+					Pos="432,77"
+					Size="28,16"
+					Image="UI/BATTLE_UI/Main/wset_iconAmmo.tga"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container Name="1HandedRight">
+				<Image Name="1HandedRight_AmmoBottom"
+					Pos="310,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBgBottom.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="1HandedRight_AmmoBar"
+					Pos="340,81"
+					Size="72,12"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBlue.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="1HandedRight_AmmoBack"
+					Pos="310,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBg.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="1HandedRight_AmmoIcon"
+					Pos="314,77"
+					Size="28,16"
+					Image="UI/BATTLE_UI/Main/wset_iconAmmo.tga"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container Name="2Handed">
+				<Image Name="2Handed_AmmoBottom"
+					Pos="310,73"
+					Size="236,24"
+					Image="UI/BATTLE_UI/Main/wset_2h_barBgBottom.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="2Handed_AmmoBar"
+					Pos="340,81"
+					Size="192,12"
+					Image="UI/BATTLE_UI/Main/wset_2h_barBlue.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="2Handed_AmmoBack"
+					Pos="310,73"
+					Size="236,24"
+					Image="UI/BATTLE_UI/Main/wset_2h_barBg.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="2Handed_AmmoIcon"
+					Pos="314,77"
+					Size="28,16"
+					Image="UI/BATTLE_UI/Main/wset_iconAmmo.tga"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			
+			<Container Name="AmmoReloadController" Visible="0" >
+				<XBOXButton Name="AmmoReloadControllerButton"
+					Pos="301,27"
+					Size="48,48"
+					SetButton="X"
+					SetCustomImage="UI/BATTLE_UI/Main/X.tga"
+				/>
+				<Text
+					Pos="342,40"
+					Height="25"
+					TextAlignH="left"
+					Style="Headline_Large_Color_Glow"
+					Text="controller.buttons.reload"
+				/>				
+			</Container>
+			
+			<Container Name="ArmorSkill_1">
+				<Image Name="ArmorSlot_1"
+					Pos="562,100"
+					Size="52,52"
+				/>
+				<MaskedImage Name="ArmorCooldown_1"
+					Pos="564,101"
+					Size="52,52"
+					Image="UI/BATTLE_UI/spells/cooldown.tga"
+					AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Effect Name="ArmorCooldownEffect_1"
+					Pos="564,101"
+					Size="52,52"
+					Effect="UI/HUD/Icon_effects/support_skill_ready.N2E"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="ArmorShortcutIcon_1"
+					Pos="571,137"
+					Size="32,32"
+					Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Image Name="ArmorShortcutIconController_1"
+					Pos="562,129"
+					Size="48,48"
+					Image="UI/BATTLE_UI/Main/LT.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Text Name="ArmorShortcutText_1"
+					Pos="581,140"
+					Size="20,20"
+					Style="Shortcut"
+					TextAlignH="center"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Container Name="ArmorSkillSummoningSkillInfo_1" Pos="546,103" IgnoreScissor="1" Visible="0">
+					<Image Name="ArmorSkillMinionWeaponModuleFrame_1"
+						Pos="36,-7"
+						Size="23,23"
+						Image="UI/BATTLE_UI/Main/Minion/MinionWeaponModuleFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="ArmorSkillMinionDefaultSecondaryWeaponModuleItem_1"
+						Pos="40,-3"
+						Size="15,15"
+					/>
+					<Artifact Name="ArmorSkillMinionSecondaryWeaponModuleItem_1"
+						Pos="40,-3"
+						Style="Item1x1"
+					/>
+					<Container Size="12,35" Pos="4,13">
+
+						<FlowContainer  Width="12" IgnoreScissor="1" VAlign="bottom"
+							BackgroundTopSize="2"
+							BackgroundBotSize="1"
+							BackgroundTopImage="UI\common\mozaic_background.tga"
+							BackgroundMidImage="UI\common\mozaic_background.tga"
+							BackgroundBotImage="UI\common\mozaic_background.tga" 
+						>
+							<Loop Count="@MinionBoosterCount" Variable="$Y$" Offset="0,12">
+								<Image Name="ArmorSkillMinionBooster_1_Module_$Y$"
+									MarginTop="1"
+									MarginBottom="1"
+									Pos="1,0"
+									Size="10,10"
+									Image="UI\TechAdept\booster_locked.tga"
+								/>
+							</Loop>
+						</FlowContainer>
+					</Container>
+				</Container>
+				<Container Name="ArmorSkillMinionInfo_1" Pos="547,163" Visible="0">
+					<Image Name="ArmorSkillMinionNumberFrame_1"
+						Pos="11,9"
+						Size="34,18"
+						Image="UI/BATTLE_UI/Main/Minion/MinionNumberFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBarBg.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="ArmorSkillMinionHealthBar_1"							
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBar.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="ArmorSkillMinionHealthBarFrame_1"
+						Size="58,14"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="ArmorSkillMinionNumber_1"
+						Pos="12,11"
+						Size="34,15"
+						Style="Shortcut"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="3/4"
+					/>
+				</Container>
+			</Container>
+			
+			<Container Pos="0,-852">
+				<Image Name="XPBarBack"
+					Pos="60,1033"
+					Size="608,36"
+					Image="UI/BATTLE_UI/Main/battle_XP_bg.dds"
+					InitPopup="bottomleft,topleft"
+				/>
+				<Image Name="XPBar"
+					Pos="72,1050"
+					Size="580,12"
+					Image="UI/BATTLE_UI/Main/battle_XP.dds"
+					MouseSenseEnabled="0"
+				/>
+				<Icon Name="InventoryIcon"
+					Pos="203,1008"
+					Size="40,32"
+					IdleImg="UI/BATTLE_UI/Main/battle_inventoryOff.tga"
+					RolloverImg="UI/BATTLE_UI/Main/battle_inventoryOver.tga"
+					PressImg="UI/BATTLE_UI/Main/battle_inventoryOver.tga"
+					InitPopup="bottomcenter,topcenter"
+					Toolti="openworld.GUI.mail.OpenInventory"
+					ShowCategory="mouse"
+				/>
+			</Container>
+			
+			<Container Name="ArmorSkill_0">
+				<MaskedImage Name="ClassResourceWarpHeatBackHigh"
+					Pos="611,73"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftResource_WarpHeat_high_bg.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<MaskedImage Name="ClassResourceWarpHeatBackMed"
+					Pos="611,73"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftResource_WarpHeat_medium_bg.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<MaskedImage Name="ClassResourceWarpHeatBackLow"
+					Pos="611,73"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftResource_WarpHeat_low_bg.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<MaskedImage Name="ClassResource"
+					Pos="611,73"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftResource.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<MaskedImage Name="ClassReserve"
+					Pos="611,73"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftReserve.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image
+					Name="BattleLeftBg2"
+					Pos="604,67"
+					Size="108,120"
+					Image="UI/BATTLE_UI/Main/battle_leftBg2.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="ArmorSlot_0"
+					Pos="629,94"
+					Size="60,60"
+				/>
+				<Image Name="ArmorSlot_0_Psykerskill"
+					Visible="0"
+					Pos="627,92"
+					Size="60,60"
+					Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+				/>
+				<MaskedImage Name="ArmorCooldown_0"
+					Pos="629,95"
+					Size="60,60"
+					Image="UI/BATTLE_UI/spells/cooldown.tga"
+					AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Effect Name="ArmorCooldownEffect_0"
+					Pos="628,92"
+					Size="60,60"
+					Effect="UI/HUD/Icon_effects/armor_skill_ready.N2E"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="ArmorShortcutIcon_0"
+					Pos="663,138"
+					Size="32,32"
+					Image="UI/BATTLE_UI/Main/shortcut_empty_inoculator.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Image Name="ArmorShortcutIconController_0"
+					Pos="615,130"
+					Size="84,48"
+					Image="UI/BATTLE_UI/Main/LT-RT.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Text Name="ArmorShortcutText_0"
+					Pos="672,141"
+					Size="20,20"
+					Style="Shortcut"
+					TextAlignH="center"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Container Name="ArmorSkillSummoningSkillInfo_0" Pos="628,98" IgnoreScissor="1" Visible="0">
+					<Image Name="ArmorSkillMinionWeaponModuleFrame_0"
+						Pos="36,-7"
+						Size="23,23"
+						Image="UI/BATTLE_UI/Main/Minion/MinionWeaponModuleFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="ArmorSkillMinionDefaultSecondaryWeaponModuleItem_0"
+						Pos="40,-3"
+						Size="15,15"
+					/>
+					<Artifact Name="ArmorSkillMinionSecondaryWeaponModuleItem_0"
+						Pos="40,-3"
+						Style="Item1x1"
+					/>
+					<Container Name="MinionBoosterControllerPos" Size="12,35" Pos="4,13">
+						<FlowContainer  Width="12" IgnoreScissor="1" VAlign="bottom"
+							BackgroundTopSize="2"
+							BackgroundBotSize="1"
+							BackgroundTopImage="UI\common\mozaic_background.tga"
+							BackgroundMidImage="UI\common\mozaic_background.tga"
+							BackgroundBotImage="UI\common\mozaic_background.tga" 
+						>
+							<Loop Count="@MinionBoosterCount" Variable="$Y$">
+								<Image Name="ArmorSkillMinionBooster_0_Module_$Y$"
+									MarginTop="1"
+									MarginBottom="1"
+									Pos="1,0"
+									Size="10,10"
+									Image="UI\TechAdept\booster_locked.tga"
+								/>
+							</Loop>
+						</FlowContainer>
+					</Container>
+				</Container>
+				<Container Name="ArmorSkillMinionInfo_0" Pos="629,163" Visible="0">
+					<Image Name="ArmorSkillMinionNumberFrame_0"
+						Pos="11,9"
+						Size="34,18"
+						Image="UI/BATTLE_UI/Main/Minion/MinionNumberFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBarBg.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="ArmorSkillMinionHealthBar_0"							
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBar.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="ArmorSkillMinionHealthBarFrame_0"
+						Size="58,14"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="ArmorSkillMinionNumber_0"
+						Pos="12,11"
+						Size="34,15"
+						Style="Shortcut"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="3/4"
+					/>
+				</Container>
+			</Container>
+			
+			<Container Name="GrenadeCharges">
+				<Image Name="GrenadeCharge1"
+					Pos="562,140"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="GrenadeCharge2"
+					Pos="554,130"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="GrenadeCharge3"
+					Pos="552,118"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="GrenadeCharge4"
+					Pos="556,104"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+                <Image Name="GrenadeCharge5"
+                    Pos="565,94"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+                <Image Name="GrenadeCharge6"
+                    Pos="577,90"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+
+			</Container>
+		
+			<Container Name="BuffDebuff" >
+				<FlowContainer Horizontal="1"  Pos="708,93" >
+					<Container Name="WorldSkillContainer" MarginRight="10" IgnoreScissor="1" Visible="0" Tutorial="World_skill">
+						<Image ShowCategory="mouse"
+							Pos="11,39"
+							Size="60,40"
+							Image="UI/BATTLE_UI/Main/battle_worldskillBackground.tga"
+						/>
+						<Image Name="WorldSkillIcon"
+							Pos="0,0"
+							Size="68,68"
+							Image="UI/spells/World_Artillery_strike.tga"
+						/>
+						<Image Name="WorldSkillCooldown"
+							Pos="8,6"
+							Size="52,52"
+							Image="UI/BATTLE_UI/Main/battle_worldskillCooldown.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Text Name="WorldSkillCharge"
+							Pos="8,6"
+							Size="52,52"
+							Style="GrenadeCharge"
+							FontType="Share Tech Mono"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="x8"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="WorldSkillHotkey_PC"
+							Pos="38,39"
+							Size="32,32"
+							Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+							MouseSenseEnabled="0"
+							ShowCategory="mouse"
+						/>
+						<Image Name="WorldSkillHotkey_Controller"
+							Pos="10,35"
+							Size="48,48"
+							Image="UI/BATTLE_UI/Main/Dpad_left.tga"
+							MouseSenseEnabled="0"
+							ShowCategory="controller"
+						/>
+						<Text Name="WorldSkillHotkey_Text"
+							Pos="48,41"
+							Size="20,20"
+							Style="Text_Small_Light"
+							TextAlignH="center"
+							TextAlignV="center"
+							Text="5"
+							MouseSenseEnabled="0"
+							ShowCategory="mouse"
+						/>
+					</Container>
+					<Container>	
+						<Container Name="Buff" Pos="0,7" IgnoreScissor="1">
+							<Loop Count="@DebuffCount" Variable="$X$" Offset="48,0">
+								<ImageArray Name="Buff$X$"
+									Source="MCAS_BUFF_DEBUFF_ICONS"
+									Size="44,44"
+									InitPopup="bottomcenter,topcenter"
+									Tooltip="_buff"
+									Visible="0"
+								/>
+								<MaskedImage Name="BuffCooldown$X$"
+									Size="44,44"
+									Image="UI/BATTLE_UI/spells/duration.tga"
+									AlphaMask="UI/BATTLE_UI/spells/duration_mask.tga"
+									MouseSenseEnabled="0"
+									Visible="0"
+								/>
+								<Text Name="BuffDuration$X$"
+									MarginTop="-34"
+									Size="44,44"
+									Style="GrenadeCharge"
+									FontSize="18"
+									BiggerFontSize="18"
+									TextAlignH="center"
+									TextAlignV="center"
+									MouseSenseEnabled="0"
+									Visible="1"
+								/>
+								<Text Name="BuffStackCount$X$"
+									Size="44,44"
+									Pos="-5,0"
+									Style="BuffStackCount"
+									TextAlignH="right"
+									TextAlignV="bottom"
+									MouseSenseEnabled="0"
+									Visible="0"
+								/>
+							</Loop>
+						</Container>
+						<Container Name="Debuff" Pos="0,57">
+							<Loop Count="@DebuffCount" Variable="$X$" Offset="44,0">
+								<ImageArray Name="Debuff$X$"
+									Source="MCAS_BUFF_DEBUFF_ICONS"
+									Size="44,44"
+									InitPopup="bottomcenter,topcenter"
+									Tooltip="_debuff"
+									Visible="0"
+								/>
+								<MaskedImage Name="DebuffCooldown$X$"
+									Size="44,44"
+									Image="UI/BATTLE_UI/spells/duration.tga"
+									AlphaMask="UI/BATTLE_UI/spells/duration_mask.tga"
+									MouseSenseEnabled="0"
+									Visible="0"
+								/>
+								<Text Name="DebuffDuration$X$"
+									Size="44,44"
+									Style="GrenadeCharge"
+									TextAlignH="center"
+									TextAlignV="center"
+									MouseSenseEnabled="0"
+									Visible="1"
+								/>
+							</Loop>
+						</Container>
+					</Container>
+				</FlowContainer>
+						
+				<Container Pos="310,-84" Size="600,150">
+					<FlowContainer HAlign="left" VAlign="bottom">
+						<Container Name="AltDebuff" IgnoreScissor="1">
+							<Loop Count="@DebuffCount" Variable="$X$" Offset="38,0">
+								<ImageArray Name="AltDebuff$X$"
+									Source="MCAS_BUFF_DEBUFF_ICONS"
+									Size="35,35"
+									InitPopup="bottomcenter,topcenter"
+									Tooltip="_debuff"
+									Visible="0"
+								/>
+								<MaskedImage Name="AltDebuffCooldown$X$"
+									Size="35,35"
+									Image="UI/BATTLE_UI/spells/duration.tga"
+									AlphaMask="UI/BATTLE_UI/spells/duration_mask.tga"
+									MouseSenseEnabled="0"
+									Visible="0"
+								/>
+								<Text Name="AltDebuffDuration$X$"
+									Size="35,35"
+									MarginTop="-28"
+									Style="GrenadeCharge"
+									FontSize="17"
+									BiggerFontSize="17"
+									TextAlignH="center"
+									TextAlignV="center"
+									MouseSenseEnabled="0"
+									Visible="1"
+									Text=""
+								/>
+							</Loop>
+						</Container>
+						<Container Name="AltBuff" IgnoreScissor="1" MarginTop="27">
+							<Loop Count="@DebuffCount" Variable="$X$" Offset="38,0">
+								<ImageArray Name="AltBuff$X$"
+									Source="MCAS_BUFF_DEBUFF_ICONS"
+									Size="35,35"
+									InitPopup="bottomcenter,topcenter"
+									Tooltip="_buff"
+									Visible="0"
+								/>
+								<MaskedImage Name="AltBuffCooldown$X$"
+									Size="35,35"
+									Image="UI/BATTLE_UI/spells/duration.tga"
+									AlphaMask="UI/BATTLE_UI/spells/duration_mask.tga"
+									MouseSenseEnabled="0"
+									Visible="0"
+								/>
+								<Text Name="AltBuffDuration$X$"
+									MarginTop="-28"
+									Size="35,35"
+									Style="GrenadeCharge"
+									FontSize="17"
+									BiggerFontSize="17"
+									TextAlignH="center"
+									TextAlignV="center"
+									MouseSenseEnabled="0"
+									Visible="1"
+								/>
+								<Text Name="AltBuffStackCount$X$"
+									Size="35,35"
+									Pos="-5,0"
+									Style="BuffStackCount"
+									TextAlignH="right"
+									TextAlignV="bottom"
+									MouseSenseEnabled="0"
+									Visible="0"
+								/>
+							</Loop>
+						</Container>
+					</FlowContainer>	
+				</Container>
+			</Container>
+				
+		</Container>
+			
+		<Effect Name="FostosHalalEffect"
+			Pos="0,-872"
+			Size="1920,1080"
+			Effect="UI/HUD/Death_marker/death_marker.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+
+	<Container Name="CoopUI" Pos="1208,852" GuiAlign="bottomright" IgnoreScissor="1" Visible="1">
+		<Image
+			Size="712,208"
+			Image="UI/BATTLE_UI/Main/CouchCoop/battle_rightBgBottom.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="CoopBattleLeftBg"
+			Size="712,208"
+			Image="UI/BATTLE_UI/Main/CouchCoop/battle_rightBg_controller.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="CoopHoldShiftToJason"
+			Visible="0"
+			Pos="-250,108"
+			Size="250,40"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="battle.gui.popup.shifttocover"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		
+		<Container Name="CoopSuppressionAndHP" Pos="364,0">
+			<MaskedImage Name="CoopSuppressionBarYellow"
+				Pos="100,11"
+				Size="148,148"
+				Image="UI/BATTLE_UI/Main/battle_supressionYellow.tga"
+				AlphaMask="UI/BATTLE_UI/Main/cooldown_supression_mask.tga"
+			/>
+			<MaskedImage Name="CoopSuppressionBarRed"
+				Pos="100,11"
+				Size="148,148"
+				Image="UI/BATTLE_UI/Main/battle_supressionRed.tga"
+				AlphaMask="UI/BATTLE_UI/Main/cooldown_supression_mask.tga"
+			/>
+			<MaskedImage Name="CoopSuppressionBarGreen"
+				Pos="100,11"
+				Size="148,148"
+				Image="UI/BATTLE_UI/Main/battle_supressionGreen.tga"
+				AlphaMask="UI/BATTLE_UI/Main/cooldown_supression_mask.tga"
+			/>
+			<Dummy Name="CoopSuppressionBarDummy"
+				Pos="100,11"
+				Size="148,148"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			<MagicBulb Name="CoopShieldBar"
+				Pos="123,51"
+				Size="108,108"
+				Image="UI/BATTLE_UI/Main/battle_shieldBar.tga"
+				AlphaMask="UI/BATTLE_UI/Main/MagicBulbGlass.dds"
+			/>
+			<MagicBulb Name="CoopHPBar"
+				Pos="123,51"
+				Size="108,108"
+				Image="UI/BATTLE_UI/Main/battle_hpBar.tga"
+				AlphaMask="UI/BATTLE_UI/Main/MagicBulbGlass.dds"
+			/>
+			<Dummy Name="CoopHPBarDummy"
+				Pos="123,51"
+				Size="108,108"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			
+		</Container>
+		
+		<Container Name="CoopMedkit" Pos="564,0">
+			<Icon Name="CoopMedkitIcon"
+				Pos="54,57"
+				Size="40,100"
+				IdleImg="UI/BATTLE_UI/Main/inoculator_empty.tga"
+				RolloverImg="UI/BATTLE_UI/Main/inoculator_empty.tga"
+				PressImg="UI/BATTLE_UI/Main/inoculator_empty_pressed.tga"
+			/>
+			<MaskedImage Name="CoopMedkitCooldown"
+				Pos="54,57"
+				Size="40,100"
+				Image="UI/BATTLE_UI/Main/cooldown_inoculator.tga"
+				AlphaMask="UI/BATTLE_UI/Spells/overheat_mask.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Effect Name="CoopMedkitCooldownEffect"
+				Pos="54,57"
+				Size="40,100"
+				Effect="UI/HUD/Icon_effects/inoculator_ready.N2E"
+				MouseSenseEnabled="0"
+			/>
+			<Text Name="CoopMedkitCharges"
+				Visible="0"
+				Pos="61,59"
+				Size="24,30"
+				Style="Text_Normal_Light"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="69"
+				MouseSenseEnabled="0"
+			/>
+			<Image Name="CoopMedkitShortcutIcon"
+				Pos="37,135"
+				Size="32,32"
+				Image="UI/BATTLE_UI/Main/CouchCoop/shortcut_empty_inoculator_right.tga"
+				MouseSenseEnabled="0"
+				Visible="0"
+			/>
+			<Image Name="CoopMedkitShortcutIconController"
+				Pos="49,125"
+				Size="48,48"
+				Image="UI/BATTLE_UI/Main/RB.tga"
+				MouseSenseEnabled="0"
+				Visible="0"
+			/>
+			<Text Name="CoopMedkitShortcut"
+				Pos="39,138"
+				Size="20,20"
+				Style="Shortcut"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text=""
+				MouseSenseEnabled="0"
+				Visible="0"
+			/>
+			<Container Name="CoopMedkitChargesIcons">
+				<Image Name="CoopMedkitCharge1"
+					Pos="92,129"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="CoopMedkitCharge2"
+					Pos="92,116"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="CoopMedkitCharge3"
+					Pos="92,103"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="CoopMedkitCharge4"
+					Pos="92,90"
+					Size="16,16"
+					Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+					MouseSenseEnabled="0"
+				/>
+                <Image Name="CoopMedkitCharge5"
+                    Pos="92,77"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+                <Image Name="CoopMedkitCharge6"
+                    Pos="92,64"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+				<Image Name="CoopMedkitCharge7"
+                    Pos="86,51"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+				<Image Name="CoopMedkitCharge8"
+                    Pos="78,40"
+                    Size="16,16"
+                    Image="UI/BATTLE_UI/Main/inoculator_chargeOff.tga"
+                    MouseSenseEnabled="0"
+                />
+			</Container>
+		</Container>
+		
+		<Container Name="SkillsAndBuffs" IgnoreScissor="1" Pos="40,0">
+			<Icon Name="CoopSwitchWeapon"
+				Pos="254,98"
+				Size="40,56"
+				IdleImg="UI/BATTLE_UI/Main/wset_switchOff.tga"
+				RolloverImg="UI/BATTLE_UI/Main/wset_switchOver.tga"
+				PressImg="UI/BATTLE_UI/Main/wset_switchOff.tga"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="battle.gui.popup.switchweaponbutton"
+			/>
+		
+			<Loop Count="@WeaponSkillCount" Variable="$X$" Offset="-60,0">
+				<Container>
+					<Image Name="CoopWeaponSlot_$X$"
+						Pos="306,97"
+						Size="60,60"
+						Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+					/>
+					<MaskedImage Name="CoopWeaponCooldown_$X$"
+						Pos="306,97"
+						Size="60,60"
+						Image="UI/BATTLE_UI/spells/cooldown_rectangular.tga"
+						AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Effect Name="CoopWeaponCooldownEffect_$X$"
+						Pos="321,113"
+						Size="28,28"
+						Effect="UI/HUD/Icon_effects/skill_ready.N2E"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopWeaponShortcutIcon_$X$"
+						Pos="332,139"
+						Size="32,32"
+						Image="UI/BATTLE_UI/Main/CouchCoop/shortcut_empty_right.tga"
+						MouseSenseEnabled="0"
+						Visible="0"
+					/>
+					<Image Name="CoopWeaponShortcutIconController_$X$"
+						Pos="300,127"
+						Size="48,48"
+						Image="none"
+						MouseSenseEnabled="0"
+						Visible="0"
+					/>
+					<Text Name="CoopWeaponShortcutText_$X$"
+						Pos="341,142"
+						Size="20,20"
+						Style="Shortcut"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+					/>
+					<Container Name="CoopSummoningSkillInfo_$X$" Pos="307,103" IgnoreScissor="1" Visible="0">
+						<Image Name="CoopMinionWeaponModuleFrame_$X$"
+							Pos="36,-9"
+							Size="23,23"
+							Image="UI/BATTLE_UI/Main/Minion/MinionWeaponModuleFrame.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="CoopMinionDefaultSecondaryWeaponModuleItem_$X$"
+							Pos="40,-3"
+							Size="15,15"
+						/>
+						<Artifact Name="CoopMinionSecondaryWeaponModuleItem_$X$"
+							Pos="40,-5"
+							Style="Item1x1"
+						/>
+						<Container Size="12,35" Pos="42,13">
+
+							<FlowContainer  Width="12" IgnoreScissor="1" VAlign="bottom"
+								BackgroundTopSize="2"
+								BackgroundBotSize="1"
+								BackgroundTopImage="UI\common\mozaic_background.tga"
+								BackgroundMidImage="UI\common\mozaic_background.tga"
+								BackgroundBotImage="UI\common\mozaic_background.tga" 
+							>
+								<Loop Count="@MinionBoosterCount" Variable="$Y$" Offset="0,12">
+									<Image Name="CoopMinionBooster_$X$_Module_$Y$"
+										MarginTop="1"
+										MarginBottom="1"
+										Pos="1,0"
+										Size="10,10"
+										Image="UI\TechAdept\booster_locked.tga"
+									/>
+								</Loop>
+							</FlowContainer>
+						</Container>
+					</Container>
+					<Container Name="CoopMinionInfo_$X$" Pos="307,168" Visible="0">
+						<Image Name="CoopMinionNumberFrame_$X$"
+							Pos="11,9"
+							Size="34,18"
+							Image="UI/BATTLE_UI/Main/Minion/MinionNumberFrame.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image
+							Pos="5,4"
+							Size="48,4"
+							Image="UI/BATTLE_UI/Main/Minion/MinionHealthBarBg.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="CoopMinionHealthBar_$X$"							
+							Pos="5,4"
+							Size="48,4"
+							Image="UI/BATTLE_UI/Main/Minion/MinionHealthBar.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Image Name="CoopMinionHealthBarFrame_$X$"
+							Size="58,14"
+							Image="UI/BATTLE_UI/Main/Minion/MinionHealthFrame.tga"
+							MouseSenseEnabled="0"
+						/>
+						<Text Name="CoopMinionNumber_$X$"
+							Pos="12,11"
+							Size="34,15"
+							Style="Shortcut"
+							TextAlignH="center"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							Text="3/4"
+						/>
+					</Container>
+				</Container>
+			</Loop>
+			
+			<Container Name="Coop1HandedLeft" Pos="-298,0">
+				<Image Name="Coop1HandedLeft_AmmoBottom"
+					Pos="428,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBgBottom.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="Coop1HandedLeft_AmmoBar"
+					Pos="458,81"
+					Size="72,12"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBlue.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="Coop1HandedLeft_AmmoBack"
+					Pos="428,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBg.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="Coop1HandedLeft_AmmoIcon"
+					Pos="432,77"
+					Size="28,16"
+					Image="UI/BATTLE_UI/Main/wset_iconAmmo.tga"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container Name="Coop1HandedRight" Pos="-62,0">
+				<Image Name="Coop1HandedRight_AmmoBottom"
+					Pos="310,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBgBottom.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="Coop1HandedRight_AmmoBar"
+					Pos="340,81"
+					Size="72,12"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBlue.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="Coop1HandedRight_AmmoBack"
+					Pos="310,73"
+					Size="116,24"
+					Image="UI/BATTLE_UI/Main/wset_1h_barBg.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="Coop1HandedRight_AmmoIcon"
+					Pos="314,77"
+					Size="28,16"
+					Image="UI/BATTLE_UI/Main/wset_iconAmmo.tga"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			<Container Name="Coop2Handed" Pos="-180,0">
+				<Image Name="Coop2Handed_AmmoBottom"
+					Pos="310,73"
+					Size="236,24"
+					Image="UI/BATTLE_UI/Main/wset_2h_barBgBottom.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="Coop2Handed_AmmoBar"
+					Pos="340,81"
+					Size="192,12"
+					Image="UI/BATTLE_UI/Main/wset_2h_barBlue.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="Coop2Handed_AmmoBack"
+					Pos="310,73"
+					Size="236,24"
+					Image="UI/BATTLE_UI/Main/wset_2h_barBg.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image Name="Coop2Handed_AmmoIcon"
+					Pos="314,77"
+					Size="28,16"
+					Image="UI/BATTLE_UI/Main/wset_iconAmmo.tga"
+					MouseSenseEnabled="0"
+				/>
+			</Container>
+			
+			<Container Name="CoopAmmoReloadController" Visible="0" Pos="-180,0">
+				<XBOXButton
+					Pos="301,27"
+					Size="48,48"
+					SetButton="X"
+					SetCustomImage="UI/BATTLE_UI/Main/X.tga"
+				/>
+				<Text
+					Pos="342,40"
+					Height="25"
+					TextAlignH="left"
+					Style="Headline_Large_Color_Glow"
+					Text="controller.buttons.reload"
+				/>				
+			</Container>
+			<Container Name="CoopArmorSkill_0" Pos="-646,0">
+				<MaskedImage Name="CoopClassResourceWarpHeatBackHigh"
+					Pos="611,74"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftResource_WarpHeat_high_bg.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<MaskedImage Name="CoopClassResourceWarpHeatBackMed"
+					Pos="611,74"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftResource_WarpHeat_medium_bg.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<MaskedImage Name="CoopClassResourceWarpHeatBackLow"
+					Pos="611,74"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/battle_leftResource_WarpHeat_low_bg.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<MaskedImage Name="CoopClassResource"
+					Pos="611,74"
+					Size="92,92"
+					Image="UI/BATTLE_UI/Main/CouchCoop/battle_rightResource.tga"
+					AlphaMask="UI/BATTLE_UI/Main/cooldown_armor_mask.tga"
+					InitPopup="bottomcenter,topcenter"
+				/>
+				<Image
+					Name="CoopBattleLeftBg2"
+					Pos="604,67"
+					Size="108,120"
+					Image="UI/BATTLE_UI/Main/CouchCoop/battle_rightBg2.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="CoopArmorSlot_0"
+					Pos="630,94"
+					Size="60,60"
+				/>
+				<MaskedImage Name="CoopArmorCooldown_0"
+					Pos="629,94"
+					Size="60,60"
+					Image="UI/BATTLE_UI/spells/cooldown.tga"
+					AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Effect Name="CoopArmorCooldownEffect_0"
+					Pos="628,91"
+					Size="60,60"
+					Effect="UI/HUD/Icon_effects/armor_skill_ready.N2E"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="CoopArmorShortcutIcon_0"
+					Pos="663,138"
+					Size="32,32"
+					Image="UI/BATTLE_UI/Main/CouchCoop/shortcut_empty_right.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Image Name="CoopArmorShortcutIconController_0"
+					Pos="615,130"
+					Size="84,48"
+					Image="UI/BATTLE_UI/Main/LT-RT.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Text Name="CoopArmorShortcutText_0"
+					Pos="665,141"
+					Size="20,20"
+					Style="Shortcut"
+					TextAlignH="center"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Container Name="CoopArmorSkillSummoningSkillInfo_0" Pos="567,103" IgnoreScissor="1" Visible="0">
+					<Image Name="CoopArmorSkillMinionWeaponModuleFrame_0"
+						Pos="36,-9"
+						Size="23,23"
+						Image="UI/BATTLE_UI/Main/Minion/MinionWeaponModuleFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopArmorSkillMinionDefaultSecondaryWeaponModuleItem_0"
+						Pos="40,-3"
+						Size="15,15"
+					/>
+					<Artifact Name="CoopArmorSkillMinionSecondaryWeaponModuleItem_0"
+						Pos="40,-5"
+						Style="Item1x1"
+					/>
+					<Container Size="12,35" Pos="42,13">
+
+						<FlowContainer  Width="12" IgnoreScissor="1" VAlign="bottom"
+							BackgroundTopSize="2"
+							BackgroundBotSize="1"
+							BackgroundTopImage="UI\common\mozaic_background.tga"
+							BackgroundMidImage="UI\common\mozaic_background.tga"
+							BackgroundBotImage="UI\common\mozaic_background.tga" 
+						>
+							<Loop Count="@MinionBoosterCount" Variable="$Y$" Offset="0,12">
+								<Image Name="CoopArmorSkillMinionBooster_0_Module_$Y$"
+									MarginTop="1"
+									MarginBottom="1"
+									Pos="1,0"
+									Size="10,10"
+									Image="UI\TechAdept\booster_locked.tga"
+								/>
+							</Loop>
+						</FlowContainer>
+					</Container>
+				</Container>
+				<Container Name="CoopArmorSkillMinionInfo_0" Pos="568,168" Visible="0">
+					<Image Name="CoopArmorSkillMinionNumberFrame_0"
+						Pos="11,9"
+						Size="34,18"
+						Image="UI/BATTLE_UI/Main/Minion/MinionNumberFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBarBg.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopArmorSkillMinionHealthBar_0"							
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBar.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopArmorSkillMinionHealthBarFrame_0"
+						Size="58,14"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="CoopArmorSkillMinionNumber_0"
+						Pos="12,11"
+						Size="34,15"
+						Style="Shortcut"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="3/4"
+					/>
+				</Container>
+			</Container>
+			<Container Name="CoopArmorSkill_1" Pos="-544,1">
+				<Image Name="CoopArmorSlot_1"
+					Pos="562,100"
+					Size="52,52"
+				/>
+				<MaskedImage Name="CoopArmorCooldown_1"
+					Pos="564,101"
+					Size="52,52"
+					Image="UI/BATTLE_UI/spells/cooldown.tga"
+					AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Effect Name="CoopArmorCooldownEffect_1"
+					Pos="564,101"
+					Size="52,52"
+					Effect="UI/HUD/Icon_effects/support_skill_ready.N2E"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="CoopArmorShortcutIcon_1"
+					Pos="570,137"
+					Size="32,32"
+					Image="UI/BATTLE_UI/Main/CouchCoop/shortcut_empty_right.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Image Name="CoopArmorShortcutIconController_1"
+					Pos="572,129"
+					Size="48,48"
+					Image="UI/BATTLE_UI/Main/LT.tga"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Text Name="CoopArmorShortcutText_1"
+					Pos="572,140"
+					Size="20,20"
+					Style="Shortcut"
+					TextAlignH="center"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Visible="0"
+				/>
+				<Container Name="CoopArmorSkillSummoningSkillInfo_1" Pos="567,103" IgnoreScissor="1" Visible="0">
+					<Image Name="CoopArmorSkillMinionWeaponModuleFrame_1"
+						Pos="36,-9"
+						Size="23,23"
+						Image="UI/BATTLE_UI/Main/Minion/MinionWeaponModuleFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopArmorSkillMinionDefaultSecondaryWeaponModuleItem_1"
+						Pos="40,-3"
+						Size="15,15"
+					/>
+					<Artifact Name="CoopArmorSkillMinionSecondaryWeaponModuleItem_1"
+						Pos="40,-5"
+						Style="Item1x1"
+					/>
+					<Container Size="12,35" Pos="42,13">
+
+						<FlowContainer  Width="12" IgnoreScissor="1" VAlign="bottom"
+							BackgroundTopSize="2"
+							BackgroundBotSize="1"
+							BackgroundTopImage="UI\common\mozaic_background.tga"
+							BackgroundMidImage="UI\common\mozaic_background.tga"
+							BackgroundBotImage="UI\common\mozaic_background.tga" 
+						>
+							<Loop Count="@MinionBoosterCount" Variable="$Y$" Offset="0,12">
+								<Image Name="CoopArmorSkillMinionBooster_1_Module_$Y$"
+									MarginTop="1"
+									MarginBottom="1"
+									Pos="1,0"
+									Size="10,10"
+									Image="UI\TechAdept\booster_locked.tga"
+								/>
+							</Loop>
+						</FlowContainer>
+					</Container>
+				</Container>
+				<Container Name="CoopArmorSkillMinionInfo_1" Pos="568,168" Visible="0">
+					<Image Name="CoopArmorSkillMinionNumberFrame_1"
+						Pos="11,9"
+						Size="34,18"
+						Image="UI/BATTLE_UI/Main/Minion/MinionNumberFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBarBg.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopArmorSkillMinionHealthBar_1"							
+						Pos="5,4"
+						Size="48,4"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthBar.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopArmorSkillMinionHealthBarFrame_1"
+						Size="58,14"
+						Image="UI/BATTLE_UI/Main/Minion/MinionHealthFrame.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="CoopArmorSkillMinionNumber_1"
+						Pos="12,11"
+						Size="34,15"
+						Style="Shortcut"
+						TextAlignH="center"
+						TextAlignV="center"
+						MouseSenseEnabled="0"
+						Text="3/4"
+					/>
+				</Container>
+			</Container>
+			<Container Pos="-500,0">
+				<Container Name="CoopGrenadeCharges">
+					<Image Name="CoopGrenadeCharge1"
+						Pos="608,140"
+						Size="16,16"
+						Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopGrenadeCharge2"
+						Pos="614,130"
+						Size="16,16"
+						Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopGrenadeCharge3"
+						Pos="615,118"
+						Size="16,16"
+						Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopGrenadeCharge4"
+						Pos="612,104"
+						Size="16,16"
+						Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopGrenadeCharge5"
+						Pos="602,94"
+						Size="16,16"
+						Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="CoopGrenadeCharge6"
+						Pos="596,90"
+						Size="16,16"
+						Image="UI/BATTLE_UI/Main/beltskill_chargeOff.tga"
+						MouseSenseEnabled="0"
+					/>
+				</Container>
+			</Container>
+			
+			<Container Name="CoopWorldSkillContainer" Pos="-110,93" IgnoreScissor="1">
+				<Image ShowCategory="mouse"
+					Pos="11,39"
+					Size="60,40"
+					Image="UI/BATTLE_UI/Main/battle_worldskillBackground.tga"
+				/>
+				<Image Name="CoopWorldSkillIcon"
+					Pos="0,0"
+					Size="68,68"
+					Image="UI/spells/World_Artillery_strike.tga"
+				/>
+				<Image Name="CoopWorldSkillCooldown"
+					Pos="8,6"
+					Size="52,52"
+					Image="UI/BATTLE_UI/Main/battle_worldskillCooldown.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Text Name="CoopWorldSkillCharge"
+					Pos="8,6"
+					Size="52,52"
+					Style="GrenadeCharge"
+					FontType="Share Tech Mono"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="x8"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="CoopWorldSkillHotkey_PC"
+					Pos="38,39"
+					Size="32,32"
+					Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+					MouseSenseEnabled="0"
+					ShowCategory="mouse"
+				/>
+				<Image Name="CoopWorldSkillHotkey_Controller"
+					Pos="10,35"
+					Size="48,48"
+					Image="UI/BATTLE_UI/Main/Dpad_left.tga"
+					MouseSenseEnabled="0"
+					ShowCategory="controller"
+				/>
+				<Text Name="CoopWorldSkillHotkey_Text"
+					Pos="48,41"
+					Size="20,20"
+					Style="Text_Small_Light"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="5"
+					MouseSenseEnabled="0"
+					ShowCategory="mouse"
+				/>
+			</Container>
+			
+			<Container Name="CoopBuffDebuff" IgnoreScissor="1" Size="430,150" Pos="-100,-84">
+				<FlowContainer VAlign="bottom" HAlign="right">
+					<Container Name="CoopDebuff" IgnoreScissor="1">
+						<Loop Count="@DebuffCount" Variable="$X$" Offset="-38,0">
+							<ImageArray Name="CoopDebuff$X$"
+								Source="MCAS_BUFF_DEBUFF_ICONS"
+								Size="35,35"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="_debuff"
+							/>
+							<MaskedImage Name="CoopDebuffCooldown$X$"
+								Size="35,35"
+								Image="UI/BATTLE_UI/spells/cooldown.tga"
+								AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+								MouseSenseEnabled="0"
+							/>
+							<Text Name="CoopDebuffDuration$X$"
+								MarginTop="-28"
+								Size="35,35"
+								Style="GrenadeCharge"
+								FontSize="17"
+								BiggerFontSize="17"
+								TextAlignH="center"
+								TextAlignV="center"
+								MouseSenseEnabled="0"
+							/>
+						</Loop>
+					</Container>
+					<Container Name="CoopBuff" IgnoreScissor="1" MarginTop="27">
+						<Loop Count="@DebuffCount" Variable="$X$" Offset="-38,0">
+							<ImageArray Name="CoopBuff$X$"
+								Source="MCAS_BUFF_DEBUFF_ICONS"
+								Size="35,35"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="_buff"
+							/>
+							<MaskedImage Name="CoopBuffCooldown$X$"
+								Size="35,35"
+								Image="UI/BATTLE_UI/spells/cooldown.tga"
+								AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+								MouseSenseEnabled="0"
+							/>
+							<Text Name="CoopBuffDuration$X$"
+								MarginTop="-28"
+								Size="35,35"
+								Style="GrenadeCharge"
+								FontSize="17"
+								BiggerFontSize="17"
+								TextAlignH="center"
+								TextAlignV="center"
+								MouseSenseEnabled="0"
+							/>
+							<Text Name="CoopBuffStackCount$X$"
+								Size="35,35"
+								Pos="-5,0"
+								Style="BuffStackCount"
+								TextAlignH="right"
+								TextAlignV="bottom"
+								MouseSenseEnabled="0"
+							/>
+						</Loop>
+					</Container>
+				</FlowContainer>
+			</Container>
+		</Container>
+	</Container>
+		
+	<Container Name="StationaryGunUI" Pos="738,938" Visible="0" GuiAlign="bottomcenter">
+		<Image Name="TurretAmmoBar"
+			Pos="124,19"
+			Size="212,12"
+			Image="UI/BATTLE_UI/Main/battle_turret_barBlue.tga"
+			GuiAlign="bottomcenter"
+		/>
+		<Image Name="TurretOverheatBar"
+			Pos="124,19"
+			Size="212,12"
+			Image="UI/BATTLE_UI/Main/battle_turret_barRed.dds"
+			GuiAlign="bottomcenter"
+		/>
+		<Dummy Name="TurretOverheatBarDummy"
+			Pos="124,19"
+			Size="212,12"
+			GuiAlign="bottomcenter"
+			InitPopup="bottomcenter,topcenter"
+		/>
+		<Image Name="TurretHPBar"
+			Pos="124,47"
+			Size="212,20"
+			Image="UI/BATTLE_UI/Main/battle_turret_barHP.tga"
+			GuiAlign="bottomcenter"
+		/>
+		<Dummy Name="TurretHPBarDummy"
+			Pos="124,47"
+			Size="212,20"
+			GuiAlign="bottomcenter"
+			InitPopup="bottomcenter,topcenter"
+		/>
+		<Image
+			Name="BattleTurretBg"
+			Pos="0,0"
+			Size="444,132"
+			Image="UI/BATTLE_UI/Main/battle_turretBg.tga"
+			GuiAlign="bottomcenter"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="TurretAmmoIcon"
+			Pos="96,16"
+			Size="28,16"
+			Image="UI/BATTLE_UI/Main/wset_iconAmmo.tga"
+			GuiAlign="bottomcenter"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="TurretOverheatIcon"
+			Pos="96,16"
+			Size="28,16"
+			Image="UI/BATTLE_UI/Main/wset_iconHeat.dds"
+			GuiAlign="bottomcenter"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="TurretSkillSlot0"
+			Pos="13,13"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+			GuiAlign="bottomcenter"
+		/>
+		<Image Name="TurretSkillSlotIconController0"
+			Pos="17,72"
+			Size="48,48"
+			Image="UI/BATTLE_UI/Main/LT.tga"
+			Visible="0"
+		/>
+		<Image Name="TurretSkillSlot1"
+			Pos="370,13"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+			GuiAlign="bottomcenter"
+		/>
+		<Image Name="TurretSkillSlotIconController1"
+			Pos="376,72"
+			Size="48,48"
+			Image="UI/BATTLE_UI/Main/RT.tga"
+			Visible="0"
+		/>
+		<Icon Name="TurretLeaveIcon"
+			Pos="141,76"
+			Size="164,28"
+			IdleImg="UI/BATTLE_UI/Main/battle_turretOff.tga"
+			PressImg="UI/BATTLE_UI/Main/battle_turretOff.tga"
+			RolloverImg="UI/BATTLE_UI/Main/battle_turretOver.tga"
+			IdleFontType="Titillium Regular" IdleFontSize="12" IdleColor="#2bede6"
+			IdleOffset="0,-2"
+			PressFontType="Titillium Regular" PressFontSize="12" PressColor="#2bede6"
+			PressOffset="0,-2"
+			RolloverFontType="Titillium Regular" RolloverFontSize="12" RolloverColor="#2bede6"
+			RolloverOffset="0,-2"
+			TextAlignH="center"
+			TextAlignV="center"
+			GuiAlign="bottomcenter"
+			Text="common.leave"
+			Visible="0"
+		/>
+		<Container Name="TurretLeaveController" Pos="152,72" Size="140,48" Visible="0" >
+			<Container GuiAlign="center" Size="137,48" >
+				<XBOXButton Name="TurretLeaveIconController"
+					SetButton="B"
+					SetCustomImage="UI/BATTLE_UI/Main/B.tga"
+					Size="48,48"
+				/>
+				<Text
+					Style="Headline_Large_Color_Glow"
+					Size="89,25"
+					Pos="48,11"
+					Text="common.leave"
+				/>
+			</Container>
+		</Container>
+		
+	</Container>
+	
+	<Container Name="VehicleUI" Pos="664,910" Visible="0" GuiAlign="bottomcenter">
+		<Image Name="VehicleShieldBack"
+			Pos="164,39"
+			Size="260,24"
+			Image="UI/BATTLE_UI/Main/battle_vehicleShieldBg.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="VehicleShieldBar"
+			Pos="198,47"
+			Size="212,12"
+			Image="UI/BATTLE_UI/Main/battle_turret_barShield.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Dummy Name="VehicleShieldBarDummy"
+			Pos="198,47"
+			Size="212,12"
+			InitPopup="bottomcenter,topcenter"
+		/>
+		<Image Name="VehicleHPBar"
+			Pos="198,75"
+			Size="212,20"
+			Image="UI/BATTLE_UI/Main/battle_turret_barHP.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Dummy Name="VehicleHPBarDummy"
+			Pos="198,75"
+			Size="212,20"
+			InitPopup="bottomcenter,topcenter"
+		/>
+		<Image
+			Pos="0,0"
+			Size="592,160"
+			Image="UI/BATTLE_UI/Main/battle_vehicleBg.tga"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Image
+			Pos="0,0"
+			Size="592,160"
+			Image="UI/BATTLE_UI/Main/battle_vehicleBg_controller.tga"
+			MouseSenseEnabled="0"
+			ShowCategory="controller"
+		/>
+		<Image Name="VehicleOverheatIcon"
+			Pos="170,44"
+			Size="28,16"
+			Image="UI/BATTLE_UI/Main/wset_iconHeat.dds"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="VehicleSkillSlot0"
+			Pos="86,42"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/armorskill_empty.tga"
+		/>
+		<MaskedImage Name="VehicleSkillCooldown0"
+			Pos="86,42"
+			Size="60,60"
+			Image="UI/BATTLE_UI/spells/cooldown.tga"
+			AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="VehicleSkillShortcutIcon0"
+			Pos="118,102"
+			Size="32,32"
+			Image="UI/BATTLE_UI/Main/shortcut_vehicle_empty.tga"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Text Name="VehicleSkillShortcutText0"
+			Pos="128,113"
+			Size="20,20"
+			Style="Shortcut"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Image Name="VehicleSkillSlotIconController0"
+			Pos="93,103"
+			Size="48,48"
+			Image="UI/BATTLE_UI/Main/LT.tga"
+			ShowCategory="controller"
+		/>
+		<Image Name="VehicleSkillSlot1"
+			Pos="445,42"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/armorskill_empty.tga"
+		/>
+		<MaskedImage Name="VehicleSkillCooldown1"
+			Pos="445,42"
+			Size="60,60"
+			Image="UI/BATTLE_UI/spells/cooldown.tga"
+			AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="VehicleSkillShortcutIcon1"
+			Pos="477,102"
+			Size="32,32"
+			Image="UI/BATTLE_UI/Main/shortcut_vehicle_empty.tga"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Text Name="VehicleSkillShortcutText1"
+			Pos="487,113"
+			Size="20,20"
+			Style="Shortcut"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Image Name="VehicleSkillSlotIconController1"
+			Pos="452,103"
+			Size="48,48"
+			Image="UI/BATTLE_UI/Main/RT.tga"
+			ShowCategory="controller"
+		/>
+		<Image Name="VehicleSkillSlot2"
+			Pos="15,17"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/armorskill_empty.tga"
+		/>
+		<MaskedImage Name="VehicleSkillCooldown2"
+			Pos="15,17"
+			Size="60,60"
+			Image="UI/BATTLE_UI/spells/cooldown.tga"
+			AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="VehicleSkillShortcutIcon2"
+			Pos="47,77"
+			Size="32,32"
+			Image="UI/BATTLE_UI/Main/shortcut_vehicle_empty.tga"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Text Name="VehicleSkillShortcutText2"
+			Pos="57,88"
+			Size="20,20"
+			Style="Shortcut"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Image Name="VehicleSkillSlotIconController2"
+			Pos="22,78"
+			Size="48,48"
+			Image="UI/BATTLE_UI/Main/LT.tga"
+			ShowCategory="controller"
+		/>
+		<Image Name="VehicleSkillSlot3"
+			Pos="516,17"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/armorskill_empty.tga"
+		/>
+		<MaskedImage Name="VehicleSkillCooldown3"
+			Pos="516,17"
+			Size="60,60"
+			Image="UI/BATTLE_UI/spells/cooldown.tga"
+			AlphaMask="UI/BATTLE_UI/spells/cooldown_mask.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="VehicleSkillShortcutIcon3"
+			Pos="549,77"
+			Size="32,32"
+			Image="UI/BATTLE_UI/Main/shortcut_vehicle_empty.tga"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Text Name="VehicleSkillShortcutText3"
+			Pos="559,88"
+			Size="20,20"
+			Style="Shortcut"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+		<Image Name="VehicleSkillSlotIconController3"
+			Pos="523,78"
+			Size="48,48"
+			Image="UI/BATTLE_UI/Main/RT.tga"
+			ShowCategory="controller"
+		/>				
+	</Container>
+	
+	<Container Name="MassacreContainer" Pos="0,180" GuiAlign="bottomcenter">
+		<Effect
+			Name="MassacreEffect"
+			Pos="960,520"
+			Size="0,0"
+			Effect="UI\Mission_signs\massacre.N2E"
+			MouseSenseEnabled="0"
+		/>
+		<Text
+			Name="MassacreText"
+			Style="Headline_XLarge_Light_Glow"
+			Pos="630,649"
+			Size="660,60"
+			Text="Massacre"
+			Visible="0"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Container Name="LootPickupContainer" GuiAlign="bottomcenter">
+		<Effect
+			Name="LootPickupEffect"
+			Pos="960,520"
+			Size="0,0"
+			Effect="UI\Loot\loot_in_mission_alap.N2E"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Name="LootPickupImage11"
+			Pos="930,765"
+			Size="60,60"
+			Alpha="0"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Name="LootPickupImage12"
+			Pos="930,736"
+			Size="60,120"
+			Alpha="0"
+			MouseSenseEnabled="0"
+		/>
+		<Effect
+			Name="LootPickupEffectOver"
+			Pos="960,520"
+			Size="0,0"
+			Effect="UI\Loot\loot_in_mission_over.N2E"
+			MouseSenseEnabled="0"
+		/>
+		<Text
+			Name="LootPickupText"
+			Style="Headline_XLarge_Light_Glow"
+			FontSize="22"
+			Pos="630,850"
+			Size="660,60"
+			Text="asda sda sdasda dsa dasdas asdasd as"
+			Alpha="0"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Image Name="CoverButton0"
+		ShowCategory="controller"
+		Visible="0"
+		Size="48,48"
+	/>
+	<Image Name="CoverButton1"
+		ShowCategory="controller"
+		Visible="0"
+		Size="48,48"
+	/>
+	<FlowContainer Name="CoverButtonKeyboardFrame" Visible="0" ShowCategory="mouse"
+		Height="24"
+		Horizontal="1"
+		BackgroundTopSize="8"
+		BackgroundBotSize="8"
+		BackgroundTopImage="UI\BATTLE_UI\Main\Cover_buttonBG_left.tga"
+		BackgroundMidImage="UI\BATTLE_UI\Main\Cover_buttonBG_mid.tga"
+		BackgroundBotImage="UI\BATTLE_UI\Main\Cover_buttonBG_right.tga"
+		MouseSenseEnabled="0"
+	>
+		<Text Name="CoverButtonKeyboard" 
+			MarginTop="4"
+			MarginLeft="6"
+			MarginRight="6"
+			Height="16" 
+			Text="Space"
+			Style="Text_Normal_Light"
+			MouseSenseEnabled="0"
+		/>
+	</FlowContainer>
+	
+	<Text Name="PingValue" Visible="0"
+		Pos="1800,20"
+		Size="100,30"
+		TextAlignH="right"
+		TextAlignV="top"
+		GuiAlign="topright"
+		Text="Ping: ??"
+	/>
+	<TextBox Name="Timestamp" Visible="0"
+		Pos="1750,50"
+		Size="150,60"
+		TextAlignH="right"
+		TextAlignV="top"
+		GuiAlign="topright"
+		Text="Loccasztaff"
+	/>
+</Window>

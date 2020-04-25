@@ -1,0 +1,5 @@
+<Root>	
+	<Include Path="Common.xml"/>
+	<Icon Name="Icon"/>
+	<Text VerticalAlignment="Bottom" TextAlignH="Right" MarginRight="3" MarginBottom="2" Height="20" FontSize="16" Color="#FFFFFF" FontOutlineWidth="2" Name="SizeLabel"/>
+</Root>

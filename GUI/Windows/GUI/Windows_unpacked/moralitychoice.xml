@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="center">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Styles>
+		<HeroText FontType="Electrolize" FontSize="18" Color="#d3c6af" OutlineColor="#3c000000" FontOutlineWidth="3" Sharpness="0.5"/>
+	</Styles>
+	
+	<Image
+		Pos="0,0"
+		Image="UI/Morality/morality_choice_backgroundOff.tga"
+	/>
+	<Container Name="RadicalChoice">
+		<Icon Name="RadicalIcon"
+			Pos="256,138"
+			Size="440,832"
+			IdleImg="UI/Morality/morality_choice_radicalOff.tga"
+			PressImg="UI/Morality/morality_choice_radicalOn.tga"
+			RolloverImg="UI/Morality/morality_choice_radicalOn.tga"
+			ControllerSenseEnabled="1"
+			UseButtonEffects="0"
+		/>
+		<Text Name="RadicalSelection"
+			Pos="100,1010"
+			Size="760,40"
+			Style="Text_Large_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.morality.choice.radical"
+			ShowCategory="mouse"
+			MouseSenseEnabled="0"
+		/>
+		<Container Name="RadicalDescirption" Pos="240,800" Size="480,400">
+			<FlowContainer
+				IgnoreScissor="1"
+				VAlign="top"
+				HAlign="center"
+				Width="480"
+				BackgroundTopSize="36"
+				BackgroundBotSize="36"
+				BackgroundTopImage="UI/BATTLE_UI/textbox/textbox_hero_top.tga"
+				BackgroundMidImage="UI/BATTLE_UI/textbox/textbox_hero_middle.tga"
+				BackgroundBotImage="UI/BATTLE_UI/textbox/textbox_hero_bottom.tga"
+				MouseSenseEnabled="0"
+				>
+				<TextBox Name="RadicalText"
+					MarginTop="38"
+					MarginBottom="38"
+					Width="400"
+					Style="HeroText"
+					TextAlignH="center"
+					TextAlignV="center"
+					HAlign="center"
+					Text="_RadicalChoiceDescription"
+					MouseSenseEnabled="0"
+				/>
+			</FlowContainer>
+		</Container>
+	</Container>
+	
+	<Container Name="PuritanChoice">
+		<Icon Name="PuritanIcon"
+			Pos="1216,138"
+			Size="440,832"
+			IdleImg="UI/Morality/morality_choice_puritanOff.tga"
+			PressImg="UI/Morality/morality_choice_puritanOn.tga"
+			RolloverImg="UI/Morality/morality_choice_puritanOn.tga"
+			ControllerSenseEnabled="1"
+			UseButtonEffects="0"
+		/>
+		<Text Name="PuritanSelection"
+			Pos="1060,1010"
+			Size="760,40"
+			Style="Text_Large_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.morality.choice.puritan"
+			ShowCategory="mouse"
+			MouseSenseEnabled="0"
+		/>
+		<Container Name="PuritanDescirption" Pos="1200,800" Size="480,400">
+			<FlowContainer
+				IgnoreScissor="1"
+				VAlign="top"
+				HAlign="center"
+				Width="480"
+				BackgroundTopSize="36"
+				BackgroundBotSize="36"
+				BackgroundTopImage="UI/BATTLE_UI/textbox/textbox_hero_top.tga"
+				BackgroundMidImage="UI/BATTLE_UI/textbox/textbox_hero_middle.tga"
+				BackgroundBotImage="UI/BATTLE_UI/textbox/textbox_hero_bottom.tga"
+				MouseSenseEnabled="0"
+				>
+				<TextBox Name="PuritanText"
+					MarginTop="38"
+					MarginBottom="38"
+					Width="400"
+					Style="HeroText"
+					TextAlignH="center"
+					TextAlignV="center"
+					HAlign="center"
+					Text="_PuritanChoiceDescription"
+					MouseSenseEnabled="0"
+				/>
+			</FlowContainer>
+		</Container>
+	</Container>
+
+	<Image Name="BackgroundMiddle"
+		Pos="950,0"
+		Size="20,1080"
+		Image="UI/Morality/morality_choice_middle.tga"
+		MouseSenseEnabled="0"
+	/>
+	<Text Name="Headline"
+		Pos="250,30"
+		Size="1420,40"
+		Style="Headline_XLarge_Light_Glow"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="openworld.gui.morality.choice.title"
+		MouseSenseEnabled="0"
+	/>
+	
+</Window>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RT_Fr55_vezetek_BG Terrain="Terrains/Sections/Rocky_Terrain/RT_Fr55_vezetek_BG.VHT" Preview="Terrains/Sections/Rocky_Terrain/MapEditorImages/RT_Fr55_vezetek_BG_thumb.bmp" Image="Terrains/Sections/Rocky_Terrain/MapEditorImages/RT_Fr55_vezetek_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Rocky Terrain">
+	<PivotPos x="-1240.8877" y="2848.83179" />
+	<Tags />
+	<Grids>
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+	</Grids>
+</RT_Fr55_vezetek_BG>

@@ -1,0 +1,1567 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	<Styles>
+		<GreatButton 
+			Style="StarmapHeadline1_4"
+			Size="284,48"
+			IdleImg="UI/Menu/main_buttonOff.tga"
+			PressImg="UI/Menu/main_buttonOver.tga"
+			RolloverImg="UI/Menu/main_buttonOver.tga"
+			ControllerSenseEnabled="1"
+			UseButtonEffects="0"
+			RolloverFade="125"
+		/>
+		<WideButton 
+			Style="StarmapHeadline1_4"
+			Size="320,40"
+			IdleImg="UI/Menu/AccountLinking/main_wideButtonOff.tga"
+			PressImg="UI/Menu/AccountLinking/main_wideButtonOver.tga"
+			RolloverImg="UI/Menu/AccountLinking/main_wideButtonOver.tga"
+			ControllerSenseEnabled="1"
+			UseButtonEffects="0"
+			RolloverFade="125"
+		/>
+	</Styles>
+	
+	<Constants>
+		<MissionProgressBarLength Type="int" Value="322"/>
+		<MultiProgressBarLength Type="int" Value="102"/>
+		<RiskRewardBarLength Type="int" Value="298"/>
+		<AnnouncementCount Type="int" Value="3"/>
+		<RewardMarkerCount Type="int" Value="5"/>
+		<WorldEventIconCount Type="int" Value="8"/>
+	</Constants>
+		
+	<Container Name="LeftButtons" Pos="0,0"  GuiAlign="leftcenter" IgnoreScissor="1">
+		<Image
+			Pos="0,0"
+			Width="288"
+			Image="UI/Menu/main_left.tga"
+			GuiAlign="topleft"
+		/>
+		<Image
+			Pos="33,162"
+			Size="332,332"
+			Image="UI/Menu/main_characterFrame.tga"
+		/>
+		<Image Name="Portrait"
+			Pos="59,184"
+			Size="284,284"
+			Image="UI/Menu/main_portraitAssassin.tga"
+			Visible="0"
+		/>
+		<Image Name="GameLogo"
+			Pos="39,26"
+			Size="320,180"
+			Image="UI/Menu/main_logo_both.tga"
+			GuiAlign="topleft"
+		/>
+		<Icon Name="Play"
+			Pos="59,497"
+			Style="GreatButton"
+			Text="menu.main.play"
+			InitPopup="bottomcenter,topcenter"
+		/>
+		<Icon Name="Options"
+			Pos="59,550"
+			Style="GreatButton"
+			Text="common.options"
+		/>
+		<Icon Name="CreateCharacter"
+			Pos="59,603"
+			Style="GreatButton"
+			Text="menu.main.createcharacter.label"
+		/>
+		<Icon Name="DeleteCharacter"
+			Pos="59,656"
+			Style="GreatButton"
+			Text="menu.character.delete"
+		/>
+		<Icon Name="Credits"
+			Pos="59,709"
+			Style="GreatButton"
+			Text="menu.main.credits"
+		/>
+		<Icon Name="Exit"
+			Pos="59,762"
+			Style="GreatButton"
+			Text="common.exit"
+		/>
+		<Image 
+			Pos="1796,0"
+			Width="124"
+			Image="UI/Menu/main_right.tga"
+			GuiAlign="topright"
+		/>
+	</Container>
+	
+	<FlowContainer Pos="1796,0" Width="356" GuiAlign="rightcenter" IgnoreScissor="1" Visible="1" ShowCategory="mouse" Name="NewsFeedMouse">
+		<Loop Count="@AnnouncementCount" Variable="$X$">
+			<FlowContainer Name="Announcement$X$" Pos="-288,60" MarginBottom="10" Visible="0" UseMinimumSize="1"	
+				Width="356"
+				BackgroundTopSize="84"
+				BackgroundBotSize="40"
+				BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+				BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+				BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+			>
+				<Text Name="AnnouncementName$X$"
+					MarginLeft="20"
+					MarginTop="13"
+					Size="316,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+				/>
+				<TextBox Name="AnnouncementDescription$X$"
+					MarginLeft="20"
+					MarginTop="13"
+					MarginBottom="15"
+					Width="320"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="top"
+				/>
+			</FlowContainer>
+		</Loop>
+		<FlowContainer Name="WeeklyBonus" Pos="-288,60" MarginBottom="10" Visible="0" UseMinimumSize="1"	
+			Width="356"
+			BackgroundTopSize="84"
+			BackgroundBotSize="40"
+			BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+			BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+			BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+		>
+			<Text Name="WeeklyBonusName"
+				MarginLeft="20"
+				MarginTop="13"
+				Size="316,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_Week of Wisdom"
+			/>
+			<FlowContainer Name="WeeklyBonusBox" MarginTop="13" Horizontal="1">
+				<Image Name="WeeklyBonusIcon"
+					MarginLeft="20"
+					Size="50,50"
+					Image="UI/OpenWorld/Missions/mission_warzoneOn.tga"
+					MouseSenseEnabled="0"
+				/>
+				<TextBox Name="WeeklyBonusDesc"
+					MarginLeft="10"
+					Width="255"
+					Style="Headline_Normal_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_Week Desc"
+					MouseSenseEnabled="0"
+				/>
+			</FlowContainer>
+			<Image Name="WeekBuffIcon"
+				Size="356,12"
+				MarginTop="-2"
+				Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+			/>
+			<Container Size="350,45">
+				<Icon Name="WeeklyBonusLink"
+					Pos="9,0"
+					Size="36,36"
+					IdleImg="UI/Tutorial/button_clueJournalOff.tga"
+					RolloverImg="UI/Tutorial/button_clueJournalOver.tga"
+					PressImg="UI/Tutorial/button_clueJournalOver.tga"
+					InitPopup="bottomcenter,topcenter"
+					Tooltip="weeklybonus.linkpopup"
+					ShowCategory="mouse"
+				/>
+					
+				<Text Name="WeeklyBonusNextDesc"
+					Pos="51,2"
+					Size="285,30"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_Next up desc: Week of the Conqueror"
+				/>
+			</Container>
+		</FlowContainer>
+		<FlowContainer Name="TokenBroker" Pos="-288,60" MarginBottom="10" Visible="0" UseMinimumSize="1"	
+			Width="356"
+			BackgroundTopSize="84"
+			BackgroundBotSize="40"
+			BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+			BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+			BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+		>
+			<Text Name="TokenBrokerName"
+				MarginLeft="20"
+				MarginTop="13"
+				Size="316,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="battle.gui.tokenbrokershop.label"
+			/>
+			<FlowContainer Name="TokenBrokerBox" MarginTop="13" Horizontal="1">
+				<Image Name="TokenBrokerIcon"
+					MarginLeft="20"
+					Size="50,50"
+					Image="UI\common\Events\TokenBroker\RebusAvatar.dds"
+					MouseSenseEnabled="0"
+				/>
+				<TextBox Name="TokenBrokerDesc"
+					MarginLeft="10"
+					Width="255"
+					Style="Headline_Normal_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworldnpc.Custodian_Rebus.desc"
+					MouseSenseEnabled="0"
+				/>
+			</FlowContainer>
+			<Image
+				Size="356,12"
+				MarginTop="-2"
+				Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+			/>
+			<Text Name="TokenBrokerNextDesc"
+				Pos="20,2"
+				Size="285,30"
+				Style="Text_Normal_Dark"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworldnpc.Custodian_Rebus.avability"
+			/>
+		</FlowContainer>
+		<FlowContainer Name="WorldSeason" Pos="-288,60" MarginBottom="10"
+			Width="356"
+			BackgroundTopSize="84"
+			BackgroundBotSize="40"
+			BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+			BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+			BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+		>
+			<Image Name="SeasonPicture"
+				MarginLeft="100"
+				MarginTop="10"
+				MarginBottom="-142"
+				Size="252,142"
+				Image="UI/OpenWorld/Rightbox/starmap_rightbox_eventDarkEldar.tga"
+			/>
+			<Text Name="SeasonName"
+				MarginLeft="20"
+				MarginTop="3"
+				Size="316,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="WorldEvent.Season_DarkEldar.name"
+			/>
+			<TextBox Name="SeasonDescription"
+				MarginLeft="20"
+				MarginTop="14"
+				MarginBottom="5"
+				Width="316"
+				Style="Text_Normal_Dark"
+				TextAlignH="left"
+				TextAlignV="top"
+				Text="WorldEvent.Season_DarkEldar.globaltask_alert"
+			/>
+			<Container Name="SeasonInfo">	
+				<Image
+					Size="356,12"
+					MarginLeft="0"
+					Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+				/>			
+				<Container Size="356,38" MarginTop="12" MarginBottom="-7" IgnoreScissor="1">
+					<Icon Name="SeasonBriefing"
+						Pos="10,2"
+						Size="36,36"
+						IdleImg="UI/Tutorial/button_clueJournalOff.tga"
+						RolloverImg="UI/Tutorial/button_clueJournalOver.tga"
+						PressImg="UI/Tutorial/button_clueJournalOver.tga"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.GUI.starmap.season_details"
+					/>
+					<Text Name="SeasonTimer"
+						Visible="0"
+						Pos="93,0"
+						Size="245,38"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_Remaining time: 2:12:35"
+					/>
+				</Container>
+			</Container>
+			<Dummy Size="1,20"/>			
+		</FlowContainer>
+		
+		<FlowContainer Name="WorldEvent" Pos="-288,60" MarginBottom="10"
+			Width="356"
+			BackgroundTopSize="84"
+			BackgroundBotSize="40"
+			BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+			BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+			BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+		>
+			<Text
+				MarginLeft="20"
+				MarginTop="11"
+				Size="316,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.GUI.starmap.world_event"
+			/>
+			<FlowContainer Name="WorldEventInfo" Visible="1">
+				<Text Name="WorldEventName"
+					MarginLeft="20"
+					MarginTop="15"
+					Size="320,30"
+					Style="Text_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_WorldEventName"
+				/>
+				<Image
+					Size="356,12"
+					MarginTop="-6"
+					Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+				/>
+			</FlowContainer>
+			<FlowContainer Name="WorldEventProgress" Visible="1">
+				<TextBox Name="EventProgressText"
+					MarginLeft="20"
+					MarginTop="16"
+					MarginBottom="5"
+					Width="316"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="top"
+					Text="_WorldEventObjective"
+				/>			
+				<Container Name="PlayerRewardProgress">
+					<FlowContainer
+						MarginLeft="17"
+						MarginTop="0"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+						BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+						BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="EventProgressBg" Height="20" Width="@MissionProgressBarLength" MouseSenseEnabled="0"/>
+					</FlowContainer>	
+					<FlowContainer
+						MarginLeft="17"
+						MarginTop="0"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+						BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+						BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="EventProgressBar" Height="20" Width="@MissionProgressBarLength" MouseSenseEnabled="0"/>
+					</FlowContainer>
+					<Container Name="RewardMarker" IgnoreScissor="1" Visible="1">
+						<Loop Count="@RewardMarkerCount" Variable="$Y$">
+							<Image Name="RewardMarker$Y$"
+								MarginTop="15"
+								MarginLeft="6"
+								Size="12,12"
+								Image="UI/OpenWorld/starmap_barMarker.tga"
+								MouseSenseEnabled="0"
+							/>
+						</Loop>
+					</Container>
+				</Container>
+			</FlowContainer>
+			<FlowContainer Name="WorldEventCommunityProgress" Visible="1">
+				<TextBox Name="EventCommunityProgressText"
+					MarginLeft="20"
+					MarginTop="10"
+					MarginBottom="5"
+					Width="316"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="top"
+					Text="_WorldEventCommunityObjective"
+				/>				
+				<Container Name="CommunityProgressBar" Visible="0">
+					<FlowContainer
+						MarginLeft="17"
+						MarginTop="0"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+						BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+						BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="EventCommunityProgressBg" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+					</FlowContainer>
+					<FlowContainer
+						MarginLeft="17"
+						MarginTop="0"
+						Height="20"
+						Horizontal="1"
+						BackgroundTopSize="8"
+						BackgroundBotSize="8"
+						BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+						BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+						BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+						MouseSenseEnabled="0"
+					>
+						<Dummy Name="EventCommunityProgressBar" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+					</FlowContainer>
+					<Container Name="CommunityRewardMarker3" IgnoreScissor="1" Visible="1">
+						<Loop Count="@RewardMarkerCount" Variable="$Y$" Offset="107,0">
+							<Image Name="CommunityReward3$Y$Marker"
+								Pos="115,15"
+								Size="12,12"
+								Image="UI/OpenWorld/starmap_barMarker.tga"
+								MouseSenseEnabled="0"
+							/>
+						</Loop>
+					</Container>
+				</Container>
+				<Container Name="CommunityMultiProgressBar" MarginLeft="17" Visible="1">
+					<Loop Count="3" Variable="$X$" Offset="110,0">
+						<FlowContainer Name="CommunityMultiProgressTooltip$X$"
+							MarginTop="0"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+							BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+							BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+							InitPopup="rightcenter,leftcenter"
+							Tooltip="_999/999"
+						>
+							<Dummy Name="CommunityMultiProgressBg$X$" Variable="$X$" Height="20" Width="@MultiProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<FlowContainer
+							MarginTop="0"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+							BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+							BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="CommunityMultiProgressBar$X$" Variable="$X$" Height="20" Width="@MultiProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+					</Loop>
+				</Container>
+			</FlowContainer>
+			<FlowContainer Name="EventPlanetary" Visible="1">				
+				<FlowContainer Horizontal="1" Height="34" Pos="20,0">
+					<Container Size="108,34">
+						<Image 
+							Image="UI/common/Events/PlanetaryReclamation/Mechanicum_34x34.dds" 
+							Size="34,34"
+							Pos="0,0"
+						/>
+						<Image 
+							Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+							Size="62,34"
+							Pos="34,0"
+						/>
+						<Image Name="PlanetaryBar0"
+							Image="UI/common/Events/PlanetaryReclamation/FPB_Red_Widget.dds" 
+							Size="60,32"
+							Pos="35,1"
+						/>
+						<Text Name="PlanetaryCounter0"
+							Text="3568"
+							Size="62,34"
+							Pos="34,0"
+							Style="Text_Small_Light"
+							Color="#eeeeee"
+						/>
+						<Dummy InitPopup="bottomcenter,topcenter" Tooltip="worldevent.planetary_reclamation.mechanicum" />
+					</Container>
+					
+					<Container Size="108,34">
+						<Image 
+							Image="UI/common/Events/PlanetaryReclamation/Ecclesiarchy_34x34.dds" 
+							Size="34,34"
+							Pos="0,0"
+						/>
+						<Image 
+							Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+							Size="62,34"
+							Pos="34,0"
+						/>
+						<Image Name="PlanetaryBar1"
+							Image="UI/common/Events/PlanetaryReclamation/FPB_Gold_Widget.dds" 
+							Size="60,32"
+							Pos="35,1"
+						/>
+						<Text Name="PlanetaryCounter1"
+							Text="3568" 
+							Size="62,34"
+							Pos="34,0"
+							Style="Text_Small_Light"
+							Color="#eeeeee"
+						/>
+						<Dummy InitPopup="bottomcenter,topcenter" Tooltip="worldevent.planetary_reclamation.ecclesiarchy" />
+					</Container>
+					
+					<Container Size="108,34">
+						<Image 
+							Image="UI/common/Events/PlanetaryReclamation/AstraMilitarum_34x34.dds" 
+							Size="34,34"
+							Pos="0,0"
+						/>
+						<Image 
+							Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+							Size="62,34"
+							Pos="34,0"
+						/>
+						<Image Name="PlanetaryBar2"
+							Image="UI/common/Events/PlanetaryReclamation/FPB_Blue_Widget.dds" 
+							Size="60,32"
+							Pos="35,1"
+						/>
+						<Text Name="PlanetaryCounter2"
+							Text="3568" 
+							Size="62,34"
+							Pos="34,0"
+							Style="Text_Small_Light"
+							Color="#eeeeee"
+						/>
+						<Dummy InitPopup="bottomcenter,topcenter" Tooltip="worldevent.planetary_reclamation.Astra_Militarum" />
+					</Container>
+				</FlowContainer>
+			</FlowContainer>
+			
+			<Container Name="WorldEventIcons" Size="350,36">
+				<Loop Count="@WorldEventIconCount" Variable="$X$" Offset="39,0">
+					<Icon Name="WorldEventIcon$X$" Size="34,34" Pos="24,0" InitPopup="bottomcenter,topcenter" UseButtonEffects="0"/>
+				</Loop>
+			</Container>
+			<Container Name="Details">	
+				<Image
+					Size="356,12"
+					MarginLeft="0"
+					Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+				/>			
+				<Container Size="356,38" MarginTop="15" MarginBottom="-9">
+					<Icon Name="WorldEventBriefing"
+						Pos="10,0"
+						Size="36,36"
+						IdleImg="UI/Tutorial/button_clueJournalOff.tga"
+						RolloverImg="UI/Tutorial/button_clueJournalOver.tga"
+						PressImg="UI/Tutorial/button_clueJournalOver.tga"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="openworld.GUI.starmap.event_details"
+						ShowCategory="mouse"
+					/>
+					<Text Name="WorldEventTimer"
+						Pos="51,0"
+						Size="287,38"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="_Remaining time: 2:12:35"
+					/>
+				</Container>
+			</Container>
+			<Dummy Size="1,20"/>
+		</FlowContainer>
+		
+		<FlowContainer Name="NewDlc" Pos="-288,60" MarginBottom="10"
+			Width="356"
+			BackgroundTopSize="84"
+			BackgroundBotSize="40"
+			BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+			BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+			BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+		>
+			<Text Name="DlcName"
+				MarginLeft="20"
+				MarginTop="11"
+				Size="316,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_DlcName"
+			/>
+			<Image Name="DlcPicture"
+				MarginLeft="8"
+				MarginTop="6"
+				MarginBottom="0"
+				Size="340,106"
+				Image="UI/menu/DLC/DLC_S01_MindPlague.tga"
+			/>			
+			<Container>			
+				<Container Size="356,38" MarginTop="0" MarginBottom="-7" IgnoreScissor="1">
+					<Icon Name="DlcPurchase"
+						Pos="10,3"
+						Size="36,36"
+						IdleImg="UI/menu/DLC/button_purchaseOff.tga"
+						RolloverImg="UI/menu/DLC/button_purchaseOver.tga"
+						PressImg="UI/menu/DLC/button_purchaseOver.tga"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="common.dlc.purchase"
+						ShowCategory="mouse"
+					/>
+					<Text Name="DlcPremiumValue"
+						Pos="214,5"
+						Size="92,32"
+						Style="Headline_Large_Light_Glow"
+						FontType="Share Tech Mono"
+						FontSize="22"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_999"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="DlcPremiumIcon"
+						Pos="312,5"
+						Size="32,32"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						InitPopup="topcenter,bottomcenter"
+						Tooltip="battle.gui.inventory.fate.label"
+						ZOffset="@Layer_0_ZOffset"
+					/>
+				</Container>
+			</Container>
+			<Dummy Size="1,20"/>
+		</FlowContainer>
+		
+		<FlowContainer Name="Expansion" Pos="-288,60" MarginBottom="10" ConsoleVisible="0"
+			Width="356"
+			BackgroundTopSize="84"
+			BackgroundBotSize="40"
+			BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+			BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+			BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+		>
+			<Text Name="ExpansionText"
+				MarginLeft="20"
+				MarginTop="11"
+				Size="316,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="Expansion.name"
+			/>
+			<Image
+				MarginLeft="8"
+				MarginTop="6"
+				MarginBottom="0"
+				Size="340,106"
+				Image="UI/menu/DLC/DLC_Prophecy.tga"
+			/>			
+			<Container>			
+				<Container Size="356,38" MarginTop="0" MarginBottom="-7" IgnoreScissor="1">
+					<Icon Name="ExpansionButton"
+						Pos="10,3"
+						Size="36,36"
+						IdleImg="UI/menu/DLC/button_purchaseOff.tga"
+						RolloverImg="UI/menu/DLC/button_purchaseOver.tga"
+						PressImg="UI/menu/DLC/button_purchaseOver.tga"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="common.dlc.purchase"
+						ShowCategory="mouse"
+					/>
+					<Text 
+						Pos="94,5"
+						Size="242,32"
+						Style="Headline_Large_Light_Glow"
+						FontType="Share Tech Mono"
+						FontSize="16"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="common.dlc.released"
+						MouseSenseEnabled="0"
+					/>
+				</Container>
+			</Container>
+			<Dummy Size="1,20"/>
+		</FlowContainer>
+		
+		<FlowContainer Name="BaseGame" Pos="-288,60" MarginBottom="10" ConsoleVisible="0"
+			Width="356"
+			BackgroundTopSize="84"
+			BackgroundBotSize="40"
+			BackgroundTopImage="UI/menu/main_rightboxTop.tga"
+			BackgroundMidImage="UI/menu/main_rightboxMiddle.tga"
+			BackgroundBotImage="UI/menu/main_rightboxBottom.tga"
+		>
+			<Text Name="BaseGameText"
+				MarginLeft="20"
+				MarginTop="11"
+				Size="316,30"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="BaseGame.name"
+			/>
+			<Image
+				MarginLeft="8"
+				MarginTop="6"
+				MarginBottom="0"
+				Size="340,106"
+				Image="UI/menu/DLC/DLC_BaseGame.tga"
+			/>			
+			<Container>			
+				<Container Size="356,38" MarginTop="0" MarginBottom="-7" IgnoreScissor="1">
+					<Icon Name="BaseGameButton"
+						Pos="10,3"
+						Size="36,36"
+						IdleImg="UI/menu/DLC/button_purchaseOff.tga"
+						RolloverImg="UI/menu/DLC/button_purchaseOver.tga"
+						PressImg="UI/menu/DLC/button_purchaseOver.tga"
+						InitPopup="bottomcenter,topcenter"
+						Tooltip="common.dlc.purchase"
+						ShowCategory="mouse"
+					/>
+				</Container>
+			</Container>
+			<Dummy Size="1,20"/>
+		</FlowContainer>
+	</FlowContainer>
+	
+	
+	<FlowContainer HAlign="right" MarginTop="30" ShowCategory="controller" Name="NewsFeedController">
+		<FlowContainer Horizontal="1" MarginBottom="-35" MarginRight="60" HAlign="center">
+			<XBOXButton	
+				Height="48"
+				HAlign="center"
+				VAlign="center"
+				SetButton="Y"
+			/>	
+			<Text 
+				HAlign="center"
+				Height="48"
+				TextAlignH="left"
+				Style="Headline_XLarge_Light_Glow"
+				Text="menu.main.news"
+			/>
+		</FlowContainer>
+		<FlowContainer
+				Width="418"
+				BackgroundTopSize="165"
+				BackgroundBotSize="110"
+				BackgroundTopImage="UI/OpenWorld/DataTerminal/data_terminal_panel_TOP.tga"
+				BackgroundMidImage="UI/OpenWorld/DataTerminal/data_terminal_panel_middle.tga"
+				BackgroundBotImage="UI/OpenWorld/DataTerminal/data_terminal_panel_bottom.tga"
+			>
+			<Dummy Size="1,65"/>
+			<Loop Count="@AnnouncementCount" Variable="$X$">
+				<FlowContainer Name="AnnouncementController$X$" MarginLeft="20" MarginBottom="10" Visible="0">				
+					<Icon Name="AnnouncementControllerName$X$"
+						MarginLeft="-20"
+						MarginTop="3"					
+						Size="330,30"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						AllImg="none"
+						ControllerSenseEnabled="1"
+					/>
+					<Image
+						Size="330,16"
+						MarginTop="-5"						
+						MarginLeft="-5"
+						Image="UI/OpenWorld/headline3.tga"
+					/>
+					<TextBox Name="AnnouncementControllerDescription$X$"
+						MarginBottom="5"
+						Width="330"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text=""
+					/>
+				</FlowContainer>
+			</Loop>
+			<FlowContainer Name="WeeklyBonusController" MarginLeft="20" MarginBottom="10" Visible="0">				
+				<Icon Name="WeeklyBonusNameController"
+					MarginLeft="-20"
+					MarginTop="3"
+					Size="330,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					AllImg="none"
+					Text="_Week of Wisdom"
+					ControllerSenseEnabled="1"
+				/>
+				<Image
+					Size="330,16"
+					MarginTop="-5"						
+					MarginLeft="-5"
+					Image="UI/OpenWorld/headline3.tga"
+				/>
+				<FlowContainer MarginTop="6" Horizontal="1">
+					<Image Name="WeeklyBonusIconController"						
+						Size="40,40"
+						Image="UI/OpenWorld/Missions/mission_warzoneOn.tga"
+					/>
+					<TextBox Name="WeeklyBonusDescController"
+						MarginLeft="10"
+						Width="285"
+						Style="Headline_Normal_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="_Week Desc"
+					/>
+				</FlowContainer>
+				<Image
+					Size="356,12"
+					MarginTop="-5"
+					Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+				/>
+				<Text Name="WeeklyBonusNextDescController"					
+					MarginBottom="5"
+					Size="320,30"
+					Style="Text_Normal_Dark"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="_Next up desc: Week of the Conqueror"
+				/>
+			</FlowContainer>
+			<FlowContainer Name="TokenBrokerController" MarginLeft="20" MarginBottom="10" Visible="0">				
+				<Icon Name="TokenBrokerNameController"
+					MarginLeft="-20"
+					MarginTop="3"
+					Size="330,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					AllImg="none"
+					Text="battle.gui.tokenbrokershop.label"
+					ControllerSenseEnabled="1"
+				/>
+				<Image
+					Size="330,16"
+					MarginTop="-5"						
+					MarginLeft="-5"
+					Image="UI/OpenWorld/headline3.tga"
+				/>
+				<FlowContainer MarginTop="6" Horizontal="1">
+					<Image Name="TokenBrokerIconController"
+						
+						Size="30,30"
+						Image="UI\common\Events\TokenBroker\RebusAvatar.dds"
+					/>
+					<TextBox Name="TokenBrokerDescController"
+						MarginLeft="10"
+						Width="285"
+						Style="Headline_Normal_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworldnpc.Custodian_Rebus.desc"
+					/>
+				</FlowContainer>
+				<Image
+					Size="356,12"
+					MarginTop="-2"
+					Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+				/>
+				<Text Name="TokenBrokerNextDescController"					
+					MarginBottom="5"
+					Size="320,30"
+					Style="Text_Normal_Dark"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="openworldnpc.Custodian_Rebus.avability"
+				/>
+			</FlowContainer>
+			<FlowContainer Name="ControllerProphecy" Visible="0" IgnoreScissor="0">
+				<Icon Name="ControllerProphecyName"
+					MarginTop="11"
+					Size="330,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					AllImg="none"
+					Text="_DlcName"
+					ControllerSenseEnabled="1"
+				/>
+				<Image Name="ControllerProphecyPicture"
+					MarginLeft="8"
+					MarginBottom="4"
+					Size="356,157"
+					Image="UI/menu/DLC/DLC_S01_MindPlague.tga"
+				/>
+				<Text Name="ControllerProphecyDescription"
+					MarginBottom="5"
+					MarginLeft="15"
+					Width="330"
+					Style="Text_Normal_Dark"
+					TextAlignH="right"
+					TextAlignV="top"
+					Text="WorldEvent.Season_DarkEldar.globaltask"
+				/>
+			</FlowContainer>
+			<FlowContainer Name="ControllerBaseGame" Visible="0" IgnoreScissor="0">
+				<Icon Name="ControllerBaseGameName"
+					MarginTop="11"
+					Size="330,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					AllImg="none"
+					Text="_DlcName"
+					ControllerSenseEnabled="1"
+				/>
+				<Image Name="ControllerBaseGamePicture"
+					MarginLeft="8"
+					Size="356,120"
+					Image="UI/menu/DLC/DLC_S01_MindPlague.tga"
+				/>
+				<TextBox Name="ControllerBaseGameDescription"
+					MarginBottom="5"
+					Width="300"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="top"
+					Text="WorldEvent.Season_DarkEldar.globaltask"
+				/>
+			</FlowContainer>
+			<FlowContainer Name="ControllerWorldSeason" MarginLeft="20" MarginBottom="10">				
+				<Image Name="ControllerSeasonPicture"
+					MarginLeft="5"					
+					VAlign="bottom"
+					Size="336,155"
+					Alpha="0.8"
+					Image="UI/OpenWorld/Rightbox/starmap_rightbox_eventDarkEldar.tga"
+				/>
+				<FlowContainer MarginBottom="10" MarginTop="-142">			
+					<Icon Name="ControllerSeasonName"
+						MarginLeft="-20"
+						MarginTop="3"					
+						Size="330,30"
+						Style="Headline_XLarge_Drukhari"
+						TextAlignH="left"
+						TextAlignV="center"
+						AllImg="none"
+						Text="WorldEvent.Season_DarkEldar.name"
+						ControllerSenseEnabled="1"
+					/>
+					<Image
+						Size="330,16"
+						MarginTop="-5"						
+						MarginLeft="-5"
+						Image="UI/OpenWorld/headline3.tga"
+					/>
+					<TextBox Name="ControllerSeasonDescription"
+						MarginBottom="5"
+						Width="300"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="WorldEvent.Season_DarkEldar.globaltask"
+					/>
+				</FlowContainer>
+			</FlowContainer>
+			
+			<FlowContainer Name="ControllerWorldEvent" MarginLeft="20" MarginBottom="15">
+				<Icon Name="ControllerWorldEventIcon"
+					Size="330,30"
+					MarginLeft="-20"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					AllImg="none"
+					Text="openworld.GUI.starmap.world_event"
+					ControllerSenseEnabled="1"
+				/>
+				<Image
+					Size="330,16"
+					MarginTop="-5"						
+					MarginLeft="-5"
+					Image="UI/OpenWorld/headline3.tga"
+				/>
+				<FlowContainer Name="ControllerWorldEventInfo" Visible="1">
+					<Text Name="ControllerWorldEventName"				
+						
+						Size="330,30"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="_WorldEventName"
+					/>
+					<Image
+						Size="330,12"
+						MarginTop="-6"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+					/>
+				</FlowContainer>
+				<FlowContainer Name="ControllerWorldEventProgress" Visible="1">
+					<Text Name="ControllerEventProgressText"
+						MarginTop="5"
+						MarginLeft="10"
+						Width="330"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="_WorldEventObjective"
+					/>			
+					<Container Name="ControllerPlayerRewardProgress" MarginLeft="-5">
+						<FlowContainer
+							MarginLeft="10"
+							MarginTop="0"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+							BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+							BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="ControllerEventProgressBg" Height="20" Width="@MissionProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>	
+						<FlowContainer
+							MarginLeft="10"
+							MarginTop="0"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+							BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+							BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="ControllerEventProgressBar" Height="20" Width="@MissionProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<Container Name="ControllerRewardMarker" IgnoreScissor="1" Visible="1">
+							<Loop Count="@RewardMarkerCount" Variable="$Y$">
+								<Image Name="ControllerRewardMarker$Y$"
+									MarginTop="15"								
+									Size="12,12"
+									Image="UI/OpenWorld/starmap_barMarker.tga"
+									MouseSenseEnabled="0"
+								/>
+							</Loop>
+						</Container>
+					</Container>
+				</FlowContainer>
+				<FlowContainer Name="ControllerWorldEventCommunityProgress" Visible="1">
+					<Text Name="ControllerEventCommunityProgressText"						
+						MarginTop="10"
+						MarginBottom="5"
+						MarginLeft="10"
+						Width="330"
+						Style="Text_Normal_Dark"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="_WorldEventCommunityObjective"
+					/>				
+					<Container Name="ControllerCommunityProgressBar" MarginLeft="-5" Visible="0">
+						<FlowContainer							
+							MarginTop="0"
+							MarginLeft="10"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+							BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+							BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="ControllerEventCommunityProgressBg" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<FlowContainer							
+							MarginTop="0"
+							MarginLeft="10"
+							Height="20"
+							Horizontal="1"
+							BackgroundTopSize="8"
+							BackgroundBotSize="8"
+							BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+							BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+							BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+							MouseSenseEnabled="0"
+						>
+							<Dummy Name="ControllerEventCommunityProgressBar" Height="20" Width="@CabalMissionProgressBarLength" MouseSenseEnabled="0"/>
+						</FlowContainer>
+						<Container Name="ControllerCommunityRewardMarker3" IgnoreScissor="1" Visible="1">
+							<Loop Count="@RewardMarkerCount" Variable="$Y$" Offset="107,0">
+								<Image Name="ControllerCommunityReward3$Y$Marker"
+									Pos="115,15"									
+									Size="12,12"
+									Image="UI/OpenWorld/starmap_barMarker.tga"
+									MouseSenseEnabled="0"
+								/>
+							</Loop>
+						</Container>
+					</Container>
+					<Container Name="ControllerCommunityMultiProgressBar" MarginLeft="6" Visible="1">
+						<Loop Count="3" Variable="$X$" Offset="110,0">
+							<FlowContainer Name="ControllerCommunityMultiProgressTooltip$X$"
+								MarginTop="0"
+								Height="20"
+								Horizontal="1"
+								BackgroundTopSize="8"
+								BackgroundBotSize="8"
+								BackgroundTopImage="UI/objectives/objectives_barBgLeft.tga"
+								BackgroundMidImage="UI/objectives/objectives_barBgMiddle.tga"
+								BackgroundBotImage="UI/objectives/objectives_barBgRight.tga"
+								InitPopup="rightcenter,leftcenter"
+								Tooltip="_999/999"
+							>
+								<Dummy Name="ControllerCommunityMultiProgressBg$X$" Variable="$X$" Height="20" Width="@MultiProgressBarLength" MouseSenseEnabled="0"/>
+							</FlowContainer>
+							<FlowContainer
+								MarginTop="0"
+								Height="20"
+								Horizontal="1"
+								BackgroundTopSize="8"
+								BackgroundBotSize="8"
+								BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+								BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+								BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+								MouseSenseEnabled="0"
+							>
+								<Dummy Name="ControllerCommunityMultiProgressBar$X$" Variable="$X$" Height="20" Width="@MultiProgressBarLength" MouseSenseEnabled="0"/>
+							</FlowContainer>
+						</Loop>
+					</Container>
+				</FlowContainer>
+				<FlowContainer Name="ControllerEventPlanetary" Visible="1">				
+					<FlowContainer Horizontal="1" Height="34" Pos="20,0">
+						<Container Size="108,34">
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/Mechanicum_34x34.dds" 
+								Size="34,34"
+								Pos="0,0"
+							/>
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+								Size="62,34"
+								Pos="34,0"
+							/>
+							<Image Name="ControllerPlanetaryBar0"
+								Image="UI/common/Events/PlanetaryReclamation/FPB_Red_Widget.dds" 
+								Size="60,32"
+								Pos="35,1"
+							/>
+							<Text Name="ControllerPlanetaryCounter0"
+								Text="3568"
+								Size="62,34"
+								Pos="34,0"
+								Style="Text_Small_Light"
+								Color="#eeeeee"
+							/>
+						</Container>
+						
+						<Container Size="108,34">
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/Ecclesiarchy_34x34.dds" 
+								Size="34,34"
+								Pos="0,0"
+							/>
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+								Size="62,34"
+								Pos="34,0"
+							/>
+							<Image Name="ControllerPlanetaryBar1"
+								Image="UI/common/Events/PlanetaryReclamation/FPB_Gold_Widget.dds" 
+								Size="60,32"
+								Pos="35,1"
+							/>
+							<Text Name="ControllerPlanetaryCounter1"
+								Text="3568" 
+								Size="62,34"
+								Pos="34,0"
+								Style="Text_Small_Light"
+								Color="#eeeeee"
+							/>
+						</Container>
+						
+						<Container Size="108,34">
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/AstraMilitarum_34x34.dds" 
+								Size="34,34"
+								Pos="0,0"
+							/>
+							<Image 
+								Image="UI/common/Events/PlanetaryReclamation/FPB_BG_Widget.dds" 
+								Size="62,34"
+								Pos="34,0"
+							/>
+							<Image Name="ControllerPlanetaryBar2"
+								Image="UI/common/Events/PlanetaryReclamation/FPB_Blue_Widget.dds" 
+								Size="60,32"
+								Pos="35,1"
+							/>
+							<Text Name="ControllerPlanetaryCounter2"
+								Text="3568" 
+								Size="62,34"
+								Pos="34,0"
+								Style="Text_Small_Light"
+								Color="#eeeeee"
+							/>
+						</Container>
+					</FlowContainer>
+				</FlowContainer>
+				<Container Name="ControllerWorldEventIcons" Size="350,36">
+					<Loop Count="@WorldEventIconCount" Variable="$X$" Offset="39,0">
+						<Icon Name="ControllerWorldEventIcon$X$" Size="34,34" Pos="12,0" InitPopup="bottomcenter,topcenter" UseButtonEffects="0"/>
+					</Loop>
+				</Container>
+				<Container Name="ControllerDetails">	
+					<Image
+						Size="330,12"
+						MarginLeft="0"
+						Image="UI/OpenWorld/Rightbox/starmap_rightboxLight.tga"
+					/>			
+					<Text Name="ControllerWorldEventTimer"						
+						Size="326,38"
+						MarginTop="12" 
+						MarginBottom="-7"
+						Style="Text_Normal_Dark"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_Remaining time: 2:12:35"
+					/>
+				</Container>			
+			</FlowContainer>
+			
+			<FlowContainer Name="ControllerNewDlc" Visible="0" IgnoreScissor="0">
+				<Icon Name="ControllerDlcName"
+					MarginTop="8"
+					Size="330,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					AllImg="none"
+					Text="_DlcName"
+					ControllerSenseEnabled="1"
+				/>
+				<Image Name="ControllerDlcPicture"
+					MarginLeft="8"
+					Size="356,120"
+					Image="UI/menu/DLC/DLC_S01_MindPlague.tga"
+				/>					
+				<Container MarginTop="0" MarginBottom="-7" MarginLeft="30" IgnoreScissor="1" ConsoleVisible="0">
+					<Text Name="ControllerDlcPremiumValue"
+						Pos="194,5"
+						Size="92,32"
+						Style="Headline_Large_Light_Glow"
+						FontType="Share Tech Mono"
+						FontSize="22"
+						TextAlignH="right"
+						TextAlignV="center"
+						Text="_999"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="ControllerDlcPremiumIcon"
+						Pos="292,5"
+						Size="32,32"
+						Image="UI/OpenWorld/starmap_resourcePremium.tga"
+						InitPopup="topcenter,bottomcenter"
+						Tooltip="battle.gui.inventory.fate.label"
+						ZOffset="@Layer_0_ZOffset"
+					/>
+				</Container>
+			</FlowContainer>
+			
+			<Dummy Size="50,60"/>
+		</FlowContainer>
+	</FlowContainer>
+	
+	<Container Name="AccountNotLinked" Pos="55,870" Visible="1" GuiAlign="bottomleft" ConsoleVisible="0">
+		<Image Name="AccountNotLinkedBg"
+			Size="356,128"
+			Image="UI/menu/Accountlinking/main_rightAccountNotlinked.tga"
+		/>		
+		<Icon Name="AccountLinkingButton"
+			Pos="18,70"
+			Style="WideButton"
+			Text="Neocore Account"
+			ShowCategory="mouse"
+		/>
+		
+		<Text 
+			Pos="60,70"
+			Style="Text_Normal_Dark"
+			Size="320,40"
+			Text="Neocore Account"
+			ShowCategory="controller"
+			TextAlignH="left"
+		/>
+		
+		<XBOXButton
+			Pos="12,64"
+			Size="48,48"
+			SetButton="X"
+		/>
+		
+		<TextBox Name="AccountLinkingText" 
+			Pos="356,20"
+			Size="210,100"
+			Style="Text_Normal_Dark"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="Linked"
+		/>
+		<Text
+			Pos="22,19"
+			Size="132,26"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="common.account_linking.name"
+		/>	
+		<Text Name="AccountName"
+			Pos="176,19"
+			Size="154,26"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="a"
+		/>		
+	</Container>
+	
+	<Container Name="AccountLinked" Pos="55,934" Visible="0" GuiAlign="bottomleft" ConsoleVisible="0">
+		<Image Name="AccountLinkedBg"
+			Size="356,64"
+			Image="UI/menu/Accountlinking/main_rightAccountLinked.tga"
+		/>		
+		<Icon Name="AccountLinkedButton"
+			Style="StarmapHeadline1_4"
+			Pos="306,14"
+			Size="36,36"
+			IdleImg="UI/Interaction/button_infoOff.tga"
+			PressImg="UI/Interaction/button_infoOff.tga"
+			RolloverImg="UI/Interaction/button_infoOver.tga"
+			UseButtonEffects="0"
+			RolloverFade="125"
+			ShowCategory="mouse"
+		/>
+		<TextBox Name="AccountLinkedText"
+			Pos="356,0"
+			Size="210,45"
+			Style="Text_Normal_Dark"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="Linked"
+		/>
+		<Text
+			Pos="22,19"
+			Size="100,26"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="common.account_linking.name"
+		/>	
+		<Text Name="AccountLinkedName"
+			Pos="138,19"
+			Size="154,26"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="a"
+		/>		
+		<XBOXButton
+			Pos="306,14"
+			Size="36,36"
+			SetButton="X"
+		/>
+	</Container>
+	
+	<Container Name="CharacterChooser" Pos="746,652" Size="600,400" GuiAlign="bottomcenter" IgnoreScissor="1">
+		<FlowContainer VAlign="bottom">
+			<Container>
+				<Image Name="CharBack"
+					Pos="0,0"
+					Size="520,136"
+					Image="UI/Menu/main_bottomBackground.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Text Name="CharName"
+					Pos="79,31"
+					Size="360,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+				/>
+				<Text Name="CharClass"
+					Pos="81,56"
+					Size="360,30"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="center"
+					TextAlignV="center"
+				/>
+				<Image Name="CharLevelBack"
+					Pos="229,84"
+					Size="60,60"
+					Image="UI/Menu/main_bottomLevel.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Text Name="CharLevelValue"
+					Pos="240,86"
+					Size="36,60"
+					Style="Text_XLarge_White_Glow"
+					FontType="Share Tech Mono"
+					TextAlignH="center"
+					TextAlignV="center"
+				/>
+				<XBOXButton Name="XBoxLT"
+					Pos="22,29"
+					Size="60,60"
+					SetButton="L_TRIGGER"
+					ShowCategory="controller"
+				/>
+				<Icon Name="PrevChar"
+					Pos="30,39"
+					Size="40,40"
+					IdleImg="UI/Menu/button_prevOff.tga"
+					PressImg="UI/Menu/button_prevOver.tga"
+					RolloverImg="UI/Menu/button_prevOver.tga"
+					UseButtonEffects="0"
+					ShowCategory="mouse"
+				/>
+				<Icon Name="NextChar"
+					Pos="450,39"
+					Size="40,40"
+					IdleImg="UI/Menu/button_nextOff.tga"
+					PressImg="UI/Menu/button_nextOver.tga"
+					RolloverImg="UI/Menu/button_nextOver.tga"
+					UseButtonEffects="0"
+					ShowCategory="mouse"
+				/>
+				<XBOXButton Name="XBoxRT"
+					Pos="440,29"
+					Size="60,60"
+					SetButton="R_TRIGGER"
+					ShowCategory="controller"
+				/>
+			</Container>
+			<Dummy Size="10,70" ShowCategory="controller" />
+		</FlowContainer>	
+	</Container>
+	
+	<Text Name="InviteMsg"
+		Pos="0,50"
+		Size="1920,150"
+		Style="AccountName"
+		TextAlignH="center"
+		TextAlignV="top"
+		GuiAlign="topleft"
+		Visible="0"	
+		Color="#ededed"
+		Styles="Text_XLarge_White_Glow"
+		FontSize="30"
+		HAlign="center"
+	/>
+	
+	<Container Name="UserPanel">
+	<!--	<Container Pos="17,740" Size="333,48">
+			<XBOXButton Name="XBoxLB"	
+				Height="48"
+				HAlign="center"
+				VAlign="center"
+				SetButton="LEFT_SHOULDER"
+				Text="controller.buttons.change_user"
+				Style="XBoxButtonFont"
+			/>	
+		</Container> -->
+				
+		<Image Name="Profile"
+			Pos="133,785"
+			Size="128,128"		
+			MouseSenseEnabled="0"
+			Image=""
+		/>
+		<Text Name="Gamertag"
+			Pos="60,920"
+			Size="277,26"
+			TextAlignH="center"
+			TextAlignV="center"
+			GuiAlign="bottomleft"
+			Text=""
+			Style="Text_XLarge_White_Glow"
+			FontSize="25"
+		/>
+	</Container>
+	
+	<Container Name="Login" Layer="2">
+		<Image Name="LoginBack"
+			Image="UI/LoadingScreens/loadingLoginBack.tga"
+			GuiAlign="topleft"
+		/>
+		<Image Name="LoginLoadingScreen"
+			Image="UI/LoadingScreens/loadingLogin.tga"
+			GuiAlign="center"
+			Size="1920,1080"
+		/>
+		<Text Name="LoginMessage"
+			Pos="584,841"
+			Size="752,40"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Color="0xffededed"
+			GuiAlign="center"
+		/>
+		<Icon Name="LoginReconnect"
+			Pos="785,913"
+			Size="168,48"
+			IdleImg="UI/common/battle_escOff.tga"
+			PressImg="UI/common/battle_escOver.tga"
+			RolloverImg="UI/common/battle_escOver.tga"
+			IndeterminateImg="UI/common/battle_escInactive.tga"
+			Style="StarmapHeadline1_4"
+			UseButtonEffects="0"
+			Text="menu.networkerror.reconnect"
+			InitPopup="bottomcenter,topcenter"
+			GuiAlign="center"
+			ShowCategory="mouse"
+		/>
+		<Icon Name="LoginExit"
+			Pos="969,913"
+			Size="168,48"
+			IdleImg="UI/common/battle_escOff.tga"
+			PressImg="UI/common/battle_escOver.tga"
+			RolloverImg="UI/common/battle_escOver.tga"
+			IndeterminateImg="UI/common/battle_escInactive.tga"
+			Style="StarmapHeadline1_4"
+			UseButtonEffects="0"
+			Text="common.exit"
+			InitPopup="bottomcenter,topcenter"
+			GuiAlign="center"
+			ShowCategory="mouse"
+		/>	
+	</Container>
+	
+	<Container Name="Version2" Pos="1512,330" Size="352,200" GuiAlign="bottomright" Visible="0">
+		<Image Image="UI/common/Events/MajorUpgrade_Bg.dds"/>
+		<Text Name="Version2Text" Style="Text_Large_Light_Glow" Text="Version2.name" Pos="10,4" Size="254,40" TextAlignH="center" TextAlignV="center" ControllerSenseEnabled="1"/>
+		<Text Style="Text_Normal_Dark" Text="Version2.available" Pos="98,161" Size="240,20" TextAlignH="right" TextAlignV="center"/>
+		<Icon Name="Version2Button"
+			IdleImg="UI/Tutorial/button_clueJournalOff.dds" 
+			PressImg="UI/Tutorial/button_clueJournalOver.dds"
+			RolloverImg="UI/Tutorial/button_clueJournalOver.dds"
+			Pos="4,159"
+			Size="36,36"
+			UseButtonEffects="0"
+			ShowCategory="mouse"
+		/>	
+	</Container>
+	
+</Window>

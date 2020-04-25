@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Styles>
+		<TutorialFlowContainerDefaultStyle
+			Width="640"
+			BackgroundTopSize="140"
+			BackgroundBotSize="140"
+			BackgroundTopImage="UI/Tutorial/tutorial_top.tga"
+			BackgroundMidImage="UI/Tutorial/tutorial_middle.tga"
+			BackgroundBotImage="UI/Tutorial/tutorial_bottom.tga"
+			IgnoreScissor="1"
+			UseMinimumSize="1"
+		/>
+		<TutorialHeaderContainerStyle
+			Size="640,122"
+		/>
+		<TutorialHeadlineStyle
+			Pos="89,69"
+			Size="418,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<TutorialCloseStyle
+			Pos="535,65"
+			Size="36,36"
+			IdleImg="UI/Tutorial/button_clueCloseOff.tga"
+			RolloverImg="UI/Tutorial/button_clueCloseOver.tga"
+			PressImg="UI/Tutorial/button_clueCloseOver.tga"
+			UseButtonEffects="0"
+			InitPopup="bottomcenter,topcenter"
+			ShowCategory="mouse"
+		/>
+		<TutorialTextBoxStyle
+			MarginLeft="85"
+			MarginBottom="70"
+			Width="470"
+			UseSlider="0"
+			Style="Text_Normal_Dark"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<TutorialControllerButtonStyle
+			MarginLeft="85"
+			MarginTop="-56"
+			Height="48"
+			SetButton="A"
+			Style="XBoxButtonFont"
+			VAlign="bottom"
+			Text="Continue"
+		/>
+	</Styles>
+
+	<Dummy Name="TutorialNonshadeArea" Size="1,1"/>
+	<Dummy Name="TutorialHighlightArea" Size="1,1"/>
+	<Dummy Name="TutorialPoint" Size="1,1"/>
+	
+	<Loop Count="5" Variable="$X$">
+		<Image Name="TutorialAdditionalImage$X$" Pos="0,0" Size="1,1"/>
+	</Loop>
+	
+	<Container Name="TopLeft" Width="640" VAlign="top">
+		<FlowContainer
+			Style="TutorialFlowContainerDefaultStyle"
+			BackgroundTopImage="UI/Tutorial/tutorial_topleft.tga"
+		>
+			<Container Style="TutorialHeaderContainerStyle">
+				<Text Name="TopLeftHeadline" Style="TutorialHeadlineStyle"/>
+				<Icon Name="TopLeftClose" Style="TutorialCloseStyle"/>
+			</Container>
+			<TextBox Name="TopLeftText" Style="TutorialTextBoxStyle"/>
+		</FlowContainer>
+		<XBOXButton Name="TopLeftControllerButton" Style="TutorialControllerButtonStyle"/>
+	</Container>
+	
+	<Container Name="TopRight" Width="640" VAlign="top">
+		<FlowContainer
+			Style="TutorialFlowContainerDefaultStyle"
+			BackgroundTopImage="UI/Tutorial/tutorial_topright.tga"
+		>
+			<Container Style="TutorialHeaderContainerStyle">
+				<Text Name="TopRightHeadline" Style="TutorialHeadlineStyle"/>
+				<Icon Name="TopRightClose" Style="TutorialCloseStyle"/>
+			</Container>
+			<TextBox Name="TopRightText" Style="TutorialTextBoxStyle"/>
+		</FlowContainer>
+		<XBOXButton Name="TopRightControllerButton" Style="TutorialControllerButtonStyle"/>
+	</Container>
+	
+	<Container Name="BottomLeft" Width="640" VAlign="top">
+		<FlowContainer
+			Style="TutorialFlowContainerDefaultStyle"
+			BackgroundBotImage="UI/Tutorial/tutorial_bottomleft.tga"
+			VAlign="bottom"
+		>
+			<Container Style="TutorialHeaderContainerStyle">
+				<Text Name="BottomLeftHeadline" Style="TutorialHeadlineStyle"/>
+				<Icon Name="BottomLeftClose" Style="TutorialCloseStyle"/>
+			</Container>
+			<TextBox Name="BottomLeftText" Style="TutorialTextBoxStyle"/>
+		</FlowContainer>
+		<XBOXButton Name="BottomLeftControllerButton" Style="TutorialControllerButtonStyle"/>
+	</Container>
+	
+	<Container Name="BottomRight" Width="640" VAlign="top">
+		<FlowContainer
+			Style="TutorialFlowContainerDefaultStyle"
+			BackgroundBotImage="UI/Tutorial/tutorial_bottomright.tga"
+			VAlign="bottom"
+		>
+			<Container Style="TutorialHeaderContainerStyle">
+				<Text Name="BottomRightHeadline" Style="TutorialHeadlineStyle"/>
+				<Icon Name="BottomRightClose" Style="TutorialCloseStyle"/>
+			</Container>
+			<TextBox Name="BottomRightText" Style="TutorialTextBoxStyle"/>
+		</FlowContainer>
+		<XBOXButton Name="BottomRightControllerButton" Style="TutorialControllerButtonStyle"/>
+	</Container>
+
+	<Container Name="Center" Width="640" VAlign="top">
+		<FlowContainer
+			Style="TutorialFlowContainerDefaultStyle"
+		>
+			<Container Style="TutorialHeaderContainerStyle">
+				<Text Name="CenterHeadline" Style="TutorialHeadlineStyle"/>
+				<Icon Name="CenterClose" Style="TutorialCloseStyle"/>
+			</Container>
+			<TextBox Name="CenterText" Style="TutorialTextBoxStyle"/>
+		</FlowContainer>
+		<XBOXButton Name="CenterControllerButton" Style="TutorialControllerButtonStyle"/>
+	</Container>
+	
+</Window>

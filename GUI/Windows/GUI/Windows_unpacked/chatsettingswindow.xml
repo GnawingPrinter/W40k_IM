@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="724,27" GuiAlign="center" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<WindowTiltPivot Value="1100,540"/>
+		<WindowTiltMouseCenter Value="1100,540"/>
+		<WindowTiltZone Value="480,0,1500,1080"/>
+
+		<Layer_0_ZOffset Value="0"/>
+		<Layer_0_DefaultTilt Value="0.0,0.0"/>
+		<Layer_0_MaximumTilt Value="0.0,0.0"/>
+		
+		
+		<Layer_0_effekt_ZOffset Value="0"/>
+		<Layer_0_effekt_DefaultTilt Value="0.0,0.0"/>
+		<Layer_0_effekt_MaximumTilt Value="0.0,0.0"/>
+		
+		<Layer_0_grid_ZOffset Value="0"/>
+		<Layer_0_grid_DefaultTilt Value="0.0,0.0"/>
+		<Layer_0_grid_MaximumTilt Value="0.0,0.0"/>
+				
+		<Layer_1_ZOffset Value="0"/>
+		<Layer_1_MaximumTilt Value="0.0,0.0"/>
+
+		<Layer_1_Shadow_ZOffset Value="0"/>
+		<Layer_1_Shadow_DefaultTilt Value="0.0,0.0"/>
+		<Layer_1_Shadow_MaximumTilt Value="0.0,0.0"/>
+
+		<Layer_2_ZOffset Value="0"/>
+		<Layer_2_MaximumTilt Value="0.0,0.0"/>
+
+		<Layer_Text_ZOffset Value="0"/>
+		<Layer_Text_MaximumTilt Value="0.0,0.0"/>
+	
+		<ShownCount Type="int" Value="10"/>
+		<TextSizes Type="int" Value="4"/>
+		<TextSize0 Type="int" Value="15"/>
+		<TextSize1 Type="int" Value="17"/>
+		<TextSize2 Type="int" Value="19"/>
+		<TextSize3 Type="int" Value="22"/>
+	</Constants>
+	
+	<FlowContainer
+		Width="472"
+		BackgroundTopSize="50"
+		BackgroundBotSize="12"
+		BackgroundTopImage="UI/BATTLE_UI/spells/Tooltip/tooltip_common_bgTop.tga"
+		BackgroundMidImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgMiddle.tga"
+		BackgroundBotImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgBottom.tga"
+		>
+		<Container Height="50">
+			<Text
+				Pos="0,6"
+				Size="472,30"
+				Style="Text_Large_Light"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="chat.settings.title"
+			/>
+		</Container>
+		<FlowContainer Width="446" Pos="13,0">
+			<Container Height="32">
+				<Text
+					Text="chat.buttons.textsize"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Size="200,32"
+				/>
+				<ComboBox Name="TextSizeComboBox"
+					Size="240,32"
+					Pos="200,0"
+					Style="Text_Normal_White"
+					TextAlignH="center"
+					TextAlignV="center"
+					ControllerSenseEnabled="1"
+					TiltPivot="@TiltPivot"
+					TiltMouseCenter="@TiltMouseCenter"
+					DefaultTilt="@DefaultTilt"
+					MaximumTilt="@MaximumTilt"
+					TiltZone="@TiltZone"
+				/>
+			</Container>
+			<Container Height="32">
+				<Text
+					Text="chat.settings.backgroundopacity"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Size="200,32"
+				/>
+				<Slider Name="BackgroundOpacitySlider"
+					RangeMin="0"
+					RangeMax="100"
+					Pos="200,6"
+					Size="240,20"
+					RangeMin="0"
+					RangeMax="100"
+					StepSize="1"
+					PageSize="10"
+					ShownSize="10"
+					ControllerSenseEnabled="1"
+					TiltPivot="@TiltPivot"
+					TiltMouseCenter="@TiltMouseCenter"
+					DefaultTilt="@DefaultTilt"
+					MaximumTilt="@MaximumTilt"
+					TiltZone="@TiltZone"
+				/>
+			</Container>
+			<Container Name="ChatJoinRegionContainer" Height="32">
+				<CheckBox Name="AutoJoinGeneral"
+					Size="440,32"
+					Text="chat.settings.autojoingeneral"
+					Style="Text_Normal_Dark_Outline"
+					BiggerFontSize="21"
+					TextAlignH="left"
+					TextAlignV="center"
+					ControllerSenseEnabled="1"
+					InitPopup="bottomleft,topleft"
+					TiltPivot="@TiltPivot"
+					TiltMouseCenter="@TiltMouseCenter"
+					DefaultTilt="@DefaultTilt"
+					MaximumTilt="@MaximumTilt"
+					TiltZone="@TiltZone"
+				/>
+			</Container>
+			<Container Name="ChatRegionContainer" Height="32">
+				<Text
+					Text="openworld.gui.cabal.list.region"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Size="200,32"
+				/>
+				<ComboBox Name="ChatRegion"
+					Size="240,32"
+					Pos="200,0"
+					Style="Text_Normal_White"
+					TextAlignH="center"
+					TextAlignV="center"
+					ControllerSenseEnabled="1"
+					TiltPivot="@TiltPivot"
+					TiltMouseCenter="@TiltMouseCenter"
+					DefaultTilt="@DefaultTilt"
+					MaximumTilt="@MaximumTilt"
+					TiltZone="@TiltZone"
+				/>
+			</Container>
+			<Container Height="280">
+				<Text
+					Text="chat.settings.blocklist"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Pos="0,0"
+					Size="200,32"
+				/>
+				<Loop Count="@ShownCount" Variable="$X$" Offset="0,27">
+					<Container Name="BlockListItem$X$" Pos="0,32" Size="420,28">
+						<Icon Name="BlockListItemBack$X$"
+							Size="407,28"
+							IdleImg="UI/Leaderboard/leaderboard_frame_neutralOff.tga"
+							PressImg="UI/Leaderboard/leaderboard_frame_neutralOn.tga"
+							RolloverImg="UI/Leaderboard/leaderboard_frame_neutralOver.tga"
+							ControllerSenseEnabled="1"
+							UseButtonEffects="0"
+							SlideredElement="1"
+							ZOffset="@Layer_2_ZOffset"
+							TiltPivot="@WindowTiltPivot"
+							TiltMouseCenter="@WindowTiltMouseCenter"
+							DefaultTilt="@Layer_2_DefaultTilt"
+							MaximumTilt="@Layer_2_MaximumTilt"
+							TiltZone="@WindowTiltZone"
+						/>
+						<Text Name="BlockListName$X$"
+							Pos="13,2"
+							Size="407,27"
+							Style="Text_Normal_Dark"
+							TextAlignH="left"
+							TextAlignV="center"
+							MouseSenseEnabled="0"
+							ZOffset="@Layer_2_ZOffset"
+							TiltPivot="@WindowTiltPivot"
+							TiltMouseCenter="@WindowTiltMouseCenter"
+							DefaultTilt="@Layer_2_DefaultTilt"
+							MaximumTilt="@Layer_2_MaximumTilt"
+							TiltZone="@WindowTiltZone"
+							Text="User"
+						/>
+						<FlowContainer Name="BlockListContextMenu_$X$" Pos="315,0" Visible="0" Topmost="1" IgnoreScissor="1">
+							<Icon Name="BlockListUnblock_$X$"
+								Style="ContextMenuButton"
+								Text="chat.settings.blocklist.unblock"
+								ControllerSenseEnabled="1"
+							/>
+						</FlowContainer>
+					</Container>
+				</Loop>
+				<Slider Name="BlockListSlider"
+					Vertical="1"
+					Pos="420,32"
+					Size="20,280"
+				/>
+			</Container>
+			<Dummy Name="ContextDummy" Visible="0" />
+		</FlowContainer>
+	</FlowContainer>
+	
+	<Icon Name="Close"
+		Pos="450,20"
+		Size="32,32"
+		IdleImg="UI/Interaction/button_closeOff.tga"
+		PressImg="UI/Interaction/button_closeOff.tga"
+		RolloverImg="UI/Interaction/button_closeOver.tga"
+		GuiAlign="topright"
+		InitPopup="bottomcenter,topcenter"
+		Tooltip="common.close"
+	/>
+	<Dummy Name="ContextMenuDummy" Visible="0"/>
+</Window>

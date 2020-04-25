@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Size="300,160" GuiAlign="center">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<MaxKoponyaCountLarge Type="int" Value="4"/>
+		<MaxKoponyaCountSmall Type="int" Value="5"/>
+		<DisableMouseSense Type="bool" Value="0"/>
+	</Constants>
+
+	<FlowContainer Width="300" VerticalAlignment="bottom">	
+		<Include Path="Windows/Objectives/ExtraObjectives.xml"/>
+		<Text Name="Title" Pos="17,4" Size="280,32" Style="Headline_Large_Color_Glow" TextAlignH="left" TextAlignV="center" Text="openworld.gui.warzone.battlenumber"/>
+		<FlowContainer Name="WarzoneBossMission" MarginTop="4" MarginBottom="0" TextAlignV="bottom"
+		Width="300"
+		BackgroundTopSize="36"
+		BackgroundBotSize="100"
+		BackgroundTopImage="UI/objectives/objectives_backgroundTop.tga"
+		BackgroundMidImage="UI/objectives/objectives_backgroundMiddle.tga"
+		BackgroundBotImage="UI/objectives/objectives_backgroundBottom.tga"
+		>
+			<Dummy Height="22"/>
+			<Container Name="RatingBlock" Pos="16,0" Size="266,64" VerticalAlignment="bottom">		
+				<Image Name="RatingBack" Pos="0,0" Size="84,52" Image="UI/OpenWorld/icon_challengeGreen.tga"/>
+				<Text Name="RatingValue" Pos="5,7" Size="72,36" Style="Clue_Cogitator_Text" FontSize="28" BiggerFontSize="30" Color="#21c800" Sharpness="0.5"/>
+				<Text Name="ChallengeDamageModifier" Pos="88,-3" Size="178,32" Style="Text_Normal_White" FontSize="16" TextAlignH="left" TextAlignV="center"/>
+				<Text Name="ChallengeDamageReductionModifier" Pos="88,24" Size="178,32" Style="Text_Normal_White" FontSize="16" TextAlignH="left" TextAlignV="center"/>			
+				<Image Name="Line" Pos="0,59" Size="266,4" Image="UI/Assignment/assignment_bigline.tga"/>
+			</Container>
+			
+			<Container Name="Hazards" Visible="1" Pos="0,0" Size="284,50" MarginTop="0" MarginBottom="0">
+				<Text Pos="17,7" Size="86,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="openworld.gui.warzone.modifiers"/>
+				<Container Name="WarzoneHazard" Pos="100,4" Size="184,36" IgnoreScissor="1" Visible="1">
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Image Name="WarzoneHazard1" Visible="0"
+							Size="36,36"
+							Image="UI/OpenWorld/Warzone/warzone_hazard_lacaonBoss1.tga"
+							InitPopup="bottomcenter,topcenter"
+						/>							
+						<Image Name="WarzoneHazard2" Visible="0"
+							Size="36,36"
+							Image="UI/OpenWorld/Warzone/warzone_hazard_lacaonBoss2.tga"
+							InitPopup="bottomcenter,topcenter"
+						/>
+						<Image Name="WarzoneHazard3" Visible="0"
+							Pos="0,0"
+							Size="36,36"
+							Image="UI/OpenWorld/Warzone/warzone_hazard_lacaonBoss3.tga" 
+							InitPopup="bottomcenter,topcenter"
+						/>
+						<Image Name="WarzoneHazard4" Visible="0"
+							Pos="0,0"
+							Size="36,36"
+							Image="UI/OpenWorld/Warzone/warzone_hazard_lacaonBoss4.tga"
+							InitPopup="bottomcenter,topcenter"
+						/>
+						<Image Name="WarzoneHazard5" Visible="0"
+							Pos="0,0"
+							Size="36,36"
+							Image="UI/OpenWorld/Warzone/warzone_hazard_lacaonBoss5.tga"
+							InitPopup="bottomcenter,topcenter"
+						/>
+					</FlowContainer>	
+				</Container>
+				<Image Pos="14,46" Size="266,4" Image="UI/Assignment/assignment_bigline.tga"/>	
+			</Container>
+
+			<Container Pos="14,0" MarginTop="2" Size="272,60">				
+				<Text Name="NemesisHP" Pos="3,0" Size="272,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.warzone.nemesisHP"/>
+				<FlowContainer Name="NemesisHPBack" Horizontal="1" HorizontalAlignment="left">
+					<Image Pos="0,24" Size="8,24" Image="UI/objectives/objectives_barBgLeft.tga"/>
+					<Image Pos="0,24" Size="256,24" Image="UI/objectives/objectives_barBgMiddle.tga"/>
+					<Image Pos="0,24" Size="8,24" Image="UI/objectives/objectives_barBgRight.tga"/>	
+				</FlowContainer>
+				<Image Name="NemesisHPBar" Pos="4,24" Size="264,24" Image="UI/Objectives/objectives_barMiddle.tga"/>
+				<Image Pos="0,56" Size="266,4" Image="UI/Assignment/assignment_bigline.tga"/>
+			</Container>
+			
+			<FlowContainer Name="Objective" Pos="14,0" Width="280">
+				<Container Pos="0,0" Size="280,52">
+					<Container Pos="0,0" Size="266,52">
+						<FlowContainer Horizontal="1" MarginTop="6" HorizontalAlignment="center">
+							<Icon Name="BunkerStatus" MarginLeft="10" MarginRight="10" Size="64,48" IdleImg="UI/Objectives/objective_iconBunkerOn.tga" PressImg="UI/Objectives/objective_iconBunkerOff.tga"/>
+							<Icon Name="GeneratorStatus" MarginLeft="10" MarginRight="10" Size="64,48" IdleImg="UI/Objectives/objective_iconGeneratorOn.tga" PressImg="UI/Objectives/objective_iconGeneratorOff.tga"/>
+							<Icon Name="GateStatus" MarginLeft="10" MarginRight="10" Size="64,48" IdleImg="UI/Objectives/objective_iconGateOn.tga" PressImg="UI/Objectives/objective_iconGateOff.tga"/>
+						</FlowContainer>
+					</Container>
+				</Container>
+			</FlowContainer>	
+			
+			<FlowContainer Name="Timers" Width="284" Pos="0,4" MarginTop="2" Visible="1">				
+				<Image MarginLeft="14" Size="266,4" Image="UI/Assignment/assignment_bigline.tga"/>	
+				<FlowContainer Name="Airstrike" MarginLeft="14" MarginTop="6" Horizontal="1" HorizontalAlignment="left">
+					<Text Name="AirstrikeText" Size="174,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.warzone.airstrike"/>
+					<Text Name="AirstrikeTime" Size="88,30" Style="Text_Normal_Light" FontType="Share Tech Mono" FontSize="22" BiggeFontSize="24" TextAlignH="right" TextAlignV="center" Text="01:28"/>	
+				</FlowContainer>
+				<FlowContainer Name="Reinforcements" MarginTop="-2" MarginLeft="14" Horizontal="1" HorizontalAlignment="left">
+					<Text Name="ReinforcementsText" Size="174,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.warzone.reinforcements"/>
+					<Text Name="ReinforcementsTime" Size="88,30" Style="Text_Normal_Light" FontType="Share Tech Mono" FontSize="22" BiggeFontSize="24"  TextAlignH="right" TextAlignV="center" Text="01:28"/>	
+				</FlowContainer>
+				<FlowContainer Name="Enrage" MarginTop="-2" MarginLeft="14" Horizontal="1" HorizontalAlignment="left">
+					<Text Name="EnrageText" Size="174,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.warzone.enrage"/>
+					<Text Name="EnrageTime" Size="88,30" Style="Text_Normal_Light" FontType="Share Tech Mono" FontSize="22" BiggeFontSize="24"  TextAlignH="right" TextAlignV="center" Text="01:28"/>	
+				</FlowContainer>
+			</FlowContainer>
+
+			<Container Pos="0,2" Size="284,42" MarginTop="6" MarginBottom="19">
+				<Image Pos="14,1" Size="266,4" Image="UI/Assignment/assignment_bigline.tga"/>	
+				<Text Name="AllowedDeath" Pos="17,10" Size="130,30" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="center" Text="mission.common.allowed_death"/>
+				<Container Name="SkullsLarge" Pos="156,11" Size="128,32">
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Loop Count="@MaxKoponyaCountLarge" Variable="$X$">
+							<Image Name="LifeLarge$X$" Size="32,32" Image="UI/Objectives/objectives_lifeOn.tga"/>
+						</Loop>
+					</FlowContainer>
+				</Container>
+				<Container Name="SkullsSmall" Pos="164,13" Size="120,32" Visible="0">
+					<FlowContainer Horizontal="1" HorizontalAlignment="right">
+						<Loop Count="@MaxKoponyaCountSmall" Variable="$X$">
+							<Image Name="LifeSmall$X$" Size="24,24" Image="UI/Objectives/objectives_lifeOn.tga"/>
+						</Loop>
+					</FlowContainer>
+				</Container>
+			</Container>			
+
+		</FlowContainer>
+	</FlowContainer>
+	
+</Window>

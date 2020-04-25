@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Styles>
+		<HeadlineButtonStyle
+			Style="StarmapHeadline2_3"
+			IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+			IdleOffset="0,-11"
+			PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+			PressOffset="0,-12"
+			RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+			RolloverOffset="0,-11"
+		/>
+	</Styles>
+	
+	<Constants>	
+		<ChapterCount Type="int" Value="15"/>
+		<QuestCount Type="int" Value="20"/>
+		<InvestigationClueCount Type="int" Value="16"/>
+		<InvestigationClueInRow Type="int" Value="8"/>
+		<ClueCount Type="int" Value="48"/>
+		<ClueInRow Type="int" Value="6"/>
+		<WeaponCategoryCount Type="int" Value="7"/>
+		<WeaponEntryCount Type="int" Value="20"/>
+		<SkillCount Type="int" Value="4"/>
+		<SkillTagCount Type="int" Value="6"/>
+		<CategoryCount Type="int" Value="5"/>
+		<EntryCount Type="int" Value="50"/>
+	</Constants>
+	
+	<Container Name="Headline">
+		<Image Name="PanelBack"
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>
+		<Image Name="WeaponRacs"
+			Image="UI/Extras/Extras_Bg_racs.tga"
+			Size="2220,1442"
+			Pos="-220,-160"
+			Alpha="0.4"
+			MouseSenseEnabled="0"
+		/>
+		<Scene3D Name="CharacterModel"
+			Pos="560,-20"
+			Size="1920,1080"
+			GuiAlign="rightcenter"
+			SetCamera="inventorywindow"
+			WeatherSystem="CustomWeather_LootBox"
+		/>	
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<FlowContainer MarginTop="36" Horizontal="1" Height="68" HAlign="center">
+			<XBOXButton Name="XBoxLB"
+				Size="48,48"
+				SetButton="LEFT_SHOULDER"
+			/>
+			<Icon Name="InvestigationsButton"
+				Size="224,68"
+				Style="HeadlineButtonStyle"
+				Text="openworld.gui.journal.investigations"
+			/>
+			<Container Name="WeaponsButtonContainer">
+				<Icon Name="WeaponsButton"
+					Size="224,68"
+					Style="HeadlineButtonStyle"
+					Text="openworld.gui.journal.weapons"
+				/>
+				<Icon Name="WeaponNotification"
+					MarginTop="8"
+					MarginLeft="5"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+				/>
+			</Container>
+			<Icon Name="TutorialsButton"
+				Size="224,68"
+				Style="HeadlineButtonStyle"
+				Text="openworld.gui.journal.tutorials"
+			/>
+			<XBOXButton Name="XBoxRB"
+				Size="48,48"
+				SetButton="RIGHT_SHOULDER"
+			/>
+		</FlowContainer>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+		/>
+	</Container>
+	
+	<Container Name="Investigations" GuiAlign="center">
+		<Text
+			Pos="81,111"
+			Size="428,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.journal.investigations.title"
+		/>
+		<Image
+			Pos="77,140"
+			Size="576,848"
+			Image="UI/Journal/journal_left.tga"
+		/>
+		<ScrollableContainer Name="InvestigationList" Pos="92,161" Size="414,800" Layer="2">
+			<FlowContainer>
+				<Loop Count="@ChapterCount" Variable="$X$">
+					<FlowContainer Name="Chapter$X$">
+						<Container Name="Chapter$X$Header" MarginTop="10">
+							<Icon Name="Chapter$X$Open"
+								Size="24,24"
+								IdleImg="UI/Journal/button_small_minusOff.tga"
+								PressImg="UI/Journal/button_small_minusOver.tga"
+								RolloverImg="UI/Journal/button_small_minusOver.tga"
+								InitPopup="bottomcenter,topcenter"
+								UseButtonEffects="0"
+								ShowCategory="mouse"
+							/>
+							<Icon Name="Chapter$X$Name"
+								Pos="30,-2"
+								Size="364,32"
+								IconMarginRatioX="1.0"
+								AllImg="none"
+								InitPopup="bottomcenter,topcenter"
+								TextAlignH="left"
+								Style="StarmapHeadline2_3"
+								MouseSenseEnabled="0"
+								Text="Chapter $X$"
+							/>
+						</Container>
+						<FlowContainer Name="Chapter$X$Investigations">
+							<Loop Count="@QuestCount" Variable="$Y$">
+								<Icon Name="Chapter$X$Investigation$Y$"
+									MarginLeft="30"
+									Size="364,32"
+									IdleOffset="10,0"
+									PressOffset="10,0"
+									RolloverOffset="10,0"
+									IconMarginRatioX="1.0"
+									IdleImg="UI/Journal/journal_left_selectionOff.tga"
+									PressImg="UI/Journal/journal_left_selectionOn.tga"
+									RolloverImg="UI/Journal/journal_left_selectionOver.tga"
+									InitPopup="bottomcenter,topcenter"
+									TextAlignH="left"
+									Style="Starmap2_3"
+									Text="Chapter $X$ Investigation $Y$"
+								/>
+								<Image Name="Chapter$X$Investigation$Y$Completed"
+									MarginLeft="363"
+									MarginTop="-33"
+									Size="32,32"
+									Image="UI/Element/Default/CHECKBOX/Checked.tga"
+									MouseSenseEnabled="0"
+								/>
+								<Image Name="Chapter$X$Investigation$Y$Claim"
+									Visible="0"
+									MarginLeft="352"
+									MarginTop="-32"
+									Size="44,32"
+									Image="UI/Journal/icon_investigation_claim.tga"
+									MouseSenseEnabled="0"
+								/>
+							</Loop>
+						</FlowContainer>
+					</FlowContainer>
+				</Loop>
+			</FlowContainer>
+		</ScrollableContainer>
+		<Container Name="CenterPanel" Pos="648,144">
+			<Image Name="InvestigationIllustration"
+				Pos="0,60"
+				Size="732,180"
+				Image="UI/Journal/investigation_general.tga"
+			/>
+			<Image
+				Pos="0,0"
+				Size="732,848"
+				Image="UI/Journal/journal_investigation_panel.tga"
+			/>
+			<Text Name="InvestigationName"
+				Pos="50,15"
+				Size="634,40"
+				Style="Headline_XLarge_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_InvestigationName"
+			/>
+			<Image Name="InvestigationCompleted"
+				Pos="642,14"
+				Size="72,72"
+				Image="UI/Journal/icon_investigation_complete.tga"
+			/>
+			<Loop Count="@InvestigationClueCount" ItemsInRow="@InvestigationClueInRow" Variable="$X$" Offset="72,72">
+				<Icon Name="InvestigationClue$X$Back"
+					Pos="83,82"
+					Size="60,60"
+					IdleImg="UI/Journal/clue_slotOff.tga"
+					PressImg="UI/Journal/clue_slotOn.tga"
+					RolloverImg="UI/Journal/clue_slotOver.tga"
+					MouseSenseEnabled="0"
+					Tooltip="Clue $X$"
+				/>
+				<Icon Name="InvestigationClue$X$Icon"
+					Pos="83,82"
+					Size="60,60"
+					IdleImg="UI/Interaction/button_closeOff.tga"
+					PressImg="UI/Interaction/button_closeOff.tga"
+					RolloverImg="UI/Interaction/button_closeOver.tga"
+					InitPopup="bottomcenter,topcenter"
+					Tooltip="Clue $X$"
+				/>
+			</Loop>
+			<FlowContainer Name="RewardFrame" Pos="0,231" Size="732,60"> 
+				<FlowContainer HAlign="center" Horizontal="1" IgnoreScissor="1">
+					<Text Name="Reward"
+						MarginTop="14"
+						Height="30"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="left"
+						Text="openworld.gui.journal.investigations.reward"
+					/>	
+					<Text Name="RewardClaimed"
+						Visible="0"
+						MarginTop="14"
+						Height="30"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="left"
+						Text="openworld.gui.journal.investigations.rewardclaimed"
+					/>							
+					<FlowContainer Name="InvestigationRewardGold" Horizontal="1" MarginLeft="20" MarginTop="12" Height="32" HAlign="left">
+						<Image Size="28,28" Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"/>
+						<Text Name="GoldValue" MarginLeft="5" Height="28" Style="Text_Normal_White" FontType="Share Tech Mono" FontSize="22" BiggerFontSize="24" TextAlignH="left" TextAlignV="center" Text="5"/>
+					</FlowContainer>
+					<FlowContainer Name="InvestigationRewardXp" Horizontal="1" MarginLeft="20" MarginTop="12" Height="32" HAlign="left">
+						<Image Size="28,28" Image="UI/OpenWorld/MissionInfo/mission_rewardXp.tga"/>
+						<Text Name="Reward2Value" MarginLeft="5" Height="28" Style="Text_Normal_White" FontType="Share Tech Mono" FontSize="22" BiggerFontSize="24" TextAlignH="left" TextAlignV="center" Text="5"/>
+					</FlowContainer>
+					<FlowContainer Name="InvestigationRewardPremium" Horizontal="1" MarginLeft="20" MarginTop="12" Height="32" HAlign="left">
+						<Image Size="28,28" Image="UI/OpenWorld/MissionInfo/mission_rewardFate.tga"/>
+						<Text Name="PremiumValue" MarginLeft="5" Height="28" Style="Text_Normal_White" FontType="Share Tech Mono" FontSize="22" BiggerFontSize="24" TextAlignH="left" TextAlignV="center" Text="5"/>
+					</FlowContainer>
+					<FlowContainer Name="InvestigationRewardItem" Horizontal="1" MarginLeft="20" MarginTop="12" Height="32" HAlign="left">
+						<Image Size="28,28" Image="UI/OpenWorld/MissionInfo/mission_rewardItem.tga"/>
+						<Text Name="ItemValue" MarginLeft="5" Height="28" Style="Text_Normal_White" FontType="Share Tech Mono" FontSize="22" BiggerFontSize="24" TextAlignH="left" TextAlignV="center" Text="5"/>
+					</FlowContainer>
+					<Container Name="ClaimReward" MarginTop="8" MarginLeft="0">
+						<Icon Name="ClaimButton"						
+							MarginLeft="30"
+							Size="164,36"
+							IdleImg="UI/common/Options/button_largeOff.tga"
+							PressImg="UI/common/Options/button_largeOff.tga"
+							RolloverImg="UI/common/Options/button_largeOver.tga"
+							Style="Starmap2_3"
+							UseButtonEffects="0"
+							Text="openworld.gui.journal.investigations.claim"
+							ShowCategory="mouse"
+						/>
+						<AnimatedImage
+							MarginLeft="30"
+							Size="164,36"
+							FPS="24"
+							ImageCount="20"
+							Image="UI/SkillTree/Icon_sweep/icon_sweep_00.tga"
+							AnimationRestartMS="500.0"
+							MouseSenseEnabled="0"
+							ShowCategory="mouse"
+						/>
+						<XBOXButton Name="ClaimControllerButton"	
+							Height="48"
+							Width="300"
+							MarginTop="-7"
+							MarginLeft="20"
+							SetButton="Y"
+							Style="XBoxButtonFont"
+							Text="controller.buttons.show_reward"
+						/>
+					</Container>
+				</FlowContainer>
+			</FlowContainer>
+			<ScrollableContainer Name="InvestigationScrollableContainer" Pos="31,294" Size="685,530">
+				<FlowContainer >
+					<TextBox Name="InvestigationStartText"
+						Width="654"
+						Style="Text_Normal_Dark"
+						TextAlignV="top"
+						TextAlignH="left"
+					/>
+					<Text
+						MarginTop="12"
+						Size="654,30"
+						Style="Headline_Large_Light_Glow"
+						TextAlignV="center"
+						TextAlignH="left"
+						Text="openworld.gui.journal.investigations.clues"
+					/>
+					<Image
+						Size="654,4"
+						Image="UI/Assignment/assignment_bigline.tga"
+					/>
+					<Loop Count="@InvestigationClueCount" Variable="$X$">
+						<CheckBox Name="InvestigationClueCheckBox$X$"
+							MarginTop="5"
+							Size="32,32"
+							MouseSenseEnabled="0"
+						/>
+						<TextBox Name="InvestigationClueTextBoxNormal$X$"
+							MarginTop="-27"
+							MarginLeft="36"
+							Width="610"
+							FontType="Roboto"
+							FontSize="17"
+							BiggerFontSize="19"
+							Color="#99cccc"
+							Sharpness="0.5"
+							TextAlignH="left"
+						/>
+						<TextBox Name="InvestigationClueTextBoxChecked$X$"
+							MarginTop="-27"
+							MarginLeft="36"
+							Width="610"
+							FontType="Roboto"
+							FontSize="17"
+							BiggerFontSize="19"
+							Color="#EDEDED"
+							Sharpness="0.5"
+							TextAlignH="left"
+							Text="missionstory.purge_001"
+						/>
+					</Loop>
+					<FlowContainer Name="InvestigationSummary">
+						<Text
+							MarginTop="12"
+							Size="654,30"
+							Style="Headline_Large_Light_Glow"
+							TextAlignV="center"
+							TextAlignH="left"
+							Text="openworld.gui.journal.investigations.summary"
+						/>
+						<Image
+							Size="654,4"
+							Image="UI/Assignment/assignment_bigline.tga"
+						/>
+						<TextBox Name="InvestigationSummaryText"
+							MarginTop="8"
+							Width="654"
+							Style="Text_Normal_Dark"
+							TextAlignV="top"
+							TextAlignH="left"
+						/>
+					</FlowContainer>
+				</FlowContainer>
+			</ScrollableContainer>
+		</Container>
+		
+		<Container Name="CluePanel">
+			<Text Name="ClueLabel"
+				Pos="1464,111"
+				Size="368,30"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="Clues - *az adott chapter neve"
+			/>
+			<Image
+				Pos="1456,144"
+				Size="384,508"
+				Image="UI/Journal/journal_investigation_cluepanel.tga"
+			/>
+			<Loop Count="@ClueCount" ItemsInRow="@ClueInRow" Variable="$X$" Offset="60,60">
+				<Icon Name="Clue$X$"
+					Pos="1468,157"
+					Size="60,60"
+					IdleImg="UI/Clue/UnknownClue.tga"
+					PressImg="UI/Clue/UnknownClue.tga"
+					RolloverImg="UI/Clue/UnknownClue.tga"
+					InitPopup="bottomcenter,topcenter"
+					Tooltip="Clue $X$"
+				/>
+			</Loop>
+		</Container>
+	</Container>
+		
+	<Container Name="Weapons" GuiAlign="center" Visible="0">
+		<Text
+			Pos="81,111"
+			Size="428,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.inventory.filter.weapon"
+		/>
+		<Image
+			Pos="77,140"
+			Size="576,848"
+			Image="UI/Journal/journal_left.tga"
+		/>
+		<ScrollableContainer Name="WeaponList" Pos="92,161" Size="414,760" Layer="2">
+			<FlowContainer>
+				<Loop Count="@WeaponCategoryCount" Variable="$X$">
+					<Container Name="WeaponCategory$X$Header" MarginTop="10">
+						<Icon Name="WeaponCategory$X$Open"
+							Size="24,24"
+							IdleImg="UI/Journal/button_small_minusOff.tga"
+							PressImg="UI/Journal/button_small_minusOver.tga"
+							RolloverImg="UI/Journal/button_small_minusOver.tga"
+							InitPopup="bottomcenter,topcenter"
+							UseButtonEffects="0"
+						/>
+						<FlowContainer Pos="30,-2" Horizontal="1">
+							<Icon Name="WeaponCategory$X$Name"
+								Size="364,32"
+								IconMarginRatioX="1.0"
+								AllImg="none"
+								InitPopup="bottomcenter,topcenter"
+								TextAlignH="left"
+								Style="StarmapHeadline2_3"
+								MouseSenseEnabled="0"
+								Text="CategoryName $X$"
+							/>
+							<Icon Name="WeaponCategory$X$Notification"
+								MarginTop="2"
+								MarginLeft="-30"
+								Size="24,24"
+								AllImg="UI/msgbox/button_alerticon.dds"
+								MouseSenseEnabled="false"
+							/>
+						</FlowContainer>
+					</Container>
+					<FlowContainer Name="WeaponCategory$X$">
+						<Loop Count="@WeaponEntryCount" Variable="$Y$">						
+							<Icon Name="WeaponCategory$X$Entry$Y$"
+								Pos="30,0"
+								Size="364,32"
+								IdleOffset="10,0"
+								PressOffset="10,0"
+								RolloverOffset="10,0"
+								IconMarginRatioX="1.0"
+								IdleImg="UI/Journal/journal_left_selectionOff.tga"
+								PressImg="UI/Journal/journal_left_selectionOn.tga"
+								RolloverImg="UI/Journal/journal_left_selectionOver.tga"
+								ControllerSenseEnabled="1"
+								InitPopup="bottomcenter,topcenter"
+								TextAlignH="left"
+								Style="Starmap2_3"
+								Text="CategoryName $X$ Entry $Y$"
+							/>
+							<Icon Name="WeaponCategory$X$Notification$Y$"
+								MarginLeft="363"
+								MarginTop="-28"
+								Size="24,24"
+								AllImg="UI/msgbox/button_alerticon.dds"
+								MouseSenseEnabled="false"
+							/>						
+						</Loop>
+					</FlowContainer>
+				</Loop>
+			</FlowContainer>
+		</ScrollableContainer>
+		
+		<Container Pos="88,921" Size="414,48">
+			<FlowContainer Height="48" Horizontal="1" HAlign="center">
+				<XBOXButton Name="XBoxLT"
+					Height="48"
+					SetButton="L_TRIGGER"
+				/>
+				<RadioGroupLogical Name="Filter"/>
+				<CheckBox
+					MarginTop="8"
+					Height="32"
+					Style="Text_Large_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					RadioGroup="Filter"
+					UseDefault="1"
+					InitPopup="bottomcenter,topcenter"
+					Text="openworld.gui.Journal.weapons.character"
+					Tooltip="openworld.gui.Journal.weapons.character.tooltip"
+				/>
+				<CheckBox
+					MarginTop="8"
+					Height="32"
+					MarginLeft="20"
+					Style="Text_Large_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					RadioGroup="Filter"
+					UseDefault="1"
+					InitPopup="bottomcenter,topcenter"
+					Text="openworld.gui.Journal.weapons.class"
+					Tooltip="openworld.gui.Journal.weapons.class.tooltip"
+				/>
+				<CheckBox
+					MarginTop="8"
+					Height="32"
+					MarginLeft="20"
+					Style="Text_Large_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					RadioGroup="Filter"
+					UseDefault="1"
+					InitPopup="bottomcenter,topcenter"
+					Text="openworld.gui.Journal.weapons.all"
+					Tooltip="openworld.gui.Journal.weapons.all.tooltip"
+				/>
+				<XBOXButton Name="XBoxRT"
+					MarginLeft="5"
+					Height="48"
+					SetButton="R_TRIGGER"
+				/>
+			</FlowContainer>
+		</Container>
+		
+		<Text Name="WeaponSelectedName"
+			Pos="588,105" 
+			Size="587,40"
+			Style="Headline_XLarge_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="bottom"
+			Text="_Autopistol"
+		/>
+		<Image
+			Pos="588,134"
+			Size="598,878"
+			Image="UI/Journal/WeaponDetail_bg.tga"
+		/>
+		<ScrollableContainer Pos="588,153" Size="582,840" IgnoreScissor="1">
+			<FlowContainer>
+				<FlowContainer Horizontal="1" VAlign="top" MarginTop="15">
+					<Image
+						MarginLeft="30"
+						Size="60,120"
+						Image="UI/Artifacts/Back/1x2_neutral.tga"
+					/>
+					<Image Name="ItemIcon" 
+						MarginLeft="-60"
+						Size="60,120"
+					/>
+					<FlowContainer Width="475" VAlign="top" MarginLeft="15">
+						<Text Name="WeaponTags"
+							Style="Headline_Large_Light_Glow"
+							TextAlignH="left"
+							Text="_Ranged, Two-Handed"
+						/>
+						<FlowContainer Name="AdditionalAbility" Height="30" Horizontal="1">
+							<Text
+								Style="Headline_Large_White_Glow"
+								TextAlignH="left"
+								Text="openworld.gui.journal.weapons.additionalability"
+							/>						
+							<Text Name="WeaponAbility"
+								MarginLeft="5"
+								Style="Headline_Large_Light_Glow"
+								TextAlignH="left"
+								Text="_Deflect"
+							/>
+						</FlowContainer>
+						<TextBox Name="ProblemText"
+							Width="475"
+							Style="Text_Normal_Dark_Outline"
+							Color="#FF0000"
+						/>
+						<TextBox Name="WeaponDesc"
+							MarginTop="8"						
+							Style="Text_Large_White"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="simplifiedconversation.terraincognita.bnt_de_grimharvest_4_secondcatalyst.02_leader"
+						/>
+					</FlowContainer>
+				</FlowContainer>
+				<Text
+					MarginTop="15"
+					Style="Headline_XLarge_Light_Glow"
+					TextAlignH="center"
+					Text="openworld.gui.journal.weapons.skills"
+				/>
+				<Image
+					HAlign="center"
+					Width="488"
+					Height="2"
+					Image="UI/OpenWorld/headline2.tga"
+				/>
+				<Container Name="ItemSkills" MarginTop="5" HAlign="center">
+					<Loop Count="@SkillCount" Variable="$X$" Offset="70,0" MarginLeft="50">
+						<Icon Name="ItemSkillSlot_$X$"							
+							Size="60,60"
+							Image="UI/BATTLE_UI/spells/Tooltip/wskill_inactive.tga"
+						/>
+					</Loop>
+				</Container>
+				
+				<Image Name="SkillSelector"
+					MarginTop="-3"
+					Size="1,38"
+					Pos="180,5"
+					Image="UI/Journal/SkillDetail_selector.tga"
+				/>
+				<Image
+					MarginTop="5"
+					MarginLeft="30"
+					Size="495,12"
+					HAlign="center"
+					Image="UI/Journal/SkillDetail_header.tga"
+				/>
+				<FlowContainer MarginLeft="60" Width="480" MarginTop="-5">
+					<Text Name="SkillName"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="left"
+						Text="_Skill Name"
+					/>
+					<TextBox Name="SkillDesc"
+						MarginTop="8"						
+						Style="Text_Large_White"
+						TextAlignH="left"
+						TextAlignV="top"
+						Text="_Desc"
+					/>
+					<FlowContainer Name="SkillDescAlattiResz">
+						<Image
+							MarginTop="10"
+							MarginBottom="10"
+							Height="2"
+							Image="UI/OpenWorld/headline2.tga"
+						/>
+						<FlowContainer Horizontal="1">	
+							<Text 
+								MarginLeft="18"
+								MarginBottom="8"
+								Height="28"
+								Style="Text_Large_Light_Glow"
+								TextAlignH="left"
+								Text="openworld.gui.journal.weapons.damagetype"
+							/>
+							<Text Name="DamageType"
+								MarginTop="2"
+								MarginLeft="10"
+								MarginBottom="8"
+								Height="28"
+								Style="Headline_Normal_Light_Glow"
+								TextAlignH="left"
+								Text="_Physical"
+							/>
+						</FlowContainer>
+						<Text 
+							MarginLeft="18"
+							MarginBottom="8"
+							Style="Text_Large_Light_Glow"
+							TextAlignH="left"
+							Text="openworld.gui.journal.weapons.damageeffect"
+						/>
+						<Loop Count="@SkillTagCount" Variable="$X$" MarginBottom="8" >
+							<Container Name="SkillTag_$X$" MarginLeft="10">
+								<Image Name="SkillTagDot_$X$"
+									MarginLeft="21"
+									MarginBottom="4"
+									VerticalAlignment="top"
+									Size="20,20"
+									Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"
+								/>
+								<TextBox Name="SkillTagDesc_$X$"
+									MarginLeft="48"
+									MarginBottom="4"
+									UseSlider="0"
+									Width="397"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="_Knockback: Targets are forced back. Affects only against targets with yellow Suppression Resistance."
+								/>
+							</Container>
+						</Loop>
+						<Text 
+							MarginLeft="18"
+							MarginBottom="8"
+							MarginTop="8"
+							Style="Text_Large_Light_Glow"
+							TextAlignH="left"
+							Text="openworld.gui.journal.weapons.damageresource"
+						/>
+						<Container Name="Resource_Ammo" MarginLeft="10">
+							<Image
+								MarginLeft="21"
+								MarginTop="-4"
+								VerticalAlignment="center"
+								Size="32,32"
+								Image="UI\BATTLE_UI\spells\Tooltip\icon_ammo.tga"
+							/>
+							<FlowContainer Horizontal="1" MarginLeft="52">
+								<Text								
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="Skills.common.Ammo"
+								/>
+								<Text
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text=":"
+								/>	
+								<Text Name="ResourceDesc_Ammo"
+									MarginLeft="5"
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="%d per use"
+								/>
+							</FlowContainer>
+						</Container>
+						<Container Name="Resource_Overheat" MarginLeft="10">
+							<Image
+								MarginLeft="21"
+								MarginTop="-4"
+								VerticalAlignment="center"
+								Size="32,32"
+								Image="UI\BATTLE_UI\spells\Tooltip\icon_overheat.tga"
+							/>
+							<FlowContainer Horizontal="1" MarginLeft="52">
+								<Text
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="Skills.common.Overheat"
+								/>
+								<Text
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text=":"
+								/>							
+								<Text Name="ResourceDesc_Overheat"
+									MarginLeft="5"
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="%d per use"
+								/>
+							</FlowContainer>
+						</Container>
+						<Container Name="Resource_Class" MarginLeft="10">
+							<Image
+								MarginLeft="21"
+								MarginTop="-4"
+								VerticalAlignment="center"
+								Size="32,32"
+								Image="UI\BATTLE_UI\spells\Tooltip\icon_class.tga"
+							/>
+							<FlowContainer Horizontal="1" MarginLeft="52">
+								<Text Name="ResourceName_Class"
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="_class"
+								/>
+								<Text
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text=":"
+								/>	
+								<Text Name="ResourceDesc_Class"
+									MarginLeft="5"
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="%d per use"
+								/>
+							</FlowContainer>
+						</Container>
+						<Container Name="Resource_Cooldown" MarginLeft="10">
+							<Image
+								MarginLeft="21"
+								MarginTop="-4"
+								VerticalAlignment="center"
+								Size="32,32"
+								Image="UI\BATTLE_UI\spells\Tooltip\icon_cooldown.tga"
+							/>
+							<FlowContainer Horizontal="1" MarginLeft="52">
+								<Text							
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="Skills.common.cooldown"
+								/>
+								<Text
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text=":"
+								/>
+								<Text Name="ResourceDesc_Cooldown"
+									MarginLeft="5"
+									Height="28"
+									VerticalAlignment="top"
+									Style="Text_Normal_Dark_Outline"
+									Text="%d per use"
+								/>
+							</FlowContainer>
+						</Container>
+					</FlowContainer>
+				</FlowContainer>
+			</FlowContainer>
+		</ScrollableContainer>
+	
+	</Container>
+	
+	<Container Name="Tutorials" GuiAlign="center">
+		<Text
+			Pos="81,111"
+			Size="428,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.journal.tutorials.title"
+		/>
+		<Image
+			Pos="77,140"
+			Size="576,848"
+			Image="UI/Journal/journal_left.tga"
+		/>
+		<ScrollableContainer Name="TutorialList" Pos="92,161" Size="414,800" Layer="2">
+			<FlowContainer>
+				<Loop Count="@CategoryCount" Variable="$X$">
+					<Container Name="Category$X$Header" MarginTop="10">
+						<Icon Name="Category$X$Open"
+							Size="24,24"
+							IdleImg="UI/Journal/button_small_minusOff.tga"
+							PressImg="UI/Journal/button_small_minusOver.tga"
+							RolloverImg="UI/Journal/button_small_minusOver.tga"
+							InitPopup="bottomcenter,topcenter"
+							UseButtonEffects="0"
+						/>
+						<Icon Name="Category$X$Name"
+							Pos="30,-2"
+							Size="364,32"
+							IconMarginRatioX="1.0"
+							AllImg="none"
+							InitPopup="bottomcenter,topcenter"
+							TextAlignH="left"
+							Style="StarmapHeadline2_3"
+							MouseSenseEnabled="0"
+							Text="CategoryName $X$"
+						/>
+					</Container>
+					<FlowContainer Name="Category$X$">
+						<Loop Count="@EntryCount" Variable="$Y$">
+							<Icon Name="Category$X$Entry$Y$"
+								Pos="30,0"
+								Size="364,32"
+								IdleOffset="10,0"
+								PressOffset="10,0"
+								RolloverOffset="10,0"
+								IconMarginRatioX="1.0"
+								IdleImg="UI/Journal/journal_left_selectionOff.tga"
+								PressImg="UI/Journal/journal_left_selectionOn.tga"
+								RolloverImg="UI/Journal/journal_left_selectionOver.tga"
+								ControllerSenseEnabled="1"
+								InitPopup="bottomcenter,topcenter"
+								TextAlignH="left"
+								Style="Starmap2_3"
+								Text="CategoryName $X$ Entry $Y$"
+							/>
+						</Loop>
+					</FlowContainer>
+				</Loop>
+			</FlowContainer>
+		</ScrollableContainer>
+		<Container Pos="648,144">
+			<Image
+				Size="1192,848"
+				Image="UI/Journal/journal_tutorial_panel.tga"
+			/>
+			<Text Name="TutorialSelectedName"
+				Pos="50,17"
+				Size="1092,40"
+				BiggerFontSize="24"
+				Style="Headline_XLarge_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_Tutorial Selected Name"
+			/>
+			<SmartTextBox Name="TutorialSelectedShortDesc"
+				Pos="350,69"
+				Size="795,170"
+				MarginRight="10"
+				BiggerFontSize="24"
+				Style="Text_Large_White"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<ScrollableContainer Name="TutorialSelectedLongDescScrollable"
+				Pos="40,267"
+				Size="538,550"
+				HSlider="false"
+				>
+				<SmartTextBox Name="TutorialSelectedLongDesc"
+					VAlign="top"
+					BiggerFontSize="21"
+					Style="Text_Normal_Dark"
+					TextAlignH="left"
+					TextAlignV="top"
+				/>
+			</ScrollableContainer>
+			<Video Name="TutorialSelectedVideo"
+				Pos="598,271"
+				Size="560,315"
+				LoopVideo="1"
+				Layer="1"
+			/>
+			<Image Name="TutorialSelectedImage"
+				Pos="592,265"
+				Size="576,552"
+				Image="UI/Journal/journal_tutorial_panel.tga"
+			/>
+		</Container>
+	</Container>
+		
+</Window>

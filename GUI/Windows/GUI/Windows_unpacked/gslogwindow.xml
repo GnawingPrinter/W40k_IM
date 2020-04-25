@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+
+	<Image Alpha="0.5" ColorMask="#FFFFFFFF" Pos="495,95" Size="1230,890"/>
+	<Container Pos="500,100" Size="1220,880" Name="Main">
+		<Image Alpha="0.8" ColorMask="#000000"/>
+		<TextBox 
+			Pos="0,0" Size="300,25"
+			Text="Gamesparks Log"
+			TextAlignH="left"
+			TextAlignV="center"
+		/>
+		<Icon Name="Close"
+			Pos="1195,0"
+			Size="25,25"
+			Color="#000000"
+			Text="X"
+		/>
+		<ScrollableContainer MarginTop="25" Name="Scroll">
+			<FlowContainer Name="Log">
+			</FlowContainer>
+		</ScrollableContainer>
+	</Container>
+	
+</Window>

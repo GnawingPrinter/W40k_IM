@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SII_Fr51_BG Terrain="Terrains/Sections/Standard_Imperial_Indoors/SII_Fr51_BG.VHT" Preview="Terrains/Sections/Standard_Imperial_Indoors/MapEditorImages/SII_Fr51_BG_thumb.bmp" Image="Terrains/Sections/Standard_Imperial_Indoors/MapEditorImages/SII_Fr51_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Standard Imperial Indoors">
+	<PivotPos x="2829" y="-1088.19287" />
+	<Tags />
+	<Grids>
+		<Grid Column="0" Row="0" Image="" />
+	</Grids>
+</SII_Fr51_BG>

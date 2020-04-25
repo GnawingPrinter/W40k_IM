@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Spaceship_Fr10 Terrain="Terrains/Sections/Spaceship/Spaceship_Fr10.VHT" Preview="Terrains/Sections/Spaceship/MapEditorImages/Spaceship_Fr10_thumb.bmp" Image="Terrains/Sections/Spaceship/MapEditorImages/Spaceship_Fr10.bmp" MinClickHeight="-50000" Background="false" MapType="Spaceship">
+	<PivotPos x="-3576.78125" y="3059.27588" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="-3553.4895" Position.y="2967.25586" Position.z="0.459181309" />
+		</Grid>
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="-3553.74951" Position.y="3197.49292" Position.z="0.459181309" />
+		</Grid>
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+	</Grids>
+</Spaceship_Fr10>

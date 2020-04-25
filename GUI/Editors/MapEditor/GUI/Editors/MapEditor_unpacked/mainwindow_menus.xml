@@ -1,0 +1,23 @@
+<FlowContainer Pos="0,30" Name="FileMenu" Width="150" FillColor="#96aabe" Visible="false">
+	<Icon Style="SimpleButton" Text="New" Name="FileMenu_New" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Open" Name="FileMenu_Load" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Open Section" Name="FileMenu_LoadSection" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Save" Name="FileMenu_Save" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Save as" Name="FileMenu_SaveAs" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Close" Name="FileMenu_Close" Height="40" ColorMask="#96aabe"/>
+</FlowContainer>
+
+<FlowContainer Pos="60,30" Name="EditMenu" Width="300" FillColor="#96aabe" Visible="false">
+	<Icon Style="SimpleButton" Text="Auto Close Deadends" Name="EditMenu_Deadend" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Download death locations" Name="EditMenu_GetDeathPos" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Order selected dummies to top" Name="EditMenu_OrderToTop" Height="40" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Order selected dummies to bottom" Name="EditMenu_OrderToBottom" Height="40" ColorMask="#96aabe"/>
+</FlowContainer>
+
+<FlowContainer Pos="120,30" Name="ViewMenu" Width="300" FillColor="#96aabe" Visible="false">
+	<CheckBox Style="SimpleButton" Text="Always show scripts" Name="EditMenu_ShowScripts" Height="40" ColorMask="#96aabe"/>
+	<CheckBox Style="SimpleButton" Text="Always show patrols" Name="EditMenu_ShowPatrols" Height="40" ColorMask="#96aabe"/>
+	<CheckBox Style="SimpleButton" Text="Select decals (D)" Name="EditMenu_SelectDecals" Height="40" ColorMask="#96aabe"/>
+	<CheckBox Style="SimpleButton" Text="Test Dummy Size" Name="EditMenu_TestDummySize" Height="40" ColorMask="#96aabe"/>
+	<CheckBox Style="SimpleButton" Text="Show Background" Name="EditMenu_ShowBackground" Height="40" ColorMask="#96aabe"/>
+</FlowContainer>

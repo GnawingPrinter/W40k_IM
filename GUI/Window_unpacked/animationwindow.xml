@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>	
+<Window>
+	<Constants>
+		<DefaultFontSize Value="16"/>
+	</Constants>
+	
+	<Styles>
+		<TextLeft Color="#000000" FontSize="16" TextAlignH="Left" FontType="PT Sans"/>
+		<TextTitle Color="#000000" FontSize="16" TextAlignH="Center" FontType="PT Sans"/>
+	</Styles>
+	
+	<StyleRules>
+		<Rule Pattern="Text" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="EditBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Icon" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="ComboBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="ListBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="CheckBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Row" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Column" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+	</StyleRules>
+	
+	<GridContainer>
+		<Rows>
+			<Row ID="Top" Height="190"/>
+			<Row ID="Bottom" Height="1*"/>
+		</Rows>
+		<TimeLine RowID="Top" Name="TimeLine" Zoom="5" KeyFrameSize="20.0"/>
+		<GridContainer RowID="Bottom">
+			<Columns>
+				<Column ID="Left" Width="790"/>
+				<Column ID="Mid" Width="1*"/>
+				<Column ID="Right" Width="350"/>
+			</Columns>
+			<GridContainer Name="LeftContainer" ColumnID="Left">
+				<Rows>
+					<Row Height="40" ID="Filters"/>
+					<Row Height="2*" ID="Grid"/>
+					<Row Height="40" ID="Buttons"/>
+					<Row Height="150" ID="Properties"/>
+					<Row Height="40" ID="GlobalButtons"/>
+				</Rows>
+				<Image RowID="Filters" ColorMask="0.1,0.1,0.1" Image="white.tga"/>
+				<GridContainer RowID="Filters">
+					<Columns>
+						<Column Width="60"/>
+						<Column Width="1*"/>
+						<Column Width="25"/>				
+						<Column Width="90"/>
+						<Column Width="1*"/>
+						<Column Width="1*"/>
+						<Column Width="1*"/>
+					</Columns>
+					<Text Column="0" Text="Anim Set"/>
+					<ComboBox Column="1" Name="AnimSet" Color="1.0,1.0,1.0"/>
+					<Text Column="3" Text="Filter by Pack" TextAlignH="Left"/>
+					<ComboBox Column="4" Name="PackFilter" Color="1,1,1"/>
+					<Text Column="5" Text="Filter by Name" TextAlignH="Right" MarginRight="10"/>
+					<EditBox Column="6" Name="NameFilter"/>
+				</GridContainer>
+				<Image RowID="Grid" ColorMask="0.3,0.3,0.3" Image="white.tga"/>
+				<Grid RowID="Grid" Name="Grid" Color="0.4,0.4,0.4"/>
+				<Image RowID="Buttons" ColorMask="0.1,0.1,0.1" Image="white.tga"/>
+				<GridContainer RowID="Buttons">
+					<Columns>
+						<Column Width="1*"/>
+						<Column Width="1*"/>
+						<Column Width="1*"/>
+						<Column Width="1*"/>
+					</Columns>
+					<Icon Row="0" Column="0" Name="AddAnimDesc" Text="Add" ColorMask="0.4,0.4,0.4" IdleImg="white.tga"/>
+					<Icon Row="0" Column="1" Name="DeleteAnimDesc" Text="Delete" ColorMask="0.4,0.4,0.4" IdleImg="white.tga"/>
+					<Icon Row="0" Column="2" Name="CopyAnimDesc" Text="Copy" ColorMask="0.4,0.4,0.4" IdleImg="white.tga"/>
+					<CheckBox Row="0" Column="3" Name="PreviewMode" Text="Preview"/>
+				</GridContainer>
+				<Image RowID="Properties" ColorMask="0.1,0.1,0.1" Image="white.tga"/>
+				<GridContainer RowID="Properties" Name="PropertyContainer">
+					<Columns>
+						<Column Width="1*"/>		
+					</Columns>
+					<GridContainer Column="0">
+						<Columns>
+							<Column Width="1*"/>
+							<Column Width="1*"/>
+						</Columns>
+						<Rows>
+							<Row Height="40"/>
+							<Row Height="40"/>
+							<Row Height="40"/>
+							<Row Height="40"/>
+							<Row Height="40"/>
+						</Rows>
+						<Text Row="0" Column="0" Text="Length (ms)" TextAlignH="Right"/>
+						<EditBox Name="LengthEdit" Row="0" Column="1" Text="0.0"/>
+						<Text Row="1" Column="0" Text="Time To Variate (ms)" TextAlignH="Right"/>
+						<EditBox Name="TimeToVariateEdit" Row="1" Column="1" Text="0.0"/>
+						<Text Row="2" Column="0" Text="Time To Variate Max (ms)" TextAlignH="Right"/>
+						<EditBox Name="TimeToVariateMaxEdit" Row="2" Column="1" Text="0.0"/>
+						<Text Row="3" Column="0" Text="Anim Blend Time (ms)" TextAlignH="Right"/>
+						<EditBox Name="AnimBlendEdit" Row="3" Column="1" Text="600.0"/>
+						<Text Row="4" Column="0" Text="Used Animation: " TextAlignH="Right"/>
+						<Text Name="ActualAnimName" Row="4" Column="1" Text="0.0"/>
+					</GridContainer>
+				</GridContainer>
+				<Image RowID="GlobalButtons" Image="white.tga" ColorMask="0.2,0.2,0.2"/>
+				<GridContainer RowID="GlobalButtons">
+					<Columns>
+						<Column Width="1*"/>
+					</Columns>
+					<Icon Name="Save" Column="0" Text="Save" IdleImg="white.tga" ColorMask="0.4,0.4,0.4"/>
+				</GridContainer>
+			</GridContainer>
+			<GridContainer ColumnID="Right" Name="AnimListContainer">
+				<Rows>
+					<Row Height="40"/>
+					<Row Height="40"/>
+					<Row Height="1*"/>
+				</Rows>
+				<Image Row="0" Column="0" RowSpan="3" ColorMask="0.2,0.2,0.2" Image="white.tga"/>				
+				<CheckBox Width="200" Row="0" Column="0" Text="Unused Only" Name="OnlyUnusedAnims" FontSize="14" Sharpness="0.5"/>
+				<Text MarginRight="175" Width="-1" Text="Filter" HorizontalAlignment="Right"/>
+				<EditBox Width="170" Text="" HorizontalAlignment="Right" Name="AnimListFilter"/>
+				<Text Row="1" Text="Anim Type Filter" HorizontalAlignment="Left"/>
+				<ComboBox Row="1" Name="AnimTypeFilter" Color="#FFFFFF" Width="230" HorizontalAlignment="Right"/>
+				<ListBox Row="2" Name="AnimList"/>
+			</GridContainer>			
+		</GridContainer>
+	</GridContainer>
+	<Icon Name="GridOpener" Pos="700,1050" Size="300,30" Text="Show Grid" ColorMask="0.4,0.4,0.4" IdleImg="white.tga" Alpha="0.3"/>
+	<Icon Name="AnimListOpener" Pos="1000,1050" Size="300,30" Text="Show Anim List" ColorMask="0.4,0.4,0.4" IdleImg="white.tga" Alpha="0.3"/>
+	<GridContainer Pos="800,400" Size="350,200" FillColor="#666666" Name="MissingCfgWindow" Visible="false">
+		<Rows>
+			<Row Height="60"/>
+			<Row Height="40"/>
+			<Row Height="40"/>
+			<Row Height="1*"/>
+			<Row Height="40" ID="Buttons"/>
+		</Rows>
+		<Text Text="Missing Anim Config File" Style="TextTitle"/>
+		<GridContainer Row="1">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="2*"/>
+			</Columns>
+			<Text Column="0" Text="Animation Set" Style="TextLeft"/>
+			<ComboBox Column="1" Name="CBAnimSet" Color="#FFFFFF"/>
+		</GridContainer>
+		<GridContainer Row="2">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="2*"/>
+			</Columns>
+			<Text Column="0" Text="Body Descriptor" Style="TextLeft"/>
+			<ComboBox Column="1" Name="CBBodyDesc" Color="#FFFFFF"/>
+		</GridContainer>
+		<GridContainer RowID="Buttons">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="1*"/>
+			</Columns>
+			<Icon Column="0" Text="OK" Name="MissingCfgOK" IdleImg="white.tga" Color="#000000" ColorMask="#999999"/>
+			<Icon Column="1" Text="Cancel" Name="MissingCfgCancel" IdleImg="white.tga" Color="#000000" ColorMask="#999999"/>
+		</GridContainer>
+	</GridContainer>
+</Window>

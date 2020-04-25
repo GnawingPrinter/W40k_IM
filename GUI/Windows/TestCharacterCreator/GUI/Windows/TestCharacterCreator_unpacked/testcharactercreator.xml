@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	<Container Name="CreatorPage"/>
+	<Container Name="CharacterEdit" Visible="0" Size="1920,1080">
+		<Container Name="Headline">
+			<Image Name="PanelBack"
+				Image="UI/Interaction/Skullwall_layer3.tga"
+				DynamicOffsetMax="80,80"
+			/>
+			<Image
+				Image="UI/Interaction/Skullwall_layer2.tga"
+				DynamicOffsetMax="40,40"
+			/>
+			<Image
+				Image="UI/Interaction/Skullwall_layer1.tga"
+				DynamicOffsetMax="20,20"
+			/>
+			<Image
+				Image="UI/Interaction/Skullwall_vignette.tga"
+				BlendMode="multiply"
+			/>
+			<Image
+				Image="UI/Interaction/Skullwall_dark_layer.tga"
+				BlendMode="multiply"
+			/>
+			<Image
+				Height="80"
+				Image="UI/Interaction/fullscreen_headline_bg.tga"
+			/>
+			<FlowContainer Name="TopTabs" MarginTop="33" Horizontal="1" Height="68" HAlign="center" GuiAlign="topleft">
+				<Container MarginTop="2" Size="224,68">
+					<Icon Name="CharacterButton"
+						Size="224,68"
+						IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+						IdleOffset="0,-11"
+						PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+						PressOffset="0,-12"
+						RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+						RolloverOffset="0,-11"
+						Style="StarmapHeadline2_3"
+						Text="openworld.gui.character.title"
+					/>
+				</Container>
+				<Container MarginTop="2" Size="224,68">
+					<Icon Name="InventoryButton"
+						Size="224,68"
+						IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+						IdleOffset="0,-11"
+						PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+						PressOffset="0,-12"
+						RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+						RolloverOffset="0,-11"
+						Style="StarmapHeadline2_3"
+						Text="openworld.gui.inventory.title"
+					/>
+				</Container>
+				<Container MarginTop="2" Size="224,68">
+					<Icon Name="SkillsButton"
+						Size="224,68"
+						IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+						IdleOffset="0,-11"
+						PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+						PressOffset="0,-12"
+						RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+						RolloverOffset="0,-11"
+						Style="StarmapHeadline2_3"
+						Text="openworld.gui.Skills.title"
+					/>
+				</Container>
+			</FlowContainer>
+			<Icon Name="Close"
+				Pos="1860,42"
+				Size="32,32"
+				IdleImg="UI/Interaction/button_closeOff.tga"
+				PressImg="UI/Interaction/button_closeOff.tga"
+				RolloverImg="UI/Interaction/button_closeOver.tga"
+				GuiAlign="topright"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="common.close"
+			/>
+		</Container>
+		<Container Name="CharacterPage"/>		
+		<Icon 
+			Size="300,60"
+			HorizontalAlignment="Right" 
+			VerticalAlignment="Bottom" 
+			Text="CREATE CHARACTER"
+			IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+			PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+			RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+			Style="StarmapHeadline2_3"
+			Name="BnCreateCharacter" 
+			Visible="1"
+		/>
+	</Container>
+</Window>

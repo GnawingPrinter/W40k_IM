@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<MinionCount Type="int" Value="7"/>
+		<MinionAbilityCount Type="int" Value="7"/>
+		<WeaponSkillCount Type="int" Value="4"/>
+		<SpellCount Type="int" Value="5"/>
+		<SpellArtifactCount Type="int" Value="5"/>
+		<SpellArtifactTokenCount Type="int" Value="7"/>
+		<SpellArtifactInventoryCount Type="int" Value="24"/>
+		<ListedBoosterInRow Type="int" Value="8"/>
+		<ListedWeaponsInRow Type="int" Value="8"/>
+		<ListedWeapons Type="int" Value="16"/>
+		<TagCount Type="int" Value="8"/>
+	</Constants>
+
+	<Styles>
+		<ItemSlot1x2
+			Size="60,120"
+			ArtifactSize="1,2"
+		/>
+		<ItemSlot1x1
+			Size="60,60"
+			ArtifactSize="1,1"
+		/>
+		<SummonStatIcon
+			Size="32,32"
+		/>
+		<SummonStatName
+			Height="32"
+			MarginLeft="5"
+			Style="Italic_Normal_White"
+			TextAlignH="left"
+			TextAlignV="center"
+		/>
+		<SummonStatValue
+			Height="32"
+			MarginLeft="5"
+			Style="Text_XLarge_White_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="3"
+		/>
+	</Styles>
+	
+		
+	<Container Name="Background">
+		<Dummy Name="BlackScreen" HAlign="right"/>
+		<Image
+			Image="UI/BlackTexture.tga"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Extras/Extras_Bg_racs.tga"
+			Size="2220,1442"
+			Pos="-520,-330"
+			Alpha="0.4"
+			GuiAlign="center"
+		/>
+		<Scene3D Name="CharacterModel"
+			GuiAlign="center"
+			Pos="0,0"
+			Size="1920,1080"
+			AllowEffects="1"
+			SetCamera="SummonSetup"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+			GuiAlign="topleft"
+		/>
+		<Icon
+			Pos="848,35"
+			Size="224,68"
+			IdleImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+			IdleFontType="Electrolize"
+			IdleFontSize="17"
+			IdleColor="#ededed"
+			IdleSharpness="0.5"
+			IdleOutlineColor="0x666bffff"
+			IdleFontOutlineWidth="20"
+			IdleOutlineSharpness="2"
+			IdleOutlineOffset="0.0"
+			IdleOffset="0,-12"
+			ButtonState="UIBS_ALWAYS_IDLE"
+			GuiAlign="topcenter"
+			Text="openworld.GUI.summonsetup.title"
+		/>
+		<Icon Name="Journal"
+			Pos="28,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_infoOff.tga"
+			PressImg="UI/Interaction/button_infoOff.tga"
+			RolloverImg="UI/Interaction/button_infoOver.tga"
+			GuiAlign="topleft"
+			InitPopup="topcenter,bottomcenter"
+			Tooltip="openworld.gui.journal.tutorials.title"
+		/>
+		<Icon TutorialCategoryToReset="Construct_setup"
+			Pos="28,80"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+			PressImg="UI/Interaction/button_tutorialResetOff.tga"
+			RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+			GuiAlign="topleft"
+			InitPopup="leftcenter,rightcenter"
+			Tooltip="Tutorial.TutorialReset"
+		/>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+		/>
+	</Container>
+	<Container Name="LeftPart" Pos="104,92" IgnoreScissor="0" GuiAlign="leftcenter" Tutorial="Construct_setup_base">
+		<Text
+			Size="488,25"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.GUI.summonsetup.priority_title"
+		/>
+		
+		<Container Name="PowerPriority" Pos="0,31" Size="498,132">
+			<Image Name="PowerPriorityBack"
+				Size="498,132"
+				Image="UI/TechAdept/Construct_priority_bg.tga"
+			/>
+			<Loop Count="@SpellCount" Variable="$X$" Offset="88,0">
+				<Container Name="SelectedSpell$X$">
+					<Image Name="SelectedSpellIcon$X$"
+						Pos="42,16"
+						Size="60,60"
+						Image="UI/Psyker/power_empty.tga"
+					/>
+                    <Icon Name="SelectedSpellHighlight$X$"
+                        Pos="28,0"
+						Size="88,88"
+                        IdleImg="UI/Alap_UI/Invisible_back.tga"
+                        RolloverImg="UI/Psyker/Power_priority_selector.tga"
+                        PressImg="none"
+						UseButtonEffects="0"
+						UseDragDrop="1"
+					/>
+					<Image Name="SelectedSpellArrow$X$"
+						Pos="102,24"
+						Size="30,39"
+						Image="UI/Psyker/arrow_right_small.tga"
+					/>
+					<Image Name="SelectedSpellShortcutIcon_$X$"
+                        Pos="72,51"
+                        Size="32,32"
+                        Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+                        MouseSenseEnabled="0"
+                    />
+                    <Text Name="SelectedSpellShortcutText_$X$"
+                        Pos="75,48"
+                        Size="32,32"
+                        Style="Shortcut"
+                        TextAlignH="center"
+                        TextAlignV="center"
+                        MouseSenseEnabled="0"
+                    />
+					<Icon Name="ChangeMinionButton_$X$"
+						Pos="55,83"
+						Size="33,35"
+						IdleImg="UI\TechAdept\icon_changeOff.tga"
+						PressImg="UI\TechAdept\icon_changeOn.tga"
+						RolloverImg="UI\TechAdept\icon_changeOn.tga"
+						InitPopup="topcenter,bottomcenter"
+						Tooltip="openworld.GUI.summonsetup.change_minion"
+					/>
+                </Container>
+			</Loop>
+		</Container>
+		
+		<Text Name="MinionSetupFrameTitle"
+			Pos="0,183"
+			Size="500,31"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="_Select a Battle Automata"
+		/>
+		<Container Name="SpellParams" Pos="0,215" Size="498,673">
+			<Image
+				Image="UI/TechAdept/MinionSetupFrame_bg.tga"
+			/>
+			<FlowContainer>
+				<Container Name="MinionList" Size="498,117" MarginBottom="-35">
+					<Image
+						Image="UI/TechAdept/MinionSelectFrame_bg.tga"
+					/>
+					<FlowContainer Horizontal="1" HAlign="center" MarginLeft="5" MarginTop="4">
+						<Loop Count="@MinionCount" Variable="$X$">
+							<Container Name="ListedSpell$X$" Width="65">
+								<Image Name="ListedSpellIcon$X$"
+									Pos="0,16"
+									Size="60,60"
+									Image="UI/Psyker/power_empty.tga"
+								/>
+								<Icon Name="ListedSpellSelection$X$"
+									Pos="-14,2"
+									Size="88,88"
+									IdleImg="UI/Alap_UI/Invisible_back.tga"
+									RolloverImg="UI/Psyker/Power_priority_selector.tga"
+									PressImg="none"
+									InitPopup="bottomcenter,topcenter"
+									UseButtonEffects="0"
+								/>
+								<Image Name="ListedSpellLock$X$"
+									Pos="47,60"
+									Size="16,21"
+									Image="UI/Psyker/Lock_small.tga"
+									MouseSenseEnabled="0"
+								/>
+							</Container>
+						</Loop>
+					</FlowContainer>
+				</Container>
+				<FlowContainer MarginTop="-20" HAlign="center">
+			
+					<Image Name="SelectedMinionBg"
+						Size="498,88"
+						MarginBottom="10"
+						HAlign="center"
+						Image="UI/Psyker/Power_list_selector.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Text Name="SelectedMinionName"
+						VAlign="top"
+						MarginTop="-58"
+						HAlign="center"
+						Size="460,31"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						Text="_Kataphron Vanguard"
+					/>
+					<TextBox Name="SelectedMinionDesc"						
+						HAlign="center"
+						Width="460"
+						MarginTop="-10"
+						Style="Text_Normal_Dark"
+						TextAlignH="center"
+						TextAlignV="top"
+						Text="_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+					/>
+					<Container Pos="0,0" Name="MinionAbilityContainer" Width="485">
+						<Image
+							MarginTop="10"
+							MarginLeft="22"
+							MarginBottom="10"
+							Size="460,8"
+							Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+						/>
+						<FlowContainer Height="50" MarginLeft="16" MarginTop="25" HAlign="center" Horizontal="1">
+							<Loop Count="@MinionAbilityCount" Variable="$X$" >
+								<Container Name="MinionAbility$X$" Width="55" >
+									<Image Name="MinionAbilityIcon$X$"
+										Size="50,50"
+										Image="UI/Psyker/power_empty.tga"
+									/>
+									<Image Name="MinionAbilityLock$X$"
+										Pos="38,30"
+										Size="16,21"
+										Image="UI/Psyker/Lock_small.tga"
+										MouseSenseEnabled="0"
+									/>
+								</Container>
+							</Loop>
+						</FlowContainer>
+					</Container>
+					<Image
+						MarginTop="10"
+						MarginLeft="22"
+						Size="460,8"
+						Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+					/>
+					<FlowContainer Name="MinionDamage" Height="32" MarginLeft="30" MarginTop="5" Horizontal="1">
+						<Image
+							Style="SummonStatIcon"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_minionDamage.tga"
+						/>
+						<Text
+							Style="SummonStatName"
+							Text="openworld.gui.character.stats.damage"
+						/>
+						<Text Name="MinionDamageValue"
+							Style="SummonStatValue"
+						/>
+						<Image Name="MinionDamageBuffPic" Visible="0"
+							MarginTop="5"
+							MarginLeft="15"
+							Size="12,20"
+							MouseSenseEnabled="0" 
+							Image="UI/BATTLE_UI/spells/Tooltip/ConstructBuff3.tga"
+						/>
+						<Text Name="MinionDamageBuffValue" Visible="0"
+							MarginLeft="5"
+							Style="Text_Normal_Green"
+							Text="+136"
+						/>
+					</FlowContainer>
+					<FlowContainer Name="MinionHP" Height="32" MarginLeft="30" Horizontal="1">
+						<Image
+							Style="SummonStatIcon"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_minionHP.tga"
+						/>
+						<Text
+							Style="SummonStatName"
+							Text="openworld.gui.character.hitpoints"
+						/>
+						<Text Name="MinionHPValue"
+							Style="SummonStatValue"
+						/>
+						<Image Name="MinionHPBuffPic" Visible="0"
+							MarginTop="5"
+							MarginLeft="15"
+							Size="12,20"
+							MouseSenseEnabled="0" 
+							Image="UI/BATTLE_UI/spells/Tooltip/ConstructBuff3.tga"
+						/>
+						<Text Name="MinionHPBuffValue" Visible="0"
+							MarginLeft="5"
+							Style="Text_Normal_Green"
+							Text="+136"
+						/>
+					</FlowContainer>
+					<FlowContainer Name="MinionSuppression" Height="32" MarginLeft="30" Horizontal="1">
+						<Image
+							Style="SummonStatIcon"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_minionSuppression.tga"
+						/>
+						<Text
+							Style="SummonStatName"
+							Text="openworld.gui.character.suppression"
+						/>
+						<Text Name="MinionSuppressionValue"
+							Style="SummonStatValue"
+						/>
+						<Image Name="MinionSuppressionBuffPic" Visible="0"
+							MarginTop="5"
+							MarginLeft="15"
+							Size="12,20"
+							MouseSenseEnabled="0" 
+							Image="UI/BATTLE_UI/spells/Tooltip/ConstructBuff3.tga"
+						/>
+						<Text Name="MinionSuppressionBuffValue" Visible="0"
+							MarginLeft="5"
+							Style="Text_Normal_Green"
+							Text="+136"
+						/>
+					</FlowContainer>
+					<FlowContainer Name="MinionShieldHP" Height="32" MarginLeft="30" Horizontal="1">
+						<Image
+							Style="SummonStatIcon"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_minionShield.tga"
+						/>
+						<Text
+							Style="SummonStatName"
+							Text="openworld.gui.character.stats.shieldhp"
+						/>
+						<Text Name="MinionShieldHPValue"
+							Style="SummonStatValue"
+						/>
+						<Image Name="MinionShieldHPBuffPic" Visible="0"
+							MarginTop="5"
+							MarginLeft="15"
+							Size="12,20"
+							MouseSenseEnabled="0" 
+							Image="UI/BATTLE_UI/spells/Tooltip/ConstructBuff3.tga"
+						/>
+						<Text Name="MinionShieldHPBuffValue" Visible="0"
+							MarginLeft="5"
+							Style="Text_Normal_Green"
+							Text="+136"
+						/>
+					</FlowContainer>
+					<FlowContainer Name="MinionHPRegen" Height="32" MarginLeft="30" Horizontal="1">
+						<Image
+							Style="SummonStatIcon"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_minionHPregen.tga"
+						/>
+						<Text
+							Style="SummonStatName"
+							Text="openworld.gui.character.stats.hp_regeneration"
+						/>
+						<Text Name="MinionHPRegenValue"
+							Style="SummonStatValue"
+						/>
+						<Image Name="MinionHPRegenBuffPic" Visible="0"
+							MarginTop="5"
+							MarginLeft="15"
+							Size="12,20"
+							MouseSenseEnabled="0" 
+							Image="UI/BATTLE_UI/spells/Tooltip/ConstructBuff3.tga"
+						/>
+						<Text Name="MinionHPRegenBuffValue" Visible="0"
+							MarginLeft="5"
+							Style="Text_Normal_Green"
+							Text="+136"
+						/>
+					</FlowContainer>
+					<FlowContainer Name="MinionDR" Height="32" MarginLeft="30" Horizontal="1">
+						<Image
+							Style="SummonStatIcon"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_minionDR.tga"
+						/>
+						<Text
+							Style="SummonStatName"
+							Text="openworld.gui.character.damagereduction"
+						/>
+						<Text Name="MinionDRValue"
+							Style="SummonStatValue"
+						/>
+						<Image Name="MinionDRBuffPic" Visible="0"
+							MarginTop="5"
+							MarginLeft="15"
+							Size="12,20"
+							MouseSenseEnabled="0" 
+							Image="UI/BATTLE_UI/spells/Tooltip/ConstructBuff3.tga"
+						/>
+						<Text Name="MinionDRBuffValue" Visible="0"
+							MarginLeft="5"
+							Style="Text_Normal_Green"
+							Text="+136"
+						/>
+					</FlowContainer>
+					<FlowContainer Name="MinionSpeed" Height="32" MarginLeft="30" Horizontal="1">
+						<Image
+							Style="SummonStatIcon"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_minionSpeed.tga"
+						/>
+						<Text
+							Style="SummonStatName"
+							Text="openworld.gui.character.stats.movement_speed"
+						/>
+						<Text Name="MinionSpeedValue"
+							Style="SummonStatValue"
+						/>
+						<Image Name="MinionSpeedBuffPic" Visible="0"
+							MarginTop="5"
+							MarginLeft="15"
+							Size="12,20"
+							MouseSenseEnabled="0" 
+							Image="UI/BATTLE_UI/spells/Tooltip/ConstructBuff3.tga"
+						/>
+						<Text Name="MinionSpeedBuffValue" Visible="0"
+							MarginLeft="5"
+							Style="Text_Normal_Green"
+							Text="+136"
+						/>
+					</FlowContainer>
+					<Image
+						MarginTop="5"
+						MarginLeft="22"
+						Size="460,8"
+						Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+					/>
+					<Container MarginTop="0" Name="MinionDataflux" Size="500,32">
+						<Image
+							Pos="30,0"
+							Size="32,32"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_class.tga"
+						/>
+						<Text
+							Pos="63,0"
+							Size="180,32"
+							Style="Italic_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="openworld.gui.character.datapool"
+						/>
+						<FlowContainer Horizontal="1" HorizontalAlignment="Right">
+							<Text Name="MinionDatafluxValue"
+								Height="32"
+								MarginRight="8"
+								MarginTop="1"
+								Style="Text_XLarge_White_Glow"
+								TextAlignH="right"
+								TextAlignV="center"
+								Text="12.5"
+							/>
+							<Text
+								Height="26"
+								MarginTop="5"
+								MarginRight="29"
+								Style="Text_Normal_Dark_Outline"
+								TextAlignH="right"
+								TextAlignV="center"
+								Text="skills.common.peruse"
+							/>
+						</FlowContainer>
+					</Container>
+					<Container MarginTop="0" Name="DatafluxReserve" Size="500,32">
+						<Image
+							Pos="30,0"
+							Size="32,32"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_class.tga"
+						/>
+						<Text Name="DatafluxReserveType"
+							Pos="63,0"
+							Size="180,32"
+							Style="Italic_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="Skills.common.reserve"
+						/>
+						<FlowContainer Horizontal="1" HorizontalAlignment="Right">
+							<Text Name="DatafluxReserveValue"
+								Height="32"
+								MarginRight="8"
+								MarginTop="1"
+								Style="Text_XLarge_White_Glow"
+								TextAlignH="right"
+								TextAlignV="center"
+								Text="12.5"
+							/>
+							<Text
+								Height="26"
+								MarginTop="5"
+								MarginRight="29"
+								Style="Text_Normal_Dark_Outline"
+								TextAlignH="right"
+								TextAlignV="center"
+								Text="%"
+							/>
+						</FlowContainer>
+					</Container>
+					<Container MarginTop="0" Name="SkillCooldown" Size="500,32">
+						<Image
+							Pos="30,0"
+							Size="32,32"
+							Image="UI/BATTLE_UI/spells/Tooltip/icon_cooldown.tga"
+						/>
+						<Text
+							Pos="63,0"
+							Size="180,32"
+							Style="Italic_Normal_White"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="Skills.common.cooldown"
+						/>
+						<FlowContainer Horizontal="1" HorizontalAlignment="Right">
+							<Text Name="SkillCooldownValue"
+								Height="32"
+								MarginRight="8"
+								MarginTop="1"
+								Style="Text_XLarge_White_Glow"
+								TextAlignH="right"
+								TextAlignV="center"
+								Text="20"
+							/>
+							<Text
+								Height="26"
+								MarginTop="5"
+								MarginRight="29"
+								Style="Text_Normal_Dark_Outline"
+								TextAlignH="right"
+								TextAlignV="center"
+								Text="Skills.common.DurationMeasure"
+							/>
+						</FlowContainer>
+					</Container>		
+				</FlowContainer>
+			</FlowContainer>
+			<Text Name="KastelanKivetel"
+				Pos="0,635"
+				Size="498,30"
+				TextAlignH="center"
+				Style="Text_Normal_White_Outline"
+				Color="#ff0000"
+				Text="openworld.GUI.summonsetup.kastelan_kivetel"
+			/>
+			<Icon Name="EquipMinionButton" IgnoreScissor="1"
+				Pos="-102,655"
+				Size="204,52"
+				MarginTop="15"
+				HAlign="center"
+				IdleImg="UI/Crafting/button_xlargeOff.tga"
+				PressImg="UI/Crafting/button_xlargeOver.tga"
+				RolloverImg="UI/Crafting/button_xlargeOver.tga"
+				Style="StarmapHeadline2_3"
+				Text="common.select"
+			/>
+			<Icon Name="MinionListClose" IgnoreScissor="1"
+				Pos="105,655"
+				Size="204,52"
+				MarginTop="15"
+				HAlign="center"
+				IdleImg="UI/Crafting/button_xlargeOff.tga"
+				PressImg="UI/Crafting/button_xlargeOver.tga"
+				RolloverImg="UI/Crafting/button_xlargeOver.tga"
+				Style="StarmapHeadline2_3"
+				Text="common.cancel"
+			/>
+		</Container>
+	</Container>
+
+	<Dummy Name="ItemTooltipDummy" Pos="120,275" Size="1,1" GuiAlign="leftcenter" Visible="0" />
+
+	<Container Name="EquippedModuleList" GuiAlign="center">
+        <Line Name="WeaponModuleLines" LineWidth="16" Texture="UI/OpenWorld/starmap_location_lineOff.tga" GuiAlign="center" Stretch="1"/>
+		<Container Pos="765,373" Name="EquippedModule3" IgnoreScissor="1">
+            <Image
+				Pos="-35,-33"
+				Size="128,156"
+				Image="UI\TechAdept\WeaponModules_bg.tga"
+                MouseSenseEnabled="0"
+            />
+		   <Artifact Name="EquippedModule3Artifact"
+                Style="ItemSlot1x1"
+            />
+			<Image Name="EquippedModule3Token"
+				Image="UI/Artifacts/default.tga"
+				Size="60,60"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			<TextBox
+				MarginTop="-135"
+				MarginLeft="-30"
+				Size="120,100"
+                Style="Text_Normal_Dark"
+                TextAlignH="center"
+                TextAlignV="bottom"
+                MouseSenseEnabled="0"
+                UseSlider="0"
+                Text="openworld.GUI.summonsetup.Primary_weapon"
+            />
+        </Container>
+        <Container Pos="1097,373" Name="EquippedModule4" IgnoreScissor="1">
+            <Image
+				Pos="-35,-33"
+				Size="128,156"
+				Image="UI\TechAdept\WeaponModules_bg.tga"
+                MouseSenseEnabled="0"
+            />
+			<Artifact Name="EquippedModule4Artifact"
+                Style="ItemSlot1x1"
+            />
+			<Image Name="EquippedModule4Token"
+				Image="UI/Artifacts/default.tga"
+				Size="60,60"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			<TextBox
+                MarginTop="-135"
+				MarginLeft="-30"
+				Size="120,100"
+                Style="Text_Normal_Dark"
+                TextAlignH="center"
+                TextAlignV="bottom"
+                MouseSenseEnabled="0"
+                UseSlider="0"
+                Text="openworld.GUI.summonsetup.Secondary_weapon"
+            />
+        </Container>
+        <Container Name="Boosters" Pos="663,790" Size="595,235">
+			<Image
+                Size="595,235"
+				Image="UI\TechAdept\EquipmentModules_bg.tga"
+                MouseSenseEnabled="0"
+            />
+			<Text IgnoreScissor="1"
+				Pos="0,-30"
+				Size="595,31"
+                Style="Text_Large_Light_Glow"
+                TextAlignH="center"
+                TextAlignV="center"
+                Text="openworld.GUI.summonsetup.Booster_modules"
+            />
+                <Container Name="EquippedModule0" Pos="134,40">
+                    <Artifact Name="EquippedModule0Artifact"
+                        Style="ItemSlot1x1"
+                    />
+                    <Image Name="EquippedModule0Locked"
+                        Size="60,60"
+						Image="UI\TechAdept\booster_locked.tga"
+						InitPopup="bottomcenter,topcenter"
+                    />
+                </Container>
+                <Container Name="EquippedModule1" Pos="401,39">
+                    <Artifact Name="EquippedModule1Artifact"
+                        Style="ItemSlot1x1"
+                    />
+                    <Image Name="EquippedModule1Locked"
+                        Size="60,60"
+						Image="UI\TechAdept\booster_locked.tga"
+						InitPopup="bottomcenter,topcenter"
+                    />
+                </Container>
+                <Container Name="EquippedModule2" Pos="268,165">
+                    <Artifact Name="EquippedModule2Artifact"
+                        Style="ItemSlot1x1"
+                    />
+                    <Image Name="EquippedModule2Locked"
+						Size="60,60"
+						Image="UI\TechAdept\booster_locked.tga"
+						InitPopup="bottomcenter,topcenter"
+                    />
+                </Container>
+        </Container>
+	</Container>
+	
+	<Container Name="BoosterInventory" Pos="1319,748" Size="498,274" GuiAlign="rightcenter">
+		<Text
+			Size="498,25"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.GUI.summonsetup.Booster_modules"
+		/>
+		<Image
+			Pos="0,30"
+			Image="UI\TechAdept\BoosterInventoryFrame.tga"
+			Size="498,254"
+		/>
+		<FlowContainer Pos="-5,33" Height="61" Horizontal="1" HAlign="center" MarginLeft="10">			
+			<Icon Name="Damage_bonus_item_filter"			
+				Size="61,61"
+				IdleImg="UI\TechAdept\BoosterFilters\booster_damage_bonusOff.tga"
+				PressImg="UI\TechAdept\BoosterFilters\booster_damage_bonusOn.tga"
+				RolloverImg="UI\TechAdept\BoosterFilters\booster_damage_bonusOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="artifacts.items.booster_damage_bonus_item.name"
+			/>
+			<Icon Name="Shield_bonus_item_filter"			
+				Size="61,61"
+				IdleImg="UI\TechAdept\BoosterFilters\booster_shield_bonusOff.tga"
+				PressImg="UI\TechAdept\BoosterFilters\booster_shield_bonusOn.tga"
+				RolloverImg="UI\TechAdept\BoosterFilters\booster_shield_bonusOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="artifacts.items.booster_shield_bonus_item.name"
+			/>
+			<Icon Name="HP_bonus_item_filter"			
+				Size="61,61"
+				IdleImg="UI\TechAdept\BoosterFilters\booster_hp_bonusOff.tga"
+				PressImg="UI\TechAdept\BoosterFilters\booster_hp_bonusOn.tga"
+				RolloverImg="UI\TechAdept\BoosterFilters\booster_hp_bonusOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="artifacts.items.booster_hp_bonus_item.name"
+			/>
+			<Icon Name="HP_regen_item_filter"			
+				Size="61,61"
+				IdleImg="UI\TechAdept\BoosterFilters\booster_hp_regenOff.tga"
+				PressImg="UI\TechAdept\BoosterFilters\booster_hp_regenOn.tga"
+				RolloverImg="UI\TechAdept\BoosterFilters\booster_hp_regenOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="artifacts.items.booster_hp_regen_item.name"
+			/>
+			<Icon Name="Damage_reduce_item_filter"			
+				Size="61,61"
+				IdleImg="UI\TechAdept\BoosterFilters\booster_damage_reduceOff.tga"
+				PressImg="UI\TechAdept\BoosterFilters\booster_damage_reduceOn.tga"
+				RolloverImg="UI\TechAdept\BoosterFilters\booster_damage_reduceOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="artifacts.items.booster_damage_reduce_item.name"
+			/>
+			<Icon Name="Movement_speed_bonus_item_filter"			
+				Size="61,61"
+				IdleImg="UI\TechAdept\BoosterFilters\booster_movement_speed_bonusOff.tga"
+				PressImg="UI\TechAdept\BoosterFilters\booster_movement_speed_bonusOn.tga"
+				RolloverImg="UI\TechAdept\BoosterFilters\booster_movement_speed_bonusOver.tga"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+				Tooltip="artifacts.items.booster_movement_speed_bonus_item.name"
+			/>
+		</FlowContainer>
+		
+		<Icon Name="BoosterSortTypeButton"
+			IgnoreScissor="1"
+			Pos="-40,90"
+			Size="44,44"
+			MarginBottom="5"
+			IdleImg="UI/Inventory/fullscreen_inventory_typeSortoff.tga"
+			PressImg="UI/Inventory/fullscreen_inventory_typeSortOn.tga"
+			RolloverImg="UI/Inventory/fullscreen_inventory_typeSortOn.tga"
+			UseButtonEffects="0"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="Battle.GUI.inventory.sort_by_type"
+		/>
+		<Icon Name="BoosterSortRarityButton"
+			IgnoreScissor="1"
+			Pos="-40,130"
+			Size="44,44"
+			MarginBottom="5"
+			IdleImg="UI/Inventory/fullscreen_inventory_raritySortOff.tga"
+			PressImg="UI/Inventory/fullscreen_inventory_raritySortOn.tga"
+			RolloverImg="UI/Inventory/fullscreen_inventory_raritySortOn.tga"
+			UseButtonEffects="0"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="Battle.GUI.inventory.sort_by_rarity"
+		/>
+		<Icon Name="BoosterSortLevelButton"
+			IgnoreScissor="1"
+			Pos="-40,170"
+			Size="44,44"
+			MarginBottom="5"
+			IdleImg="UI/Inventory/fullscreen_inventory_powerratingSortOff.tga"
+			PressImg="UI/Inventory/fullscreen_inventory_powerratingSortOn.tga"
+			RolloverImg="UI/Inventory/fullscreen_inventory_powerratingSortOn.tga"
+			UseButtonEffects="0"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="Battle.GUI.inventory.sort_by_level"
+		/>
+		<Loop Count="@SpellArtifactInventoryCount" Variable="$X$" ItemsInRow="@ListedBoosterInRow" Offset="60,61">
+			<Artifact Name="BoosterModuleIcon$X$"
+				Pos="8,90"
+				Style="ItemSlot1x1"
+			/>
+		</Loop>
+		<Slider Name="BoosterSlider" IgnoreScissor="1"
+			Pos="500,90"
+			Size="20,180"
+		/>
+	</Container>
+	
+	<Container Name="WeaponListContainer" Pos="1319,50" Size="498,680" GuiAlign="rightcenter">		
+		<FlowContainer VAlign="bottom">
+			<FlowContainer Name="PrimaryWeaponContainer" VAlign="bottom">
+				<Text
+					Size="498,25"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="openworld.GUI.summonsetup.Primary_weapon"
+				/>
+				<FlowContainer  Width="498" IgnoreScissor="1" VAlign="bottom"
+					BackgroundTopSize="215"
+					BackgroundBotSize="17"
+					BackgroundTopImage="UI\TechAdept\WeaponListFrame_top.tga"
+					BackgroundMidImage="UI\TechAdept\WeaponListFrame_grid.tga"
+					BackgroundBotImage="UI\TechAdept\WeaponListFrame_bottom.tga" 
+				>
+					<Text
+						Pos="20,10"
+						Size="484,31"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.summonsetup.Default_weapons"
+					/>
+					<Container MarginTop="10" Height="60" IgnoreScissor="1">
+						<Loop Count="@SpellArtifactTokenCount" Variable="$X$" Offset="68,0">
+							<Icon Name="DefaultPrimaryWeapons$X$"
+								Pos="10,2"
+								Size="60,60"
+								IdleImg="UI/Artifacts/default.tga"
+								RolloverImg="UI/Artifacts/default.tga"
+								PressImg="UI/Artifacts/default.tga"
+								InitPopup="bottomcenter,topcenter"
+								UseButtonEffects="0"
+							/>
+							<Image Name="DefaultPrimaryWeaponsLock$X$"
+								Pos="3,20"
+								Size="73,73"
+								Image="UI/TechAdept/Lock_weapon_item.tga"
+								InitPopup="bottomcenter,topcenter"
+							/>							
+						</Loop>
+					</Container>
+					
+					<Text						
+						Pos="20,20"
+						Size="484,31"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.summonsetup.Weapon_items"
+					/>
+					<Container MarginTop="20" MarginBottom="15">
+						<Icon Name="PrimarySortTypeButton"
+							IgnoreScissor="1"
+							Pos="-40,0"
+							Size="44,44"
+							IdleImg="UI/Inventory/fullscreen_inventory_typeSortoff.tga"
+							PressImg="UI/Inventory/fullscreen_inventory_typeSortOn.tga"
+							RolloverImg="UI/Inventory/fullscreen_inventory_typeSortOn.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="Battle.GUI.inventory.sort_by_type"
+						/>
+						<Icon Name="PrimarySortRarityButton"
+							IgnoreScissor="1"
+							Pos="-40,40"
+							Size="44,44"
+							IdleImg="UI/Inventory/fullscreen_inventory_raritySortOff.tga"
+							PressImg="UI/Inventory/fullscreen_inventory_raritySortOn.tga"
+							RolloverImg="UI/Inventory/fullscreen_inventory_raritySortOn.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="Battle.GUI.inventory.sort_by_rarity"
+						/>
+						<Icon Name="PrimarySortLevelButton"
+							IgnoreScissor="1"
+							Pos="-40,80"
+							Size="44,44"
+							IdleImg="UI/Inventory/fullscreen_inventory_powerratingSortOff.tga"
+							PressImg="UI/Inventory/fullscreen_inventory_powerratingSortOn.tga"
+							RolloverImg="UI/Inventory/fullscreen_inventory_powerratingSortOn.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="Battle.GUI.inventory.sort_by_level"
+						/>
+						<Loop Count="@ListedWeapons" Variable="$X$" ItemsInRow="@ListedWeaponsInRow" Offset="60,61">
+							<Artifact Name="PrimaryWeaponModuleIcon$X$"
+								Pos="10,2"
+								Style="ItemSlot1x1"
+							/>							
+						</Loop>
+						<Slider Name="PrimaryWeaponSlider" IgnoreScissor="1"
+							Pos="500,0"
+							Size="20,120"
+						/>
+					</Container>
+				</FlowContainer>
+			</FlowContainer>
+			<FlowContainer Name="SecondaryWeaponContainer" VAlign="bottom" Visible="1" MarginTop="15">
+				<Text
+					Size="498,25"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="openworld.GUI.summonsetup.Secondary_weapon"
+				/>
+				<FlowContainer  Width="498" IgnoreScissor="1" VAlign="bottom"
+					BackgroundTopSize="215"
+					BackgroundBotSize="17"
+					BackgroundTopImage="UI\TechAdept\WeaponListFrame_top.tga"
+					BackgroundMidImage="UI\TechAdept\WeaponListFrame_grid.tga"
+					BackgroundBotImage="UI\TechAdept\WeaponListFrame_bottom.tga" 
+				>
+					<Text
+						Pos="20,10"
+						Size="484,31"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.summonsetup.Default_weapons"
+					/>
+					<Container MarginTop="10" Height="60" IgnoreScissor="1">
+						<Loop Count="@SpellArtifactTokenCount" Variable="$X$" Offset="68,0">
+							<Icon Name="DefaultSecondaryWeapons$X$"
+								Pos="10,2"
+								Size="60,60"
+								IdleImg="UI/Artifacts/default.tga"
+								RolloverImg="UI/Artifacts/default.tga"
+								PressImg="UI/Artifacts/default.tga"
+								InitPopup="bottomcenter,topcenter"
+								UseButtonEffects="0"
+							/>
+							<Image Name="DefaultSecondaryWeaponsLock$X$"
+								Pos="3,20"
+								Size="73,73"
+								Image="UI/TechAdept/Lock_weapon_item.tga"
+								InitPopup="bottomcenter,topcenter"
+							/>							
+						</Loop>
+					</Container>
+					
+					<Text
+						Pos="20,20"
+						Size="484,31"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="openworld.GUI.summonsetup.Weapon_items"
+					/>
+					<Container MarginTop="20" MarginBottom="15">
+						<Icon Name="SecondarySortTypeButton"
+							IgnoreScissor="1"
+							Pos="-40,0"
+							Size="44,44"
+							IdleImg="UI/Inventory/fullscreen_inventory_typeSortoff.tga"
+							PressImg="UI/Inventory/fullscreen_inventory_typeSortOn.tga"
+							RolloverImg="UI/Inventory/fullscreen_inventory_typeSortOn.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="Battle.GUI.inventory.sort_by_type"
+						/>
+						<Icon Name="SecondarySortRarityButton"
+							IgnoreScissor="1"
+							Pos="-40,40"
+							Size="44,44"
+							IdleImg="UI/Inventory/fullscreen_inventory_raritySortOff.tga"
+							PressImg="UI/Inventory/fullscreen_inventory_raritySortOn.tga"
+							RolloverImg="UI/Inventory/fullscreen_inventory_raritySortOn.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="Battle.GUI.inventory.sort_by_rarity"
+						/>
+						<Icon Name="SecondarySortLevelButton"
+							IgnoreScissor="1"
+							Pos="-40,80"
+							Size="44,44"
+							IdleImg="UI/Inventory/fullscreen_inventory_powerratingSortOff.tga"
+							PressImg="UI/Inventory/fullscreen_inventory_powerratingSortOn.tga"
+							RolloverImg="UI/Inventory/fullscreen_inventory_powerratingSortOn.tga"
+							UseButtonEffects="0"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="Battle.GUI.inventory.sort_by_level"
+						/>
+						<Loop Count="@ListedWeapons" Variable="$X$" ItemsInRow="@ListedWeaponsInRow" Offset="60,61">
+							<Artifact Name="SecondaryWeaponModuleIcon$X$"
+								Pos="10,2"
+								Style="ItemSlot1x1"
+							/>							
+						</Loop>
+						<Slider Name="SecondaryWeaponSlider" IgnoreScissor="1"
+							Pos="500,0"
+							Size="20,120"
+						/>
+					</Container>
+				</FlowContainer>
+			</FlowContainer>
+		</FlowContainer>
+	</Container>
+	
+	<Container Name="Equipment" Pos="700,-176" Size="585,460" IgnoreScissor="1" GuiAlign="topcenter">
+		<Text
+			Pos="77,300"
+			Size="484,25"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.spellsetup.active_skills"
+		/>
+		<Image
+			Pos="94,280"
+			Size="488,176"
+			Image="UI/Psyker/skills_preview_bg.tga"
+		/>
+		<Image Name="SpellBackgroundForBelt"
+			Visible="0"
+			Pos="22,18"
+			Size="323,116"
+			Image="UI/Psyker/Active_skill_4_slots.tga"
+		/>
+		<Loop Count="@WeaponSkillCount" Variable="$X$" Offset="60,0">
+			<Image Name="WeaponSlot_$X$"
+				Pos="155,332"
+				Size="60,60"
+				Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+			/>
+			<Image Name="WeaponShortcutIcon_$X$"
+				Pos="181,373"
+				Size="32,32"
+				Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text Name="WeaponShortcutText_$X$"
+				Pos="184,370"
+				Size="32,32"
+				Style="Shortcut"
+				TextAlignH="center"
+				TextAlignV="center"
+				MouseSenseEnabled="0"
+			/>
+		</Loop>
+		<Image Name="WeaponSlot_4"
+			Pos="411,335"
+			Size="52,52"
+			Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+		/>
+		<Image Name="WeaponSlot_4_Psykerskill"
+			Pos="402,332"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+		/>
+		<Image Name="WeaponShortcutIcon_4"
+			Pos="420,372"
+			Size="32,32"
+			Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="WeaponShortcutText_4"
+			Pos="424,369"
+			Size="32,32"
+			Style="Shortcut"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="WeaponSlot_5"
+			Pos="477,328"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+		/>
+		<Image Name="WeaponSlot_5_Psykerskill"
+			Pos="477,328"
+			Size="60,60"
+			Image="UI/BATTLE_UI/Main/wskill_empty.tga"
+		/>
+		<Image Name="WeaponShortcutIcon_5"
+			Pos="509,372"
+			Size="32,32"
+			Image="UI/BATTLE_UI/Main/shortcut_empty.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="WeaponShortcutText_5"
+			Pos="513,369"
+			Size="32,32"
+			Style="Shortcut"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+		/>
+		<Container Pos="-30,160" IgnoreScissor="1">
+			<Icon Name="WeaponSet0_Right"
+				Pos="-35,141"
+				Size="36,36"
+				IdleImg="UI/Inventory/button_firstOff.tga"
+				PressImg="UI/Inventory/button_firstOn.tga"
+				RolloverImg="UI/Inventory/button_firstOn.tga"
+				UseButtonEffects="0"
+			/>
+			<Icon Name="WeaponSet1_Right"
+				Pos="-35,178"
+				Size="36,36"
+				IdleImg="UI/Inventory/button_secondOff.tga"
+				PressImg="UI/Inventory/button_secondOn.tga"
+				RolloverImg="UI/Inventory/button_secondOn.tga"
+				UseButtonEffects="0"
+			/>
+			<Artifact Name="EquippedItemSlot_Mainhand" Pos="4,141" Style="ItemSlot1x2"/>
+			<Artifact Name="EquippedItemSlot_Offhand" Pos="68,141" Style="ItemSlot1x2"/>
+		</Container>
+	</Container>
+	
+	<Container Name="MouseActions" Pos="0,1025" Size="1920,32" GuiAlign="bottomcenter" Visible="1">
+		<FlowContainer Horizontal="1" HAlign="center">
+			<Loop Count="2" Variable="$X$">
+				<Text Name="ActionModifier$X$"
+					Style="Text_Large_Light"
+					Height="30"
+					MarginTop="2"
+					MarginRight="2"
+				/>
+				<Image Name="ActionImage$X$"
+					Height="32"
+					Width="32"
+					Image="UI/Shortcuts/bigshortcut_leftclick.dds"
+				/>
+				<Text Name="ActionText$X$"
+					Style="Text_Large_Light"
+					Height="30"
+					MarginTop="2"
+					MarginRight="48"
+					Text="Action $X$."
+				/>
+			</Loop>
+		</FlowContainer>
+	</Container>
+	
+	<Container Name="MinionAbilitySkillTooltipBack" Pos="613,435" VerticalAlignment="top" HorizontalAlignment="left" Visible="0">
+		<FlowContainer Name="MinionAbilitySkillTooltipBackLeft"
+			VerticalAlignment="bottom"
+			Width="472"
+			BackgroundTopSize="128"
+			BackgroundBotSize="12"
+			BackgroundTopImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgTop.tga"
+			BackgroundMidImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgMiddle.tga"
+			BackgroundBotImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgBottom.tga"
+			>
+			
+			<Container Height="100">
+				<Image Name="MinionAbilitySkillIcon"
+					Pos="26,25"
+					Size="50,50"
+				/>
+				<Text Name="MinionAbilitySkillName"
+					Pos="97,20"
+					Size="355,34"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="Very Long Skill Name"
+				/>
+				<Text Name="MinionAbilitySkillType"
+					Pos="97,48"
+					Size="355,28"
+					Style="Italic_Normal_White"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="Melee Skill"
+				/>
+			</Container>
+			<TextBox Name="MinionAbilitySkillDesc"
+				MarginTop="8"
+				MarginLeft="25"
+				UseSlider="0"
+				Width="420"
+				Style="Text_Normal_Dark_Outline"
+				Italic="true"
+				Text="Skill Description"
+			/>
+			<Image
+				MarginTop="10"
+				MarginLeft="21"
+				Size="436,8"
+				Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+			/>
+			<FlowContainer Width="472" MarginBottom="20">
+				<Loop Count="@TagCount" Variable="$X$">
+					<Container Name="MinionAbilitySkillTag$X$" Size="472,27" IgnoreScissor="1">
+						<Image Pos="21,8" Size="20,20" Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"/>
+						<Text Name="MinionAbilitySkillTag$X$Name" Pos="46,4" Size="397,28" Style="Text_Large_Light_Glow" FontOutlineWidth="0" TextAlignH="left" TextAlignV="center"/>
+					</Container>
+				</Loop>
+			</FlowContainer>
+		</FlowContainer>
+		
+		
+		<FlowContainer Name="MinionAbilitySkillTooltipBackRight" Width="332" MarginLeft="484" VerticalAlignment="bottom">
+			<Loop Count="@TagCount" Variable="$X$">
+				<FlowContainer Name="MinionAbilitySkillTooltipTag$X$"
+					Width="332"
+					BackgroundTopSize="12"
+					BackgroundBotSize="12"
+					VerticalAlignment="bottom"
+					BackgroundTopImage="UI/BATTLE_UI/spells/Tooltip/tooltip_tag_bgTop.tga"
+					BackgroundMidImage="UI/BATTLE_UI/spells/Tooltip/tooltip_tag_bgMiddle.tga"
+					BackgroundBotImage="UI/BATTLE_UI/spells/Tooltip/tooltip_tag_bgBottom.tga"
+					>
+					<TextBox Name="MinionAbilitySkillTooltipTag$X$Text" 
+						MarginTop="12"
+						MarginBottom="12"
+						MarginLeft="12"
+						MarginRight="12"
+						UseSlider="0"
+						Width="308"
+						Style="Text_Normal_Dark_Outline"
+						Italic="true"
+						Text="Tag Description"
+					/>
+				</FlowContainer>
+			</Loop>
+		</FlowContainer>
+	</Container>
+
+</Window>

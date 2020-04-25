@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<SoldierInfo IgnoreScissor="1">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Styles>
+		<HeroText FontType="Electrolize" FontSize="18" Color="#d3c6af" OutlineColor="#3c000000" FontOutlineWidth="3" Sharpness="0.5"/>
+		<PeasantText FontType="Electrolize" FontSize="17" Color="#b5fffc" OutlineColor="#3c000000" FontOutlineWidth="3" Sharpness="0.5"/>
+	</Styles>
+	
+	<FlowContainer
+		Name="HeroTextBox"
+		IgnoreScissor="1"
+		VAlign="bottom"
+		HAlign="center"
+		Width="480"
+		BackgroundTopSize="36"
+		BackgroundBotSize="36"
+		BackgroundTopImage="UI/BATTLE_UI/textbox/textbox_hero_top.tga"
+		BackgroundMidImage="UI/BATTLE_UI/textbox/textbox_hero_middle.tga"
+		BackgroundBotImage="UI/BATTLE_UI/textbox/textbox_hero_bottom.tga"
+		>
+		<Container>
+			<TextBox Name="HeroText"
+				MarginTop="38"
+				MarginBottom="38"
+				UseSlider="0"
+				Width="304"
+				Style="HeroText"
+				TextAlignH="center"
+				TextAlignV="top"
+				HAlign="center"
+				Text="_ImmaHero"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+	</FlowContainer>	
+	
+	<FlowContainer
+		Name="OutscreenTextBox"
+		IgnoreScissor="1"
+		VAlign="bottom"
+		HAlign="center"
+		Width="480"
+		BackgroundTopSize="36"
+		BackgroundBotSize="36"
+		BackgroundTopImage="UI/BATTLE_UI/textbox/textbox_hero_top.tga"
+		BackgroundMidImage="UI/BATTLE_UI/textbox/textbox_hero_middle.tga"
+		BackgroundBotImage="UI/BATTLE_UI/textbox/textbox_hero_bottom.tga"
+		>
+		<Text Name="OutscreenName"
+			MarginTop="28"
+			Size="304,24"
+			Style="HeroText"
+			TextAlignH="center"
+			TextAlignV="center"
+			HAlign="center"
+			MouseSenseEnabled="0"
+		/>
+		<Container>
+			<TextBox Name="OutscreenText"
+				MarginTop="5"
+				MarginBottom="38"
+				UseSlider="0"
+				Width="304"
+				Style="HeroText"
+				TextAlignH="center"
+				TextAlignV="top"
+				HAlign="center"
+				Text="_ImmaHero"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+	</FlowContainer>
+	
+	<FlowContainer
+		Name="PeasantTextBox"
+		IgnoreScissor="1"
+		VAlign="bottom"
+		HAlign="center"
+		Width="480"
+		BackgroundTopSize="8"
+		BackgroundBotSize="8"
+		BackgroundTopImage="UI/BATTLE_UI/textbox/textbox_top.tga"
+		BackgroundMidImage="UI/BATTLE_UI/textbox/textbox_middle.tga"
+		BackgroundBotImage="UI/BATTLE_UI/textbox/textbox_bottom.tga"
+		>
+		<Container>
+			<TextBox Name="PeasantText"
+				MarginTop="6"
+				MarginBottom="6"
+				UseSlider="0"
+				Width="304"
+				Style="PeasantText"
+				TextAlignH="center"
+				TextAlignV="top"
+				HAlign="center"
+				Text="_ImmaPeasant"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+	</FlowContainer>
+</SoldierInfo>

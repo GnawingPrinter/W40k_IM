@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Industrial_Fr06 Terrain="Terrains/Sections/Industrial/Industrial_Fr06.VHT" Preview="Terrains/Sections/Industrial/MapEditorImages/Industrial_Fr06_thumb.bmp" Image="Terrains/Sections/Industrial/MapEditorImages/Industrial_Fr06.bmp" MinClickHeight="-50000" Background="false" MapType="Industrial Indoors">
+	<PivotPos x="2138.06982" y="2546.0957" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="2161.31055" Position.y="2453.62695" Position.z="-0.602540851" />
+		</Grid>
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="2161.31055" Position.y="2683.50513" Position.z="-0.602540851" />
+		</Grid>
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+	</Grids>
+</Industrial_Fr06>

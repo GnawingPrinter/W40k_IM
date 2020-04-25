@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Giant_Rails_Fr08 Terrain="Terrains/Sections/Giant_Rails/Giant_Rails_Fr08.VHT" Preview="Terrains/Sections/Giant_Rails/MapEditorImages/Giant_Rails_Fr08_thumb.bmp" Image="Terrains/Sections/Giant_Rails/MapEditorImages/Giant_Rails_Fr08.bmp" MinClickHeight="-50000" Background="false" MapType="Giant Rails">
+	<PivotPos x="-3496" y="-2300" />
+	<Tags />
+	<Grids>
+		<Grid Column="-2" Row="-4" Image="" />
+		<Grid Column="-1" Row="-4" Image="" />
+		<Grid Column="0" Row="-4" Image="" />
+		<Grid Column="1" Row="-4" Image="" />
+		<Grid Column="2" Row="-4" Image="" />
+		<Grid Column="3" Row="-4" Image="" />
+		<Grid Column="-2" Row="-3" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="" />
+		<Grid Column="2" Row="-3" Image="" />
+		<Grid Column="3" Row="-3" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="" />
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="-2" Row="4" Image="" />
+		<Grid Column="-1" Row="4" Image="" />
+		<Grid Column="0" Row="4" Image="" />
+		<Grid Column="1" Row="4" Image="" />
+		<Grid Column="2" Row="4" Image="" />
+		<Grid Column="3" Row="4" Image="" />
+	</Grids>
+</Giant_Rails_Fr08>

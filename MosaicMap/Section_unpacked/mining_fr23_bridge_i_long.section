@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Mining_Fr23_Bridge_I_long Terrain="Terrains/Sections/MiningOperation/Mining_Fr23_Bridge_I_long.VHT" Preview="Terrains/Sections/MiningOperation/MapEditorImages/Mining_Fr23_Bridge_I_long_thumb.bmp" Image="Terrains/Sections/MiningOperation/MapEditorImages/Mining_Fr23_Bridge_I_long.bmp" MinClickHeight="-50000" Background="false" MapType="Mining Operation">
+	<PivotPos x="3313.1123" y="318.831543" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-3" Row="0" Image="">
+			<Gate Direction="WEST" Size="1" Position.x="3174.96411" Position.y="341.479156" Position.z="0.459181279" />
+		</Grid>
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="">
+			<Gate Direction="EAST" Size="1" Position.x="3543.42871" Position.y="342.385651" Position.z="0.459181279" />
+		</Grid>
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+	</Grids>
+</Mining_Fr23_Bridge_I_long>

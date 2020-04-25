@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Ruined_City_Fr47 Terrain="Terrains/Sections/Ruined_City/Ruined_City_Fr47.VHT" Preview="Terrains/Sections/Ruined_City/MapEditorImages/Ruined_City_Fr47_thumb.bmp" Image="Terrains/Sections/Ruined_City/MapEditorImages/Ruined_City_Fr47.bmp" MinClickHeight="-50000" Background="false" MapType="Urban Ruins">
+	<PivotPos x="-1598.72534" y="2231.05347" />
+	<Tags />
+	<Grids>
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+	</Grids>
+</Ruined_City_Fr47>

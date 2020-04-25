@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="center" >
+	<Constants>
+		<CheatCount Type="int" Value="8"/>
+		<ShownMapCount Type="int" Value="16" />
+		<AchievementCount Type="int" Value="42" />
+	</Constants>
+	
+	<Styles>
+		<CheatCheckboxStyle
+				Size="400,54"
+				Style="Text_Normal_Dark_Outline"
+				FontSize="34"
+				TextAlignH="left"
+				TextAlignV="center"
+				ControllerSenseEnabled="1"
+				InitPopup="bottomleft,topleft"
+			/>
+	</Styles>
+	
+	<Container Name="CheatContainer">
+		<Container
+			VerticalAlignment="center" HorizontalAlignment="center"
+			Width="500"
+		>
+			<Image Alpha="0.2"/>
+			<Image
+				Size="488,798"
+				Image="UI\\common\\Options\\options_background1.tga"
+			/>
+			
+			<Icon Name="MapCheatIcon" 
+				Size="100,54" 
+				MarginTop="70" MarginLeft="32"
+				Text="Change map"
+				ControllerSenseEnabled="1"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+			/>
+			<Icon Name="SpeedCheatIcon" 
+				Size="100,54" 
+				MarginTop="70" MarginLeft="132"
+				Text="Speed x1"
+				ControllerSenseEnabled="1"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+			/>
+			<Icon Name="WinMissionIcon" 
+				Size="100,54" 
+				MarginTop="70" MarginLeft="232"
+				Text="Win Mission"
+				ControllerSenseEnabled="1"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+			/>		
+
+			<Icon Name="GSDebugIcon" 
+				Size="100,54" 
+				MarginTop="70" MarginLeft="332"
+				Text="GS Debug"
+				ControllerSenseEnabled="1"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+			/>						
+			
+			<ComboBox Name="MapTypeCheatCB" 
+				Size="200,42" 
+				MarginTop="126" MarginLeft="32"
+				Style="Text_Normal_Dark_Outline"
+				ControllerSenseEnabled="1"
+			/>
+			
+			<ComboBox Name="MonsterTypeCheatCB" 
+				Size="200,42" 
+				MarginTop="126" MarginLeft="240"
+				Style="Text_Normal_Dark_Outline"
+				ControllerSenseEnabled="1"
+			/>
+
+			<Container MarginTop="200" MarginLeft="32" >
+				<Loop Count="@CheatCount" Variable="$X$" Offset="0,54">
+					<CheckBox Name="Check_$X$"
+						Style="CheatCheckboxStyle"
+						Text="Check_$X$"
+					/>
+				</Loop>
+			</Container>
+			
+			<XBOXButton Name="SelectCheat"
+				VerticalAlignment="bottom"
+				Size="110,28"
+				Text="Select"
+				SetButton="A"
+			/>
+			<XBOXButton Name="BackCheat"
+				VerticalAlignment="bottom"
+				MarginLeft="250"
+				Size="110,28"
+				Text="Back"
+				SetButton="B"
+			/>
+		</Container>
+		
+	</Container>
+	
+	<Container Name="CheatMapContainer" 
+		VerticalAlignment="center" HorizontalAlignment="center"
+		Width="500"
+		Visible="0"	>
+		<Image Name="CheatMapBG"
+			Size="488,798"
+			Image="UI\\common\\Options\\options_background1.tga"
+		/>
+		<Text
+			Pos="100,50"
+			Size="290,25"
+			Style="Text_Normal_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="Teleport to map"
+		/>
+		
+		<Container Name="CheatMapList"
+			Pos="10,56" 
+			Size="478,695"
+		>
+			<Loop Count="@ShownMapCount" Variable="$X$" Offset="0,42">
+				<Icon Name="MapIcon_$X$"
+					Size="400,40"
+					HorizontalAlignment="center"
+					IdleImg="UI\\common\\Options\\button_largeOff.tga"
+					PressImg="UI\\common\\Options\\button_largeOver.tga"
+					RolloverImg="UI\\common\\Options\\button_largeOver.tga"
+					SlideredElement="1"
+					ControllerSenseEnabled="1"
+					Text="MapName$X$"
+				/>
+			</Loop>
+			<Slider Name="MapSlider"
+				Pos="458,5"
+				Size="20,690"
+			/>
+			
+		</Container>
+		
+		<XBOXButton Name="SelectMap"
+			Pos="60,750"
+			Size="110,28"
+			Text="Select"
+			SetButton="A"
+		/>
+		<XBOXButton Name="BackMap"
+			Pos="318,750"
+			Size="110,28"
+			Text="Back"
+			SetButton="B"
+		/>
+	</Container>
+
+	<Container Name="CheatAchievementContainer"
+		VerticalAlignment="center" HorizontalAlignment="right"
+		MarginRight="150"
+		Width="500"
+		>
+		
+		<Image Alpha="0.2" Size="500,770"/>
+		<Image
+			Size="488,798"
+			Image="UI\\common\\Options\\options_background1.tga"
+		/>
+
+		<ScrollableContainer Size="500,600" MarginLeft="50" MarginTop="80">
+			<FlowContainer>
+				<Loop Count="@AchievementCount" Variable="$X$">
+					<FlowContainer Horizontal="true">
+						<TextBox Name="AchiName_$X$"
+							Size="240,30"
+							TextAlignH="left"
+							Text="AchiName"
+							Style="Text_Normal_Dark_Outline"
+							FontSize="24"
+							VerticalAlignment="top"
+						/>
+						<Text Name="AchiProgress_$X$"
+							Size="120,30"
+							MarginLeft="75"
+							Text="0 / 0"
+							Style="Text_Normal_Dark_Outline"
+							FontSize="24"
+							VerticalAlignment="top"
+						/>
+						</FlowContainer>
+				</Loop>
+			</FlowContainer>
+		</ScrollableContainer>
+		
+		<Text
+			Size="120,30"
+			MarginLeft="10"
+			Text="Achi Progress"
+			Style="Text_Normal_Dark_Outline"
+			FontSize="26"
+		/>
+	</Container>
+	
+	<Container Name="CheatAchiHover" 
+		HorizontalAlignment="right"	>
+		<FlowContainer>
+			<Loop Count="@AchievementCount" Variable="$X$">
+				<FlowContainer Horizontal="true">
+					<TextBox Name="AchiNameHover_$X$"
+							Size="240,18"
+							TextAlignH="left"
+							Text="AchiName"
+							Style="Text_Normal_Dark_Outline"
+							FontSize="18"
+							VerticalAlignment="top"
+						/>
+						<Text Name="AchiProgressHover_$X$"
+							Size="120,18"
+							MarginLeft="30"
+							Text="0 / 0"
+							Style="Text_Normal_Dark_Outline"
+							FontSize="18"
+							VerticalAlignment="top"
+						/>
+						</FlowContainer>
+				</Loop>
+			</FlowContainer>
+	
+	</Container>
+</Window>

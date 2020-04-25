@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>	
+<Window>
+
+	<Styles>
+		<TextLeft Color="#000000" FontSize="14" TextAlignH="Left" FontType="PT Sans"/>
+		<TextRight Color="#000000" FontSize="14" TextAlignH="right" FontType="PT Sans"/>
+		<TextTitle Color="#000000" FontSize="16" TextAlignH="Left" FontType="PT Sans"/>
+		<TextButton Color="#ffffff" FontSize="16" TextAlignH="Left" FontType="PT Sans"/>
+		<TextEdit Color="#FFFFFF" FontSize="14" TextAlignH="Left" TextAlignV="Center" FontType="PT Sans" />
+	</Styles>
+	
+    <Constants>
+        <NamedPosDisplayLimit Type="int" Value="10"/>
+		<SkillsDisplayLimit Type="int" Value="15"/>
+    </Constants>
+
+	
+	<GridContainer Size="700,1070" FillColor="#888888" HorizontalAlignment="right" MarginTop="4" BorderColor="0xffff0000" BorderWidth="1" >
+		<Rows>
+			<Row Height="60" />		<!-- 0 -->
+			<Row Height="50" />		<!-- 1 -->
+			<Row Height="80" />		<!-- 2 -->
+			<Row Height="850" />	<!-- 3 -->
+			<Row Height="1*" />		<!-- 4 -->
+		</Rows>
+		<Columns>
+			<Column Width="1*"/>	
+			<!-- <Column Width="1*"/> -->				
+		</Columns>
+	<!-- Row 0 -->
+		<Text Row="0" Column="0" VAlign="Top" HAlign="Left" Name="SelectedSoldierName" Style="TextTitle" MarginLeft="20" MarginTop="6" />
+		
+		<Text Row="0" Column="0" VAlign="Bottom" HAlign="Left" Name="SelectedSoldierTypeName" Style="TextTitle" MarginLeft="20" MarginBottom="6" />
+		
+	<!-- Row 1 -->
+		<GridContainer Row="1" Column="0" >
+			<Columns>
+				<Column Width="1*"/>	
+				<Column Width="1*"/>	
+			</Columns>
+			<Button Column="0" Style="TextButton" Text="Save" ColorMask="#444400" MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="SaveBtn"	/>
+			<Button Column="1" Style="TextButton" Text="Reload" ColorMask="#444400" MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="ReloadBtn" />
+		</GridContainer>
+	
+	<!-- Row 2 -->	
+		<GridContainer Row="2" Column="0" >
+			<Columns>
+				<Column Width="1*"/>	
+				<Column Width="1*"/>				
+				<Column Width="1*"/>
+			</Columns>
+			<Rows>
+				<Row Height="1*"/>
+				<Row Height="1*"/>
+			</Rows>
+			<Button Row="0" Column="0" Style="TextButton" ColorMask="#333333" Text="Main" 		MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="MainTabBtn" />
+			<Button Row="0" Column="1" Style="TextButton" ColorMask="#333333" Text="Stats" 		MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="StatsTabBtn" />
+			<Button Row="0" Column="2" Style="TextButton" ColorMask="#333333" Text="Sound" 		MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="SoundTabBtn" />
+			<Button Row="1" Column="0" Style="TextButton" ColorMask="#333333" Text="Movement" 	MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="MovementTabBtn" />
+			<Button Row="1" Column="1" Style="TextButton" ColorMask="#333333" Text="Pain/Death" MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="PainTabBtn" />
+			<Button Row="1" Column="2" Style="TextButton" ColorMask="#333333" Text="Misc" 		MarginLeft="20" MarginRight="20" MarginTop="4" MarginBottom="4" Name="MiscTabBtn" />
+		</GridContainer>
+		
+		<!-- MAIN TAB -->
+		<GridContainer Row="3" Visible="false" Size="700,850" BorderColor="0xffff0000" BorderWidth="1" Name="MainTabContent" >
+			<Columns>
+				<Column Width="1*"/>	
+			</Columns>
+			<Rows>
+				<Row Height="50"/>
+				<Row Height="80"/>
+				<Row Height="1*"/>
+			</Rows>
+			<Container Row="0" Column="0" MarginTop="10" Name="ScaleContainer" >
+				<Text Height="20" Text="scale:" Style="TextTitle" Name="scdaleTxt" MarginLeft="5" />
+				<Slider	Name="ScaleSlider" Size="560,30" MarginLeft="80" />
+				<EditBox Text="" FontSize="18" Name="scaleValueDisplay" MarginTop="4" MarginBottom="4" Width="65" HAlign="right" MarginLeft="5" />
+			</Container>
+			<GridContainer Row="1" Column="0" Name="CheckBoxContainer" >
+				<Columns>
+					<Column Width="1*"/>	
+					<Column Width="1*"/>
+					<Column Width="1*"/>				
+					<Column Width="1*"/>
+				</Columns>
+				<Rows>
+					<Row Height="1*"/>
+					<Row Height="1*"/>
+					<Row Height="1*"/>
+				</Rows>
+				<CheckBox Column="0" Row="0" Text="can charge" 						Style="TextTitle" 	Name="canChargeCB" 			MarginLeft="5" ColorMask="#FF0000" Tooltip="can charge ?" />	
+				<CheckBox Column="0" Row="1" Text="can fall" 						Style="TextTitle" 	Name="canFallCB" 				MarginLeft="5" ColorMask="#FF0000" Tooltip="can fall ?" />
+				<CheckBox Column="0" Row="2" Text="can be pushed" 					Style="TextTitle" 	Name="canBePushedCB" 			MarginLeft="5" ColorMask="#FF0000" Tooltip="can be pushed ?" />	
+				<CheckBox Column="1" Row="0" Text="can move" 						Style="TextTitle" 	Name="canMoveCB" 				MarginLeft="5" ColorMask="#FF0000" Tooltip="can move ?" />	
+				<CheckBox Column="1" Row="1" Text="can rotate" 						Style="TextTitle" 	Name="canRotateCB" 			MarginLeft="5" ColorMask="#FF0000" Tooltip="can rotate ?" />	
+				<CheckBox Column="1" Row="2" Text="use turn anim" 					Style="TextTitle" 	Name="canUseTurnAnimCB" 		MarginLeft="5" ColorMask="#FF0000" Tooltip="can use turn anim while moving ?" />	
+				<CheckBox Column="2" Row="0" Text="flee backward" 					Style="TextTitle" 	Name="canFleeBackCB" 			MarginLeft="5" ColorMask="#FF0000" Tooltip="can flee backwards ?" />
+				<CheckBox Column="2" Row="1" Text="use covers" 						Style="TextTitle" 	Name="canUseCoversCB" 		MarginLeft="5" ColorMask="#FF0000" Tooltip="can use covers ?" />	
+				<CheckBox Column="2" Row="2" Text="give charge order" 				Style="TextTitle" 	Name="canGiveChargeOrderCB" 	MarginLeft="5" ColorMask="#FF0000" Tooltip="can give charge order ?" />	
+			</GridContainer>
+		</GridContainer>
+		
+		<!-- STATS TAB -->
+		<GridContainer Row="3" Visible="false" Size="700,850" BorderColor="0xffff0000" BorderWidth="1" Name="StatsTabContent" >
+			<Columns>
+				<Column Width="1*"/>	
+			</Columns>
+			<Rows>
+				<Row Height="60"/>
+				<Row Height="1*"/>
+			</Rows>
+			<GridContainer Row="0" Column="0" MarginTop="6" MarginBottom="6" Name="StatsContainer" >
+				<Columns>
+					<Column Width="1*"/>	
+					<Column Width="1*"/>
+					<Column Width="1*"/>
+					<Column Width="1*"/>					
+				</Columns>
+				<Text 		Column="0" Name="HPTxt" Style="TextTitle" Text="HP:" MarginLeft="10" />
+				<EditBox 	Column="0" Name="HpEB"	MarginLeft="80" FontSize="18" />
+				<Text 		Column="1" Name="HPMaxTxt" Style="TextTitle" Text="HPMax:" MarginLeft="10" />
+				<EditBox 	Column="1" Name="HpMaxEB"	MarginLeft="80" FontSize="18" />
+				<Text 		Column="2" Name="SupprTxt" Style="TextTitle" Text="Suppression:" MarginLeft="10" />
+				<EditBox 	Column="2" Name="SupprEB"	MarginLeft="100" FontSize="18" />
+				<Text 		Column="3" Name="DefenseTxt" Style="TextTitle" Text="Defense:" MarginLeft="10" />
+				<EditBox 	Column="3" Name="DefenseEB"	MarginLeft="80" FontSize="18" />
+			</GridContainer>
+		</GridContainer>
+		
+		<!-- SOUND TAB -->
+		<GridContainer Row="3" Visible="false" Size="700,850" BorderColor="0xffff0000" BorderWidth="1" Name="SoundTabContent" >
+			<Columns>
+				<Column Width="1*"/>
+			</Columns>
+			<Rows>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="1*"/>
+			</Rows>
+			
+			<Text 		Row="1" Column="0" MarginTop="4" MarginBottom="4" Name="SoundUniqueReactionTxt" Style="TextTitle" Text="UniqueReaction:" MarginLeft="10" />
+			<EditBox 	Row="1" Column="0" MarginTop="4" MarginBottom="4" Name="SoundUniqueReactionEB" MarginLeft="150"	FontSize="18" />
+			
+			<GridContainer Row="0" Column="0" >
+				<Columns>
+					<Column Width="150"/>
+					<Column Width="1*"/>
+					<Column Width="150"/>
+					<Column Width="1*"/>
+				</Columns>
+				<Text 		Column="0" MarginTop="4" MarginBottom="4" Name="footTypeTxt" Text="foot type:" Style="TextTitle"  MarginLeft="10" />	
+				<ComboBox 	Column="1" MarginTop="4" MarginBottom="4" Name="footTypeLB"	Style="TextEdit" FontSize="18" HighlightColor="#777777"  />
+				<Text 		Column="2" MarginTop="4" MarginBottom="4" Name="SoundFootstepWeightTxt" Style="TextTitle" Text="FootstepWeight:" MarginLeft="10" />
+				<EditBox 	Column="3" MarginTop="4" MarginBottom="4" Name="SoundFootstepWeightEB"	FontSize="18" />
+			</GridContainer>	
+			<GridContainer Row="2" Column="0" >
+				<Columns>
+					<Column Width="150"/>
+					<Column Width="1*"/>
+					<Column Width="150"/>
+					<Column Width="1*"/>
+				</Columns>
+				<Text 		Column="0" MarginTop="4" MarginBottom="4" Name="unitSizeTxt" Text="unit size:" Style="TextTitle"  MarginLeft="10" />	
+				<ComboBox 	Column="1" MarginTop="4" MarginBottom="4" Name="unitSizeLB"	Style="TextEdit" FontSize="18" HighlightColor="#777777"  />
+				<Text 		Column="2" MarginTop="4" MarginBottom="4" Name="unitOriginTxt" Text="unit origin:" Style="TextTitle"  MarginLeft="10" />	
+				<ComboBox 	Column="3" MarginTop="4" MarginBottom="4" Name="unitOriginLB"	Style="TextEdit" FontSize="18" HighlightColor="#777777"  />
+			</GridContainer>
+			
+			<Text 		Row="3" Column="0" MarginTop="4" MarginBottom="4" Name="SoundLoopSoundTxt" Style="TextTitle" Text="Loop sound:" MarginLeft="10" />
+			<EditBox 	Row="3" Column="0" MarginTop="4" MarginBottom="4" Name="SoundLoopSoundEB" MarginLeft="150"	FontSize="18" />
+			<Text 		Row="4" Column="0" MarginTop="4" MarginBottom="4" Name="SoundMonologTypeTxt" Style="TextTitle" Text="Monolog Type:" MarginLeft="10" />
+			<EditBox 	Row="4" Column="0" MarginTop="4" MarginBottom="4" Name="SoundMonologTypeEB" MarginLeft="150"	FontSize="18" />
+			<Text 		Row="5" Column="0" MarginTop="4" MarginBottom="4" Name="RotateLoopSoundTxt" Style="TextTitle" Text="RotateLoopSound:" MarginLeft="10" />
+			<EditBox 	Row="5" Column="0" MarginTop="4" MarginBottom="4" Name="RotateLoopSoundEB" MarginLeft="150"	FontSize="18" />
+			<Text 		Row="6" Column="0" MarginTop="4" MarginBottom="4" Name="RotateLoopSoundParamNameTxt" Style="TextTitle" Text="RotateLoopParamName:" MarginLeft="10" />
+			<EditBox 	Row="6" Column="0" MarginTop="4" MarginBottom="4" Name="RotateLoopSoundParamNameEB" MarginLeft="240"	FontSize="18" />
+			<GridContainer Row="7" Column="0" >
+				<Columns>
+					<Column Width="250"/>
+					<Column Width="1*"/>
+					<Column Width="250"/>
+					<Column Width="1*"/>
+				</Columns>
+				<Text 		Column="0" MarginTop="4" MarginBottom="4" Name="RotateSoundIdleParamValTxt" Style="TextTitle" Text="RotateIdleParamVal:" MarginLeft="10" />
+				<EditBox 	Column="1" MarginTop="4" MarginBottom="4" Name="RotateSoundIdleParamValEB" FontSize="18" />
+				<Text 		Column="2" MarginTop="4" MarginBottom="4" Name="RotateSoundStopParamValTxt" Style="TextTitle" Text="RotateStopParamVal:" MarginLeft="10" />
+				<EditBox 	Column="3" MarginTop="4" MarginBottom="4" Name="RotateSoundStopParamValEB"	FontSize="18" />
+			</GridContainer>
+			<Text 		Row="8" Column="0" MarginTop="4" MarginBottom="4" Name="MoveSoundParamNameTxt" Style="TextTitle" Text="MoveSoundParamName:" MarginLeft="10" />
+			<EditBox 	Row="8" Column="0" MarginTop="4" MarginBottom="4" Name="MoveSoundParamNameEB" MarginLeft="240"	FontSize="18" />
+			<Text 		Row="9" Column="0" MarginTop="4" MarginBottom="4" Name="MoveRotateSoundParamNameTxt" Style="TextTitle" Text="MoveRotateSoundParamName:" MarginLeft="10" />
+			<EditBox 	Row="9" Column="0" MarginTop="4" MarginBottom="4" Name="MoveRotateSoundParamNameEB" MarginLeft="240"	FontSize="18" />
+			
+			<GridContainer Row="10" Column="0" >
+				<Columns>
+					<Column Width="250"/>
+					<Column Width="1*"/>
+					<Column Width="250"/>
+					<Column Width="1*"/>
+				</Columns>
+				<Text 		Column="0" MarginTop="4" MarginBottom="4" Name="MoveRotateSoundParamMaxValTxt" Style="TextTitle" Text="MoveRotateSoundParamMaxVal:" MarginLeft="10" />
+				<EditBox 	Column="1" MarginTop="4" MarginBottom="4" Name="MoveRotateSoundParamMaxValEB" FontSize="18" />
+				<Text 		Column="2" MarginTop="4" MarginBottom="4" Name="MoveSoundParamMaxValTxt" Style="TextTitle" Text="MoveSoundParamMaxVal:" MarginLeft="10" />
+				<EditBox 	Column="3" MarginTop="4" MarginBottom="4" Name="MoveSoundParamMaxValEB"	FontSize="18" />
+			</GridContainer>
+			
+		
+			
+			
+		</GridContainer>
+		
+		<!-- MOVEMENT TAB -->
+		<GridContainer Row="3" Visible="false" Size="700,850" BorderColor="0xffff0000" BorderWidth="1" Name="MovementTabContent" >
+			<Columns>
+				<Column Width="1*"/>	
+			</Columns>
+			<Rows>
+				<Row Height="60"/>
+				<Row Height="1*"/>
+			</Rows>
+			<Container Row="0" Column="0" MarginTop="6" MarginBottom="6" Name="MovespeedContainer" >
+				<Text Height="20" Text="movementspeed" Style="TextTitle" Name="movementspeedTxt" MarginLeft="5" />
+				<Slider Name="MoveSpeedSlider" Size="480,30" MarginLeft="120" />
+        <EditBox Column="0" Text="" FontSize="18" Name="movementspeedValueDisplay" MarginTop="4" MarginBottom="4" Width="65" HAlign="right" MarginLeft="5" />
+			</Container>
+		</GridContainer>
+		
+		<!-- PAIN TAB -->
+		<GridContainer Row="3" Visible="false" Size="700,850" BorderColor="0xffff0000" BorderWidth="1" Name="PainTabContent" >
+			<Columns>
+				<Column Width="1*"/>	
+			</Columns>
+			<Rows>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="60"/>
+				<Row Height="160" ID="DisabledHalalTypes" />
+				<Row Height="1*"/>
+			</Rows>
+			<Container Row="0" Column="0"  MarginTop="6" MarginBottom="6" Name="InjuryTypeContainer" >
+				<Text Height="20" Text="injury type:" Style="TextTitle" Name="injuryTypeTxt" MarginLeft="5" />	
+				<ComboBox Style="TextEdit" FontSize="18" HighlightColor="#777777" Name="injurytypeLB" MarginLeft="150" />
+			</Container>
+			<Container Row="1" Column="0"  MarginTop="6" MarginBottom="6" Name="ForceHalalTypeContainer" >
+				<Text Height="20" Text="force halal type:" Style="TextTitle" Name="forceHalalTypeTxt" MarginLeft="5" />	
+				<ComboBox Style="TextEdit" FontSize="18" HighlightColor="#777777" Name="forcehalaltypeLB" MarginLeft="150" />
+			</Container>
+			<Container Row="2" Column="0"  MarginTop="6" MarginBottom="6" Name="ForceSpecialDeathTypeContainer" >
+				<Text Height="20" Text="special death type:" Style="TextTitle" Name="forceSpecialDeathTypeTxt" MarginLeft="5" />	
+				<ComboBox Style="TextEdit" FontSize="18" HighlightColor="#777777" Name="forceSpecialDeathTypeLB" MarginLeft="150" />
+			</Container>
+			<Container Row="3" Column="0"  MarginTop="6" MarginBottom="6" Name="SpecialDeathChanceContainer" >
+				<Text 		Column="0" Name="SpecialDeathChanceTxt" Style="TextTitle" Text="SpecialDeathChance:" MarginLeft="10" />
+				<EditBox 	Column="0" Name="SpecialDeathChanceEB"	FontSize="18" MarginLeft="200" />
+			</Container>
+			<Container Row="4" Column="0"  MarginTop="6" MarginBottom="6" Name="physicsHalalDelayContainer" >
+				<Text 		Column="0" Name="physicsHalalDelayTxt" Style="TextTitle" Text="physicsHalalDelay:" MarginLeft="10" />
+				<EditBox 	Column="0" Name="physicsHalalDelayEB"	FontSize="18" MarginLeft="200" />
+			</Container>
+			<GridContainer RowID="DisabledHalalTypes" Column="0" Name="DisabledHalaltypeCheckboxContainer" >
+			 	<Columns>
+					<Column Width="1*"/>	
+					<Column Width="1*"/>
+					<Column Width="1*"/>				
+					<Column Width="1*"/>
+				</Columns>
+				<Rows>
+					<Row Height="30"/>
+					<Row Height="1*"/>
+					<Row Height="1*"/>
+					<Row Height="1*"/>
+				</Rows>
+				<Text Height="20" Text="disabled halal types:" Style="TextTitle" Name="DisabledHalalTypeTxt" MarginLeft="5" MarginTop="4" MarginBottom="4" />	
+			</GridContainer>
+		</GridContainer>
+		
+		<!-- MISC TAB -->
+		<GridContainer Row="3" Visible="false" Size="700,850" BorderColor="0xffff0000" BorderWidth="1" Name="MiscTabContent" >
+			<Columns>
+				<Column Width="1*"/>	
+			</Columns>
+			<Rows>
+				<Row Height="60"/>
+				<Row Height="1*"/>
+			</Rows>
+			<GridContainer Row="0" Column="0" MarginTop="6" MarginBottom="6" Name="MiscButtonsContainer" >
+				<Columns>
+					<Column Width="1*"/>	
+					<Column Width="1*"/>	
+				</Columns>
+				<Button Column="0" Style="TextButton" ColorMask="#113344" Text="Named Positions" MarginLeft="20" MarginRight="20" Name="NamedPosBtn" />
+				<Button Column="1" Style="TextButton" ColorMask="#113344" Text="Skills" MarginLeft="20" MarginRight="20" Name="SkillsBtn" />
+			</GridContainer>	
+		</GridContainer>
+		
+	</GridContainer>
+	
+	<!-- NAMED POSITIONS SUBWINDOW -->
+	<Container VAlign="Center" HAlign="Center" ElementDirectory="Editor" Name="NamedPosSubWindow" Visible="0">
+		<Image ColorMask="#555555"/>
+		<FlowContainer>
+			<Container Width="500" Height="40">
+				<Text Text="Named Position"		Style="TextTitle"    Name="NamedPosTxt_Name"	MarginTop="5" MarginLeft="5" />
+				<Text Text="X"                 	Style="TextTitle"    Name="NamedPosTxt_x"     	MarginTop="5" MarginLeft="250" />
+				<Text Text="Y"                 	Style="TextTitle"    Name="NamedPosTxt_y"     	MarginTop="5" MarginLeft="350" />
+				<Text Text="Z"                 	Style="TextTitle"    Name="NamedPosTxt_z"     	MarginTop="5" MarginLeft="450" />
+			</Container>
+			<Loop Count="@NamedPosDisplayLimit" Variable="$X$">
+				<FlowContainer Horizontal="1" Height="40" Margin="5">
+					<EditBox Style="TextTitle" MarginLeft="10"  MarginRight="10" Name="NamedPositionName_$X$" Width="200" Graphics="UI/Element/Editor/EDITBOX" />
+                    <EditBox Style="TextTitle" MarginLeft="10"  MarginRight="10" Name="NamedPositionX_$X$" Width="80" Graphics="UI/Element/Editor/EDITBOX" />
+                    <EditBox Style="TextTitle" MarginLeft="10"  MarginRight="10" Name="NamedPositionY_$X$" Width="80" Graphics="UI/Element/Editor/EDITBOX" />
+                    <EditBox Style="TextTitle" MarginLeft="10"  MarginRight="10" Name="NamedPositionZ_$X$" Width="80" Graphics="UI/Element/Editor/EDITBOX" />
+					<CheckBox Style="TextTitle" MarginLeft="6" MarginRight="6"  Name="NamedPositionShow_$X$" Width="50" ColorMask="#FF0000" Tooltip="show this position" />	
+					<Icon Size="30,30" ColorMask="#880000" Text="-" MarginLeft="5" VAlign="Center" Name="DeleteNamedPosEntry_$X$"/>
+				</FlowContainer>
+			</Loop>
+			<Icon Size="120, 40" ColorMask="#333333" Text="Ok" HAlign="Center" Name="NamedPosWindOk"/>
+		</FlowContainer>		
+	</Container>	
+	
+	<!-- SKILLS SUBWINDOW -->
+	<Container VAlign="Center" HAlign="Center" MarginLeft="280" ElementDirectory="Editor" Name="SkillsSubWindow" Visible="0">
+		<Image ColorMask="#555555"/>
+		<FlowContainer>
+			<Container Width="740" Height="40">
+				<Text Text="Skill name"					Style="TextTitle"    Name="SkillTxt_Name"			MarginTop="5" MarginLeft="5" />
+				<Text Text="ON"                 		Style="TextTitle"    Name="SkillsTxt_enabled"     	MarginTop="5" MarginLeft="440" />
+				<Text Text="Prio"                 		Style="TextTitle"    Name="SkillsTxt_priority"     	MarginTop="5" MarginLeft="500" />
+				<Text Text="Bodyregion"                 Style="TextTitle"    Name="SkillsTxt_bodyregion"    MarginTop="5" MarginLeft="550" />
+				<Text Text="OtherParams"              	Style="TextTitle"    Name="SkillsTxt_otherparams"   MarginTop="5" MarginLeft="670" />
+			</Container>
+			<Loop Count="@SkillsDisplayLimit" Variable="$X$">
+				<FlowContainer Horizontal="1" Height="40" Margin="5">
+					<EditBox Style="TextTitle" MarginLeft="6"  MarginRight="6" Name="SkillName_$X$" Width="420" Graphics="UI/Element/Editor/EDITBOX" />
+					<CheckBox Style="TextTitle" MarginLeft="6" MarginRight="6"  Name="SkillEnabled_$X$" Width="50" ColorMask="#FF0000" Tooltip="enable or disable that is the question" />	
+					<EditBox Style="TextTitle" MarginLeft="6"  MarginRight="6" Name="SkillPriority_$X$" Width="30" Graphics="UI/Element/Editor/EDITBOX" Tooltip="value of how likely the unit will use it when goverened by ai (higher = more likely)"  />
+					<ComboBox Style="TextTitle" MarginLeft="6"  MarginRight="6" Name="SkillBodyRegion_$X$" Width="100" FontSize="18" HighlightColor="#777777" />
+					<EditBox Style="TextTitle" MarginLeft="6"  MarginRight="6" Name="SkillOtherParam_$X$" Width="300" Graphics="UI/Element/Editor/EDITBOX" Tooltip="other params, such as animpack/level/actionslot"  />
+					<Icon Size="30,30" ColorMask="#880000" Text="-" MarginLeft="5" VAlign="Center" Name="DeleteSkillEntry_$X$"/>
+				</FlowContainer>
+			</Loop>
+			<Icon MarginLeft="10" Width="60" Height="60" ColorMask="#008800" Text="+" Name="AddSkillEntry"/>
+			<Icon Size="120, 40" ColorMask="#333333" Text="Ok" HAlign="Center" Name="SkillWindOk"/>
+		</FlowContainer>		
+	</Container>	
+	
+</Window>
+

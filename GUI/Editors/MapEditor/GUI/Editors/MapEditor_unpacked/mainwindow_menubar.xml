@@ -1,0 +1,8 @@
+<Dummy/>
+<FlowContainer FillColor="#96aabe" Horizontal="true">
+	<Icon Style="SimpleButton" Text="File" Width="60" Name="OpenFileMenu" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="Edit" Width="60" Name="OpenEditMenu" ColorMask="#96aabe"/>
+	<Icon Style="SimpleButton" Text="View" Width="60" Name="OpenViewMenu" ColorMask="#96aabe"/>
+</FlowContainer>
+<Text Name="Filename"  Text="Untitled" HorizontalAlignment="Center"/>
+<Icon Name="Exit" Style="SimpleButton" Text="X" Width="30" HorizontalAlignment="Right" ColorMask="#96aabe"/>

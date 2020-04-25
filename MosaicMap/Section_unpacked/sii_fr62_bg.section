@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SII_Fr62_BG Terrain="Terrains/Sections/Standard_Imperial_Indoors/SII_Fr62_BG.VHT" Preview="Terrains/Sections/Standard_Imperial_Indoors/MapEditorImages/SII_Fr62_BG_thumb.bmp" Image="Terrains/Sections/Standard_Imperial_Indoors/MapEditorImages/SII_Fr62_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Standard Imperial Indoors">
+	<PivotPos x="2277" y="-536.192871" />
+	<Tags />
+	<Grids>
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="" />
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+	</Grids>
+</SII_Fr62_BG>

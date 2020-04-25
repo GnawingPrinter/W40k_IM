@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Upper_Hive_Fr02 Terrain="Terrains/Sections/Upper_Hive/Upper_Hive_Fr02.VHT" Preview="Terrains/Sections/Upper_Hive/MapEditorImages/Upper_Hive_Fr02_thumb.bmp" Image="Terrains/Sections/Upper_Hive/MapEditorImages/Upper_Hive_Fr02.bmp" MinClickHeight="-50000" Background="false" MapType="Upper Hive">
+	<PivotPos x="3542" y="3128" />
+	<Tags Room="true" />
+	<Grids>
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+	</Grids>
+</Upper_Hive_Fr02>

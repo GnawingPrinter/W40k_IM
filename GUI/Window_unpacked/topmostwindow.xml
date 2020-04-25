@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Container Name="TopRight" GuiAlign="topright">
+		<Text Name="NetworkProblem"
+			Pos="1545,105"
+			Size="210,26"
+			Style="GrenadeCharge"
+			Text="Backend connection problem..."
+			TextAlignH="center"
+			TextAlignV="center"
+			Color="#ff0000"
+		/>
+	</Container>
+	
+</Window>

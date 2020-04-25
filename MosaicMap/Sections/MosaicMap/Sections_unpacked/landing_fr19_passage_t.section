@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Landing_Fr19_Passage_T Terrain="Terrains/Sections/Landing_site/Landing_Fr19_Passage_T.VHT" Preview="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr19_Passage_T_thumb.bmp" Image="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr19_Passage_T.bmp" MapType="Floating Platform" MinClickHeight="-310">
+	<PivotPos x="3932.96875" y="933.962891" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-4" Row="-3" Image="" />
+		<Grid Column="-3" Row="-3" Image="" />
+		<Grid Column="-2" Row="-3" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="" />
+		<Grid Column="2" Row="-3" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="4048.85156" Position.y="797.569946" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="3" Row="-3" Image="" />
+		<Grid Column="4" Row="-3" Image="" />
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="">
+			<Gate Direction="WEST" Size="1" Position.x="3748.92944" Position.y="960.300903" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+		<Grid Column="-4" Row="3" Image="" />
+		<Grid Column="-3" Row="3" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="4048.4314" Position.y="1119.52966" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="4" Row="3" Image="" />
+	</Grids>
+</Landing_Fr19_Passage_T>

@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window GuiAlign="center" OpenTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Container Name="DataSlateLayout" Pos="650,77">
+		<Image
+			Pos="20,146"
+			Size="588,712"
+			Image="UI/Clue/clue_slate_background.tga"
+		/>
+		<Text Name="DataSlateHeadline"
+			Pos="54,194"
+			Size="500,30"
+			Style="Clue_Dataslate_Headline"
+			TextAlignH="right"
+			TextAlignV="center"
+		/>
+		<TextBox Name="DataSlateText"
+			Pos="54,238"
+			Size="530,598"
+			Style="Clue_Dataslate_Text"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<Image
+			Pos="20,144"
+			Size="588,712"
+			Image="UI/Clue/clue_slate_interlace.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Size="632,296"
+			Image="UI/Clue/clue_slate_frame.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Icon Name="DataSlateClose"
+			Pos="574,35"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+		<Icon Name="DataSlatePlay"
+			Pos="396,67"
+			Size="36,52"
+			IdleImg="UI/Clue/clue_slate_playOff.tga"
+			PressImg="UI/Clue/clue_slate_playOver.tga"
+			RolloverImg="UI/Clue/clue_slate_playOver.tga"
+		/>
+		<Image Name="DataSlateOscillator"
+			Pos="496,56"
+			Size="84,84"
+			Image="UI/Clue/clue_slate_effekt.tga"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Container Name="ConclaveLayout" Pos="650,77" Visible="0">
+		<Image
+			Pos="588,70"
+			Size="348,360"
+			Image="UI/BATTLE_UI/message/message_background.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Video Name="ConclaveMessageVideo"
+			Pos="594,82"
+			Size="336,336"
+			LoopVideo="1"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Pos="20,146"
+			Size="588,712"
+			Image="UI/Clue/clue_slate_background.tga"
+		/>
+		<TextBox Name="ConclaveText"
+			Pos="54,252"
+			Size="520,566"
+			Style="Clue_Dataslate_Text"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<Image
+			Pos="20,144"
+			Size="588,712"
+			Image="UI/Clue/clue_slate_interlace.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Pos="0,0"
+			Size="632,296"
+			Image="UI/Clue/clue_conclave_frame.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Container Name="ConclaveMessageContainer" Pos="588,70" IgnoreScissor="1" Visible="1">
+			<Image
+				Pos="0,0"
+				Size="348,376"
+				Image="UI/BATTLE_UI/message/message_frame.tga"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+		<Image Name="ConclaveLogo"
+			Pos="41,38"
+			Size="124,124"
+			Image="UI/Clue/clue_conclave_logo.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="ConclaveHeadline"
+			Pos="228,167"
+			Size="312,30"
+			Style="Text_Large_Light"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="_INQUISITOR JOACHIM MALDOR"
+		/>
+		<Text Name="ConclaveHeadline2"
+			Pos="128,195"
+			Size="412,30"
+			Style="Text_Normal_Dark"
+			Color="#669999"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="_Lord Inquisitor of the Caligari Conclave"
+		/>
+		<Icon Name="ConclaveClose"
+			Pos="573,34"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+		<Icon Name="ConclavePlay"
+			Pos="396,67"
+			Size="36,52"
+			IdleImg="UI/Clue/clue_slate_playOff.tga"
+			PressImg="UI/Clue/clue_slate_playOver.tga"
+			RolloverImg="UI/Clue/clue_slate_playOver.tga"
+		/>
+		<Image Name="ConclaveOscillator"
+			Pos="496,56"
+			Size="84,84"
+			Image="UI/Clue/clue_slate_effekt.tga"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Container Name="CogitatorLayout" Pos="330,82">
+		<Image
+			Pos="25,26"
+			Size="1156,800"
+			Image="UI/Clue/clue_cogitator_background.tga"
+		/>
+		<Text Name="CogitatorHeadline"
+			Pos="217,63"
+			Size="804,40"
+			Style="Clue_Cogitator_Headline"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Effect
+			Pos="78,132"
+			Size="1036,674"
+			Effect="UI/Clue_tutorial/clue_ablak.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+			Show="1"
+		/>
+		<TextBox Name="CogitatorText"
+			Pos="93,132"
+			Size="1040,680"
+			Style="Clue_Cogitator_Text"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<Image
+			Pos="25,26"
+			Size="1156,800"
+			Image="UI/Clue/clue_cogitator_interlace.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Size="1260,844"
+			Image="UI/Clue/clue_cogitator_frame.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Icon Name="CogitatorClose"
+			Pos="1145,22"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="VideoLayout" Pos="330,82">
+		<Image
+			Pos="25,22"
+			Size="1156,656"
+			Image="UI/Clue/clue_video_background.tga"
+		/>
+		<TextBox Name="VideoText"
+			Visible="0"
+			Pos="83,132"
+			Size="1046,676"
+			Style="Clue_Cogitator_Text"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<Text Name="VideoHeadline"
+			Visible="0"
+			Pos="217,48"
+			Size="804,40"
+			Style="Clue_Cogitator_Headline"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Video Name="VideoVideo"
+			Pos="25,28"
+			Size="1152,648"
+			LoopVideo="1"
+		/>
+		<Image
+			Pos="25,22"
+			Size="1156,656"
+			Image="UI/Clue/clue_video_interlace.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Pos="25,22"
+			Size="1156,656"
+			Image="UI/Clue/clue_video_glass.tga"
+		/>
+		<Image
+			Size="1260,708"
+			Image="UI/Clue/clue_video_frame.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Icon Name="VideoClose"
+			Pos="1153,16"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="ChaosLayout" Pos="660,60" Visible="0">
+		<Image
+			Pos="0,0"
+			Size="600,1000"
+			Image="UI/Clue/clue_chaos_background.tga"
+		/>
+		<TextBox Name="ChaosText"
+			Pos="73,200"
+			Size="460,584"
+			Style="Clue_Chaos_Text"
+			SliderImage="UI/Clue/slider/Chaos"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<Text Name="ChaosHeadline"
+			Pos="73,134"
+			Size="460,40"
+			Style="Clue_Chaos_Headline"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Icon Name="ChaosClose"
+			Pos="547,58"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="ManuscriptLayout" Pos="660,60" Visible="0">
+		<Image
+			Pos="0,0"
+			Size="600,1000"
+			Image="UI/Clue/clue_manuscript_background.tga"
+		/>
+		<TextBox Name="ManuscriptText"
+			Pos="89,206"
+			Size="428,594"
+			Style="Clue_Manuscript_Text"
+			SliderImage="UI/Clue/slider/Manuscript"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<Text Name="ManuscriptHeadline"
+			Pos="98,150"
+			Size="410,40"
+			Style="Clue_Manuscript_Headline"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Icon Name="ManuscriptClose"
+			Pos="551,54"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Name="CrystalLayout" Pos="650,77" Visible="0">
+		<Image
+			Pos="588,70"
+			Size="348,360"
+			Image="UI/BATTLE_UI/message/message_background.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Video Name="CrystalVideo"
+			Pos="594,82"
+			Size="336,336"
+			LoopVideo="1"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Pos="20,146"
+			Size="588,712"
+			Image="UI/Clue/clue_slate_background.tga"
+		/>
+		<TextBox Name="CrystalText"
+			Pos="54,252"
+			Size="520,566"
+			Style="Clue_Dataslate_Text"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		<Image
+			Pos="20,144"
+			Size="588,712"
+			Image="UI/Clue/clue_slate_interlace.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image
+			Pos="0,0"
+			Size="632,296"
+			Image="UI/Clue/clue_conclave_frame.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Container Name="CrystalContainer" Pos="588,70" IgnoreScissor="1" Visible="1">
+			<Image
+				Pos="0,0"
+				Size="348,376"
+				Image="UI/BATTLE_UI/message/message_frame.tga"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+		<Image Name="CrystalPicture"
+			Pos="41,38"
+			Size="124,124"
+			Image="UI/Clue/clue_conclave_logo.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Text Name="CrystalHeadline"
+			Pos="228,167"
+			Size="312,30"
+			Style="Text_Large_Light"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="_INQUISITOR JOACHIM MALDOR"
+		/>
+		<Text Name="CrystalHeadline2"
+			Pos="128,195"
+			Size="412,30"
+			Style="Text_Normal_Dark"
+			Color="#669999"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="_Lord Inquisitor of the Caligari Conclave"
+		/>
+		<Icon Name="CrystalClose"
+			Pos="573,34"
+			Size="28,28"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+		<Image Name="CrystalOscillator"
+			Pos="496,56"
+			Size="84,84"
+			Image="UI/Clue/clue_slate_effekt.tga"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+	
+	<Container Name="ReadModeLayout_Chaos" Pos="0,0" Visible="0">
+		<Image
+			Pos="0,0"
+			Alpha="0.95"
+			Image="UI/BlackTexture.tga"
+		/>
+		<TextBox Name="ReadModeText_Chaos"
+			Pos="560,150"
+			Size="800,824"
+			Style="Text_Large_White"
+			SliderImage="UI/Clue/slider/Manuscript"
+			TextAlignH="left"
+			TextAlignV="top"
+			GuiAlign="center"
+		/>
+		<Text Name="ReadModeHeadline_Chaos"
+			Pos="560,100"
+			Size="800,40"
+			Style="Headline_MLarge_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			GuiAlign="center"
+		/>
+	</Container>
+	
+	<Container Name="ReadModeLayout_Manuscript" Pos="0,0" Visible="0">
+		<Image
+			Pos="0,0"
+			Alpha="0.95"
+			Image="UI/BlackTexture.tga"
+		/>
+		<TextBox Name="ReadModeText_Manuscript"
+			Pos="560,150"
+			Size="800,824"
+			Style="Text_Large_White"
+			SliderImage="UI/Clue/slider/Manuscript"
+			TextAlignH="left"
+			TextAlignV="top"
+			GuiAlign="center"
+		/>
+		<Text Name="ReadModeHeadline_Manuscript"
+			Pos="560,100"
+			Size="800,40"
+			Style="Headline_MLarge_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			GuiAlign="center"
+		/>
+	</Container>
+	
+		
+	<Text Name="WaitingForOtherPlayers"
+		GuiAlign="topleft"
+		Height="30"
+		MarginTop="37"
+		VAlign="top"
+		HAlign="center"
+		TextAlignH="center"
+		TextAlignV="center"
+		Style="Text_Large_Light"
+		Text="common.waitingforothers"
+	/>
+	
+	<Text Name="MultiplayerAutoCloseTimer"
+		GuiAlign="topleft"
+		Height="30"
+		MarginTop="37"
+		VAlign="left"
+		HAlign="center"
+		TextAlignH="center"
+		TextAlignV="center"
+		Style="Text_Large_Light"
+		Text="common.reset"
+	/>
+</Window>

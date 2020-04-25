@@ -1,0 +1,9 @@
+<Gate>
+	<Container>
+		<Image Name="Connected" Image="UI/Editor/MapEditor/connection_connected.dds" Visible="false"/>
+		<Image Name="Off" Image="UI/Editor/MapEditor/connection_inactive.dds" Visible="false"/>
+		<Image Name="Free" Image="UI/Editor/MapEditor/connection_off.dds" Visible="true"/>
+		<Image Name="Error" Image="UI/Editor/MapEditor/connection_off.dds" ColorMask="1,0,0" Visible="false"/>
+		<Text Color="#000000" Name="SizeLabel">a</Text>
+	</Container>
+</Gate>

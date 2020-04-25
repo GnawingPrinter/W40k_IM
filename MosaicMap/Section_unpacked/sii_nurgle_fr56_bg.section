@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SII_Nurgle_Fr56_BG Terrain="Terrains/Sections/Imperial_indoors_nurgle_infested/SII_Nurgle_Fr56_BG.VHT" Preview="Terrains/Sections/Imperial_indoors_nurgle_infested/MapEditorImages/SII_Nurgle_Fr56_BG_thumb.bmp" Image="Terrains/Sections/Imperial_indoors_nurgle_infested/MapEditorImages/SII_Nurgle_Fr56_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Nurgle Indoors">
+	<PivotPos x="1771" y="-904.192871" />
+	<Tags />
+	<Grids>
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+	</Grids>
+</SII_Nurgle_Fr56_BG>

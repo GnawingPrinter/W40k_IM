@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	<Constants>		
+		<CardRowCount Type="int" Value="4"/>
+		<CardColumnCount Type="int" Value="4"/>
+		<EffectLength Type="float" Value="7.0"/>
+		<MaxVoteCount Type="int" Value="4"/>
+	</Constants>
+	
+	
+	<Container>
+		<Image Name="Background"
+			Image="UI/BlackTexture.tga"
+		/>
+		<Effect Name="TarotBackEffect"
+			Pos="0,0"
+			Size="1920,1080"
+			Effect="UI/3D_GUI_windows/Tarot/tarot.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+			GuiAlign="center"
+		/>
+		<Image
+			Pos="0,0"
+			Size="1920,1080"
+			Image="UI/Tarot/tarot_darken.tga"
+			GuiAlign="center"
+		/>
+		<Image
+			Pos="504,138"
+			Size="958,528"
+			Image="UI/Tarot/fullscreen_tarot_background.tga"
+			GuiAlign="center"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<Icon Name="Journal"
+			Pos="28,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_infoOff.tga"
+			PressImg="UI/Interaction/button_infoOff.tga"
+			RolloverImg="UI/Interaction/button_infoOver.tga"
+			InitPopup="topcenter,bottomcenter"
+			Tooltip="openworld.gui.journal.tutorials.title"
+		/>
+		<Icon TutorialCategoryToReset="Tarot"
+			Pos="28,80"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+			PressImg="UI/Interaction/button_tutorialResetOff.tga"
+			RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+			GuiAlign="topleft"
+			InitPopup="leftcenter,rightcenter"
+			Tooltip="Tutorial.TutorialReset"
+			ShowCategory="mouse"
+		/>
+		<Container Name="TopTabs" GuiAlign="topcenter">
+			<XBOXButton Name="XBoxLB"
+				Pos="686,35"
+				Size="48,48"
+				SetButton="LEFT_SHOULDER"
+			/>
+			<Icon Name="WarpRealityButton"
+				Pos="736,35"
+				Size="224,68"
+				IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+				IdleOffset="0,-11"
+				PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+				PressOffset="0,-12"
+				RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+				RolloverOffset="0,-11"
+				Style="StarmapHeadline2_3"
+				ButtonState="UIBS_PRESSED_BYPROG"
+				Text="openworld.gui.tarot.warp_reailty"
+			/>
+			<Icon Name="DivinationButton"
+				Pos="960,35"
+				Size="224,68"
+				IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+				IdleOffset="0,-11"
+				PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+				PressOffset="0,-12"
+				RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+				RolloverOffset="0,-11"
+				Style="StarmapHeadline2_3"
+				Text="openworld.gui.tarot.divinitation"
+			/>
+			<XBOXButton Name="XBoxRB"
+				Pos="1180,35"
+				Size="48,48"
+				SetButton="RIGHT_SHOULDER"
+			/>
+		</Container>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+		/>
+	</Container>
+	
+	<Container Name="CardLists" GuiAlign="leftcenter">
+		<Image
+			Pos="75,147"
+			Size="500,844"
+			Image="UI/Tarot/fullscreen_tarot_left.tga"
+		/>
+		<Text
+			Pos="75,113"
+			Size="500,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.tarot.title"
+		/>
+		<XBOXButton Name="XBoxLT"
+			Pos="90,146"
+			Size="48,48"
+			SetButton="L_TRIGGER"
+		/>
+		<Icon Name="MajorTab"
+			Pos="136,150"
+			Size="184,40"
+			IdleImg="UI/Tarot/fullscreen_tabOff.tga"
+			PressImg="UI/Tarot/fullscreen_tabOn.tga"
+			RolloverImg="UI/Tarot/fullscreen_tabOver.tga"
+			Style="Starmap2_3"
+			Text="openworld.gui.tarot.major_arcana"
+		/>
+		<Icon Name="MinorTab"
+			Pos="330,150"
+			Size="184,40"
+			IdleImg="UI/Tarot/fullscreen_tabOff.tga"
+			PressImg="UI/Tarot/fullscreen_tabOn.tga"
+			RolloverImg="UI/Tarot/fullscreen_tabOver.tga"
+			Style="Starmap2_3"
+			Text="openworld.gui.tarot.minor_arcana"
+		/>
+		<XBOXButton Name="XBoxRT"
+			Pos="510,146"
+			Size="48,48"
+			SetButton="R_TRIGGER"
+		/>
+		<Loop Count="@CardRowCount" Variable="$Y$" Offset="0,176">
+			<Container Pos="111,202">
+				<Loop Count="@CardColumnCount" Variable="$X$" Offset="110,0">
+					<Icon Name="ListedArcanaCardIcon_$X$_$Y$"
+						Size="104,168"
+						AllImg="UI/Tarot/cards/tarot_small_locked.tga"
+						UseButtonEffects="0"
+						ControllerSenseEnabled="1"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Image Name="ListedArcanaCardLock_$X$_$Y$"
+						Pos="12,30"
+						Size="81,105"
+						Image="UI/Tarot/cards/tarot_small_locked.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Effect Name="ListedArcanaCardMajorEffect_$X$_$Y$"
+						Pos="3,-52"
+						Size="104,168"
+						Effect="UI/3D_GUI_windows/Tarot/small_card_selected_major.N2E"
+						MouseSenseEnabled="0"
+						Loop="1"
+					/>
+					<Effect Name="ListedArcanaCardMinorEffect_$X$_$Y$"
+						Pos="3,-52"
+						Size="104,168"
+						Effect="UI/3D_GUI_windows/Tarot/small_card_selected_minor.N2E"
+						MouseSenseEnabled="0"
+						Loop="1"
+					/>
+				</Loop>
+			</Container>
+		</Loop>
+		<Image
+			Pos="247,933"
+			Size="156,48"
+			Image="UI/Tarot/fullscreen_tarot_costBg.tga"
+		/>
+		<Text Name="CurrentPremium"
+			Pos="303,942"
+			Size="92,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+	</Container>
+	
+	
+	<Container Name="CardSlots" GuiAlign="center" Tutorial="Tarot_base">
+		<Text Name="MajorArcanaName"
+			Pos="835,109"
+			Size="252,30"
+			Style="Text_Large_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Image Name="MajorArcanaBack"
+			Pos="885,147"
+			Size="152,248"
+			Image="UI/Tarot/cards/tarot_major_large_backside.tga"
+		/>
+		<TextBox Name="MajorArcanaClick"
+			Pos="895,147"
+			Size="132,248"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.tarot.slot_instructions"
+			MouseSenseEnabled="0"
+		/>
+		
+		<Text Name="MinorArcanaName1"
+			Pos="589,286"
+			Size="252,30"
+			Style="Text_Large_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Image Name="MinorArcanaBack1"
+			Pos="639,324"
+			Size="152,248"
+			Image="UI/Tarot/cards/tarot_minor_large_backside.tga"
+		/>
+		<TextBox Name="MinorArcanaClick1"
+			Pos="649,324"
+			Size="132,248"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.tarot.slot_instructions"
+			MouseSenseEnabled="0"
+		/>
+		
+		<Text Name="MinorArcanaName2"
+			Pos="1081,286"
+			Size="252,30"
+			Style="Text_Large_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Image Name="MinorArcanaBack2"
+			Pos="1131,324"
+			Size="152,248"
+			Image="UI/Tarot/cards/tarot_minor_large_backside.tga"
+		/>
+		<TextBox Name="MinorArcanaClick2"
+			Pos="1141,324"
+			Size="132,248"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.tarot.slot_instructions"
+			MouseSenseEnabled="0"
+		/>
+	</Container>
+		
+	<Container Name="CardSlotsAlwaysShown" GuiAlign="center">
+		<Image Name="MajorArcanaSlot"
+			Pos="885,147"
+			Size="152,248"
+			Image="UI/Tarot/fullscreen_tarot_left.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="MinorArcanaSlot1"
+			Pos="639,324"
+			Size="152,248"
+			Image="UI/Tarot/fullscreen_tarot_left.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="MinorArcanaSlot2"
+			Pos="1131,324"
+			Size="152,248"
+			Image="UI/Tarot/fullscreen_tarot_left.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="MajorArcanaSlotEffect"
+			Pos="885,271"
+			Size="152,248"
+			Effect="UI/3D_GUI_windows/Tarot/Tarot_place_card_maincard.N2E"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="MinorArcanaSlotEffect1"
+			Pos="639,448"
+			Size="152,248"
+			Effect="UI/3D_GUI_windows/Tarot/Tarot_place_card_left.N2E"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="MinorArcanaSlotEffect2"
+			Pos="1131,448"
+			Size="152,248"
+			Effect="UI/3D_GUI_windows/Tarot/Tarot_place_card_right.N2E"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="MajorArcanaSlotLoopEffect"
+			Pos="885,271"
+			Size="152,248"
+			Effect="UI/3D_GUI_windows/Tarot/Tarot_empty_cardslot_center.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="MinorArcanaSlotLoopEffect1"
+			Pos="639,448"
+			Size="152,248"
+			Effect="UI/3D_GUI_windows/Tarot/Tarot_empty_cardslot_left.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Effect Name="MinorArcanaSlotLoopEffect2"
+			Pos="1131,448"
+			Size="152,248"
+			Effect="UI/3D_GUI_windows/Tarot/Tarot_empty_cardslot_left.N2E"
+			Loop="1"
+			MouseSenseEnabled="0"
+		/>
+		<Icon Name="CreateDivButton"
+			Pos="881,461"
+			Size="160,76"
+			Style="StarmapHeadline2_3"
+			IdleImg="UI/Tarot/tarot_IconDivinationOff.tga"
+			IdleOffset="0,1"
+			PressImg="UI/Tarot/tarot_IconDivinationOff.tga"
+			PressOffset="0,1"
+			RolloverImg="UI/Tarot/tarot_IconDivinationOn.tga"
+			RolloverOffset="0,0"
+			UseButtonEffects="0"
+			Text="openworld.gui.tarot.create"
+			RolloverFade="300"
+		/>
+		<Icon Name="CreateWarpButton"
+			Pos="881,461"
+			Size="160,76"
+			Style="StarmapHeadline2_3"
+			IdleImg="UI/Tarot/tarot_IconRealityWarpOff.tga"
+			IdleOffset="0,1"
+			PressImg="UI/Tarot/tarot_IconRealityWarpOff.tga"
+			PressOffset="0,1"
+			RolloverImg="UI/Tarot/tarot_IconRealityWarpOn.tga"
+			RolloverOffset="0,0"
+			UseButtonEffects="0"
+			Text="openworld.gui.tarot.create"
+			RolloverFade="200"
+		/>
+		
+		<Container Name="VotePanel">
+			<Container Name="VotePartyVotes" Size="344,32" Pos="789,461">
+				<FlowContainer Horizontal="1" HAlign="center" Height="32" >		
+					<Text
+						Height="32"
+						MarginRight="20"
+						Style="Text_Large_White"
+						TextAlignV="center"
+						Text="common.Partyvotes"
+					/>
+					<Loop Count="@MaxVoteCount" Variable="$X$">
+						<Image Name="PartyVote$X$"
+							Size="32,32"
+							MarginRight="4"
+							Image="UI/msgbox/popup_voteOff.tga"
+						/>
+					</Loop>
+				</FlowContainer>
+			</Container>
+			
+			<Icon Name="CancelVote"
+				Pos="881,497"
+				Size="160,40"
+				Style="StarmapHeadline2_3"
+				IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+				PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+				RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+				Text="common.cancel"
+				ShowCategory="mouse"
+			/>
+		</Container>
+	</Container>
+	<Container Name="MissionInfo" GuiAlign="bottomcenter">
+		<Image
+			Pos="880,539"
+			Size="156,48"
+			Image="UI/Tarot/fullscreen_tarot_costBg.tga"
+		/>
+		<Text Name="TotalCost"
+			Pos="938,548"
+			Size="92,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>	
+		<Image
+			Pos="634,627"
+			Size="656,368"
+			Image="UI/Tarot/fullscreen_tarot_middle.tga"
+		/>
+		<Container Name="Difficulty">
+			<Text
+				Pos="658,643"
+				Size="220,32"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.GUI.mission.difficulty.missiondifficulty"
+			/>
+			<ComboBox Name="DifficultyComboBox"
+				Pos="983,643"
+				Size="250,32"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="right"
+				TextAlignV="center"
+				PaddingRight="10" 
+			/>
+			<Icon Name="DifficultyButton"
+				Pos="1233,643"
+				Size="32,32"
+				PaddingRight="4"
+				IdleImg="UI/Element/Default/COMBOBOX/Gomb_Idle.tga"
+				PressImg="UI/Element/Default/COMBOBOX/Gomb_Over.tga"
+				RolloverImg="UI/Element/Default/COMBOBOX/Gomb_Over.tga"
+				Style="Starmap2_3"
+				InitPopup="bottomcenter,topcenter"
+				ShowCategory="mouse"
+			/>
+			<XBOXButton Name="DifficultyButtonController"
+				Pos="1233,641"
+				Size="40,40"
+				MarginLeft="5"
+				SetButton="Back"
+			/>
+		</Container>
+		<Container Name="Details">
+			<Image Name="RatingBack"
+				Pos="654,699"
+				Size="84,52"
+				Image="UI/OpenWorld/icon_challengeGreen.tga"
+			/>
+			<Text Name="RatingValue"
+				Pos="665,702"
+				Size="60,48"
+				FontType="Vibrocentric"
+				FontSize="20"
+				Color="#21c800"
+				Sharpness="0.5"
+				TextAlignH="center"
+				TextAlignV="center"
+				MouseSenseEnabled="0"
+			/>
+			<Text Name="ChallengeDamageModifier"
+				Pos="742,696"
+				Size="200,32"
+				Style="Text_Normal_White"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>
+			<Text Name="ChallengeDamageReductionModifier"
+				Pos="742,723"
+				Size="200,32"
+				Style="Text_Normal_White"
+				TextAlignH="left"
+				TextAlignV="center"
+			/>			
+			<Text Name="MissionType"
+				Pos="952,695"
+				Size="310,30"
+				Style="Text_Normal_White"
+				TextAlignH="right"
+				TextAlignV="center"
+			/>
+			<Text Name="MissionThreat"
+				Pos="952,724"
+				Size="310,30"
+				Style="Text_Normal_Light"
+				TextAlignH="right"
+				TextAlignV="center"
+			/>
+		</Container>
+		<TextBox Name="MissionModifiers"	
+			Pos="650,772"
+			Size="620,180"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="left"
+			TextAlignV="top"
+		/>
+		
+		<Text
+			Pos="709,942"
+			Size="158,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="openworld.gui.tarot.xp"
+		/>
+		<Image
+			Pos="903,933"
+			Size="156,48"
+			Image="UI/Tarot/fullscreen_tarot_xpBg.tga"
+		/>
+		<Text Name="MissionXp"
+			Pos="960,942"
+			Size="88,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>		
+	</Container>
+	
+	
+	<Container Name="CardInfo" GuiAlign="rightcenter">
+		<Text Name="SelectedCardName"
+			Pos="1346,113"
+			Size="500,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<Image
+			Pos="1346,147"
+			Size="500,844"
+			Image="UI/Tarot/fullscreen_tarot_right.tga"
+		/>
+		<Image Name="SelectedCardSlot"
+			Pos="1456,173"
+			Size="280,472"
+			Image="UI/Tarot/cards/tarot_large_backside.tga"
+		/>
+		<Image Name="SelectedCardLock"
+			Pos="1493,274"
+			Size="204,275"
+			Image="UI/Tarot/cards/tarot_large_locked.tga"
+		/>
+		<Text
+			Pos="1379,942"
+			Size="158,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="openworld.gui.tarot.xp"
+		/>
+		<Image
+			Pos="1553,933"
+			Size="156,48"
+			Image="UI/Tarot/fullscreen_tarot_xpBg.tga"
+		/>
+		<Text Name="SelectedCardXp"
+			Pos="1610,942"
+			Size="88,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+		/>
+		<ScrollableContainer Pos="1378,683" Size="468,264">
+			<FlowContainer Width="448">
+				<TextBox Name="SelectedCardEffect"
+					Width="448"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="top"
+				/>
+				<TextBox Name="SelectedCardReward"
+					MarginTop="12"
+					Width="448"
+					Style="Text_Normal_White"
+					TextAlignH="left"
+					TextAlignV="top"
+				/>
+				<Image
+					MarginTop="12"
+					Size="448,4"
+					Image="UI/CharacterSheet/frame_stats_lineMiddle.tga"
+				/>
+				<TextBox Name="SelectedCardDecription"
+					MarginTop="12"
+					Width="448"
+					Style="Italic_Fluff"
+					FontSize="16"
+					BiggerFontSize="19"
+					Color="#99cccc"
+					TextAlignH="left"
+					TextAlignV="top"
+				/>
+			</FlowContainer>
+		</ScrollableContainer>
+	</Container>
+	
+	<Effect Name="CreateEffect"
+		Pos="0,0"
+		Size="1920,1080"
+		Effect="UI/3D_GUI_windows/Tarot/Tarot_create_anim.N2E"
+		MouseSenseEnabled="0"
+		GuiAlign="center"
+	/>
+</Window>

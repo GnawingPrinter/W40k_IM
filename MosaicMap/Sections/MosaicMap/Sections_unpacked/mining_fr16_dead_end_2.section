@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Mining_Fr16_dead_end_2 Terrain="Terrains/Sections/MiningOperation/Mining_Fr16_dead_end_2.VHT" Preview="Terrains/Sections/MiningOperation/MapEditorImages/Mining_Fr16_dead_end_2_thumb.bmp" Image="Terrains/Sections/MiningOperation/MapEditorImages/Mining_Fr16_dead_end_2.bmp" MinClickHeight="-50000" Background="false" MapType="Mining Operation">
+	<PivotPos x="783.112305" y="-2119.16846" />
+	<Tags DeadEnd="true" />
+	<Grids>
+		<Grid Column="-6" Row="-3" Image="" />
+		<Grid Column="-5" Row="-3" Image="" />
+		<Grid Column="-4" Row="-3" Image="" />
+		<Grid Column="-3" Row="-3" Image="" />
+		<Grid Column="-2" Row="-3" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="850.489136" Position.y="-2256.77661" Position.z="0.689442694" />
+		</Grid>
+		<Grid Column="2" Row="-3" Image="" />
+		<Grid Column="3" Row="-3" Image="" />
+		<Grid Column="4" Row="-3" Image="" />
+		<Grid Column="5" Row="-3" Image="" />
+		<Grid Column="6" Row="-3" Image="" />
+		<Grid Column="-6" Row="-2" Image="" />
+		<Grid Column="-5" Row="-2" Image="" />
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="5" Row="-2" Image="" />
+		<Grid Column="6" Row="-2" Image="" />
+		<Grid Column="-6" Row="-1" Image="" />
+		<Grid Column="-5" Row="-1" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="5" Row="-1" Image="" />
+		<Grid Column="6" Row="-1" Image="" />
+		<Grid Column="-6" Row="0" Image="" />
+		<Grid Column="-5" Row="0" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="5" Row="0" Image="" />
+		<Grid Column="6" Row="0" Image="" />
+		<Grid Column="-6" Row="1" Image="" />
+		<Grid Column="-5" Row="1" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="5" Row="1" Image="" />
+		<Grid Column="6" Row="1" Image="" />
+		<Grid Column="-6" Row="2" Image="" />
+		<Grid Column="-5" Row="2" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+		<Grid Column="5" Row="2" Image="" />
+		<Grid Column="6" Row="2" Image="" />
+		<Grid Column="-6" Row="3" Image="" />
+		<Grid Column="-5" Row="3" Image="" />
+		<Grid Column="-4" Row="3" Image="" />
+		<Grid Column="-3" Row="3" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="" />
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="4" Row="3" Image="" />
+		<Grid Column="5" Row="3" Image="" />
+		<Grid Column="6" Row="3" Image="" />
+		<Grid Column="-6" Row="4" Image="" />
+		<Grid Column="-5" Row="4" Image="" />
+		<Grid Column="-4" Row="4" Image="" />
+		<Grid Column="-3" Row="4" Image="" />
+		<Grid Column="-2" Row="4" Image="" />
+		<Grid Column="-1" Row="4" Image="" />
+		<Grid Column="0" Row="4" Image="" />
+		<Grid Column="1" Row="4" Image="" />
+		<Grid Column="2" Row="4" Image="" />
+		<Grid Column="3" Row="4" Image="" />
+		<Grid Column="4" Row="4" Image="" />
+		<Grid Column="5" Row="4" Image="" />
+		<Grid Column="6" Row="4" Image="" />
+	</Grids>
+</Mining_Fr16_dead_end_2>

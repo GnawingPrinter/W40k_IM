@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Size="1920,1080">
+	<Include Path="Windows/Objectives/PVP_Basics.xml"/>
+	<Constants>
+		<VPCount Type="int" Value="5"/>
+		<PlayerCount Type="int" Value="4"/>
+	</Constants>
+	
+	<Container Pos="1620,600" Name="ObjectiveBack" MouseSenseEnabled="0">
+		<Image
+			Pos="0,0"
+			Size="276,172"
+			Image="UI/objectives/objectives_background_PvP.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Container Pos="12,18" Size="250,32">
+			<FlowContainer Horizontal="1" HAlign="left">
+				<Loop Count="@VPCount" Variable="$X$">
+					<Image Name="VPTeam1_$X$" Size="32,32" Image="UI/Objectives/objectives_VL_team1.tga"/>
+				</Loop>
+			</FlowContainer>
+		</Container>
+		<Container Pos="12,18" Size="250,32">
+			<FlowContainer Horizontal="1" HAlign="center">
+				<Loop Count="@VPCount" Variable="$X$">
+					<Image Name="VPNeutral_$X$" Size="32,32" Image="UI/Objectives/objectives_VL_neutral.tga"/>
+				</Loop>
+			</FlowContainer>
+		</Container>
+		<Container Pos="12,18" Size="250,32">
+			<FlowContainer Horizontal="1" HAlign="right">
+				<Loop Count="@VPCount" Variable="$X$">
+					<Image Name="VPTeam2_$X$" Size="32,32" Image="UI/Objectives/objectives_VL_team2.tga"/>
+				</Loop>
+			</FlowContainer>
+		</Container>
+		<Container Pos="0,0">
+			<Text
+				Pos="12,60"
+				Size="120,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.TeamA"
+				MouseSenseEnabled="0"
+			/>
+			<Image Name="TeamAProgressBar"
+				Pos="16,115"
+				Size="72,20"
+				Image="UI/SoldierInfo/lifebar_topShield.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text Name="TeamAPoints"
+				Pos="88,105"
+				Size="44,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_69"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+		<Container Pos="130,0">
+			<Text
+				Pos="12,60"
+				Size="120,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.TeamB"
+				MouseSenseEnabled="0"
+			/>
+			<Image Name="TeamBProgressBar"
+				Pos="16,115"
+				Size="72,20"
+				Image="UI/SoldierInfo/lifebar_top.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text Name="TeamBPoints"
+				Pos="88,105"
+				Size="44,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_69"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+		<Text
+			Pos="0,146"
+			Size="276,26"
+			Style="Text_Normal_Light"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.pvp.gamemode.dominion.HoldB"
+			MouseSenseEnabled="0"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	<Container Pos="554,100" Name="DetailsBack" Visible="1" GuiAlign="center" MouseSenseEnabled="0">
+		<Image
+			Pos="0,0"
+			Size="812,196"
+			Image="UI/objectives/background_PvP_details.tga"
+		/>
+		<Container Pos="0,0">
+			<Text
+				Pos="12,0"
+				Size="200,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.TeamA"
+			/>
+			<Image Name="DetailsTeamAProgressBar"
+				Pos="285,10"
+				Size="72,20"
+				Image="UI/SoldierInfo/lifebar_topShield.tga"
+			/>
+			<Text Name="DetailsTeamAPoints"
+				Pos="357,0"
+				Size="44,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_69"
+			/>
+			<Text
+				Pos="12,45"
+				Size="200,30"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.Players"
+			/>
+			<Text
+				Pos="239,45"
+				Size="80,30"
+				Style="Text_Normal_Light"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.Kills"
+			/>
+			<Text
+				Pos="321,45"
+				Size="80,30"
+				Style="Text_Normal_Light"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.Deaths"
+			/>
+			<Loop Count="@PlayerCount" Variable="$X$" Offset="0,30">
+				<Text Name="DetailsTeamAPlayerName$X$"
+					Pos="12,75"
+					Size="200,30"
+					Style="Text_Normal_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_Player $X$"
+				/>
+				<Text Name="DetailsTeamAPlayerKills$X$"
+					Pos="239,75"
+					Size="80,30"
+					Style="Text_Normal_Light"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_$X$"
+				/>
+				<Text Name="DetailsTeamAPlayerDeaths$X$"
+					Pos="321,75"
+					Size="80,30"
+					Style="Text_Normal_Light"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_$X$"
+				/>
+			</Loop>
+			
+			<Icon Name="JoinTeamAButton" Visible="0"
+				Style="StarmapHeadline1_4"
+				Pos="30,200"
+				Size="284,48"
+				IdleImg="UI/Menu/main_buttonOff.tga"
+				PressImg="UI/Menu/main_buttonOver.tga"
+				RolloverImg="UI/Menu/main_buttonOver.tga"
+				ControllerSenseEnabled="1"
+				UseButtonEffects="0"
+				RolloverFade="125"
+			/>
+
+		</Container>
+		<Container Pos="410,0">
+			<Text
+				Pos="12,0"
+				Size="200,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.TeamB"
+			/>
+			<Image Name="DetailsTeamBProgressBar"
+				Pos="285,10"
+				Size="72,20"
+				Image="UI/SoldierInfo/lifebar_top.tga"
+			/>
+			<Text Name="DetailsTeamBPoints"
+				Pos="357,0"
+				Size="44,40"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_69"
+			/>
+			<Text
+				Pos="12,45"
+				Size="200,30"
+				Style="Text_Normal_Light"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.Players"
+			/>
+			<Text
+				Pos="239,45"
+				Size="80,30"
+				Style="Text_Normal_Light"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.Kills"
+			/>
+			<Text
+				Pos="321,45"
+				Size="80,30"
+				Style="Text_Normal_Light"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.pvp.gamemode.dominion.Deaths"
+			/>
+			<Loop Count="@PlayerCount" Variable="$X$" Offset="0,30">
+				<Text Name="DetailsTeamBPlayerName$X$"
+					Pos="12,75"
+					Size="200,30"
+					Style="Text_Normal_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_Player $X$"
+				/>
+				<Text Name="DetailsTeamBPlayerKills$X$"
+					Pos="239,75"
+					Size="80,30"
+					Style="Text_Normal_Light"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_$X$"
+				/>
+				<Text Name="DetailsTeamBPlayerDeaths$X$"
+					Pos="321,75"
+					Size="80,30"
+					Style="Text_Normal_Light"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_$X$"
+				/>
+			</Loop>
+			
+			<Icon Name="JoinTeamBButton" Visible="0"
+				Style="StarmapHeadline1_4"
+				Pos="30,200"
+				Size="284,48"
+				IdleImg="UI/Menu/main_buttonOff.tga"
+				PressImg="UI/Menu/main_buttonOver.tga"
+				RolloverImg="UI/Menu/main_buttonOver.tga"
+				ControllerSenseEnabled="1"
+				UseButtonEffects="0"
+				RolloverFade="125"
+			/>
+		</Container>
+		<Text Name="Leavetimer"
+			MarginTop="630"
+			MarginLeft="322"
+			Size="168,60"
+			Style="Headline_XLarge_Light_Glow"
+			TextSize="60"
+			Text="_LEAVETIMER"
+		/>
+	</Container>
+</Window>

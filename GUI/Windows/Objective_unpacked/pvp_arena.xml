@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Size="1920,1080">
+	<Include Path="Windows/Objectives/PVP_Basics.xml"/>
+</Window>

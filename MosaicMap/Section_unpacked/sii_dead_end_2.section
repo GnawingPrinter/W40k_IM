@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SII_dead_end_2 Terrain="Terrains/Sections/Standard_Imperial_Indoors/SII_dead_end_2.VHT" Preview="Terrains/Sections/Standard_Imperial_Indoors/MapEditorImages/SII_dead_end_2_thumb.bmp" Image="Terrains/Sections/Standard_Imperial_Indoors/MapEditorImages/SII_dead_end_2.bmp" MapType="Standard Imperial Indoors" MinClickHeight="0">
+	<PivotPos x="-575" y="429.807129" />
+	<Tags DeadEnd="true" />
+	<Grids>
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="-551.329163" Position.y="521.672424" Position.z="-0.221491337" />
+		</Grid>
+		<Grid Column="1" Row="1" Image="" />
+	</Grids>
+</SII_dead_end_2>

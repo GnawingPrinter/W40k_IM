@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Container Pos="1650,300" Size="400,500" IgnorScissor="1">
+	<Image ColorMask="#000000" Alpha="0.1"/>
+	<Loop Count="30" Variable="$X$" Offset="0,24">
+		<Icon Name="EqModel$X$Check"
+			Pos="10,0"
+			Size="260,24"
+			AllImg="UI/OpenWorld/Chat/chat_menu_checkboxOff.tga"
+			PressImg="UI/OpenWorld/Chat/chat_menu_checkboxOver.tga"
+			Text="EqModel$X$"
+			FontType="Roboto" FontSize="13" Color="#b5fffc" Sharpness="0.5"
+			TextAlignH="left"
+			TextAlignV="center"
+		/>
+	</Loop>
+	
+</Container>

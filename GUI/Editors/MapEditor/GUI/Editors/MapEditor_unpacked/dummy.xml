@@ -1,0 +1,19 @@
+<MapEditorDummy>
+	<Image Image="UI/Editor/MapEditor/Dummies/dummy_general.dds" Clickable="false" Name="Icon" />
+	<Image Image="UI/Editor/MapEditor/Dummies/dummy_errorLarge.dds" Clickable="false" Name="Error"/>
+	<GridContainer Name="Supergroup">
+		<Columns>
+			<Column Width="4*"/>
+			<Column Width="2*"/>
+			<Column Width="1*"/>
+		</Columns>
+		<Rows>
+			<Row Height="4*"/>
+			<Row Height="2*"/>
+			<Row Height="1*"/>
+		</Rows>
+		<Image ColorMask="#5a6473" Row="1" Column="1"/>
+		<Text Color="#ffffff" Text="5" FontSize="50" Row="1" Column="1" Name="SupergroupID"/>
+	</GridContainer>
+	
+</MapEditorDummy>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Container Name="Line" Size="1220,25">
+	<Styles>
+		<Code FontType="Share Tech Mono" FontSize="13" Color="#b5fffc"/>
+		<Letter FontType="Arial" FontSize="13" Color="#b5fffc"/>
+	</Styles>
+	<Image Alpha="0.7" ColorMask="#000000" MouseSenseEnabled="0" Name="Bg"/>
+	<TextBox Name="Letter" 
+		Pos="0,0" 
+		Style="Letter"
+		Size="25,25" 
+		TextAlignH="center"
+		TextAlignV="center"
+		MouseSenseEnabled="0"
+	/>
+	<TextBox Name="Number"
+		Pos="25,0"
+		Style="Code"
+		Size="125,25"
+		FontSize="10"
+		TextAlignH="left"
+		TextAlignV="center"
+		MouseSenseEnabled="0"
+	/>
+	<TextBox Name="Name" 
+		Pos="100,0" 
+		Style="Code" 
+		Size="200,25"
+		TextAlignH="left"
+		TextAlignV="center"
+		MouseSenseEnabled="0"
+	/>
+	<Text Name="Preview"
+		Pos="325,0" 
+		Style="Code"
+		Size="1195,25"
+		TextAlignH="left"
+		TextAlignV="center"
+		MouseSenseEnabled="0"
+	/>
+</Container>

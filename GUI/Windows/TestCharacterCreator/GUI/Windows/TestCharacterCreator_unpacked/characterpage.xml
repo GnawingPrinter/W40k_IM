@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Container Size="1920,1080" IgnoreScissor="1" Visible="0">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>		
+		<AbilityTierCount Type="int" Value="5"/>
+		<AbilityCount Type="int" Value="3"/>
+		<AbilityBarLength Type="int" Value="468"/>
+		<PerksInRow Type="int" Value="6"/>
+		<PerkCount Type="int" Value="80"/>
+	</Constants>
+		
+	<Container Name="CharacterLevelContainer" Pos="75,106" GuiAlign="leftcenter" Tutorial="Rank">
+		<Image Name="CharacterBG"
+			Pos="0,0"
+			Size="500,172"
+			Image="UI/CharacterSheet/frame_rank_bg.tga"
+			InitPopup="leftcenter,rightcenter"
+			Tooltip="openworld.gui.playerinfo.ranktooltip"
+			ControllerSenseEnabled="1"
+		/>
+		<TextBox
+			Pos="22,16"
+			Size="340,30"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.GUI.character.rank"
+			MouseSenseEnabled="false"
+		/>
+		<Text Name="CharacterLevelCharacterRank"
+			Pos="227,122"
+			Size="212,30"
+			Style="Text_Large_Light_Glow"
+			Color="#54f1eb"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="Inquisitor"
+			MouseSenseEnabled="false"
+			Visible="0"
+		/>
+		<Text Name="CharacterLevelCharacterLevel"
+			Pos="386,20"
+			Size="87,70"
+			Style="Headline_XLarge_Light_Glow"
+			FontType="Share Tech Mono"
+			FontSize="60"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="1"
+			MouseSenseEnabled="false"
+		/>
+	</Container>
+	
+	<Container Name="CharacterNameContainer" Pos="660,112" Size="600,112" GuiAlign="center">
+		<Image Name="Rosetta"
+			Size="90,112"
+			Image="UI/CharacterSheet/rank_icons/lvl_1.tga"
+		/>
+		<FlowContainer Horizontal="1" HAlign="center">
+			<Container MarginTop="18">
+				<TextBox Name="CharacterLevelCharacterName"
+					Pos="0,0"
+					Size="500,45"
+					Style="Headline_XLarge_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="Inquisitor Jelcin tata"
+				/>
+				<TextBox Name="CharacterLevelCharacterClass"
+					Pos="0,42"
+					Size="500,30"
+					Style="Text_Large_Dark_Outline"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="Class"
+				/>
+			</Container>
+		</FlowContainer>
+	</Container>
+		
+	<Container Name="AbilitiesPerks" GuiAlign="bottomleft">
+		<Text
+			Pos="76,545"
+			Size="500,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.character.abilities"
+		/>
+		<Loop Count="@AbilityCount" Variable="$X$" Offset="0,122">
+			<Container Pos="75,577" Size="536,120">
+				<Image Name="Ability$X$Back"
+					Size="500,120"
+					Image="UI/CharacterSheet/frame_attribute1_bg.tga"
+					ControllerSenseEnabled="1"
+					InitPopup="bottomleft,bottomright"
+				/>
+				<Dummy Name="Ability$X$Dummy"
+					Pos="14,12"
+					Size="468,54"
+					MouseSenseEnabled="0"
+				/>
+				<Image Name="Ability$X$Icon"
+					Pos="14,13"
+					Size="32,32"
+					Image="UI/CharacterSheet/icon_attribute_crusader1.tga"
+					MouseSenseEnabled="0"
+				/>
+				<Text Name="Ability$X$Name"
+					Pos="49,16"
+					Size="280,30"
+					Style="Text_Large_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Text="_ability"
+				/>
+				<Text Name="Ability$X$Value"
+					Pos="337,13"
+					Size="140,36"
+					Style="Headline_XLarge_Light_Glow"
+					FontType="Share Tech Mono"
+					TextAlignH="right"
+					TextAlignV="center"
+					MouseSenseEnabled="0"
+					Text="_ability"
+				/>
+				<FlowContainer
+					Pos="16,48"
+					Height="20"
+					Horizontal="1"
+					BackgroundTopSize="8"
+					BackgroundBotSize="8"
+					BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+					BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+					BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+					MouseSenseEnabled="0"
+				>
+					<Dummy Name="Ability$X$Bar" GuiAlign="leftcenter" Height="20" Width="@AbilityBarLength" MouseSenseEnabled="0"/>
+				</FlowContainer>
+				<Loop Count="@AbilityTierCount" Variable="$Y$" Offset="93,0">
+					<Image Name="Ability$X$Tier$Y$Marker"
+						Pos="102,63"
+						Size="12,12"
+						Image="UI/OpenWorld/starmap_barMarker.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="Ability$X$Tier$Y$Bonus"
+						Pos="43,70"
+						Size="36,36"
+						Image="UI/CharacterSheet/icon_attribute_crusader1_passive1On.tga"
+						MouseSenseEnabled="0"
+					/>
+				</Loop>
+				
+				
+				<Icon Name="Ability$X$Plus"
+					Pos="500,13"
+					Size="36,36"
+					IdleImg="UI/CharacterSheet/button_plusOff.tga"
+					PressImg="UI/CharacterSheet/button_plusOn.tga"
+					RolloverImg="UI/CharacterSheet/button_plusOn.tga"
+					Visible="0"
+					InitPopup="bottomcenter,topcenter"
+					Tooltip="openworld.gui.character.plus"
+				/>
+				<Icon Name="Ability$X$Minus"
+					Pos="500,52"
+					Size="36,36"
+					IdleImg="UI/CharacterSheet/button_minusOff.tga"
+					PressImg="UI/CharacterSheet/button_minusOn.tga"
+					RolloverImg="UI/CharacterSheet/button_minusOn.tga"
+					Visible="0"
+					InitPopup="bottomcenter,topcenter"
+					Tooltip="openworld.gui.character.minus"
+				/>
+			</Container>
+		</Loop>
+	</Container>
+	
+	<Container Name="PerkContainer" GuiAlign="bottomcenter" Pos="0,10">
+		<Container>
+			<Text
+				Pos="710,738"
+				Size="500,30"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="openworld.gui.character.perks"
+			/>
+			<Image
+				Pos="715,750"
+				Size="492,248"
+				Image="UI/CharacterSheet/fullscreen_charsheet_left.tga"
+			/>
+			<Icon Name="Perk_0"
+				Pos="785,792"
+				Size="112,112"
+				IdleImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				PressImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				RolloverImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				ControllerSenseEnabled="1"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			<Image Name="Perk_0Frame"
+				Pos="791,798"
+				Size="100,100"
+				Image="UI/CharacterSheet/frame_trait.tga"
+				MouseSenseEnabled="false"
+			/>
+			<AnimatedImage Name="Perk_0Blink"
+				Pos="791,798"
+				Size="100,100"
+				FPS="24"
+				ImageCount="20"
+				Image="UI/SkillTree/Icon_sweep/icon_sweep_00.tga"
+				AnimationRestartMS="500.0"
+				MouseSenseEnabled="0"
+			/>
+			<Icon Name="Perk_1"
+				Pos="905,842"
+				Size="112,112"
+				IdleImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				PressImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				RolloverImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				ControllerSenseEnabled="1"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			<Image Name="Perk_1Frame"
+				Pos="911,848"
+				Size="100,100"
+				Image="UI/CharacterSheet/frame_trait.tga"
+				MouseSenseEnabled="false"
+			/>
+			<AnimatedImage Name="Perk_1Blink"
+				Pos="911,848"
+				Size="100,100"
+				FPS="24"
+				ImageCount="20"
+				Image="UI/SkillTree/Icon_sweep/icon_sweep_00.tga"
+				AnimationRestartMS="500.0"
+				MouseSenseEnabled="0"
+			/>
+			<Icon Name="Perk_2"
+				Pos="1025,792"
+				Size="112,112"
+				IdleImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				PressImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				RolloverImg="UI/CharacterSheet/icon_trait_slotLocked.tga"
+				ControllerSenseEnabled="1"
+				UseButtonEffects="0"
+				InitPopup="bottomcenter,topcenter"
+			/>
+			<Image Name="Perk_2Frame"
+				Pos="1031,798"
+				Size="100,100"
+				Image="UI/CharacterSheet/frame_trait.tga"
+				MouseSenseEnabled="false"
+			/>
+			<AnimatedImage Name="Perk_2Blink"
+				Pos="1031,798"
+				Size="100,100"
+				FPS="24"
+				ImageCount="20"
+				Image="UI/SkillTree/Icon_sweep/icon_sweep_00.tga"
+				AnimationRestartMS="500.0"
+				MouseSenseEnabled="0"
+			/>
+		</Container>
+	</Container>
+	
+	<Image Name="PerkSelectionDummy" ColorMask="#000000" Alpha="0.0"/>
+	<Container Pos="610,-65" Size="700,818" Name="PerkSelection" GuiAlign="bottomcenter" OpenTransition="Fast" CloseTransition="Fast" VAlign="bottom">
+		<Image Name="PerkSelectionBack"
+			Pos="0,210"
+			Size="700,408"
+			Image="UI/CharacterSheet/fullscreen_traits_backgroundSlot1.tga"
+		/>
+
+		<Image
+			Pos="14,254"
+			Size="650,4"
+			Image="UI/Assignment/assignment_bigline.tga"
+		/>	
+		<Text
+			Pos="16,222"
+			Size="340,30"
+			Style="Text_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.GUI.character.perklist"
+			MouseSenseEnabled="false"
+		/>
+		<ScrollableContainer Size="682,336" Pos="9,262">
+			<Loop Count="@PerkCount" ItemsInRow="@PerksInRow" Variable="$X$" Offset="110,110">
+				<Icon Name="PerkIcon_$X$"
+					Size="112,112"
+					IdleImg="UI/CharacterSheet/icon_trait_slotEmptyOff.tga"
+					PressImg="UI/CharacterSheet/icon_trait_slotEmptyOver.tga"
+					RolloverImg="UI/CharacterSheet/icon_trait_slotEmptyOver.tga"
+					ControllerSenseEnabled="1"
+					UseButtonEffects="0"
+					InitPopup="bottomcenter,topcenter"
+				/>
+			</Loop>
+		</ScrollableContainer>
+		<Container	Pos="0,-382"	Size="750,584">
+			<FlowContainer 	VAlign="bottom"  Width="700" IgnoreScissor="1"
+				BackgroundTopSize="13"
+				BackgroundBotSize="17"
+				BackgroundTopImage="UI/CharacterSheet/fullscreen_traits_backgroundSelected_top.tga"
+				BackgroundMidImage="UI/CharacterSheet/fullscreen_traits_backgroundSelected_middle.tga"
+				BackgroundBotImage="UI/CharacterSheet/fullscreen_traits_backgroundSelected_bottom.tga" 
+			>
+				<FlowContainer Horizontal="1" MarginTop="10" MarginBottom="40" IgnoreScissor="1">
+					<Icon Name="PerkIcon_Selected"
+						Pos="10,40"
+						Size="112,112"
+						MarginBottom="20"
+						IdleImg="UI/CharacterSheet/icon_trait_slotEmptyOff.tga"
+						PressImg="UI/CharacterSheet/icon_trait_slotEmptyOff.tga"
+						RolloverImg="UI/CharacterSheet/icon_trait_slotEmptyOff.tga"
+						ControllerSenseEnabled="0"
+						MouseSenseEnabled="false"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+					/>			
+					<FlowContainer MarginLeft="-96" >
+						<Text Name="PerkSelectionInfoName"
+							Size="654,30"
+							Style="Text_Large_Light_Glow"
+							TextAlignH="left"
+							TextAlignV="center"
+							Text="Perk Name"
+						/>
+						<Image
+							MarginTop="2"
+							Size="650,4"
+							Image="UI/Assignment/assignment_bigline.tga"
+						/>	
+						<TextBox Name="PerkSelectionInfoDesc"
+							MarginTop="12"
+							MarginLeft="114"
+							Width="532"
+							Style="Text_Normal_Dark_Outline"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="Perk Desc"
+						/>
+						<TextBox Name="PerkSelectionInfoUnlock"
+							MarginTop="10"
+							MarginLeft="114"
+							Width="532"
+							Style="Text_Normal_White"
+							TextAlignH="left"
+							TextAlignV="top"
+							Text="Perk Unlock"
+						/>
+					</FlowContainer>
+				</FlowContainer>
+			</FlowContainer>
+		</Container>
+		<Icon Name="PerkSelectionAccept"
+			Pos="268,173"
+			Size="164,36"
+			IdleImg="UI/common/Options/button_largeOff.tga"
+			RolloverImg="UI/common/Options/button_largeOver.tga"
+			PressImg="UI/common/Options/button_largeOff.tga"
+			Style="StarmapHeadline2_3"
+			Text="common.accept"
+		/>
+		<Image Name="AcceptFrame" ShowCategory="mouse"
+			Pos="268,173"
+			Size="164,36"
+			Image="UI/CharacterSheet/frame_button_large.tga"
+			MouseSenseEnabled="false"
+		/>
+	</Container>
+</Container>

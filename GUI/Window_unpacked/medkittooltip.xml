@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<ComponentCount Type="int" Value="4"/>
+	</Constants>
+	
+	<FlowContainer Name="SkillTooltipBack"
+		Width="472"
+		BackgroundTopSize="128"
+		BackgroundBotSize="12"
+		BackgroundTopImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgTop.tga"
+		BackgroundMidImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgMiddle.tga"
+		BackgroundBotImage="UI/BATTLE_UI/spells/Tooltip/tooltip_bgBottom.tga"
+		>
+		
+		<Container Height="100">
+			<Image
+				Pos="21,20"
+				Size="60,60"
+				Image="UI/spells/Inoculator.tga"
+			/>
+			<Text
+				Pos="97,20"
+				Size="355,34"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="Skills.Inoculator.Name"
+			/>
+			<Text
+				Pos="97,50"
+				Size="355,28"
+				Style="Italic_Normal_White"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="Skills.common.inoculator_skill"
+			/>
+			<Text Name="MedkitChargeCount"
+				Pos="345,16"
+				Size="112,34"
+				Style="Text_XLarge_White_Glow"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="x99"
+			/>
+			<Text
+				Pos="345,52"
+				Size="112,22"
+				Style="Italic_Normal_White"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="CHARGE"
+			/>
+		</Container>
+		<FlowContainer Width="472">
+			<Loop Count="@ComponentCount" Variable="$X$">
+				<Container Name="Component$X$" Width="472">
+					<Image MarginLeft="21" MarginTop="10" Size="20,20" Image="UI/OpenWorld/MissionInfo/mission_dotOn.tga"/>
+					<TextBox Name="Component$X$Effect" MarginLeft="46" MarginTop="8" Width="397" UseSlider="0" Style="Text_Large_Light_Glow" TextAlignH="left" TextAlignV="center" VerticalAlignment="top"/>
+				</Container>
+			</Loop>
+		</FlowContainer>
+		<Image
+			MarginTop="10"
+			MarginLeft="21"
+			Size="436,8"
+			Image="UI/BATTLE_UI/spells/Tooltip/tooltip_line.tga"
+		/>
+		<Container MarginBottom="4" Name="SkillCooldown" Size="472,32">
+			<Image
+				Pos="19,0"
+				Size="32,32"
+				Image="UI/BATTLE_UI/spells/Tooltip/icon_cooldown.tga"
+			/>
+			<Text
+				Pos="52,0"
+				Size="180,32"
+				Style="Italic_Normal_White"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="Skills.common.cooldown"
+			/>
+			<FlowContainer Horizontal="1" HorizontalAlignment="Right">
+				<Text Name="SkillCooldownValue"
+					Height="32"
+					MarginRight="8"
+					Style="Text_Large_White"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="20"
+				/>
+				<Text
+					Height="26"
+					MarginTop="5"
+					MarginRight="29"
+					Style="Italic_Normal_White"
+					TextAlignH="right"
+					TextAlignV="center"
+					Text="Skills.common.DurationMeasure"
+				/>
+			</FlowContainer>
+		</Container>
+	</FlowContainer>
+</Window>

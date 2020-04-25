@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>		
+		<PowerLevelBarLength Type="int" Value="350"/>
+		<DefaultPage Type="string" Value="weapon"/>
+		<AvailableMaterialColCount Type="int" Value="8"/>
+		<AvailableMaterialRowCount Type="int" Value="2"/>
+	</Constants>
+	
+	<Styles>
+		<ItemSlot1x1
+			Size="60,60"
+			ArtifactSize="1,1"
+		/>
+		<ItemSlot1x2
+			Size="60,120"
+			ArtifactSize="1,2"
+		/>
+	</Styles>
+	
+	<Container Name="CharacterHeadline">
+		<Image
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Inventory/fullscreen_inventory_storageBg.tga"
+			Pos="600,174"
+			Size="484,732"
+			DynamicOffsetMax="40,40"
+			GuiAlign="center"
+		/>
+		<Scene3D Name="CharacterModel"
+			Pos="560,-20"
+			Size="1920,1080"
+			GuiAlign="rightcenter"
+			SetCamera="inventorywindow"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<FlowContainer Name="TopTabs" MarginTop="33" Horizontal="1" Height="68" HAlign="center" GuiAlign="topleft">
+			<XBOXButton Name="XBoxLB"
+				Size="48,48"
+				SetButton="LEFT_SHOULDER"
+			/>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="CharacterButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.character.title"
+				/>
+				<Icon Name="CharacterNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="InventoryButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					ButtonState="UIBS_PRESSED_BYPROG"
+					Text="openworld.gui.inventory.title"
+				/>
+				<Icon Name="InventoryNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="SkillsButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.Skills.title"
+				/>
+				<Icon Name="SkillsNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="HeroicDeedsButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.HeroicDeeds.title"
+				/>
+				<Icon Name="HeroicDeedsNotification"
+					Pos="30,10"
+					Size="24,24"
+					AllImg="UI/msgbox/button_alerticon.dds"
+					MouseSenseEnabled="false"
+				/>
+			</Container>
+			<Container MarginTop="2" Size="224,68">
+				<Icon Name="MoralityButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="openworld.gui.Morality.title"
+				/>
+			</Container>
+			<XBOXButton Name="XBoxRB"
+				Size="48,48"
+				SetButton="RIGHT_SHOULDER"
+			/>
+		</FlowContainer>
+	</Container>
+	
+	<Container Name="ShopHeadline" Visible="0">
+		<Image
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>		
+		<Image Name="ShopBg"
+			Image="UI/Inventory/fullscreen_inventory_shopBg.tga"
+			Pos="466,232"
+			Size="988,536"
+			DynamicOffsetMax="40,40"
+			GuiAlign="center"
+		/>
+		<Image Name="StorageBg"
+			Image="UI/Inventory/fullscreen_inventory_storageBg.tga"
+			Pos="718,174"
+			Size="484,732"
+			DynamicOffsetMax="40,40"
+			GuiAlign="center"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<Container Pos="0,35" Height="68">
+			<FlowContainer Horizontal="1" HAlign="center">
+				<XBOXButton Name="XBoxLBShop"
+					Size="48,48"
+					SetButton="LEFT_SHOULDER"
+				/>
+				<Icon Name="ShopInvButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					ButtonState="UIBS_PRESSED_BYPROG"
+					Text="openworld.gui.inventory.title"
+				/>
+				<Icon Name="ShopButton"
+					Size="224,68"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					IdleOffset="0,-11"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					PressOffset="0,-12"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					RolloverOffset="0,-11"
+					Style="StarmapHeadline2_3"
+					Text="battle.gui.vendor.label"
+				/>
+				<XBOXButton Name="XBoxRBShop"
+					Size="48,48"
+					SetButton="RIGHT_SHOULDER"
+				/>
+			</FlowContainer>
+		</Container>
+	</Container>
+		
+	<Container>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+		/>
+		<Icon Name="Journal"
+			Pos="28,42"
+			Size="32,32"
+			IdleImg="UI/OpenWorld/button_journalOff.tga"
+			PressImg="UI/OpenWorld/button_journalOff.tga"
+			RolloverImg="UI/OpenWorld/button_journalOver.tga"
+			GuiAlign="topleft"
+			InitPopup="topcenter,bottomcenter"
+			Tooltip="tutorial.inventory.name"
+			ShowCategory="mouse"
+		/>
+		<Container Pos="75,106" GuiAlign="topleft" Tutorial="Power_rating">
+			<Image
+				Size="500,220"
+				Image="UI/Inventory/fullscreen_inventory_left1.tga"
+			/>
+			<Icon Name="ItemisationTutorial"
+				Pos="502,289"
+				Size="36,36"
+				IdleImg="UI/OpenWorld/button_journalOff.tga"
+				PressImg="UI/OpenWorld/button_journalOff.tga"
+				RolloverImg="UI/OpenWorld/button_journalOver.tga"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="tutorial.itemisation.name"
+				ShowCategory="mouse"
+			/>
+			<TextBox
+				Pos="22,16"
+				Size="340,30"
+				Style="Text_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.GUI.character.rank"
+				MouseSenseEnabled="false"
+			/>
+			<Text Name="CharacterXPValue"
+				Pos="122,47"
+				Size="242,70"
+				Style="Text_Large_Light_Glow"
+				FontType="Share Tech Mono"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="_1281/_2200"
+				MouseSenseEnabled="false"
+			/>
+			<Text Name="CharacterLevelCharacterLevel"
+				Pos="386,20"
+				Size="87,70"
+				Style="Headline_XLarge_Light_Glow"
+				FontType="Share Tech Mono"
+				FontSize="60"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="1"
+				InitPopup="topcenter,bottomcenter"
+			/>
+			<FlowContainer
+				Pos="17,47"
+				Height="20"
+				Horizontal="1"
+				BackgroundTopSize="8"
+				BackgroundBotSize="8"
+				BackgroundTopImage="UI/CharacterSheet/frame_xp_barLeft.tga"
+				BackgroundMidImage="UI/CharacterSheet/frame_xp_barMiddle.tga"
+				BackgroundBotImage="UI/CharacterSheet/frame_xp_barRight.tga"
+				MouseSenseEnabled="0"
+			>
+				<Dummy Name="CharacterLevelExperienceBar" Height="20" Width="@ExperienceBarLength" MouseSenseEnabled="0"/>
+			</FlowContainer>
+		</Container>
+		<Container Pos="5,1">
+			<Image
+				Pos="89,221"
+				Size="32,32"
+				Image="UI/Inventory/icon_power_attack.tga"
+			/>
+			<Text
+				Pos="124,222"
+				Size="200,30"
+				Style="Text_Large_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.character.stats.damage"
+			/>
+			<Text Name="DamageValue"
+				Pos="396,215"
+				Size="148,40"
+				Style="Headline_XLarge_Light_Glow"
+				FontType="Share Tech Mono"
+				Color="#00d500"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="100"
+			/>
+			
+			<Image
+				Pos="89,250"
+				Size="32,32"
+				Image="UI/CharacterSheet/icon_resource_crusader1.tga"
+			/>
+			<Text
+				Pos="124,253"
+				Size="200,30"
+				Style="Text_Large_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.character.hitpoints"
+			/>
+			<Text Name="HitpointsValue"
+				Pos="396,246"
+				Size="148,40"
+				Style="Headline_XLarge_Light_Glow"
+				FontType="Share Tech Mono"
+				Color="#00d500"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="1000"
+			/>
+			
+			<Image
+				Pos="89,283"
+				Size="32,32"
+				Image="UI/CharacterSheet/icon_resource_crusader2.tga"
+			/>
+			<Text
+				Pos="124,284"
+				Size="200,30"
+				Style="Text_Large_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.character.suppression"
+			/>
+			<Text Name="SuppressionValue"
+				Pos="396,277"
+				Size="148,40"
+				Style="Headline_XLarge_Light_Glow"
+				FontType="Share Tech Mono"
+				Color="#00d500"
+				TextAlignH="right"
+				TextAlignV="center"
+				Text="1000"
+			/>
+		</Container>
+		<Container Pos="75,330" GuiAlign="leftcenter">
+			<Text Name="InventoryLabel"
+				Pos="0,18"
+				Size="500,30"
+				Style="Headline_Large_Color_Glow"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="battle.gui.inventory.label"
+			/>
+			<TabbedInventory Name="Inventory" Pos="0,50" Size="500,604" PageCount="3" MaterialPage="0" ContextMenu="1" ResetTutorial="1"/>
+			<Icon Name="Kuka"
+				Pos="438,592"
+				Size="56,56"
+				IdleImg="UI/Inventory/fullscreen_inventory_DeleteOff.tga"
+				PressImg="UI/Inventory/fullscreen_inventory_DeleteOver.tga"
+				RolloverImg="UI/Inventory/fullscreen_inventory_DeleteOver.tga"
+				InitPopup="bottomcenter,topcetner"
+				Tooltip="battle.gui.inventory.kuka_tooltip"
+				ShowCategory="mouse"
+				UseButtonEffects="0"
+			/>
+		</Container>
+		
+		<Dummy Name="TooltipDummy" Pos="590,110" Size="1,1" GuiAlign="leftcenter"/>
+	</Container>
+		
+		
+	<Container Name="EquipmentSlots" GuiAlign="rightcenter" Pos="-50,40">
+		<Image
+			Pos="1132,136"
+			Size="544,752"
+			Image="UI/Inventory/fullscreen_inventory_right1.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="Highlight1"
+			Pos="1335,131"
+			Size="176,168"
+			Image="UI/Inventory/equipments_highlight.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="Highlight2"
+			Pos="1335,330"
+			Size="176,168"
+			Image="UI/Inventory/equipments_highlight.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="Highlight3"
+			Pos="1335,473"
+			Size="156,224"
+			Image="UI/Inventory/inoculator_highlight.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Image Name="Highlight4"
+			Pos="1397,542"
+			Size="280,352"
+			Image="UI/Inventory/weapons_highlight.tga"
+			MouseSenseEnabled="0"
+		/>
+		<Container Name="EquipGroup1">
+			<Artifact Name="EquippedItemSlot_Implant" Pos="1275,154" Style="ItemSlot1x2"/>
+			<Image Name="ImplantFrame" Pos="1275,154" Size="60,120" Image="UI/Artifacts/Back/1x2_over.tga" Visible="0" ShowCategory="controller"/>
+			<Artifact Name="EquippedItemSlot_EyeImplant" Pos="1209,154" Style="ItemSlot1x1"/>
+			<Image Name="EyeImplantFrame" Pos="1209,154" Size="60,60" Image="UI/Artifacts/Back/1x1_over.tga" Visible="0" ShowCategory="controller"/>
+			<Artifact Name="EquippedItemSlot_NeuralImplant" Pos="1149,154" Style="ItemSlot1x1"/>
+			<Image Name="NeuralImplantFrame" Pos="1149,154" Size="60,60" Image="UI/Artifacts/Back/1x1_over.tga" Visible="0" ShowCategory="controller"/>
+		</Container>
+		<Container Name="EquipGroup2">
+			<Artifact Name="EquippedItemSlot_Armor" Pos="1275,352" Style="ItemSlot1x2"/>
+			<Image Name="ArmorFrame" Pos="1275,352" Size="60,120" Image="UI/Artifacts/Back/1x2_over.tga" Visible="0" ShowCategory="controller"/>
+			<Artifact Name="EquippedItemSlot_PuritySeal" Pos="1149,352" Style="ItemSlot1x1"/>
+			<Image Name="PuritySealFrame" Pos="1149,352" Size="60,60" Image="UI/Artifacts/Back/1x1_over.tga" Visible="0" ShowCategory="controller"/>
+			<Artifact Name="EquippedItemSlot_Belt" Pos="1209,352" Style="ItemSlot1x1"/>
+			<Image Name="BeltFrame" Pos="1209,352" Size="60,60" Image="UI/Artifacts/Back/1x1_over.tga" Visible="0" ShowCategory="controller"/>
+		</Container>
+		<Container Name="EquipGroup3">
+			<Artifact Name="EquippedItemSlot_Wardrug" Pos="1275,550" Style="ItemSlot1x2"/>
+			<Image Name="WardrugFrame" Pos="1275,550" Size="60,120" Image="UI/Artifacts/Back/1x2_over.tga" Visible="0" ShowCategory="controller"/>
+		</Container>
+		<Container Name="EquipGroup4">
+			<Artifact Name="EquippedItemSlot_Offhand" Pos="1337,748" Style="ItemSlot1x2"/>
+			<Artifact Name="EquippedItemSlot_Signum2" Pos="1273,748" Style="ItemSlot1x1"/>
+			<Artifact Name="EquippedItemSlot_Mainhand" Pos="1145,748" Style="ItemSlot1x2"/>
+			<Artifact Name="EquippedItemSlot_Signum1" Pos="1209,748" Style="ItemSlot1x1"/>
+			<Image Name="EquippedItemSlot_Offhand_Highlight" Pos="1337,748" Size="60,120" Image="UI/Artifacts/Back/1x2_on.tga" ShowCategory="controller"/>
+			<Image Name="EquippedItemSlot_Signum2_Highlight" Pos="1273,748" Size="60,60" Image="UI/Artifacts/Back/1x1_on.tga" ShowCategory="controller"/>
+			<Image Name="EquippedItemSlot_Mainhand_Highlight" Pos="1145,748" Size="60,120" Image="UI/Artifacts/Back/1x2_on.tga" ShowCategory="controller"/>
+			<Image Name="EquippedItemSlot_Signum1_Highlight" Pos="1209,748" Size="60,60" Image="UI/Artifacts/Back/1x1_on.tga" ShowCategory="controller"/>
+			<Image Name="OffhandFrame" Pos="1337,748" Size="60,120" Image="UI/Artifacts/Back/1x2_over.tga" ShowCategory="controller"/>
+			<Image Name="Signum2Frame" Pos="1273,748" Size="60,60" Image="UI/Artifacts/Back/1x1_over.tga" ShowCategory="controller"/>
+			<Image Name="MainhandFrame" Pos="1145,748" Size="60,120" Image="UI/Artifacts/Back/1x2_over.tga" ShowCategory="controller"/>
+			<Image Name="Signum1Frame" Pos="1209,748" Size="60,60" Image="UI/Artifacts/Back/1x1_over.tga" ShowCategory="controller"/>
+			
+			<XBOXButton Name="XboxMainhand"
+				Pos="1150,685"
+				Height="50"
+				SetButton="X"
+				Visible="0"
+			/>
+			<XBOXButton Name="XboxOffhand"
+				Pos="1343,685"
+				Height="50"
+				SetButton="Y"
+				Visible="0"
+			/>
+			<XBOXButton Name="XboxSignum1"
+				Pos="1214,685"
+				Height="50"
+				SetButton="X"
+				Visible="1"
+			/>
+			<XBOXButton Name="XboxSignum2"
+				Pos="1278,685"
+				Height="50"
+				SetButton="Y"
+				Visible="1"
+			/>
+		</Container>
+		<Icon Name="WeaponSet0"
+			Pos="1133,887"
+			Size="132,38"
+			IdleImg="UI/Inventory/Weapon_set_button_off.tga"
+			PressImg="UI/Inventory/Weapon_set_button_on.tga"
+			RolloverImg="UI/Inventory/Weapon_set_button_on.tga"
+			UseButtonEffects="0"
+		/>
+		<TextBox
+			Pos="1133,887"
+			Size="132,38"
+			Style="Headline_Normal_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="Battle.GUI.inventory.weapon_set1"
+			MouseSenseEnabled="false"
+				
+		/>
+		<Icon Name="WeaponSet1"
+			Pos="1275,887"
+			Size="132,38"
+			IdleImg="UI/Inventory/Weapon_set_button_off.tga"
+			PressImg="UI/Inventory/Weapon_set_button_on.tga"
+			RolloverImg="UI/Inventory/Weapon_set_button_on.tga"
+			UseButtonEffects="0"
+		/>
+		<TextBox
+			Pos="1275,887"
+			Size="132,38"
+			Style="Headline_Normal_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="Battle.GUI.inventory.weapon_set2"
+			MouseSenseEnabled="false"
+			
+		/>
+		<XBOXButton Name="XBoxWeaponset"
+			Pos="1126,918"
+			Height="40"
+			Style="ButtonFont_small"
+			SetButton="R_THUMB_PRESS"
+			Text="controller.buttons.switch_weapon"
+		/>
+	</Container>
+		
+	<Container Name="Shop" GuiAlign="rightcenter" Visible="0">
+		<Video Name="ShopCharvid"
+			Pos="1629,137"
+			Size="172,172"
+			LoopVideo="1"
+		/>
+		<Image
+			Pos="1582,106"
+			Size="264,264"
+			Image="UI/Inventory/fullscreen_shop_charframe.tga"
+		/>
+		<Image
+			Pos="1582,106"
+			Size="264,264"
+			Image="UI/Inventory/fullscreen_shop_charframeGlass.tga"
+			Alpha="0.3"
+		/>
+		<TextBox Name="VendorName"
+			Pos="1353,137"
+			Size="220,164"
+			Style="Headline_XLarge_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="openworld.gui.shop.title"
+		/>
+		<TextBox Name="VendorType"
+			Pos="1353,318"
+			Size="310,30"
+			Style="Text_Large_White"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.shoprogue.trader"
+		/>
+		<Text Name="ShopInvLabel"
+			Pos="1345,348"
+			Size="500,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="battle.gui.inventory.label"
+		/>
+		<TabbedInventory Name="ShopInventory" Pos="1345,382" Size="500,604" PageCount="4" Resources="0" ContextMenuLeft="1" OptionsLeft="1"  />
+		<Container Pos="1355,925" Size="480,56">
+			<Text Name="ResetTimer"
+				Height="56"
+				HAlign="center"	
+				TextAlignV="center"
+				Text="reset in 1:23"
+				
+				FontType="Share Tech Mono" 
+				FontSize="19" 
+				Color="#99ffcc" 
+				Sharpness="0.5" 
+				OutlineColor="0x6663CF93" 
+				FontOutlineWidth="2" 
+				OutlineSharpness="1" 
+				OutlineOffset="0.0"
+			/>
+		</Container>
+		
+		
+		<Dummy Name="ShopTooltipDummy" Pos="858,136" Size="1,1"/>
+	</Container>
+	<Container Name="OrdoStoreNote" GuiAlign="bottomcenter" Visible="0">
+		<TextBox 
+			HAlign="center"
+			VAlign="bottom"
+			MarginBottom="100"
+			Size="350,300"
+			TextAlignH="center"
+			TextAlignV="bottom"
+			Style="Text_Large_White"
+			Text="openworld.GUI.OrdoMissions.store_desc"
+		/>
+	</Container>
+	
+	<Container Pos="0,1013" Size="1920,32" GuiAlign="bottomcenter" ShowCategory="mouse">
+		<FlowContainer Horizontal="1" HAlign="center">
+				<Image
+					Height="32"
+					Width="32"
+					Image="UI/Shortcuts/bigshortcut_leftclick.dds"
+				/>
+				<Text 
+					Style="Text_Large_Light"
+					Height="30"
+					MarginTop="2"
+					MarginRight="48"
+					Text="Battle.GUI.inventory.ClickActions.LockSelection"
+				/>
+		</FlowContainer>
+	</Container>
+	
+	<!-- Inventory Teszt ablak -->
+	<Icon 
+		Size="70,30" 
+		HorizontalAlignment="Right" 
+		VerticalAlignment="Bottom" 
+		Text="TEST"
+		IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+		PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+		RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+		Style="StarmapHeadline2_3"
+		Name="BnOpenDebugWindow" 
+		Visible="0"
+	/>
+	<GridContainer Pos="1420,110" Size="460,920" FillColor="#000000" BorderWidth="1" Visible="0" Name="TestWindow" GuiAlign="rightcenter">
+		<Rows>
+			<Row Height="45" ID="Tabs"/>
+			<Row Height="1*" ID="Content"/>
+		</Rows>
+		<GridContainer RowID="Tabs">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="1*"/>
+			</Columns>
+			<Icon Column="0" Text="Create Artifacts"
+			IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+			PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+			RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+			Style="StarmapHeadline2_3"
+			Name="BnCreateArtifactsTab"
+			/>
+			<Icon Column="1" Text="Modify Artifacts"
+			IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+			PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+			RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+			Style="StarmapHeadline2_3"
+			Name="BnModifyArtifactsTab"
+			/>
+		</GridContainer>
+		<GridContainer Name="CreateArtifactsTab" RowID="Content">
+			<Rows>
+				<Row Height="45" ID="Settings"/>
+				<Row Height="50" ID="Rarity"/>
+				<Row Height="50" ID="Sockets"/>
+				<Row Height="1*" ID="List"/>
+				<Row Height="45" ID="Controls"/>
+			</Rows>
+			<FlowContainer RowID="Settings" Horizontal="true" Margin="5">
+				<Text Text="Slot Type"/>
+				<ComboBox Width="150" MarginLeft="5" Name="CbSlotType" Color="#ffffff" OpenHeight="600" MaxListWidthExtension="250"/>
+				<Text Text="Filter" MarginLeft="30"/>
+				<EditBox Width="170" MarginLeft="5" Name="InventoryFilter" Color="#ffffff"/>
+			</FlowContainer>
+			<FlowContainer RowID="Sockets" Horizontal="true" Margin="5">
+				<Text Text="Sockets" FontSize="14" />
+				<EditBox Width="60" MarginLeft="5" Name="EbSocketCount" InputType="numbers" Color="#ffffff" FontSize="14" Text="0"/>
+			</FlowContainer>
+			<FlowContainer RowID="Rarity" Horizontal="true" Margin="5">
+				<Text Text="Rarities"/>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/eye_implant_common.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Common" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds" Checked="1"/>
+				</Container>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/eye_implant_uncommon.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Uncommon" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds" Checked="1"/>
+				</Container>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/eye_implant_rare1.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Rare1" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds" Checked="1"/>
+				</Container>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/eye_implant_rare2.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Rare2" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds" Checked="1"/>
+				</Container>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/eye_implant_godlike.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Godlike" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds"/>
+				</Container>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/Eye_implant_biggodlike.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Biggodlike" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds"/>
+				</Container>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/Eye_implant_ancient.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Ancient" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds"/>
+				</Container>
+				<Container Size="40,40"> 
+					<Image Image="UI/Artifacts/Eye_implant_morality.dds" Size="40,40"/>
+					<CheckBox Name="Rarity_Morality" Size="40,40" ImageChecked="UI/Artifacts/Back/1x1_on.dds" ImageUnchecked="UI/Artifacts/Back/1x1_neutral.dds"/>
+				</Container>	
+				<ComboBox Width="50" MarginLeft="5" Name="CbPattern" Color="#ffffff" OpenHeight="600" MaxListWidthExtension="250"/>	
+			</FlowContainer>
+			<ListBox RowID="List" Name="DebugInventoryList" Style="Text_Normal_White"/>
+			<Icon RowID="Controls" Text="Add To Inventory" Width="150" Margin="5" 
+				IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+				PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+				RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+				Style="StarmapHeadline2_3"
+				Name="DebugAddToInventory"
+			/>
+		</GridContainer>
+		<GridContainer Name="ModifyArtifactsTab" RowID="Content">
+			<Rows>
+				<Row Height="50"/>
+				<Row Height="200"/>
+				<Row Height="1*"/>
+			</Rows>
+			<FlowContainer Row="0" Height="50" Horizontal="true">
+				<Text Text="POWER LEVEL:" VerticalAlignment="Top" MarginTop="0" Style="Text_Large_Light_Glow" Size="150,50" MarginLeft="50"/>
+				<EditBox Name="PowerLevelInput"
+					MarginTop="5"
+					MarginLeft="10"
+					Size="50,40"
+					Pos="0,0"
+					Style="Text_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					SelectionColor="#ffffff"
+					Text="1"
+				/>
+				<Icon
+					Text="Apply"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					Style="StarmapHeadline2_3"
+					MarginLeft="15"
+					Size="100,50"
+					Name="BnApplyPowerLevel"
+				/>
+			</FlowContainer>
+			<GridContainer Row="1">
+				<Rows>
+					<Row Height="40"/>
+					<Row Height="60"/>
+					<Row Height="40"/>
+					<Row Height="40"/>
+				</Rows>
+				
+				<Text Text="Enchantments" Row="0" VerticalAlignment="Top" HorizontalAlignment="right" MarginTop="5" MarginRight="30" Style="Text_Normal_Dark_Outline"/>
+				<Icon Name="BnUnlockEnchants" 
+					Text="Unlock Enchantments"
+					Row="0" 
+					VerticalAlignment="Top" 
+					HorizontalAlignment="left" 
+					MarginTop="5" 
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					Style="StarmapHeadline2_3"
+					Margin="5"/>
+				<FlowContainer Row="1" Horizontal="true">
+					<Text Text="Search:" MarginLeft="5"/>
+					<EditBox Name="EnchantmentSearchInput"
+						MarginTop="5"
+						MarginLeft="10"
+						Size="300,40"
+						Pos="0,0"
+						Style="Text_Large_Light_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						SelectionColor="#ffffff"
+					/>
+				</FlowContainer>
+				<FlowContainer Row="2" Horizontal="true">
+					<Text Text="Type" MarginLeft="5"/>
+					<ComboBox Width="150" MarginLeft="5" Name="CbEnchantmentTypes" Color="#ffffff" OpenHeight="600" MaxListWidthExtension="250"/>
+					<Text Text="Value" MarginLeft="25"/>
+					<Slider Width="185" Height="40" MarginLeft="2" Name="SlEnchantmentValue"/>
+					<Text Text="0.0" MarginLeft="2" Name="TxEnchantmentValue"/>
+				</FlowContainer>
+				<Icon Row="3"
+					Text="Add Enchantment"
+					IdleImg="UI/Interaction/fullscreen_headline_buttonOff.tga"
+					PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+					RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+					Style="StarmapHeadline2_3"
+					Margin="5"
+					Name="BnAddEnchantment"
+				/>
+			</GridContainer>
+		</GridContainer>
+	</GridContainer>
+	<Icon Name="ClearInventoryDebug"
+		Visible="0"
+		Pos="85,1000"
+		Size="160,40"
+		IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+		PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+		Style="Starmap2_3"
+		Text="Clear"
+	/>
+	
+	<Dummy Name="LastDummy" MouseSenseEnabled="0" />
+
+</Window>

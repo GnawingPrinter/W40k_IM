@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Root>
+	<LanguageName>
+		<eng>English</eng>
+	</LanguageName>
+	<Languages>eng</Languages>
+	<Quest>
+		<DLC_MaelstromOfCarnage>
+			<node1>
+				<Desc>
+					<eng>Inquisitor! Welcome to Fortress of the Valorous Heart.</eng>
+				</Desc>
+			</node1>
+			<node10>
+				<Desc>
+					<eng>[ff4a64a7][Mission info][/ff4a64a7]</eng>
+				</Desc>
+			</node10>
+			<node11>
+				<Desc>
+					<eng>Not right now. Duty calls elsewhere.</eng>
+				</Desc>
+			</node11>
+			<node12>
+				<Desc>
+					<eng>You’ll descend among a horde of Daemons with a targeting beacon. You gain points for exacting vengeance on them: with each kill you’ll earn points, depending on the enemy type.\n\nAn automatic orbital gun battery will fire on your position in regular intervals. Use it to increase your score.</eng>
+				</Desc>
+			</node12>
+			<node13>
+				<Desc>
+					<eng>&lt;BACK&gt;</eng>
+				</Desc>
+			</node13>
+			<node14>
+				<Desc>
+					<eng>I have returned to deal with the filth of Chaos below.</eng>
+				</Desc>
+			</node14>
+			<node2>
+				<Desc>
+					<eng>What is an Adepta Sororitas contingent doing on this orbital platform?</eng>
+				</Desc>
+			</node2>
+			<node3>
+				<Desc>
+					<eng>We have a mandate from the Ordo Malleus to monitor the state of Daemonic infestation on the planet until a purgation fleet becomes available.</eng>
+				</Desc>
+			</node3>
+			<node4>
+				<Desc>
+					<eng>What about the orbital battery? It must capable of performing at least a partial purge.</eng>
+				</Desc>
+			</node4>
+			<node5>
+				<Desc>
+					<eng>Unfortunately, the battery can only fire at irregular intervals and the targeting cogitator has also been damaged. Its Machine Spirit only accepts coordinates from beacons placed on the surface.</eng>
+				</Desc>
+			</node5>
+			<node6>
+				<Desc>
+					<eng>So you need someone to land on the planet with the beacons.</eng>
+				</Desc>
+			</node6>
+			<node7>
+				<Desc>
+					<eng>The Sisters of Repentia did volunteer from time to time, but the death toll has been steadily growing and we had to stop until the infestation is under control. Could you offer us some assistance?</eng>
+				</Desc>
+			</node7>
+			<node8>
+				<Desc>
+					<eng>Emperor be praised, Inquisitor! You are back. Have you changed your mind about lending us some assistance?</eng>
+				</Desc>
+			</node8>
+			<node9>
+				<Desc>
+					<eng>I’d regard it as a glorious task. I’ll diminish that unholy horde below.</eng>
+				</Desc>
+			</node9>
+		</DLC_MaelstromOfCarnage>
+	</Quest>
+</Root>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="626,95" GuiAlign="bottomcenter" OpenTransition="Fast" CloseTransition="Fast">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<TiltPivot Value="1650,0"/>
+		<TiltMouseCenter Value="1780,540"/>
+		<DefaultTilt Value="0.0,0.0"/>
+		<MaximumTilt Value="0.0,0.0"/>
+		<TiltZone Value="0,0,0,0"/>
+		
+		<FriendCount Type="int" Value="13"/>
+	</Constants>
+		
+	
+	<Container>
+		<Image
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/PvP_Setup_background.tga"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<Image Name="Bg"
+			Pos="0,0"
+			Size="668,832"
+			Image="UI/OpenWorld/subsector_background2.tga"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+		/>
+		<Text
+			Pos="94,98"
+			Size="506,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Text="openworld.gui.pvp.title"
+		/>
+
+		<Text Visible="0"
+			Pos="86,192"
+			Size="150,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Text="openworld.gui.pvp.gamemode"
+		/>
+		
+		<Text Name="GameMode" Visible="0"
+			Pos="310,192"
+			Size="220,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Text="openworld.gui.pvp.gamemode.dominion"
+		/>
+		<Container Pos="60,170" Size="550,850" VAlign="top" IgnoreScissor="1">
+			<FlowContainer VAlign="top">
+				<TextBox 
+					Style="Text_Normal_White"
+					Text="openworld.GUI.pvp.gamemode.dominion.desc_alternate"
+				/>
+				<TextBox Name="GameModeDescription" Visible="0"
+					Style="Text_Normal_White"
+					Text="openworld.GUI.pvp.gamemode.dominion.desc_alternate"
+				/>
+				<Container Height="200" MarginTop="20" VAlign="top" IgnoreScissor="1">
+					<Text
+						Pos="67,0"
+						Size="410,30"
+						Style="Headline_Large_Color_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="openworld.gui.pvp.gamemode.dominion.rating"
+					/>
+					<Image Name="_RatingIcon"
+						Pos="66,38"
+						Size="410,40"
+						Image="UI/OpenWorld/PVP/lvl_0.tga"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+					/>
+
+					<Text Name="RatingValue"
+						Pos="447,51"
+						Size="120,30"
+						Style="Headline_Large_Light_Glow"
+						TextAlignH="center"
+						TextAlignV="center"
+						FontSize="16"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="2500"
+					/>
+
+					<Text
+						Pos="117,90"
+						Size="200,30"
+						Style="Text_Normal_White"
+						Color="#54f1eb"
+						TextAlignH="left"
+						TextAlignV="center"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="openworld.gui.pvp.matches_played"
+					/>
+
+					<Text Name="MatchesPlayedValue"
+						Pos="357,90"
+						Size="120,30"
+						Style="Text_Normal_White"
+						TextAlignH="center"
+						TextAlignV="center"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="10"
+					/>
+
+					<Text
+						Pos="117,120"
+						Size="200,30"
+						Style="Text_Normal_White"
+						Color="#54f1eb"
+						TextAlignH="left"
+						TextAlignV="center"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="openworld.gui.pvp.win_loss"
+					/>
+
+					<Text Name="WinLossValue"
+						Pos="357,120"
+						Size="120,30"
+						Style="Text_Normal_White"
+						TextAlignH="center"
+						TextAlignV="center"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="5/7"
+					/>
+
+					<Text Visible="0"
+						Pos="117,110"
+						Size="200,30"
+						Style="Text_Normal_White"
+						Color="#54f1eb"
+						TextAlignH="left"
+						TextAlignV="center"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="openworld.gui.pvp.kd"
+					/>
+
+					<Text Name="KDValue" Visible="0"
+						Pos="357,110"
+						Size="120,30"
+						Style="Text_Normal_White"
+						TextAlignH="center"
+						TextAlignV="center"
+						TiltPivot="@TiltPivot"
+						TiltMouseCenter="@TiltMouseCenter"
+						DefaultTilt="@DefaultTilt"
+						MaximumTilt="@MaximumTilt"
+						TiltZone="@TiltZone"
+						Text="1/0"
+					/>
+				</Container>
+			</FlowContainer>
+		</Container>
+		<Text Name="MapTypeTitle"
+			Pos="86,692"
+			Size="150,30"
+			Style="Headline_Large_Color_Glow"
+			TextAlignH="left"
+			TextAlignV="center"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Text="openworld.gui.pvp.players"
+		/>
+		
+		<RadioGroupLogical Name="MapType"/>
+		<Container Pos="288,680" Size="320,45" Name="MapTypeContainer">
+			<FlowContainer Horizontal="1">
+				<XBOXButton Name="XBoxLT"
+					Size="48,48"
+					MarginRight="3"
+					SetButton="L_TRIGGER"
+				/>
+				<CheckBox Name="1v1"
+					MarginTop="12"
+					Height="30"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					InitPopup="bottomleft,topleft"
+					TiltPivot="@TiltPivot"
+					TiltMouseCenter="@TiltMouseCenter"
+					DefaultTilt="@DefaultTilt"
+					MaximumTilt="@MaximumTilt"
+					TiltZone="@TiltZone"
+					RadioGroup="MapType"
+					UseDefault="1"
+					Text="GameMode.Lobby._1v1"
+				/>
+				<CheckBox Name="2v2"
+					MarginTop="12"
+					MarginLeft="20"
+					Height="30"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					InitPopup="bottomleft,topleft"
+					TiltPivot="@TiltPivot"
+					TiltMouseCenter="@TiltMouseCenter"
+					DefaultTilt="@DefaultTilt"
+					MaximumTilt="@MaximumTilt"
+					TiltZone="@TiltZone"
+					RadioGroup="MapType"
+					UseDefault="1"
+					Text="GameMode.Lobby._2v2"
+				/>
+
+				<XBOXButton Name="XBoxRT"
+					Size="48,48"
+					MarginLeft="7"
+					SetButton="R_TRIGGER"
+				/>
+			</FlowContainer>
+		</Container>
+		
+		<TextBox Name="WaitingMessage"
+			Pos="80,562"
+			Size="490,100"
+			Style="Text_Normal_White"
+			TextAlignH="center"
+			TextAlignV="bottom"
+			Text="Itten van egy szoveg"
+		/>
+		
+		<Icon Name="ReadyButton"
+			Pos="64,672"
+			Size="150,68"
+			IdleImg="UI/Crafting/button_xlargeOff.tga"
+			PressImg="UI/Crafting/button_xlargeOver.tga"
+			RolloverImg="UI/Crafting/button_xlargeOver.tga"
+			Enabled="1"
+			Style="StarmapHeadline1_4"
+			Text="Ready"
+			ShowCategory="mouse"
+		/>
+		
+		<Container Name="ReadyVotes" MarginTop="5" Pos="250,686" Size="460,30">
+			<Loop Count="8" Variable="$X$" Offset="31,0">
+				<Image Name="ReadyVote$X$"
+					Pos="0,0"
+					Size="28,28"
+					Image="UI/Element/Default/CHECKBOX/Unchecked.tga"
+				/>
+			</Loop>
+		</Container>
+
+		
+		<Icon Name="MainButton"
+			Pos="456,782"
+			Size="188,32"
+			IdleImg="UI/OpenWorld/starmap_buttonOff.tga"
+			PressImg="UI/OpenWorld/starmap_buttonOver.tga"
+			RolloverImg="UI/OpenWorld/starmap_buttonOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Style="StarmapHeadline1_4"
+			Text="openworld.gui.pvp.start"
+			ShowCategory="mouse"
+		/>
+		
+		<Icon Name="LeaderboardButton"
+			Pos="256,782"
+			Size="188,32"
+			IdleImg="UI/OpenWorld/starmap_buttonOff.tga"
+			PressImg="UI/OpenWorld/starmap_buttonOver.tga"
+			RolloverImg="UI/OpenWorld/starmap_buttonOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			Style="StarmapHeadline1_4"
+			Text="openworld.gui.leaderboard.title"
+			ShowCategory="mouse"
+		/>
+		
+		<Icon Name="Close"
+			Pos="626,120"
+			Size="24,24"
+			IdleImg="UI/OpenWorld/icon_closeOff.tga"
+			PressImg="UI/OpenWorld/icon_closeOver.tga"
+			RolloverImg="UI/OpenWorld/icon_closeOver.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			TiltPivot="@TiltPivot"
+			TiltMouseCenter="@TiltMouseCenter"
+			DefaultTilt="@DefaultTilt"
+			MaximumTilt="@MaximumTilt"
+			TiltZone="@TiltZone"
+			ShowCategory="mouse"
+		/>
+	</Container>
+</Window>

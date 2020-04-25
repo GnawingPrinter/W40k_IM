@@ -1,0 +1,22 @@
+<GridContainer Visible="false" Name="ObjectGroups">
+	<Rows>
+		<Row Height="40" ID="Title"/>
+		<Row Height="1" ID="Border1"/>
+		<Row Height="1*" ID="Content"/>
+	</Rows>
+	<Image RowID="Title" ColorMask="#5a6473"/>
+	<Text RowID="Title" Style="InvertedText" Text="Object Groups (?)" FontSize="18"/>
+	<Image RowID="Border1" ColorMask="#000000"/>
+	<GridContainer Name="ObjectGroupsTabs" RowID="Content" Margin="5">
+		<Columns>
+			<Column Width="1*"/>
+			<Column Width="1*"/>
+		</Columns>
+		<Rows>
+			<Row Height="250" ID="FiltersCollTab"/>
+			<Row Height="1*" ID="Content"/> 
+		</Rows>
+		<ScrollableContainer RowID="Content" Column="0" ColumnSpan="2" Name="ObjectGroupList" Margin="5" />
+	</GridContainer>
+	
+</GridContainer>

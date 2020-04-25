@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<Window Pos="0,0">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<ReputationCount Type="int" Value="5"/>
+		<RewardNumber Type="int" Value="6"/>
+		<ProgressBarLength Type="int" Value="605"/>
+	</Constants>
+	
+	<Container Name="MainContainer">
+		<Image
+			Image="UI/Interaction/Skullwall_layer3.tga"
+			DynamicOffsetMax="80,80"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer2.tga"
+			DynamicOffsetMax="40,40"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_layer1.tga"
+			DynamicOffsetMax="20,20"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_vignette.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Interaction/Skullwall_dark_layer.tga"
+			BlendMode="multiply"
+		/>
+		<Image
+			Image="UI/Inventory/fullscreen_inventory_storageBg.tga"
+			Pos="700,174"
+			Size="484,732"
+			DynamicOffsetMax="40,40"
+			GuiAlign="center"
+		/>
+		<Image
+			Height="80"
+			Image="UI/Interaction/fullscreen_headline_bg.tga"
+		/>
+		<Container MarginTop="33" Horizontal="1" Height="68" HAlign="center" GuiAlign="topleft">
+			<Icon Name="MoralityButton"
+				Size="224,68"
+				IdleImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+				IdleOffset="0,-11"
+				PressImg="UI/Interaction/fullscreen_headline_buttonOn.tga"
+				PressOffset="0,-12"
+				RolloverImg="UI/Interaction/fullscreen_headline_buttonOver.tga"
+				RolloverOffset="0,-11"
+				Style="StarmapHeadline2_3"
+				MouseSenseEnabled="false"
+				Text="openworld.GUI.OrdoMissions.title"
+			/>
+		</Container>
+		<Icon TutorialCategoryToReset="Ordo_Missions"
+			Pos="28,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+			PressImg="UI/Interaction/button_tutorialResetOff.tga"
+			RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+			GuiAlign="topleft"
+			InitPopup="leftcenter,rightcenter"
+			Tooltip="Tutorial.TutorialReset"
+			ShowCategory="mouse"
+		/>
+		<Icon Name="Close"
+			Pos="1860,42"
+			Size="32,32"
+			IdleImg="UI/Interaction/button_closeOff.tga"
+			PressImg="UI/Interaction/button_closeOff.tga"
+			RolloverImg="UI/Interaction/button_closeOver.tga"
+			GuiAlign="topright"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="common.close"
+			ShowCategory="mouse"
+		/>
+	</Container>
+	
+	
+	<Loop Count="3" Variable="$A$" Offset="0,305">
+		<Container Name="OrdoContainer$A$" Pos="75,65" Size="676,325" GuiAlign="topleft" Tutorial="Ordo_Missions">
+			<Image Name="Ordo_bg$A$"
+				Image="UI\OpenWorld\Ordo\Ordo_bg.tga"
+			/>
+			<Video Name="OrdoChar$A$"
+				Pos="69,62"
+				Size="140,140"
+				LoopVideo="1"		
+			/>
+			<Image Name="OrdoCharFrame$A$"
+				Pos="23,34"
+				Size="221,221"
+				Image="UI\OpenWorld\Ordo\ordo_charframe_type1.tga"			
+			/>
+			<Icon Name="OrdoShop$A$"
+				Pos="52,263"
+				Size="164,36"
+				Style="Starmap2_3"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				UseButtonEffects="0"
+				Text="battle.gui.interaction.shop.name"
+				ShowCategory="mouse"
+			/>
+			<Text Name="OrdoName$A$"
+				Pos="230,26"
+				Size="423,40"
+				Style="Headline_XLarge_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="_Ordo name"
+			/>
+			<Image
+				Pos="226,62"
+				Size="425,12"
+				Image="UI/OpenWorld/headline3.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text
+				Pos="249,78"
+				Size="237,30"
+				Style="Text_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="bottom"
+				Text="openworld.GUI.OrdoMissions.reputation"
+			/>
+			<Container Pos="520,78">
+				<Loop Count="@ReputationCount" Variable="$X$" Offset="25,0">
+					<Icon Name="OrdoContainer$A$ReputationIcon$X$"
+						Size="17,26"
+						IdleImg="UI\OpenWorld\Ordo\icon_reputationOff.tga"
+						PressImg="UI\OpenWorld\Ordo\icon_reputationOn.tga"
+						RolloverImg="UI\OpenWorld\Ordo\icon_reputationOn.tga"
+						MouseSenseEnabled="0"
+					/>
+				</Loop>
+			</Container>
+			<Icon Name="OrdoRewards$A$"
+				Pos="500,110"
+				Size="154,36"
+				Style="Starmap2_3"
+				IdleImg="UI/common/Options/button_largeOff.tga"
+				PressImg="UI/common/Options/button_largeOver.tga"
+				RolloverImg="UI/common/Options/button_largeOver.tga"
+				UseButtonEffects="0"
+				InitPopup="topcenter,bottomcenter"
+				Tooltip="openworld.GUI.OrdoMissions.Reputation_rewards_tooltip"
+				Text="openworld.gui.worldevent.rewards"
+				ShowCategory="mouse"
+			/>
+			<Image
+				Pos="249,108"
+				Size="400,3"
+				Image="UI/Psyker/separator.tga"
+				MouseSenseEnabled="0"
+			/>
+			<Text
+				Pos="259,144"
+				Size="378,30"
+				Style="Text_Large_Light_Glow"
+				TextAlignH="center"
+				TextAlignV="bottom"
+				Text="openworld.GUI.OrdoMissions.title"
+			/>
+			<Container Pos="268,175">
+				<Loop Count="3" Variable="$X$" Offset="125,0">
+					<Icon Name="OrdoContainer$A$MissionIcon$X$"
+						Pos="30,23"
+						Size="60,60"
+						IdleImg="UI/OpenWorld/Missions/mission_%sOff.dds"
+						MouseSenseEnabled="1"
+						ControllerSenseEnabled="1"
+						UseButtonEffects="0"
+						InitPopup="bottomcenter,topcenter"
+					/>
+					<Image Name="OrdoContainer$A$MissionFrame$X$"
+						Size="118,115"
+						Image="UI\OpenWorld\Ordo\Missionframe_type1.tga"
+						Tooltip="openworld.GUI.OrdoMissions.mission_info_tooltip"
+						MouseSenseEnabled="0"					
+					/>
+				</Loop>
+			</Container>
+		</Container>
+	</Loop>
+
+	<Container Name="OrdoReputation" Pos="1321,55" GuiAlign="topright">
+		<Image
+			Size="507,815"
+			Pos="0,30"
+			Image="UI\OpenWorld\Ordo\Reputation_bg.tga"
+		/>
+		<Image Name="OrdoType"
+			Size="507,95"
+			Pos="0,30"
+			Image="UI\OpenWorld\Ordo\Reputation_header_Malleus.tga"
+		/>
+		<Text Name="OrdoName"
+			Pos="0,40"
+			Size="505,40"
+			Style="Headline_XLarge_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="bottom"
+			Text="_Ordo name"
+		/>
+		<Image
+			Size="507,2"
+			Pos="0,85"
+			Image="UI\OpenWorld\Ordo\headline_center.tga"
+		/>
+		<Text
+			Pos="0,75"
+			Size="505,40"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="bottom"
+			Text="openworld.GUI.OrdoMissions.Reputation_rewards"
+		/>
+		<Container Pos="282,189" Width="22" Height="@ProgressBarLength" IgnoreScissor="1" Alpha="0.25">
+			<FlowContainer
+				MarginTop="-4"
+				MarginBottom="-4"
+				Width="22"
+				BackgroundTopSize="8"
+				BackgroundBotSize="8"
+				BackgroundTopImage="UI/Progress/frame_verticalXp_barRight.tga"
+				BackgroundMidImage="UI/Progress/frame_verticalXp_barMiddle.tga"
+				BackgroundBotImage="UI/Progress/frame_verticalXp_barLeft.tga"
+				MouseSenseEnabled="0"
+				VAlign="bottom"
+			>
+				<Dummy Name="OrdoLevelProgressBarKamu" Width="20" MarginTop="4" MarginBottom="4" Height="@ProgressBarLength" MouseSenseEnabled="0"/>
+			</FlowContainer>
+		</Container>
+		<Container Pos="282,189" Width="22" Height="@ProgressBarLength" IgnoreScissor="1">
+			<FlowContainer
+				MarginTop="-4"
+				MarginBottom="-4"
+				Width="22"
+				BackgroundTopSize="8"
+				BackgroundBotSize="8"
+				BackgroundTopImage="UI/Progress/frame_verticalXp_barRight.tga"
+				BackgroundMidImage="UI/Progress/frame_verticalXp_barMiddle.tga"
+				BackgroundBotImage="UI/Progress/frame_verticalXp_barLeft.tga"
+				MouseSenseEnabled="0"
+				VAlign="bottom"
+			>
+				<Dummy Name="OrdoLevelProgressBar" Width="20" MarginTop="4" MarginBottom="4" Height="@ProgressBarLength" MouseSenseEnabled="0"/>
+			</FlowContainer>
+		</Container>
+		<Container Name="OrdoRewards" Pos="0,510" Size="456,670" IgnoreScissor="1">
+			<Loop Count="@RewardNumber" Variable="$X$" Offset="0,-122">
+				<Container Name="OrdoReward_$X$" Pos="0,235">
+					<Image Name="OrdoRewardLine_$X$"
+						Pos="200,39"
+						Size="100,12"
+						Image="UI/Progress/progress_rewardLeftlineOn.tga"
+						MouseSenseEnabled="0"
+					/>
+					<Image Name="OrdoRewardMarker_$X$"
+						Pos="273,25"
+						Size="40,40"
+						Image="UI/Progress/progress_rewardMarkerOn.tga"
+					/>
+					<Text Name="OrdoRewardLevel_$X$"
+						Pos="323,25"
+						Size="80,40"
+						Style="Headline_XLarge_Light_Glow"
+						TextAlignH="left"
+						TextAlignV="center"
+						Text="$X$"
+						MouseSenseEnabled="0"
+					/>
+					<Container Size="260,90">
+						<FlowContainer Height="90" Horizontal="1" HAlign="right">
+							<Image Name="OrdoReward_Image_$X$"
+								MarginTop="10"
+								Size="68,68"
+								Image="UI/Perks/Precognitive_evasionOff.tga"
+								InitPopup="bottomcenter,topcenter"
+								Tooltip="openworld.GUI.OrdoMissions.Reputation_rewards.XENOS.level$X$.name"
+								ControllerSenseEnabled="1"
+								SlideredElement="1"
+							/>
+						</FlowContainer>
+					</Container>
+				</Container>
+			</Loop>
+		</Container>
+		<Image
+			Pos="80,791"
+			Size="220,8"
+			Image="UI/CharacterSheet/frame_stats_lineRight.tga"
+		/>
+		<Text Name="OrdoReputationValue"
+			Pos="80,758"
+			Size="170,40"
+			Style="Headline_XLarge_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="10/300"
+		/>		
+	</Container>
+	<Container GuiAlign="topright">
+		<Text
+			Pos="1328,892"
+			Size="387,40"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="openworld.GUI.OrdoMissions.ordo_reset"
+		/>
+		<Text
+			Pos="1328,932"
+			Size="387,40"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="openworld.GUI.OrdoMissions.available_missions"
+		/>
+		<Text Name="OrdoReset"
+			Pos="1715,892"
+			Size="100,40"
+			Style="Headline_XLarge_Light_Glow"
+			TextAlignH="right"
+			TextAlignV="bottom"
+			Text="86:92"
+		/>
+		<Text Name="AvailableOrdoMissions"
+			Pos="1715,932"
+			Size="100,40"
+			Style="Headline_XLarge_Light_Glow"
+			TextAlignH="right"
+			TextAlignV="bottom"
+			Text="3"
+		/>
+	</Container>
+</Window>

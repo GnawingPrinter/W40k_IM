@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window Pos="729,320" GuiAlign="center">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Image Name="BackTop"
+		Image="UI/msgbox/popup_top.tga"
+		Size="460,48"
+	/>
+	
+	<Image Name="BackMid"
+		Image="UI/msgbox/popup_middle.tga"
+		Pos="0,48"
+		Size="460,220"
+		Layer="-1"
+	/>
+	
+	<Image Name="BackBot"
+		Image="UI/msgbox/popup_bottom.tga"
+		Size="460,48"
+		Pos="0,268"	
+	/>
+	
+	<Container Name="MouseContainer" ShowCategory="mouse">
+		<Icon Name="YesIcon"
+			Pos="19,323"
+			Size="168,36"
+			IdleImg="UI/msgbox/button_textSmallOff.tga"
+			RolloverImg="UI/msgbox/button_textSmallOn.tga"
+			PressImg="UI/msgbox/button_textSmallOn.tga"
+			Style="StarmapHeadline1_4"
+			Text="Common.Yes"
+		/>
+		<Icon Name="NoIcon"
+			Pos="275,323"
+			Size="168,36"
+			IdleImg="UI/msgbox/button_textSmallOff.tga"
+			RolloverImg="UI/msgbox/button_textSmallOn.tga"
+			PressImg="UI/msgbox/button_textSmallOn.tga"
+			Style="StarmapHeadline1_4"
+			Text="Common.No"
+		/>
+		<Icon Name="OkIcon"
+			Pos="146,323"
+			Size="168,36"
+			IdleImg="UI/msgbox/button_textSmallOff.tga"
+			RolloverImg="UI/msgbox/button_textSmallOn.tga"
+			PressImg="UI/msgbox/button_textSmallOn.tga"
+			Style="StarmapHeadline1_4"
+			Text="Common.OK"
+		/>
+	</Container>
+	<Container ShowCategory="controller">
+		<Container Pos="19,313" Size="168,48">
+			<XBOXButton Name="YesIconController"
+				Height="48"
+				SetButton="A"
+				Style="XBoxButtonFont"
+				HAlign="left"
+				Text="Common.Yes"
+			/>
+		</Container>
+		<Container Pos="256,313" Size="168,48">
+			<XBOXButton Name="NoIconController"
+				Height="48"
+				SetButton="B"
+				Style="XBoxButtonFont"
+				HAlign="right"
+				Text="Common.No"
+			/>
+		</Container>
+		<Container Pos="146,313" Size="168,48">
+			<XBOXButton Name="OkIconController"
+				Height="48"
+				SetButton="A"
+				Style="XBoxButtonFont"
+				HAlign="center"
+				Text="Common.OK"
+			/>	
+		</Container>
+	</Container>
+	
+	<TextBox Name="Desc"
+		Pos="21,25"
+		Size="418,250"
+		Style="Text_Large_Light"
+		TextAlignH="center"
+		TextAlignV="center"
+		Text="common.network.error.account_name.undefined"
+	/>		
+</Window>

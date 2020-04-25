@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Landing_Fr09_Room_I_kicsi Terrain="Terrains/Sections/Landing_site/Landing_Fr09_Room_I_kicsi.VHT" Preview="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr09_Room_I_kicsi_thumb.bmp" Image="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr09_Room_I_kicsi.bmp" MapType="Floating Platform" MinClickHeight="-310">
+	<PivotPos x="252.96875" y="3923.96289" />
+	<Tags Room="true" />
+	<Grids>
+		<Grid Column="-4" Row="-3" Image="" />
+		<Grid Column="-3" Row="-3" Image="" />
+		<Grid Column="-2" Row="-3" Image="" />
+		<Grid Column="-1" Row="-3" Image="" />
+		<Grid Column="0" Row="-3" Image="" />
+		<Grid Column="1" Row="-3" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="321.493286" Position.y="3788.03027" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="2" Row="-3" Image="" />
+		<Grid Column="3" Row="-3" Image="" />
+		<Grid Column="4" Row="-3" Image="" />
+		<Grid Column="5" Row="-3" Image="" />
+		<Grid Column="-4" Row="-2" Image="" />
+		<Grid Column="-3" Row="-2" Image="" />
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="" />
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="3" Row="-2" Image="" />
+		<Grid Column="4" Row="-2" Image="" />
+		<Grid Column="5" Row="-2" Image="" />
+		<Grid Column="-4" Row="-1" Image="" />
+		<Grid Column="-3" Row="-1" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="3" Row="-1" Image="" />
+		<Grid Column="4" Row="-1" Image="" />
+		<Grid Column="5" Row="-1" Image="" />
+		<Grid Column="-4" Row="0" Image="" />
+		<Grid Column="-3" Row="0" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="3" Row="0" Image="" />
+		<Grid Column="4" Row="0" Image="" />
+		<Grid Column="5" Row="0" Image="" />
+		<Grid Column="-4" Row="1" Image="" />
+		<Grid Column="-3" Row="1" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="3" Row="1" Image="" />
+		<Grid Column="4" Row="1" Image="" />
+		<Grid Column="5" Row="1" Image="" />
+		<Grid Column="-4" Row="2" Image="" />
+		<Grid Column="-3" Row="2" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="" />
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+		<Grid Column="3" Row="2" Image="" />
+		<Grid Column="4" Row="2" Image="" />
+		<Grid Column="5" Row="2" Image="" />
+		<Grid Column="-4" Row="3" Image="" />
+		<Grid Column="-3" Row="3" Image="" />
+		<Grid Column="-2" Row="3" Image="" />
+		<Grid Column="-1" Row="3" Image="" />
+		<Grid Column="0" Row="3" Image="" />
+		<Grid Column="1" Row="3" Image="" />
+		<Grid Column="2" Row="3" Image="" />
+		<Grid Column="3" Row="3" Image="" />
+		<Grid Column="4" Row="3" Image="" />
+		<Grid Column="5" Row="3" Image="" />
+		<Grid Column="-4" Row="4" Image="" />
+		<Grid Column="-3" Row="4" Image="" />
+		<Grid Column="-2" Row="4" Image="" />
+		<Grid Column="-1" Row="4" Image="" />
+		<Grid Column="0" Row="4" Image="" />
+		<Grid Column="1" Row="4" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="321.494598" Position.y="4155.86377" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="2" Row="4" Image="" />
+		<Grid Column="3" Row="4" Image="" />
+		<Grid Column="4" Row="4" Image="" />
+		<Grid Column="5" Row="4" Image="" />
+	</Grids>
+</Landing_Fr09_Room_I_kicsi>

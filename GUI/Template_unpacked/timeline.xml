@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<TimeLine>
+	<Constants>
+		<DefaultFontSize Value="16"/>
+	</Constants>
+
+	<StyleRules>
+		<Rule Pattern="Icon" HoverSoundPath="" ClickSoundPath="" />
+	</StyleRules>
+	
+	<StyleRules>
+		<Rule Pattern="Text" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="EditBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Icon" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="ComboBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="ListBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="CheckBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Row" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Column" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+	</StyleRules>
+
+	<Constants>
+		<KeyFrameImage Type="string" Value="UI/Editor/Timeline/timeline_event_icon.tga"/>
+	</Constants>
+	<GridContainer Name="maingrid" FillColor="0.2,0.2,0.2">
+		<Rows>
+			<Row ID="Ruler" Height="10"/>
+			<Row ID="Content" Height="1*"/>
+			<Row ID="Controls" Height="30"/>
+			<Row ID="Events" Height="60"/>
+		</Rows>
+		<Container Name="Ruler" RowID="Ruler" Color="0.4,0.4,0.4"/>
+		<Image RowID="Content" ColorMask="#333333"/>
+		<ScrollableContainer Name="Content" RowID="Content" HSlider="false" AutoResize="false">
+			<Image Name="WorkingSpace" Size="0,0" Image="white.tga" ColorMask="0.3,0.3,0.3"/>
+			<Image Name="PlayerLine" Pos="40,0" Width="2" Image="white.tga" ColorMask="1,0,0"/>
+		</ScrollableContainer>
+		<GridContainer RowID="Controls">
+			<Columns>
+				<Column ID="Play" Width="60"/>
+				<Column ID="TimeText" Width="50"/>
+				<Column ID="TimeEdit" Width="65"/>
+				<Column ID="SpeedText" Width="50"/>
+				<Column ID="SpeedEdit" Width="50"/>
+				<Column ID="LoopText" Width="50"/>
+				<Column ID="LoopCheck" Width="50"/>
+			</Columns>
+			<Icon ColumnID="Play" Name="Play" IdleImg="white.tga" ColorMask="0,0.6,0" Text="Play"/>
+			<Text ColumnID="LoopText" Text="Loop" TextAlignH="Right"/>
+			<CheckBox ColumnID="LoopCheck" Name="Loop" Checked="true"/>
+			<Text ColumnID="SpeedText" Text="Speed" TextAlignH="Right"/>
+			<EditBox ColumnID="SpeedEdit" Name="Speed" Text="1.0"/>
+			<Text ColumnID="TimeText" Text="Time" TextAlignH="Right"/>
+			<EditBox ColumnID="TimeEdit" Name="Time" Text="1.0"/>				
+		</GridContainer>
+		<GridContainer RowID="Events" Name="Events" FillColor="#333333">
+			<Rows>
+				<Row ID="main" Height="30" />
+				<Row ID="secondary" Height="30" />
+			</Rows>
+			<Columns>
+				<Column ID="EventsText" Width="60"/>
+				<Column ID="Separator" Width="1"/>
+				<Column ID="Add" Width="30"/>
+				<Column ID="Delete" Width="30"/>
+				<Column ID="Move" Width="40"/>
+				<Column ID="AddLine0" Width="60"/>
+				<Column ID="AddLine1" Width="60"/>
+				<Column ID="AddLine2" Width="60"/>
+				<Column ID="AddLine3" Width="60"/>
+				<Column ID="AddLine4" Width="60"/>
+				<Column ID="Separator2" Width="1"/>
+				<Column ID="Name" Width="60"/>
+				<Column ID="NameEdit" Width="165"/>
+			</Columns>
+			<Text ColumnID="EventsText" RowID="main" Text="EVENTS"/>
+			<Image ColumnID="Separator" RowID="main" ColorMask="#000000"/>
+			<Icon ColumnID="Add" RowID="main" IdleImg="white.tga" ColorMask="#333333" Text="+" Name="AddEvent" Tooltip="Add Event"/>
+			<Icon ColumnID="AddLine0" RowID="main" IdleImg="white.tga" ColorMask="#333333" Text="Line1" Name="AddEventLine0" Tooltip="Add Line1" Visible="false"/>
+			<Icon ColumnID="AddLine1" RowID="main" IdleImg="white.tga" ColorMask="#333333" Text="Line2" Name="AddEventLine1" Tooltip="Add Line2" Visible="false"/>
+			<Icon ColumnID="AddLine2" RowID="main" IdleImg="white.tga" ColorMask="#333333" Text="Line3" Name="AddEventLine2" Tooltip="Add Line3" Visible="false"/>
+			<Icon ColumnID="AddLine3" RowID="main" IdleImg="white.tga" ColorMask="#333333" Text="Line4" Name="AddEventLine3" Tooltip="Add Line4" Visible="false"/>
+			<Icon ColumnID="AddLine0" RowID="secondary" IdleImg="white.tga" ColorMask="#333333" Text="Line5" Name="AddEventLine4" Tooltip="Add Line5" Visible="false"/>
+			<Icon ColumnID="AddLine1" RowID="secondary" IdleImg="white.tga" ColorMask="#333333" Text="Line6" Name="AddEventLine5" Tooltip="Add Line6" Visible="false"/>
+			<Icon ColumnID="AddLine2" RowID="secondary" IdleImg="white.tga" ColorMask="#333333" Text="Line7" Name="AddEventLine6" Tooltip="Add Line7" Visible="false"/>
+			<Icon ColumnID="AddLine3" RowID="secondary" IdleImg="white.tga" ColorMask="#333333" Text="Line8" Name="AddEventLine7" Tooltip="Add Line8" Visible="false"/>
+			<Icon ColumnID="AddLine4" RowID="secondary" IdleImg="white.tga" ColorMask="#333333" Text="Line9" Name="AddEventLine8" Tooltip="Add Line9" Visible="false"/>
+			<Icon ColumnID="Delete" RowID="main" IdleImg="white.tga" ColorMask="#333333" Text="-" Name="DeleteEvent" Tooltip="Delete Event"/>
+			<Icon ColumnID="Move" RowID="main" IdleImg="white.tga" ColorMask="#333333" Text="Now" Name="MoveEvent" Tooltip="Move selected event to cursor"/>
+			<Image ColumnID="Separator2" RowID="main" ColorMask="#000000"/>
+			<Text ColumnID="Name" RowID="main" Name="EventNameText" Text="Name" TextAlignH="Right"/>
+			<EditBox ColumnID="NameEdit" RowID="main" Name="EventName"/>
+		</GridContainer>
+	</GridContainer>
+</TimeLine>

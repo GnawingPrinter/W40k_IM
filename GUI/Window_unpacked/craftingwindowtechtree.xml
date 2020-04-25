@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Constants>	
+	<TechTreeBarLength Type="int" Value="408"/>
+	<TechTreeUpgradeColCount Type="int" Value="4"/>
+	<TechTreeUpgradeRowCount Type="int" Value="4"/>
+</Constants>	
+<Dummy Name="TechtreeLayout"
+		ShowCategory="controller"
+/>
+<Dummy Name="TechtreeOptionsLayout"
+		ShowCategory="controller"
+/>
+<Container Name="TechTree" Visible="0" Tutorial="Techtree_basic">
+	<Scene3D Name="TechPriestModel"
+		Pos="540,80"
+		Size="1920,1080"
+		GuiAlign="rightcenter"
+		MouseSenseEnabled="0"
+		SetCamera="craftingwindow_techpreist"
+	/>
+	<Icon TutorialCategoryToReset="Techtree"
+		Pos="28,80"
+		Size="32,32"
+		IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+		PressImg="UI/Interaction/button_tutorialResetOff.tga"
+		RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+		GuiAlign="topleft"
+		InitPopup="leftcenter,rightcenter"
+		Tooltip="Tutorial.TutorialReset"
+		ShowCategory="mouse"
+	/>
+	<Icon Name="TechtreeTutorialReset"
+		TutorialCategoryToReset="Techtree"
+		Pos="580,216"
+		Size="44,44"
+		IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+		PressImg="UI/Interaction/button_tutorialResetOff.tga"
+		RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+		UseButtonEffects="0"
+		GuiAlign="leftcenter"
+		InitPopup="bottomcenter,topcenter"
+		Tooltip="Tutorial.TutorialReset"
+		ShowCategory="controller"
+	/>
+	<XBOXButton
+		Pos="579,163"
+		Size="48,48"
+		SetButton="Back"
+	/>
+	<Container Name="TechTreeLeft" GuiAlign="leftcenter">
+		<Text
+			Pos="75,103"
+			Size="500,30"
+			Style="Headline_Large_Light_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.forgeinfo"
+		/>
+		<Image
+			Pos="76,136"
+			Size="500,120"
+			Image="UI/Crafting/fullscreen_crafting_forge.tga"
+			InitPopup="bottomcenter,topcenter"
+			Tooltip="openworld.gui.crafting.forgepower.tooltip"
+		/>
+		<Text Name="TechTreeForgeLevel"
+			Pos="100,159"
+			Size="40,40"
+			Style="Text_XLarge_White_Glow"
+			TextAlignH="center"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+			Text="12"
+		/>
+		<Text
+			Pos="153,151"
+			Size="374,30"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="left"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+			Text="openworld.gui.crafting.forgepower"
+		/>
+		<Text Name="TechTreeForgeText"
+			Pos="153,206"
+			Size="414,40"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="left"
+			TextAlignV="center"
+			MouseSenseEnabled="0"
+			Text="openworld.GUI.crafting.salvagechance"
+		/>
+		<FlowContainer
+			Pos="150,181"
+			Height="20"
+			Horizontal="1"
+			BackgroundTopSize="8"
+			BackgroundBotSize="8"
+			BackgroundTopImage="UI/CharacterSheet/frame_attribute_barLeft.tga"
+			BackgroundMidImage="UI/CharacterSheet/frame_attribute_barMiddle.tga"
+			BackgroundBotImage="UI/CharacterSheet/frame_attribute_barRight.tga"
+			MouseSenseEnabled="0"
+		>
+			<Dummy Name="ForgeLevelBar" Height="20" Width="@TechTreeBarLength" MouseSenseEnabled="0"/>
+		</FlowContainer>
+		<Image
+			Pos="73,285"
+			Size="128,128"
+			Image="UI/Crafting/Upgrades/upgrade_selection.tga"
+		/>
+		<Image Name="CurrentUpgradeIcon"
+			Pos="73,285"
+			Size="128,128"
+			Image="UI/Crafting/upgrade_fos.tga"
+		/>
+		<TextBox Name="CurrentUpgradeName"
+			Pos="220,270"
+			Size="346,70"
+			Style="Headline_XLarge_Light_Glow"
+			TextAlignH="left"
+			TextAlignV="bottom"
+			Text="Most epp mit is fejlesztunk?"
+		/>
+		<FlowContainer Pos="220,347">
+			<Icon Name="TechTreeResearchButton"
+				Size="164,36"
+				IdleImg="UI/Crafting/button_craftingOff.tga"
+				PressImg="UI/Crafting/button_craftingOff.tga"
+				RolloverImg="UI/Crafting/button_craftingOver.tga"
+				Style="Starmap2_3"
+				Text="openworld.gui.crafting.research"
+				ShowCategory="mouse"
+			/>
+			<Text Name="CurrentUpgradeStatus"
+				MarginTop="8"
+				Size="346,30"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="top"
+				Text="_researched"
+			/>
+		</FlowContainer>
+		<Image
+			Pos="76,425"
+			Size="500,339"
+			Image="UI/Crafting/fullscreen_crafting_forgeupgrade.tga"
+		/>
+		<ScrollableContainer Pos="95,443" Size="475,249">
+			<FlowContainer>
+				<TextBox Name="CurrentUpgradeDesc"
+					MarginLeft="5"
+					Width="452"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="top"
+					Text="missionstory.purge_001"
+				/>
+				<Text Name="CurrentUpgradePower"
+					MarginLeft="5"
+					MarginTop="4"
+					Size="452,30"
+					Style="Text_Normal_Dark_Outline"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="_Forge Power: 69"
+				/>
+				<TextBox Name="CurrentUpgradeRequirements"
+					MarginTop="5"
+					MarginLeft="5"
+					Width="452"
+					Style="Text_Large_Light_Glow"
+					TextAlignH="left"
+					TextAlignV="top"
+					Text="missionstory.purge_001"
+				/>
+			</FlowContainer>
+		</ScrollableContainer>
+		<Container Name="ResearchCostContainer" Pos="95,670" Size="460,90" >
+			<Text
+				MarginLeft="5"
+				Size="452,30"
+				Style="Text_Normal_Dark_Outline"
+				TextAlignH="left"
+				TextAlignV="center"
+				Text="openworld.gui.crafting.researchcost"
+			/>
+			<Image
+				MarginLeft="-2"
+				MarginTop="20"
+				Size="460,16"
+				Image="UI/Crafting/fullscreen_crafting_line.tga"
+			/>
+			<Image
+				Pos="5,36"
+				Size="40,40"
+				Image="UI/OpenWorld/starmap_resourceCrown.tga"
+			/>
+			<Image
+				Pos="54,34"
+				Size="148,44"
+				Image="UI/Inventory/fullscreen_shop_costBg.tga"
+			/>
+			<Text Name="CurrentUpgradeGoldCost"
+				Pos="61,43"
+				Size="132,30"
+				Style="Headline_Large_Light_Glow"
+				FontOutlineWidth="1"
+				OutlineColor="0x66000000"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_6666"
+			/>
+			<Image
+				Pos="228,36"
+				Size="40,40"
+				Image="UI/OpenWorld/starmap_resourcePremium.tga"
+			/>
+			<Image
+				Pos="277,34"
+				Size="148,44"
+				Image="UI/Inventory/fullscreen_shop_costBg.tga"
+			/>
+			<Text Name="CurrentUpgradePremiumCost"
+				Pos="284,43"
+				Size="132,30"
+				Style="Headline_Large_Light_Glow"
+				FontOutlineWidth="1"
+				OutlineColor="0xff000000"
+				TextAlignH="center"
+				TextAlignV="center"
+				Text="_666"
+			/>
+		</Container>
+	</Container>
+	<Line Name="Inactive" LineWidth="30" Texture="UI/Skills/fullscreen_skills_lineOff.tga"/>
+	<Line Name="Active" LineWidth="30" Texture="UI/Skills/fullscreen_skills_lineOn.tga"/>
+	<Container Pos="654,139">
+		<Loop Count="@TechTreeUpgradeRowCount" Variable="$Y$" Offset="0,195">
+			<Container>
+				<Loop Count="@TechTreeUpgradeColCount" Variable="$X$" Offset="195,0">
+					<Image Name="UpgradeIcon_$X$_$Y$"
+						Size="128,128"
+						Image="UI/Crafting/upgrade_fos.tga"
+						GuiAlign="center"
+					/>
+					<Image Name="UpgradeBack_$X$_$Y$"
+						Size="128,128"
+						Image="UI/Crafting/Upgrades/upgrade_selection.tga"
+						GuiAlign="center"
+					/>
+				</Loop>
+			</Container>
+		</Loop>
+	</Container>
+</Container>

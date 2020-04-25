@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Window>
+	<Constants>
+		<DefaultFontSize Value="16"/>
+	</Constants>
+	
+	<StyleRules>
+		<Rule Pattern="Text" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="EditBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Icon" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="ComboBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="ListBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="CheckBox" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Row" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Column" FontSize="@DefaultFontSize" Sharpness="0.5"/>
+		<Rule Pattern="Icon" HoverSoundPath="" ClickSoundPath="" />
+	</StyleRules>
+
+	<Include Path="Cfg/GUI/Templates/MapEditor/Common.xml"/>
+	<GridContainer>
+		<Columns>
+			<Column ID="Anims" Width="260"/>
+			<Column  Width="1*"/>
+			<Column ID="TimeLine" Width="500"/>
+		</Columns>
+		<GridContainer ColumnID="TimeLine">
+			<Rows>
+				<Row Height="1*"/>
+				<Row Height="160"/>
+			</Rows>
+			<TimeLine Name="TimeLine" KeyFrameSize="20.0"/>
+			<GridContainer Row="1">
+				<Rows>
+					<Row Height="1*"/>
+					<Row Height="40"/>
+				</Rows>
+				<GridContainer Row="0" FillColor="0.3,0.3,0.3">
+					<Columns>
+						<Column Width="80*"/>
+						<Column Width="80*"/>
+						<Column Width="80*"/>
+						<Column Width="80*"/>
+					</Columns>
+					<Rows>
+						<Row Height="40*"/>
+						<Row Height="40*"/>
+						<Row Height="60*"/>
+						<Row Height="60*"/>
+					</Rows>
+					<Text Row="0" Column="0" Text="Render audio" TextAlignH="Right"/>
+					<CheckBox Row="0" Column="1" Name="RenderAudio" Checked="true"/>
+					<Text Row="1" Column="0" Text="Sound Path" TextAlignH="Right"/>
+					<GridContainer Row="1" Column="1" ColumnSpan="5">
+						<Columns>
+							<Column Width="1*"/>
+							<Column Width="0"/>
+						</Columns>
+						<EditBox Column="0" Text="" Name="SoundPath"/>
+						<Icon Column="1" Text="..." Name="BrowseSoundPath" Style="SimpleButton"/>
+					</GridContainer>
+					<Text Row="2" Column="0" Text="Volume" TextAlignH="Right"/>
+					<Knob Row="2" Column="1" Name="VolumeKnob" MinValue="0.0" MaxValue="1.0" DefaultValue="0.8" Style="NormalText" TextAlignH="Left"/>
+					<Text Row="3" Column="0" Name="ParamText0" Text="param" TextAlignH="Right"/>
+					<Knob Row="3" Column="1" Name="ParamKnob0" MinValue="0.0" MaxValue="1.0" Style="NormalText" TextAlignH="Left"/>
+					<Text Row="3" Column="2" Name="ParamText1" Text="param" TextAlignH="Right"/>
+					<Knob Row="3" Column="3" Name="ParamKnob1" MinValue="0.0" MaxValue="1.0" Style="NormalText" TextAlignH="Left"/>
+				</GridContainer>
+				<Icon Name="Save" Row="1" Text="Save" IdleImg="white.tga" ColorMask="@DarkGrey"/>
+			</GridContainer>
+		</GridContainer>
+		<GridContainer Name="LeftContainer" ColumnID="Anims">			
+			<Rows>
+				<Row Height="40" ID="Filter"/>
+				<Row Height="1*" ID="Grid"/>
+				<Row Height="80" ID="GlobalButtons"/>
+			</Rows>			
+			<GridContainer RowID="Filter">
+				<Columns>
+					<Column Width="1*"/>
+				</Columns>
+				<EditBox RowID="Filter" Column="0" Text="" Name="FilterText" IdleImg="white.tga" ColorMask="0.4,0.4,0.4"/>
+			</GridContainer>
+			<Image RowID="Grid" ColorMask="0.3,0.3,0.3" Image="white.tga"/>
+			<Grid RowID="Grid" Name="Grid" Color="0.4,0.4,0.4"/>
+			<GridContainer RowID="GlobalButtons">
+				<Rows>
+					<Row Height="40" />
+					<Row Height="1*" />
+				</Rows>
+				<Columns>
+					<Column Width="1*"/>
+				</Columns>
+				<Icon Row="0" Name="ChkParams" Column="0" Text="BigRedButton" IdleImg="white.tga" ColorMask="1.0,0.0,0.0"/>
+				<Icon Row="1" Name="Reload" Column="0" Text="Reload" IdleImg="white.tga" ColorMask="0.4,0.4,0.4"/>
+			</GridContainer>
+		</GridContainer>
+	</GridContainer>
+
+	<GridContainer Pos="800,400" Size="350,200" FillColor="#666666" Name="MissingCfgWindow" Visible="false">
+		<Rows>
+			<Row Height="60"/>
+			<Row Height="40"/>
+			<Row Height="40"/>
+			<Row Height="1*"/>
+			<Row Height="40" ID="Buttons"/>
+		</Rows>
+		<Text Text="Missing Anim Config File" Style="TextTitle"/>
+		<GridContainer Row="1">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="2*"/>
+			</Columns>
+			<Text Column="0" Text="Animation Set" Style="TextLeft"/>
+			<ComboBox Column="1" Name="CBAnimSet" Color="#FFFFFF"/>
+		</GridContainer>
+		<GridContainer Row="2">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="2*"/>
+			</Columns>
+			<Text Column="0" Text="Body Descriptor" Style="TextLeft"/>
+			<ComboBox Column="1" Name="CBBodyDesc" Color="#FFFFFF"/>
+		</GridContainer>
+		<GridContainer RowID="Buttons">
+			<Columns>
+				<Column Width="1*"/>
+				<Column Width="1*"/>
+			</Columns>
+			<Icon Column="0" Text="OK" Name="MissingCfgOK" IdleImg="white.tga" Color="#000000" ColorMask="#999999"/>
+			<Icon Column="1" Text="Cancel" Name="MissingCfgCancel" IdleImg="white.tga" Color="#000000" ColorMask="#999999"/>
+		</GridContainer>
+	</GridContainer>
+</Window>

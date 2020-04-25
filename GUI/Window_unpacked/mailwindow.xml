@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<Window Pos="0,0" GuiAlign="center">
+	<Include Path="Windows/Styles.xml"/>
+	
+	<Constants>
+		<MailCount Type="int" Value="19"/>
+		<AttachedItemCount Type="int" Value="5"/>
+		<ItemsInRow Type="int" Value="5"/>
+		<AvailableMaterialCount Type="int" Value="10"/>
+		<AvailableMaterialColCount Type="int" Value="8"/>
+		<AvailableMaterialRowCount Type="int" Value="2"/>
+	</Constants>
+	
+	<Styles>
+		<ItemSlot1x1
+			Size="45,45"
+			ArtifactSize="1,1"
+		/>
+		<ItemSlot1x2
+			Size="45,90"
+			ArtifactSize="1,2"
+		/>
+	</Styles>
+
+	<Container Pos="626,67">
+		<Image Pos="0,0" Size="668,832" Image="UI/OpenWorld/subsector_background1.tga" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+		<Image Pos="0,0" Size="668,832" Image="UI/OpenWorld/Friends/friends_background2.tga" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+		<Text Pos="96,98" Size="506,30" Style="Headline_Large_Light_Glow" TextAlignH="center" TextAlignV="center" Text="openworld.GUI.mail.title"/>
+		
+		<Container Name="Mails">			
+			<Container Name="MailList" Visible="1">
+				<CheckBox Name="MailListSelectAll" Pos="45,180" Size="32,32" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" MouseSenseEnabled="1" TiltZone="@TiltZone" ShowCategory="mouse"/>
+				<Text Pos="80,182" Size="234,30" Style="Text_Normal_Dark" TextAlignH="left" TextAlignV="center" Text="openworld.gui.mail.subject" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+				<Text Pos="358,182" Size="144,30" Style="Text_Normal_Dark" TextAlignH="left" TextAlignV="center" Text="openworld.gui.mail.sender" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+				<Image Name="FriendlistBack" Pos="44,208" Size="580,524" Image="UI/msgbox/mailbox_list.tga" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+				<Loop Count="@MailCount" Variable="$X$" Offset="0,27">
+					<Container Pos="48,213" Widht="550" Name="Mail$X$">
+						<Icon Name="MailBack$X$" Pos="0,0" Size="572,28" IdleImg="UI/Leaderboard/leaderboard_frame_neutralOff.tga" PressImg="UI/Leaderboard/leaderboard_frame_neutralOn.tga" RolloverImg="UI/Leaderboard/leaderboard_frame_neutralOver.tga" UseButtonEffects="0" ControllerSenseEnabled="1" SlideredElement="1" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+						<CheckBox Name="MailCheckbox$X$" Pos="-3,-1" Size="32,32" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" MouseSenseEnabled="1" TiltZone="@TiltZone"/>
+						<Text Name="MailTitle$X$" Pos="32,1" Size="253,30" Style="Text_Normal_White" TextAlignH="left" TextAlignV="center" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone" MouseSenseEnabled="0" Text="Mail Title $X$"/>
+						<Text Name="MailSender$X$" Pos="310,0" Size="200,30" Style="Italic_Normal_White" TextAlignH="left" TextAlignV="center" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone" MouseSenseEnabled="0" Text="xXPussyDestroyer12Xx"/>
+						<Container Pos="522,3" Size="48,24">
+							<FlowContainer Horizontal="1" HorizontalAlignment="right">						
+								<Image Name="MailItems$X$" Pos="0,0" Size="24,24" Image="UI/msgbox/icon_mailItems.tga" InitPopup="bottomcenter,topcenter" Tooltip="openworld.gui.mail.hasItems" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+								<Image Name="MailStatus$X$" Pos="0,0" Size="24,24" Image="UI/msgbox/icon_mailNew.tga" InitPopup="bottomcenter,topcenter" Tooltip="openworld.gui.mail.unread" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone"/>
+							</FlowContainer>
+						</Container>
+					</Container>
+				</Loop>
+			
+				<Icon Name="PrevPage"
+					Pos="45,735"
+					Size="36,36"
+					IdleImg="UI/Leaderboard/button_prevOff.tga"
+					PressImg="UI/Leaderboard/button_prevOver.tga"
+					RolloverImg="UI/Leaderboard/button_prevOver.tga"
+					ShowCategory="mouse"
+				/>
+				<Icon Name="NextPage"
+					Pos="588,735"
+					Size="36,36"
+					IdleImg="UI/Leaderboard/button_nextOff.tga"
+					PressImg="UI/Leaderboard/button_nextOver.tga"
+					RolloverImg="UI/Leaderboard/button_nextOver.tga"
+					ShowCategory="mouse"
+				/>
+			</Container>
+
+			<Icon Name="ButtonCompose" Pos="484,781" MarginRight="2" Size="160,40" IdleImg="UI/Assignment/starmap_panelbuttonOff.tga" PressImg="UI/Assignment/starmap_panelbuttonOver.tga" RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga" Style="Starmap2_3" Text="openworld.GUI.mail.compose" ShowCategory="mouse"/>
+			<Icon Name="ButtonDelete" Pos="324,781" Size="160,40" IdleImg="UI/Assignment/starmap_panelbuttonOff.tga" PressImg="UI/Assignment/starmap_panelbuttonOver.tga" RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga" Style="Starmap2_3" Text="openworld.GUI.mail.delete" ShowCategory="mouse"/>
+			<Icon Name="ButtonReceiveItems" Pos="164,781" Size="160,40" IdleImg="UI/Assignment/starmap_panelbuttonOff.tga" PressImg="UI/Assignment/starmap_panelbuttonOver.tga" RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga" Style="Starmap2_3" Text="openworld.GUI.mail.receiveItems" ShowCategory="mouse"/>
+		</Container>
+		
+		<Icon Name="Close" Pos="624,118" Size="28,28" IdleImg="UI/OpenWorld/icon_closeOff.tga" PressImg="UI/OpenWorld/icon_closeOver.tga" RolloverImg="UI/OpenWorld/icon_closeOver.tga" InitPopup="bottomcenter,topcenter" Tooltip="common.close" TiltPivot="@TiltPivot" TiltMouseCenter="@TiltMouseCenter" DefaultTilt="@DefaultTilt" MaximumTilt="@MaximumTilt" TiltZone="@TiltZone" ShowCategory="mouse"/>
+		<Dummy Name="ItemPopupAlign" Pos="22,136" Align="bottomright" MouseSenseEnabled="0"/>
+	</Container>
+	
+	<Container Name="ReadMail" Pos="264,170" Visible="1" GuiAlign="center">
+		<Container Name="PlayerMessage">
+			<Image Name="BackgroundMiddle" Pos="0,68" Size="420,552" Image="UI/msgbox/popup_rewardsMiddle.tga"/>		
+			<Image Name="BackgroundTop" Pos="0,0" Size="420,76" Image="UI/msgbox/popup_rewardsTop.tga"/>
+			<Image Name="BackgroundBottom" Pos="0,614" Size="420,52" Image="UI/msgbox/popup_rewardsBottom.tga"/>
+			<_Image Pos="27,110" Size="348,312" Image="UI/msgbox/mailbox_message_frame.tga"/>		
+			<Image Pos="29,109" Size="344,4" Image="UI/Assignment/assignment_bigline.tga"/>
+			<Image Pos="29,430" Size="352,4" Image="UI/Assignment/assignment_bigline.tga"/>
+			<Text Name="PlayerMessageTitle" Pos="35,30" Size="330,32" Style="Headline_Large_Light_Glow" TextAlignH="center" TextAlignV="center"/>
+			<Icon Name="ReadClose" Pos="370,19" Size="28,28" IdleImg="UI/OpenWorld/icon_closeOff.tga" PressImg="UI/OpenWorld/icon_closeOff.tga" RolloverImg="UI/OpenWorld/icon_closeOver.tga" InitPopup="bottomcenter,topcenter" Tooltip="common.close" ShowCategory="mouse"/>
+			<Text Pos="29,79" Size="134,30" Style="Text_Normal_Dark" TextAlignH="left" TextAlignV="center" Text="openworld.gui.mail.sender" />
+			<Text Name="ReadMailHeader" Pos="175,79" Size="200,30" Style="Text_Normal_White" TextAlignH="right" TextAlignV="center" Text="xXPussyDestroyer12Xx"/>
+			<ScrollableContainer Pos="40,117" Size="350,298">	
+				<FlowContainer>
+					<TextBox Name="ReadMailBody" Width="324" MarginTop="2" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="top" UseSlider="0" Text="The last surviving Hive, Maioris One is now under complete Chaos blockade, but the Ecclesiarchy still forbids evacuation, most probably embracing the chance of glorious martyrdom. The situation is dire, but the arrival of an Imperial Fleet offers a glimpse of hope. The battle for Lacaon Maioris in the cold void ends with the defeat of the Chaos fleet and their ground forces try to move underground to escape the planetary bombardment. The war is far from over, though: the open Warp Gates still provide the forces of the Archenemy with constant reinforcements. The Administratum has re-classified Lacaon Maioris, which is now officially a War World, and reminded the Caligari Conclace to continue sending in all available assets to this unholy warzone until the world is pacified."/>
+				</FlowContainer>
+			</ScrollableContainer>
+			<Container Name="ReadMailAttachments" Pos="46,475">
+				<Image Pos="4,7" Size="304,128" Image="UI/msgbox/popup_inventorySmall.tga"/>
+				<Container>
+					<Loop Count="@AttachedItemCount" Variable="$X$" Offset="60,0">
+						<Artifact Name="ReadMailItem1x1_$X$" Style="ItemSlot1x1" Visible="0" Pos="6,10" ShowCompare="0"/>
+						<Artifact Name="ReadMailItem1x2_$X$" Style="ItemSlot1x2" Visible="0" Pos="6,10" ShowCompare="0"/>
+						<Image Name="ReadMailMaterialImage_$X$"
+							Pos="7,11"
+							Size="58,58"
+							Image="UI/Crafting/Materials/Enchant.tga"
+							InitPopup="bottomcenter,topcenter"
+						/>
+						<Text Name="ReadMailMaterialCount_$X$"
+							Pos="31,38"
+							Size="30,30"
+							Style="GrenadeCharge"
+							FontSize="14"
+							TextAlignH="right"
+							TextAlignV="bottom"
+							MouseSenseEnabled="0"
+							Text="69"
+						/>
+					</Loop>
+				</Container>
+			</Container>
+			<Container Name="ReadMail_Credit" Pos="28,438">
+				<Image
+					Pos="2,5"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"
+				/>				
+				<Text
+					Pos="34,5"
+					Size="134,30"
+					Style="Text_Normal_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.mission.gold"
+				/>
+				<Image
+					Pos="245,4"
+					Size="108,32"
+					Image="UI/OpenWorld/starmap_resourceBackgroundFrame.tga"
+				/>			
+				<Text Name="ReadMail_CreditValue"
+					Pos="253,0"
+					Size="92,40"
+					Style="Headline_Large_Light_Glow"
+					FontType="Share Tech Mono"
+					FontSize="22"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_100"					
+				/>			
+			</Container>
+		</Container>
+			
+		<Container Pos="20,618" Size="366,50">
+			<FlowContainer Horizontal="1" HAlign="center" IgnoreScissor="1">
+				<Icon Name="ReadReceiveItems"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.GUI.mail.receiveItems"
+					ShowCategory="mouse"
+				/>
+				<Icon Name="ReadDelete"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.GUI.mail.delete"
+					ShowCategory="mouse"
+				/>
+				<Icon Name="ReadReply"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.GUI.mail.reply"
+					ShowCategory="mouse"
+				/>
+			</FlowContainer>
+		</Container>
+	</Container>
+
+	<Container Name="WriteMail" Pos="264,170" Visible="0" GuiAlign="center">
+		<Container Name="WritePlayerMessage">
+			<Image Name="WriteBackgroundMiddle" Pos="0,68" Size="420,552" Image="UI/msgbox/popup_rewardsMiddle.tga"/>		
+			<Image Name="WriteBackgroundTop" Pos="0,0" Size="420,76" Image="UI/msgbox/popup_rewardsTop.tga"/>
+			<Image Name="WriteBackgroundBottom" Pos="0,614" Size="420,52" Image="UI/msgbox/popup_rewardsBottom.tga"/>
+			<Image Pos="27,110" Size="348,312" Image="UI/msgbox/mailbox_message_frame.tga"/>		
+			<Image Pos="29,430" Size="352,4" Image="UI/Assignment/assignment_bigline.tga"/>
+			<EditBox Name="WritePlayerMessageTitle" Pos="27,32" Size="337,31" Style="Headline_Large_Light_Glow" TextAlignH="center" TextAlignV="center" ControllerSenseEnabled="1" MaxCharacters="100"/>
+			<Icon Name="WriteClose" Pos="370,19" Size="28,28" IdleImg="UI/OpenWorld/icon_closeOff.tga" PressImg="UI/OpenWorld/icon_closeOff.tga" RolloverImg="UI/OpenWorld/icon_closeOver.tga" InitPopup="bottomcenter,topcenter" Tooltip="common.close" ShowCategory="mouse"/>
+			<Text Pos="29,79" Size="134,30" Style="Text_Normal_Dark" TextAlignH="left" TextAlignV="center" Text="openworld.gui.mail.sent" />
+			<ComboBox Name="WriteTarget" Pos="175,75" Size="200,32" Style="Text_Normal_White" TextAlignH="left" TextAlignV="center" Text="xXPussyDestroyer12Xx" ControllerSenseEnabled="1" MaxCharacters="100"/>
+			<TextEditor Name="WriteMessageBody" Pos="27,110" Size="348,290" MarginTop="2" MarginBottom="-15" Style="Text_Normal_Light" TextAlignH="left" TextAlignV="top" UseSlider="1" ControllerSenseEnabled="1"/>
+			<Text Name="TextLengthLimit" Pos="236,402" Size="130,30" Style="Text_Normal_Dark" FontType="Share Tech Mono" TextAlignV="center" Text="0/1000" TextAlignH="right"/>
+			<Container Name="WriteMailAttachments" Pos="46,475">
+				<Image Pos="4,7" Size="304,128" Image="UI/msgbox/popup_inventorySmall.tga"/>
+				<Container>
+					<Loop Count="@AttachedItemCount" Variable="$X$" Offset="60,0">
+						<Dummy Name="WriteMailItemBack$X$" Pos="6,10" Size="60,120"/>
+						<Artifact Name="WriteMailItem1x1_$X$" Style="ItemSlot1x1" Visible="0" Pos="6,40" ShowCompare="0"/>
+						<Artifact Name="WriteMailItem1x2_$X$" Style="ItemSlot1x2" Visible="0" Pos="6,10" ShowCompare="0"/>
+						<Image Name="WriteMailMaterialImage_$X$"
+							Pos="7,41"
+							Size="58,58"
+							Image="UI/Crafting/Materials/Enchant.tga"
+							InitPopup="bottomcenter,topcenter"
+						/>
+						<Text Name="WriteMailMaterialCount_$X$"
+							Pos="31,68"
+							Size="30,30"
+							Style="GrenadeCharge"
+							FontSize="14"
+							TextAlignH="right"
+							TextAlignV="bottom"
+							MouseSenseEnabled="0"
+							Text="69"
+						/>
+					</Loop>
+				</Container>
+			</Container>
+			<Container Name="WriteMail_Credit" Pos="28,438">
+				<Image
+					Pos="2,5"
+					Size="28,28"
+					Image="UI/OpenWorld/MissionInfo/mission_rewardCrown.tga"
+				/>				
+				<Text
+					Pos="34,5"
+					Size="134,30"
+					Style="Text_Normal_Light"
+					TextAlignH="left"
+					TextAlignV="center"
+					Text="openworld.gui.mission.gold"
+				/>
+				<Image
+					Pos="245,4"
+					Size="108,32"
+					Image="UI/OpenWorld/starmap_resourceBackgroundFrame.tga"
+				/>			
+				<EditBox Name="WriteMail_CreditValue"
+					Pos="246,4"
+					Size="106,32"
+					Style="Headline_Large_Light_Glow"
+					FontType="Share Tech Mono"
+					FontSize="22"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_100"	
+					InputType="numbers"
+					ControllerSenseEnabled="1"
+			/>			
+			</Container>
+		</Container>
+			
+		<Container Pos="20,618" Size="366,50">
+			<FlowContainer Horizontal="1" HAlign="center" IgnoreScissor="1">
+				<Icon Name="OpenInventory"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.GUI.mail.OpenInventory"
+					ShowCategory="mouse"
+				/>
+				<Icon Name="WriteSend"
+					Size="160,40"
+					MarginTop="4"
+					IdleImg="UI/Assignment/starmap_panelbuttonOff.tga"
+					PressImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					RolloverImg="UI/Assignment/starmap_panelbuttonOver.tga"
+					Style="Starmap2_3"
+					Text="openworld.GUI.mail.Send"
+					ShowCategory="mouse"
+				/>
+			</FlowContainer>
+		</Container>
+	</Container>
+	
+	<Container Name="InventoryBox" Visible="0" Pos="1304,183" Size="512,664">
+		<Dummy/>
+		<TabbedInventory Name="Inventory" 
+			Pos="8,17" 
+			GuiAlign="leftcenter" 
+			Visible="1"
+			MaterialPage="1" 
+			Resources="0" 
+		/>
+		<Image 
+			MouseSenseEnabled="0" 
+			Image="UI/msgbox/mailbox_inventory_background2.tga"
+		/>
+	</Container>
+	
+	<Dummy Name="ItemDummy" MouseSenseEnabled="0" Pos="820,210"/>
+	
+	<Dummy Name="MainDummy" ShowCategory="controller"/>
+	<Dummy Name="MainOptionsDummy" ShowCategory="controller" Visible="0"/>
+	<Dummy Name="WriteDummy" ShowCategory="controller" Visible="0"/>
+	<Dummy Name="ReadDummy" ShowCategory="controller" Visible="0"/>
+	<Dummy Name="InventoryDummy" ShowCategory="controller" Visible="0"/>
+
+	
+</Window>

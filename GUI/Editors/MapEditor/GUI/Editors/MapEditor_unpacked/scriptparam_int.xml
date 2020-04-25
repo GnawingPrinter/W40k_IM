@@ -1,0 +1,11 @@
+<ScriptParam_Int>	
+	<Include Path="Common.xml"/>
+	<GridContainer Height="40" ElementDirectory="Editor">
+		<Columns>
+			<Column Width="Auto"/>
+			<Column Width="1*"/>
+		</Columns>
+		<Text Name="Name" Text="Param Neve"  Width="70"/>
+		<EditBox Column="1" Margin="3" Name="Value" Text="5" Graphics="UI/Element/Editor/EDITBOX"/>
+	</GridContainer>
+</ScriptParam_Int>

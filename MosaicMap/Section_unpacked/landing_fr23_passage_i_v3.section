@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Landing_Fr23_Passage_I_v3 Terrain="Terrains/Sections/Landing_site/Landing_Fr23_Passage_I_v3.VHT" Preview="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr23_Passage_I_v3_thumb.bmp" Image="Terrains/Sections/Landing_site/MapEditorImages/Landing_Fr23_Passage_I_v3.bmp" MapType="Floating Platform" MinClickHeight="-310">
+	<PivotPos x="4530.96875" y="335.962891" />
+	<Tags Passage="true" />
+	<Grids>
+		<Grid Column="-2" Row="-2" Image="" />
+		<Grid Column="-1" Row="-2" Image="" />
+		<Grid Column="0" Row="-2" Image="">
+			<Gate Direction="NORTH" Size="1" Position.x="4554.08398" Position.y="245.689163" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="1" Row="-2" Image="" />
+		<Grid Column="2" Row="-2" Image="" />
+		<Grid Column="-2" Row="-1" Image="" />
+		<Grid Column="-1" Row="-1" Image="" />
+		<Grid Column="0" Row="-1" Image="" />
+		<Grid Column="1" Row="-1" Image="" />
+		<Grid Column="2" Row="-1" Image="" />
+		<Grid Column="-2" Row="0" Image="" />
+		<Grid Column="-1" Row="0" Image="" />
+		<Grid Column="0" Row="0" Image="" />
+		<Grid Column="1" Row="0" Image="" />
+		<Grid Column="2" Row="0" Image="" />
+		<Grid Column="-2" Row="1" Image="" />
+		<Grid Column="-1" Row="1" Image="" />
+		<Grid Column="0" Row="1" Image="" />
+		<Grid Column="1" Row="1" Image="" />
+		<Grid Column="2" Row="1" Image="" />
+		<Grid Column="-2" Row="2" Image="" />
+		<Grid Column="-1" Row="2" Image="" />
+		<Grid Column="0" Row="2" Image="">
+			<Gate Direction="SOUTH" Size="1" Position.x="4555.97754" Position.y="475.439972" Position.z="-183.428818" />
+		</Grid>
+		<Grid Column="1" Row="2" Image="" />
+		<Grid Column="2" Row="2" Image="" />
+	</Grids>
+</Landing_Fr23_Passage_I_v3>

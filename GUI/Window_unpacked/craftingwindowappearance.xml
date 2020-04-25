@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Constants>	
+	<SkinModelCount Type="int" Value="3"/>
+	<SkinMaterialPaletteCount Type="int" Value="4"/>
+	<SkinMaterialColCount Type="int" Value="8"/>
+	<SkinMaterialRowCount Type="int" Value="3"/>
+	<SkinColorColCount Type="int" Value="20"/>
+	<SkinColorRowCount Type="int" Value="3"/>
+</Constants>
+<Container Name="Appearance" Visible="0" Tutorial="Apperance_basic">
+	<Scene3D Name="CharacterModel"
+		Pos="-50,-50"
+		Size="1920,1080"
+		GuiAlign="center"
+		SetCamera="craftingwindow_charactermodel"			
+	/>
+	<Dummy Name="AppearanceInventoryLayout"
+			ShowCategory="controller"
+	/>
+	<Dummy Name="AppearanceOptionsLayout"
+			ShowCategory="controller"
+	/>
+	<Dummy Name="AppearanceMainLayout"
+			ShowCategory="controller"
+	/>
+	<Dummy Name="AppearanceMaterialsLayout"
+			ShowCategory="controller"
+	/>
+	<Dummy Name="AppearanceSkinsLayout"
+			ShowCategory="controller"
+	/>
+	<Dummy Name="AppearanceSkinParamsLayout"
+			ShowCategory="controller"
+	/>
+	<Dummy Name="AppearanceColorsLayout"
+			ShowCategory="controller"
+	/>
+	<Icon TutorialCategoryToReset="Apperance"
+		Pos="28,80"
+		Size="32,32"
+		IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+		PressImg="UI/Interaction/button_tutorialResetOff.tga"
+		RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+		GuiAlign="topleft"
+		InitPopup="leftcenter,rightcenter"
+		Tooltip="Tutorial.TutorialReset"
+		ShowCategory="mouse"
+	/>
+	<Icon Name="ApperanceTutorialReset"
+		TutorialCategoryToReset="Apperance"
+		Pos="580,216"
+		Size="44,44"
+		IdleImg="UI/Interaction/button_tutorialResetOff.tga"
+		PressImg="UI/Interaction/button_tutorialResetOff.tga"
+		RolloverImg="UI/Interaction/button_tutorialResetOver.tga"
+		UseButtonEffects="0"
+		GuiAlign="leftcenter"
+		InitPopup="bottomcenter,topcenter"
+		Tooltip="Tutorial.TutorialReset"
+		ShowCategory="controller"
+	/>
+	<XBOXButton
+		Pos="579,163"
+		Size="48,48"
+		SetButton="Back"
+	/>
+	
+	<Container Name="AppearanceSettings" GuiAlign="rightcenter" Tutorial="Apperance_skin">
+		<Text
+			Pos="1240,103"
+			Size="600,30"
+			Style="Headline_Large_Light_Glow"
+			IgnoreScissor="1"
+			TextAlignH="center"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.modifyappearance"
+		/>
+		<Image
+			Pos="1041,137"
+			Size="800,704"
+			Image="UI/Crafting/fullscreen_crafting_skins.tga"
+		/>
+		<Text
+			Pos="1263,160"
+			Size="460,30"
+			Style="Text_Large_Light_Glow"
+			FontSize="21"
+			IgnoreScissor="1"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.skin"
+		/>
+		<Image
+			Pos="1256,190"
+			Size="268,4"
+			Image="UI/Assignment/assignment_bigline.tga"
+		/>
+		<Container Pos="1260,200" Size="210,70">
+			<Loop Count="@SkinModelCount" Variable="$X$" Offset="70,0">
+				<Icon Name="SkinModelIcon_$X$"
+					Pos="5,5"									
+					Size="60,60"
+					AllImg="UI/Crafting/Skin/Filters/skin_$X$.tga"
+					_InitPopup="bottomcenter,topcenter"
+					_Tooltip="_SkinModel_$X$"
+					UseButtonEffects="0"
+				/>	
+				<Icon Name="SkinModelBack_$X$"
+					Pos="-1,-1"
+					Size="72,72"
+					IdleImg="UI/Crafting/crafting_materialbgOff.tga"
+					PressImg="UI/Crafting/crafting_materialbgOn.tga"
+					RolloverImg="UI/Crafting/crafting_materialbgOver.tga"
+					MouseSenseEnabled="0"
+					UseButtonEffects="0"
+					IgnoreScissor="1"
+				/>					
+			</Loop>
+		</Container>
+		<Text
+			Pos="1550,156"
+			Size="160,30"
+			Style="Text_Large_Light_Glow"
+			IgnoreScissor="1"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.dirt"
+		/>
+		<Text Name="DirtValue"
+			Pos="1722,156"
+			Size="93,30"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="50%"
+		/>
+		<Slider Name="DirtSlider"
+			Pos="1546,184"
+			Size="275,20"
+			RangeMin="0"
+			RangeMax="100"
+			StepSize="1"
+			PageSize="10"
+			ShownSize="10"
+			GadgetsToUse="11"
+			UseLeftStick="0"
+			UseRightStick="0"
+			SliderImage="UI/Element/Default/Slider/"
+		/>
+		<Text
+			Pos="1550,208"
+			Size="160,30"
+			Style="Text_Large_Light_Glow"
+			IgnoreScissor="1"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.scratch"
+		/>
+		<Text Name="ScratchValue"
+			Pos="1722,208"
+			Size="93,30"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="50%"
+		/>
+		<Slider Name="ScratchSlider"
+			Pos="1546,236"
+			Size="275,20"
+			RangeMin="0"
+			RangeMax="100"
+			StepSize="1"
+			PageSize="10"
+			ShownSize="10"
+			GadgetsToUse="11"
+			UseLeftStick="0"
+			UseRightStick="0"
+			SliderImage="UI/Element/Default/Slider/"
+		/>
+		<Text
+			Pos="1550,260"
+			Size="160,30"
+			Style="Text_Large_Light_Glow"
+			IgnoreScissor="1"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.blend"
+		/>
+		<Text Name="BlendValue"
+			Pos="1722,260"
+			Size="93,30"
+			Style="Text_Normal_Dark_Outline"
+			TextAlignH="right"
+			TextAlignV="center"
+			Text="50%"
+		/>
+		<Slider Name="BlendSlider"
+			Pos="1546,288"
+			Size="275,20"
+			RangeMin="0"
+			RangeMax="100"
+			StepSize="1"
+			PageSize="10"
+			ShownSize="10"
+			GadgetsToUse="11"
+			UseLeftStick="0"
+			UseRightStick="0"
+			SliderImage="UI/Element/Default/Slider/"
+		/>
+		<FlowContainer Pos="1303,332" Horizontal="1">
+			<XBOXButton Name="_MaterialLT"
+				Size="48,48"
+				MarginTop="-4"
+				MarginLeft="5"
+				SetButton="L_TRIGGER"
+				Enabled="0"
+			/>
+			<Dummy Size="48,1" ShowCategory="mouse"/>
+			<Icon Name="ColorGroup0Tab"
+				Size="184,40"
+				IdleImg="UI/Crafting/tab_craftingOff.tga"
+				PressImg="UI/Crafting/tab_craftingOn.tga"
+				RolloverImg="UI/Crafting/tab_craftingOver.tga"
+				UseButtonEffects="0"
+				Style="StarmapHeadline2_3"
+				InitPopup="bottomcenter,topcenter"
+				Text="BASE PART"
+			/>
+			<Icon Name="ColorGroup1Tab"
+				Size="184,40"
+				IdleImg="UI/Crafting/tab_craftingOff.tga"
+				PressImg="UI/Crafting/tab_craftingOn.tga"
+				RolloverImg="UI/Crafting/tab_craftingOver.tga"
+				UseButtonEffects="0"
+				Style="StarmapHeadline2_3"
+				InitPopup="bottomcenter,topcenter"
+				Text="EQUIPMENTS"
+			/>
+			<XBOXButton Name="_MaterialRT"
+				Size="48,48"
+				MarginTop="-4"
+				SetButton="R_TRIGGER"
+				Enabled="0"
+			/>
+		</FlowContainer>
+		<Image
+			Pos="1255,370"
+			Size="572,450"
+			Image="UI/Crafting/Apperance_texture_bg.tga"
+			ShowCategory="mouse"
+		/>
+		<Text
+			Pos="1263,380"
+			Size="460,30"
+			Style="Text_Large_Light_Glow"
+			FontSize="21"
+			IgnoreScissor="1"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.materials"
+		/>
+		<Image
+			Size="570,4"
+			Pos="1256,410"
+			Image="UI/Assignment/assignment_bigline.tga"
+		/>
+		<Container Pos="1260,422" Size="280,70" Name="PaletteContainer">
+			<Loop Count="@SkinMaterialPaletteCount" Variable="$X$" Offset="70,0">
+				<Icon Name="SkinMaterialPaletteIcon_$X$"
+					Pos="5,5"									
+					Size="60,60"
+					AllImg="UI/Crafting/Skin/gold.tga"
+					InitPopup="bottomcenter,topcenter"
+					Tooltip="_SkinMaterialPalette_$X$"
+					UseButtonEffects="0"
+				/>	
+				<Icon Name="SkinMaterialPaletteBack_$X$"
+					Pos="-1,0"
+					Size="72,72"
+					IdleImg="UI/Crafting/crafting_materialbgOff.tga"
+					PressImg="UI/Crafting/crafting_materialbgOn.tga"
+					RolloverImg="UI/Crafting/crafting_materialbgOver.tga"
+					MouseSenseEnabled="0"
+					UseButtonEffects="0"
+					IgnoreScissor="1"
+				/>					
+			</Loop>
+		</Container>
+		<Text
+			Pos="1263,502"
+			Size="460,30"
+			Style="Text_Large_Light_Glow"
+			FontSize="21"
+			IgnoreScissor="1"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="TEXTURES:"
+		/>
+		<Image
+			Size="570,4"
+			Pos="1256,532"
+			Image="UI/Assignment/assignment_bigline.tga"
+		/>
+		<Container Pos="1260,540" Size="560,210">
+			<Loop Count="@SkinMaterialColCount" Variable="$X$" Offset="70,0">
+				<Container>
+					<Loop Count="@SkinMaterialRowCount" Variable="$Y$" Offset="0,70">
+						<Icon Name="SkinMaterialIcon_$X$_$Y$"
+							Pos="5,5"									
+							Size="60,60"
+							AllImg="UI/Crafting/Skin/gold.tga"
+							_InitPopup="bottomcenter,topcenter"
+							_Tooltip="_SkinMaterial_$X$_$Y$"
+							UseButtonEffects="0"
+						/>
+						<Icon Name="SkinMaterialBack_$X$_$Y$"
+							Pos="-1,0"
+							Size="72,72"
+							IdleImg="UI/Crafting/crafting_materialbgOff.tga"
+							PressImg="UI/Crafting/crafting_materialbgOn.tga"
+							RolloverImg="UI/Crafting/crafting_materialbgOver.tga"
+							MouseSenseEnabled="0"
+							UseButtonEffects="0"
+						/>
+					</Loop>
+				</Container>
+			</Loop>
+		</Container>
+		<Text
+			Pos="1263,689"
+			Size="460,30"
+			Style="Text_Large_Light_Glow"
+			FontSize="21"
+			IgnoreScissor="1"
+			TextAlignH="left"
+			TextAlignV="center"
+			Text="openworld.gui.crafting.colour"
+		/>
+		<Image
+			Size="570,4"
+			Pos="1256,719"
+			Image="UI/Assignment/assignment_bigline.tga"
+		/>
+		<Container Pos="1260,728" Size="560,84">
+			<Loop Count="@SkinColorColCount" Variable="$X$" Offset="28,0">
+				<Container>
+					<Loop Count="@SkinColorRowCount" Variable="$Y$" Offset="0,28">
+						<Icon Name="SkinColorIcon_$X$_$Y$"
+							Pos="4,4"									
+							Size="20,20"
+							_AllImg="UI/Crafting/Skin/gold.tga"
+							InitPopup="bottomcenter,topcenter"
+							Tooltip="_SkinColor_$X$_$Y$"
+							UseButtonEffects="0"
+						/>
+						<Icon Name="SkinColorBack_$X$_$Y$"
+							Pos="-2,-2"
+							Size="32,32"
+							IdleImg="UI/Crafting/crafting_colorbgOff.tga"
+							PressImg="UI/Crafting/crafting_colorbgOn.tga"
+							RolloverImg="UI/Crafting/crafting_colorbgOver.tga"
+							MouseSenseEnabled="0"
+							UseButtonEffects="0"
+							IgnoreScissor="1"
+						/>
+					</Loop>
+				</Container>
+			</Loop>
+		</Container>
+		<FlowContainer Pos="1255,845" Horizontal="1">
+			<Text					
+				Height="40"
+				Style="Headline_Large_Light_Glow"
+				TextAlignH="left"
+				TextAlignV="center"
+				MarginRight="15"
+				Text="openworld.gui.cabal.cost"
+			/>
+			<Container Size="200,44">
+				<Image
+					
+					Size="40,40"
+					Image="UI/OpenWorld/starmap_resourceCrown.tga"
+				/>
+				<Image
+					Pos="49,-2"
+					Size="128,44"
+					Image="UI/Crafting/fullscreen_crafting_costBg.tga"
+				/>
+				<Text Name="SkinGoldCostValue"
+					Pos="57,7"
+					Size="112,30"
+					Style="Headline_Large_Light_Glow"
+					TextAlignH="center"
+					TextAlignV="center"
+					Text="_666"
+				/>
+			</Container>
+		</FlowContainer>
+		<Icon Name="SkinApplyButton"
+			Pos="1680,850"
+			Size="164,44"
+			IdleImg="UI/Crafting/button_xlargeOff.tga"
+			PressImg="UI/Crafting/button_xlargeOver.tga"
+			RolloverImg="UI/Crafting/button_xlargeOver.tga"
+			Style="StarmapHeadline2_3"
+			Text="openworld.gui.crafting.apply"
+			ShowCategory="mouse"
+		/>
+		<Image Name="SkinSelectFrame"
+			Pos="1251,149"
+			Size="275,176"
+			Image="UI/Crafting/Apperance/Selector_1.tga"
+			ShowCategory="controller"
+			Alpha="0.1"
+		/>
+		<Image Name="CsuszkaSelectFrame"
+			Pos="1534,149"
+			Size="300,176"
+			Image="UI/Crafting/Apperance/Selector_1.tga"
+			ShowCategory="controller"
+			Alpha="0.1"
+		/>
+		<Image Name="MaterialSelectFrame"
+			Pos="1251,366"
+			Size="580,325"
+			Image="UI/Crafting/Apperance/Selector_2.tga"
+			ShowCategory="controller"
+			Alpha="0.1"
+		/>
+		<Image Name="ColorSelectFrame"
+			Pos="1251,718"
+			Size="580,106"
+			Image="UI/Crafting/Apperance/Selector_3.tga"
+			ShowCategory="controller"
+			Alpha="0.1"
+		/>
+	</Container>
+</Container>
