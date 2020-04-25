@@ -1,6 +1,6 @@
 
 # Relic enchants:
-```
+
 
 ## Area_damage_after_10_kills:
 can appear on:
