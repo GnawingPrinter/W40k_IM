@@ -1,6 +1,0 @@
-<MapEditorGrid>
-	<Image Name="Background"/>
-	<Image Name="Selection" ColorMask="1,1,0" Alpha="0.15"/>
-	<Image Name="Error" ColorMask="1,0,0" Alpha="0.3"/>
-	<Text Name="Order" FontSize="15" Color="#ff0000" Text=" " Visible="0"/>
-</MapEditorGrid>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Indoors_Clean_Fr51_BG Terrain="Terrains/Sections/Indoors_Clean/SII_Fr51_BG.VHT" Preview="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_Fr51_BG_thumb.bmp" Image="Terrains/Sections/Indoors_Clean/MapEditorImages/SII_Fr51_BG.bmp" MinClickHeight="-50000" Background="true" MapType="Indoors Clean">
-	<PivotPos x="2829" y="-1088.19287" />
-	<Tags />
-	<Grids>
-		<Grid Column="0" Row="0" Image="" />
-	</Grids>
-</Indoors_Clean_Fr51_BG>
